@@ -1,26 +1,13 @@
 # GA4 + GTM - Design and Implementation Manual
 
-> GA4 is the foundation of all analytics, and its design is difficult to change later. Approach the initial design carefully.
-> Always verify the latest specifications in the [GA4 Help Center](https://support.google.com/analytics) and [GA4 Developer Docs](https://developers.google.com/analytics/devguides/collection/ga4).
+> Focus: GTM container design for GA4. Admin/analytics-side topics are summarized with pointers to official docs.
+> Single source of truth: [GA4 Help Center](https://support.google.com/analytics).
 
 ---
 
 ## 1. Property Structure
 
-### Hierarchy
-
-**Account** > **Property** > **Data Stream**
-
-- 1 property = 1 site (+ associated apps). Avoid excessive splitting in order to maintain a unified user journey
-- The recommended data stream configuration is Web 1 + iOS 1 + Android 1 (the official limit is 50, but avoid excessive splitting)
-- If you only have a website, configure a single Web data stream
-
-| Setting | Limit |
-|------|------|
-| Properties per account | 2,000 |
-| Data streams per property | 50 (up to 30 apps) |
-
-> Subproperties / rollup properties are available only in 360.
+**Account > Property > Data Stream.** 1 property = 1 site (+ apps); avoid excessive splitting. For GTM design purposes, you typically target a single Web data stream's Measurement ID (`G-XXXXX`). Limits and setup details: see GA4 property setup.
 
 ---
 
@@ -66,15 +53,19 @@ Parameter value prefix pattern: `type_position` (e.g., `cta_bnr_top`, `cta_btn_f
 
 > Operational guideline: keep custom events to roughly 15-25. Web has no official limit, but apps have a hard limit of 500.
 
-### Parameter Rules
+### Parameter / Limit Rules (key limits for GTM design)
 
-| Item | Limit |
-|------|------|
-| Parameters per event | 25 |
-| Parameter name | 40 chars, alphanumeric + underscore, must start with a letter |
-| Parameter value | 100 chars (standard) / 500 chars (360) |
-| User property name | 24 chars |
-| User property value | 36 chars |
+| Item | Standard | 360 |
+|------|------|-----|
+| Parameters per event | 25 | 25 |
+| Parameter name | 40 chars (alphanumeric + underscore, must start with letter) | same |
+| Parameter value | 100 chars | 500 chars |
+| User property name / value | 24 / 36 chars | same |
+| Unique event names (App hard limit) | 500 | 500 |
+| E-commerce items per event | 200 | 200 |
+| Key events | 30 | 50 |
+
+Full quota reference: GA4 limits.
 
 ---
 
@@ -147,71 +138,25 @@ help_article_viewed (article_id) / support_ticket_created / feedback_submitted (
 
 ## 4. Key Events (Conversions)
 
-In GA4, "conversions" have been renamed to "key events". Any event can be marked as a key event. Mark only the business actions that truly matter.
+In GA4, conversions are called **key events**. Any event can be marked as a key event; mark only business-critical actions. For counting methods (once per event vs. once per session), conversion windows (default 30/90 days), and attribution model details (Data-driven vs. Paid and organic last click), see GA4 key events and Attribution in GA4.
 
-### Counting Methods
-
-| Method | Behavior | Best suited for |
-|------|------|-----------|
-| **Once per event** | Counts every time it fires | E-commerce (count each purchase) |
-| **Once per session** | Counted only once within the same session | Leads (prevent duplicates) |
-
-### Conversion Window
-
-| Type | Default | Options |
-|------|-----------|-----------|
-| Acquisition events (`first_open`, `first_visit`) | 30 days | 7 days |
-| Other key events | 90 days | 30 days, 60 days |
-
-### Attribution
-
-Only **two** models are available in GA4 (the others have been deprecated):
-
-| Model (UI label) | Description | Recommended case |
-|-----------------|------|-----------|
-| **Data-driven** | ML calculates the contribution of each touchpoint | 200+ CV / 2,000+ touchpoints per month |
-| **Paid and organic channels last click** | 100% credit to the last paid/organic touchpoint | Low CV volume / simple purchase flow |
-
-**Recommendation**: Use last click while traffic is low, then switch to data-driven once enough data has accumulated.
-
-**Differences in attribution per report** (fixed regardless of settings):
-
-| Report | Attribution used |
-|---------|---------------------|
-| Traffic acquisition | Last non-direct click |
-| User acquisition | First touch |
-| Conversions | Selected model (Data-driven or Last click) |
-
-> This is a major cause of data discrepancies. When report numbers don't match, check this difference first.
-
-### Google Ads Linking
-
-- GA4 key events default to **Secondary** in Google Ads → switch to **Primary** if used for bidding
-- After import, wait **3 weeks** before applying the bidding strategy
-- Reflection: up to **24 hours**
-- During migration: change the old CV action to "Secondary" → set the new GA4 action to "Primary"
+**Practical notes for GTM design**:
+- Trigger granularity matters: choose "once per session" semantics in GTM (e.g., trigger group / blocking) for lead-style events, "once per event" for purchases.
+- Reports use different attribution (Traffic acquisition = last non-direct, User acquisition = first touch, Conversions = selected model). This is a frequent cause of number mismatches.
+- Google Ads import: GA4 key events default to **Secondary**; switch to **Primary** if used for bidding. CV reflection up to 24h.
 
 ---
 
 ## 5. Custom Dimensions / Metrics
 
-### Quotas
+Quotas (standard / 360): event-scoped 50/125, user-scoped 25/100, item-scoped 10/25, custom metrics 50/125. After deletion wait 48h before recreating. Full reference: Custom dimensions and metrics.
 
-| Type | Standard | 360 |
-|--------|------|-----|
-| Event-scoped | 50 | 125 |
-| User-scoped | 25 | 100 |
-| Item-scoped | 10 | 25 |
-| Custom metrics | 50 | 125 |
-
-### Best Practices
-
-- **Check default dimensions first**. Registering duplicates against existing parameters wastes quota
-- **Avoid high cardinality**: too many unique values get aggregated into the "(other)" row (rule of thumb: can occur at around several hundred unique values; varies by situation). Do not register Event ID / Session ID / User ID
-- **Use the built-in User-ID feature for User ID** (do not make it a custom dimension)
-- **Use custom metrics** for numeric data
-- After deletion, wait **48 hours** before recreating
-- Once a custom parameter is created, register the custom dimension/metric promptly (without registration, it will not appear in UI reports)
+**GTM design implications**:
+- Check default dimensions first before registering parameters as custom dimensions (avoid duplicates).
+- Avoid high-cardinality parameters as dimensions (Event ID / Session ID / User ID) — they get bucketed into "(other)".
+- Use built-in **User-ID** feature, not a custom dimension.
+- Numeric values → custom metrics, not dimensions.
+- Once you push a custom parameter via GTM, register it in GA4 admin promptly — unregistered parameters never appear in UI reports.
 
 ---
 
@@ -337,83 +282,32 @@ When enabled on a GA4 event tag, e-commerce data is **read automatically** from 
 
 ---
 
-## 8. Data Quality
+## 8. Data Quality (Internal Traffic, Referral Exclusion, Cross-Domain)
 
-### Internal Traffic Filtering
+Configured in **GA4 Admin > Data Streams / Data Filters**, not in GTM. See GA4 data filters and Cross-domain measurement.
 
-1. Data Streams > Tag settings > Define internal traffic, then specify IPs
-2. Data Settings > Data Filters, then create a filter
-3. Validate first in the **"Testing"** state → after confirmation, manually change to **"Active"**
-
-> The default is "Testing" state, in which **filtering is not active**. It is easy to forget to change it to "Active".
-
-### Developer Traffic Filtering
-
-Excludes traffic with debug mode enabled from production data. Enable it under Data Settings > Data Filters.
-
-### Referral Exclusion
-
-- Add payment processors (PayPal, Stripe, etc.) to the referral exclusion list
-- Self-referrals from domains included in the cross-domain configuration are handled automatically
-
-### Cross-Domain Tracking
-
-- Data Streams > Tag settings > Configure your domains
-- Use the **same Measurement ID** (`G-XXXXX`) across all domains
-- Carry the client ID via the `_gl` parameter
-- In addition to link decoration (`<a>` tags), **form decoration** is officially supported
-- **Common issue**: server redirects strip the `_gl` parameter → verify that URL parameters are preserved through redirects
+**GTM-relevant gotchas**:
+- Internal traffic filters default to **"Testing"** (inactive). Remember to flip to "Active".
+- Add payment processors (PayPal, Stripe) to the referral exclusion list.
+- Cross-domain: use the **same Measurement ID** across all domains; client ID rides on the `_gl` parameter. Server redirects that strip query params will break attribution — verify `_gl` survives all redirects. Form decoration is officially supported alongside link decoration.
 
 ---
 
-## 9. User ID and Reporting Identity
+## 9. User-ID and Reporting Identity
 
-### User-ID
-
-- Send a unique identifier (256 chars or fewer) at login
-- On sign-in: send the ID / not signed in: do not send the parameter / on sign-out: `null`
-- **Do not register as a custom dimension** (use the built-in User-ID feature)
-
-### Reporting Identity
-
-| Option | Method | Recommendation |
-|-----------|------|------|
-| **Blended** | User-ID > device ID > modeling | **Recommended** (maximum coverage) |
-| Observed | User-ID > device ID | When modeling is not needed |
-| Device-based | Device ID only | Simple but lowest accuracy |
-
-> Enabling Google Signals provides cross-device insights, but low-traffic data may be hidden by thresholding.
+Send a stable, non-PII identifier (≤256 chars) at login; omit when not signed in; send `null` on sign-out. Do **not** also register User-ID as a custom dimension — use the built-in feature. Reporting identity options (Blended / Observed / Device-based): **Blended is recommended**. See User-ID for the web.
 
 ---
 
 ## 10. Consent Mode and Privacy
 
-### Consent Types
+### Consent Types & Modes
 
-| Consent type | What it controls |
-|-----------|---------|
-| `analytics_storage` | Analytics cookies/identifiers |
-| `ad_storage` | Ad cookies/device identifiers |
-| `ad_user_data` | Sending user data for advertising purposes |
-| `ad_personalization` | Personalized advertising |
-| `functionality_storage` | Functional cookies |
-| `personalization_storage` | Personalization |
-| `security_storage` | Security and fraud prevention |
+Seven consent signals (`analytics_storage`, `ad_storage`, `ad_user_data`, `ad_personalization`, `functionality_storage`, `personalization_storage`, `security_storage`). Two implementation modes: **Basic** (tags blocked until consent) and **Advanced** (recommended; default "denied" + cookieless pings, enabling advertiser-specific CV modeling). Scope default consent to regions where a banner is shown. Full reference: Consent Mode.
 
-### Implementation Modes
+Behavioral modeling requires roughly 1,000 events/day for 7 days (`denied`) and 1,000 granted users/day on 7 of 28 days; meeting the threshold is necessary but not sufficient.
 
-| Mode | Behavior | Characteristics |
-|--------|------|------|
-| **Basic** | Tags are blocked until consent | No data sent. Generic CV modeling |
-| **Advanced (recommended)** | Tags load with default "denied". Cookieless pings sent | Advertiser-specific CV modeling enabled |
-
-> Scope the default consent settings to regions where the consent banner is shown (preserve measurement in regions where a banner is not required).
-
-### Behavioral Modeling Thresholds
-
-- `analytics_storage='denied'`: at least **1,000 events per day** for **7 days**
-- Daily users with `analytics_storage='granted'`: at least **1,000 users per day** on **7 of 28 days**
-- Meeting the threshold does not guarantee eligibility (ML applies additional criteria)
+Data retention: change to **14 months** (the standard maximum) immediately after creating the property. Retention only affects exploration reports; standard aggregated reports persist. See Data retention.
 
 ### PII Prohibition
 
@@ -428,191 +322,43 @@ Do not send email addresses, phone numbers, names, addresses, credit card number
 - In Data Streams > Tag settings > "Configure your query parameters further", add PII-containing query parameters to the exclusion list
 - Avoid including PII in query parameters when designing app URLs
 
-### Data Retention
-
-| Option | Conditions |
-|-----------|------|
-| 2 months | Standard default |
-| **14 months** | **Recommended for standard (the maximum)** |
-| 26-50 months / unlimited | 360 only |
-
-- Data retention only affects **exploration reports**. Standard aggregated reports are retained indefinitely
-- Age/gender/interest data is always limited to 2 months
-- Google Signals data is retained for up to 26 months
-- **Change to 14 months immediately after creating the property**
-
 ---
 
 ## 11. Reports and Audiences
 
-### Exploration Reports
+Exploration techniques (Free form, Funnel, Path, Segment overlap, User explorer, User lifetime, Cohort) and audiences (default 30-day membership, max 540 days; standard limit 100 / 360 limit 400; 24-48h to start accumulating, no retroactive application) are configured in the GA4 UI. See Explorations and Audiences.
 
-| Technique | Purpose |
-|------|------|
-| Free form | Pivot tables, charts |
-| Funnel exploration | Up to 10 steps, drop-off rates (open/closed) |
-| Path exploration | Visualize navigation paths |
-| Segment overlap | Compare up to 3 segments (Venn diagram) |
-| User explorer | Timeline of an individual user |
-| User lifetime | Long-term LTV analysis |
-| Cohort exploration | Retention by acquisition date |
-
-> Explorations are affected by the data retention setting. Sampling limits: 10M events (standard) / 1B (360).
-
-### Audiences
-
-| Setting | Value |
-|------|-----|
-| Default membership | 30 days |
-| Maximum membership | 540 days |
-| Limit | 100 (standard) / 400 (360) |
-| Accumulation start | 24-48 hours (no retroactive application) |
-
-- **Predictive audiences**: likely to purchase in 7 days / likely to churn / predicted revenue (200+ CV / 2,000+ touchpoints per month recommended)
-- When linked to Google Ads, audiences are exported automatically for remarketing (up to 2 days to reflect)
-
-**Behavior-based segment examples**:
-- Cart abandoners (no purchase within X days of adding)
-- Highly engaged users (engaged sessions > threshold)
-- Feature explorers (viewed pricing/feature pages)
-- Sequential conditions: view list → view detail → add to cart (no purchase)
-- Exclusions: purchasers in the last 30 days, bounce traffic (`engagement_time` < 10 seconds)
+GTM-relevant: ensure the events and parameters audiences depend on (e.g., `engagement_time`, cart events for "cart abandoners", page-path matches for "feature explorers") are actually firing and registered as custom dimensions where needed.
 
 ---
 
 ## 12. Google Ads / Search Console Linking
 
-### Google Ads
-
-**Setup**: Editor role in GA4 + admin access in Google Ads. Enable auto-tagging. Verify that GCLID is not stripped by redirects.
-
-**Handling key events**:
-- GA4 key events default to **Secondary** in Google Ads → switch to **Primary** if used for bidding
-- After import, wait **3 weeks** before applying the bidding strategy
-- CV reflection: up to 24 hours
-
-### Search Console
-
-- Editor in GA4 + verified owner in Search Console
-- 1:1 relationship with the web data stream
-- Data availability: 48 hours after collection
+Performed in GA4 Admin (not GTM). Requires Editor in GA4 + admin in Google Ads / verified owner in Search Console. Enable Google Ads auto-tagging and verify GCLID survives redirects. See Product links.
 
 ---
 
-## 13. Configuration Limits Summary
+## 13. Configuration Limits
 
-### Standard Property
-
-| Setting | Limit |
-|---------|------|
-| Properties per account | 2,000 |
-| Data streams per property | 50 (up to 30 apps) |
-| Unique event names (Web) | Unlimited (operationally recommended within 500) |
-| Unique event names (App) | 500 (hard limit) |
-| Parameters per event | 25 |
-| Event name | 40 chars |
-| Parameter name | 40 chars |
-| Parameter value | 100 chars |
-| User property name | 24 chars |
-| User property value | 36 chars |
-| Event-scoped custom dimensions | 50 |
-| User-scoped custom dimensions | 25 |
-| Item-scoped custom dimensions | 10 |
-| Custom metrics | 50 |
-| Audiences | 100 |
-| Key events | 30 |
-| E-commerce items per event | 200 |
-| Cardinality threshold | Rule of thumb: "(other)" appears at several hundred unique values (situation-dependent) |
-| Exploration sampling | 10M events |
-| Session timeout | Default 30 minutes (max 7h 55m) |
-| Data retention | Default 2 months (max 14 months) |
-
-### 360 Property (Differences Only)
-
-| Setting | Limit |
-|---------|------|
-| Parameter value | 500 chars |
-| Event-scoped custom dimensions | 125 |
-| User-scoped custom dimensions | 100 |
-| Item-scoped custom dimensions | 25 |
-| Custom metrics | 125 |
-| Audiences | 400 |
-| Key events | 50 |
-| Exploration sampling | 1B events |
+Key limits used during GTM design are consolidated in §2. For the full property-level quota reference (audiences, key events, exploration sampling, session timeout, etc.) and 360 differences, see [GA4 limits](https://support.google.com/analytics/answer/9267744).
 
 ---
 
 ## 14. Testing and Validation
 
-### DebugView
-
-- Displays events and parameters in real time in the GA4 admin UI
-- `debug_mode` is a flag for debug display, and **does not stop event sending itself** (events may still appear in production reports)
-- To exclude from production reports, enable the **developer traffic data filter**
-- Standard reports have a processing delay of **24-48 hours**
-
-### Enabling Debug Mode
-
-| Method | Description |
-|------|------|
-| GTM Preview mode | Automatically attaches `debug_mode: true` (the easiest) |
-| Chrome extension | Google Analytics Debugger |
-| Manual parameter | Add `debug_mode: true` in GTM tag settings |
-
-### Validation Best Practices
-
-- Follow the test plan; do not browse randomly
-- Use incognito mode to avoid cache interference
-- **Test edge cases too** (adding to cart while not logged in, applying a discount code, when cookies are denied, etc.)
-- Record expected and actual values
-- Use three tools together: **DebugView** + **GTM Tag Assistant** + **DevTools Network**
-- E-commerce: validate the correct event name, unique `transaction_id`, and parameter syntax
+- **GTM Preview mode** automatically attaches `debug_mode: true` — easiest way to surface events in GA4 **DebugView**.
+- `debug_mode` only flags for debug display; events still hit production reports unless filtered. Enable the **developer traffic data filter** to exclude.
+- Cross-check with GTM Tag Assistant + DevTools Network. Validate in incognito to avoid cache. For e-commerce: confirm event name, unique `transaction_id`, parameter syntax.
+- Standard reports lag 24-48h. See [DebugView](https://support.google.com/analytics/answer/7201382).
 
 ---
 
 ## 15. Initial Setup Checklist
 
-### Day 1
-
-1. Create GA4 property (verify account structure)
-2. Create web data stream (up to 3)
-3. Install Google tag via GTM (use the **Initialization trigger**)
-4. **Change data retention to 14 months**
-5. **Enable enhanced measurement events** (review each toggle individually; do not enable all blindly)
-6. Define internal traffic rules (specify IPs)
-7. Create the internal traffic filter ("Testing" → validate → change to "Active")
-8. Create and enable the developer traffic filter
-9. Enable Google Signals (if applicable)
-
-### Week 1
-
-10. Implement recommended events (those appropriate for the business type)
-11. Configure key events (choose counting method)
-12. Configure cross-domain tracking (if multiple domains)
-13. Link Search Console
-14. Link Google Ads (if running ads)
-15. Configure User-ID (if authentication exists)
-16. Define and share GTM naming conventions with the team
-
-### Weeks 2-3
-
-17. Register custom dimensions and metrics
-18. Create audiences (for remarketing and analysis)
-19. Configure consent mode (especially for EU traffic)
-20. Configure attribution (DDA recommended when data is sufficient)
-21. Configure referral exclusions (payment processors, etc.)
-22. Validate the entire setup with DebugView + Realtime report
-23. **Document the measurement plan in a spreadsheet** (event names, parameters, expected values, firing conditions, custom dimension registration status)
-
----
-
-## 16. Reference Links
-
-### GA4 Official
-
-- [GA4 Help Center](https://support.google.com/analytics)
-- [GA4 Developer Docs](https://developers.google.com/analytics/devguides/collection/ga4)
-- [Recommended Events Reference](https://developers.google.com/analytics/devguides/collection/ga4/reference/events)
-- [Ecommerce Implementation](https://developers.google.com/analytics/devguides/collection/ga4/ecommerce)
-- [Consent Mode](https://developers.google.com/tag-platform/security/concepts/consent-mode)
-- [User-ID](https://developers.google.com/analytics/devguides/collection/ga4/user-id)
+1. Create GA4 property and Web data stream; install Google tag via GTM on the **Initialization trigger**.
+2. Set data retention to **14 months**; review enhanced measurement toggles individually.
+3. Define internal traffic IPs and create the filter ("Testing" → validate → "Active"); enable developer traffic filter.
+4. Implement recommended events; mark business-critical ones as key events.
+5. Configure cross-domain (if needed), User-ID (if auth exists), consent mode (especially EU).
+6. Register custom dimensions/metrics for any custom parameters you push.
+7. Validate end-to-end with DebugView + Realtime, and document the measurement plan (events, parameters, triggers, registration status).

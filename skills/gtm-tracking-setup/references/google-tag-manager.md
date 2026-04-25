@@ -1,7 +1,8 @@
 # GTM (Google Tag Manager) Configuration Manual
 
 > **Purpose:** Guidelines for the AI to design GTM containers in collaboration with the user and output importable JSON files.
-> The JSON specification is based on GTM's container export/import format (`exportFormatVersion: 2`) and conforms to the ContainerVersion model defined in the [Tag Manager API v2](https://developers.google.com/tag-platform/tag-manager/api/v2/devguide).
+> The JSON specification is based on GTM's container export/import format (`exportFormatVersion: 2`) and conforms to the ContainerVersion model defined in the Tag Manager API v2.
+> Source of truth: [Tag Platform / Tag Manager developer hub](https://developers.google.com/tag-platform/tag-manager) — entry point to the API v2 reference, container export format, and templates.
 
 ---
 
@@ -789,15 +790,3 @@ When operating as a team, separate work into different workspaces. Naming: `[Pro
 | Tag Assistant | General Google tag verification |
 
 **Always test in Preview mode before publishing.** In particular, verify trigger conditions and that there is no firing on unintended pages.
-
----
-
-## References
-
-- [Google - Tag Manager API v2 Developer Guide](https://developers.google.com/tag-platform/tag-manager/api/v2/devguide)
-- [Google - Tag Manager API v2 - ContainerVersion](https://developers.google.com/tag-platform/tag-manager/api/reference/rest/v2/accounts.containers.versions)
-- [Google - Tag Manager API v2 - Tag](https://developers.google.com/tag-platform/tag-manager/api/reference/rest/v2/accounts.containers.workspaces.tags)
-- [Google - Tag Manager API v2 - Trigger](https://developers.google.com/tag-platform/tag-manager/api/v2/reference/accounts/containers/workspaces/triggers)
-- [Google - Tag Manager API v2 - Variable](https://developers.google.com/tag-platform/tag-manager/api/reference/rest/v2/accounts.containers.workspaces.variables)
-- [Google - Tag Manager API v2 - Parameter](https://developers.google.com/tag-platform/tag-manager/api/reference/rest/v2/Parameter)
-- [Google - BuiltInVariable Types](https://developers.google.com/tag-platform/tag-manager/api/reference/rest/v2/accounts.containers.versions#BuiltInVariable)

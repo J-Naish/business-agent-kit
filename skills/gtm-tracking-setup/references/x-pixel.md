@@ -1,6 +1,6 @@
 # X Pixel - GTM Implementation Manual
 
-> Always check the latest specifications at [Conversion Tracking for Websites](https://business.x.com/en/help/campaign-measurement-and-analytics/conversion-tracking-for-websites).
+> Source of truth: [X for Business Help Center](https://business.x.com/en/help) — entry point to Pixel, Conversion API, and campaign measurement docs.
 
 ---
 
@@ -10,21 +10,21 @@
 
 | Event Name | Example Use Case |
 |-----------|-------|
-| **Page View** | All pages (visits are measured by installing the Base Code. To use as a conversion, an event must be created in Events Manager) |
+| **Page View** | All pages (Base Code; create event in Events Manager to use as conversion) |
 | **Purchase** | Purchase completion |
 | **Lead** | Inquiry completion, document request |
-| **Sign Up** | Account creation completion (verify availability in Events Manager. If unavailable, substitute with Lead / Subscribe, etc.) |
+| **Sign Up** | Account creation (verify in Events Manager) |
 | **Add to Cart** | Add to cart |
 | **Add to Wishlist** | Add to wishlist |
 | **Checkout Initiated** | Transition to checkout page |
 | **Content View** | Product detail page |
-| **Added Payment Info** | Payment information entry completion |
+| **Added Payment Info** | Payment information entered |
 | **Search** | On-site search |
 | **Subscribe** | Subscription / newsletter signup |
 | **Start Trial** | Free trial signup |
 | **Download** | File / app download |
 | **Product Customization** | Product option selection |
-| **Custom** | Actions that do not match the above |
+| **Custom** | Other actions |
 
 ### Event Parameters
 
@@ -32,21 +32,21 @@
 |-----------|------|------|
 | `value` | Number | Conversion value |
 | `currency` | String | ISO 4217 currency code (e.g. `'USD'`) |
-| `conversion_id` | String | Unique ID for deduplication (e.g. order ID) |
+| `conversion_id` | String | Unique deduplication ID (e.g. order ID) |
 | `search_string` | String | On-site search query |
 | `description` | String | Additional event description |
 | `status` | String | `'started'` or `'completed'` |
-| `contents` | Array | Array of product details (see table below) |
-| `num_items` | Number | Total quantity of items (separate from `num_items` inside `contents`. Top-level = overall total) |
-| `email_address` | String | Email address (hashed to SHA256 by X. **CAPI submission recommended**) |
-| `phone_number` | String | Phone number (E.164 format. **CAPI submission recommended**) |
+| `contents` | Array | Array of product details (see below) |
+| `num_items` | Number | Top-level total quantity |
+| `email_address` | String | Email (X applies SHA256. **CAPI recommended**) |
+| `phone_number` | String | Phone in E.164 format (**CAPI recommended**) |
 | `restricted_data_use` | String | `'restrict_optimization'` or `'off'` |
 
 ### contents Array
 
 | Parameter | Type | Description |
 |-----------|------|------|
-| `content_type` | String | Product category (Google taxonomy compliant) |
+| `content_type` | String | Product category (Google taxonomy) |
 | `content_id` | String | SKU or GTIN |
 | `content_name` | String | Product name |
 | `content_price` | Number | Unit price |
@@ -59,8 +59,8 @@
 
 ### Prerequisites
 
-- **Pixel ID** and each **Event ID** (`tw-XXXXX-YYYYY` format) have been obtained from X Ads Events Manager
-- Use the GTM community templates **Twitter Base Pixel** and **Twitter Event Pixel** (template names may change in the gallery; verify the latest names)
+- **Pixel ID** and per-event **Event IDs** (`tw-XXXXX-YYYYY`) from X Ads Events Manager
+- Use GTM community templates **Twitter Base Pixel** and **Twitter Event Pixel**
 
 ### Tags
 
@@ -73,7 +73,7 @@
 | X Pixel - Add to Cart | Twitter Event Pixel | CE - add_to_cart | ad_storage |
 | X Pixel - Content View | Twitter Event Pixel | CE - view_item | ad_storage |
 
-Configure **tag sequencing** for all event tags: Advanced Settings > Tag Sequencing > fire `X Pixel - Base` first.
+Configure **tag sequencing** for all event tags: fire `X Pixel - Base` first.
 
 ### Per-Event Parameter Mapping
 
@@ -85,9 +85,11 @@ Configure **tag sequencing** for all event tags: Advanced Settings > Tag Sequenc
 | **Add to Cart** | contents → `{{cjs - X Pixel Contents}}` |
 | **Content View** | contents → `{{cjs - X Pixel Contents}}` |
 
+> **Pre-purchase events**: For Add to Cart / Checkout Initiated, **do not map** `value` / `currency` / `conversion_id` (prevents unintended revenue attribution). Send only `contents`.
+
 ### Variables
 
-**Constant variables** (centrally manage Pixel ID and Event IDs):
+**Constant variables**:
 
 | Variable Name | Value |
 |--------|---|
@@ -109,7 +111,7 @@ Configure **tag sequencing** for all event tags: Advanced Settings > Tag Sequenc
 | `DLV - ecommerce.items` | `ecommerce.items` |
 | `DLV - form.submission_id` | `form.submission_id` |
 
-**Custom JS Variable** (GA4 items → X Pixel contents conversion):
+**Custom JS Variable** (GA4 items → X Pixel contents):
 
 ```javascript
 // Variable name: cjs - X Pixel Contents
@@ -147,61 +149,29 @@ function() {
 
 ### conversion_id and Deduplication
 
-- Use a **stable ID** (e.g. order ID). `Date.now()` or random values are not acceptable
-- Only Page View-type events are automatically deduplicated on X's side (approximate window: ~30 minutes; verify the official spec). **Other events (Purchase / Lead, etc.) are not automatically deduplicated by X**
-- The primary role of `conversion_id` is **deduplication between Pixel and CAPI**. When using both, send the **same `conversion_id`** in both
-
-### Parameter Restrictions for Pre-Purchase Events
-
-For Add to Cart, Checkout Initiated, etc., **do not map** `value` / `currency` / `conversion_id` (to prevent unintended revenue attribution). Send only `contents`.
+Use a **stable ID** (e.g. order ID; not `Date.now()` or random). Only Page View-type events are auto-deduplicated by X (~30 min). For Purchase/Lead/etc., `conversion_id` is the **primary deduplication mechanism between Pixel and CAPI** — send the same value from both.
 
 ### Consent Management
 
-X Pixel does not have its own Consent Mode. Control via GTM consent settings:
-- Add **`ad_storage`** as an additional consent check on all X Pixel tags
-- Via CMP integration, do not fire until `ad_storage: granted`
+No native consent mode. Add `ad_storage` as an additional consent check on all X Pixel tags; do not fire until `ad_storage: granted`.
 
-### PII (Email / Phone Number)
+### PII (Email / Phone)
 
-Client-side submission via dataLayer carries the risk of leaking to other tags. **Server-side submission via CAPI is strongly recommended**.
+Client-side dataLayer submission risks leaking to other tags. **Server-side via CAPI is strongly recommended.**
 
 ### SPA Environments
 
-- The Base Code runs **only once** on initial load. Do not re-run it on every routing change
-- Events on route changes (Content View, etc.) require a separate firing design via the History Change trigger or similar
+Base Code runs once on initial load. Fire route-change events (Content View, etc.) via the GTM History Change trigger.
+
+### DPA Requirements
+
+Page View / Content View / Add to Cart / Purchase required. `contents` required on all; Purchase additionally needs `value` / `currency`. Physical products only.
 
 ---
 
 ## 4. Conversion API (CAPI)
 
-X-recommended hybrid setup: use Pixel (client) + CAPI (server) together, deduplicating with `conversion_id`.
-
-### Required Identifiers for CAPI (at least one)
-
-| Identifier | Match Accuracy |
-|--------|-----------|
-| Click ID (twclid) | Highest |
-| Email address (SHA256) | High |
-| Phone number (SHA256, E.164) | High |
-
-**twclid integration**: The Pixel automatically captures `?twclid=XXX` from the URL or 1st-party cookies. On the CAPI side, store it server-side at landing time and send it at conversion time.
-
-### CAPI Parameters
-
-| Parameter | Required | Description |
-|---|---|---|
-| `conversion_time` | Required | ISO 8601 timestamp |
-| `event_id` | Required | Event ID from Events Manager |
-| `conversion_id` | Required when used with Pixel | Deduplication ID |
-| `identifiers` | Required (at least one) | twclid / hashed_email / hashed_phone_number |
-| `value` / `price_currency` / `contents` | Optional | Same concepts as Pixel, but field names may differ. Follow the [API reference](https://developer.x.com/en/docs/x-ads-api/measurement/web-conversions/conversion-api) |
-
-### sGTM
-
-- Authentication: **OAuth 1.0a** (Consumer Key/Secret + OAuth Token/Secret) → obtain from the X Developer Portal
-- Requires an X Developer Account. CAPI applications may require sales approval from X
-- **Real-time testing is not supported** (12-24 hours for reflection)
-- Implementation: Stape custom tag (easy) or self-hosted (full control)
+Use a server-side custom tag (Stape or self-hosted sGTM) to send server events alongside Pixel, deduplicated via `conversion_id`. Authentication is OAuth 1.0a from the X Developer Portal (CAPI access may require X sales approval). Real-time test mode is unsupported (12-24h reflection). See [Conversion API reference](https://developer.x.com/en/docs/x-ads-api/measurement/web-conversions/conversion-api).
 
 ---
 
@@ -209,20 +179,6 @@ X-recommended hybrid setup: use Pixel (client) + CAPI (server) together, dedupli
 
 | Tool | What to Verify |
 |--------|---------|
-| **GTM Preview Mode** | Tag firing order (Base→Event), variable values |
-| **X Pixel Helper** (Chrome extension) | Pixel detection, parameters, errors |
-| **DevTools Network** | Requests to X-related domains (`ads-twitter.com`, etc.) |
-| **Events Manager** | Status verification (up to 24 hours for reflection) |
-
----
-
-## 6. Reference Links
-
-- [X Business - Conversion Tracking](https://business.x.com/en/help/campaign-measurement-and-analytics/conversion-tracking-for-websites)
-- [X Business - Pixel Helper](https://business.x.com/en/help/campaign-measurement-and-analytics/pixel-helper)
-- [X Business - Restricted Data Use](https://business.x.com/en/help/campaign-measurement-and-analytics/conversion-tracking-for-websites/restricted-data-use-guide)
-- [X Developer - Conversion API](https://developer.x.com/en/docs/x-ads-api/measurement/web-conversions/conversion-api)
-
-### Additional Requirements for DPA
-
-The four events Page View / Content View / Add to Cart / Purchase are required. `contents` is required on all events; Purchase additionally requires `value` / `currency`. Email submission is also recommended (verify). **Physical products only** are supported.
+| **GTM Preview Mode** | Tag firing order, variable values |
+| **X Pixel Helper** | Pixel detection, parameters, errors |
+| **Events Manager** | Status (up to 24h reflection) |

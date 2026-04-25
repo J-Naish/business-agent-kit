@@ -1,6 +1,6 @@
 # Meta Pixel - GTM Implementation Manual
 
-> Always verify the latest specifications in the [Meta Pixel Reference](https://developers.facebook.com/docs/meta-pixel/reference) and [Events Manager](https://business.facebook.com/events_manager).
+> Source of truth: [Meta Pixel developer docs](https://developers.facebook.com/docs/meta-pixel/) — entry point to Standard Events, Advanced Matching, Conversions API, and consent docs.
 
 ---
 
@@ -28,8 +28,6 @@
 | 16 | **StartTrial** | Free trial started | Recommended: `value`, `currency` |
 | 17 | **SubmitApplication** | Application submitted | None |
 | 18 | **Subscribe** | Paid subscription started | Recommended: `value`, `currency` |
-
-> The number of events may change as Meta updates its specifications. Treat the [Meta Pixel Reference](https://developers.facebook.com/docs/meta-pixel/reference) as the source of truth.
 
 ### Event Parameters
 
@@ -64,8 +62,7 @@
 ### Prerequisites
 
 - A **Pixel ID** has been obtained in Meta Events Manager
-- Use the GTM community template "**Facebook Pixel**" (maintainers: facebookarchive / Simo Ahava. Note: the template name may change in the gallery.)
-- A separate template "**Facebook Pixel by Stape**" is also available (with built-in DataLayer integration and Enhanced Ecommerce auto-mapping)
+- Use the GTM community template "**Facebook Pixel**" (template name may change in the gallery)
 - Because the template internally handles loading `fbevents.js` and initialization (`fbq('init', ...)`), **a Custom HTML Base Code is not required**
 
 ### Key Template Configuration Options
@@ -77,8 +74,8 @@
 | **Object Properties** | Event parameters (table or JS variable) |
 | **Event ID** | Unique identifier for deduplication (required when integrating with CAPI) |
 | **Advanced Matching** | Enables sending of user data (email, phone, etc.) |
-| **Consent Granted** | When `false`, only loads the SDK and stops sending data (integrates with Meta Consent Mode) |
-| **Enhanced Ecommerce** | Auto-maps the DataLayer ecommerce object (UA format supported. For the GA4 `items` format, check the template's support status.) |
+| **Consent Granted** | When `false`, only loads the SDK and stops sending data |
+| **Enhanced Ecommerce** | Auto-maps the DataLayer ecommerce object |
 | **Disable Automatic Configuration** | Disables automatic collection of button clicks and metadata |
 
 ### Tags
@@ -93,7 +90,7 @@
 | Meta Pixel - ViewContent | Facebook Pixel | CE - view_item | ad_storage |
 | Meta Pixel - InitiateCheckout | Facebook Pixel | CE - begin_checkout | ad_storage |
 
-Configure **tag sequencing** for all event tags: Advanced Settings > Tag Sequencing > fire `Meta Pixel - PageView` first. Since the template handles initialization internally, sequencing is more of a safety net, but it is recommended to ensure reliable Pixel initialization. For SPAs, design a separate setup using the History Change trigger.
+Configure **tag sequencing** for all event tags: fire `Meta Pixel - PageView` first as a safety net for reliable Pixel initialization.
 
 ### Per-Event Parameter Mapping
 
@@ -173,162 +170,58 @@ function() {
 
 ### eventID and Deduplication
 
-- Deduplication criteria: matching **event_name** + **eventID** (time window: up to **48 hours** as a guideline, per the official help documentation. However, large transmission delays can break the merging/exclusion behavior, so send Pixel and CAPI events as close together in time as possible.)
-- Use a **stable ID** (such as an order ID) for eventID. When using CAPI alongside Pixel, send the **same value** from both.
-- **Watch out for naming differences**:
-
-| Layer | Field Name | Format |
-|---|---|---|
-| Pixel (browser) | `eventID` | camelCase. The optional argument in `fbq('track', ..., {eventID: '...'})` |
-| CAPI (server) | `event_id` | snake_case. JSON field of the API request |
-| DataLayer (GTM) | Arbitrary (e.g. `meta_event_id`) | Retrieved via a GTM variable and passed to both the Pixel and CAPI tags |
-
-The **value must be identical** across all three layers. Only the names differ.
+Deduplication uses matching **event_name** + **eventID** within ~48 hours. Use a **stable ID** (e.g. order ID), and send the same value from both Pixel (`eventID`, camelCase, options arg) and CAPI (`event_id`, snake_case, JSON field). The DataLayer field name is arbitrary (e.g. `meta_event_id`); only names differ across layers, the value must be identical.
 
 ### AEM (Aggregated Event Measurement)
 
-A protocol for iOS 14.5+ ATT compliance. Specifications have been changing (removal of the previous 8-event limit, removal of the AEM tab, changes to domain verification requirements, etc.), so **treat the current Events Manager UI as the primary source of truth** for:
-
-- Whether the AEM tab exists
-- Whether event prioritization is required
-- Whether domain verification is required
-
-For accounts on the legacy specification, the 8-event prioritization and domain verification may still be required.
+Protocol for iOS 14.5+ ATT compliance. Specs change frequently — treat the current Events Manager UI as the source of truth for whether AEM tab, event prioritization, and domain verification are required. See [docs](https://developers.facebook.com/docs/marketing-api/aggregated-event-measurement).
 
 ### Domain Verification
 
-- Configure under Business Manager > Business Settings > Brand Safety > Domains
-- Use either a **DNS TXT record** (recommended; not affected by site renewals) or an **HTML meta tag** (`<meta name="facebook-domain-verification" content="..." />`)
-- There are reports that domain verification for AEM became unnecessary from mid-2025 onward (see above). However, it is still recommended for proving link ownership and preventing misuse.
+Configure under Business Manager > Business Settings > Brand Safety > Domains via DNS TXT (recommended) or HTML meta tag. See [docs](https://developers.facebook.com/docs/sharing/domain-verification).
 
 ### Consent Management
 
-- **GTM consent settings are the foundation**: Add `ad_storage` as an Additional Consent Check on every Meta Pixel tag. With CMP integration, tags will not fire until `ad_storage: granted`.
-- **Meta Consent Mode**: Integrates with the CMP to automatically reflect the user's consent choices. Granted = full data collection, Denied = privacy-preserving aggregated insights are estimated. Controlled via the template's "Consent Granted" setting.
-- For strict GDPR opt-in, the safest design is to avoid loading `fbevents.js` itself until consent is obtained.
+- Add `ad_storage` as an Additional Consent Check on every Meta Pixel tag. Tags will not fire until `ad_storage: granted`.
+- The template's "Consent Granted" setting integrates with Meta Consent Mode.
+- For strict GDPR opt-in, avoid loading `fbevents.js` itself until consent is obtained.
 
 ### Advanced Matching
 
-A feature that improves match rates with Meta users using email, phone number, etc.:
+Send hashed user data (email, phone, etc.) to improve match rates. Configure in the **Advanced Matching** section of the GTM template. The Pixel applies SHA-256 hashing automatically. See [docs](https://developers.facebook.com/docs/meta-pixel/advanced/advanced-matching) for the full parameter list (em, ph, fn, ln, ge, db, ct, st, zp, country, external_id).
 
-- **Automatic**: Toggle on in Events Manager. Automatically detects form fields and sends them as hashed values.
-- **Manual**: Send explicitly via `fbq('init', PIXEL_ID, {em, ph, ...})`. The Pixel automatically applies SHA-256 hashing. Configure in the Advanced Matching section of the GTM template.
-- **Recommendation**: Use Automatic + Manual together to maximize EMQ.
-
-| Parameter | Description | Format |
-|---|---|---|
-| `em` | Email address | Lowercase |
-| `ph` | Phone number | Country code + number (digits only) |
-| `fn` | First name | Lowercase |
-| `ln` | Last name | Lowercase |
-| `ge` | Gender | `f` or `m` |
-| `db` | Date of birth | `YYYYMMDD` |
-| `ct` | City | Lowercase, no spaces |
-| `st` | State / prefecture | 2-letter code, lowercase |
-| `zp` | Postal code | No hyphens |
-| `country` | Country | ISO 3166-1 alpha-2 (`jp`, `us`) |
-| `external_id` | External customer ID | Identifier from your own system |
-
-> If raw PII (plaintext email or phone number) is included in the DataLayer, only push it to the DataLayer after cookie consent has been obtained (there is a risk of leakage via other tags). **Server-side transmission via CAPI is strongly recommended.**
+> **PII warning**: Do not push raw email/phone to the DataLayer before consent (leakage risk via other tags). **Server-side via CAPI is strongly recommended.**
 
 ### EMQ (Event Match Quality)
 
-- **A score from 0 to 10** (shown next to each event in Events Manager; updated every 48 hours)
-- **Goal: a score of 8 or higher for all key events**
-- Improvement priorities:
-
-| Priority | Data |
-|---|---|
-| Highest | Email (`em`) |
-| High | Phone number (`ph`), `fbp` (`_fbp` cookie value), `fbc` (`_fbc` cookie value), `external_id` |
-| Medium | First name (`fn`), last name (`ln`), city (`ct`) |
-| Low | Country (`country`), date of birth (`db`), gender (`ge`) |
+Score 0-10 per event in Events Manager (updated every 48 hours). Target 8+. Email is the highest-impact identifier; phone, `_fbp`, `_fbc`, and `external_id` are also high-priority. See [docs](https://www.facebook.com/business/help/765081237991954).
 
 ### Custom Events and Custom Conversions
 
-- **Custom events**: `fbq('trackCustom', 'EventName', {...})`. **Prefer standard events whenever they can serve the purpose** (so you benefit from optimization based on Meta's global data). PascalCase is recommended for naming.
-- **Custom conversions**: Defined via rules in Events Manager (URL patterns or event + filter conditions). No code changes required. Up to 100 per account.
+`fbq('trackCustom', 'EventName', {...})` for custom events; **prefer standard events** for optimization. Custom conversions are rule-based (URL or event filters) defined in Events Manager, no code change.
 
 ### SPA Environments
 
-- `fbevents.js` should be loaded only once on initial load. Do not reload it on every routing change.
-- Events on route change (such as ViewContent) need to be designed separately, e.g. via a History Change trigger.
-- If you want to send `PageView` on every route change in an SPA, fire an additional PageView tag using the History Change trigger.
-
-### Dynamic Ads (DPA) / Catalog Requirements
-
-**The three events ViewContent, AddToCart, and Purchase are required.** For all of them:
-
-- `content_ids` (must exactly match catalog product IDs) and `content_type` (`'product'` or `'product_group'`) are required
-- For Purchase, `value` and `currency` are also required
-- Sending the `contents` array with product details (`id`, `quantity`, `item_price`) is also recommended
+Load `fbevents.js` once on initial load. For route-change events (e.g. ViewContent, additional PageView), fire via the GTM History Change trigger.
 
 ### Cookies
 
 | Cookie Name | Lifetime | Purpose |
 |-----------|---------|------|
-| `_fbp` | About 3 months | Unique identifier for website visitors (first-party) |
-| `_fbc` | About 3 months | Contains the Facebook ad click ID (`fbclid`) and links conversions back to the ad |
+| `_fbp` | ~3 months | First-party browser identifier |
+| `_fbc` | ~3 months | Stores `fbclid` from ad clicks |
 
-These are first-party cookies, so they continue to work in environments that restrict third-party cookies. When using CAPI alongside Pixel, also send the `_fbp` / `_fbc` values to the server to improve match quality.
+First-party cookies; persist in environments restricting third-party cookies. When using CAPI, forward `_fbp`/`_fbc` to the server to improve match quality.
+
+### Dynamic Ads (DPA) / Catalog
+
+ViewContent, AddToCart, Purchase required, all with `content_ids` (matching catalog) and `content_type`; Purchase additionally requires `value`/`currency`. See [docs](https://www.facebook.com/business/help/1275400645914358).
 
 ---
 
 ## 4. Conversions API (CAPI)
 
-Meta's recommended hybrid setup: use Pixel (client) and CAPI (server) together, deduplicating with `eventID` / `event_id`.
-
-> **Operational policy**: Ideally, every conversion event sent via Pixel (Purchase, Lead, etc.) should also be sent via CAPI. At a minimum, send Purchase via both and deduplicate using eventID. Decide in advance which events will also be sent via CAPI.
-
-### Required Identifiers
-
-| Identifier | Priority | Hashing | Description |
-|--------|-------|--------|------|
-| `fbc` (_fbc cookie value) | Highest | Not required | Facebook Click ID (the cookie-stored form of fbclid) |
-| `fbp` (_fbp cookie value) | High | Not required | Browser identifier |
-| Email address (`em`) | High | SHA-256 required | Hash after lowercasing |
-| Phone number (`ph`) | High | SHA-256 required | Hash with country code, digits only |
-| `external_id` | Medium | SHA-256 recommended | Advertiser's user ID |
-| `client_ip_address` + `client_user_agent` | Low | Not required | Fallback (sending recommended) |
-
-### CAPI Parameters
-
-| Parameter | Required | Description |
-|---|---|---|
-| `event_name` | Required | Event name (same as Pixel; **case must match exactly**) |
-| `event_time` | Required | UNIX timestamp (in seconds) |
-| `event_id` | Required when used with Pixel | Deduplication ID (same value as the Pixel `eventID`) |
-| `event_source_url` | Recommended | URL of the page where the conversion occurred |
-| `action_source` | Required | `'website'` (for websites) |
-| `user_data.em` | Recommended | SHA-256 hashed email (array) |
-| `user_data.ph` | Recommended | SHA-256 hashed phone number (array) |
-| `user_data.fbc` | Recommended | `_fbc` cookie value (no hashing) |
-| `user_data.fbp` | Recommended | `_fbp` cookie value (no hashing) |
-| `user_data.client_ip_address` | Recommended | IP address (no hashing) |
-| `user_data.client_user_agent` | Recommended | UA string (no hashing) |
-| `user_data.external_id` | Optional | SHA-256 hashed user ID (array) |
-| `custom_data.value` | Optional | Conversion amount |
-| `custom_data.currency` | Optional | ISO 4217 currency code |
-| `custom_data.content_ids` | Optional | Array of product IDs |
-| `custom_data.content_type` | Optional | `'product'` or `'product_group'` |
-| `custom_data.contents` | Optional | Array of product details (same structure as Pixel) |
-| `custom_data.num_items` | Optional | Number of items |
-
-**Endpoint**: `POST https://graph.facebook.com/v{API_VERSION}/{PIXEL_ID}/events`
-**Authentication**: `access_token` parameter (generated in Events Manager)
-
-### sGTM
-
-- Template: the "**Facebook Conversions API**" tag from the community gallery
-- Forward data from client to server using GA4 or a Data Client, then send it to Meta via the CAPI tag
-- Configure the Pixel ID and API access token, then map event, user data, and custom data fields
-- Hosting: **Stape.io** (recommended; easy deployment, template-based) or **Google Cloud Run** (when customization is a priority)
-
-### Validating Deduplication
-
-- **Coverage target**: aim for a CAPI-to-Pixel event coverage ratio of **75% or higher** (gradually expanding from key conversions such as purchases)
-- **Stabilization period**: after CAPI setup, wait at least 24 hours before checking EMQ stability
-- Regularly monitor the "Deduplication" metrics in Events Manager
+Use the GTM server-side template "**Facebook Conversions API**" (sGTM) to send server-side events alongside Pixel, deduplicated via `event_id`. Forward client events to the server (e.g. via GA4 Client) and map them to the CAPI tag with the same `eventID` value used by the Pixel. See [Conversions API docs](https://developers.facebook.com/docs/marketing-api/conversions-api).
 
 ---
 
@@ -336,22 +229,6 @@ Meta's recommended hybrid setup: use Pixel (client) and CAPI (server) together, 
 
 | Tool | What to Check |
 |--------|---------|
-| **GTM Preview Mode** | Tag firing order (PageView -> Event), variable values |
-| **Meta Pixel Helper** (Chrome extension) | Pixel detection, events and parameters, errors. CAPI cannot be verified. |
-| **Test Events** (Events Manager) | Real-time event reception (both Pixel and CAPI) |
-| **Diagnostics** (Events Manager) | Warnings about missing parameters and configuration issues, recommended actions |
-| **DevTools Network** | Check requests to `facebook.com/tr` |
-| **EMQ Score** (Events Manager) | Match quality score (target: 8 or higher; updated every 48 hours) |
-
----
-
-## 6. References
-
-- [Meta Pixel - Official Reference](https://developers.facebook.com/docs/meta-pixel/)
-- [Standard Events Reference](https://developers.facebook.com/docs/meta-pixel/reference)
-- [Conversions API](https://developers.facebook.com/docs/marketing-api/conversions-api)
-- [Advanced Matching](https://developers.facebook.com/docs/meta-pixel/advanced/advanced-matching)
-- [Event Deduplication](https://developers.facebook.com/docs/marketing-api/conversions-api/deduplicate-pixel-and-server-events)
-- [GDPR / Consent Implementation](https://developers.facebook.com/docs/meta-pixel/implementation/gdpr)
-- [Domain Verification](https://developers.facebook.com/docs/sharing/domain-verification)
-- [Events Manager](https://business.facebook.com/events_manager)
+| **GTM Preview Mode** | Tag firing order, variable values |
+| **Meta Pixel Helper** | Pixel events / parameters / errors (browser only) |
+| **Test Events** (Events Manager) | Real-time Pixel + CAPI reception |
