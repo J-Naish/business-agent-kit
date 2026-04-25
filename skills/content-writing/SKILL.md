@@ -29,14 +29,39 @@ Most weak writing fails at step 1 or step 2 — not enough source material, or n
 
 ## Workflow: writing something new
 
-### 1. Lock in the goal and the situation
+### 1. Lock in the goal and the brief
 
-Confirm the following with the user. Use anything already available in the project; ask about whatever is missing.
+Get clear on what you are actually writing before drafting anything.
 
-- **What is this piece for?** — Web page, ad, email, social post, proposal, press release, internal doc, etc.
-- **Who is the reader?** — Their role, the problem on their mind, what they already know, what they are skeptical about.
-- **What state should they be in afterward?** — Refer to step 0 above.
-- **How will they encounter this?** — Where they arrive from (ad, search, email, internal share, direct send) and what context they bring with them.
+**First, narrow down the deliverable from the top:**
+
+- **Mode** — Persuasive (change behavior or belief) or informational (deliver knowledge)? A piece can mix modes at the section level, but the dominant mode shapes every later choice.
+- **Piece type** — Landing page, ad, email, social post, blog article, proposal, press release, case study, internal doc, report, etc.
+- **Format constraints** — Length, channel, language, any rigid structural requirements (subject-line character limits, slide count, word count for a brief).
+
+**Then confirm the brief. At minimum:**
+
+- **Reader** — Their role, the problem on their mind, what they already know, what they are skeptical about. The narrower you can name them, the harder the piece will land.
+- **End state** — The action, conviction, interest, or understanding the reader should be in after they finish (see First Principles step 0). Vague end state → vague piece.
+- **Distribution context** — Where they arrive from (ad, search result, email, internal share, direct send), what came right before, what they are expected to do right after.
+- **Voice constraints** — Brand voice, style guide, banned/preferred terminology, or prior copy this should match. Inventing a new voice when an established one exists creates inconsistency.
+- **Source material on hand** — Do we have the numbers, customer cases, quotes, claims, evidence the piece will rest on? Or is gathering needed first? Writing without source material is the surest path to fabrication or hand-waving.
+- **Anti-goals** — Topics to avoid, regulatory or legal constraints, prior controversies, audience sensitivities. Easier to surface upfront than to redo a draft.
+
+If anything material is unclear, ask. Use what's already in the project before re-asking the user. **Don't fire off questions and then start writing anyway — wait for answers before moving on.**
+
+**Rules of thumb for how much to ask:**
+
+| Brief | How much to ask |
+|---|---|
+| "Tighten this CTA" / "Make this hero punchier" | Minimal — work from what's there |
+| "Three alternative headlines for this LP" | Light — confirm the angle, not the whole brief |
+| "Draft a case study from this customer interview" | Moderate — which problem and result to lead with, target reader |
+| "Launch announcement email for our new feature" | High — audience segments, what is actually shipping, brand tone, prior launches |
+| "Blog post about [topic]" | Very high — audience, angle, search intent, length, tone, distribution channel |
+| "Write the homepage copy for our new product" | Very high — full intake before anything is drafted |
+
+The newer, larger, or fuzzier the deliverable, the more you ask. For tweaks and follow-ups inside an established piece, ask less.
 
 ### 2. Gather the source material
 
@@ -84,8 +109,12 @@ Write the piece using the plan and tone you've agreed on.
 
 Take in the existing piece and confirm:
 
-- **Purpose and audience** — who it is for, what it is trying to achieve.
-- **What is wrong with it** — the user's specific concern. If they don't have one, treat it as "make it better overall."
+- **Purpose and audience** — who it is for, what it is trying to achieve, where the reader encounters it.
+- **The user's specific concern** — "make it tighter" / "make it convert" / "fix the tone" are different jobs. If the user only said "make it better," ask which axis matters most rather than guessing.
+- **Success criterion** — what would tell us the rewrite worked? If there is performance data (CTR, conversion rate, open rate, reply rate) on the current version, ask for it.
+- **What must not change** — sections that need to be preserved, legal or trademark language, length caps, terminology that ships in product. Easier to mark off-limits upfront than to revert it later.
+
+If the piece is significant and any of this is unclear, ask before diagnosing. Small surface tweaks need less.
 
 ### 2. Diagnose
 
