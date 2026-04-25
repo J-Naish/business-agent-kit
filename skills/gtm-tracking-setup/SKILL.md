@@ -1,6 +1,6 @@
 ---
 name: gtm-tracking-setup
-description: Designs and configures analytics tracking for GA4, GTM, Google Ads, Meta Pixel, TikTok Pixel, X Pixel, Pinterest Tag, Snap Pixel, Reddit Pixel, Microsoft Clarity, Hotjar, and more, and outputs an importable JSON for the GTM container. Also use this skill when the user mentions "tracking setup", "GA4 setup", "Google Analytics", "conversion tracking", "event tracking", "GTM setup", "tag manager", "pixel setup", "Pinterest Tag setup", "Pinterest Pixel", "Snap Pixel setup", "Snapchat Pixel", "Snap Conversions API", "Reddit Pixel setup", "Reddit Ads", "Reddit Conversions API", "tracking design", "tracking plan", "Clarity implementation", "Hotjar setup", "session recording", "heatmap", or "ad tag setup".
+description: Designs analytics tracking and outputs an importable GTM container JSON covering GA4, Google Ads, Microsoft Ads, Meta, TikTok, X, Pinterest, Snap, Reddit, LinkedIn, Microsoft Clarity, and Hotjar. Trigger whenever the user wants to set up or expand tracking — conversion tracking, event tracking, dataLayer design, pixel/tag setup, session recording, or heatmaps — including casual asks like "wire up Google Analytics", "track form submissions", "add a Meta pixel", "set up purchase tracking", or "I need a tracking plan". Use this skill even when GTM isn't explicitly mentioned, since browser-side tracking almost always routes through GTM. Skip for pure GA4 admin-side configuration (custom dimensions, audiences, reports) that doesn't touch the container.
 ---
 
 # GTM Tracking Setup
