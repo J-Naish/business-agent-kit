@@ -1,0 +1,700 @@
+{
+  "exportFormatVersion": 2,
+  "exportTime": "2026-04-26 00:00:00",
+  "containerVersion": {
+    "path": "accounts/{ACCOUNT_ID}/containers/{CONTAINER_ID}/versions/0",
+    "accountId": "{ACCOUNT_ID}",
+    "containerId": "{CONTAINER_ID}",
+    "containerVersionId": "0",
+    "name": "Initial Setup - Social EC",
+    "description": "GA4 + Clarity + Google Ads + Meta + Pinterest: Configuration for visual / social e-commerce (full ecommerce funnel across Meta and Pinterest with a shared dataLayer). Pinterest's official 'Pinterest Tag' community template (github.com/pinterest/ws-gtm-template) is referenced via a placeholder cvt_PINTEREST_TAG_TEMPLATE_ID; replace with the cvt_* ID assigned in your destination workspace after installing the template from the GTM Community Template Gallery.",
+    "container": {
+      "path": "accounts/{ACCOUNT_ID}/containers/{CONTAINER_ID}",
+      "accountId": "{ACCOUNT_ID}",
+      "containerId": "{CONTAINER_ID}",
+      "name": "{SITE_DOMAIN}",
+      "publicId": "{GTM_PUBLIC_ID}",
+      "usageContext": ["WEB"],
+      "fingerprint": "0",
+      "tagManagerUrl": ""
+    },
+    "tag": [
+      {
+        "accountId": "{ACCOUNT_ID}",
+        "containerId": "{CONTAINER_ID}",
+        "tagId": "1",
+        "name": "GA4 - Config",
+        "type": "googtag",
+        "parameter": [
+          { "type": "TEMPLATE", "key": "tagId", "value": "{{Const - GA4 Measurement ID}}" }
+        ],
+        "firingTriggerId": ["2147479573"],
+        "tagFiringOption": "ONCE_PER_EVENT",
+        "monitoringMetadata": { "type": "MAP" },
+        "consentSettings": { "consentStatus": "NOT_SET" },
+        "fingerprint": "0",
+        "parentFolderId": "10"
+      },
+      {
+        "accountId": "{ACCOUNT_ID}",
+        "containerId": "{CONTAINER_ID}",
+        "tagId": "2",
+        "name": "Google Ads - Conversion Linker",
+        "type": "gclidw",
+        "parameter": [],
+        "firingTriggerId": ["2147479573"],
+        "tagFiringOption": "ONCE_PER_EVENT",
+        "monitoringMetadata": { "type": "MAP" },
+        "consentSettings": { "consentStatus": "NOT_SET" },
+        "fingerprint": "0",
+        "parentFolderId": "13"
+      },
+      {
+        "accountId": "{ACCOUNT_ID}",
+        "containerId": "{CONTAINER_ID}",
+        "tagId": "3",
+        "name": "Clarity - Base",
+        "type": "cvt_MQDKZ",
+        "parameter": [
+          { "type": "TEMPLATE", "key": "projectId", "value": "{{Const - Clarity Project ID}}" }
+        ],
+        "firingTriggerId": ["2147479553"],
+        "tagFiringOption": "ONCE_PER_EVENT",
+        "monitoringMetadata": { "type": "MAP" },
+        "consentSettings": { "consentStatus": "NOT_SET" },
+        "fingerprint": "0",
+        "parentFolderId": "12"
+      },
+      {
+        "accountId": "{ACCOUNT_ID}",
+        "containerId": "{CONTAINER_ID}",
+        "tagId": "4",
+        "name": "Meta - Base",
+        "type": "cvt_META_PIXEL_TEMPLATE_ID",
+        "parameter": [
+          { "type": "TEMPLATE", "key": "pixelId", "value": "{{Const - Meta Pixel ID}}" }
+        ],
+        "firingTriggerId": ["2147479553"],
+        "tagFiringOption": "ONCE_PER_EVENT",
+        "monitoringMetadata": { "type": "MAP" },
+        "consentSettings": { "consentStatus": "NOT_SET" },
+        "fingerprint": "0",
+        "parentFolderId": "11"
+      },
+      {
+        "accountId": "{ACCOUNT_ID}",
+        "containerId": "{CONTAINER_ID}",
+        "tagId": "5",
+        "name": "Pinterest - Base",
+        "type": "cvt_PINTEREST_TAG_TEMPLATE_ID",
+        "parameter": [
+          { "type": "TEMPLATE", "key": "tagId", "value": "{{Const - Pinterest Tag ID}}" },
+          { "type": "TEMPLATE", "key": "eventName", "value": "pagevisit" }
+        ],
+        "firingTriggerId": ["2147479553"],
+        "tagFiringOption": "ONCE_PER_EVENT",
+        "monitoringMetadata": { "type": "MAP" },
+        "consentSettings": { "consentStatus": "NOT_SET" },
+        "fingerprint": "0",
+        "notes": "Pinterest's official 'Pinterest Tag' community template (pinterest/ws-gtm-template). Replace cvt_PINTEREST_TAG_TEMPLATE_ID with the cvt_* ID assigned in your destination workspace after installing the template. The base tag fires the PageVisit event on every page; configure Tag Sequencing on every Pinterest event tag to fire 'Pinterest - Base' first.",
+        "parentFolderId": "15"
+      },
+      {
+        "accountId": "{ACCOUNT_ID}",
+        "containerId": "{CONTAINER_ID}",
+        "tagId": "6",
+        "name": "GA4 - Event - view_item",
+        "type": "gaawe",
+        "parameter": [
+          { "type": "TAG_REFERENCE", "key": "measurementId", "value": "GA4 - Config" },
+          { "type": "TEMPLATE", "key": "eventName", "value": "view_item" }
+        ],
+        "firingTriggerId": ["1"],
+        "tagFiringOption": "ONCE_PER_EVENT",
+        "monitoringMetadata": { "type": "MAP" },
+        "consentSettings": { "consentStatus": "NOT_SET" },
+        "fingerprint": "0",
+        "parentFolderId": "10"
+      },
+      {
+        "accountId": "{ACCOUNT_ID}",
+        "containerId": "{CONTAINER_ID}",
+        "tagId": "7",
+        "name": "GA4 - Event - add_to_cart",
+        "type": "gaawe",
+        "parameter": [
+          { "type": "TAG_REFERENCE", "key": "measurementId", "value": "GA4 - Config" },
+          { "type": "TEMPLATE", "key": "eventName", "value": "add_to_cart" }
+        ],
+        "firingTriggerId": ["2"],
+        "tagFiringOption": "ONCE_PER_EVENT",
+        "monitoringMetadata": { "type": "MAP" },
+        "consentSettings": { "consentStatus": "NOT_SET" },
+        "fingerprint": "0",
+        "parentFolderId": "10"
+      },
+      {
+        "accountId": "{ACCOUNT_ID}",
+        "containerId": "{CONTAINER_ID}",
+        "tagId": "8",
+        "name": "GA4 - Event - begin_checkout",
+        "type": "gaawe",
+        "parameter": [
+          { "type": "TAG_REFERENCE", "key": "measurementId", "value": "GA4 - Config" },
+          { "type": "TEMPLATE", "key": "eventName", "value": "begin_checkout" }
+        ],
+        "firingTriggerId": ["3"],
+        "tagFiringOption": "ONCE_PER_EVENT",
+        "monitoringMetadata": { "type": "MAP" },
+        "consentSettings": { "consentStatus": "NOT_SET" },
+        "fingerprint": "0",
+        "parentFolderId": "10"
+      },
+      {
+        "accountId": "{ACCOUNT_ID}",
+        "containerId": "{CONTAINER_ID}",
+        "tagId": "9",
+        "name": "GA4 - Event - purchase",
+        "type": "gaawe",
+        "parameter": [
+          { "type": "TAG_REFERENCE", "key": "measurementId", "value": "GA4 - Config" },
+          { "type": "TEMPLATE", "key": "eventName", "value": "purchase" }
+        ],
+        "firingTriggerId": ["4"],
+        "tagFiringOption": "ONCE_PER_EVENT",
+        "monitoringMetadata": { "type": "MAP" },
+        "consentSettings": { "consentStatus": "NOT_SET" },
+        "fingerprint": "0",
+        "parentFolderId": "10"
+      },
+      {
+        "accountId": "{ACCOUNT_ID}",
+        "containerId": "{CONTAINER_ID}",
+        "tagId": "10",
+        "name": "Google Ads - Conversion - purchase",
+        "type": "awct",
+        "parameter": [
+          { "type": "TEMPLATE", "key": "conversionId", "value": "{{Const - Google Ads Conversion ID}}" },
+          { "type": "TEMPLATE", "key": "conversionLabel", "value": "{{Const - Google Ads Conversion Label - purchase}}" },
+          { "type": "TEMPLATE", "key": "conversionValue", "value": "{{DLV - ecommerce.value}}" },
+          { "type": "TEMPLATE", "key": "currencyCode", "value": "{{DLV - ecommerce.currency}}" },
+          { "type": "TEMPLATE", "key": "orderId", "value": "{{DLV - ecommerce.transaction_id}}" },
+          { "type": "BOOLEAN", "key": "enableConversionLinker", "value": "true" }
+        ],
+        "firingTriggerId": ["4"],
+        "tagFiringOption": "ONCE_PER_EVENT",
+        "monitoringMetadata": { "type": "MAP" },
+        "consentSettings": { "consentStatus": "NOT_SET" },
+        "fingerprint": "0",
+        "parentFolderId": "13"
+      },
+      {
+        "accountId": "{ACCOUNT_ID}",
+        "containerId": "{CONTAINER_ID}",
+        "tagId": "11",
+        "name": "Meta - Event - ViewContent",
+        "type": "cvt_META_PIXEL_TEMPLATE_ID",
+        "parameter": [
+          { "type": "TEMPLATE", "key": "pixelId", "value": "{{Const - Meta Pixel ID}}" },
+          { "type": "TEMPLATE", "key": "eventName", "value": "ViewContent" },
+          { "type": "TEMPLATE", "key": "contents", "value": "{{CJS - Meta Pixel Contents}}" }
+        ],
+        "firingTriggerId": ["1"],
+        "tagFiringOption": "ONCE_PER_EVENT",
+        "monitoringMetadata": { "type": "MAP" },
+        "consentSettings": { "consentStatus": "NOT_SET" },
+        "fingerprint": "0",
+        "parentFolderId": "11"
+      },
+      {
+        "accountId": "{ACCOUNT_ID}",
+        "containerId": "{CONTAINER_ID}",
+        "tagId": "12",
+        "name": "Meta - Event - AddToCart",
+        "type": "cvt_META_PIXEL_TEMPLATE_ID",
+        "parameter": [
+          { "type": "TEMPLATE", "key": "pixelId", "value": "{{Const - Meta Pixel ID}}" },
+          { "type": "TEMPLATE", "key": "eventName", "value": "AddToCart" },
+          { "type": "TEMPLATE", "key": "contents", "value": "{{CJS - Meta Pixel Contents}}" }
+        ],
+        "firingTriggerId": ["2"],
+        "tagFiringOption": "ONCE_PER_EVENT",
+        "monitoringMetadata": { "type": "MAP" },
+        "consentSettings": { "consentStatus": "NOT_SET" },
+        "fingerprint": "0",
+        "parentFolderId": "11"
+      },
+      {
+        "accountId": "{ACCOUNT_ID}",
+        "containerId": "{CONTAINER_ID}",
+        "tagId": "13",
+        "name": "Meta - Event - InitiateCheckout",
+        "type": "cvt_META_PIXEL_TEMPLATE_ID",
+        "parameter": [
+          { "type": "TEMPLATE", "key": "pixelId", "value": "{{Const - Meta Pixel ID}}" },
+          { "type": "TEMPLATE", "key": "eventName", "value": "InitiateCheckout" },
+          { "type": "TEMPLATE", "key": "value", "value": "{{DLV - ecommerce.value}}" },
+          { "type": "TEMPLATE", "key": "currency", "value": "{{DLV - ecommerce.currency}}" },
+          { "type": "TEMPLATE", "key": "contents", "value": "{{CJS - Meta Pixel Contents}}" }
+        ],
+        "firingTriggerId": ["3"],
+        "tagFiringOption": "ONCE_PER_EVENT",
+        "monitoringMetadata": { "type": "MAP" },
+        "consentSettings": { "consentStatus": "NOT_SET" },
+        "fingerprint": "0",
+        "parentFolderId": "11"
+      },
+      {
+        "accountId": "{ACCOUNT_ID}",
+        "containerId": "{CONTAINER_ID}",
+        "tagId": "14",
+        "name": "Meta - Event - Purchase",
+        "type": "cvt_META_PIXEL_TEMPLATE_ID",
+        "parameter": [
+          { "type": "TEMPLATE", "key": "pixelId", "value": "{{Const - Meta Pixel ID}}" },
+          { "type": "TEMPLATE", "key": "eventName", "value": "Purchase" },
+          { "type": "TEMPLATE", "key": "eventId", "value": "{{DLV - ecommerce.transaction_id}}" },
+          { "type": "TEMPLATE", "key": "value", "value": "{{DLV - ecommerce.value}}" },
+          { "type": "TEMPLATE", "key": "currency", "value": "{{DLV - ecommerce.currency}}" },
+          { "type": "TEMPLATE", "key": "contents", "value": "{{CJS - Meta Pixel Contents}}" }
+        ],
+        "firingTriggerId": ["4"],
+        "tagFiringOption": "ONCE_PER_EVENT",
+        "monitoringMetadata": { "type": "MAP" },
+        "consentSettings": { "consentStatus": "NOT_SET" },
+        "fingerprint": "0",
+        "parentFolderId": "11"
+      },
+      {
+        "accountId": "{ACCOUNT_ID}",
+        "containerId": "{CONTAINER_ID}",
+        "tagId": "15",
+        "name": "Pinterest - Event - PageVisit",
+        "type": "cvt_PINTEREST_TAG_TEMPLATE_ID",
+        "parameter": [
+          { "type": "TEMPLATE", "key": "tagId", "value": "{{Const - Pinterest Tag ID}}" },
+          { "type": "TEMPLATE", "key": "eventName", "value": "pagevisit" },
+          { "type": "TEMPLATE", "key": "customParameters", "value": "{{CJS - Pinterest Line Items}}" }
+        ],
+        "firingTriggerId": ["1"],
+        "tagFiringOption": "ONCE_PER_EVENT",
+        "monitoringMetadata": { "type": "MAP" },
+        "consentSettings": { "consentStatus": "NOT_SET" },
+        "fingerprint": "0",
+        "notes": "GA4 view_item -> Pinterest PageVisit (per references/pinterest-tag.md, PageVisit is the canonical event for product detail pages and feeds catalog/dynamic retargeting). Configure Tag Sequencing to fire 'Pinterest - Base' first.",
+        "parentFolderId": "15"
+      },
+      {
+        "accountId": "{ACCOUNT_ID}",
+        "containerId": "{CONTAINER_ID}",
+        "tagId": "16",
+        "name": "Pinterest - Event - AddToCart",
+        "type": "cvt_PINTEREST_TAG_TEMPLATE_ID",
+        "parameter": [
+          { "type": "TEMPLATE", "key": "tagId", "value": "{{Const - Pinterest Tag ID}}" },
+          { "type": "TEMPLATE", "key": "eventName", "value": "addtocart" },
+          { "type": "TEMPLATE", "key": "customParameters", "value": "{{CJS - Pinterest AddToCart Params}}" }
+        ],
+        "firingTriggerId": ["2"],
+        "tagFiringOption": "ONCE_PER_EVENT",
+        "monitoringMetadata": { "type": "MAP" },
+        "consentSettings": { "consentStatus": "NOT_SET" },
+        "fingerprint": "0",
+        "notes": "GA4 add_to_cart -> Pinterest AddToCart (event name 'addtocart'). Configure Tag Sequencing to fire 'Pinterest - Base' first.",
+        "parentFolderId": "15"
+      },
+      {
+        "accountId": "{ACCOUNT_ID}",
+        "containerId": "{CONTAINER_ID}",
+        "tagId": "17",
+        "name": "Pinterest - Event - InitiateCheckout",
+        "type": "cvt_PINTEREST_TAG_TEMPLATE_ID",
+        "parameter": [
+          { "type": "TEMPLATE", "key": "tagId", "value": "{{Const - Pinterest Tag ID}}" },
+          { "type": "TEMPLATE", "key": "eventName", "value": "initiatecheckout" },
+          { "type": "TEMPLATE", "key": "customParameters", "value": "{{CJS - Pinterest InitiateCheckout Params}}" }
+        ],
+        "firingTriggerId": ["3"],
+        "tagFiringOption": "ONCE_PER_EVENT",
+        "monitoringMetadata": { "type": "MAP" },
+        "consentSettings": { "consentStatus": "NOT_SET" },
+        "fingerprint": "0",
+        "notes": "GA4 begin_checkout -> Pinterest InitiateCheckout (event name 'initiatecheckout'). Configure Tag Sequencing to fire 'Pinterest - Base' first.",
+        "parentFolderId": "15"
+      },
+      {
+        "accountId": "{ACCOUNT_ID}",
+        "containerId": "{CONTAINER_ID}",
+        "tagId": "18",
+        "name": "Pinterest - Event - Checkout",
+        "type": "cvt_PINTEREST_TAG_TEMPLATE_ID",
+        "parameter": [
+          { "type": "TEMPLATE", "key": "tagId", "value": "{{Const - Pinterest Tag ID}}" },
+          { "type": "TEMPLATE", "key": "eventName", "value": "checkout" },
+          { "type": "TEMPLATE", "key": "eventId", "value": "{{DLV - ecommerce.transaction_id}}" },
+          { "type": "TEMPLATE", "key": "customParameters", "value": "{{CJS - Pinterest Checkout Params}}" }
+        ],
+        "firingTriggerId": ["4"],
+        "tagFiringOption": "ONCE_PER_EVENT",
+        "monitoringMetadata": { "type": "MAP" },
+        "consentSettings": { "consentStatus": "NOT_SET" },
+        "fingerprint": "0",
+        "notes": "GA4 purchase -> Pinterest Checkout (event name 'checkout'). Pinterest's canonical purchase event is 'Checkout', not 'Purchase'. Event ID is set from ecommerce.transaction_id for dedup with the Conversions API. Configure Tag Sequencing to fire 'Pinterest - Base' first.",
+        "parentFolderId": "15"
+      }
+    ],
+    "trigger": [
+      {
+        "accountId": "{ACCOUNT_ID}",
+        "containerId": "{CONTAINER_ID}",
+        "triggerId": "1",
+        "name": "CE - view_item",
+        "type": "CUSTOM_EVENT",
+        "customEventFilter": [
+          {
+            "type": "EQUALS",
+            "parameter": [
+              { "type": "TEMPLATE", "key": "arg0", "value": "{{_event}}" },
+              { "type": "TEMPLATE", "key": "arg1", "value": "view_item" }
+            ]
+          }
+        ],
+        "fingerprint": "0",
+        "parentFolderId": "20"
+      },
+      {
+        "accountId": "{ACCOUNT_ID}",
+        "containerId": "{CONTAINER_ID}",
+        "triggerId": "2",
+        "name": "CE - add_to_cart",
+        "type": "CUSTOM_EVENT",
+        "customEventFilter": [
+          {
+            "type": "EQUALS",
+            "parameter": [
+              { "type": "TEMPLATE", "key": "arg0", "value": "{{_event}}" },
+              { "type": "TEMPLATE", "key": "arg1", "value": "add_to_cart" }
+            ]
+          }
+        ],
+        "fingerprint": "0",
+        "parentFolderId": "20"
+      },
+      {
+        "accountId": "{ACCOUNT_ID}",
+        "containerId": "{CONTAINER_ID}",
+        "triggerId": "3",
+        "name": "CE - begin_checkout",
+        "type": "CUSTOM_EVENT",
+        "customEventFilter": [
+          {
+            "type": "EQUALS",
+            "parameter": [
+              { "type": "TEMPLATE", "key": "arg0", "value": "{{_event}}" },
+              { "type": "TEMPLATE", "key": "arg1", "value": "begin_checkout" }
+            ]
+          }
+        ],
+        "fingerprint": "0",
+        "parentFolderId": "20"
+      },
+      {
+        "accountId": "{ACCOUNT_ID}",
+        "containerId": "{CONTAINER_ID}",
+        "triggerId": "4",
+        "name": "CE - purchase",
+        "type": "CUSTOM_EVENT",
+        "customEventFilter": [
+          {
+            "type": "EQUALS",
+            "parameter": [
+              { "type": "TEMPLATE", "key": "arg0", "value": "{{_event}}" },
+              { "type": "TEMPLATE", "key": "arg1", "value": "purchase" }
+            ]
+          }
+        ],
+        "fingerprint": "0",
+        "parentFolderId": "20"
+      }
+    ],
+    "variable": [
+      {
+        "accountId": "{ACCOUNT_ID}",
+        "containerId": "{CONTAINER_ID}",
+        "variableId": "1",
+        "name": "Const - GA4 Measurement ID",
+        "type": "c",
+        "parameter": [
+          { "type": "TEMPLATE", "key": "value", "value": "{GA4_MEASUREMENT_ID}" }
+        ],
+        "fingerprint": "0",
+        "parentFolderId": "10"
+      },
+      {
+        "accountId": "{ACCOUNT_ID}",
+        "containerId": "{CONTAINER_ID}",
+        "variableId": "2",
+        "name": "Const - Clarity Project ID",
+        "type": "c",
+        "parameter": [
+          { "type": "TEMPLATE", "key": "value", "value": "{CLARITY_PROJECT_ID}" }
+        ],
+        "fingerprint": "0",
+        "parentFolderId": "12"
+      },
+      {
+        "accountId": "{ACCOUNT_ID}",
+        "containerId": "{CONTAINER_ID}",
+        "variableId": "3",
+        "name": "Const - Google Ads Conversion ID",
+        "type": "c",
+        "parameter": [
+          { "type": "TEMPLATE", "key": "value", "value": "{GOOGLE_ADS_CONVERSION_ID}" }
+        ],
+        "fingerprint": "0",
+        "parentFolderId": "13"
+      },
+      {
+        "accountId": "{ACCOUNT_ID}",
+        "containerId": "{CONTAINER_ID}",
+        "variableId": "4",
+        "name": "Const - Google Ads Conversion Label - purchase",
+        "type": "c",
+        "parameter": [
+          { "type": "TEMPLATE", "key": "value", "value": "{GOOGLE_ADS_CONVERSION_LABEL_PURCHASE}" }
+        ],
+        "fingerprint": "0",
+        "parentFolderId": "13"
+      },
+      {
+        "accountId": "{ACCOUNT_ID}",
+        "containerId": "{CONTAINER_ID}",
+        "variableId": "5",
+        "name": "Const - Meta Pixel ID",
+        "type": "c",
+        "parameter": [
+          { "type": "TEMPLATE", "key": "value", "value": "{META_PIXEL_ID}" }
+        ],
+        "fingerprint": "0",
+        "parentFolderId": "11"
+      },
+      {
+        "accountId": "{ACCOUNT_ID}",
+        "containerId": "{CONTAINER_ID}",
+        "variableId": "6",
+        "name": "Const - Pinterest Tag ID",
+        "type": "c",
+        "parameter": [
+          { "type": "TEMPLATE", "key": "value", "value": "{PINTEREST_TAG_ID}" }
+        ],
+        "fingerprint": "0",
+        "parentFolderId": "15"
+      },
+      {
+        "accountId": "{ACCOUNT_ID}",
+        "containerId": "{CONTAINER_ID}",
+        "variableId": "7",
+        "name": "DLV - ecommerce",
+        "type": "v",
+        "parameter": [
+          { "type": "TEMPLATE", "key": "name", "value": "ecommerce" },
+          { "type": "INTEGER", "key": "dataLayerVersion", "value": "2" }
+        ],
+        "fingerprint": "0",
+        "parentFolderId": "14"
+      },
+      {
+        "accountId": "{ACCOUNT_ID}",
+        "containerId": "{CONTAINER_ID}",
+        "variableId": "8",
+        "name": "DLV - ecommerce.value",
+        "type": "v",
+        "parameter": [
+          { "type": "TEMPLATE", "key": "name", "value": "ecommerce.value" },
+          { "type": "INTEGER", "key": "dataLayerVersion", "value": "2" }
+        ],
+        "fingerprint": "0",
+        "parentFolderId": "14"
+      },
+      {
+        "accountId": "{ACCOUNT_ID}",
+        "containerId": "{CONTAINER_ID}",
+        "variableId": "9",
+        "name": "DLV - ecommerce.currency",
+        "type": "v",
+        "parameter": [
+          { "type": "TEMPLATE", "key": "name", "value": "ecommerce.currency" },
+          { "type": "INTEGER", "key": "dataLayerVersion", "value": "2" }
+        ],
+        "fingerprint": "0",
+        "parentFolderId": "14"
+      },
+      {
+        "accountId": "{ACCOUNT_ID}",
+        "containerId": "{CONTAINER_ID}",
+        "variableId": "10",
+        "name": "DLV - ecommerce.transaction_id",
+        "type": "v",
+        "parameter": [
+          { "type": "TEMPLATE", "key": "name", "value": "ecommerce.transaction_id" },
+          { "type": "INTEGER", "key": "dataLayerVersion", "value": "2" }
+        ],
+        "fingerprint": "0",
+        "parentFolderId": "14"
+      },
+      {
+        "accountId": "{ACCOUNT_ID}",
+        "containerId": "{CONTAINER_ID}",
+        "variableId": "11",
+        "name": "DLV - ecommerce.items",
+        "type": "v",
+        "parameter": [
+          { "type": "TEMPLATE", "key": "name", "value": "ecommerce.items" },
+          { "type": "INTEGER", "key": "dataLayerVersion", "value": "2" }
+        ],
+        "fingerprint": "0",
+        "parentFolderId": "14"
+      },
+      {
+        "accountId": "{ACCOUNT_ID}",
+        "containerId": "{CONTAINER_ID}",
+        "variableId": "12",
+        "name": "CJS - Meta Pixel Contents",
+        "type": "jsm",
+        "parameter": [
+          {
+            "type": "TEMPLATE",
+            "key": "javascript",
+            "value": "function() {\n  var ecommerce = {{DLV - ecommerce}};\n  if (!ecommerce || !ecommerce.items) return [];\n  return ecommerce.items.map(function(item) {\n    return {\n      id: item.item_id || '',\n      quantity: item.quantity || 1,\n      item_price: item.price || 0\n    };\n  });\n}"
+          }
+        ],
+        "fingerprint": "0",
+        "parentFolderId": "30"
+      },
+      {
+        "accountId": "{ACCOUNT_ID}",
+        "containerId": "{CONTAINER_ID}",
+        "variableId": "13",
+        "name": "CJS - Pinterest Line Items",
+        "type": "jsm",
+        "parameter": [
+          {
+            "type": "TEMPLATE",
+            "key": "javascript",
+            "value": "function() {\n  var ecommerce = {{DLV - ecommerce}};\n  var items = ecommerce && ecommerce.items;\n  if (!items || !items.length) return { line_items: [] };\n  return {\n    line_items: items.map(function(item) {\n      return {\n        product_id: item.item_id || '',\n        product_name: item.item_name || '',\n        product_category: item.item_category || '',\n        product_variant: item.item_variant || '',\n        product_price: Number(item.price || 0),\n        product_quantity: item.quantity || 1,\n        product_brand: item.item_brand || ''\n      };\n    }).filter(function(x) { return x.product_id; })\n  };\n}"
+          }
+        ],
+        "fingerprint": "0",
+        "parentFolderId": "30"
+      },
+      {
+        "accountId": "{ACCOUNT_ID}",
+        "containerId": "{CONTAINER_ID}",
+        "variableId": "14",
+        "name": "CJS - Pinterest AddToCart Params",
+        "type": "jsm",
+        "parameter": [
+          {
+            "type": "TEMPLATE",
+            "key": "javascript",
+            "value": "function() {\n  var ecommerce = {{DLV - ecommerce}};\n  if (!ecommerce) return {};\n  var items = ecommerce.items || [];\n  return {\n    value: Number(ecommerce.value || 0),\n    currency: ecommerce.currency || 'USD',\n    line_items: items.map(function(item) {\n      return {\n        product_id: item.item_id || '',\n        product_name: item.item_name || '',\n        product_category: item.item_category || '',\n        product_price: Number(item.price || 0),\n        product_quantity: item.quantity || 1,\n        product_brand: item.item_brand || ''\n      };\n    }).filter(function(x) { return x.product_id; })\n  };\n}"
+          }
+        ],
+        "fingerprint": "0",
+        "parentFolderId": "30"
+      },
+      {
+        "accountId": "{ACCOUNT_ID}",
+        "containerId": "{CONTAINER_ID}",
+        "variableId": "15",
+        "name": "CJS - Pinterest InitiateCheckout Params",
+        "type": "jsm",
+        "parameter": [
+          {
+            "type": "TEMPLATE",
+            "key": "javascript",
+            "value": "function() {\n  var ecommerce = {{DLV - ecommerce}};\n  if (!ecommerce) return {};\n  var items = ecommerce.items || [];\n  return {\n    value: Number(ecommerce.value || 0),\n    currency: ecommerce.currency || 'USD',\n    line_items: items.map(function(item) {\n      return {\n        product_id: item.item_id || '',\n        product_name: item.item_name || '',\n        product_category: item.item_category || '',\n        product_price: Number(item.price || 0),\n        product_quantity: item.quantity || 1,\n        product_brand: item.item_brand || ''\n      };\n    }).filter(function(x) { return x.product_id; })\n  };\n}"
+          }
+        ],
+        "fingerprint": "0",
+        "parentFolderId": "30"
+      },
+      {
+        "accountId": "{ACCOUNT_ID}",
+        "containerId": "{CONTAINER_ID}",
+        "variableId": "16",
+        "name": "CJS - Pinterest Checkout Params",
+        "type": "jsm",
+        "parameter": [
+          {
+            "type": "TEMPLATE",
+            "key": "javascript",
+            "value": "function() {\n  var ecommerce = {{DLV - ecommerce}};\n  if (!ecommerce) return {};\n  var items = ecommerce.items || [];\n  var orderQuantity = items.reduce(function(sum, item) {\n    return sum + (Number(item.quantity) || 0);\n  }, 0);\n  return {\n    value: Number(ecommerce.value || 0),\n    currency: ecommerce.currency || 'USD',\n    order_id: ecommerce.transaction_id || '',\n    order_quantity: orderQuantity,\n    line_items: items.map(function(item) {\n      return {\n        product_id: item.item_id || '',\n        product_name: item.item_name || '',\n        product_category: item.item_category || '',\n        product_price: Number(item.price || 0),\n        product_quantity: item.quantity || 1,\n        product_brand: item.item_brand || ''\n      };\n    }).filter(function(x) { return x.product_id; })\n  };\n}"
+          }
+        ],
+        "fingerprint": "0",
+        "parentFolderId": "30"
+      }
+    ],
+    "builtInVariable": [
+      { "accountId": "{ACCOUNT_ID}", "containerId": "{CONTAINER_ID}", "type": "PAGE_URL", "name": "Page URL" },
+      { "accountId": "{ACCOUNT_ID}", "containerId": "{CONTAINER_ID}", "type": "PAGE_HOSTNAME", "name": "Page Hostname" },
+      { "accountId": "{ACCOUNT_ID}", "containerId": "{CONTAINER_ID}", "type": "PAGE_PATH", "name": "Page Path" },
+      { "accountId": "{ACCOUNT_ID}", "containerId": "{CONTAINER_ID}", "type": "REFERRER", "name": "Referrer" },
+      { "accountId": "{ACCOUNT_ID}", "containerId": "{CONTAINER_ID}", "type": "EVENT", "name": "Event" },
+      { "accountId": "{ACCOUNT_ID}", "containerId": "{CONTAINER_ID}", "type": "CLICK_ELEMENT", "name": "Click Element" },
+      { "accountId": "{ACCOUNT_ID}", "containerId": "{CONTAINER_ID}", "type": "CLICK_CLASSES", "name": "Click Classes" },
+      { "accountId": "{ACCOUNT_ID}", "containerId": "{CONTAINER_ID}", "type": "CLICK_ID", "name": "Click ID" },
+      { "accountId": "{ACCOUNT_ID}", "containerId": "{CONTAINER_ID}", "type": "CLICK_URL", "name": "Click URL" },
+      { "accountId": "{ACCOUNT_ID}", "containerId": "{CONTAINER_ID}", "type": "CLICK_TEXT", "name": "Click Text" },
+      { "accountId": "{ACCOUNT_ID}", "containerId": "{CONTAINER_ID}", "type": "FORM_ELEMENT", "name": "Form Element" },
+      { "accountId": "{ACCOUNT_ID}", "containerId": "{CONTAINER_ID}", "type": "FORM_ID", "name": "Form ID" },
+      { "accountId": "{ACCOUNT_ID}", "containerId": "{CONTAINER_ID}", "type": "FORM_CLASSES", "name": "Form Classes" },
+      { "accountId": "{ACCOUNT_ID}", "containerId": "{CONTAINER_ID}", "type": "FORM_URL", "name": "Form URL" },
+      { "accountId": "{ACCOUNT_ID}", "containerId": "{CONTAINER_ID}", "type": "SCROLL_DEPTH_THRESHOLD", "name": "Scroll Depth Threshold" },
+      { "accountId": "{ACCOUNT_ID}", "containerId": "{CONTAINER_ID}", "type": "SCROLL_DEPTH_UNITS", "name": "Scroll Depth Units" },
+      { "accountId": "{ACCOUNT_ID}", "containerId": "{CONTAINER_ID}", "type": "SCROLL_DEPTH_DIRECTION", "name": "Scroll Depth Direction" },
+      { "accountId": "{ACCOUNT_ID}", "containerId": "{CONTAINER_ID}", "type": "DEBUG_MODE", "name": "Debug Mode" },
+      { "accountId": "{ACCOUNT_ID}", "containerId": "{CONTAINER_ID}", "type": "RANDOM_NUMBER", "name": "Random Number" },
+      { "accountId": "{ACCOUNT_ID}", "containerId": "{CONTAINER_ID}", "type": "CONTAINER_ID", "name": "Container ID" }
+    ],
+    "folder": [
+      { "accountId": "{ACCOUNT_ID}", "containerId": "{CONTAINER_ID}", "folderId": "10", "name": "GA4", "fingerprint": "0" },
+      { "accountId": "{ACCOUNT_ID}", "containerId": "{CONTAINER_ID}", "folderId": "11", "name": "Meta", "fingerprint": "0" },
+      { "accountId": "{ACCOUNT_ID}", "containerId": "{CONTAINER_ID}", "folderId": "12", "name": "Clarity", "fingerprint": "0" },
+      { "accountId": "{ACCOUNT_ID}", "containerId": "{CONTAINER_ID}", "folderId": "13", "name": "Google Ads", "fingerprint": "0" },
+      { "accountId": "{ACCOUNT_ID}", "containerId": "{CONTAINER_ID}", "folderId": "14", "name": "GA4 - Ecommerce", "fingerprint": "0" },
+      { "accountId": "{ACCOUNT_ID}", "containerId": "{CONTAINER_ID}", "folderId": "15", "name": "Pinterest", "fingerprint": "0" },
+      { "accountId": "{ACCOUNT_ID}", "containerId": "{CONTAINER_ID}", "folderId": "20", "name": "_Global", "fingerprint": "0" },
+      { "accountId": "{ACCOUNT_ID}", "containerId": "{CONTAINER_ID}", "folderId": "30", "name": "Utilities", "fingerprint": "0" }
+    ],
+    "customTemplate": [
+      {
+        "accountId": "{ACCOUNT_ID}",
+        "containerId": "{CONTAINER_ID}",
+        "templateId": "100",
+        "name": "Microsoft Clarity - Official",
+        "fingerprint": "0",
+        "templateData": "___TERMS_OF_SERVICE___\n\nBy creating or modifying this file you agree to Google Tag Manager's Community\nTemplate Gallery Developer Terms of Service available at\nhttps://developers.google.com/tag-manager/gallery-tos (or such other URL as\nGoogle may provide), as modified from time to time.\n\n\n___INFO___\n\n{\n  \"type\": \"TAG\",\n  \"id\": \"cvt_MQDKZ\",\n  \"version\": 1,\n  \"displayName\": \"Microsoft Clarity - Official\",\n  \"categories\": [\n    \"ANALYTICS\",\n    \"HEAT_MAP\",\n    \"SESSION_RECORDING\"\n  ],\n  \"brand\": {\n    \"id\": \"github.com_microsoft\",\n    \"displayName\": \"microsoft\"\n  },\n  \"description\": \"Clarity is a user behavior analytics tool, which helps you understand how users are interacting with your website.\",\n  \"containerContexts\": [\n    \"WEB\"\n  ]\n}\n",
+        "galleryReference": {
+          "host": "github.com",
+          "owner": "microsoft",
+          "repository": "clarity-gtm-template",
+          "version": "d85d0a7070ff9e1626bb260dfa341653be7f3266",
+          "signature": "6d80fb063e54671b559a5692f7bfdedb1ae33ebbe20063c6515d68a895455b45",
+          "galleryTemplateId": "MQDKZ"
+        }
+      },
+      {
+        "accountId": "{ACCOUNT_ID}",
+        "containerId": "{CONTAINER_ID}",
+        "templateId": "101",
+        "name": "Pinterest Tag",
+        "fingerprint": "0",
+        "templateData": "___TERMS_OF_SERVICE___\n\nBy creating or modifying this file you agree to Google Tag Manager's Community\nTemplate Gallery Developer Terms of Service available at\nhttps://developers.google.com/tag-manager/gallery-tos (or such other URL as\nGoogle may provide), as modified from time to time.\n\n\n___INFO___\n\n{\n  \"type\": \"TAG\",\n  \"id\": \"cvt_PINTEREST_TAG_TEMPLATE_ID\",\n  \"version\": 1,\n  \"displayName\": \"Pinterest Tag\",\n  \"categories\": [\n    \"ADVERTISING\",\n    \"MARKETING\",\n    \"ANALYTICS\"\n  ],\n  \"brand\": {\n    \"id\": \"github.com_pinterest\",\n    \"displayName\": \"Pinterest\"\n  },\n  \"description\": \"Pinterest's official Pinterest Tag template (pinterest/ws-gtm-template). Exposes Tag ID, Event to Fire, Hashed Email, Custom Parameters, Event ID, and Opt Out Information. NOTE: Replace cvt_PINTEREST_TAG_TEMPLATE_ID with the cvt_* ID assigned in your destination workspace after installing 'Pinterest Tag' from the GTM Community Template Gallery. The exact galleryReference (version commit SHA, signature, galleryTemplateId) is install-time and not included here.\",\n  \"containerContexts\": [\n    \"WEB\"\n  ]\n}\n"
+      }
+    ],
+    "fingerprint": "0",
+    "tagManagerUrl": ""
+  }
+}

@@ -1,0 +1,534 @@
+{
+  "exportFormatVersion": 2,
+  "exportTime": "2026-04-26 00:00:00",
+  "containerVersion": {
+    "path": "accounts/{ACCOUNT_ID}/containers/{CONTAINER_ID}/versions/0",
+    "accountId": "{ACCOUNT_ID}",
+    "containerId": "{CONTAINER_ID}",
+    "containerVersionId": "0",
+    "name": "Initial Setup - Paid Search",
+    "description": "GA4 + Clarity + Google Ads + Microsoft Ads: Configuration for paid search across Google and Bing (purchase and lead conversions)",
+    "container": {
+      "path": "accounts/{ACCOUNT_ID}/containers/{CONTAINER_ID}",
+      "accountId": "{ACCOUNT_ID}",
+      "containerId": "{CONTAINER_ID}",
+      "name": "{SITE_DOMAIN}",
+      "publicId": "{GTM_PUBLIC_ID}",
+      "usageContext": ["WEB"],
+      "fingerprint": "0",
+      "tagManagerUrl": ""
+    },
+    "tag": [
+      {
+        "accountId": "{ACCOUNT_ID}",
+        "containerId": "{CONTAINER_ID}",
+        "tagId": "1",
+        "name": "GA4 - Config",
+        "type": "googtag",
+        "parameter": [
+          { "type": "TEMPLATE", "key": "tagId", "value": "{{Const - GA4 Measurement ID}}" }
+        ],
+        "firingTriggerId": ["2147479573"],
+        "tagFiringOption": "ONCE_PER_EVENT",
+        "monitoringMetadata": { "type": "MAP" },
+        "consentSettings": { "consentStatus": "NOT_SET" },
+        "fingerprint": "0",
+        "parentFolderId": "10"
+      },
+      {
+        "accountId": "{ACCOUNT_ID}",
+        "containerId": "{CONTAINER_ID}",
+        "tagId": "2",
+        "name": "Google Ads - Conversion Linker",
+        "type": "gclidw",
+        "parameter": [],
+        "firingTriggerId": ["2147479573"],
+        "tagFiringOption": "ONCE_PER_EVENT",
+        "monitoringMetadata": { "type": "MAP" },
+        "consentSettings": { "consentStatus": "NOT_SET" },
+        "fingerprint": "0",
+        "parentFolderId": "13"
+      },
+      {
+        "accountId": "{ACCOUNT_ID}",
+        "containerId": "{CONTAINER_ID}",
+        "tagId": "3",
+        "name": "Clarity - Base",
+        "type": "cvt_MQDKZ",
+        "parameter": [
+          { "type": "TEMPLATE", "key": "projectId", "value": "{{Const - Clarity Project ID}}" }
+        ],
+        "firingTriggerId": ["2147479553"],
+        "tagFiringOption": "ONCE_PER_EVENT",
+        "monitoringMetadata": { "type": "MAP" },
+        "consentSettings": { "consentStatus": "NOT_SET" },
+        "fingerprint": "0",
+        "parentFolderId": "12"
+      },
+      {
+        "accountId": "{ACCOUNT_ID}",
+        "containerId": "{CONTAINER_ID}",
+        "tagId": "4",
+        "name": "Microsoft Ads - UET Base",
+        "type": "html",
+        "parameter": [
+          {
+            "type": "TEMPLATE",
+            "key": "html",
+            "value": "<script>\n(function(w,d,t,r,u){\n  var f,n,i;\n  w[u]=w[u]||[],f=function(){\n    var o={ti:\"{{Const - Microsoft Ads UET Tag ID}}\", enableAutoSpaTracking: true};\n    o.q=w[u], w[u]=new UET(o);\n  },\n  n=d.createElement(t), n.src=r, n.async=1,\n  n.onload=n.onreadystatechange=function(){\n    var s=this.readyState;\n    s&&s!==\"loaded\"&&s!==\"complete\"||(f(),n.onload=n.onreadystatechange=null);\n  },\n  i=d.getElementsByTagName(t)[0], i.parentNode.insertBefore(n,i);\n})(window,document,\"script\",\"//bat.bing.com/bat.js\",\"uetq\");\n</script>"
+          },
+          { "type": "BOOLEAN", "key": "supportDocumentWrite", "value": "false" }
+        ],
+        "firingTriggerId": ["2147479553"],
+        "tagFiringOption": "ONCE_PER_EVENT",
+        "monitoringMetadata": { "type": "MAP" },
+        "consentSettings": { "consentStatus": "NOT_SET" },
+        "fingerprint": "0",
+        "parentFolderId": "15",
+        "notes": "Custom HTML implementation of the UET base tag, matching the canonical Microsoft snippet in references/microsoft-ads.md. Replace with the official 'Microsoft Advertising Universal Event Tracking' native GTM tag in the destination container if preferred."
+      },
+      {
+        "accountId": "{ACCOUNT_ID}",
+        "containerId": "{CONTAINER_ID}",
+        "tagId": "5",
+        "name": "GA4 - Event - purchase",
+        "type": "gaawe",
+        "parameter": [
+          { "type": "TAG_REFERENCE", "key": "measurementId", "value": "GA4 - Config" },
+          { "type": "TEMPLATE", "key": "eventName", "value": "purchase" },
+          {
+            "type": "LIST",
+            "key": "eventParameters",
+            "list": [
+              {
+                "type": "MAP",
+                "map": [
+                  { "type": "TEMPLATE", "key": "name", "value": "transaction_id" },
+                  { "type": "TEMPLATE", "key": "value", "value": "{{DLV - ecommerce.transaction_id}}" }
+                ]
+              },
+              {
+                "type": "MAP",
+                "map": [
+                  { "type": "TEMPLATE", "key": "name", "value": "value" },
+                  { "type": "TEMPLATE", "key": "value", "value": "{{DLV - ecommerce.value}}" }
+                ]
+              },
+              {
+                "type": "MAP",
+                "map": [
+                  { "type": "TEMPLATE", "key": "name", "value": "currency" },
+                  { "type": "TEMPLATE", "key": "value", "value": "{{DLV - ecommerce.currency}}" }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "LIST",
+            "key": "eventSettingsTable",
+            "list": [
+              {
+                "type": "MAP",
+                "map": [
+                  { "type": "TEMPLATE", "key": "parameter", "value": "items" },
+                  { "type": "TEMPLATE", "key": "parameterValue", "value": "{{DLV - ecommerce}}" }
+                ]
+              }
+            ]
+          }
+        ],
+        "firingTriggerId": ["1"],
+        "tagFiringOption": "ONCE_PER_EVENT",
+        "monitoringMetadata": { "type": "MAP" },
+        "consentSettings": { "consentStatus": "NOT_SET" },
+        "fingerprint": "0",
+        "parentFolderId": "10"
+      },
+      {
+        "accountId": "{ACCOUNT_ID}",
+        "containerId": "{CONTAINER_ID}",
+        "tagId": "6",
+        "name": "Google Ads - Conversion - purchase",
+        "type": "awct",
+        "parameter": [
+          { "type": "TEMPLATE", "key": "conversionId", "value": "{{Const - Google Ads Conversion ID}}" },
+          { "type": "TEMPLATE", "key": "conversionLabel", "value": "{{Const - Google Ads Conversion Label - purchase}}" },
+          { "type": "TEMPLATE", "key": "conversionValue", "value": "{{DLV - ecommerce.value}}" },
+          { "type": "TEMPLATE", "key": "currencyCode", "value": "{{DLV - ecommerce.currency}}" },
+          { "type": "TEMPLATE", "key": "orderId", "value": "{{DLV - ecommerce.transaction_id}}" },
+          { "type": "BOOLEAN", "key": "enableConversionLinker", "value": "true" }
+        ],
+        "firingTriggerId": ["1"],
+        "tagFiringOption": "ONCE_PER_EVENT",
+        "monitoringMetadata": { "type": "MAP" },
+        "consentSettings": { "consentStatus": "NOT_SET" },
+        "fingerprint": "0",
+        "parentFolderId": "13"
+      },
+      {
+        "accountId": "{ACCOUNT_ID}",
+        "containerId": "{CONTAINER_ID}",
+        "tagId": "7",
+        "name": "Microsoft Ads - Event - purchase",
+        "type": "html",
+        "parameter": [
+          {
+            "type": "TEMPLATE",
+            "key": "html",
+            "value": "<script>\nwindow.uetq = window.uetq || [];\nwindow.uetq.push('event', 'purchase', {\n  event_category: 'ecommerce',\n  event_label: 'order_complete',\n  event_value: 1,\n  revenue_value: {{DLV - ecommerce.value}},\n  currency: '{{DLV - ecommerce.currency}}',\n  event_id: '{{DLV - ecommerce.transaction_id}}'\n});\n</script>"
+          },
+          { "type": "BOOLEAN", "key": "supportDocumentWrite", "value": "false" }
+        ],
+        "firingTriggerId": ["1"],
+        "tagFiringOption": "ONCE_PER_EVENT",
+        "monitoringMetadata": { "type": "MAP" },
+        "consentSettings": { "consentStatus": "NOT_SET" },
+        "fingerprint": "0",
+        "parentFolderId": "15",
+        "notes": "UET custom event for purchase. event_id is set to transaction_id to enable client-side <-> CAPI deduplication."
+      },
+      {
+        "accountId": "{ACCOUNT_ID}",
+        "containerId": "{CONTAINER_ID}",
+        "tagId": "8",
+        "name": "GA4 - Event - generate_lead",
+        "type": "gaawe",
+        "parameter": [
+          { "type": "TAG_REFERENCE", "key": "measurementId", "value": "GA4 - Config" },
+          { "type": "TEMPLATE", "key": "eventName", "value": "generate_lead" },
+          {
+            "type": "LIST",
+            "key": "eventParameters",
+            "list": [
+              {
+                "type": "MAP",
+                "map": [
+                  { "type": "TEMPLATE", "key": "name", "value": "form_name" },
+                  { "type": "TEMPLATE", "key": "value", "value": "{{DLV - form_name}}" }
+                ]
+              }
+            ]
+          }
+        ],
+        "firingTriggerId": ["2"],
+        "tagFiringOption": "ONCE_PER_EVENT",
+        "monitoringMetadata": { "type": "MAP" },
+        "consentSettings": { "consentStatus": "NOT_SET" },
+        "fingerprint": "0",
+        "parentFolderId": "10"
+      },
+      {
+        "accountId": "{ACCOUNT_ID}",
+        "containerId": "{CONTAINER_ID}",
+        "tagId": "9",
+        "name": "Google Ads - Conversion - generate_lead",
+        "type": "awct",
+        "parameter": [
+          { "type": "TEMPLATE", "key": "conversionId", "value": "{{Const - Google Ads Conversion ID}}" },
+          { "type": "TEMPLATE", "key": "conversionLabel", "value": "{{Const - Google Ads Conversion Label - generate_lead}}" },
+          { "type": "BOOLEAN", "key": "enableConversionLinker", "value": "true" }
+        ],
+        "firingTriggerId": ["2"],
+        "tagFiringOption": "ONCE_PER_EVENT",
+        "monitoringMetadata": { "type": "MAP" },
+        "consentSettings": { "consentStatus": "NOT_SET" },
+        "fingerprint": "0",
+        "parentFolderId": "13"
+      },
+      {
+        "accountId": "{ACCOUNT_ID}",
+        "containerId": "{CONTAINER_ID}",
+        "tagId": "10",
+        "name": "Microsoft Ads - Event - generate_lead",
+        "type": "html",
+        "parameter": [
+          {
+            "type": "TEMPLATE",
+            "key": "html",
+            "value": "<script>\nwindow.uetq = window.uetq || [];\nwindow.uetq.push('event', 'generate_lead', {\n  event_category: 'lead_generation',\n  event_label: '{{DLV - form_name}}',\n  event_value: 1\n});\n</script>"
+          },
+          { "type": "BOOLEAN", "key": "supportDocumentWrite", "value": "false" }
+        ],
+        "firingTriggerId": ["2"],
+        "tagFiringOption": "ONCE_PER_EVENT",
+        "monitoringMetadata": { "type": "MAP" },
+        "consentSettings": { "consentStatus": "NOT_SET" },
+        "fingerprint": "0",
+        "parentFolderId": "15",
+        "notes": "UET custom event for generate_lead. Map to a Microsoft Advertising EventGoal with GoalCategory=SubmitLeadForm or Contact."
+      },
+      {
+        "accountId": "{ACCOUNT_ID}",
+        "containerId": "{CONTAINER_ID}",
+        "tagId": "11",
+        "name": "GA4 - Event - scroll",
+        "type": "gaawe",
+        "parameter": [
+          { "type": "TAG_REFERENCE", "key": "measurementId", "value": "GA4 - Config" },
+          { "type": "TEMPLATE", "key": "eventName", "value": "scroll" },
+          {
+            "type": "LIST",
+            "key": "eventParameters",
+            "list": [
+              {
+                "type": "MAP",
+                "map": [
+                  { "type": "TEMPLATE", "key": "name", "value": "percent_scrolled" },
+                  { "type": "TEMPLATE", "key": "value", "value": "{{Scroll Depth Threshold}}" }
+                ]
+              }
+            ]
+          }
+        ],
+        "firingTriggerId": ["3"],
+        "tagFiringOption": "UNLIMITED",
+        "monitoringMetadata": { "type": "MAP" },
+        "consentSettings": { "consentStatus": "NOT_SET" },
+        "fingerprint": "0",
+        "parentFolderId": "10"
+      }
+    ],
+    "trigger": [
+      {
+        "accountId": "{ACCOUNT_ID}",
+        "containerId": "{CONTAINER_ID}",
+        "triggerId": "1",
+        "name": "CE - purchase",
+        "type": "CUSTOM_EVENT",
+        "customEventFilter": [
+          {
+            "type": "EQUALS",
+            "parameter": [
+              { "type": "TEMPLATE", "key": "arg0", "value": "{{_event}}" },
+              { "type": "TEMPLATE", "key": "arg1", "value": "purchase" }
+            ]
+          }
+        ],
+        "fingerprint": "0",
+        "parentFolderId": "20"
+      },
+      {
+        "accountId": "{ACCOUNT_ID}",
+        "containerId": "{CONTAINER_ID}",
+        "triggerId": "2",
+        "name": "CE - form_submit",
+        "type": "CUSTOM_EVENT",
+        "customEventFilter": [
+          {
+            "type": "EQUALS",
+            "parameter": [
+              { "type": "TEMPLATE", "key": "arg0", "value": "{{_event}}" },
+              { "type": "TEMPLATE", "key": "arg1", "value": "form_submit" }
+            ]
+          }
+        ],
+        "fingerprint": "0",
+        "parentFolderId": "20"
+      },
+      {
+        "accountId": "{ACCOUNT_ID}",
+        "containerId": "{CONTAINER_ID}",
+        "triggerId": "3",
+        "name": "Scroll - 25/50/75/100 Percent",
+        "type": "SCROLL_DEPTH",
+        "parameter": [
+          { "type": "BOOLEAN", "key": "verticalThresholdOn", "value": "true" },
+          { "type": "TEMPLATE", "key": "verticalThresholdsPercent", "value": "25,50,75,100" },
+          { "type": "BOOLEAN", "key": "horizontalThresholdOn", "value": "false" },
+          { "type": "TEMPLATE", "key": "triggerStartOption", "value": "WINDOW_LOAD" }
+        ],
+        "fingerprint": "0",
+        "parentFolderId": "20"
+      }
+    ],
+    "variable": [
+      {
+        "accountId": "{ACCOUNT_ID}",
+        "containerId": "{CONTAINER_ID}",
+        "variableId": "1",
+        "name": "Const - GA4 Measurement ID",
+        "type": "c",
+        "parameter": [
+          { "type": "TEMPLATE", "key": "value", "value": "{GA4_MEASUREMENT_ID}" }
+        ],
+        "fingerprint": "0",
+        "parentFolderId": "10"
+      },
+      {
+        "accountId": "{ACCOUNT_ID}",
+        "containerId": "{CONTAINER_ID}",
+        "variableId": "2",
+        "name": "Const - Clarity Project ID",
+        "type": "c",
+        "parameter": [
+          { "type": "TEMPLATE", "key": "value", "value": "{CLARITY_PROJECT_ID}" }
+        ],
+        "fingerprint": "0",
+        "parentFolderId": "12"
+      },
+      {
+        "accountId": "{ACCOUNT_ID}",
+        "containerId": "{CONTAINER_ID}",
+        "variableId": "3",
+        "name": "Const - Google Ads Conversion ID",
+        "type": "c",
+        "parameter": [
+          { "type": "TEMPLATE", "key": "value", "value": "{GOOGLE_ADS_CONVERSION_ID}" }
+        ],
+        "fingerprint": "0",
+        "parentFolderId": "13"
+      },
+      {
+        "accountId": "{ACCOUNT_ID}",
+        "containerId": "{CONTAINER_ID}",
+        "variableId": "4",
+        "name": "Const - Google Ads Conversion Label - purchase",
+        "type": "c",
+        "parameter": [
+          { "type": "TEMPLATE", "key": "value", "value": "{GOOGLE_ADS_CONVERSION_LABEL_PURCHASE}" }
+        ],
+        "fingerprint": "0",
+        "parentFolderId": "13"
+      },
+      {
+        "accountId": "{ACCOUNT_ID}",
+        "containerId": "{CONTAINER_ID}",
+        "variableId": "5",
+        "name": "Const - Google Ads Conversion Label - generate_lead",
+        "type": "c",
+        "parameter": [
+          { "type": "TEMPLATE", "key": "value", "value": "{GOOGLE_ADS_CONVERSION_LABEL_LEAD}" }
+        ],
+        "fingerprint": "0",
+        "parentFolderId": "13"
+      },
+      {
+        "accountId": "{ACCOUNT_ID}",
+        "containerId": "{CONTAINER_ID}",
+        "variableId": "6",
+        "name": "Const - Microsoft Ads UET Tag ID",
+        "type": "c",
+        "parameter": [
+          { "type": "TEMPLATE", "key": "value", "value": "{MICROSOFT_ADS_UET_TAG_ID}" }
+        ],
+        "fingerprint": "0",
+        "parentFolderId": "15"
+      },
+      {
+        "accountId": "{ACCOUNT_ID}",
+        "containerId": "{CONTAINER_ID}",
+        "variableId": "7",
+        "name": "DLV - ecommerce",
+        "type": "v",
+        "parameter": [
+          { "type": "TEMPLATE", "key": "name", "value": "ecommerce" },
+          { "type": "INTEGER", "key": "dataLayerVersion", "value": "2" }
+        ],
+        "fingerprint": "0",
+        "parentFolderId": "20"
+      },
+      {
+        "accountId": "{ACCOUNT_ID}",
+        "containerId": "{CONTAINER_ID}",
+        "variableId": "8",
+        "name": "DLV - ecommerce.value",
+        "type": "v",
+        "parameter": [
+          { "type": "TEMPLATE", "key": "name", "value": "ecommerce.value" },
+          { "type": "INTEGER", "key": "dataLayerVersion", "value": "2" }
+        ],
+        "fingerprint": "0",
+        "parentFolderId": "20"
+      },
+      {
+        "accountId": "{ACCOUNT_ID}",
+        "containerId": "{CONTAINER_ID}",
+        "variableId": "9",
+        "name": "DLV - ecommerce.currency",
+        "type": "v",
+        "parameter": [
+          { "type": "TEMPLATE", "key": "name", "value": "ecommerce.currency" },
+          { "type": "INTEGER", "key": "dataLayerVersion", "value": "2" }
+        ],
+        "fingerprint": "0",
+        "parentFolderId": "20"
+      },
+      {
+        "accountId": "{ACCOUNT_ID}",
+        "containerId": "{CONTAINER_ID}",
+        "variableId": "10",
+        "name": "DLV - ecommerce.transaction_id",
+        "type": "v",
+        "parameter": [
+          { "type": "TEMPLATE", "key": "name", "value": "ecommerce.transaction_id" },
+          { "type": "INTEGER", "key": "dataLayerVersion", "value": "2" }
+        ],
+        "fingerprint": "0",
+        "parentFolderId": "20"
+      },
+      {
+        "accountId": "{ACCOUNT_ID}",
+        "containerId": "{CONTAINER_ID}",
+        "variableId": "11",
+        "name": "DLV - form_name",
+        "type": "v",
+        "parameter": [
+          { "type": "TEMPLATE", "key": "name", "value": "form_name" },
+          { "type": "INTEGER", "key": "dataLayerVersion", "value": "2" }
+        ],
+        "fingerprint": "0",
+        "parentFolderId": "20"
+      }
+    ],
+    "builtInVariable": [
+      { "accountId": "{ACCOUNT_ID}", "containerId": "{CONTAINER_ID}", "type": "PAGE_URL", "name": "Page URL" },
+      { "accountId": "{ACCOUNT_ID}", "containerId": "{CONTAINER_ID}", "type": "PAGE_HOSTNAME", "name": "Page Hostname" },
+      { "accountId": "{ACCOUNT_ID}", "containerId": "{CONTAINER_ID}", "type": "PAGE_PATH", "name": "Page Path" },
+      { "accountId": "{ACCOUNT_ID}", "containerId": "{CONTAINER_ID}", "type": "REFERRER", "name": "Referrer" },
+      { "accountId": "{ACCOUNT_ID}", "containerId": "{CONTAINER_ID}", "type": "EVENT", "name": "Event" },
+      { "accountId": "{ACCOUNT_ID}", "containerId": "{CONTAINER_ID}", "type": "CLICK_ELEMENT", "name": "Click Element" },
+      { "accountId": "{ACCOUNT_ID}", "containerId": "{CONTAINER_ID}", "type": "CLICK_CLASSES", "name": "Click Classes" },
+      { "accountId": "{ACCOUNT_ID}", "containerId": "{CONTAINER_ID}", "type": "CLICK_ID", "name": "Click ID" },
+      { "accountId": "{ACCOUNT_ID}", "containerId": "{CONTAINER_ID}", "type": "CLICK_URL", "name": "Click URL" },
+      { "accountId": "{ACCOUNT_ID}", "containerId": "{CONTAINER_ID}", "type": "CLICK_TEXT", "name": "Click Text" },
+      { "accountId": "{ACCOUNT_ID}", "containerId": "{CONTAINER_ID}", "type": "FORM_ELEMENT", "name": "Form Element" },
+      { "accountId": "{ACCOUNT_ID}", "containerId": "{CONTAINER_ID}", "type": "FORM_ID", "name": "Form ID" },
+      { "accountId": "{ACCOUNT_ID}", "containerId": "{CONTAINER_ID}", "type": "FORM_CLASSES", "name": "Form Classes" },
+      { "accountId": "{ACCOUNT_ID}", "containerId": "{CONTAINER_ID}", "type": "FORM_URL", "name": "Form URL" },
+      { "accountId": "{ACCOUNT_ID}", "containerId": "{CONTAINER_ID}", "type": "SCROLL_DEPTH_THRESHOLD", "name": "Scroll Depth Threshold" },
+      { "accountId": "{ACCOUNT_ID}", "containerId": "{CONTAINER_ID}", "type": "SCROLL_DEPTH_UNITS", "name": "Scroll Depth Units" },
+      { "accountId": "{ACCOUNT_ID}", "containerId": "{CONTAINER_ID}", "type": "SCROLL_DEPTH_DIRECTION", "name": "Scroll Depth Direction" },
+      { "accountId": "{ACCOUNT_ID}", "containerId": "{CONTAINER_ID}", "type": "DEBUG_MODE", "name": "Debug Mode" },
+      { "accountId": "{ACCOUNT_ID}", "containerId": "{CONTAINER_ID}", "type": "RANDOM_NUMBER", "name": "Random Number" },
+      { "accountId": "{ACCOUNT_ID}", "containerId": "{CONTAINER_ID}", "type": "CONTAINER_ID", "name": "Container ID" }
+    ],
+    "folder": [
+      { "accountId": "{ACCOUNT_ID}", "containerId": "{CONTAINER_ID}", "folderId": "10", "name": "GA4", "fingerprint": "0" },
+      { "accountId": "{ACCOUNT_ID}", "containerId": "{CONTAINER_ID}", "folderId": "12", "name": "Clarity", "fingerprint": "0" },
+      { "accountId": "{ACCOUNT_ID}", "containerId": "{CONTAINER_ID}", "folderId": "13", "name": "Google Ads", "fingerprint": "0" },
+      { "accountId": "{ACCOUNT_ID}", "containerId": "{CONTAINER_ID}", "folderId": "15", "name": "Microsoft Ads", "fingerprint": "0" },
+      { "accountId": "{ACCOUNT_ID}", "containerId": "{CONTAINER_ID}", "folderId": "19", "name": "Utilities", "fingerprint": "0" },
+      { "accountId": "{ACCOUNT_ID}", "containerId": "{CONTAINER_ID}", "folderId": "20", "name": "_Global", "fingerprint": "0" }
+    ],
+    "customTemplate": [
+      {
+        "accountId": "{ACCOUNT_ID}",
+        "containerId": "{CONTAINER_ID}",
+        "templateId": "100",
+        "name": "Microsoft Clarity - Official",
+        "fingerprint": "0",
+        "templateData": "___TERMS_OF_SERVICE___\n\nBy creating or modifying this file you agree to Google Tag Manager's Community\nTemplate Gallery Developer Terms of Service available at\nhttps://developers.google.com/tag-manager/gallery-tos (or such other URL as\nGoogle may provide), as modified from time to time.\n\n\n___INFO___\n\n{\n  \"type\": \"TAG\",\n  \"id\": \"cvt_MQDKZ\",\n  \"version\": 1,\n  \"displayName\": \"Microsoft Clarity - Official\",\n  \"categories\": [\n    \"ANALYTICS\",\n    \"HEAT_MAP\",\n    \"SESSION_RECORDING\"\n  ],\n  \"brand\": {\n    \"id\": \"github.com_microsoft\",\n    \"displayName\": \"microsoft\"\n  },\n  \"description\": \"Clarity is a user behavior analytics tool, which helps you understand how users are interacting with your website.\",\n  \"containerContexts\": [\n    \"WEB\"\n  ]\n}\n",
+        "galleryReference": {
+          "host": "github.com",
+          "owner": "microsoft",
+          "repository": "clarity-gtm-template",
+          "version": "d85d0a7070ff9e1626bb260dfa341653be7f3266",
+          "signature": "6d80fb063e54671b559a5692f7bfdedb1ae33ebbe20063c6515d68a895455b45",
+          "galleryTemplateId": "MQDKZ"
+        }
+      }
+    ],
+    "fingerprint": "0",
+    "tagManagerUrl": ""
+  }
+}

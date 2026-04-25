@@ -1,0 +1,558 @@
+{
+  "exportFormatVersion": 2,
+  "exportTime": "2026-04-26 00:00:00",
+  "containerVersion": {
+    "path": "accounts/{ACCOUNT_ID}/containers/{CONTAINER_ID}/versions/0",
+    "accountId": "{ACCOUNT_ID}",
+    "containerId": "{CONTAINER_ID}",
+    "containerVersionId": "0",
+    "name": "Initial Setup - SaaS Lead Gen",
+    "description": "GA4 + Clarity + Google Ads + LinkedIn + Reddit: Configuration for SaaS / developer-tool lead generation (decision-maker targeting via LinkedIn + technical community targeting via Reddit). Reddit's official 'Reddit Pixel' community template (github.com/reddit/reddit-gtm-template, cvt_PBGZL) is referenced by its confirmed cvt_* ID; the install-time galleryReference block (version commit SHA + signature) is omitted and must be resolved by importing the template from the GTM Community Template Gallery in the destination workspace. The same pattern applies to LinkedIn InsightTag 2.0 (replace cvt_LINKEDIN_INSIGHT_TAG_TEMPLATE_ID with the cvt_* assigned in your destination workspace).",
+    "container": {
+      "path": "accounts/{ACCOUNT_ID}/containers/{CONTAINER_ID}",
+      "accountId": "{ACCOUNT_ID}",
+      "containerId": "{CONTAINER_ID}",
+      "name": "{SITE_DOMAIN}",
+      "publicId": "{GTM_PUBLIC_ID}",
+      "usageContext": ["WEB"],
+      "fingerprint": "0",
+      "tagManagerUrl": ""
+    },
+    "tag": [
+      {
+        "accountId": "{ACCOUNT_ID}",
+        "containerId": "{CONTAINER_ID}",
+        "tagId": "1",
+        "name": "GA4 - Config",
+        "type": "googtag",
+        "parameter": [
+          { "type": "TEMPLATE", "key": "tagId", "value": "{{Const - GA4 Measurement ID}}" }
+        ],
+        "firingTriggerId": ["2147479573"],
+        "tagFiringOption": "ONCE_PER_EVENT",
+        "monitoringMetadata": { "type": "MAP" },
+        "consentSettings": { "consentStatus": "NOT_SET" },
+        "fingerprint": "0",
+        "parentFolderId": "10"
+      },
+      {
+        "accountId": "{ACCOUNT_ID}",
+        "containerId": "{CONTAINER_ID}",
+        "tagId": "2",
+        "name": "Google Ads - Conversion Linker",
+        "type": "gclidw",
+        "parameter": [],
+        "firingTriggerId": ["2147479573"],
+        "tagFiringOption": "ONCE_PER_EVENT",
+        "monitoringMetadata": { "type": "MAP" },
+        "consentSettings": { "consentStatus": "NOT_SET" },
+        "fingerprint": "0",
+        "parentFolderId": "13"
+      },
+      {
+        "accountId": "{ACCOUNT_ID}",
+        "containerId": "{CONTAINER_ID}",
+        "tagId": "3",
+        "name": "Clarity - Base",
+        "type": "cvt_MQDKZ",
+        "parameter": [
+          { "type": "TEMPLATE", "key": "projectId", "value": "{{Const - Clarity Project ID}}" }
+        ],
+        "firingTriggerId": ["2147479553"],
+        "tagFiringOption": "ONCE_PER_EVENT",
+        "monitoringMetadata": { "type": "MAP" },
+        "consentSettings": { "consentStatus": "NOT_SET" },
+        "fingerprint": "0",
+        "parentFolderId": "12"
+      },
+      {
+        "accountId": "{ACCOUNT_ID}",
+        "containerId": "{CONTAINER_ID}",
+        "tagId": "4",
+        "name": "LinkedIn - Base",
+        "type": "cvt_LINKEDIN_INSIGHT_TAG_TEMPLATE_ID",
+        "parameter": [
+          { "type": "TEMPLATE", "key": "partnerIds", "value": "{{Const - LinkedIn Partner ID}}" }
+        ],
+        "firingTriggerId": ["2147479553"],
+        "tagFiringOption": "ONCE_PER_EVENT",
+        "monitoringMetadata": { "type": "MAP" },
+        "consentSettings": { "consentStatus": "NOT_SET" },
+        "fingerprint": "0",
+        "parentFolderId": "14"
+      },
+      {
+        "accountId": "{ACCOUNT_ID}",
+        "containerId": "{CONTAINER_ID}",
+        "tagId": "5",
+        "name": "Reddit - Base",
+        "type": "cvt_PBGZL",
+        "parameter": [
+          { "type": "TEMPLATE", "key": "pixelId", "value": "{{Const - Reddit Pixel ID}}" },
+          { "type": "TEMPLATE", "key": "eventType", "value": "PageVisit" }
+        ],
+        "firingTriggerId": ["2147479553"],
+        "tagFiringOption": "ONCE_PER_EVENT",
+        "monitoringMetadata": { "type": "MAP" },
+        "consentSettings": { "consentStatus": "NOT_SET" },
+        "fingerprint": "0",
+        "notes": "Reddit's official 'Reddit Pixel' community template (reddit/reddit-gtm-template, cvt_PBGZL). The Reddit web template handles loader injection and initialization itself, so a separate Custom HTML base is not required — fire this PageVisit tag on every page first, then fire each event tag on its custom event trigger. The install-time galleryReference block (host/owner/repository/version commit SHA/signature) is intentionally omitted from this example because version + signature are environment-specific; install the template from the GTM Community Template Gallery in your destination workspace, which will populate the galleryReference automatically.",
+        "parentFolderId": "15"
+      },
+      {
+        "accountId": "{ACCOUNT_ID}",
+        "containerId": "{CONTAINER_ID}",
+        "tagId": "6",
+        "name": "GA4 - Event - generate_lead",
+        "type": "gaawe",
+        "parameter": [
+          { "type": "TAG_REFERENCE", "key": "measurementId", "value": "GA4 - Config" },
+          { "type": "TEMPLATE", "key": "eventName", "value": "generate_lead" },
+          {
+            "type": "LIST",
+            "key": "eventParameters",
+            "list": [
+              {
+                "type": "MAP",
+                "map": [
+                  { "type": "TEMPLATE", "key": "name", "value": "form_name" },
+                  { "type": "TEMPLATE", "key": "value", "value": "{{DLV - form_name}}" }
+                ]
+              }
+            ]
+          }
+        ],
+        "firingTriggerId": ["1"],
+        "tagFiringOption": "ONCE_PER_EVENT",
+        "monitoringMetadata": { "type": "MAP" },
+        "consentSettings": { "consentStatus": "NOT_SET" },
+        "fingerprint": "0",
+        "parentFolderId": "10"
+      },
+      {
+        "accountId": "{ACCOUNT_ID}",
+        "containerId": "{CONTAINER_ID}",
+        "tagId": "7",
+        "name": "Google Ads - Conversion - generate_lead",
+        "type": "awct",
+        "parameter": [
+          { "type": "TEMPLATE", "key": "conversionId", "value": "{{Const - Google Ads Conversion ID}}" },
+          { "type": "TEMPLATE", "key": "conversionLabel", "value": "{{Const - Google Ads Conversion Label - generate_lead}}" },
+          { "type": "BOOLEAN", "key": "enableConversionLinker", "value": "true" }
+        ],
+        "firingTriggerId": ["1"],
+        "tagFiringOption": "ONCE_PER_EVENT",
+        "monitoringMetadata": { "type": "MAP" },
+        "consentSettings": { "consentStatus": "NOT_SET" },
+        "fingerprint": "0",
+        "parentFolderId": "13"
+      },
+      {
+        "accountId": "{ACCOUNT_ID}",
+        "containerId": "{CONTAINER_ID}",
+        "tagId": "8",
+        "name": "LinkedIn - Event - Lead Conversion",
+        "type": "cvt_LINKEDIN_INSIGHT_TAG_TEMPLATE_ID",
+        "parameter": [
+          { "type": "TEMPLATE", "key": "partnerIds", "value": "{{Const - LinkedIn Partner ID}}" },
+          { "type": "TEMPLATE", "key": "conversionIds", "value": "{{Const - LinkedIn Conversion ID - generate_lead}}" }
+        ],
+        "firingTriggerId": ["1"],
+        "tagFiringOption": "ONCE_PER_EVENT",
+        "monitoringMetadata": { "type": "MAP" },
+        "consentSettings": { "consentStatus": "NOT_SET" },
+        "fingerprint": "0",
+        "parentFolderId": "14"
+      },
+      {
+        "accountId": "{ACCOUNT_ID}",
+        "containerId": "{CONTAINER_ID}",
+        "tagId": "9",
+        "name": "Reddit - Event - Lead",
+        "type": "cvt_PBGZL",
+        "parameter": [
+          { "type": "TEMPLATE", "key": "pixelId", "value": "{{Const - Reddit Pixel ID}}" },
+          { "type": "TEMPLATE", "key": "eventType", "value": "Lead" },
+          { "type": "TEMPLATE", "key": "conversionId", "value": "{{DLV - form.submission_id}}" }
+        ],
+        "firingTriggerId": ["1"],
+        "tagFiringOption": "ONCE_PER_EVENT",
+        "monitoringMetadata": { "type": "MAP" },
+        "consentSettings": { "consentStatus": "NOT_SET" },
+        "fingerprint": "0",
+        "notes": "GA4 generate_lead -> Reddit Lead (tracking_type LEAD per references/reddit-pixel.md). Conversion ID is set from form.submission_id for deduplication with the Reddit Conversions API. Replace cvt_PBGZL with the cvt_* ID assigned in your destination workspace if it differs after installing 'Reddit Pixel' from the GTM Community Template Gallery.",
+        "parentFolderId": "15"
+      },
+      {
+        "accountId": "{ACCOUNT_ID}",
+        "containerId": "{CONTAINER_ID}",
+        "tagId": "10",
+        "name": "GA4 - Event - sign_up",
+        "type": "gaawe",
+        "parameter": [
+          { "type": "TAG_REFERENCE", "key": "measurementId", "value": "GA4 - Config" },
+          { "type": "TEMPLATE", "key": "eventName", "value": "sign_up" }
+        ],
+        "firingTriggerId": ["2"],
+        "tagFiringOption": "ONCE_PER_EVENT",
+        "monitoringMetadata": { "type": "MAP" },
+        "consentSettings": { "consentStatus": "NOT_SET" },
+        "fingerprint": "0",
+        "parentFolderId": "10"
+      },
+      {
+        "accountId": "{ACCOUNT_ID}",
+        "containerId": "{CONTAINER_ID}",
+        "tagId": "11",
+        "name": "Google Ads - Conversion - sign_up",
+        "type": "awct",
+        "parameter": [
+          { "type": "TEMPLATE", "key": "conversionId", "value": "{{Const - Google Ads Conversion ID}}" },
+          { "type": "TEMPLATE", "key": "conversionLabel", "value": "{{Const - Google Ads Conversion Label - sign_up}}" },
+          { "type": "BOOLEAN", "key": "enableConversionLinker", "value": "true" }
+        ],
+        "firingTriggerId": ["2"],
+        "tagFiringOption": "ONCE_PER_EVENT",
+        "monitoringMetadata": { "type": "MAP" },
+        "consentSettings": { "consentStatus": "NOT_SET" },
+        "fingerprint": "0",
+        "parentFolderId": "13"
+      },
+      {
+        "accountId": "{ACCOUNT_ID}",
+        "containerId": "{CONTAINER_ID}",
+        "tagId": "12",
+        "name": "LinkedIn - Event - Sign-up Conversion",
+        "type": "cvt_LINKEDIN_INSIGHT_TAG_TEMPLATE_ID",
+        "parameter": [
+          { "type": "TEMPLATE", "key": "partnerIds", "value": "{{Const - LinkedIn Partner ID}}" },
+          { "type": "TEMPLATE", "key": "conversionIds", "value": "{{Const - LinkedIn Conversion ID - sign_up}}" }
+        ],
+        "firingTriggerId": ["2"],
+        "tagFiringOption": "ONCE_PER_EVENT",
+        "monitoringMetadata": { "type": "MAP" },
+        "consentSettings": { "consentStatus": "NOT_SET" },
+        "fingerprint": "0",
+        "notes": "GA4 sign_up -> LinkedIn SIGN_UP conversion type. Per references/linkedin-insight-tag.md the LinkedIn enum supports SIGN_UP (and COMPLETE_SIGNUP); create the rule in Campaign Manager with type SIGN_UP and supply the resulting numeric Conversion ID via Const - LinkedIn Conversion ID - sign_up.",
+        "parentFolderId": "14"
+      },
+      {
+        "accountId": "{ACCOUNT_ID}",
+        "containerId": "{CONTAINER_ID}",
+        "tagId": "13",
+        "name": "Reddit - Event - SignUp",
+        "type": "cvt_PBGZL",
+        "parameter": [
+          { "type": "TEMPLATE", "key": "pixelId", "value": "{{Const - Reddit Pixel ID}}" },
+          { "type": "TEMPLATE", "key": "eventType", "value": "SignUp" },
+          { "type": "TEMPLATE", "key": "conversionId", "value": "{{DLV - registration_id}}" }
+        ],
+        "firingTriggerId": ["2"],
+        "tagFiringOption": "ONCE_PER_EVENT",
+        "monitoringMetadata": { "type": "MAP" },
+        "consentSettings": { "consentStatus": "NOT_SET" },
+        "fingerprint": "0",
+        "notes": "GA4 sign_up -> Reddit SignUp (tracking_type SIGN_UP per references/reddit-pixel.md). Conversion ID is set from registration_id for deduplication with the Reddit Conversions API. Replace cvt_PBGZL with the cvt_* ID assigned in your destination workspace if it differs after installing 'Reddit Pixel' from the GTM Community Template Gallery.",
+        "parentFolderId": "15"
+      },
+      {
+        "accountId": "{ACCOUNT_ID}",
+        "containerId": "{CONTAINER_ID}",
+        "tagId": "14",
+        "name": "GA4 - Event - scroll",
+        "type": "gaawe",
+        "parameter": [
+          { "type": "TAG_REFERENCE", "key": "measurementId", "value": "GA4 - Config" },
+          { "type": "TEMPLATE", "key": "eventName", "value": "scroll" },
+          {
+            "type": "LIST",
+            "key": "eventParameters",
+            "list": [
+              {
+                "type": "MAP",
+                "map": [
+                  { "type": "TEMPLATE", "key": "name", "value": "percent_scrolled" },
+                  { "type": "TEMPLATE", "key": "value", "value": "{{Scroll Depth Threshold}}" }
+                ]
+              }
+            ]
+          }
+        ],
+        "firingTriggerId": ["3"],
+        "tagFiringOption": "UNLIMITED",
+        "monitoringMetadata": { "type": "MAP" },
+        "consentSettings": { "consentStatus": "NOT_SET" },
+        "fingerprint": "0",
+        "parentFolderId": "10"
+      }
+    ],
+    "trigger": [
+      {
+        "accountId": "{ACCOUNT_ID}",
+        "containerId": "{CONTAINER_ID}",
+        "triggerId": "1",
+        "name": "CE - form_submit",
+        "type": "CUSTOM_EVENT",
+        "customEventFilter": [
+          {
+            "type": "EQUALS",
+            "parameter": [
+              { "type": "TEMPLATE", "key": "arg0", "value": "{{_event}}" },
+              { "type": "TEMPLATE", "key": "arg1", "value": "form_submit" }
+            ]
+          }
+        ],
+        "fingerprint": "0",
+        "parentFolderId": "20"
+      },
+      {
+        "accountId": "{ACCOUNT_ID}",
+        "containerId": "{CONTAINER_ID}",
+        "triggerId": "2",
+        "name": "CE - sign_up",
+        "type": "CUSTOM_EVENT",
+        "customEventFilter": [
+          {
+            "type": "EQUALS",
+            "parameter": [
+              { "type": "TEMPLATE", "key": "arg0", "value": "{{_event}}" },
+              { "type": "TEMPLATE", "key": "arg1", "value": "sign_up" }
+            ]
+          }
+        ],
+        "fingerprint": "0",
+        "parentFolderId": "20"
+      },
+      {
+        "accountId": "{ACCOUNT_ID}",
+        "containerId": "{CONTAINER_ID}",
+        "triggerId": "3",
+        "name": "Scroll - 25/50/75/100 Percent",
+        "type": "SCROLL_DEPTH",
+        "parameter": [
+          { "type": "BOOLEAN", "key": "verticalThresholdOn", "value": "true" },
+          { "type": "TEMPLATE", "key": "verticalThresholdsPercent", "value": "25,50,75,100" },
+          { "type": "BOOLEAN", "key": "horizontalThresholdOn", "value": "false" },
+          { "type": "TEMPLATE", "key": "triggerStartOption", "value": "WINDOW_LOAD" }
+        ],
+        "fingerprint": "0",
+        "parentFolderId": "20"
+      }
+    ],
+    "variable": [
+      {
+        "accountId": "{ACCOUNT_ID}",
+        "containerId": "{CONTAINER_ID}",
+        "variableId": "1",
+        "name": "Const - GA4 Measurement ID",
+        "type": "c",
+        "parameter": [
+          { "type": "TEMPLATE", "key": "value", "value": "{GA4_MEASUREMENT_ID}" }
+        ],
+        "fingerprint": "0",
+        "parentFolderId": "10"
+      },
+      {
+        "accountId": "{ACCOUNT_ID}",
+        "containerId": "{CONTAINER_ID}",
+        "variableId": "2",
+        "name": "Const - Clarity Project ID",
+        "type": "c",
+        "parameter": [
+          { "type": "TEMPLATE", "key": "value", "value": "{CLARITY_PROJECT_ID}" }
+        ],
+        "fingerprint": "0",
+        "parentFolderId": "12"
+      },
+      {
+        "accountId": "{ACCOUNT_ID}",
+        "containerId": "{CONTAINER_ID}",
+        "variableId": "3",
+        "name": "Const - Google Ads Conversion ID",
+        "type": "c",
+        "parameter": [
+          { "type": "TEMPLATE", "key": "value", "value": "{GOOGLE_ADS_CONVERSION_ID}" }
+        ],
+        "fingerprint": "0",
+        "parentFolderId": "13"
+      },
+      {
+        "accountId": "{ACCOUNT_ID}",
+        "containerId": "{CONTAINER_ID}",
+        "variableId": "4",
+        "name": "Const - Google Ads Conversion Label - generate_lead",
+        "type": "c",
+        "parameter": [
+          { "type": "TEMPLATE", "key": "value", "value": "{GOOGLE_ADS_CONVERSION_LABEL_LEAD}" }
+        ],
+        "fingerprint": "0",
+        "parentFolderId": "13"
+      },
+      {
+        "accountId": "{ACCOUNT_ID}",
+        "containerId": "{CONTAINER_ID}",
+        "variableId": "5",
+        "name": "Const - Google Ads Conversion Label - sign_up",
+        "type": "c",
+        "parameter": [
+          { "type": "TEMPLATE", "key": "value", "value": "{GOOGLE_ADS_CONVERSION_LABEL_SIGNUP}" }
+        ],
+        "fingerprint": "0",
+        "parentFolderId": "13"
+      },
+      {
+        "accountId": "{ACCOUNT_ID}",
+        "containerId": "{CONTAINER_ID}",
+        "variableId": "6",
+        "name": "Const - LinkedIn Partner ID",
+        "type": "c",
+        "parameter": [
+          { "type": "TEMPLATE", "key": "value", "value": "{LINKEDIN_PARTNER_ID}" }
+        ],
+        "fingerprint": "0",
+        "parentFolderId": "14"
+      },
+      {
+        "accountId": "{ACCOUNT_ID}",
+        "containerId": "{CONTAINER_ID}",
+        "variableId": "7",
+        "name": "Const - LinkedIn Conversion ID - generate_lead",
+        "type": "c",
+        "parameter": [
+          { "type": "TEMPLATE", "key": "value", "value": "{LINKEDIN_CONVERSION_ID_LEAD}" }
+        ],
+        "fingerprint": "0",
+        "parentFolderId": "14"
+      },
+      {
+        "accountId": "{ACCOUNT_ID}",
+        "containerId": "{CONTAINER_ID}",
+        "variableId": "8",
+        "name": "Const - LinkedIn Conversion ID - sign_up",
+        "type": "c",
+        "parameter": [
+          { "type": "TEMPLATE", "key": "value", "value": "{LINKEDIN_CONVERSION_ID_SIGNUP}" }
+        ],
+        "fingerprint": "0",
+        "parentFolderId": "14"
+      },
+      {
+        "accountId": "{ACCOUNT_ID}",
+        "containerId": "{CONTAINER_ID}",
+        "variableId": "9",
+        "name": "Const - Reddit Pixel ID",
+        "type": "c",
+        "parameter": [
+          { "type": "TEMPLATE", "key": "value", "value": "{REDDIT_PIXEL_ID}" }
+        ],
+        "fingerprint": "0",
+        "parentFolderId": "15"
+      },
+      {
+        "accountId": "{ACCOUNT_ID}",
+        "containerId": "{CONTAINER_ID}",
+        "variableId": "10",
+        "name": "DLV - form_name",
+        "type": "v",
+        "parameter": [
+          { "type": "TEMPLATE", "key": "name", "value": "form_name" },
+          { "type": "INTEGER", "key": "dataLayerVersion", "value": "2" }
+        ],
+        "fingerprint": "0",
+        "parentFolderId": "20"
+      },
+      {
+        "accountId": "{ACCOUNT_ID}",
+        "containerId": "{CONTAINER_ID}",
+        "variableId": "11",
+        "name": "DLV - form.submission_id",
+        "type": "v",
+        "parameter": [
+          { "type": "TEMPLATE", "key": "name", "value": "form.submission_id" },
+          { "type": "INTEGER", "key": "dataLayerVersion", "value": "2" }
+        ],
+        "fingerprint": "0",
+        "parentFolderId": "20"
+      },
+      {
+        "accountId": "{ACCOUNT_ID}",
+        "containerId": "{CONTAINER_ID}",
+        "variableId": "12",
+        "name": "DLV - registration_id",
+        "type": "v",
+        "parameter": [
+          { "type": "TEMPLATE", "key": "name", "value": "registration_id" },
+          { "type": "INTEGER", "key": "dataLayerVersion", "value": "2" }
+        ],
+        "fingerprint": "0",
+        "parentFolderId": "20"
+      }
+    ],
+    "builtInVariable": [
+      { "accountId": "{ACCOUNT_ID}", "containerId": "{CONTAINER_ID}", "type": "PAGE_URL", "name": "Page URL" },
+      { "accountId": "{ACCOUNT_ID}", "containerId": "{CONTAINER_ID}", "type": "PAGE_HOSTNAME", "name": "Page Hostname" },
+      { "accountId": "{ACCOUNT_ID}", "containerId": "{CONTAINER_ID}", "type": "PAGE_PATH", "name": "Page Path" },
+      { "accountId": "{ACCOUNT_ID}", "containerId": "{CONTAINER_ID}", "type": "REFERRER", "name": "Referrer" },
+      { "accountId": "{ACCOUNT_ID}", "containerId": "{CONTAINER_ID}", "type": "EVENT", "name": "Event" },
+      { "accountId": "{ACCOUNT_ID}", "containerId": "{CONTAINER_ID}", "type": "CLICK_ELEMENT", "name": "Click Element" },
+      { "accountId": "{ACCOUNT_ID}", "containerId": "{CONTAINER_ID}", "type": "CLICK_CLASSES", "name": "Click Classes" },
+      { "accountId": "{ACCOUNT_ID}", "containerId": "{CONTAINER_ID}", "type": "CLICK_ID", "name": "Click ID" },
+      { "accountId": "{ACCOUNT_ID}", "containerId": "{CONTAINER_ID}", "type": "CLICK_URL", "name": "Click URL" },
+      { "accountId": "{ACCOUNT_ID}", "containerId": "{CONTAINER_ID}", "type": "CLICK_TEXT", "name": "Click Text" },
+      { "accountId": "{ACCOUNT_ID}", "containerId": "{CONTAINER_ID}", "type": "FORM_ELEMENT", "name": "Form Element" },
+      { "accountId": "{ACCOUNT_ID}", "containerId": "{CONTAINER_ID}", "type": "FORM_ID", "name": "Form ID" },
+      { "accountId": "{ACCOUNT_ID}", "containerId": "{CONTAINER_ID}", "type": "FORM_CLASSES", "name": "Form Classes" },
+      { "accountId": "{ACCOUNT_ID}", "containerId": "{CONTAINER_ID}", "type": "FORM_URL", "name": "Form URL" },
+      { "accountId": "{ACCOUNT_ID}", "containerId": "{CONTAINER_ID}", "type": "SCROLL_DEPTH_THRESHOLD", "name": "Scroll Depth Threshold" },
+      { "accountId": "{ACCOUNT_ID}", "containerId": "{CONTAINER_ID}", "type": "SCROLL_DEPTH_UNITS", "name": "Scroll Depth Units" },
+      { "accountId": "{ACCOUNT_ID}", "containerId": "{CONTAINER_ID}", "type": "SCROLL_DEPTH_DIRECTION", "name": "Scroll Depth Direction" },
+      { "accountId": "{ACCOUNT_ID}", "containerId": "{CONTAINER_ID}", "type": "DEBUG_MODE", "name": "Debug Mode" },
+      { "accountId": "{ACCOUNT_ID}", "containerId": "{CONTAINER_ID}", "type": "RANDOM_NUMBER", "name": "Random Number" },
+      { "accountId": "{ACCOUNT_ID}", "containerId": "{CONTAINER_ID}", "type": "CONTAINER_ID", "name": "Container ID" }
+    ],
+    "folder": [
+      { "accountId": "{ACCOUNT_ID}", "containerId": "{CONTAINER_ID}", "folderId": "10", "name": "GA4", "fingerprint": "0" },
+      { "accountId": "{ACCOUNT_ID}", "containerId": "{CONTAINER_ID}", "folderId": "12", "name": "Clarity", "fingerprint": "0" },
+      { "accountId": "{ACCOUNT_ID}", "containerId": "{CONTAINER_ID}", "folderId": "13", "name": "Google Ads", "fingerprint": "0" },
+      { "accountId": "{ACCOUNT_ID}", "containerId": "{CONTAINER_ID}", "folderId": "14", "name": "LinkedIn", "fingerprint": "0" },
+      { "accountId": "{ACCOUNT_ID}", "containerId": "{CONTAINER_ID}", "folderId": "15", "name": "Reddit", "fingerprint": "0" },
+      { "accountId": "{ACCOUNT_ID}", "containerId": "{CONTAINER_ID}", "folderId": "20", "name": "_Global", "fingerprint": "0" }
+    ],
+    "customTemplate": [
+      {
+        "accountId": "{ACCOUNT_ID}",
+        "containerId": "{CONTAINER_ID}",
+        "templateId": "100",
+        "name": "Microsoft Clarity - Official",
+        "fingerprint": "0",
+        "templateData": "___TERMS_OF_SERVICE___\n\nBy creating or modifying this file you agree to Google Tag Manager's Community\nTemplate Gallery Developer Terms of Service available at\nhttps://developers.google.com/tag-manager/gallery-tos (or such other URL as\nGoogle may provide), as modified from time to time.\n\n\n___INFO___\n\n{\n  \"type\": \"TAG\",\n  \"id\": \"cvt_MQDKZ\",\n  \"version\": 1,\n  \"displayName\": \"Microsoft Clarity - Official\",\n  \"categories\": [\n    \"ANALYTICS\",\n    \"HEAT_MAP\",\n    \"SESSION_RECORDING\"\n  ],\n  \"brand\": {\n    \"id\": \"github.com_microsoft\",\n    \"displayName\": \"microsoft\"\n  },\n  \"description\": \"Clarity is a user behavior analytics tool, which helps you understand how users are interacting with your website.\",\n  \"containerContexts\": [\n    \"WEB\"\n  ]\n}\n",
+        "galleryReference": {
+          "host": "github.com",
+          "owner": "microsoft",
+          "repository": "clarity-gtm-template",
+          "version": "d85d0a7070ff9e1626bb260dfa341653be7f3266",
+          "signature": "6d80fb063e54671b559a5692f7bfdedb1ae33ebbe20063c6515d68a895455b45",
+          "galleryTemplateId": "MQDKZ"
+        }
+      },
+      {
+        "accountId": "{ACCOUNT_ID}",
+        "containerId": "{CONTAINER_ID}",
+        "templateId": "101",
+        "name": "LinkedIn InsightTag 2.0",
+        "fingerprint": "0",
+        "templateData": "___TERMS_OF_SERVICE___\n\nBy creating or modifying this file you agree to Google Tag Manager's Community\nTemplate Gallery Developer Terms of Service available at\nhttps://developers.google.com/tag-manager/gallery-tos (or such other URL as\nGoogle may provide), as modified from time to time.\n\n\n___INFO___\n\n{\n  \"type\": \"TAG\",\n  \"id\": \"cvt_LINKEDIN_INSIGHT_TAG_TEMPLATE_ID\",\n  \"version\": 1,\n  \"displayName\": \"LinkedIn InsightTag 2.0\",\n  \"categories\": [\n    \"ADVERTISING\",\n    \"MARKETING\",\n    \"ANALYTICS\"\n  ],\n  \"brand\": {\n    \"id\": \"github.com_linkedin\",\n    \"displayName\": \"LinkedIn\"\n  },\n  \"description\": \"LinkedIn's official updated tag template allows for both page-level and event-level tracking via easily configurable options. Exposes Partner ID, Conversion IDs (max 3), Custom URL, and Event ID. NOTE: Replace cvt_LINKEDIN_INSIGHT_TAG_TEMPLATE_ID with the cvt_* ID assigned in your destination workspace after installing 'LinkedIn InsightTag 2.0' from the GTM Community Template Gallery.\",\n  \"containerContexts\": [\n    \"WEB\"\n  ]\n}\n"
+      },
+      {
+        "accountId": "{ACCOUNT_ID}",
+        "containerId": "{CONTAINER_ID}",
+        "templateId": "102",
+        "name": "Reddit Pixel",
+        "fingerprint": "0",
+        "templateData": "___TERMS_OF_SERVICE___\n\nBy creating or modifying this file you agree to Google Tag Manager's Community\nTemplate Gallery Developer Terms of Service available at\nhttps://developers.google.com/tag-manager/gallery-tos (or such other URL as\nGoogle may provide), as modified from time to time.\n\n\n___INFO___\n\n{\n  \"type\": \"TAG\",\n  \"id\": \"cvt_PBGZL\",\n  \"version\": 1,\n  \"displayName\": \"Reddit Pixel\",\n  \"categories\": [\n    \"ADVERTISING\",\n    \"MARKETING\",\n    \"ANALYTICS\"\n  ],\n  \"brand\": {\n    \"id\": \"github.com_reddit\",\n    \"displayName\": \"Reddit\"\n  },\n  \"description\": \"Reddit's official Reddit Pixel community template (reddit/reddit-gtm-template). Exposes Pixel ID, Event to Fire (PageVisit, ViewContent, Search, AddToCart, AddToWishlist, Purchase, Lead, SignUp, Custom), CustomEventName, Currency, Transaction Value, Item Count, Transaction ID, Conversion ID (deduplication), First Party Cookies toggle, Advanced Matching parameters (email, phoneNumber, aaid, idfa, externalId), Data Processing Options (LDU mode/country/region), and Product Information rows / JSON. NOTE: The cvt_PBGZL ID is the confirmed gallery ID of Reddit's official template; the install-time galleryReference block (host/owner/repository/version commit SHA/signature) is intentionally omitted because version + signature are environment-specific. Install 'Reddit Pixel' from the GTM Community Template Gallery in your destination workspace, which will populate the galleryReference automatically.\",\n  \"containerContexts\": [\n    \"WEB\"\n  ]\n}\n"
+      }
+    ],
+    "fingerprint": "0",
+    "tagManagerUrl": ""
+  }
+}

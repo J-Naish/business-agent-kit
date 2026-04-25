@@ -1,0 +1,705 @@
+{
+  "exportFormatVersion": 2,
+  "exportTime": "2026-04-26 00:00:00",
+  "containerVersion": {
+    "path": "accounts/{ACCOUNT_ID}/containers/{CONTAINER_ID}/versions/0",
+    "accountId": "{ACCOUNT_ID}",
+    "containerId": "{CONTAINER_ID}",
+    "containerVersionId": "0",
+    "name": "Initial Setup - Gen Z EC",
+    "description": "GA4 + Clarity + Google Ads + Snap + TikTok: Configuration for youth-focused mobile-first e-commerce (full ecommerce funnel across Snap and TikTok with shared dataLayer). Snap's official 'Snap Pixel' community template (github.com/Snapchat/snapchat-google-tag-manager) is referenced via a placeholder cvt_SNAP_PIXEL_TEMPLATE_ID; replace with the cvt_* ID assigned in your destination workspace after installing the template from the GTM Community Template Gallery. The TikTok 'TikTok Pixel' community template is also referenced via cvt_TIKTOK_PIXEL_TEMPLATE_ID and follows the same install-time replacement pattern.",
+    "container": {
+      "path": "accounts/{ACCOUNT_ID}/containers/{CONTAINER_ID}",
+      "accountId": "{ACCOUNT_ID}",
+      "containerId": "{CONTAINER_ID}",
+      "name": "{SITE_DOMAIN}",
+      "publicId": "{GTM_PUBLIC_ID}",
+      "usageContext": ["WEB"],
+      "fingerprint": "0",
+      "tagManagerUrl": ""
+    },
+    "tag": [
+      {
+        "accountId": "{ACCOUNT_ID}",
+        "containerId": "{CONTAINER_ID}",
+        "tagId": "1",
+        "name": "GA4 - Config",
+        "type": "googtag",
+        "parameter": [
+          { "type": "TEMPLATE", "key": "tagId", "value": "{{Const - GA4 Measurement ID}}" }
+        ],
+        "firingTriggerId": ["2147479573"],
+        "tagFiringOption": "ONCE_PER_EVENT",
+        "monitoringMetadata": { "type": "MAP" },
+        "consentSettings": { "consentStatus": "NOT_SET" },
+        "fingerprint": "0",
+        "parentFolderId": "10"
+      },
+      {
+        "accountId": "{ACCOUNT_ID}",
+        "containerId": "{CONTAINER_ID}",
+        "tagId": "2",
+        "name": "Google Ads - Conversion Linker",
+        "type": "gclidw",
+        "parameter": [],
+        "firingTriggerId": ["2147479573"],
+        "tagFiringOption": "ONCE_PER_EVENT",
+        "monitoringMetadata": { "type": "MAP" },
+        "consentSettings": { "consentStatus": "NOT_SET" },
+        "fingerprint": "0",
+        "parentFolderId": "13"
+      },
+      {
+        "accountId": "{ACCOUNT_ID}",
+        "containerId": "{CONTAINER_ID}",
+        "tagId": "3",
+        "name": "Clarity - Base",
+        "type": "cvt_MQDKZ",
+        "parameter": [
+          { "type": "TEMPLATE", "key": "projectId", "value": "{{Const - Clarity Project ID}}" }
+        ],
+        "firingTriggerId": ["2147479553"],
+        "tagFiringOption": "ONCE_PER_EVENT",
+        "monitoringMetadata": { "type": "MAP" },
+        "consentSettings": { "consentStatus": "NOT_SET" },
+        "fingerprint": "0",
+        "parentFolderId": "12"
+      },
+      {
+        "accountId": "{ACCOUNT_ID}",
+        "containerId": "{CONTAINER_ID}",
+        "tagId": "4",
+        "name": "TikTok - Base",
+        "type": "cvt_TIKTOK_PIXEL_TEMPLATE_ID",
+        "parameter": [
+          { "type": "TEMPLATE", "key": "pixelId", "value": "{{Const - TikTok Pixel ID}}" }
+        ],
+        "firingTriggerId": ["2147479553"],
+        "tagFiringOption": "ONCE_PER_EVENT",
+        "monitoringMetadata": { "type": "MAP" },
+        "consentSettings": { "consentStatus": "NOT_SET" },
+        "fingerprint": "0",
+        "notes": "TikTok's official 'TikTok Pixel' community template (tiktok/gtm-template-pixel). Replace cvt_TIKTOK_PIXEL_TEMPLATE_ID with the cvt_* ID assigned in your destination workspace after installing the template.",
+        "parentFolderId": "15"
+      },
+      {
+        "accountId": "{ACCOUNT_ID}",
+        "containerId": "{CONTAINER_ID}",
+        "tagId": "5",
+        "name": "Snap - Base",
+        "type": "cvt_SNAP_PIXEL_TEMPLATE_ID",
+        "parameter": [
+          { "type": "TEMPLATE", "key": "pixelId", "value": "{{Const - Snap Pixel ID}}" },
+          { "type": "TEMPLATE", "key": "eventName", "value": "PAGE_VIEW" }
+        ],
+        "firingTriggerId": ["2147479553"],
+        "tagFiringOption": "ONCE_PER_EVENT",
+        "monitoringMetadata": { "type": "MAP" },
+        "consentSettings": { "consentStatus": "NOT_SET" },
+        "fingerprint": "0",
+        "notes": "Snap's official 'Snap Pixel' community template (Snapchat/snapchat-google-tag-manager). Replace cvt_SNAP_PIXEL_TEMPLATE_ID with the cvt_* ID assigned in your destination workspace after installing the template from the GTM Community Template Gallery. The base tag fires PAGE_VIEW on every page; Snap's template loads the Pixel SDK and emits the configured event in the same call so no Tag Sequencing is required for downstream Snap event tags.",
+        "parentFolderId": "16"
+      },
+      {
+        "accountId": "{ACCOUNT_ID}",
+        "containerId": "{CONTAINER_ID}",
+        "tagId": "6",
+        "name": "GA4 - Event - view_item",
+        "type": "gaawe",
+        "parameter": [
+          { "type": "TAG_REFERENCE", "key": "measurementId", "value": "GA4 - Config" },
+          { "type": "TEMPLATE", "key": "eventName", "value": "view_item" }
+        ],
+        "firingTriggerId": ["1"],
+        "tagFiringOption": "ONCE_PER_EVENT",
+        "monitoringMetadata": { "type": "MAP" },
+        "consentSettings": { "consentStatus": "NOT_SET" },
+        "fingerprint": "0",
+        "parentFolderId": "10"
+      },
+      {
+        "accountId": "{ACCOUNT_ID}",
+        "containerId": "{CONTAINER_ID}",
+        "tagId": "7",
+        "name": "GA4 - Event - add_to_cart",
+        "type": "gaawe",
+        "parameter": [
+          { "type": "TAG_REFERENCE", "key": "measurementId", "value": "GA4 - Config" },
+          { "type": "TEMPLATE", "key": "eventName", "value": "add_to_cart" }
+        ],
+        "firingTriggerId": ["2"],
+        "tagFiringOption": "ONCE_PER_EVENT",
+        "monitoringMetadata": { "type": "MAP" },
+        "consentSettings": { "consentStatus": "NOT_SET" },
+        "fingerprint": "0",
+        "parentFolderId": "10"
+      },
+      {
+        "accountId": "{ACCOUNT_ID}",
+        "containerId": "{CONTAINER_ID}",
+        "tagId": "8",
+        "name": "GA4 - Event - begin_checkout",
+        "type": "gaawe",
+        "parameter": [
+          { "type": "TAG_REFERENCE", "key": "measurementId", "value": "GA4 - Config" },
+          { "type": "TEMPLATE", "key": "eventName", "value": "begin_checkout" }
+        ],
+        "firingTriggerId": ["3"],
+        "tagFiringOption": "ONCE_PER_EVENT",
+        "monitoringMetadata": { "type": "MAP" },
+        "consentSettings": { "consentStatus": "NOT_SET" },
+        "fingerprint": "0",
+        "parentFolderId": "10"
+      },
+      {
+        "accountId": "{ACCOUNT_ID}",
+        "containerId": "{CONTAINER_ID}",
+        "tagId": "9",
+        "name": "GA4 - Event - purchase",
+        "type": "gaawe",
+        "parameter": [
+          { "type": "TAG_REFERENCE", "key": "measurementId", "value": "GA4 - Config" },
+          { "type": "TEMPLATE", "key": "eventName", "value": "purchase" }
+        ],
+        "firingTriggerId": ["4"],
+        "tagFiringOption": "ONCE_PER_EVENT",
+        "monitoringMetadata": { "type": "MAP" },
+        "consentSettings": { "consentStatus": "NOT_SET" },
+        "fingerprint": "0",
+        "parentFolderId": "10"
+      },
+      {
+        "accountId": "{ACCOUNT_ID}",
+        "containerId": "{CONTAINER_ID}",
+        "tagId": "10",
+        "name": "Google Ads - Conversion - purchase",
+        "type": "awct",
+        "parameter": [
+          { "type": "TEMPLATE", "key": "conversionId", "value": "{{Const - Google Ads Conversion ID}}" },
+          { "type": "TEMPLATE", "key": "conversionLabel", "value": "{{Const - Google Ads Conversion Label - purchase}}" },
+          { "type": "TEMPLATE", "key": "conversionValue", "value": "{{DLV - ecommerce.value}}" },
+          { "type": "TEMPLATE", "key": "currencyCode", "value": "{{DLV - ecommerce.currency}}" },
+          { "type": "TEMPLATE", "key": "orderId", "value": "{{DLV - ecommerce.transaction_id}}" },
+          { "type": "BOOLEAN", "key": "enableConversionLinker", "value": "true" }
+        ],
+        "firingTriggerId": ["4"],
+        "tagFiringOption": "ONCE_PER_EVENT",
+        "monitoringMetadata": { "type": "MAP" },
+        "consentSettings": { "consentStatus": "NOT_SET" },
+        "fingerprint": "0",
+        "parentFolderId": "13"
+      },
+      {
+        "accountId": "{ACCOUNT_ID}",
+        "containerId": "{CONTAINER_ID}",
+        "tagId": "11",
+        "name": "TikTok - Event - ViewContent",
+        "type": "cvt_TIKTOK_PIXEL_TEMPLATE_ID",
+        "parameter": [
+          { "type": "TEMPLATE", "key": "pixelId", "value": "{{Const - TikTok Pixel ID}}" },
+          { "type": "TEMPLATE", "key": "eventType", "value": "ViewContent" },
+          { "type": "TEMPLATE", "key": "contents", "value": "{{CJS - TikTok Pixel Contents}}" }
+        ],
+        "firingTriggerId": ["1"],
+        "tagFiringOption": "ONCE_PER_EVENT",
+        "monitoringMetadata": { "type": "MAP" },
+        "consentSettings": { "consentStatus": "NOT_SET" },
+        "fingerprint": "0",
+        "parentFolderId": "15"
+      },
+      {
+        "accountId": "{ACCOUNT_ID}",
+        "containerId": "{CONTAINER_ID}",
+        "tagId": "12",
+        "name": "TikTok - Event - AddToCart",
+        "type": "cvt_TIKTOK_PIXEL_TEMPLATE_ID",
+        "parameter": [
+          { "type": "TEMPLATE", "key": "pixelId", "value": "{{Const - TikTok Pixel ID}}" },
+          { "type": "TEMPLATE", "key": "eventType", "value": "AddToCart" },
+          { "type": "TEMPLATE", "key": "value", "value": "{{DLV - ecommerce.value}}" },
+          { "type": "TEMPLATE", "key": "currency", "value": "{{DLV - ecommerce.currency}}" },
+          { "type": "TEMPLATE", "key": "contents", "value": "{{CJS - TikTok Pixel Contents}}" }
+        ],
+        "firingTriggerId": ["2"],
+        "tagFiringOption": "ONCE_PER_EVENT",
+        "monitoringMetadata": { "type": "MAP" },
+        "consentSettings": { "consentStatus": "NOT_SET" },
+        "fingerprint": "0",
+        "parentFolderId": "15"
+      },
+      {
+        "accountId": "{ACCOUNT_ID}",
+        "containerId": "{CONTAINER_ID}",
+        "tagId": "13",
+        "name": "TikTok - Event - InitiateCheckout",
+        "type": "cvt_TIKTOK_PIXEL_TEMPLATE_ID",
+        "parameter": [
+          { "type": "TEMPLATE", "key": "pixelId", "value": "{{Const - TikTok Pixel ID}}" },
+          { "type": "TEMPLATE", "key": "eventType", "value": "InitiateCheckout" },
+          { "type": "TEMPLATE", "key": "value", "value": "{{DLV - ecommerce.value}}" },
+          { "type": "TEMPLATE", "key": "currency", "value": "{{DLV - ecommerce.currency}}" },
+          { "type": "TEMPLATE", "key": "contents", "value": "{{CJS - TikTok Pixel Contents}}" }
+        ],
+        "firingTriggerId": ["3"],
+        "tagFiringOption": "ONCE_PER_EVENT",
+        "monitoringMetadata": { "type": "MAP" },
+        "consentSettings": { "consentStatus": "NOT_SET" },
+        "fingerprint": "0",
+        "parentFolderId": "15"
+      },
+      {
+        "accountId": "{ACCOUNT_ID}",
+        "containerId": "{CONTAINER_ID}",
+        "tagId": "14",
+        "name": "TikTok - Event - CompletePayment",
+        "type": "cvt_TIKTOK_PIXEL_TEMPLATE_ID",
+        "parameter": [
+          { "type": "TEMPLATE", "key": "pixelId", "value": "{{Const - TikTok Pixel ID}}" },
+          { "type": "TEMPLATE", "key": "eventType", "value": "Purchase" },
+          { "type": "TEMPLATE", "key": "eventId", "value": "{{DLV - ecommerce.transaction_id}}" },
+          { "type": "TEMPLATE", "key": "value", "value": "{{DLV - ecommerce.value}}" },
+          { "type": "TEMPLATE", "key": "currency", "value": "{{DLV - ecommerce.currency}}" },
+          { "type": "TEMPLATE", "key": "contents", "value": "{{CJS - TikTok Pixel Contents}}" }
+        ],
+        "firingTriggerId": ["4"],
+        "tagFiringOption": "ONCE_PER_EVENT",
+        "monitoringMetadata": { "type": "MAP" },
+        "consentSettings": { "consentStatus": "NOT_SET" },
+        "fingerprint": "0",
+        "notes": "GA4 purchase -> TikTok Purchase (legacy name 'CompletePayment' is automatically renamed to 'Purchase' in the backend per references/tiktok-pixel.md). Tag name retains 'CompletePayment' to mirror the requested mapping label; eventType field uses the canonical 'Purchase'.",
+        "parentFolderId": "15"
+      },
+      {
+        "accountId": "{ACCOUNT_ID}",
+        "containerId": "{CONTAINER_ID}",
+        "tagId": "15",
+        "name": "Snap - Event - VIEW_CONTENT",
+        "type": "cvt_SNAP_PIXEL_TEMPLATE_ID",
+        "parameter": [
+          { "type": "TEMPLATE", "key": "pixelId", "value": "{{Const - Snap Pixel ID}}" },
+          { "type": "TEMPLATE", "key": "eventName", "value": "VIEW_CONTENT" },
+          { "type": "TEMPLATE", "key": "itemIds", "value": "{{CJS - Snap Item IDs}}" },
+          { "type": "TEMPLATE", "key": "clientDedupId", "value": "{{DLV - event_id}}" }
+        ],
+        "firingTriggerId": ["1"],
+        "tagFiringOption": "ONCE_PER_EVENT",
+        "monitoringMetadata": { "type": "MAP" },
+        "consentSettings": { "consentStatus": "NOT_SET" },
+        "fingerprint": "0",
+        "notes": "GA4 view_item -> Snap VIEW_CONTENT (per references/snap-pixel.md GA4 -> Snap mapping). client_dedup_id is sourced from dataLayer event_id for Pixel/CAPI deduplication on non-purchase events.",
+        "parentFolderId": "16"
+      },
+      {
+        "accountId": "{ACCOUNT_ID}",
+        "containerId": "{CONTAINER_ID}",
+        "tagId": "16",
+        "name": "Snap - Event - ADD_CART",
+        "type": "cvt_SNAP_PIXEL_TEMPLATE_ID",
+        "parameter": [
+          { "type": "TEMPLATE", "key": "pixelId", "value": "{{Const - Snap Pixel ID}}" },
+          { "type": "TEMPLATE", "key": "eventName", "value": "ADD_CART" },
+          { "type": "TEMPLATE", "key": "price", "value": "{{DLV - ecommerce.value}}" },
+          { "type": "TEMPLATE", "key": "currency", "value": "{{DLV - ecommerce.currency}}" },
+          { "type": "TEMPLATE", "key": "itemIds", "value": "{{CJS - Snap Item IDs}}" },
+          { "type": "TEMPLATE", "key": "numberItems", "value": "{{CJS - Snap Number Items}}" },
+          { "type": "TEMPLATE", "key": "clientDedupId", "value": "{{DLV - event_id}}" }
+        ],
+        "firingTriggerId": ["2"],
+        "tagFiringOption": "ONCE_PER_EVENT",
+        "monitoringMetadata": { "type": "MAP" },
+        "consentSettings": { "consentStatus": "NOT_SET" },
+        "fingerprint": "0",
+        "notes": "GA4 add_to_cart -> Snap ADD_CART (per references/snap-pixel.md). client_dedup_id is sourced from dataLayer event_id for non-purchase Pixel/CAPI dedup.",
+        "parentFolderId": "16"
+      },
+      {
+        "accountId": "{ACCOUNT_ID}",
+        "containerId": "{CONTAINER_ID}",
+        "tagId": "17",
+        "name": "Snap - Event - START_CHECKOUT",
+        "type": "cvt_SNAP_PIXEL_TEMPLATE_ID",
+        "parameter": [
+          { "type": "TEMPLATE", "key": "pixelId", "value": "{{Const - Snap Pixel ID}}" },
+          { "type": "TEMPLATE", "key": "eventName", "value": "START_CHECKOUT" },
+          { "type": "TEMPLATE", "key": "price", "value": "{{DLV - ecommerce.value}}" },
+          { "type": "TEMPLATE", "key": "currency", "value": "{{DLV - ecommerce.currency}}" },
+          { "type": "TEMPLATE", "key": "itemIds", "value": "{{CJS - Snap Item IDs}}" },
+          { "type": "TEMPLATE", "key": "numberItems", "value": "{{CJS - Snap Number Items}}" },
+          { "type": "TEMPLATE", "key": "clientDedupId", "value": "{{DLV - event_id}}" }
+        ],
+        "firingTriggerId": ["3"],
+        "tagFiringOption": "ONCE_PER_EVENT",
+        "monitoringMetadata": { "type": "MAP" },
+        "consentSettings": { "consentStatus": "NOT_SET" },
+        "fingerprint": "0",
+        "notes": "GA4 begin_checkout -> Snap START_CHECKOUT (per references/snap-pixel.md). client_dedup_id is sourced from dataLayer event_id.",
+        "parentFolderId": "16"
+      },
+      {
+        "accountId": "{ACCOUNT_ID}",
+        "containerId": "{CONTAINER_ID}",
+        "tagId": "18",
+        "name": "Snap - Event - PURCHASE",
+        "type": "cvt_SNAP_PIXEL_TEMPLATE_ID",
+        "parameter": [
+          { "type": "TEMPLATE", "key": "pixelId", "value": "{{Const - Snap Pixel ID}}" },
+          { "type": "TEMPLATE", "key": "eventName", "value": "PURCHASE" },
+          { "type": "TEMPLATE", "key": "transactionId", "value": "{{DLV - ecommerce.transaction_id}}" },
+          { "type": "TEMPLATE", "key": "price", "value": "{{DLV - ecommerce.value}}" },
+          { "type": "TEMPLATE", "key": "currency", "value": "{{DLV - ecommerce.currency}}" },
+          { "type": "TEMPLATE", "key": "itemIds", "value": "{{CJS - Snap Item IDs}}" },
+          { "type": "TEMPLATE", "key": "numberItems", "value": "{{CJS - Snap Number Items}}" }
+        ],
+        "firingTriggerId": ["4"],
+        "tagFiringOption": "ONCE_PER_EVENT",
+        "monitoringMetadata": { "type": "MAP" },
+        "consentSettings": { "consentStatus": "NOT_SET" },
+        "fingerprint": "0",
+        "notes": "GA4 purchase -> Snap PURCHASE (per references/snap-pixel.md). For purchase events Snap dedups on transaction_id (Pixel) <-> event_id (CAPI), so transaction_id is the dedup key (no separate client_dedup_id). currency and price are required.",
+        "parentFolderId": "16"
+      }
+    ],
+    "trigger": [
+      {
+        "accountId": "{ACCOUNT_ID}",
+        "containerId": "{CONTAINER_ID}",
+        "triggerId": "1",
+        "name": "CE - view_item",
+        "type": "CUSTOM_EVENT",
+        "customEventFilter": [
+          {
+            "type": "EQUALS",
+            "parameter": [
+              { "type": "TEMPLATE", "key": "arg0", "value": "{{_event}}" },
+              { "type": "TEMPLATE", "key": "arg1", "value": "view_item" }
+            ]
+          }
+        ],
+        "fingerprint": "0",
+        "parentFolderId": "20"
+      },
+      {
+        "accountId": "{ACCOUNT_ID}",
+        "containerId": "{CONTAINER_ID}",
+        "triggerId": "2",
+        "name": "CE - add_to_cart",
+        "type": "CUSTOM_EVENT",
+        "customEventFilter": [
+          {
+            "type": "EQUALS",
+            "parameter": [
+              { "type": "TEMPLATE", "key": "arg0", "value": "{{_event}}" },
+              { "type": "TEMPLATE", "key": "arg1", "value": "add_to_cart" }
+            ]
+          }
+        ],
+        "fingerprint": "0",
+        "parentFolderId": "20"
+      },
+      {
+        "accountId": "{ACCOUNT_ID}",
+        "containerId": "{CONTAINER_ID}",
+        "triggerId": "3",
+        "name": "CE - begin_checkout",
+        "type": "CUSTOM_EVENT",
+        "customEventFilter": [
+          {
+            "type": "EQUALS",
+            "parameter": [
+              { "type": "TEMPLATE", "key": "arg0", "value": "{{_event}}" },
+              { "type": "TEMPLATE", "key": "arg1", "value": "begin_checkout" }
+            ]
+          }
+        ],
+        "fingerprint": "0",
+        "parentFolderId": "20"
+      },
+      {
+        "accountId": "{ACCOUNT_ID}",
+        "containerId": "{CONTAINER_ID}",
+        "triggerId": "4",
+        "name": "CE - purchase",
+        "type": "CUSTOM_EVENT",
+        "customEventFilter": [
+          {
+            "type": "EQUALS",
+            "parameter": [
+              { "type": "TEMPLATE", "key": "arg0", "value": "{{_event}}" },
+              { "type": "TEMPLATE", "key": "arg1", "value": "purchase" }
+            ]
+          }
+        ],
+        "fingerprint": "0",
+        "parentFolderId": "20"
+      }
+    ],
+    "variable": [
+      {
+        "accountId": "{ACCOUNT_ID}",
+        "containerId": "{CONTAINER_ID}",
+        "variableId": "1",
+        "name": "Const - GA4 Measurement ID",
+        "type": "c",
+        "parameter": [
+          { "type": "TEMPLATE", "key": "value", "value": "{GA4_MEASUREMENT_ID}" }
+        ],
+        "fingerprint": "0",
+        "parentFolderId": "10"
+      },
+      {
+        "accountId": "{ACCOUNT_ID}",
+        "containerId": "{CONTAINER_ID}",
+        "variableId": "2",
+        "name": "Const - Clarity Project ID",
+        "type": "c",
+        "parameter": [
+          { "type": "TEMPLATE", "key": "value", "value": "{CLARITY_PROJECT_ID}" }
+        ],
+        "fingerprint": "0",
+        "parentFolderId": "12"
+      },
+      {
+        "accountId": "{ACCOUNT_ID}",
+        "containerId": "{CONTAINER_ID}",
+        "variableId": "3",
+        "name": "Const - Google Ads Conversion ID",
+        "type": "c",
+        "parameter": [
+          { "type": "TEMPLATE", "key": "value", "value": "{GOOGLE_ADS_CONVERSION_ID}" }
+        ],
+        "fingerprint": "0",
+        "parentFolderId": "13"
+      },
+      {
+        "accountId": "{ACCOUNT_ID}",
+        "containerId": "{CONTAINER_ID}",
+        "variableId": "4",
+        "name": "Const - Google Ads Conversion Label - purchase",
+        "type": "c",
+        "parameter": [
+          { "type": "TEMPLATE", "key": "value", "value": "{GOOGLE_ADS_CONVERSION_LABEL_PURCHASE}" }
+        ],
+        "fingerprint": "0",
+        "parentFolderId": "13"
+      },
+      {
+        "accountId": "{ACCOUNT_ID}",
+        "containerId": "{CONTAINER_ID}",
+        "variableId": "5",
+        "name": "Const - TikTok Pixel ID",
+        "type": "c",
+        "parameter": [
+          { "type": "TEMPLATE", "key": "value", "value": "{TIKTOK_PIXEL_ID}" }
+        ],
+        "fingerprint": "0",
+        "parentFolderId": "15"
+      },
+      {
+        "accountId": "{ACCOUNT_ID}",
+        "containerId": "{CONTAINER_ID}",
+        "variableId": "6",
+        "name": "Const - Snap Pixel ID",
+        "type": "c",
+        "parameter": [
+          { "type": "TEMPLATE", "key": "value", "value": "{SNAP_PIXEL_ID}" }
+        ],
+        "fingerprint": "0",
+        "parentFolderId": "16"
+      },
+      {
+        "accountId": "{ACCOUNT_ID}",
+        "containerId": "{CONTAINER_ID}",
+        "variableId": "7",
+        "name": "DLV - ecommerce",
+        "type": "v",
+        "parameter": [
+          { "type": "TEMPLATE", "key": "name", "value": "ecommerce" },
+          { "type": "INTEGER", "key": "dataLayerVersion", "value": "2" }
+        ],
+        "fingerprint": "0",
+        "parentFolderId": "14"
+      },
+      {
+        "accountId": "{ACCOUNT_ID}",
+        "containerId": "{CONTAINER_ID}",
+        "variableId": "8",
+        "name": "DLV - ecommerce.value",
+        "type": "v",
+        "parameter": [
+          { "type": "TEMPLATE", "key": "name", "value": "ecommerce.value" },
+          { "type": "INTEGER", "key": "dataLayerVersion", "value": "2" }
+        ],
+        "fingerprint": "0",
+        "parentFolderId": "14"
+      },
+      {
+        "accountId": "{ACCOUNT_ID}",
+        "containerId": "{CONTAINER_ID}",
+        "variableId": "9",
+        "name": "DLV - ecommerce.currency",
+        "type": "v",
+        "parameter": [
+          { "type": "TEMPLATE", "key": "name", "value": "ecommerce.currency" },
+          { "type": "INTEGER", "key": "dataLayerVersion", "value": "2" }
+        ],
+        "fingerprint": "0",
+        "parentFolderId": "14"
+      },
+      {
+        "accountId": "{ACCOUNT_ID}",
+        "containerId": "{CONTAINER_ID}",
+        "variableId": "10",
+        "name": "DLV - ecommerce.transaction_id",
+        "type": "v",
+        "parameter": [
+          { "type": "TEMPLATE", "key": "name", "value": "ecommerce.transaction_id" },
+          { "type": "INTEGER", "key": "dataLayerVersion", "value": "2" }
+        ],
+        "fingerprint": "0",
+        "parentFolderId": "14"
+      },
+      {
+        "accountId": "{ACCOUNT_ID}",
+        "containerId": "{CONTAINER_ID}",
+        "variableId": "11",
+        "name": "DLV - ecommerce.items",
+        "type": "v",
+        "parameter": [
+          { "type": "TEMPLATE", "key": "name", "value": "ecommerce.items" },
+          { "type": "INTEGER", "key": "dataLayerVersion", "value": "2" }
+        ],
+        "fingerprint": "0",
+        "parentFolderId": "14"
+      },
+      {
+        "accountId": "{ACCOUNT_ID}",
+        "containerId": "{CONTAINER_ID}",
+        "variableId": "12",
+        "name": "DLV - event_id",
+        "type": "v",
+        "parameter": [
+          { "type": "TEMPLATE", "key": "name", "value": "event_id" },
+          { "type": "INTEGER", "key": "dataLayerVersion", "value": "2" }
+        ],
+        "fingerprint": "0",
+        "parentFolderId": "14"
+      },
+      {
+        "accountId": "{ACCOUNT_ID}",
+        "containerId": "{CONTAINER_ID}",
+        "variableId": "13",
+        "name": "CJS - TikTok Pixel Contents",
+        "type": "jsm",
+        "parameter": [
+          {
+            "type": "TEMPLATE",
+            "key": "javascript",
+            "value": "function() {\n  var ecommerce = {{DLV - ecommerce}};\n  if (!ecommerce || !ecommerce.items) return [];\n  return ecommerce.items.map(function(item) {\n    return {\n      content_id: item.item_id || '',\n      content_name: item.item_name || '',\n      content_type: 'product',\n      quantity: item.quantity || 1,\n      price: item.price || 0\n    };\n  });\n}"
+          }
+        ],
+        "fingerprint": "0",
+        "parentFolderId": "30"
+      },
+      {
+        "accountId": "{ACCOUNT_ID}",
+        "containerId": "{CONTAINER_ID}",
+        "variableId": "14",
+        "name": "CJS - Snap Item IDs",
+        "type": "jsm",
+        "parameter": [
+          {
+            "type": "TEMPLATE",
+            "key": "javascript",
+            "value": "function() {\n  var ecommerce = {{DLV - ecommerce}};\n  var items = ecommerce && ecommerce.items;\n  if (!items || !items.length) return undefined;\n  return items.map(function(item) {\n    return item.item_id || item.id || item.sku;\n  }).filter(Boolean);\n}"
+          }
+        ],
+        "fingerprint": "0",
+        "parentFolderId": "30"
+      },
+      {
+        "accountId": "{ACCOUNT_ID}",
+        "containerId": "{CONTAINER_ID}",
+        "variableId": "15",
+        "name": "CJS - Snap Number Items",
+        "type": "jsm",
+        "parameter": [
+          {
+            "type": "TEMPLATE",
+            "key": "javascript",
+            "value": "function() {\n  var ecommerce = {{DLV - ecommerce}};\n  var items = ecommerce && ecommerce.items;\n  if (!items || !items.length) return undefined;\n  return items.reduce(function(total, item) {\n    var quantity = Number(item.quantity || 1);\n    return total + (isNaN(quantity) ? 1 : quantity);\n  }, 0);\n}"
+          }
+        ],
+        "fingerprint": "0",
+        "parentFolderId": "30"
+      }
+    ],
+    "builtInVariable": [
+      { "accountId": "{ACCOUNT_ID}", "containerId": "{CONTAINER_ID}", "type": "PAGE_URL", "name": "Page URL" },
+      { "accountId": "{ACCOUNT_ID}", "containerId": "{CONTAINER_ID}", "type": "PAGE_HOSTNAME", "name": "Page Hostname" },
+      { "accountId": "{ACCOUNT_ID}", "containerId": "{CONTAINER_ID}", "type": "PAGE_PATH", "name": "Page Path" },
+      { "accountId": "{ACCOUNT_ID}", "containerId": "{CONTAINER_ID}", "type": "REFERRER", "name": "Referrer" },
+      { "accountId": "{ACCOUNT_ID}", "containerId": "{CONTAINER_ID}", "type": "EVENT", "name": "Event" },
+      { "accountId": "{ACCOUNT_ID}", "containerId": "{CONTAINER_ID}", "type": "CLICK_ELEMENT", "name": "Click Element" },
+      { "accountId": "{ACCOUNT_ID}", "containerId": "{CONTAINER_ID}", "type": "CLICK_CLASSES", "name": "Click Classes" },
+      { "accountId": "{ACCOUNT_ID}", "containerId": "{CONTAINER_ID}", "type": "CLICK_ID", "name": "Click ID" },
+      { "accountId": "{ACCOUNT_ID}", "containerId": "{CONTAINER_ID}", "type": "CLICK_URL", "name": "Click URL" },
+      { "accountId": "{ACCOUNT_ID}", "containerId": "{CONTAINER_ID}", "type": "CLICK_TEXT", "name": "Click Text" },
+      { "accountId": "{ACCOUNT_ID}", "containerId": "{CONTAINER_ID}", "type": "FORM_ELEMENT", "name": "Form Element" },
+      { "accountId": "{ACCOUNT_ID}", "containerId": "{CONTAINER_ID}", "type": "FORM_ID", "name": "Form ID" },
+      { "accountId": "{ACCOUNT_ID}", "containerId": "{CONTAINER_ID}", "type": "FORM_CLASSES", "name": "Form Classes" },
+      { "accountId": "{ACCOUNT_ID}", "containerId": "{CONTAINER_ID}", "type": "FORM_URL", "name": "Form URL" },
+      { "accountId": "{ACCOUNT_ID}", "containerId": "{CONTAINER_ID}", "type": "SCROLL_DEPTH_THRESHOLD", "name": "Scroll Depth Threshold" },
+      { "accountId": "{ACCOUNT_ID}", "containerId": "{CONTAINER_ID}", "type": "SCROLL_DEPTH_UNITS", "name": "Scroll Depth Units" },
+      { "accountId": "{ACCOUNT_ID}", "containerId": "{CONTAINER_ID}", "type": "SCROLL_DEPTH_DIRECTION", "name": "Scroll Depth Direction" },
+      { "accountId": "{ACCOUNT_ID}", "containerId": "{CONTAINER_ID}", "type": "DEBUG_MODE", "name": "Debug Mode" },
+      { "accountId": "{ACCOUNT_ID}", "containerId": "{CONTAINER_ID}", "type": "RANDOM_NUMBER", "name": "Random Number" },
+      { "accountId": "{ACCOUNT_ID}", "containerId": "{CONTAINER_ID}", "type": "CONTAINER_ID", "name": "Container ID" }
+    ],
+    "folder": [
+      { "accountId": "{ACCOUNT_ID}", "containerId": "{CONTAINER_ID}", "folderId": "10", "name": "GA4", "fingerprint": "0" },
+      { "accountId": "{ACCOUNT_ID}", "containerId": "{CONTAINER_ID}", "folderId": "12", "name": "Clarity", "fingerprint": "0" },
+      { "accountId": "{ACCOUNT_ID}", "containerId": "{CONTAINER_ID}", "folderId": "13", "name": "Google Ads", "fingerprint": "0" },
+      { "accountId": "{ACCOUNT_ID}", "containerId": "{CONTAINER_ID}", "folderId": "14", "name": "GA4 - Ecommerce", "fingerprint": "0" },
+      { "accountId": "{ACCOUNT_ID}", "containerId": "{CONTAINER_ID}", "folderId": "15", "name": "TikTok", "fingerprint": "0" },
+      { "accountId": "{ACCOUNT_ID}", "containerId": "{CONTAINER_ID}", "folderId": "16", "name": "Snap", "fingerprint": "0" },
+      { "accountId": "{ACCOUNT_ID}", "containerId": "{CONTAINER_ID}", "folderId": "20", "name": "_Global", "fingerprint": "0" },
+      { "accountId": "{ACCOUNT_ID}", "containerId": "{CONTAINER_ID}", "folderId": "30", "name": "Utilities", "fingerprint": "0" }
+    ],
+    "customTemplate": [
+      {
+        "accountId": "{ACCOUNT_ID}",
+        "containerId": "{CONTAINER_ID}",
+        "templateId": "100",
+        "name": "Microsoft Clarity - Official",
+        "fingerprint": "0",
+        "templateData": "___TERMS_OF_SERVICE___\n\nBy creating or modifying this file you agree to Google Tag Manager's Community\nTemplate Gallery Developer Terms of Service available at\nhttps://developers.google.com/tag-manager/gallery-tos (or such other URL as\nGoogle may provide), as modified from time to time.\n\n\n___INFO___\n\n{\n  \"type\": \"TAG\",\n  \"id\": \"cvt_MQDKZ\",\n  \"version\": 1,\n  \"displayName\": \"Microsoft Clarity - Official\",\n  \"categories\": [\n    \"ANALYTICS\",\n    \"HEAT_MAP\",\n    \"SESSION_RECORDING\"\n  ],\n  \"brand\": {\n    \"id\": \"github.com_microsoft\",\n    \"displayName\": \"microsoft\"\n  },\n  \"description\": \"Clarity is a user behavior analytics tool, which helps you understand how users are interacting with your website.\",\n  \"containerContexts\": [\n    \"WEB\"\n  ]\n}\n",
+        "galleryReference": {
+          "host": "github.com",
+          "owner": "microsoft",
+          "repository": "clarity-gtm-template",
+          "version": "d85d0a7070ff9e1626bb260dfa341653be7f3266",
+          "signature": "6d80fb063e54671b559a5692f7bfdedb1ae33ebbe20063c6515d68a895455b45",
+          "galleryTemplateId": "MQDKZ"
+        }
+      },
+      {
+        "accountId": "{ACCOUNT_ID}",
+        "containerId": "{CONTAINER_ID}",
+        "templateId": "101",
+        "name": "TikTok Pixel",
+        "fingerprint": "0",
+        "templateData": "___TERMS_OF_SERVICE___\n\nBy creating or modifying this file you agree to Google Tag Manager's Community\nTemplate Gallery Developer Terms of Service available at\nhttps://developers.google.com/tag-manager/gallery-tos (or such other URL as\nGoogle may provide), as modified from time to time.\n\n\n___INFO___\n\n{\n  \"type\": \"TAG\",\n  \"id\": \"cvt_TIKTOK_PIXEL_TEMPLATE_ID\",\n  \"version\": 1,\n  \"displayName\": \"TikTok Pixel\",\n  \"categories\": [\n    \"ADVERTISING\",\n    \"MARKETING\",\n    \"ANALYTICS\"\n  ],\n  \"brand\": {\n    \"id\": \"github.com_tiktok\",\n    \"displayName\": \"TikTok\"\n  },\n  \"description\": \"TikTok's official 'TikTok Pixel' template (tiktok/gtm-template-pixel). NOTE: Replace cvt_TIKTOK_PIXEL_TEMPLATE_ID with the cvt_* ID assigned in your destination workspace after installing 'TikTok Pixel' from the GTM Community Template Gallery. The exact galleryReference (version commit SHA, signature, galleryTemplateId) is install-time and not included here.\",\n  \"containerContexts\": [\n    \"WEB\"\n  ]\n}\n"
+      },
+      {
+        "accountId": "{ACCOUNT_ID}",
+        "containerId": "{CONTAINER_ID}",
+        "templateId": "102",
+        "name": "Snap Pixel",
+        "fingerprint": "0",
+        "templateData": "___TERMS_OF_SERVICE___\n\nBy creating or modifying this file you agree to Google Tag Manager's Community\nTemplate Gallery Developer Terms of Service available at\nhttps://developers.google.com/tag-manager/gallery-tos (or such other URL as\nGoogle may provide), as modified from time to time.\n\n\n___INFO___\n\n{\n  \"type\": \"TAG\",\n  \"id\": \"cvt_SNAP_PIXEL_TEMPLATE_ID\",\n  \"version\": 1,\n  \"displayName\": \"Snap Pixel\",\n  \"categories\": [\n    \"ADVERTISING\",\n    \"MARKETING\",\n    \"ANALYTICS\"\n  ],\n  \"brand\": {\n    \"id\": \"github.com_Snapchat\",\n    \"displayName\": \"Snap\"\n  },\n  \"description\": \"Snap's official 'Snap Pixel' template (Snapchat/snapchat-google-tag-manager). Exposes Pixel ID, Event Type, commerce parameters (price, currency, transaction_id, item_ids, item_category, number_items), advanced match (hashed email/phone/name), client_dedup_id for non-purchase dedup, and Conversions API Gateway script URL. NOTE: Replace cvt_SNAP_PIXEL_TEMPLATE_ID with the cvt_* ID assigned in your destination workspace after installing 'Snap Pixel' from the GTM Community Template Gallery. The exact galleryReference (version commit SHA, signature, galleryTemplateId) is install-time and not included here.\",\n  \"containerContexts\": [\n    \"WEB\"\n  ]\n}\n"
+      }
+    ],
+    "fingerprint": "0",
+    "tagManagerUrl": ""
+  }
+}
