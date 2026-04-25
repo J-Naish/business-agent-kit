@@ -17,7 +17,9 @@ Design tracking configurations for GA4, GTM, and each ad platform, and output an
 
 ## 0. Reading the application code
 
-If the source code of the site/app to be tracked exists within the project (e.g., under `dev/`), **always read and understand it before starting design.** Understanding the actual code dramatically improves the precision of dataLayer design, trigger conditions, and event definitions.
+If the source code of the site/app to be tracked is accessible (anywhere in the workspace, or at a path the user provides), **read and understand it before starting design.** Reading the actual code dramatically improves the precision of dataLayer design, trigger conditions, and event definitions — guessing at form IDs or routing patterns leads to triggers that silently fail in production.
+
+Skip this step only if the code is not accessible (e.g., the user is integrating with a third-party site they cannot read).
 
 **Points to check:**
 - Page structure and routing (SPA/MPA detection, identification of major pages)
@@ -28,8 +30,8 @@ If the source code of the site/app to be tracked exists within the project (e.g.
 - HTML `data-*` attributes and class names (elements that can be used for trigger conditions)
 
 **Procedure:**
-1. Confirm the directory path of the target app with the user
-2. Understand the project structure (explore files via Glob/Grep)
+1. Ask the user where the application source lives (or confirm if it is obvious from the workspace)
+2. Explore the structure (Glob/Grep) before reading individual files
 3. Read the source of major pages and components
 4. Identify existing tracking implementations and avoid duplication
 
@@ -41,7 +43,7 @@ Collect the following from the user. Ask questions to clarify any unknown items.
 
 | # | Item | Example | Required |
 |---|------|-----|------|
-| 1 | Application path | `apps/my-site/` | If located within the project |
+| 1 | Application path (if readable) | (path the user provides) | If the source is accessible |
 | 2 | Site type | Corporate / LP / EC / Lead generation | ✅ |
 | 3 | Platforms to use | GA4, Google Ads, Meta, TikTok, X, Clarity | ✅ |
 | 4 | Primary conversions | Purchase, form submission, phone tap, etc. | ✅ |
@@ -68,12 +70,14 @@ Detailed specifications for each platform are in the manuals under the `referenc
 | `references/google-tag-manager.md` | GTM container design, naming conventions, JSON specification | **Always read** (foundation for JSON output) |
 | `references/google-analytics.md` | GA4 property design, event taxonomy, recommended events, ecommerce | When using GA4 |
 | `references/google-ads.md` | Conversion design, enhanced conversions, dynamic remarketing | When using Google Ads |
+| `references/microsoft-ads.md` | UET tag, conversion goals, custom events, dataLayer mapping | When using Microsoft Ads / Bing |
 | `references/meta-pixel.md` | Standard events, custom events, Conversions API | When using Meta |
 | `references/tiktok-pixel.md` | Standard events, Events API, Advanced Matching | When using TikTok |
 | `references/x-pixel.md` | Standard events, Conversion API | When using X |
 | `references/pinterest-tag.md` | Standard events, Conversions API, Enhanced Match | When using Pinterest |
 | `references/snap-pixel.md` | Standard events, Conversions API v3, advanced match, dedup | When using Snap |
 | `references/reddit-pixel.md` | Standard events, Conversions API, Advanced Matching, DPAs | When using Reddit Ads |
+| `references/linkedin-insight-tag.md` | Insight Tag, conversions, Matched Audiences, Conversions API | When using LinkedIn |
 | `references/microsoft-clarity.md` | Heatmaps, session recordings, custom tags | When using Clarity |
 | `references/hotjar.md` | Tracking Code, Events API, Identify API, suppression | When using Hotjar |
 
@@ -184,3 +188,17 @@ After outputting the JSON, guide the user through the following.
 3. Verify with each platform's helper tool (Meta Pixel Helper, etc.)
 4. Confirm no PII is included in events
 5. If there are no issues, fill in the version name and description and publish
+
+---
+
+## Patching an existing container
+
+If the user has an existing GTM container and wants to add/change a few tags rather than rebuild from scratch:
+
+1. **Ask the user to export the current container** from GTM (Admin → Export Container) and provide the JSON. This gives you the existing tag/trigger/variable IDs and folder structure.
+2. **Read the export** to understand what is already in place — naming conventions actually in use, existing constant variables, folder layout. Match the user's current style rather than imposing the conventions in `references/google-tag-manager.md` blindly (deviation creates inconsistency that confuses operators).
+3. **Generate a small, additive JSON** containing only the new tags/triggers/variables. Reuse existing trigger and variable IDs by reference where possible. Place new items into existing folders.
+4. **Tell the user to import with "Merge"** (not Overwrite) and choose **"Rename"** on conflicts so existing items are preserved. Overwrite would wipe their container.
+5. **Skip the example-based pattern study** (Section 3) — the existing container is the source of truth for structure. Examples are for greenfield builds.
+
+The JSON output naming follows the same convention but use a descriptive `{type}` like `gtm-add-meta-purchase-v1-20260426.json` so the patch nature is obvious.

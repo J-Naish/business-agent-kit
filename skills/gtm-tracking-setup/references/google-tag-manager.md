@@ -6,6 +6,22 @@
 
 ---
 
+## Contents
+
+1. **Prerequisites** — info to collect, basic principles (PII, single-snippet rule)
+2. **Container Structure Design** — folders, firing order, typical tags, trigger sharing, dataLayer, constant variables
+3. **Naming Conventions** — tags / triggers / variables / folders / versions
+4. **Container JSON Specification** — export/import format, top-level structure, Tag/Trigger/Variable/BuiltInVariable/Parameter/Folder schemas, built-in trigger IDs, import notes, example container JSON index
+5. **Per-Platform Reference** — pointer to per-platform manuals
+6. **Additional Use Cases** — cross-domain tracking, internal traffic exclusion, file download / outbound link / phone tap tracking
+7. **Operational Rules** — version management, workspaces, performance
+8. **Checklist** — new container setup, pre-publish, naming and structure
+9. **Debugging** — Preview mode, helper tools
+
+Section 4 is the load-bearing JSON spec — read it whenever generating or editing a container JSON. Sections 6–9 are operational; consult only for the relevant scenario.
+
+---
+
 ## 1. Prerequisites
 
 ### 1.1 Information to Collect from the User
