@@ -1,9 +1,9 @@
 ---
 name: visual-design
-description: A foundational principles-and-practices skill for any design task. Apply it to anything that has a visual surface — websites, landing pages, app UIs, dashboards, slide decks, PDFs, image creatives, posters, email templates, video. Use whenever the user mentions design, UI, UX, layout, look-and-feel, styling, visuals, color, typography, spacing, or animation, and whenever you write code that determines how a website, app, slide, or image looks.
+description: A foundational principles-and-practices skill for any design task. Apply it to anything that has a visual surface — websites, landing pages, app UIs, dashboards, slide decks, PDFs, image creatives, posters, email templates, video. Make sure to use this skill whenever the user mentions design, UI, UX, layout, look-and-feel, styling, visuals, color, typography, spacing, or animation, and whenever you write code that determines how a website, app, slide, or image looks — even if they don't explicitly say "design." Skip it for pure copy edits, code refactors with no visual impact, or conceptual discussions where no artifact is being produced.
 ---
 
-Principles and a practical playbook for producing strong design work. Use this as the basis for every design decision and every artifact you make.
+Strong design isn't a finishing layer — it's a sequence of decisions about purpose, context, and visual system that compound into the final artifact. This skill is the playbook for making those decisions well, on every surface from a one-off poster to a full product UI.
 
 ## Workflow
 
@@ -64,7 +64,7 @@ If there is no `DESIGN.md`, decide based on scope:
 - One-off small piece of design → don't bother.
 - Unsure → ask the user.
 
-When you do create a `DESIGN.md`, you don't need every section. Include only what the artifact actually needs. See [references/design-md-guide.md](references/design-md-guide.md) for how to write and update it. The [examples/](examples/) directory has design systems modeled on real brands; use them for:
+When you do create a `DESIGN.md`, you don't need every section. Include only what the artifact actually needs. See [references/design-md-guide.md](references/design-md-guide.md) for how to write and update it. The [examples/](examples/) directory has design systems modeled on real brands — start at [examples/README.md](examples/README.md), which groups them by tone (minimal/premium, warm/editorial, developer/technical, bold/expressive, AI-native) so you can pick 1–2 anchors before opening the full files. Use them for:
 - Reference for `DESIGN.md` format and level of detail.
 - Reference for color strategy, typographic hierarchy, shadow systems, etc.
 - A starting point — if a sample brand is close to what you're going for, adapt it.
@@ -199,12 +199,15 @@ The main components that compose a design. You won't read every reference every 
 - **Depth & elevation** — express hierarchy via shadow, border, or background brightness shifts. Design distinct levels: flat → slightly raised → card → modal → ... → [references/depth.md](references/depth.md)
 - **Responsive** (only if you need to deploy across multiple devices and sizes) — the strategy for adapting to screen size. Breakpoints, column collapse, type scaling, touch targets → [references/responsive.md](references/responsive.md)
 - **Motion & interaction** (dynamic only) — animation, transitions, hover effects, scroll-linking. Motion must serve a purpose; never animate purely for decoration → [references/motion.md](references/motion.md)
+- **Imagery & iconography** — photography, illustration, icons, logos. Style consistency matters as much as color or type: a single sloppy icon or off-brand stock photo lowers the perceived quality of the whole piece. Define one icon family (line vs. filled, weight, corner radius) and one imagery direction (photographic vs. illustrative, warm vs. cool, literal vs. abstract) and stick to it. When you don't have the real asset, follow the placeholder rule from "Marks of strong design" — a labeled box beats a bad self-made asset every time.
 
 ---
 
 ## Reference guide by task
 
 You don't need to load every reference every time. Pull what fits the artifact.
+
+### By artifact
 
 | Artifact | Building blocks | Principles & extras |
 |----------|-----------------|---------------------|
@@ -214,3 +217,13 @@ You don't need to load every reference every time. Pull what fits the artifact.
 | Image creative / Poster | color, typography, layout | — |
 | Email template | color, typography, layout, components | responsive as needed |
 | Video | color, typography, layout | motion as needed |
+
+### By situation
+
+| Situation | Reference |
+|-----------|-----------|
+| Standing up a new project that needs a documented design system | [references/design-md-guide.md](references/design-md-guide.md) |
+| Looking for a tonal anchor before drafting | [examples/README.md](examples/README.md) |
+| Designing a UI flow, app, or anything interactive — minimizing cognitive load, state design, progressive disclosure | [references/ux-ui.md](references/ux-ui.md) |
+| Output feels generic, templated, or "AI-looking" — also as a standard polish-stage check on every piece | [references/anti-ai-aesthetic.md](references/anti-ai-aesthetic.md) |
+| Pushing the work toward art at deliberate cost to function (editorial, brand campaign, expressive moments) | [references/artistry.md](references/artistry.md) |
