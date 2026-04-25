@@ -15,6 +15,7 @@ Hooks earn attention with strong claims. That's exactly why a single fabricated 
 - **Don't fake scarcity.** "Limited to 50 spots," "ends Friday," "private preview" — only if the constraint is actually real. Don't manufacture deadlines or supply caps.
 - **Don't exaggerate losses or risk.** "Costing you $500/month," "your business won't survive" — only if there's a defensible reason.
 - **When you can't substantiate, lean on structural hooks.** Counter-intuition, questions, story, audience call-out — these work without depending on a verifiable claim.
+- **When you don't have the fact, use a labeled placeholder rather than vague filler.** `[X% improvement]` is honest; "significant improvement" in place of an unknown number is not. Drop in `[Customer name]`, `[Specific result]`, `[Date]` and ask the user for the real value before publishing.
 
 ## When not to use hooks
 

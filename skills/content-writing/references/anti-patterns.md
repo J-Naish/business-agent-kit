@@ -73,36 +73,37 @@ Common ways prose goes wrong. Use this list as a self-check while drafting, as a
 40. **Hollow appeals to authority** — "Experts agree," "studies show," with no specific expert or study named.
 41. **All emotion, no logic** — Pushing on fear, urgency, or empathy without any reasoning the reader can verify.
 42. **Spec dump** — Listing features without translating them into what the reader actually gets.
+43. **Plausible-sounding inventions** — When the real number, name, or quote isn't available, papering the gap with confident-but-unverifiable language ("many customers," "significant gains," "industry-leading"). It reads like specificity, but it isn't. Use a labeled placeholder (`[X%]`, `[Customer name]`) and ask for the real data instead.
 
 ---
 
 ## Tone and posture
 
-43. **Talking down to the reader** — Lecturing, condescension, "as you may not know." Especially toxic in B2C.
-44. **Tone drift** — Casual at the top, formal in the middle, breezy again at the close. The voice doesn't feel like one person.
-45. **Wrong distance from the reader** — Too familiar with strangers, too stiff with people you actually know. The register doesn't match the relationship.
-46. **Self-congratulation** — "Our amazing service," "our innovative platform." When you say it about yourself, it reads as hollow.
-47. **Pushy** — "Act now," "don't miss out," "you must." Stacked urgency raises suspicion instead of converting.
-48. **Hedging everything** — "It might be the case that this could potentially…" Soft language piled on soft language until the reader can't tell what you actually believe.
+44. **Talking down to the reader** — Lecturing, condescension, "as you may not know." Especially toxic in B2C.
+45. **Tone drift** — Casual at the top, formal in the middle, breezy again at the close. The voice doesn't feel like one person.
+46. **Wrong distance from the reader** — Too familiar with strangers, too stiff with people you actually know. The register doesn't match the relationship.
+47. **Self-congratulation** — "Our amazing service," "our innovative platform." When you say it about yourself, it reads as hollow.
+48. **Pushy** — "Act now," "don't miss out," "you must." Stacked urgency raises suspicion instead of converting.
+49. **Hedging everything** — "It might be the case that this could potentially…" Soft language piled on soft language until the reader can't tell what you actually believe.
 
 ---
 
 ## Reader experience
 
-49. **Visually punishing** — Walls of text, no breaks, no whitespace. The reader bounces before reading a word.
-50. **Paragraphs too long** — Ten-line blocks that feel like work just to look at.
-51. **Prose where a list belongs** — Burying parallel items inside paragraphs so the reader can't compare them at a glance.
-52. **Unexplained jargon** — Using terms the audience may not know, with no gloss on first use.
-53. **Pronoun fog** — "This," "that," "it" piling up until no one knows what any of them refer to.
-54. **Unscannable** — No headings, no bold, no lists. A reader skimming for the point can't find it.
-55. **Bait-and-switch headlines** — A title that promises something the body doesn't deliver. Pays for one click and burns the next ten.
+50. **Visually punishing** — Walls of text, no breaks, no whitespace. The reader bounces before reading a word.
+51. **Paragraphs too long** — Ten-line blocks that feel like work just to look at.
+52. **Prose where a list belongs** — Burying parallel items inside paragraphs so the reader can't compare them at a glance.
+53. **Unexplained jargon** — Using terms the audience may not know, with no gloss on first use.
+54. **Pronoun fog** — "This," "that," "it" piling up until no one knows what any of them refer to.
+55. **Unscannable** — No headings, no bold, no lists. A reader skimming for the point can't find it.
+56. **Bait-and-switch headlines** — A title that promises something the body doesn't deliver. Pays for one click and burns the next ten.
 
 ---
 
 ## Editing and revision
 
-56. **Skipping the edit pass** — Shipping the first draft. Typos, logic gaps, and bloat all survive.
-57. **Refusing to cut** — Keeping a sentence because you wrote it, not because it earns its place.
-58. **Falling in love with your own phrasing** — A clever line that the reader has to work to parse is a clever line that should go.
-59. **Editing for everything at once** — Trying to fix clarity, tone, and specificity in a single pass. Each gets done badly.
-60. **Writing in a closed loop** — Never showing it to anyone else. Your blind spots stay blind.
+57. **Skipping the edit pass** — Shipping the first draft. Typos, logic gaps, and bloat all survive.
+58. **Refusing to cut** — Keeping a sentence because you wrote it, not because it earns its place.
+59. **Falling in love with your own phrasing** — A clever line that the reader has to work to parse is a clever line that should go.
+60. **Editing for everything at once** — Trying to fix clarity, tone, and specificity in a single pass. Each gets done badly.
+61. **Writing in a closed loop** — Never showing it to anyone else. Your blind spots stay blind.

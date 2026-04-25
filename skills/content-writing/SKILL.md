@@ -21,6 +21,7 @@ Produce the most effective copy for the goal at hand, or diagnose and rewrite co
 1. **Gather** — Pull together everything useful about the subject, the audience, and the context. If the source material is thin, ask or research before you write.
 2. **Select** — From what you gathered, keep only what serves the change you want to cause. Trying to say everything is the same as saying nothing. Filter against the reader's interests, problems, and decision criteria.
 3. **Express** — Put the selected information into the words, order, and structure that will land hardest with this reader. The same facts in different shapes produce different results.
+4. **Use placeholders, never fabricate** — When you don't have a specific number, customer name, quote, result, or detail, don't paper over the gap with plausible-sounding invention or vague hand-waving. Drop in a labeled placeholder (`[X% improvement]`, `[Customer name]`, `[Specific feature]`, `[Date]`) and ask the user for the real data. One fabricated detail does more damage to credibility than ten visible gaps. A placeholder is honest; "significant gains" in place of an unknown number is not.
 
 Most weak writing fails at step 1 or step 2 — not enough source material, or no editorial discipline about what to leave out. Surface-level wordcraft cannot rescue a piece that is unfocused at the foundation.
 
