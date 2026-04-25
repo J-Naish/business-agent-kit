@@ -1,5 +1,5 @@
 ---
-name: design-craft
+name: visual-design
 description: A foundational principles-and-practices skill for any design task. Apply it to anything that has a visual surface — websites, landing pages, app UIs, dashboards, slide decks, PDFs, image creatives, posters, email templates, video. Use whenever the user mentions design, UI, UX, layout, look-and-feel, styling, visuals, color, typography, spacing, or animation, and whenever you write code that determines how a website, app, slide, or image looks.
 ---
 
