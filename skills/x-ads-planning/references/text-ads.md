@@ -2,6 +2,8 @@
 
 Text Ads are Promoted Ads that look and behave like standard posts. Use them when the message itself is the creative.
 
+Spec source: X Creative Ad Specifications (https://business.x.com/en/help/campaign-setup/creative-ad-specifications). Last verified: 2026-04.
+
 ## Specs
 
 | Item | Guidance |
@@ -53,3 +55,17 @@ Judge Text Ads by the job:
 - Awareness: reach, frequency, CPM.
 - Engagement: engagement rate, CPE, conversation quality.
 - Traffic/conversion: CPC, landing page behavior, conversion rate, CPA.
+
+## Diagnosis
+
+| Symptom | Likely cause | Response |
+|---|---|---|
+| Low engagement | Message feels generic or ad-like | Rewrite with a sharper point of view or audience callout |
+| Engagement but no action | No clear path or CTA | Add destination logic or pair with a card/media format |
+| Negative replies | Claim, tone, or audience mismatch | Review policy, comments, and brand-safety posture |
+
+## Operating Cadence
+
+- Use Text Ads for fast message testing before producing heavier creative.
+- Promote organic posts only when the organic engagement is relevant and high quality.
+- Retire messages that drive low-quality replies even if engagement volume is high.

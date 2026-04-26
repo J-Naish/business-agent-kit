@@ -2,6 +2,8 @@
 
 Collection Ads let advertisers showcase a primary hero image with smaller product thumbnails below. They are useful for discovery, browsing, and commerce-oriented campaigns.
 
+Spec source: X Creative Ad Specifications (https://business.x.com/en/help/campaign-setup/creative-ad-specifications). Last verified: 2026-04.
+
 ## Use Cases
 
 - E-commerce product discovery.
@@ -42,3 +44,17 @@ Collection Ads let advertisers showcase a primary hero image with smaller produc
 - Dead or mismatched product URLs.
 - Promoting low-margin products without margin visibility.
 - Treating Collection Ads as a replacement for catalog/feed hygiene.
+
+## Diagnosis
+
+| Symptom | Likely cause | Response |
+|---|---|---|
+| Low CTR | Hero image does not explain the collection | Rebuild the hero around one clear category, offer, or use case |
+| Clicks concentrate on one thumbnail | Product set is uneven | Split top product into its own ad or rebuild the collection |
+| Revenue weak despite clicks | Products are low-margin or poor-fit | Review product-level margin and landing-page match |
+
+## Operating Cadence
+
+- Check product URLs and availability before launch.
+- Review product-level clicks and revenue weekly.
+- Refresh hero images around seasonality, new arrivals, and best sellers.

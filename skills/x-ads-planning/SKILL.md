@@ -1,6 +1,6 @@
 ---
 name: x-ads-planning
-description: Plan and design X Ads programs end-to-end: choose campaign objectives, X ad formats, campaign structure, targeting, bidding, creative requirements, measurement, and operating cadence. Use this skill whenever the user mentions X Ads, Twitter Ads, paid campaigns on X, Promoted Ads, Vertical Video Ads, X Amplify, X Takeovers, Dynamic Product Ads, Collection Ads, Branded Notifications, Branded Hashtags, Keyword Ads, or X campaign planning.
+description: Plan and design X Ads programs end-to-end: choose campaign objectives, X ad formats, campaign structure, targeting, bidding, creative requirements, measurement, policy constraints, and operating cadence. Use this skill whenever the user mentions X Ads, Twitter Ads, paid campaigns on X, Promoted Ads, Vertical Video Ads, X Amplify, X Takeovers, Dynamic Product Ads, Collection Ads, Branded Notifications, Branded Hashtags, Keyword Ads, Housing/Lending/Credit ads, Cause-Based Advertising, regulated X Ads, or X campaign planning.
 ---
 
 # X Ads Planning
@@ -143,7 +143,8 @@ Before choosing the final mix, combine:
 1. Business-model fit from [references/business-model-playbooks.md](references/business-model-playbooks.md).
 2. Budget and signal viability from [references/budget-planning.md](references/budget-planning.md).
 3. Measurement readiness from [references/measurement-and-signal-quality.md](references/measurement-and-signal-quality.md).
-4. Objective, format, and buying-path fit from the sections below.
+4. Policy/account eligibility from [references/policy-and-account-requirements.md](references/policy-and-account-requirements.md).
+5. Objective, format, and buying-path fit from the sections below.
 
 Do not recommend a campaign type just because it exists. If budget, event quality, creative supply, account eligibility, catalog health, or measurement cannot support it, state what must be fixed first.
 
@@ -275,6 +276,7 @@ Produce the output that fits the user's request: a short recommendation, structu
 | Business-model playbooks | [business-model-playbooks.md](references/business-model-playbooks.md) | E-commerce, lead gen, SaaS/B2B, app, brand, event |
 | Budget planning | [budget-planning.md](references/budget-planning.md) | CPA/CPI/ROAS economics, signal viability, budget split |
 | Measurement and signal quality | [measurement-and-signal-quality.md](references/measurement-and-signal-quality.md) | X Pixel, Conversion API, MMP, catalog, attribution, incrementality |
+| Policy and account requirements | [policy-and-account-requirements.md](references/policy-and-account-requirements.md) | Account eligibility, Verified Organizations, HLC, cause-based, healthcare, finance, restricted categories |
 | Diagnostics | [diagnostic-decision-trees.md](references/diagnostic-decision-trees.md) | Existing-account failure modes and fixes |
 | Creative fundamentals | [creative-fundamentals.md](references/creative-fundamentals.md) | Aesthetic Score, copy, hooks, CTA, testing |
 | Format-specific details | Format files linked above | Specs, use cases, mistakes |

@@ -2,6 +2,8 @@
 
 Keywords campaigns reach people based on what they search for on X and can serve promoted posts in Search Results. Keep this separate from **keyword targeting**, which is a targeting feature available in broader campaign setup.
 
+Spec source: X Create a Keywords Campaign docs (https://business.x.com/en/help/campaign-setup/create-a-keywords-campaign) and Keyword Targeting docs (https://business.x.com/en/help/campaign-setup/campaign-targeting/keyword-targeting). Last verified: 2026-04.
+
 ## Product Behavior
 
 | Item | Guidance |
@@ -62,3 +64,17 @@ For general keyword targeting outside this campaign workflow, current official d
 - Using generic copy that does not match the search intent.
 - Judging only on CTR.
 - Not using UTMs or landing-page analytics.
+
+## Diagnosis
+
+| Symptom | Likely cause | Response |
+|---|---|---|
+| Low delivery | Too few keywords or low-volume topic | Expand to adjacent terms, handles, and problem language |
+| High CTR, low conversion | Curiosity/search mismatch | Tighten copy to the user's intent and improve landing-page match |
+| Poor quality traffic | Mixed intent keywords | Split brand/category/problem/competitor terms |
+
+## Operating Cadence
+
+- Review keyword clusters weekly and add/remove terms in batches.
+- Keep separate ad groups for materially different intent levels.
+- Rebuild local-language keyword sets manually; do not assume translation.

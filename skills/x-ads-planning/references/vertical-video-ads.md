@@ -2,6 +2,8 @@
 
 Vertical Video Ads are full-screen, sound-on video ads in X's Immersive Media Viewer and related vertical video experiences.
 
+Spec source: X Vertical Video Ads product page (https://business.x.com/en/products/vertical-video-ads) and Creative Ad Specifications (https://business.x.com/en/help/campaign-setup/creative-ad-specifications). Last verified: 2026-04.
+
 ## Specs
 
 | Item | Guidance |
@@ -62,3 +64,17 @@ Final seconds: CTA
 - Putting text too close to UI areas.
 - Slow first frame.
 - No clear CTA after the first few seconds.
+
+## Diagnosis
+
+| Symptom | Likely cause | Response |
+|---|---|---|
+| Low retention | Hook is not immediate or vertical-native | Recut for 0-1s attention and full-frame composition |
+| Clicks do not materialize | CTA/product appears too late | Introduce product and CTA logic before the 1-second CTA button |
+| Looks cropped or cluttered | Reused horizontal asset without redesign | Rebuild safe-zone layout for 9:16 |
+
+## Operating Cadence
+
+- Check mobile preview before launch.
+- Test first-frame concepts separately from offer/CTA concepts.
+- Refresh quickly when retention drops; vertical inventory punishes stale openings.

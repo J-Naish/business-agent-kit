@@ -2,6 +2,8 @@
 
 Dynamic Product Ads help advertisers deliver relevant products from a catalog to users based on behavior and predicted interest.
 
+Spec source: X Dynamic Product Ads setup docs (https://business.x.com/en/help/campaign-setup/create-a-dynamic-product-ads-campaign) and Creative Ad Specifications (https://business.x.com/en/help/campaign-setup/creative-ad-specifications). Last verified: 2026-04.
+
 ## Types
 
 | Type | Use |
@@ -60,3 +62,18 @@ Avoid overusing discount language if it weakens brand positioning or trains low-
 - Weak product images.
 - Retargeting windows that are too broad for the purchase cycle.
 - Reporting only revenue ROAS without margin or incrementality context.
+
+## Diagnosis
+
+| Symptom | Likely cause | Response |
+|---|---|---|
+| Few products serve | Product set too narrow or feed errors | Check X Shopping Manager approval, filters, availability, and image URLs |
+| Retargeting underdelivers | Catalog Activity Audience too small | Add relevant List Custom Audiences where appropriate |
+| ROAS looks good but profit weak | Low-margin products dominate | Segment product sets by margin, inventory, or category |
+| Product mismatch | Event `contents` values do not match catalog IDs | Audit Pixel/CAPI parameters against catalog IDs |
+
+## Operating Cadence
+
+- Daily: check feed sync, rejected products, and event health.
+- Weekly: review product-level spend, revenue, margin, and stock status.
+- Monthly: refresh product sets around margin, seasonality, new arrivals, and inventory.

@@ -2,6 +2,8 @@
 
 Branded Hashtags let advertisers add a visually distinctive branded element to a hashtag across X. Current official X ad-format pages still list Branded Hashtags, while public reporting indicates ordinary hashtags in paid ad copy have been restricted. Treat managed Branded Hashtags as a separate X-approved product, not as permission to add hashtags to standard promoted posts.
 
+Spec source: X Creative Ad Specifications (https://business.x.com/en/help/campaign-setup/creative-ad-specifications). Last verified: 2026-04.
+
 ## Availability
 
 Branded Hashtags are typically managed-service products and may require X approval. Confirm current eligibility, markets, dates, creative requirements, and pricing with X.

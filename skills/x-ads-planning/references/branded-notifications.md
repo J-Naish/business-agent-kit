@@ -2,6 +2,8 @@
 
 Branded Notifications let people opt in to receive future messages from a brand at moments that matter.
 
+Spec source: X Branded Notifications product page (https://business.x.com/en/advertising/branded-notifications). Last verified: 2026-04.
+
 ## Availability
 
 Branded Notifications are eligibility-gated and operationally heavier than standard ads.
@@ -59,3 +61,17 @@ Promoted CTA post
 ## Measurement
 
 Use opt-in rate, notification engagement, click-through, conversion rate, and incremental lift where possible. X Ads Manager provides full metrics for promoted CTA posts, but notification-post reporting can be limited. Users' device and account notification settings can prevent notification posts from appearing.
+
+## Diagnosis
+
+| Symptom | Likely cause | Response |
+|---|---|---|
+| Low opt-in rate | Reminder value is unclear | Make the moment and payoff explicit |
+| Opt-ins but weak follow-through | Notification timing or content misses the promise | Tighten schedule and destination relevance |
+| Reporting gap | Notification post metrics are limited | Plan CTA-post metrics, downstream UTMs, and lift/proxy reads upfront |
+
+## Operating Cadence
+
+- Confirm Arrow, OAuth, verified account, and X Next/account-team access before selling the idea internally.
+- Lock schedule, copy, and approval workflow early.
+- Review notification performance together with downstream business metrics, not only opt-ins.

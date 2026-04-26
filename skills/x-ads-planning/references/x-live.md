@@ -4,6 +4,8 @@ X Live supports real-time broadcasts for product launches, conferences, watch pa
 
 X Live is a high-touch format. Verify current availability, technical support, and promotion options with X before presenting it as a standard self-serve placement.
 
+Spec source: X Creative Ad Specifications (https://business.x.com/en/help/campaign-setup/creative-ad-specifications). Last verified: 2026-04.
+
 ## Stream Specs
 
 | Item | Guidance |
@@ -63,3 +65,20 @@ Post-event: highlight clips, retargeting, conversion follow-up
 - No clear reason to watch live.
 - No post-event content plan.
 - No moderation or response plan.
+
+## Planning and Cost Checks
+
+Do not treat X Live as standard self-serve inventory. Ask X for:
+
+- Technical support requirements and stream test timeline.
+- Promotion options before, during, and after the live event.
+- Moderation, escalation, and brand-safety responsibilities.
+- Reporting fields for live and replay views.
+
+## Diagnosis
+
+| Symptom | Likely cause | Response |
+|---|---|---|
+| Low attendance | Weak pre-event promotion or unclear live value | Start promotion earlier and sharpen the live-only reason |
+| Drop-off during stream | Slow run-of-show or poor production | Tighten agenda, hosts, and segment pacing |
+| No business impact | No post-event follow-up | Clip highlights and retarget viewers/registrants |

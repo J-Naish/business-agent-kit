@@ -2,6 +2,8 @@
 
 Image Ads are Promoted Ads that combine one image with post copy and optional X Ad Features such as Website Cards, App Cards, Conversation Buttons, or Polls.
 
+Spec source: X Creative Ad Specifications (https://business.x.com/en/help/campaign-setup/creative-ad-specifications) and 2026 aspect-ratio announcement (https://business.x.com/en/blog/x-expands-aspect-ratio-support-for-ad-creatives.html). Last verified: 2026-04.
+
 ## Specs
 
 | Item | Guidance |
@@ -63,3 +65,17 @@ CTA: what to do next
 - Generic stock photography.
 - Weak message match between ad and landing page.
 - Low-resolution or heavily compressed assets.
+
+## Diagnosis
+
+| Symptom | Likely cause | Response |
+|---|---|---|
+| Low CTR | Weak focal point or unclear first read | Rebuild around one product, proof point, or outcome |
+| High CTR, low CVR | Image promise does not match landing page | Align image, copy, card headline, and destination |
+| Limited delivery | Policy issue, low quality, or restricted category | Check policy/account requirements and creative QA |
+
+## Operating Cadence
+
+- Review preview/cropping before launch and after any aspect-ratio change.
+- Refresh when CTR or CPE deteriorates against the campaign's recent baseline.
+- Keep winning concepts and rotate new visuals; do not only change colors or minor copy.

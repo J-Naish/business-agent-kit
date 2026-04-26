@@ -2,6 +2,8 @@
 
 Video Ads are Promoted Ads that use video to demonstrate, explain, entertain, or build trust.
 
+Spec source: X Creative Ad Specifications (https://business.x.com/en/help/campaign-setup/creative-ad-specifications) and 2026 aspect-ratio announcement (https://business.x.com/en/blog/x-expands-aspect-ratio-support-for-ad-creatives.html). Last verified: 2026-04.
+
 ## Specs
 
 | Item | Guidance |
@@ -63,3 +65,17 @@ Longer videos can work for education or premium placements, but the first second
 - Making the video understandable only with sound.
 - Optimizing for views when the business needs conversions.
 - Reusing a TV-style cut without adapting to the X timeline.
+
+## Diagnosis
+
+| Symptom | Likely cause | Response |
+|---|---|---|
+| Low view rate | Slow first frame or weak hook | Start with product, outcome, tension, or motion |
+| Strong views, weak clicks | CTA appears late or message is awareness-only | Add earlier value/offer cue and align card CTA |
+| High CPV | Audience/context mismatch or weak thumbnail/opening | Test different first 2 seconds and targeting signal |
+
+## Operating Cadence
+
+- Read first-day delivery for obvious hook failures, but wait for enough spend before judging CPA/ROAS.
+- Replace fatigued openings before rebuilding the whole concept.
+- Keep a log of hook, proof, CTA, length, and aspect ratio for each test.

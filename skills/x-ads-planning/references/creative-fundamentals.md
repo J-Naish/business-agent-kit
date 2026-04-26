@@ -2,6 +2,8 @@
 
 Use this reference before writing X Ads copy or specifying creative assets.
 
+Spec source for Conversation Buttons and Polls: X Creative Ad Specifications (https://business.x.com/en/help/campaign-setup/creative-ad-specifications) and Conversation Buttons docs (https://business.x.com/en/help/campaign-setup/conversation-buttons). Last verified: 2026-04.
+
 ## Core Principles
 
 - Make the first line or first frame earn attention quickly.

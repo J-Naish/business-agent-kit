@@ -2,6 +2,8 @@
 
 Carousel Ads are Promoted Ads with multiple horizontally swipeable images or videos. Use them to show multiple products, explain a sequence, or build a narrative.
 
+Spec source: X Creative Ad Specifications (https://business.x.com/en/help/campaign-setup/creative-ad-specifications) and 2026 aspect-ratio announcement (https://business.x.com/en/blog/x-expands-aspect-ratio-support-for-ad-creatives.html). Last verified: 2026-04.
+
 ## Specs
 
 | Item | Guidance |
@@ -51,3 +53,17 @@ X expanded 4:5 and 2:3 support in 2026 to improve creative portability from Meta
 - Using tiny text.
 - Repeating the same idea across all cards.
 - Sending all cards to a generic landing page when specific destinations would be better.
+
+## Diagnosis
+
+| Symptom | Likely cause | Response |
+|---|---|---|
+| Card 1 gets impressions but little interaction | Weak opening card | Make card 1 a clear problem, hero product, or promise |
+| Later cards ignored | No reason to swipe | Add sequence logic: problem -> proof -> offer |
+| Click quality weak | Generic destinations | Use card-specific URLs where available |
+
+## Operating Cadence
+
+- Review card-level performance, not only whole-ad CTR.
+- Replace weak cards without discarding the entire structure when the story still works.
+- Keep aspect ratio consistent before uploading.

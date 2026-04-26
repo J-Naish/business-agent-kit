@@ -2,6 +2,8 @@
 
 Amplify Pre-roll lets advertisers run pre-roll video ads against premium video content categories on X.
 
+Spec source: X Creative Ad Specifications (https://business.x.com/en/help/campaign-setup/creative-ad-specifications). Last verified: 2026-04.
+
 ## Best Uses
 
 - Brand awareness.
@@ -48,3 +50,17 @@ Amplify Pre-roll can be available through self-serve or eligible account workflo
 - Treating pre-roll as a direct-response-only format.
 - Ignoring contextual fit.
 - Judging only by last-click conversions.
+
+## Diagnosis
+
+| Symptom | Likely cause | Response |
+|---|---|---|
+| Low completion | Creative too slow or too long | Cut to the brand/product cue and core message earlier |
+| Weak brand effect | Category/context mismatch | Revisit content categories and moment fit |
+| Poor downstream action | No post-view plan | Pair with retargeting or follow-up Promoted Ads |
+
+## Operating Cadence
+
+- Confirm inventory/category availability before building the plan.
+- Review view quality and brand safety weekly.
+- Use downstream reads as supporting evidence, not the only success metric.

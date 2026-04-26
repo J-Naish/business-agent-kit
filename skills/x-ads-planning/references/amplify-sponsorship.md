@@ -2,6 +2,8 @@
 
 Amplify Sponsorship provides a 1:1 pairing with a publisher during a selected moment, with Post-level control for the campaign period.
 
+Spec source: X Creative Ad Specifications (https://business.x.com/en/help/campaign-setup/creative-ad-specifications) and managed-product documentation. Last verified: 2026-04.
+
 ## Availability
 
 Amplify Sponsorship is generally a managed-service product and may not be available to self-serve advertisers. Confirm availability, inventory, dates, publisher fit, and minimum spend with X.
@@ -42,3 +44,20 @@ Amplify Sponsorship is generally a managed-service product and may not be availa
 ## Measurement
 
 Use reach, frequency, video view quality, brand lift where available, search/direct lift, and downstream site or conversion signals. Do not judge sponsorships only by last-click CPA.
+
+## Planning and Cost Checks
+
+Do not encode fixed minimum spends in the plan unless X provides a current quote for the market and date. Ask X for:
+
+- Minimum spend, reservation window, cancellation terms, and makegood policy.
+- Publisher/content package, exclusivity, and brand safety controls.
+- Approval deadlines and asset handoff requirements.
+- Reporting fields available during and after the flight.
+
+## Diagnosis
+
+| Symptom | Likely cause | Response |
+|---|---|---|
+| Strong reach, weak recall | Generic creative or weak brand cue | Put the brand/product role earlier |
+| Engagement volatility | Publisher moment mismatch | Recheck content alignment and audience expectations |
+| Stakeholders expect CPA | Sponsorship goal misframed | Set reach/lift/context KPIs before purchase |

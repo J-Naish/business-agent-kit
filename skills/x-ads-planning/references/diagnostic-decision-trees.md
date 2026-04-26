@@ -2,6 +2,30 @@
 
 Use this reference for existing X Ads accounts with performance issues.
 
+## Quick Routing
+
+Start with the visible symptom, then branch to the first likely bottleneck:
+
+```text
+Delivery low?
+  -> Check billing / dates / disapproval / eligibility
+  -> If clean: check bid, budget, audience size, and Optimized Targeting
+
+Traffic weak?
+  -> If impressions low: delivery or targeting problem
+  -> If impressions high and CTR low: creative / message / context problem
+
+Conversions weak?
+  -> If clicks low quality: targeting or intent mismatch
+  -> If clicks good but CVR low: destination, event, offer, or trust problem
+
+Reported performance volatile?
+  -> If event volume low: budget / fragmentation / conversion delay
+  -> If event volume healthy: creative fatigue, audience mix, or measurement issue
+```
+
+Do not change every layer at once. Fix the first confirmed bottleneck, log the change, and wait for enough signal before moving to the next layer.
+
 ## Spend Is Low or Delivery Is Limited
 
 Likely causes:
