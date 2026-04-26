@@ -74,11 +74,11 @@ When in doubt, ask whether they want a written deliverable or a conversational a
 ```
 Step 0: Mode detection           → New launch or improvement of existing account
     ↓
-Step 1: Information gathering    → Phase A (basics) → propose ad-type direction → Phase B (details)
+Step 1: Information gathering    → Phase A (basics) → business-model read → Phase B (details)
     ↓
-Step 2: Ad-type selection        → Pick the campaign mix that fits
+Step 2: Viability + ad-type selection → Budget viability → campaign mix that fits
     ↓
-Step 3: Strategy formation       → Account structure, bidding, conversion design, budget split
+Step 3: Strategy formation       → Account structure, bidding, conversion design, budget split, creative strategy
     ↓
 Step 4: Practice-led detailed design + delivery → Per-ad-type playbooks; deliver as fits the situation
 ```
@@ -96,17 +96,17 @@ Determine which of the two situations applies. If unclear, ask.
 
 ### Improvement workflow
 
-For existing accounts, run a diagnostic after Step 1:
+For existing accounts, run a diagnostic after Step 1. Use [references/diagnostic-decision-trees.md](references/diagnostic-decision-trees.md) to rank likely root causes before proposing changes.
 
 1. **Inventory** — Account structure, list of running campaigns, current KPI performance.
-2. **Issue identification** — Hear the user's pain point, then audit:
+2. **Issue identification** — Hear the user's pain point, then audit with the diagnostic decision trees:
    - Is the bid strategy appropriate for the conversion volume? (Smart bidding starves with too few conversions.)
    - Account-structure issues — over-fragmentation of campaigns? mixed themes inside an ad group?
    - Are negative keywords adequate? Is the search-terms report showing wasted clicks?
    - Is conversion tracking set up correctly?
    - Any ad groups with low Quality Score?
    - Is budget allocated to the high-performing campaigns?
-3. **Improvement proposals** — Ranked actions, agreed with the user.
+3. **Improvement proposals** — Ranked actions with evidence, expected stabilization window, and changes to avoid.
 4. **Execution** — Document the agreed changes in whatever form fits (conversational, structured response, or written deliverable).
 
 ---
@@ -123,6 +123,8 @@ For existing accounts, run a diagnostic after Step 1:
 
 After Phase A, propose an ad-type direction using the cheat sheet in Step 2. Once the user agrees, proceed to Phase B.
 
+Before proposing that direction, use [references/business-model-playbooks.md](references/business-model-playbooks.md) to check the default strategy for the business model. This prevents campaign-type selection from becoming menu-driven.
+
 ### Phase B: Detailed inputs for design
 
 | Category | Question |
@@ -138,9 +140,19 @@ After Phase A, propose an ad-type direction using the cheat sheet in Step 2. Onc
 
 If existing context (business profile, competitive analysis, brand assets, prior audit reports, etc.) is already available in the project, read it first and don't re-ask for information that's already known.
 
+After Phase B, use [references/budget-planning.md](references/budget-planning.md) to check whether the budget can support the proposed campaign mix, expected conversion volume, and bid strategy. If the budget cannot produce enough meaningful signal, narrow the structure before moving to Step 2.
+
 ---
 
-## Step 2: Ad-type selection
+## Step 2: Viability + ad-type selection
+
+Before choosing the final mix, combine:
+
+1. Business-model fit from [references/business-model-playbooks.md](references/business-model-playbooks.md).
+2. Budget and signal viability from [references/budget-planning.md](references/budget-planning.md).
+3. Campaign-type fit from the cheat sheet below.
+
+Do not recommend a campaign type just because it is available. If budget, conversion quality, creative supply, feed quality, or measurement cannot support it, say what must be fixed first.
 
 ### Campaign-type cheat sheet
 
@@ -244,6 +256,14 @@ Get confirmation before going deep into Step 3.
 ## Step 3: Strategy formation
 
 This step decides cross-campaign strategy. Per-ad-type detail design happens in Step 4 using the playbooks.
+
+Use this order:
+
+1. Confirm business-model strategy and campaign roles.
+2. Confirm budget viability and expected conversion volume.
+3. Define conversion signals and incrementality stance.
+4. Decide account structure, bidding, and budget split.
+5. Define creative strategy using [references/creative-strategy.md](references/creative-strategy.md).
 
 ### Account structure
 
@@ -359,6 +379,8 @@ VTC measures users who saw the ad without clicking and converted later. It appli
 
 ### Budget allocation
 
+Use [references/budget-planning.md](references/budget-planning.md) before applying allocation rules. The 70 / 20 / 10 split is only a default operating pattern when the budget is large enough to fund learning in each bucket.
+
 **70 / 20 / 10 rule:**
 
 - 70% — proven campaigns and keywords
@@ -393,6 +415,8 @@ Quarterly: campaign-structure review, strategy-level rethink
 
 For each ad type that's been selected, consult the matching playbook for both practice and settings. The practice sections should drive the recommendation; settings are the implementation layer.
 
+Before asset specs or copy drafts, use [references/creative-strategy.md](references/creative-strategy.md) to define audience, offer, proof, objections, format fit, and test angles. Then use the ad-type playbooks for channel-specific settings and specs.
+
 ### Per-ad-type playbooks
 
 | Ad type | Playbook | Key design topics |
@@ -404,6 +428,17 @@ For each ad type that's been selected, consult the matching playbook for both pr
 | Video | [references/video-campaigns.md](references/video-campaigns.md) | Hook/offer/ABCD, Shorts/CTV role, frequency, lift measurement, DR vs awareness |
 | P-MAX | [references/pmax.md](references/pmax.md) | Conversion signal quality, asset-group practice, brand controls, URL expansion, feed/margin strategy |
 | Demand Gen | [references/demand-gen.md](references/demand-gen.md) | Social-style creative, lookalike seed quality, assisted demand, surface mix, P-MAX overlap |
+
+### Cross-cutting design references
+
+Use these inside the workflow, not just as optional reading:
+
+| Reference | Use when | Key design topics |
+|---|---|---|
+| [references/business-model-playbooks.md](references/business-model-playbooks.md) | Choosing strategy by business model | B2B lead gen, local service, e-commerce, high-ticket, app, store visit |
+| [references/budget-planning.md](references/budget-planning.md) | Deciding what the budget can realistically support | CPA/ROAS economics, expected CV volume, campaign mix viability |
+| [references/diagnostic-decision-trees.md](references/diagnostic-decision-trees.md) | Improving an existing account or diagnosing poor performance | Spend/CV issues, lead quality, CTR/CVR, CPC increases, P-MAX/Demand Gen traps |
+| [references/creative-strategy.md](references/creative-strategy.md) | Designing assets, copy, or creative briefs | Angles, proof, objections, format fit, P-MAX/Demand Gen/video creative systems |
 
 ### Delivering the output
 
