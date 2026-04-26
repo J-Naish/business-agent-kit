@@ -1,0 +1,1039 @@
+# P-MAX (Performance Max) operating manual
+
+## Contents
+
+- [Glossary](#glossary)
+- [Decision matrix](#decision-matrix)
+- [Quickstart](#quickstart)
+- [1. Major updates 2025–2026](#1-major-updates-20252026)
+- [2. Campaign structure design](#2-campaign-structure-design)
+- [3. Asset-group design](#3-asset-group-design)
+- [4. Asset specs and submission requirements](#4-asset-specs-and-submission-requirements)
+- [5. Audience signals](#5-audience-signals)
+- [6. Search themes and URL expansion](#6-search-themes-and-url-expansion)
+- [7. Negative keywords and brand exclusion](#7-negative-keywords-and-brand-exclusion)
+- [8. Bid strategy](#8-bid-strategy)
+- [9. Conversion-measurement optimization](#9-conversion-measurement-optimization)
+- [10. Product-feed integration (e-commerce)](#10-product-feed-integration-e-commerce)
+- [11. Feed-only vs. full assets](#11-feed-only-vs-full-assets)
+- [12. New-customer acquisition mode](#12-new-customer-acquisition-mode)
+- [13. Demographic controls](#13-demographic-controls)
+- [14. Coexistence with other campaigns](#14-coexistence-with-other-campaigns)
+- [15. P-MAX for Store Goals](#15-p-max-for-store-goals)
+- [16. Reporting and insights](#16-reporting-and-insights)
+- [17. A/B testing (Experiments)](#17-ab-testing-experiments)
+- [18. Gemini AI integration](#18-gemini-ai-integration)
+- [19. Learning period and operating cadence](#19-learning-period-and-operating-cadence)
+- [20. Common failure patterns](#20-common-failure-patterns)
+- [Appendix A: Symptom-based troubleshooting](#appendix-a-symptom-based-troubleshooting)
+- [Appendix B: Naming conventions, change log, checklist](#appendix-b-naming-conventions-change-log-checklist)
+
+---
+
+## Glossary
+
+Abbreviations and terms used in this manual.
+
+| Abbr. | Full term | Definition |
+|------|---------|------|
+| P-MAX | Performance Max | A campaign type where Google's AI auto-optimizes across all Google channels |
+| AG | Asset group | A set of creative (text, image, video) and signals inside a P-MAX campaign |
+| LG | Listing group | A filter that controls which products from your feed are eligible for an AG |
+| CL | Custom label | Classification labels you attach to Merchant Center products (5 slots: 0–4) |
+| CV | Conversion | Completion of the goal action (purchase, inquiry, etc.) |
+| CV value | Conversion value | The monetary value tied to one CV (revenue, lead score, etc.) |
+| CPA | Cost per acquisition | Spend ÷ conversions |
+| ROAS | Return on ad spend | Total CV value ÷ spend |
+| VTC | View-through conversion | A CV that occurred after an impression but without a click |
+| tCPA | Target CPA | A bid strategy with a CPA target |
+| tROAS | Target ROAS | A bid strategy with a ROAS target |
+| GMC | Google Merchant Center | The platform that manages your product feed |
+| URL expansion | Final URL Expansion | Auto-routes traffic to LPs other than the one specified |
+| Feed-only | Feed-Only campaign | Runs without text / image / video assets, using only the product feed |
+
+---
+
+## Decision matrix
+
+When and how to deploy P-MAX.
+
+### Adoption decision
+
+| Condition | Decision | Reason |
+|------|------|------|
+| 30+ monthly CVs (account-wide) | Consider adopting | The minimum data the AI needs to learn |
+| 50+ monthly CVs | Adopt with confidence | Stable optimization is realistic |
+| Under 10 monthly CVs | Too early | Insufficient learning data. Build CV history with Search first |
+| No Search campaign yet | Run Search first | P-MAX leverages your existing campaigns' CV data |
+
+### How many campaigns to run
+
+| Monthly CVs (account-wide) | Recommended P-MAX campaigns | Notes |
+|---------------------------|----------------------|------|
+| 30–50 | 1 campaign | Concentrate data for max learning efficiency |
+| 50–150 | 1–2 campaigns | Consider splitting brand vs. non-brand |
+| 150+ | 2–4 campaigns | Split by category, margin tier, or customer type |
+
+### Design approach by business type
+
+| Business type | Campaign structure | Asset approach | Notes |
+|--------------|----------------|------------|---------|
+| E-commerce (small catalog) | 1 campaign / 2–3 AGs | Full assets recommended | Feed optimization is the most important lever |
+| E-commerce (large catalog) | 2–4 campaigns (by category / margin) | Feed-only or full assets | Use custom labels to segment products |
+| B2B lead-gen | 1–2 campaigns | Full assets required | Recommend URL expansion OFF — prevents traffic to blogs etc. |
+| B2C lead-gen | 1–2 campaigns | Full assets required | Use demographic exclusions strategically |
+| Store visits | P-MAX for Store Goals | Full assets recommended | Google Business Profile integration required |
+
+---
+
+## Quickstart
+
+The shortest path for a first-time P-MAX launch. Refer to detailed sections below.
+
+### Pre-launch readiness
+
+| Check | Required / recommended | If not met |
+|------------|---------|----------|
+| CV tracking is accurate | Required | Set up CV tracking first (see [§9](#9-conversion-measurement-optimization)) |
+| Enhanced Conversions implemented | Strongly recommended | Improves measurement accuracy |
+| 30+ monthly CVs (account-wide) | Required | Build CV history via Search first |
+| Search campaign already running | Strongly recommended | Needed for brand-KW control and cannibalization monitoring |
+| Product feed optimized (e-commerce) | Required (e-commerce) | See [shopping-ads.md](shopping-ads.md) |
+| Offline-CV import in place (lead-gen) | Recommended | Build CRM integration to capture GCLID |
+
+### Launch steps
+
+| Step | Action | Reference |
+|---------|----------|-------|
+| 1. Decide structure | Set the number of campaigns and AGs (start with 1 campaign and 1–3 AGs) | [§2](#2-campaign-structure-design) |
+| 2. Build assets | Text (11+ headlines, 4+ descriptions), images (5+ landscape, 5+ square), video (1+ landscape, 1+ vertical) | [§4](#4-asset-specs-and-submission-requirements) |
+| 3. Set audience signals | Customer Match list + In-market segments | [§5](#5-audience-signals) |
+| 4. Search themes | 8–12 themes | [§6](#6-search-themes-and-url-expansion) |
+| 5. Exclusions | Brand exclusion + irrelevant-KW negatives + URL exclusion rules (URL expansion OFF for lead-gen) | [§7](#7-negative-keywords-and-brand-exclusion) |
+| 6. Bidding | Start with Maximize Conversions or Maximize Conversion Value (no constraint) | [§8](#8-bid-strategy) |
+| 7. Budget | At least 3× your target CPA per day | [§8](#8-bid-strategy) |
+| 8. Go live | Activate the campaign | — |
+
+### First two weeks (learning period)
+
+| Do | Don't |
+|---------|------------|
+| Check budget pacing daily | Change the bid strategy |
+| Watch for anomalous spend patterns | Increase or decrease the budget |
+| Review the search-terms report (only exclude clearly irrelevant terms) | Bulk-replace assets |
+| Review the channel report (for trend awareness only) | Add tCPA / tROAS constraints |
+
+### Weeks 3–6 (stabilization → optimization)
+
+| Decision | Condition | Action |
+|------|------|----------|
+| Migrate to tCPA / tROAS | 30+ monthly CVs is stable | Set targets from trailing-30-day actuals (see [§8-3](#8-bid-strategy)) |
+| Add an AG | Existing AGs have 20+ monthly CVs | Add an AG for a new category / target |
+| Improve assets | Some assets are rated "Low" | Replace "Low" assets |
+| Add negative KWs | Search-terms report reveals irrelevance | Exclude strategically — by category, not single terms |
+
+---
+
+## 1. Major updates 2025–2026
+
+> The following reflects information as of February 2026. Beta-feature availability differs by account, country, and timing. Verify on [Google Ads Help](https://support.google.com/google-ads/) and the [Google Ads Blog](https://blog.google/products/ads-commerce/).
+
+| When | Update |
+|------|----------------|
+| Jan 2025 | Self-service campaign-level negative keywords (up to 10,000) |
+| Jan 2025 | Age-based demographic exclusion (beta) |
+| Mar 2025 | Search-terms report introduced (Search and Shopping inventory) |
+| May 2025 | Channel performance report introduced (open beta) |
+| Jul 2025 | Gender-based demographic exclusion (beta) |
+| Aug 2025 | Demographic-exclusion consolidation (manage age + gender together) |
+| 2025 | Strengthened asset auto-generation via Gemini |
+| 2025 | Asset-level impressions / clicks / cost data added |
+| 2025 | Shared negative-keyword list support |
+| 2025 | High-Value New Customer Mode rollout |
+| 2025 | Option to apply brand exclusions only to Shopping ads |
+| Nov 2025 | Waze ad inventory added (US-only, Store Goals only) |
+| Nov 2025 | Search Partners added to channel report |
+| Jan 2026 | Asset A/B tests (Experiments) extended to all campaigns |
+| Jan 2026 | Channel-level reporting in API v23 |
+| Feb 2026 | Search Partners placement visibility |
+| Feb 2026 | Parked domains (AdSense for Domains) permanently removed from the Search Partners network |
+
+---
+
+## 2. Campaign structure design
+
+### 2-1. Structural principles
+
+Think of P-MAX in three layers.
+
+```
+Account
+ └── Campaign  (the unit for budget, bid strategy, geo, negatives)
+      └── Asset group  (the unit for creative, audience signals, search themes)
+           └── Listing group  (filter on the product feed — for e-commerce)
+```
+
+**Split into separate campaigns when:**
+- Different budget allocations are required
+- Different bid strategies are required (tCPA vs. tROAS)
+- Different geo-targeting is required
+- Different negative-KW strategies are required
+
+**Split into separate asset groups when:**
+- Different product categories / service lines
+- Different audience segments
+- Different creative themes / messaging
+
+> **Principle: when in doubt, fewer campaigns and more asset groups.** Split campaigns once data is sufficient. Each campaign needs at least 30+ monthly CVs as a baseline.
+
+### 2-2. E-commerce campaign-structure patterns
+
+| Pattern | Structure | Suited to |
+|---------|------|----------|
+| Simple | 1 campaign / 1–3 AGs | 30–100 monthly CVs. Small catalog |
+| Category split | 2–3 campaigns / 2–3 AGs each | 100+ monthly CVs. Margin varies materially across categories |
+| Margin split | 3 campaigns by high / mid / low margin | tROAS operation. Wide product-margin spread |
+| Brand vs. non-brand | 2 campaigns: branded queries / generic | When you want brand budget and ROAS managed independently |
+
+### 2-3. Lead-gen campaign-structure patterns
+
+| Pattern | Structure | Suited to |
+|---------|------|----------|
+| Simple | 1 campaign / 2–3 AGs (per service) | 30–50 monthly CVs. Few service lines |
+| Service split | 2 campaigns: service A / service B | When CPA targets differ across services |
+| Funnel split | High-intent (CV = inquiry) / low-intent (CV = whitepaper download) | When you want different bid strategies per CV type |
+
+### 2-4. Campaign settings checklist
+
+| Setting | Recommendation | Notes |
+|---------|---------|------|
+| Goal | Sales / Leads | Match to business goal |
+| Bid strategy | Value-led → tROAS / Volume-led → tCPA | See [§8](#8-bid-strategy) |
+| Budget | 3× target CPA per day | Minimum is 1× CPA per day |
+| Geo | Target locations explicit | Recommend "Presence" only |
+| Language | Target languages explicit | |
+| Ad schedule | As needed | Default is 24/7 |
+| URL expansion | On / off based on goal | See [§6](#6-search-themes-and-url-expansion) |
+| Brand exclusion | As needed | See [§7](#7-negative-keywords-and-brand-exclusion) |
+| New customer acquisition | Enable as needed | See [§12](#12-new-customer-acquisition-mode) |
+
+---
+
+## 3. Asset-group design
+
+### 3-1. Basics
+
+An asset group contains:
+
+| Element | Description |
+|------|------|
+| Text assets | Headlines, long headlines, descriptions, business name, display URL path |
+| Image assets | Landscape, square, portrait images, plus logo |
+| Video assets | YouTube videos (landscape, vertical, square) |
+| Audience signals | Hints about your target user |
+| Search themes | Search-intent themes (max 25 per AG) |
+| Final URL | The destination page after click |
+| Listing group | Filter selecting which products are eligible (e-commerce) |
+
+### 3-2. Splitting strategy
+
+| Approach | Description | Suited to |
+|---------|------|----------|
+| By category | Mirrors your main site categories | Easy to manage. General-purpose |
+| By target | Persona / segment | Apparel, beauty, and other segment-driven categories |
+| By messaging | Price-led / quality-led / convenience-led | When you want creative-A/B tests |
+| By promotion | Sale / seasonal pushes | Time-limited offers without disrupting evergreen AGs |
+
+### 3-3. Asset-group rules
+
+| Rule | Reason |
+|-------|------|
+| Maintain 20+ monthly CVs per AG | Minimum data for learning |
+| Consolidate AGs with under 5 CVs | Insufficient data for AI to optimize |
+| Start with 1–3 AGs | Over-segmentation fragments data |
+| Avoid product / target overlap between AGs | Confuses learning |
+| Register every asset type (text + image + video) | Required to serve on every channel |
+| Aim for "Excellent" Ad Strength | Google's recommendation; affects delivery volume |
+
+---
+
+## 4. Asset specs and submission requirements
+
+### 4-1. Text assets
+
+| Asset | Min | Max | Char limit | Notes |
+|------------|-------|-------|----------|------|
+| Headline | 3 | 15 | 30 chars | Include at least one ≤15 chars |
+| Long headline | 1 | 5 | 90 chars | |
+| Description | 2 | 5 | 90 chars | Include at least one ≤60 chars |
+| Business name | 1 | 1 | 25 chars | |
+| Display URL path | 0 | 2 | 15 chars each | |
+| CTA | 1 | 1 | — | Auto-selected by Google or set manually |
+
+> **Japanese / Chinese / Korean**: 1 full-width character counts as 2 characters.
+
+**Best practices:**
+- Register 10+ headlines to give the AI more learning material
+- Each headline should stand alone (they will be combined dynamically)
+- Mix brand, USP, CTA, price / discount, and social proof (volumes, reviews) in balance
+- For ad-copy best practices per channel, see [search-ads.md](search-ads.md)
+
+### 4-2. Image assets
+
+| Aspect ratio | Use | Min | Max | Recommended size | Min size |
+|------------|------|-------|-------|----------|----------|
+| Landscape (1.91:1) | GDN, Discover, Gmail | 1 | 20 | 1200×628 | 600×314 |
+| Square (1:1) | GDN, Discover, Gmail | 1 | 20 | 1200×1200 | 300×300 |
+| Portrait (4:5) | Mobile placements | 0 | 20 | 960×1200 | 480×600 |
+| Logo (square 1:1) | All placements | 1 | 5 | 1200×1200 | 128×128 |
+| Logo (landscape 4:1) | Some placements | 0 | 5 | 1200×300 | 512×128 |
+
+| Spec | Requirement |
+|------|------|
+| File format | JPEG or PNG |
+| Max file size | 5 MB |
+| Subject placement | Within the central 80% of the frame |
+
+**Best practices:**
+- Landscape (1.91:1) and square (1:1) are required. Portrait (4:5) is also recommended
+- Avoid heavy text inside images (keep ≤20% of the image area)
+- Use professional-quality imagery
+- Mix product shots, in-use shots, people, and lifestyle imagery
+- For per-channel image best practices, see [display-ads.md](display-ads.md)
+
+### 4-3. Video assets
+
+| Item | Requirement |
+|------|------|
+| Hosting | YouTube (must be uploaded in advance) |
+| Min length | 10 sec |
+| Recommended length | 15+ sec |
+| Max file size | 256 GB |
+| Recommended resolution | 1080p Full HD |
+| Format | MPEG-2 / MPEG-4 (.MPG) |
+| Per-AG cap | 5 videos per aspect ratio |
+
+| Aspect ratio | Use | Recommended count |
+|------------|------|-------|
+| Landscape (16:9) | YouTube in-stream | 1+ |
+| Vertical (9:16) | YouTube Shorts | 1+ (10–60s; required for Shorts delivery) |
+| Square (1:1) | Mobile placements | Recommended |
+
+**Best practices:**
+- If you don't supply video, Google auto-generates one from your images. Quality is poor — **strongly recommend supplying your own**
+- Minimum set: 1× landscape (16:9), 1× vertical (9:16)
+- For per-channel video best practices, see [video-campaigns.md](video-campaigns.md)
+
+### 4-4. Recommended asset counts
+
+Targets to reach an "Excellent" Ad Strength rating.
+
+| Asset | Recommended count |
+|------------|----------|
+| Headline | 11–15 |
+| Long headline | 3–5 |
+| Description | 4–5 |
+| Landscape image | 5–15 |
+| Square image | 5–15 |
+| Portrait image | 3–5 |
+| Logo | 1–3 |
+| Video | 3–5 (covering all 3 aspect ratios) |
+
+---
+
+## 5. Audience signals
+
+### 5-1. What signals are
+
+Audience signals are not targeting — they are hints. They tell Google's algorithm what your ideal prospects look like. P-MAX bootstraps from the signal and then auto-expands beyond it.
+
+### 5-2. Signal types and priority
+
+| Priority | Signal | Description | How to set |
+|-------|-------------|------|---------|
+| Highest | Customer Match | List of existing customers' email addresses | Upload a Customer Match list |
+| High | Website visitors | Remarketing list | Google Ads audience list |
+| High | YouTube viewers | Subscribers / video viewers | YouTube linking |
+| Medium | In-market | Users in active purchase consideration in a category | Pick from Google's predefined segments |
+| Medium | Custom segment | Built from search terms or URLs visited | Define with KWs / URLs |
+| Low | Affinity | Interest categories | Pick from Google's predefined segments |
+| Low | Life events | Marriage, moving, new job | Pick from Google's predefined segments |
+| Low | Demographic | Age, gender, household income, parental status | Set basic attributes |
+
+### 5-3. Signal design rules
+
+| Rule | Reason |
+|-------|------|
+| Prioritize Customer Match | The strongest signal — ideal as the AI's starting point |
+| Combine multiple signal types per AG | Multi-angle signals improve learning quality |
+| Understand signals are hints, not constraints | Google will expand beyond them |
+| Avoid lists that are too small | 1,000+ users is the recommended minimum |
+| Use distinct signals per AG | Same signal across multiple AGs fragments data |
+
+---
+
+## 6. Search themes and URL expansion
+
+### 6-1. Search themes
+
+Search themes guide P-MAX's Search-channel delivery. Unlike Search-campaign keywords, themes are starting points the AI auto-expands from.
+
+| Item | Spec (at the time of writing) |
+|------|------|
+| Cap | 25 themes per asset group |
+| Behavior | In addition to AI-predicted matching, also expands to terms within the specified themes (additive) |
+| Match types | None — the AI auto-expands to related terms |
+
+**Design rules:**
+- 8–12 themes is the recommended count
+- Include your main service names, product categories, and the search terms your customers use
+- Reference high-performing KWs from your Search campaign as inspiration
+- Don't list competitor brand names (conflicts with brand exclusion)
+- Think in "themes", not "keywords" — don't use an exact-match mindset
+
+### 6-2. URL expansion (Final URL Expansion)
+
+URL expansion is on by default. Google routes traffic to LPs other than the specified Final URL based on the search query.
+
+| Setting | Behavior | When to use |
+|------|------|----------|
+| ON (default) | Google picks the best LP automatically; generates dynamic headlines / descriptions | E-commerce sites with many product pages |
+| OFF | Routes only to the specified Final URL | Lead-gen, where you want a specific LP |
+| ON + URL exclusion rules | Auto-selection on, with specific paths excluded | E-commerce that wants to block traffic to /blog, /careers, etc. |
+
+**Risks and mitigations:**
+
+| Risk | Mitigation |
+|-------|------|
+| Routing to non-CV pages (blog posts, privacy policy) | Add URL exclusion rules for /blog/, /privacy/, /careers/, etc. |
+| Ads showing on unintended brand pages | Add URL exclusion rules |
+| Loss of LP-message match (also breaks LP A/B-test designs) | For lead-gen, recommend URL expansion OFF |
+
+---
+
+## 7. Negative keywords and brand exclusion
+
+### 7-1. Negative keywords
+
+Since January 2025, P-MAX supports self-managed campaign-level negative keywords. Shared negative-keyword lists are also supported.
+
+| Item | Spec (at the time of writing) |
+|------|------|
+| Cap | 10,000 per campaign |
+| Shared lists | Supported (apply to multiple P-MAX campaigns at once) |
+| Scope | Primarily affects Search and Shopping channels (no effect on Display, YouTube, etc.) |
+
+> Caps may change. Verify the current cap in the Google Ads UI under Campaign → Negative keywords.
+
+**Negative-keyword strategy:**
+
+| Category | Examples to exclude |
+|---------|------------|
+| Irrelevant terms | jobs, careers, salary, reviews (when not driving CV) |
+| Competitor names | When deliberately not bidding on competitor terms |
+| Information-only | "what is", "how to", "comparison" (when not driving CV) |
+| Negative connotation | "worst", "scam", "cancel" |
+
+> **Don't over-exclude.** Reflexively excluding every non-CV query narrows the AI's exploration space and costs you new-customer discovery. The right approach is strategic, category-level exclusion.
+
+### 7-2. Brand exclusion
+
+Brand exclusion prevents your ads from showing on queries that include specific brand names.
+
+| Setting | Effect | When to use |
+|------|------|----------|
+| Own-brand exclusion | Prevents P-MAX from absorbing your brand searches | When already running brand KWs in a Search campaign |
+| Competitor-brand exclusion | Prevents ads on competitor names | When you've decided not to target competitor terms |
+| Shopping-only exclusion | Apply brand exclusion to text ads only — Shopping ads still serve on brand searches | E-commerce that wants Shopping to capture branded traffic (2025+) |
+
+---
+
+## 8. Bid strategy
+
+### 8-1. Available bid strategies
+
+P-MAX supports four bid strategies.
+
+| Strategy | Optimizes for | When to use |
+|---------|----------|----------|
+| Maximize Conversions | CV count | Initial launch, data-accumulation phase |
+| Target CPA (tCPA) | CV count (with cost constraint) | Lead-gen with uniform CV value |
+| Maximize Conversion Value | CV value (revenue) | E-commerce, data-accumulation phase |
+| Target ROAS (tROAS) | CV value (with ROAS constraint) | E-commerce with sufficient CV history |
+
+### 8-2. How to choose
+
+```
+Does CV value vary by product?
+├── Yes (e-commerce, etc.)
+│   ├── 50+ monthly CVs → tROAS
+│   └── Under 50 monthly CVs → Maximize Conversion Value (no tROAS constraint)
+└── No (lead-gen with uniform CV value)
+    ├── 30+ monthly CVs → tCPA
+    └── Under 30 monthly CVs → Maximize Conversions (no tCPA constraint)
+```
+
+### 8-3. Bid-strategy design rules
+
+| Rule | Reason |
+|-------|------|
+| Start with no constraint ("Maximize"-family) | Don't constrain learning; prioritize data accumulation |
+| Set tCPA / tROAS targets from actuals | Anchor on observed performance, not aspirational targets |
+| Start tROAS at 80–90% of trailing-30-day actual ROAS | Tight constraints crash delivery volume |
+| Start tCPA at 110–120% of trailing-30-day actual CPA | Same |
+| Change targets in 10–20% steps | Large changes reset learning |
+| Don't change bid and budget at the same time | Confuses learning — change one at a time and measure |
+| Allow 2–4 weeks of learning after a change | Repeat changes before stabilization makes learning permanently unstable |
+
+### 8-4. Budget design
+
+| Item | Recommendation | Notes |
+|------|------|------|
+| Min daily budget | 3× target CPA | Google's recommendation. Ensures fast data accumulation |
+| Floor | 1× target CPA | Below this, learning is extremely slow |
+| Practical floor | 1–3× target CPA per day (e.g., $50 CPA → $50–$150 / day) | Varies by industry and CPA |
+| Budget increases | Up to 20% every 7–14 days | Sudden hikes reset learning |
+| Budget decreases | Up to 15% every 7–14 days | Sudden cuts destabilize delivery |
+
+---
+
+## 9. Conversion-measurement optimization
+
+### 9-1. Why CV measurement matters in P-MAX
+
+CV data is P-MAX's only learning signal. The quality of your CV definitions and tracking translates directly into campaign quality.
+
+### 9-2. CV-measurement design rules
+
+| Rule | Reason |
+|-------|------|
+| Limit optimization-target CVs to actual business outcomes | Including low-intent actions (PDF downloads, newsletter signups) makes the AI mass-produce them |
+| Always implement Enhanced Conversions | Often improves measurement accuracy (Google reports 5–10%; varies by EC vs. lead, consent mode, etc.). Cookieless-environment readiness |
+| Set CV value accurately (e-commerce: dynamic; lead-gen: lead-score-based) | CV-value accuracy directly determines tROAS accuracy |
+| Use data-driven attribution | Google's recommendation. Credits non-last-click touchpoints |
+
+### 9-3. Click-based vs. view-through CV
+
+> See SKILL.md "VTC unified policy" as well. P-MAX is the ad type most affected by VTC — extra care is warranted.
+
+P-MAX includes view-through conversions (VTC) in optimization by default. This widely overstates ROAS vs. real impact.
+
+| Metric | Description | Caveat |
+|------|------|-------|
+| Click-through CV | Click → CV | Reflects actual ad impact |
+| View-through CV | Impression but no click → CV | Causal contribution unclear; risk of overstating impact |
+
+**Mitigation (advanced):**
+- Create a click-only CV action and use it as P-MAX's CV goal
+- Apparent ROAS will drop sharply right after the switch, but several reports note real ROAS improves over a few weeks (source: ALM Corp 2026 report; magnitude varies widely by industry, account, and CV volume)
+- This is an advanced technique — start with defaults, monitor VTC share, and decide from there
+
+**How to validate in your account:**
+1. Use Segment → Conversions → Conversion Action to see VTC share
+2. If VTC ≥ 50% of total CVs, consider creating a click-only CV action
+3. After switching, observe for 4+ weeks and judge by click-through CPA / ROAS
+4. Record CPA / ROAS / CV count before and after to assess real improvement
+
+### 9-4. Offline CV import
+
+For lead-gen, importing later-stage data (qualified opportunities, closed-won) — not just form submits — substantially improves P-MAX optimization.
+
+| Step | Detail |
+|---------|------|
+| 1. Capture GCLID | Save the GCLID into your CRM at form submission |
+| 2. Define later-stage CVs | Define qualified opportunity / closed-won as CV actions |
+| 3. Periodic import | Upload from CRM to Google Ads on a regular cadence |
+| 4. Set as P-MAX optimization goal | Include the imported CVs as optimization targets |
+
+---
+
+## 10. Product-feed integration (e-commerce)
+
+### 10-1. The role of the feed
+
+For e-commerce, P-MAX uses your Google Merchant Center (GMC) product feed to serve Shopping ads and dynamic remarketing. Feed quality is the biggest performance driver.
+
+> **For detailed feed design and optimization, see [shopping-ads.md](shopping-ads.md).**
+
+### 10-2. Listing groups (product filtering)
+
+Listing groups control which products from the feed are eligible in each asset group.
+
+**Filterable attributes:**
+
+| Attribute | Use | Example |
+|------|------|-----|
+| Category (Google product category) | Top-level segmentation | Apparel > Men's |
+| Brand | Brand-level management | Nike / Adidas |
+| Product ID | Single-product include / exclude | Exclude a specific SKU |
+| Condition | New vs. used | New only |
+| Custom labels (0–4) | Free-form classification | Margin, seasonality, sales rank, etc. |
+
+### 10-3. Custom-label patterns
+
+| Label | Use | Example values |
+|-------|------|-------|
+| custom_label_0 | Margin tier | high_margin / mid_margin / low_margin |
+| custom_label_1 | Sales performance | best_seller / mid_performer / long_tail |
+| custom_label_2 | Seasonality | spring / summer / autumn / winter / year_round |
+| custom_label_3 | Promotion | on_sale / clearance / new_arrival |
+| custom_label_4 | Stock | in_stock / low_stock / pre_order |
+
+**Example campaign split using custom labels:**
+
+```
+P-MAX Campaign A (high margin, high performance)
+ ├── tROAS: 400%
+ ├── AG1: best_seller × high_margin
+ └── AG2: mid_performer × high_margin
+
+P-MAX Campaign B (mid margin, the rest)
+ ├── tROAS: 250%
+ ├── AG1: best_seller × mid_margin
+ └── AG2: remaining products
+```
+
+---
+
+## 11. Feed-only vs. full assets
+
+### 11-1. What feed-only is
+
+A campaign that submits no text / image / video assets and runs solely on the product feed. Effectively focuses on Shopping ads and dynamic remarketing.
+
+### 11-2. Comparison
+
+| Item | Feed-only | Full assets |
+|------|---------------|------------|
+| Channels | Mostly Shopping + dynamic remarketing | All 7 channels (Search, Shopping, YouTube, GDN, Discover, Gmail, Maps) |
+| Asset production | Not needed (feed only) | Need to produce text, image, video |
+| Time-to-launch | Fast | Asset production takes time |
+| CPA / ROAS | CPA tends to be lower short-term (concentrates on high-intent users) | Long-term CV growth potential via reach expansion |
+| Reach | Limited (mostly high-intent users) | Wide (covers awareness → consideration → purchase) |
+| Brand awareness | Almost none | YouTube / GDN delivery builds brand contact |
+
+### 11-3. Which to choose
+
+| Situation | Recommendation | Reason |
+|-------|---------|------|
+| Immediate ROAS focus | Feed-only | Strips away wasted placements, concentrates on high-intent |
+| No asset-production resource | Feed-only | Can launch with the feed alone |
+| New-customer / brand awareness goals | Full assets | Reach across all channels finds new customers |
+| Long-term growth strategy | Full assets | Covers full funnel: awareness → consideration → purchase |
+| Already running Display / YouTube as separate campaigns | Feed-only | Prevents overlap and cannibalization with P-MAX |
+
+---
+
+## 12. New-customer acquisition mode
+
+### 12-1. Overview
+
+P-MAX has dedicated modes for prioritizing new-customer acquisition.
+
+| Mode | Behavior | When to use |
+|-------|------|----------|
+| New Customer Value Mode | Adds extra value to new-customer CVs and bids more aggressively for them; existing customers still served | Reinforce new acquisition while keeping existing-customer CV opportunity |
+| New Customer Only Mode | Optimizes solely for new-customer CVs; existing customers excluded | Full focus on new acquisition |
+| High-Value New Customer Mode | Define high-value existing customers via Customer Match, and bid even more aggressively for high-LTV-likely new customers | Businesses with wide LTV variance among customers |
+
+### 12-2. Setup requirements
+
+| Requirement | Detail |
+|------|------|
+| Customer Match list | Upload existing-customer email list |
+| Conversion tag | Implement a parameter that distinguishes new vs. existing |
+| High-value mode | Additional Customer Match list defining high-value customers |
+
+### 12-3. Design notes
+
+- Don't set the new-customer "extra value" too high. Base it on actual new-customer LTV.
+- "New Customer Only" mode can shrink delivery materially — only use when you have ample traffic.
+- Refresh the Customer Match list regularly (at least monthly).
+
+---
+
+## 13. Demographic controls
+
+### 13-1. Available demographic exclusions (2025+)
+
+The table reflects availability as of February 2026. Availability varies by account and region. Confirm in Google Ads UI under Campaign settings → Demographic exclusions.
+
+| Demographic | Excludable values | Available since (at time of writing) |
+|---------------|------------|---------|
+| Age | 18-24 / 25-34 / 35-44 / 45-54 / 55-64 / 65+ / Unknown | Apr 2025 (beta started Jan 2025) |
+| Gender | Male / Female / Unknown | Jul 2025 |
+| Device | Desktop / Mobile / Tablet / CTV | 2025 |
+
+> **Household-income targeting**: available but limited in accuracy (estimate-based). Available in roughly 20 countries.
+
+### 13-2. Demographic-exclusion rules
+
+| Rule | Reason |
+|-------|------|
+| Limit exclusions to attributes that genuinely don't convert | Excessive exclusion narrows learning |
+| Be cautious with "Unknown" | A meaningful share of users get classified as Unknown |
+| Decide from data, not assumptions | Base decisions on actuals |
+| Monitor for at least 2 weeks after exclusion | Sometimes exclusion backfires |
+
+---
+
+## 14. Coexistence with other campaigns
+
+### 14-1. P-MAX and Search
+
+Because P-MAX serves on the Search channel too, cannibalization with existing Search campaigns is unavoidable.
+
+**Auction priority rules:**
+
+| Condition | Wins the auction |
+|------|-------------------|
+| Search KW matches an Exact-match keyword in a Search campaign | **Search campaign** |
+| Search KW matches Phrase / Broad in a Search campaign | The one with higher Ad Rank (often P-MAX) |
+| Search KW doesn't exist in any Search campaign | **P-MAX** |
+
+**Cannibalization mitigations:**
+
+| Mitigation | Effect |
+|------|------|
+| Add brand KWs as Exact match in the Search campaign | Branded queries route to Search |
+| Add brand exclusion to P-MAX | Prevents P-MAX from absorbing brand searches |
+| Periodically check P-MAX search-term insights | Understand where P-MAX is serving |
+| Add high-performing terms as Exact match in Search | Locks priority to the Search campaign |
+| Watch CPC trends in the Search campaign | Verify CPC didn't spike after P-MAX launch |
+
+### 14-2. P-MAX and Shopping
+
+| Situation | Recommendation |
+|------|------|
+| Standard Shopping running | P-MAX wins the auction. If you run both, watch for product-segment overlap |
+| P-MAX only | Generally recommended. Manageable in one campaign |
+| Hybrid | Standard Shopping for fine control over specific products (high-margin), P-MAX for the rest |
+
+### 14-3. P-MAX vs. other campaign types
+
+| Campaign type | Cannibalization risk | Recommendation |
+|----------------|-------------|---------|
+| Search | High | Lock priority via Exact-match KWs. Brand exclusion on P-MAX |
+| Shopping (Standard) | High | Eliminate product-segment overlap |
+| Display | Medium | Can coexist for different goals. Care needed when both target CV |
+| Video (YouTube) | Low–medium | Can coexist with awareness-focused video campaigns |
+| Demand Gen | High | If both target CV, Demand Gen risks getting suppressed |
+| App | None | Channels don't overlap |
+
+> **For per-campaign-type best practices, see each reference: [search-ads.md](search-ads.md), [display-ads.md](display-ads.md), [shopping-ads.md](shopping-ads.md), [video-campaigns.md](video-campaigns.md), [app-campaigns.md](app-campaigns.md).**
+
+---
+
+## 15. P-MAX for Store Goals
+
+### 15-1. Overview
+
+P-MAX for Store Goals is a dedicated variant for optimizing local actions: store visits, calls, directions. Introduced in July 2022 to consolidate the legacy Local campaigns.
+
+### 15-2. Optimization goals
+
+| Goal | Description |
+|------|------|
+| Store visits | Optimizes for in-store visits |
+| Store sales | Optimizes for post-visit purchases |
+| Local actions (directions, calls) | Optimizes for direction lookups in Google Maps and tap-to-call |
+
+### 15-3. Channels
+
+Google Search / Google Maps / YouTube / GDN / Gmail / Discover / **Waze** (Nov 2025+, US only)
+
+### 15-4. Setup requirements
+
+| Requirement | Detail |
+|------|------|
+| Google Business Profile (GBP) integration | Store info, address, hours required |
+| Store-visit measurement enabled | Compatible with Google's store-visit conversion measurement |
+| Multi-store | Configure store groups for regional delivery optimization |
+
+### 15-5. Waze integration (Nov 2025+, US only)
+
+| Item | Detail |
+|------|------|
+| Display format | "Promoted Places" pin on the navigation map |
+| Eligibility | Campaigns targeting Store Visits / Store Sales / Local Action Directions |
+| Setup | Automatic — no extra config; existing assets surface in Waze |
+| Region | US only. International rollout planned 2026+ |
+
+---
+
+## 16. Reporting and insights
+
+### 16-1. Channel performance report (May 2025+)
+
+The most important report for the "P-MAX black-box" problem. See per-channel performance.
+
+| Channel | Visible metrics |
+|---------|--------------|
+| Search | Impressions, clicks, cost, CV, CV value |
+| Shopping | Same |
+| YouTube | Same |
+| Display (GDN) | Same |
+| Discover | Same |
+| Gmail | Same |
+| Maps | Same |
+| Search Partners | Same (added Nov 2025) |
+
+> **Limit: you cannot control budget / bid per channel.** The report is read-only. If allocation is unsatisfactory, control indirectly via campaign splits or feed-only mode.
+
+### 16-2. Search-terms report (Mar 2025+)
+
+See search terms used for Search and Shopping delivery in P-MAX. Same granularity as Search-campaign search terms.
+
+**How to use:**
+- Add converting search terms as Exact-match KWs in the Search campaign (lock priority)
+- Add irrelevant search terms to negative keywords
+- Validate the effectiveness of your search themes
+
+### 16-3. Asset performance report
+
+| Visible data | Detail |
+|----------------|------|
+| Asset-level impressions, clicks, cost | Each text / image / video's contribution (2025+) |
+| Performance rating | Best / Good / Low (3-tier) |
+| Combination report | Performance per asset combination |
+
+**How to use:**
+- Replace "Low"-rated assets after at least 14 days
+- Analyze commonalities of "Best" assets and apply them to new ones
+- Keep an asset live at least 2 weeks before reading the rating
+
+### 16-4. Other insights
+
+| Report | Content |
+|---------|------|
+| Audience insights | Which audience segments contribute to CVs |
+| Diagnostic insights | Auto-detected issues (budget shortage, asset quality) |
+| Competitive insights | Auction Insights (Search channel only at the time of writing) |
+| Placement report | Sites, apps, and videos where the ad served |
+
+---
+
+## 17. A/B testing (Experiments)
+
+### 17-1. Asset A/B testing (Jan 2026+, all campaign types)
+
+| Item | Detail |
+|------|------|
+| Scope | Asset sets within a single asset group |
+| Method | Traffic split between control (existing) and treatment (new) |
+| Traffic split | 50/50 recommended |
+| Recommended duration | 4–6 weeks or longer |
+| Applying the result | Manually apply the winning asset set |
+
+**Test design rules:**
+- Tests under 3 weeks have unstable results — run at least 4 weeks
+- Change one variable per test (only headlines, only images, etc.)
+- Extend to 6–8 weeks for low-CV accounts
+
+### 17-2. Campaign-mix experiments
+
+Campaign-level A/B tests for evaluating P-MAX's impact.
+
+| Test | Detail |
+|---------|------|
+| P-MAX vs. existing campaign mix | Measure P-MAX's launch impact |
+| DSA → P-MAX budget shift | Measure the impact of moving DSA budget to P-MAX |
+| Display → P-MAX budget shift | Measure the impact of moving Display budget to P-MAX |
+
+---
+
+## 18. Gemini AI integration
+
+### 18-1. Gemini-powered features (2025+)
+
+| Feature | Detail |
+|------|------|
+| Text-asset auto-generation | Gemini auto-generates long headlines and descriptions |
+| Sitelink auto-generation | Auto-suggests sitelinks based on LP content |
+| Image generation | Imagen 2-based ad-image generation (lifestyle, people) |
+| Image editing | Background swap, person addition for existing images |
+| High-performance look-alike generation | Generates new images similar to "Best"-rated ones |
+| Shareable preview | Share an ad preview via link (no Google Ads login required) |
+
+### 18-2. Rules for using AI-generated assets
+
+| Rule | Reason |
+|-------|------|
+| AI is a supplement — keep your own assets as the core | Brand consistency |
+| Always review AI-generated assets before approval | Risk of inappropriate language or imagery |
+| Use your top-performing assets as the base for AI generation | Better learning quality |
+| Evaluate AI-generated asset performance like any other | Don't favor or penalize them by source |
+
+---
+
+## 19. Learning period and operating cadence
+
+### 19-1. Learning period
+
+| Phase | Duration | Detail |
+|---------|------|------|
+| Initial learning | 2–4 weeks | AI learns to optimize bidding, targeting, and creatives. Performance is unstable |
+| Stabilization | 4–6 weeks | Learning matures; performance steadies |
+| Maturity | 6+ weeks | Stable. Now consider optimization and expansion |
+
+**Changes that reset learning:**
+- Switching bid strategy
+- Budget changes ≥20%
+- Adding / changing / removing CV actions
+- Major asset-group changes (replacing 50%+ of assets)
+- Major changes to geo-targeting
+
+### 19-2. Operating cadence
+
+| Cadence | Action |
+|------|----------|
+| Daily | Budget pacing. Watch for anomalous spend |
+| Weekly | Channel report / asset performance / search-terms report / spend-concentration check (top 20% products / AGs absorbing 80%+ of spend?) |
+| Bi-weekly | Replace "Low"-rated assets / add negative KWs |
+| Monthly | Audience-insights analysis / review bid targets / budget reallocation / refresh Customer Match list |
+| Quarterly | Full asset refresh / restructure campaigns / cross-check competitor moves |
+
+### 19-3. Optimization priority
+
+When performance falls short, work in this order.
+
+| Priority | Check | Action |
+|-------|------------|------|
+| 1 | CV measurement accurate? | Implement Enhanced Conversions / revisit CV definitions |
+| 2 | Budget sufficient? | At least 3× target CPA per day |
+| 3 | Asset quality sufficient? | Replace "Low" assets / fill gaps |
+| 4 | Audience signals appropriate? | Add Customer Match / revise signals |
+| 5 | Negatives and brand exclusion right? | Add irrelevant terms via search-terms report |
+| 6 | Bid targets realistic? | Re-anchor on trailing actuals |
+| 7 | URL expansion settings right? | Verify no traffic leaks to wrong pages |
+| 8 | Cannibalization happening? | Watch Search-campaign CPC and IS |
+
+---
+
+## 20. Common failure patterns
+
+### 20-1. Design-stage mistakes
+
+| Mistake | Why it fails | Avoidance |
+|------------|----------|-------|
+| Launching with insufficient CV data | AI can't learn; wasted impressions accumulate | Build 30+ monthly CVs in Search first |
+| Over-splitting campaigns | Each campaign starves for CV data | Structure to maintain 30+ monthly CVs per campaign |
+| Over-splitting asset groups | Data fragmentation slows learning | Start with 1–3 AGs; expand based on data |
+| P-MAX-only without Search | Can't control brand KWs or judge cannibalization | Build Search first, add P-MAX after |
+
+### 20-2. Asset mistakes
+
+| Mistake | Why it fails | Avoidance |
+|------------|----------|-------|
+| Only generic stock images | Low CVR; no brand differentiation | Use real photos of your products / services |
+| No video assets | Google auto-generates low-quality video from images | At least one landscape + one vertical video |
+| Too few text assets | AI has limited combinations to test | 11+ headlines, 4+ descriptions |
+| Excessive text in images | Risk of policy issues / delivery limits on GDN, Discover | Keep text ≤20% of image area |
+
+### 20-3. Operating-stage mistakes
+
+| Mistake | Why it fails | Avoidance |
+|------------|----------|-------|
+| Frequent changes during learning | Resets learning; permanently unstable | Don't touch for at least 2 weeks after a change |
+| Leaving URL expansion on by default | Traffic leaks to blogs / careers | Configure URL exclusion rules; off for lead-gen |
+| Running without brand exclusion | P-MAX absorbs brand-search CVs — apparent ROAS is high but real lift is small | Configure brand exclusion to draw a clean line with Search |
+| Excluding all non-CV terms | Narrows AI exploration; loses new-customer discovery | Strategic, category-level exclusion only |
+| Judging by ROAS alone | VTC-inclusive ROAS may be overstated | Also evaluate click-only ROAS |
+| Spiking the budget | Triggers learning reset | Up to 20% per 7–14 days |
+| Setting tCPA / tROAS targets to aspirational values | Delivery collapses, learning halts | Anchor on actuals |
+| "Set and forget" P-MAX | Performance decays as the environment shifts | Make a weekly health check routine |
+
+### 20-4. P-MAX retargeting bias
+
+P-MAX defaults to prioritizing existing customers and site visitors — "users likely to convert". This makes ROAS look high while real new-customer acquisition is low.
+
+**Mitigations:**
+- Enable a New Customer Acquisition mode (see [§12](#12-new-customer-acquisition-mode))
+- Use Customer Match to identify existing customers
+- Check Display / YouTube share in the channel report (heavy retargeting → high Display share)
+- Periodically analyze new vs. existing CV breakdown
+
+---
+
+## Appendix A: Symptom-based troubleshooting
+
+Reverse lookup: identify the cause from the symptom and decide the action.
+
+| Symptom | Likely causes | Action |
+|------|---------|-------|
+| CVs are coming in but ROAS is degrading | High VTC share inflates apparent ROAS / tROAS too loose / low-margin products dominate CVs | Check VTC share / tighten tROAS in steps from actuals / split by margin via custom labels |
+| Spend concentrates on a few products / AGs | AI optimized into a few easy-to-convert products | Split via listing groups / improve low-spend AG asset quality / split campaigns to manage budget independently |
+| YouTube / Display share is too high | Full-asset delivery skewing to retargeting / fierce Search-channel competition | Consider feed-only / enable New Customer Acquisition mode / verify true CV contribution in the channel report |
+| CPA / CPC suddenly rose | Learning reset / competitive shift / seasonality | Check recent changes (bid, budget, assets) / wait 2–3 weeks for stabilization / check search-terms for new high-CPC queries |
+| Search-campaign performance dropped | Cannibalization with P-MAX | Check P-MAX search-terms for overlap / set brand exclusion / add critical KWs as Exact match in Search |
+| Far too few CVs / learning not progressing | Budget shortage / CV definition too strict / poor asset quality | Lift daily budget to 3× target CPA / add a micro-CV / fill out assets |
+| Ad Strength stuck at "Low" | Insufficient asset count / missing asset types | 11+ headlines, 4+ descriptions, 5+ images per format, 1+ videos |
+
+---
+
+## Appendix B: Naming conventions, change log, checklist
+
+### Naming-convention templates
+
+For consistency and easy handoffs, use a unified naming convention.
+
+**Campaign naming:**
+```
+[P-MAX] [Goal] [Segment] [Bid strategy]
+```
+
+| Example | Description |
+|-----|------|
+| `P-MAX_EC_HighMargin_tROAS400` | E-commerce high-margin, tROAS 400% |
+| `P-MAX_EC_AllProducts_MaxCV` | E-commerce all products, Maximize Conversion Value |
+| `P-MAX_Lead_ServiceA_tCPA50` | Lead-gen service A, tCPA $50 |
+| `P-MAX_StoreGoals_NYC_MaxCV` | Store Goals (NYC) |
+
+**Asset-group naming:**
+```
+[Category / Target] [Messaging axis]
+```
+
+| Example | Description |
+|-----|------|
+| `Mens_Shoes_Price` | Men's shoes — price-led |
+| `SaaS_Enterprise_ROI` | SaaS enterprise — ROI-led |
+| `Summer_Sale_2026` | 2026 summer sale promotion |
+
+**Custom-label naming:**
+```
+CL[number]_[axis]_[value]
+```
+
+| Example | Description |
+|-----|------|
+| `CL0_margin_high` | Custom label 0: high margin |
+| `CL1_rank_bestseller` | Custom label 1: best seller |
+
+### Change-log template
+
+In P-MAX, every change risks resetting learning — log everything.
+
+| Date | Change | Hypothesis | Expected effect | Next review | Result |
+|------|---------|------|------------|----------|------|
+| 2026-02-23 | tROAS 300% → 350% | CVs stable; room to improve ROAS | ROAS up (slight delivery dip acceptable) | 2026-03-09 | — |
+| 2026-02-23 | Replaced 3 headlines (Low-rated) | New headlines improve CTR | CTR up, CV maintained | 2026-03-09 | — |
+
+### Asset-production checklist
+
+| Item | Criterion | Check |
+|------------|------|------|
+| Headlines | 11+ (min 3, at least 1 ≤15 chars) | □ |
+| Long headlines | 3+ (min 1) | □ |
+| Descriptions | 4+ (min 2, at least 1 ≤60 chars) | □ |
+| Landscape images (1.91:1) | 5+ (recommended 1200×628) | □ |
+| Square images (1:1) | 5+ (recommended 1200×1200) | □ |
+| Portrait images (4:5) | 3+ (recommended 960×1200) | □ |
+| Logo (1:1) | 1+ (recommended 1200×1200) | □ |
+| Video (16:9) | 1+ (15+ sec recommended) | □ |
+| Video (9:16) | 1+ (10–60 sec; Shorts-eligible) | □ |
+| Image text | ≤20% of image area | □ |
+| Subject placement | Within central 80% of frame | □ |
+| File format | JPEG or PNG (image) / MP4 recommended (video) | □ |
+| File size | ≤5 MB (image) / ≤256 GB (video) | □ |
+| Ad Strength | "Excellent" | □ |
