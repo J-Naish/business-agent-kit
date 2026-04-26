@@ -269,8 +269,8 @@ In Google Ads, you pick a goal first; the available sub-types depend on the goal
 
 | Bid strategy | Pricing | Compatible sub-types | Typical price level |
 |---|---|---|---|
-| **Target CPV** | Per view | Video Views | $0.02–$0.10 (global avg ~$0.03; varies materially by industry, region, and timing) |
-| **Target CPM** | Per 1,000 imps | Video Reach, Ad Sequence, Audio | $5–$10 (global avg ~$9; varies materially by industry, region, and timing) |
+| **Target CPV** | Per view | Video Views | Varies materially by industry, region, audience, and timing |
+| **Target CPM** | Per 1,000 imps | Video Reach, Ad Sequence, Audio | Varies materially by industry, region, audience, and timing |
 | **Maximize Conversions** | Per CV | Demand Gen | Industry- and product-dependent |
 | **Target CPA** | Per CV | Demand Gen | Set the target CPA |
 | **Target ROAS** | Revenue ratio | Demand Gen | Set the target ROAS |
@@ -376,7 +376,7 @@ In Google Ads, you pick a goal first; the available sub-types depend on the goal
 | Square | 1:1 | 1080 × 1080 | 480 × 480 | In-feed, some surfaces |
 | Other landscape | 4:3 | 1440 × 1080 | 960 × 720 | Legacy support |
 
-> **Recommendation:** Ship a **set of landscape (16:9) + vertical (9:16)**. This covers every surface optimally. Adding vertical has been reported to improve mobile engagement and lift CV rate by 20%+ in some cases (Google data; varies by industry / product).
+> **Recommendation:** Ship a **set of landscape (16:9) + vertical (9:16)**. This covers the major surfaces more cleanly than relying on cropped or auto-adapted assets.
 
 **Minimum production set:**
 
@@ -412,7 +412,7 @@ In Google Ads, you pick a goal first; the available sub-types depend on the goal
 
 ## 6. The ABCD framework (creative principles)
 
-A framework Google developed in collaboration with Ipsos, Nielsen Neuro, and Kantar. Ads following ABCD have shown up to 30% short-term sales lift and 17% long-term brand contribution lift (Google / Ipsos joint research; results vary materially by creative quality, industry, and campaign design).
+A practical creative framework for YouTube ads. Use it as a quality floor for attention, brand memory, emotional connection, and action clarity.
 
 ### 6-1. A — Attract
 
@@ -446,7 +446,7 @@ The first 5 seconds decide everything. Skippable ads decide skip vs continue at 
 
 | Tactic | Description |
 |---|---|
-| **Humor** | Per Google research, humor is the single biggest lift to ad receptivity |
+| **Humor** | Can improve receptivity when it fits the brand and offer |
 | **Storytelling** | Use a tension → resolution arc to drive emotional pull |
 | **Surface the audience's problem** | Show the pain the viewer recognizes as their own |
 | **Real customer voices** | Reviews / testimonials build trust and connection |
@@ -577,7 +577,7 @@ Important info shouldn't be hidden by UI elements (like / comment / share button
 ### 9-1. Characteristics of CTV viewing
 
 - In the U.S., YouTube's TV-screen viewing share has surpassed Netflix, Hulu, and Prime Video (2025 U.S. data; situations vary by region).
-- Ad completion rates on CTV have been reported as high as 96% (Google; varies by ad format and industry).
+- CTV often produces high completion rates, especially for non-skippable and bumper-style formats.
 - About 26% of CTV viewing is co-viewing (one ad reaches multiple people).
 - YouTube ads on CTV have shown around a 10% higher brand-recall lift than linear-TV ads.
 
@@ -614,10 +614,10 @@ Important info shouldn't be hidden by UI elements (like / comment / share button
 | Item | VAC (legacy) | Demand Gen (current) |
 |---|---|---|
 | Surfaces | YouTube | YouTube + Discover + Gmail (separate from Display campaign / GDN; surfaces may expand further) |
-| Creative | Video only | Video + image (combining the two has driven 20% more CVs at the same CPA per Google) |
+| Creative | Video only | Video + image. Use both when the campaign needs broad surface coverage |
 | Channel control | Limited | Detailed control, e.g. YouTube Shorts only |
 | Lookalike Segments | — | Reach new users similar to seed lists. Availability varies by account / region |
-| ROAS | — | Reportedly 58% higher ROAS vs VAC on average (Nielsen analysis; results vary widely by account / industry) |
+| ROAS | — | Must be judged from the account's own conversion quality, assisted impact, and incrementality |
 
 ### 10-3. Demand Gen setup points
 
@@ -652,9 +652,9 @@ Demand Gen is sensitive to learning periods. Use the following rules to prevent 
 |---|---|---|
 | **TrueView views** | 30-second view, video completion, or click (renamed from "Views" in October 2025) | Video Views primary KPI |
 | **View rate (VTR)** | TrueView views ÷ impressions | Evaluate creative attractiveness |
-| **Average view rate** | Global average ~31.9% (2024–2025 data; varies materially by industry / region / format) | Benchmark reference |
+| **View-rate baseline** | Account and campaign-history baseline | Benchmark creative attractiveness against your own history and comparable campaigns |
 | **CTR** | Clicks ÷ impressions | Evaluate the strength of action driving |
-| **Average CTR** | Global average ~0.65% (2024–2025 data; varies materially by industry / region / format) | Benchmark reference |
+| **CTR baseline** | Account and campaign-history baseline | Benchmark action-driving strength against your own history and comparable campaigns |
 | **View-completion rate** | Share of users who watched the video to the end | Evaluate content-retention strength |
 | **CPV** | Cost ÷ TrueView views | View cost efficiency |
 | **CPM** | Cost ÷ impressions × 1,000 | Reach cost efficiency |
@@ -665,7 +665,7 @@ Demand Gen is sensitive to learning periods. Use the following rules to prevent 
 
 ### 11-2. Brand Lift studies
 
-Google's official tool to measure awareness / consideration impact from video ads.
+Built-in lift-measurement workflow for awareness / consideration impact from video ads.
 
 | Item | Detail |
 |---|---|
@@ -736,18 +736,10 @@ The following categories can be excluded from delivery:
 
 | Item | Recommendation |
 |---|---|
-| Refresh interval | Every 2–4 weeks (high-growth accounts average 18.2 days) |
+| Refresh interval | Every 2–4 weeks for active accounts, adjusted by spend, fatigue, and approval capacity |
 | Variation count | 3–5 minimum; 10+ ideal at high budget tiers |
 | Test method | Google Ads video experiments (A/B: 2 arms; custom: up to 10 arms) |
 | Test priority | 1. Hook (first 5 s) → 2. Offer content → 3. Visuals → 4. CTA |
-
-**Refresh interval and growth (industry data, Adzoola 2024–2025; primarily Western markets — patterns may differ in other markets):**
-
-| Refresh interval | Monthly growth (rough) |
-|---|---|
-| <14 days | +1.67% |
-| 14–30 days | +0.42% |
-| >30 days | -0.95% |
 
 ### 13-2. A/B testing rules
 

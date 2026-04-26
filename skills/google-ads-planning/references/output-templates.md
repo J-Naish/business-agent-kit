@@ -202,7 +202,7 @@ Brand exclusion: {what's excluded}
 |---|---|---|---|
 | CPA | ${X,XXX} | Every 2 weeks | Within ±20% of target |
 | ROAS | {XXX%} | Every 2 weeks | Within ±20% of target |
-| CTR | {X.X%} | Weekly | At or above industry average |
+| CTR | {X.X%} | Weekly | At or above account baseline for the same intent segment |
 | CV count | {XX / month} | Monthly | Evaluate together with budget pacing |
 | Quality Score | 7+ | Monthly | Search only |
 

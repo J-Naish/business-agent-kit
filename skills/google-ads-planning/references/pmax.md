@@ -104,7 +104,7 @@ When and how to deploy P-MAX.
 
 | Condition | Decision | Reason |
 |------|------|------|
-| 30+ monthly CVs (account-wide) | Consider adopting | The minimum data the AI needs to learn |
+| 30+ monthly CVs (account-wide) | Consider adopting | A practical baseline for more stable learning |
 | 50+ monthly CVs | Adopt with confidence | Stable optimization is realistic |
 | Under 10 monthly CVs | Too early | Insufficient learning data. Build CV history with Search first |
 | No Search campaign yet | Run Search first | P-MAX leverages your existing campaigns' CV data |
@@ -139,7 +139,7 @@ The shortest path for a first-time P-MAX launch. Refer to detailed sections belo
 |------------|---------|----------|
 | CV tracking is accurate | Required | Set up CV tracking first (see [§9](#9-conversion-measurement-optimization)) |
 | Enhanced Conversions implemented | Strongly recommended | Improves measurement accuracy |
-| 30+ monthly CVs (account-wide) | Required | Build CV history via Search first |
+| 30+ monthly CVs (account-wide) | Strongly recommended | Below this, expect slower and less stable learning. Build CV history via Search first when possible |
 | Search campaign already running | Strongly recommended | Needed for brand-KW control and cannibalization monitoring |
 | Product feed optimized (e-commerce) | Required (e-commerce) | See [shopping-ads.md](shopping-ads.md) |
 | Offline-CV import in place (lead-gen) | Recommended | Build CRM integration to capture GCLID |
@@ -179,7 +179,7 @@ The shortest path for a first-time P-MAX launch. Refer to detailed sections belo
 
 ## 1. Major updates 2025–2026
 
-> The following reflects information as of February 2026. Beta-feature availability differs by account, country, and timing. Verify on [Google Ads Help](https://support.google.com/google-ads/) and the [Google Ads Blog](https://blog.google/products/ads-commerce/).
+> The following reflects platform capabilities as of the time of writing. Beta-feature availability differs by account, country, and timing. Verify in the Google Ads UI before implementation.
 
 | When | Update |
 |------|----------------|
@@ -296,7 +296,7 @@ An asset group contains:
 | Start with 1–3 AGs | Over-segmentation fragments data |
 | Avoid product / target overlap between AGs | Confuses learning |
 | Register every asset type (text + image + video) | Required to serve on every channel |
-| Aim for "Excellent" Ad Strength | Google's recommendation; affects delivery volume |
+| Aim for "Good" or better Ad Strength, and improve toward "Excellent" when practical | Better asset coverage can improve eligibility and delivery quality |
 
 ---
 
@@ -532,7 +532,7 @@ Does CV value vary by product?
 
 | Item | Recommendation | Notes |
 |------|------|------|
-| Min daily budget | 3× target CPA | Google's recommendation. Ensures fast data accumulation |
+| Min daily budget | 3× target CPA | Practical starting point for faster data accumulation |
 | Floor | 1× target CPA | Below this, learning is extremely slow |
 | Practical floor | 1–3× target CPA per day (e.g., $50 CPA → $50–$150 / day) | Varies by industry and CPA |
 | Budget increases | Up to 20% every 7–14 days | Sudden hikes reset learning |
@@ -551,15 +551,15 @@ CV data is P-MAX's only learning signal. The quality of your CV definitions and 
 | Rule | Reason |
 |-------|------|
 | Limit optimization-target CVs to actual business outcomes | Including low-intent actions (PDF downloads, newsletter signups) makes the AI mass-produce them |
-| Always implement Enhanced Conversions | Often improves measurement accuracy (Google reports 5–10%; varies by EC vs. lead, consent mode, etc.). Cookieless-environment readiness |
+| Implement Enhanced Conversions where eligible | Improves measurement resilience and gives Smart Bidding cleaner first-party signals |
 | Set CV value accurately (e-commerce: dynamic; lead-gen: lead-score-based) | CV-value accuracy directly determines tROAS accuracy |
-| Use data-driven attribution | Google's recommendation. Credits non-last-click touchpoints |
+| Use data-driven attribution when appropriate | Helps credit non-last-click touchpoints when the account has meaningful assist paths |
 
 ### 9-3. Click-based vs. view-through CV
 
 > See SKILL.md "VTC unified policy" as well. P-MAX is the ad type most affected by VTC — extra care is warranted.
 
-P-MAX includes view-through conversions (VTC) in optimization by default. This widely overstates ROAS vs. real impact.
+P-MAX can include view-through conversions (VTC) in reporting and optimization depending on conversion-action settings. High VTC share can overstate causal impact.
 
 | Metric | Description | Caveat |
 |------|------|-------|
@@ -568,7 +568,7 @@ P-MAX includes view-through conversions (VTC) in optimization by default. This w
 
 **Mitigation (advanced):**
 - Create a click-only CV action and use it as P-MAX's CV goal
-- Apparent ROAS will drop sharply right after the switch, but several reports note real ROAS improves over a few weeks (source: ALM Corp 2026 report; magnitude varies widely by industry, account, and CV volume)
+- Apparent ROAS may drop after the switch because impression-only credit is removed. Judge the change with a before/after window and business-source-of-truth data, not platform ROAS alone.
 - This is an advanced technique — start with defaults, monitor VTC share, and decide from there
 
 **How to validate in your account:**
@@ -959,8 +959,8 @@ When performance falls short, work in this order.
 
 | Mistake | Why it fails | Avoidance |
 |------------|----------|-------|
-| Launching with insufficient CV data | AI can't learn; wasted impressions accumulate | Build 30+ monthly CVs in Search first |
-| Over-splitting campaigns | Each campaign starves for CV data | Structure to maintain 30+ monthly CVs per campaign |
+| Launching with insufficient CV data | Learning is slower and less stable | Build more true conversion volume first when possible |
+| Over-splitting campaigns | Each campaign starves for CV data | Split only for real control needs and keep enough volume per campaign |
 | Over-splitting asset groups | Data fragmentation slows learning | Start with 1–3 AGs; expand based on data |
 | P-MAX-only without Search | Can't control brand KWs or judge cannibalization | Build Search first, add P-MAX after |
 
@@ -1009,7 +1009,7 @@ Reverse lookup: identify the cause from the symptom and decide the action.
 | YouTube / Display share is too high | Full-asset delivery skewing to retargeting / fierce Search-channel competition | Consider feed-only / enable New Customer Acquisition mode / verify true CV contribution in the channel report |
 | CPA / CPC suddenly rose | Learning reset / competitive shift / seasonality | Check recent changes (bid, budget, assets) / wait 2–3 weeks for stabilization / check search-terms for new high-CPC queries |
 | Search-campaign performance dropped | Cannibalization with P-MAX | Check P-MAX search-terms for overlap / set brand exclusion / add critical KWs as Exact match in Search |
-| Far too few CVs / learning not progressing | Budget shortage / CV definition too strict / poor asset quality | Lift daily budget to 3× target CPA / add a micro-CV / fill out assets |
+| Far too few CVs / learning not progressing | Budget shortage / CV definition too strict / poor asset quality | Lift daily budget if economics allow / improve the primary CV path / use only proven proxy signals / fill out assets |
 | Ad Strength stuck at "Low" | Insufficient asset count / missing asset types | 11+ headlines, 4+ descriptions, 5+ images per format, 1+ videos |
 
 ---

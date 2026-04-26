@@ -149,7 +149,7 @@ Use when you want pixel-level design control.
 | Description | 1 | **5** | 5 |
 | Video | 0 | 1–3 | 5 |
 
-**Why upload more assets:** With multiple variations, Google AI can test more combinations and serve the optimal ad per surface and user. Google reports that running multiple asset variations tends to improve conversion volume at equivalent CPA (results vary by industry, scale, and asset quality).
+**Why upload more assets:** With multiple variations, Google AI can test more combinations and serve the optimal ad per surface and user. More useful variation usually improves learning quality, provided the assets are genuinely distinct.
 
 ---
 
@@ -572,7 +572,7 @@ Methods for verifying that Display is actually generating incremental conversion
 | **Period on / off** | Pause Display for a defined period; compare CV count and brand-search volume before vs after | Mid |
 | **Optimized Targeting on / off** | Compare ad groups under the same conditions with Optimized Targeting on vs off | Mid |
 | **Prospecting vs Remarketing split** | Split into separate campaigns to surface each side's incremental contribution | Mid |
-| **Google Ads Conversion Lift** | Use Google's official lift-measurement feature (eligibility required) | High |
+| **Conversion Lift** | Use the platform lift-measurement workflow when eligible | High |
 
 ### 8-5. Landing-page requirements (Display-specific)
 

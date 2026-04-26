@@ -220,9 +220,9 @@ If existing context (business profile, competitive analysis, brand assets, prior
 
 (Numbers are rough orders of magnitude — adjust to local market CPCs and the target vertical's economics.)
 
-### Google's "power pack" recommendation (2025–2026)
+### Modern automation stack (2025–2026)
 
-Google's recommended modern stack:
+A common modern stack to consider:
 
 1. **Performance Max** — primary conversion engine
 2. **Demand Gen** — visual-rich prospecting
@@ -251,8 +251,8 @@ Google Ads is a 3-layer structure: Account → Campaign → Ad Group (→ Ads + 
 
 | Level | Design principle |
 |---|---|
-| Campaign | Split by goal and budget. ~6–10 campaigns is typical. Over-fragmenting splits the AI's training signal. |
-| Ad Group | One theme per ad group. ~10–20 keywords, 3–5 RSAs. ~7–10 ad groups per campaign. |
+| Campaign | Split by goal, budget, economics, geo/language, and ownership. Keep the structure as small as the business logic allows; over-fragmenting splits the AI's training signal. |
+| Ad Group | One clear theme per ad group. Use enough keywords and RSAs to learn, but avoid tiny structures that exist only for reporting neatness. |
 
 ### Naming conventions
 
@@ -330,11 +330,11 @@ When changing bid settings:
 | Secondary CV | Monitoring only | Resource downloads, newsletter signup |
 | Micro CV | Engagement signals | Scroll depth, dwell time |
 
-Required modern setup (2025+):
+Modern setup to prioritize:
 
-- **Enhanced Conversions** — Hashed first-party data sent to Google. Essentially required as cookie restrictions tighten.
-- **Offline Conversion Import** (for lead gen) — Push closed-deal data from CRM back into Google Ads.
-- **Server-side tagging** — Mitigates ad-blocker and cookie-restriction loss.
+- **Enhanced Conversions** — Hashed first-party data sent to Google. Treat as a default part of a durable measurement setup.
+- **Offline Conversion Import** (for lead gen) — Push qualified-lead, opportunity, or closed-won data from CRM back into Google Ads.
+- **Server-side tagging** — Use when the technical stack and measurement needs justify it; it can reduce browser-side signal loss.
 
 #### View-through conversions (VTC) — unified policy
 

@@ -90,7 +90,7 @@ Search works when explicit intent, a relevant promise, a strong landing page, an
 
 | Monthly CVs | Bid strategy | Match types | CV design |
 |-----------|---------|-------------|--------|
-| **0–15** | Manual CPC or Maximize Clicks | Exact, Phrase | Add a micro-CV (form start, etc.) as primary to supplement learning data |
+| **0–15** | Manual CPC or Maximize Clicks | Exact, Phrase | Keep the true business outcome primary. Track micro-CVs as secondary; use a proxy as primary only if it is proven to correlate with qualified outcomes |
 | **15–30** | Maximize Conversions (no tCPA) | Exact, Phrase | Operate on primary CV only. Move micro-CVs to secondary |
 | **30–50** | tCPA (set from actuals) | Phrase-led, begin testing Broad | Primary CV only. Consider importing offline CVs (B2B) |
 | **50–100** | tCPA or tROAS | Broad + Smart Bidding as the workhorse | Begin using CV value rules. Verify DDA eligibility |
@@ -115,7 +115,7 @@ Core principle: **separate campaigns whenever the goal, budget, or target differ
 
 ### Ad group design: STAG (Single Theme Ad Group)
 
-The 2025–2026 recommendation is **STAG (Single Theme Ad Group)**.
+Use **STAG (Single Theme Ad Group)** as a common starting point, not as a universal rule.
 
 The legacy SKAG (one keyword per ad group) approach is no longer recommended for these reasons:
 
@@ -127,9 +127,9 @@ The legacy SKAG (one keyword per ad group) approach is no longer recommended for
 
 | Item | Recommendation |
 |------|------|
-| KWs per ad group | 3–20, grouped around a shared theme and intent |
+| KWs per ad group | Enough to express one shared theme and intent without fragmenting learning |
 | Ads per ad group | 3–5 RSAs |
-| Ad groups per campaign | 7–10 |
+| Ad groups per campaign | As few as the business logic allows; add groups when theme, LP, economics, or message differ |
 | Relevance | Ad copy and LP must closely match the theme of each ad group |
 
 **Hybrid approach**: Keep SKAG for high-value, niche KWs while running everything else as STAG.
@@ -208,7 +208,7 @@ Across all phases: aggressively build out negative-KW lists
 
 #### 2025–2026 trends
 
-- A large share of Smart-Bidding advertisers now use Broad as their primary match type (source: Google blog, Search Scientists 2025 study)
+- Broad match is increasingly useful when paired with Smart Bidding, clean conversion data, and disciplined negative-keyword operations.
 - Even Exact match is no longer a "strict" match — Google's AI applies semantic interpretation across all match types
 - The dominant approach is holistic: a small set of core KWs combined with appropriate audience signals
 
@@ -318,7 +318,7 @@ Long-tail KWs (4+ word, specific phrases) tend to have lower CPC and higher CVR.
 
 ### Managing the learning period
 
-- **Duration**: typically 7–30 days; most cases resolve in ~2 weeks (source: [Google Ads help — learning period](https://support.google.com/google-ads/answer/13020501))
+- **Duration**: typically 7–30 days; many cases stabilize in roughly 2 weeks.
 - **Required data**: ~50 CV events, or 3 conversion cycles
 
 **Triggers that reset learning:**
@@ -349,8 +349,6 @@ Use Google Ads' **Seasonality Adjustments** feature.
 - Notify Smart Bidding in advance of expected CVR shifts around promotions / sales / events
 - **Best for 1–7 day** short-term events (14+ days is not recommended)
 - No reverse adjustment is needed afterwards (it auto-reverts)
-- Source: [Google Ads help — Seasonality adjustments](https://support.google.com/google-ads/answer/10369906)
-
 **General playbook:**
 
 | Period | Action |
@@ -375,13 +373,13 @@ Use Google Ads' **Seasonality Adjustments** feature.
 
 ### Pinning
 
-- Google recommends "minimal pinning"
+- Use minimal pinning by default
 - When unavoidable, **pin 2–3 to the same position** to keep variety
 - Pinning tends to lower Ad Strength, but Ad Strength and performance don't always correlate
 
 ### Ad Strength
 
-- Improving from "Low" → "Excellent" yields ~12% more conversions on average (source: [Google Ads help — RSA](https://support.google.com/google-ads/answer/7684791) — global Search-campaign average; individual results vary)
+- Better Ad Strength can improve eligibility and combination quality, but it is a diagnostic rather than the final goal.
 - That said, judge by actual metrics (CPA / ROAS) at the end
 - Aim for "Good" or higher ("Excellent" is not required)
 
@@ -517,7 +515,7 @@ When the three Quality Score factors (expected CTR, ad relevance, LP experience)
 
 ### Page speed
 
-- Page-speed delays disproportionately hurt mobile CVR (Google's research: bounce rate +90% when load time goes 1s → 5s)
+- Page-speed delays disproportionately hurt mobile CVR.
 - Targets: LCP under 2.5s, total load under 2s
 - How to improve: image compression, reducing unused JS, CDN, lazy loading
 
@@ -530,7 +528,7 @@ When the three Quality Score factors (expected CTR, ad relevance, LP experience)
 
 ### Form optimization
 
-- Reducing form fields tends to raise CVR (HubSpot research: forms with ≤3 fields convert highest)
+- Reducing unnecessary form fields usually raises CVR.
 - Multi-step forms work well (put PII at the final step)
 - Show a progress bar
 - Real-time error messages
@@ -750,18 +748,16 @@ Search-campaign creation flows sometimes offer an "Include Display Network" togg
 
 ## 11. Analysis and improvement
 
-### KPI benchmarks (reference)
+### KPI baselines
 
-Cross-industry averages. **Always compare to your own historical data first.** Industry, country, scale, and product all shift these dramatically — treat as ballpark only.
+Use account history, unit economics, Keyword Planner estimates, and current auction context as the primary baseline. Generic industry averages are too broad to drive decisions.
 
-| KPI | Reference | Conditions / Source |
+| KPI | Primary baseline | How to use |
 |-----|--------|-----------|
-| CTR | ~6–7% | Google Search ads, all-industry average, US-led data. Source: WordStream 2025 Benchmarks |
-| CVR | ~7–8% | Same. Wide industry variance (legal 15%+ vs. apparel ~2%) |
-| CPA | $20–30 (median) | Same. Trending higher year over year in 2025 |
-| ROAS | 3–4× | E-commerce-led data. Doesn't apply directly to lead-gen |
-
-> **Note**: these benchmarks are mostly US-market data. CPC and CVR vary significantly by region — use Keyword Planner estimates and your own historical numbers as the primary baseline.
+| CTR | Account history by brand / non-brand / competitor / category | Diagnose relevance and ad strength, not business profitability by itself |
+| CVR | Landing-page and offer history by intent segment | Separate query-quality issues from LP / offer issues |
+| CPA | Target economics from margin, close rate, and LTV | Anchor tCPA to observed performance, then tighten gradually |
+| ROAS | Gross margin or contribution-margin break-even | Revenue ROAS alone can overinvest in low-margin products |
 
 ### Using the search-terms report
 
@@ -810,8 +806,6 @@ From 2025 onward, the only attribution models in Google Ads are **DDA (data-driv
 | Last click | None | 100% credit to the last-clicked ad |
 
 - If you don't meet the threshold, use last-click
-- Source: [Google Ads help — DDA](https://support.google.com/google-ads/answer/6394265)
-
 ---
 
 ## 12. Budget management and optimization
@@ -873,11 +867,11 @@ Set a total budget for a defined period and let Google's AI optimize daily alloc
 | 1 | CV tracking missing or broken | Verify all tags fire in GTM Preview before launch. Set up Enhanced Conversions |
 | 2 | No negative KWs | Apply a generic negative list from day one (see [Appendix A](#appendix-a-starter-negative-keyword-set)). Review search terms weekly |
 | 3 | Starting with Broad everywhere | Begin with Exact / Phrase, expand in stages |
-| 4 | Cramming KWs into one ad group | Build STAGs of 3–20 KWs around a single theme |
+| 4 | Cramming unrelated KWs into one ad group | Group keywords around a single intent, LP, and message |
 | 5 | Only one ad variant | 3–5 RSAs per ad group with distinct messages |
 | 6 | LP is the homepage | Build a dedicated LP per ad-group theme |
-| 7 | Blindly accepting Google's recommendations | Use them as input but decide based on your own data and goals |
-| 8 | Smart Bidding with too little CV data | Reach 30+ monthly CVs first. Supplement with micro-CVs if short |
+| 7 | Blindly accepting platform recommendations | Use them as input but decide based on your own data and goals |
+| 8 | Smart Bidding with too little CV data | Build more true conversion volume first. Use micro-CVs for observation unless a proxy is proven to predict quality |
 | 9 | Only checking once a month | At minimum weekly review of search terms and performance |
 | 10 | Mobile-unfriendly LP | Responsive design, page speed, form optimization are mandatory |
 
@@ -890,13 +884,13 @@ Set a total budget for a defined period and let Google's AI optimize daily alloc
 | 3 | Frequent changes during learning | Avoid large changes for 2–3 weeks |
 | 4 | Mismatch between budget and tCPA | Daily budget at least 10–15× tCPA |
 | 5 | CV-data contamination | Accurate tracking; watch for accidental micro-CV inclusion |
-| 6 | Blindly accepting Google's recommendations | Recommendations are a hypothesis — judge with your own data |
+| 6 | Blindly accepting platform recommendations | Recommendations are a hypothesis — judge with your own data |
 
 ---
 
 ## 14. AI Max for Search Campaigns
 
-Beta opened to all advertisers May 2025. A layer that adds AI features to existing Search campaigns (source: [Google Blog — AI Max for Search](https://blog.google/products/ads-commerce/google-ai-max-for-search-campaigns/)).
+A layer that adds AI-assisted matching, ad-copy generation, and landing-page selection to Search campaigns. Availability and controls can vary by account, so verify in the Google Ads UI before planning around it.
 
 ### Three core features
 
@@ -906,12 +900,11 @@ Beta opened to all advertisers May 2025. A layer that adds AI features to existi
 | Ad-copy auto-generation | AI generates headlines / descriptions to combine with your assets |
 | LP auto-selection | Picks the best-fit LP from your site for the search intent |
 
-### Reported performance
+### Performance expectation
 
-- Typical accounts: **+14% CV / CV value** (source: Google announcement; cross-industry, cross-region average)
-- Accounts heavily on Exact / Phrase: **+27%** (same source)
-- Similar CPA / ROAS
-- Independent tests show only some advertisers see strong results; outcomes vary widely by account
+- Treat AI Max as an expansion and automation layer, not a guaranteed lift.
+- Accounts with narrow Exact / Phrase coverage may see more discovery benefit than already-broad accounts.
+- Judge it on query quality, CPA / ROAS, landing-page routing, and generated-text quality after the learning period.
 
 ### Text guidelines (from Q1 2026)
 
@@ -1033,6 +1026,6 @@ Before running a test, pin down and document the following.
 | Situation | Workaround |
 |------|--------|
 | Not enough CVs | Extend to 4–6 weeks |
-| Still not enough | Use a micro-CV (form start, etc.) as the metric |
+| Still not enough | Use a qualified proxy metric only if it is known to correlate with the business outcome |
 | Low search volume on the KW | Combine target ad groups |
 | No statistical significance | The change may be too subtle — test a bolder change |

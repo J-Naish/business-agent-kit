@@ -189,14 +189,14 @@ Combines a Merchant Center product feed with image / video creative. Three sub-t
 | **Gmail** | CPC | Image | Promotions / Social tabs; expandable |
 | **GDN** (added April 2025) | CPM / CPC | Image | 2M+ sites and apps |
 | **Google Video Partners** | CPM | Video | Third-party video inventory |
-| **Google Maps** (late 2025) | — | Promoted pins | Shown during local search |
+| **Google Maps** | — | Promoted pins | Shown during local search. Availability can vary by account, country, and rollout status |
 
 ### 3-2. Surface-by-surface selection (March 2025+)
 
 Since March 2025, all Demand Gen campaigns can choose surfaces individually.
 
 - Shorts-only campaigns are possible
-- Budget split per surface
+- Surface-level channel selection and exclusions; budget allocation is indirect through the eligible channels
 - Toggle YouTube / Discover / Gmail / GDN ON / OFF independently
 
 **Use cases:**
@@ -231,7 +231,7 @@ Since March 2025, all Demand Gen campaigns can choose surfaces individually.
 | **Balanced** | ~5% | Recommended starting point |
 | **Broad** | ~10% | Maximum reach; awareness expansion |
 
-**Important change (March 2026 onward):** Lookalike segments default to "suggestion mode" — the reach slider becomes a signal to AI rather than a hard targeting constraint. To preserve the legacy hard-targeting behavior, opt out explicitly.
+**Important operating note:** Treat Lookalike reach settings as directional controls rather than guaranteed hard audience boundaries unless the current UI clearly confirms strict targeting behavior. Verify whether optimized targeting, demographic expansion, and audience exclusions match the intended audience-control design before launch.
 
 ### 4-3. Custom segments
 
@@ -464,8 +464,8 @@ Demand Gen (Shorts-focused)
 |---|---|
 | **CPA / ROAS** | Direct performance evaluation |
 | **VTC (view-through CV)** | Users who saw the ad without clicking and converted later. Per the unified VTC policy in SKILL.md, don't combine with direct CV — track separately as "demand-creation indirect impact" |
-| **Cross-platform comparable CV** (2025+) | New metric enabling direct comparison with Meta / TikTok / LinkedIn |
-| **Attributed brand searches** (January 2026+) | Volume of brand searches driven by Demand Gen |
+| **Cross-platform comparable CV** | Metric intended to support cross-channel comparison when available |
+| **Attributed brand searches** | Brand-search activity attributed to Demand Gen when available |
 | **Assist CV** | Demand Gen touchpoints that contributed to a final conversion |
 
 ### 9-2. Reading performance correctly
@@ -543,7 +543,7 @@ Per-asset performance labels:
 |---|---|---|
 | **Funnel position** | Top–mid (demand creation, consideration) | Full funnel (especially CV maximization) |
 | **Audience control** | High (parameters specified) | Low (full AI automation) |
-| **Surfaces** | YouTube / Discover / Gmail / GDN / Maps | All 7 channels (including Search) |
+| **Surfaces** | YouTube / Discover / Gmail / GDN / Maps where available | All 7 channels (including Search) |
 | **Formats** | Image / video / carousel / product feed | Text / image / video |
 | **Lookalike** | Available (Demand Gen exclusive) | Not available |
 | **Reporting transparency** | High (per surface, per asset) | Improving but limited |
@@ -558,7 +558,7 @@ Per-asset performance labels:
 
 | Item | Demand Gen | Display |
 |---|---|---|
-| **Surfaces** | YouTube + Discover + Gmail + GDN + Maps | GDN only |
+| **Surfaces** | YouTube + Discover + Gmail + GDN + Maps where available | GDN only |
 | **Formats** | Image / video / carousel / product feed | Banner / rich media / video |
 | **Lookalike** | Available | Not available (use Optimized Targeting instead) |
 | **Content targeting** | Not available | Available (KW / topic / placement specification) |
@@ -568,7 +568,7 @@ Per-asset performance labels:
 - **Display**: When you need GDN-specific control with content targeting (KW / topic / placement specification).
 - **Demand Gen**: For YouTube / Discover delivery, visual-rich creative, and Lookalike segments.
 
-> Demand Gen added GDN image inventory in April 2025 — Demand Gen is becoming a superset of Display. Google plans to position Demand Gen as Display's successor over time.
+> Demand Gen now overlaps more with Display inventory than before. Keep Display only when it has a distinct job such as GDN-specific control, content targeting, or placement strategy.
 
 ---
 
@@ -582,9 +582,9 @@ Per-asset performance labels:
 | **May 2025** | **Target CPC bidding** available in click-goal Demand Gen campaigns |
 | **Jul 2025** | Existing VAC (Video Action Campaigns) begin auto-migration to Demand Gen |
 | **Sep 2025** | Migration of all accounts with VAC delivery in 2025 completes |
-| **Oct–Dec 2025** | Algorithm shifts from contextual matching to interest-based. Google Maps support. AI creative features (animated images, auto-video generation, etc.). New-customer-acquisition goal. Cross-platform comparable CV. Local offers, checkout links |
-| **Jan 2026** | **Shoppable CTV**: direct purchases from YouTube ads on connected TV (7% CV lift at the same ROI). Attributed brand searches. Travel feed support |
-| **Mar 2026 (planned)** | Lookalike segments default to suggestion mode |
+| **Oct–Dec 2025** | Expanded channel controls, Google Maps support where available, AI creative features, new-customer-acquisition options, local offers, and checkout-link style commerce features |
+| **Jan 2026** | Connected-TV commerce features, attributed brand-search reporting where available, and travel-feed support |
+| **Mar 2026 onward** | Treat Lookalike reach settings as directional controls unless strict targeting behavior is confirmed in the current UI |
 
 ---
 

@@ -104,10 +104,10 @@ Updates rolling out in 2025–2026:
 - **AI insights**: Automated analysis of product performance with improvement suggestions
 - **Promotion targeting**: Promotions can now be set with conditions like new customers only, by region, etc.
 - **Creative Content**: Auto-link videos from social and YouTube as Google Ads assets
-- **Product ID separation (March 2026 onward)**: When online and in-store versions have different attributes (price, inventory, etc.), separate IDs are required ([official changelog](https://support.google.com/merchants/announcements/6192467))
-- **Merchant API v1**: Now formally released as the successor to Content API for Shopping (v1beta sunsets February 2026) ([API updates](https://developers.google.com/merchant/api/latest-updates))
+- **Product ID separation**: When online and in-store versions have different attributes (price, inventory, etc.), separate IDs may be required depending on current Merchant Center policy.
+- **Merchant API migration**: Treat Merchant API as the forward-looking integration path for programmatic product data management.
 
-> Merchant Center features, scope, and deadlines can shift. Verify in the official help center before implementation.
+> Merchant Center features, scope, and deadlines can shift. Verify current requirements in Merchant Center before implementation.
 
 ---
 
@@ -128,7 +128,6 @@ Attributes that must be set on every product.
 | `image_link` | Main product image URL | Details in Section 5 |
 | `availability` | Inventory status | One of `in_stock` / `out_of_stock` / `preorder` |
 | `price` | Price | With currency code (e.g. `2980 USD`). Must match the LP price exactly |
-| `condition` | Product condition | `new` / `refurbished` / `used` |
 
 ### 3-2. Conditionally-required attributes
 
@@ -137,8 +136,9 @@ Required depending on category or situation.
 | Attribute | When required | Description |
 |---|---|---|
 | `brand` | New products | Brand name (especially important for products registered with GTIN) |
-| `gtin` | When MPN is unavailable | UPC / EAN / JAN. Affects ad-display priority |
-| `mpn` | When GTIN is unavailable | Manufacturer's part number |
+| `gtin` | When the manufacturer assigned a GTIN | UPC / EAN / JAN. Important for matching and eligibility |
+| `mpn` | When the manufacturer did not assign a GTIN | Manufacturer's part number |
+| `condition` | Required for refurbished / used products; optional for new products | `new` / `refurbished` / `used` |
 | `google_product_category` | Recommended for all products | Google's product-category taxonomy |
 | `product_type` | Recommended | Your own product taxonomy |
 | `age_group` | Apparel | `newborn` / `infant` / `toddler` / `kids` / `adult` |
@@ -233,7 +233,7 @@ The optimal title structure depends on category.
 - **High brand awareness** → lead with the brand.
 - **Low brand awareness** → lead with the product type (the searched-for generic noun).
 - **Variants of the same product** → always reflect color / size differences in the title.
-- **Google's structured title attribute (`structured_title`)** → an attribute supporting AI title optimization. Availability and scope shift; check the [official help](https://support.google.com/merchants/answer/6324415) for current state.
+- **Structured title attribute (`structured_title`)** → an attribute supporting title optimization. Availability and scope shift; check the current Merchant Center specification before relying on it.
 
 ---
 
@@ -671,7 +671,7 @@ Check at the product level periodically:
 
 **Before:** PMax automatically took priority over Standard Shopping for the same product.
 
-**Now:** Decided by **Ad Rank.** When the same product exists in both, the campaign with the higher Ad Rank at auction time wins. ([Official help](https://support.google.com/google-ads/answer/13825980))
+**Now:** Decided by **Ad Rank.** When the same product exists in both, the campaign with the higher Ad Rank at auction time wins.
 
 This change restored Standard Shopping's competitiveness and made hybrid (running both) more effective.
 

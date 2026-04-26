@@ -119,7 +119,7 @@ The advertiser controls only three things: assets (creative), budget, and bid ta
 | Measurement SDK | Firebase SDK or an MMP (AppsFlyer, Adjust, etc.) implemented |
 | Conversion tracking | Tracking set up for installs and / or in-app events |
 | Daily budget | Capable of sustaining tCPI × 50 or tCPA × 10 |
-| ACe (engagement) additional requirements | A minimum install base (rough guideline: 50,000+) and deep links implemented. Requirements vary by account and category, so [verify ACe is selectable in the campaign creation flow](https://support.google.com/google-ads/answer/9234102) |
+| ACe (engagement) additional requirements | A meaningful install base, deep links implemented, and ACe selectable in the campaign creation flow. Requirements vary by account and category |
 
 ### 2-3. Pre-launch checklist
 
@@ -168,7 +168,7 @@ Re-engagement of existing users.
 - Deep links implemented (App Links / Universal Links / custom schemes)
 - An app-user audience list
 
-> **How to verify:** The most reliable way is to check whether ACe appears as an option in the Google Ads campaign creation flow. [Details](https://support.google.com/google-ads/answer/9234102)
+> **How to verify:** The most reliable way is to check whether ACe appears as an option in the Google Ads campaign creation flow.
 
 **Common use cases:**
 
@@ -210,7 +210,7 @@ Pre-launch pre-registration campaigns. **Android only.**
 
 | Solution | Platforms | Summary |
 |---|---|---|
-| **Firebase SDK** | iOS / Android | Google's official mobile development platform. Smoothest integration with Google Ads |
+| **Firebase SDK** | iOS / Android | Strong baseline integration for Google Ads bid signals and audience building |
 | **Google Play install referrer** | Android only | Lightweight measurement of install paths via Google Play |
 | **MMP** | iOS / Android | AppsFlyer, Adjust, Singular, etc. Strongest at cross-platform measurement |
 
@@ -762,7 +762,7 @@ Web to App Connect enables seamless transitions from web campaigns (Search, Shop
 
 ### 14-4. Impact
 
-Per Google's announcements, brands using Web to App Connect on YouTube reportedly saw 2× conversion-rate improvement (results vary by industry, scale, and region). On iOS especially, it surfaces web-campaign contribution to app installs that was previously invisible.
+Web to App Connect can improve continuity between web discovery and app conversion. On iOS especially, it can surface web-campaign contribution to app installs that would otherwise be harder to see.
 
 ---
 
