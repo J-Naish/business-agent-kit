@@ -36,6 +36,15 @@ YouTube performance is creative-led. Targeting and bidding matter, but weak vide
 - **Measure upper-funnel correctly.** Brand Lift, search lift, geo lift, MMM, and assisted conversion patterns are more meaningful than pure last-click CPA for awareness/reach campaigns.
 - **Production budget is not the lever after a basic quality floor.** Hook, offer, structure, brand timing, and CTA often outperform production polish.
 
+### Generalizable practitioner heuristics
+
+- **Repurposed TV creative usually needs surgery.** Move brand/value into the opening, tighten pacing, add on-screen text, and design for skip behavior. A TV cutdown is not automatically a YouTube ad.
+- **The end card is a conversion lever.** For direct response, use a clear offer, visual product/service reminder, and specific CTA. Generic "Learn more" is weaker when a more concrete action is available.
+- **CTV is usually brand/reach spend.** Evaluate CTV with reach, lift, search lift, or MMM-style contribution. Do not expect reliable last-click attribution.
+- **Shorts requires native vertical thinking.** Use motion in frame one, visible text, safe zones, and a fast offer/problem reveal.
+- **Frequency caps matter more when interruption is high.** Non-skippable and small remarketing audiences need tighter controls than broad skippable reach.
+- **Video experiments are best for concept questions.** Use them to test hooks, offers, structure, and audience-message fit; do not spend large budgets testing tiny edits.
+
 ### How to diagnose Video issues
 
 | Symptom | First checks | Likely action |

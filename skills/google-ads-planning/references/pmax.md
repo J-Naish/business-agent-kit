@@ -45,6 +45,16 @@ Performance Max amplifies the quality of the inputs you give it: conversion goal
 - **Feed quality is creative quality for retail.** Product titles, images, prices, availability, GTINs, product_type, and custom labels often move performance more than campaign switches.
 - **P-MAX ROAS needs skepticism.** Reported performance can be inflated by brand traffic, remarketing bias, modeled conversions, and VTC. Use Search terms insights, brand exclusions, experiments, geo tests, or customer holdouts when decisions are material.
 
+### Generalizable practitioner heuristics
+
+- **P-MAX is rarely one thing.** It can behave like Shopping, remarketing, brand Search, Display, YouTube, or prospecting depending on feed, assets, signals, and goals. Diagnose channel mix and query/category insights before making strategy claims.
+- **Brand exclusions are not just cleanup; they are incrementality controls.** Use them when P-MAX is taking credit for demand that Search or organic would capture anyway.
+- **URL expansion is powerful on strong commercial sites and dangerous on messy sites.** Keep it on when many landing pages are commercially useful; turn it off or exclude aggressively when the site has blog/support/careers/low-intent pages.
+- **Asset-group reporting is directional.** Use asset groups to express coherent themes, but do not over-read noisy asset-group performance as clean A/B truth.
+- **Large simultaneous changes create avoidable volatility.** Avoid changing budget, target, conversion goals, URL expansion, brand controls, and asset groups in one move unless the campaign is fundamentally wrong.
+- **Feed-only P-MAX can be valid.** For asset-poor, SKU-heavy, or highly utilitarian catalogs, feed-led delivery may outperform weak generic creative. Full assets are not automatically better if the assets dilute purchase intent.
+- **New-customer acquisition mode needs clean definitions.** Use it only when customer lists and new/existing customer values are reliable; otherwise it can distort bidding.
+
 ### How to diagnose P-MAX issues
 
 | Symptom | First checks | Likely action |

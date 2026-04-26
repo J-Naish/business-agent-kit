@@ -37,6 +37,16 @@ App campaigns are highly automated. The real levers are event choice, event qual
 - **ACe needs incrementality skepticism.** Re-engagement campaigns can capture users who would have returned organically. Use holdouts or conservative reporting where stakes are high.
 - **Learning is easy to break.** Changing bid targets, budgets, geos, or creative wholesale can reset momentum. Add creative gradually and make target moves deliberately.
 
+### Generalizable practitioner heuristics
+
+- **Launch shallower, graduate deeper.** For cold app acquisition, tCPI or a higher-volume in-app event can seed learning; move toward tCPA/tROAS only when the deeper event has stable volume and reliable value.
+- **Proxy events need business validation.** Tutorial complete, add-to-cart, paywall view, level complete, or trial start are useful only if they correlate with retention/LTV. Audit that correlation periodically.
+- **Video refresh is usually the first creative priority.** Text assets can last longer; video fatigue tends to show earlier, especially at scale.
+- **Do not call trims "creative variety."** Multiple lengths or aspect ratios of the same idea help coverage, but the algorithm also needs different motivations, use cases, emotional hooks, and proof points.
+- **ACe should be tested for incrementality.** Returning users often come back without ads. Use audience holdouts, geo tests, or conservative attribution before scaling re-engagement purely from platform ROAS.
+- **Web-to-App Connect is a strategic lever when web traffic exists.** Deep links, event passing, and attribution plumbing are operationally heavy, but can improve user quality when the same users discover on web and convert in app.
+- **Seasonal spikes require target planning.** If CPM/CPI rises predictably, adjust targets and budgets before the peak rather than reacting mid-spike.
+
 ### How to diagnose App issues
 
 | Symptom | First checks | Likely action |

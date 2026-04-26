@@ -38,6 +38,15 @@ Search works when explicit intent, a relevant promise, a strong landing page, an
 - **Landing-page match beats clever ad copy.** The ad promise, keyword intent, page headline, proof, form/purchase path, and mobile speed need to agree.
 - **Bid targets should move gradually.** Large tCPA/tROAS swings suppress volume first and can create multi-week volatility. Use small steps unless business economics changed enough to justify a reset.
 
+### Generalizable practitioner heuristics
+
+- **Reported Search ROAS is most distorted when brand is mixed in.** A high blended ROAS can hide weak non-brand acquisition. For strategy work, always ask: "How does non-brand perform without brand lift?"
+- **Do not optimize match types as if it were 2018.** Close variants, Broad + Smart Bidding, and AI Max reduce the value of fine-grained match-type architecture. Keyword hygiene still matters, but query quality and conversion quality matter more.
+- **Portfolio bidding helps only when campaigns are economically similar.** Pooling brand and generic, low-CPA and high-CPA, or lead-quality-mismatched campaigns can make the portfolio optimize toward the wrong average.
+- **DDA is useful when there is meaningful assist diversity.** In a simple Search-only account it may not change much; in a multi-campaign account it can better reflect assist paths. Do not compare YoY performance across attribution changes without noting the model shift.
+- **Search Partners should be a deliberate test.** It can add volume, but quality varies by vertical and geography. Evaluate separately before leaving it on as a default.
+- **Competitor campaigns need isolated economics.** They often have lower Quality Score, higher CPC, and weaker CVR. Run only when the strategic value or conquest economics justify it.
+
 ### How to diagnose Search issues
 
 | Symptom | First checks | Likely action |

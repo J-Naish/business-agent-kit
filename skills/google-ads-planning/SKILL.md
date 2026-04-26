@@ -48,6 +48,41 @@ Use this as the default practice cadence unless the user's account context sugge
 | Monthly | Negative sweeps, creative refresh, feed/title improvements, landing-page review, budget reallocation | Letting launch-era assumptions persist |
 | Quarterly | Conversion action redesign, incrementality review, brand/non-brand split, account architecture, target economics | Reporting only platform ROAS |
 
+### Measurement and incrementality practice
+
+Use platform metrics for tactical optimization, but avoid treating them as financial truth.
+
+| Practice | Guidance |
+|---|---|
+| Platform ROAS | Use as a steering metric inside Google Ads, not as the final business result. It can be inflated by brand capture, view-through conversions, modeled conversions, and attribution overlap. |
+| Brand search | Report separately from non-brand. For established brands, assume some branded conversions would have happened organically unless a holdout or incrementality test says otherwise. |
+| P-MAX / Demand Gen / Display / Video | Look for incremental contribution, assisted demand, branded search lift, and audience-pool growth. Last-click CPA is often incomplete for these campaign types. |
+| VTC | Keep view-through conversions visible but separate by default. If included in primary reporting, state the assumption and use short windows or calibration tests. |
+| Holdouts | Use geo holdouts, Customer Match holdouts, campaign experiments, conversion lift, or pre/post analysis when budget and volume allow. |
+| Finance source of truth | Reconcile against revenue, pipeline, CRM, app LTV, or contribution margin. Do not sum platform-reported revenue across channels as if it were deduplicated. |
+
+### Automation discipline
+
+Google automation works best when each layer has a clear owner and constraint.
+
+- Keep auto-applied recommendations off by default; treat recommendations as an inbox, not an operator.
+- Avoid stacking Smart Bidding, scripts, automated rules, third-party optimizers, and workflow automations without a documented ownership model.
+- Maintain a change log that records intent, not just the platform's change history. Include website, landing-page, creative, offer, feed, CRM, and tagging changes.
+- Move target CPA/ROAS gradually in normal conditions. If the account is structurally wrong, accept a learning reset and fix it directly.
+- Revisit conversion actions quarterly. A conversion action that was useful at launch can become harmful once volume, sales motion, or product economics change.
+
+### Creative practice
+
+Treat creative as an operating system, not a one-time launch asset.
+
+| Principle | Guidance |
+|---|---|
+| Concept diversity | Prefer 4-8 distinct concepts over many cosmetic variants of one concept. A concept is a new hook, audience pain, product angle, proof point, offer, or use case. |
+| Cadence | For visual campaigns, plan regular refreshes. Weekly fresh assets and monthly fresh concepts is a strong default for scaled accounts; smaller accounts can use slower cadence but should still avoid launch-and-forget creative. |
+| AI creative | Use AI to accelerate production and variation from human-defined angles. Generic AI-generated ads tend to be competent but forgettable unless the strategy provides a point of view. |
+| Asset ratings | Treat "Best / Good / Low" as directional. Use winners to create new variations, but do not infer perfect causal truth from asset labels alone. |
+| Offer clarity | A clear offer or reason to act usually beats decorative polish. Creative should communicate the customer value quickly, especially on mobile and video surfaces. |
+
 ## Output flexibility (don't always write a document)
 
 Adapt the output to what the user actually asked for. **There is no requirement to produce a written spec document** — sometimes a conversational answer or a structured inline response is the right deliverable.

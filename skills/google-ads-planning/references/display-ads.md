@@ -33,6 +33,15 @@ Display should have a clear job: remarketing, warm re-engagement, cheap incremen
 - **Creative message beats visual polish.** Clear value prop, reason to act, and CTA usually matter more than decorative image quality. In visual categories, the image becomes the message; in most lead-gen categories, the headline/offer carries conversion.
 - **Placement hygiene should be focused, not maximalist.** Exclude known bad inventory and inappropriate app/content categories, but avoid enormous exclusion lists that simply raise CPM without improving outcomes.
 
+### Generalizable practitioner heuristics
+
+- **Broad enough + cheap enough can beat precise targeting.** Once a warm audience or prospecting signal is good enough, excessive audience layering can raise CPM faster than it raises CVR. The exception is compliance-heavy or very narrow-fit products where bad impressions carry real cost.
+- **Standalone Display is usually not the first cold-acquisition engine.** P-MAX and Demand Gen often cover broad visual inventory better. Use Display when it has a differentiated job: remarketing, frequency-controlled reach, customer reactivation, or curated B2B placements.
+- **Mobile app inventory should be reviewed deliberately.** For non-app advertisers, app placements can create low-quality clicks or accidental engagement. Exclude categories or placements when quality is poor, but avoid reflexively blocking all scale before testing.
+- **A small shared exclusion list is healthier than endless exclusions.** Maintain known-bad placements/content categories; do not turn placement cleanup into the main optimization strategy.
+- **Display creative fatigue is real.** For active campaigns, plan refreshes around new concepts and offers, not just resized banners.
+- **Do not let Display and P-MAX fight for the same job.** If P-MAX is already handling conversion-oriented broad reach, make Display own remarketing, win-back, controlled reach, or a different message.
+
 ### How to diagnose Display issues
 
 | Symptom | First checks | Likely action |

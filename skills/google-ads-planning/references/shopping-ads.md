@@ -34,6 +34,16 @@ Shopping performance is mostly feed, price, product-market fit, landing-page pur
 - **Standard Shopping still has a role.** It can be useful for diagnostics, long-tail SKU protection, inventory-heavy/asset-poor catalogs, or cases where P-MAX hides too much.
 - **Free listings are worth maintaining but not forecasting around.** Treat them as incremental visibility and remarketing-pool input, not the core growth engine.
 
+### Generalizable practitioner heuristics
+
+- **Title structure should follow buyer search behavior.** For generic category searches, lead with category and key attributes. For brand-led or model-led categories, lead with brand/model. Validate with search terms rather than applying one universal formula.
+- **Custom labels should map to business levers.** Margin tier is often the most useful; inventory status, velocity, hero/long-tail, promotion, and seasonality are useful when they change bidding or campaign inclusion.
+- **Supplemental feeds are the fastest testing layer.** Use them for title rewrites, labels, product_type corrections, and temporary merchandising fixes. Promote stable winners back into the primary feed to avoid long-term drift.
+- **Long-tail products may need isolation.** P-MAX and Smart Bidding often concentrate on high-signal winners. If long-tail SKUs should sell but never receive impressions, isolate them with a looser target or separate structure.
+- **Promotions and price annotations are real creative levers.** Sale price, promotions, shipping, return policy, and reviews can change CTR/CVR without touching campaign settings.
+- **Inventory-aware bidding can be simple.** Labels such as low/normal/high stock or days-of-cover can prevent wasted spend on soon-to-stock-out SKUs and prioritize products that can actually fulfill demand.
+- **Do not break product IDs casually.** Stable IDs preserve history and product continuity. Feed rebuilds that change IDs can create avoidable learning loss.
+
 ### How to diagnose Shopping issues
 
 | Symptom | First checks | Likely action |
