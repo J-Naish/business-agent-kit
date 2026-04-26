@@ -43,6 +43,7 @@ GMV Max performance depends on commerce operations:
 - Treat GMV Max as a commerce system, not just an ad campaign.
 - Validate TikTok-reported GMV against Seller Center, finance, fulfillment, returns, and margin.
 - Provide fresh product videos and creator content; automation cannot compensate for weak product creative.
+- Prioritize creator, affiliate, and authorized product videos when the brand can support them; they often provide stronger native proof than brand-handle product clips, but compliance and category fit still decide.
 - Monitor product-level outcomes where available.
 - Be careful when multiple teams or ad accounts need access; GMV Max authorization can be tied to the shop's primary ad account.
 - Check whether **ROI Protection** applies. TikTok guidance says ROI Protection supports GMV Max campaigns created through Seller Center and TikTok Ads Manager from February 25, 2026, and can issue ad credits when eligible campaigns fall below the protected ROI threshold.
@@ -59,6 +60,8 @@ GMV Max performance depends on commerce operations:
 | Profit weak despite good GMV | Inspect returns, fees, discounts, commission, product mix, new buyer rate |
 
 Treat aggressive Target ROI changes as material edits. Check current ROI Protection rules before changing targets.
+
+Practical Target ROI planning should start from contribution margin and historical Shop economics. Some practitioners use a target below recent average performance to leave room for learning, but avoid encoding a fixed percentage; margin, inventory, maturity, and ROI Protection rules matter more than a universal number.
 
 ## LIVE Commerce Notes
 
@@ -78,3 +81,4 @@ LIVE GMV Max needs operations, not just media:
 - Manual ROI target changes can affect ROI Protection eligibility.
 - Large brands may need additional incrementality and attribution validation.
 - GMV can include demand that is not fully incremental. Validate against finance and, where possible, holdouts or lift tests.
+- Current operational details can matter: enforcement dates, LIVE GMV Max country lists, ROI Protection eligibility/void rules, auto-budget behavior, product-list edit rules, and creative-source controls should be verified in current TikTok docs or the account before a handoff.

@@ -23,6 +23,8 @@ TikTok is phasing out Custom Identity for advertising. For new campaigns, plan a
 
 Spark Ads authorization duration can vary by workflow and account. Confirm whether the creator/owner can grant the needed duration before building a media plan around the post.
 
+When the campaign needs a long evergreen window, request the longest practical authorization duration available in the current workflow, such as 365 days where the account supports it. Short authorizations can force relaunches or break a scaling plan.
+
 ## Best Uses
 
 - Boosting organic posts that already show strong engagement or retention.
@@ -32,6 +34,8 @@ Spark Ads authorization duration can vary by workflow and account. Confirm wheth
 - Testing creator concepts before larger media spend.
 
 Spark Ads are not automatically better than non-Spark ads. Prioritize Spark when the post has native proof, comments, creator trust, or organic momentum that the paid version can use.
+
+Creator-handle Spark can carry stronger trust than brand-handle Spark when the creator relationship is credible. Brand-handle Spark may still be better for regulated, premium, or tightly controlled claims. Test the identity choice instead of assuming one is always superior.
 
 ## Creative Selection
 

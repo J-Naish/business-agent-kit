@@ -21,6 +21,7 @@ Actions:
 - Add fresh hooks/concepts before restructuring.
 - Avoid large bid/budget changes until the cause is clear.
 - Reconcile platform results to business-source truth.
+- If no account-specific thresholds exist, use practical markers only as hypotheses: rising frequency, hook-rate decline, weaker 2s/6s views, and negative comment themes usually deserve creative review before bid surgery.
 
 ## Spend Does Not Deliver
 
@@ -113,6 +114,7 @@ Actions:
 - Suppress recent purchasers where available.
 - Exclude weak products if product economics are bad.
 - Add authorized creator/affiliate videos and product demos.
+- Confirm current GMV Max rules before editing Target ROI, product lists, campaign status, or creative sources; small-looking changes can affect protection, learning, or reporting.
 
 ## App Installs but Weak LTV
 

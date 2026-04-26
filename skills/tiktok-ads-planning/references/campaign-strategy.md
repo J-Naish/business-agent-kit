@@ -163,6 +163,8 @@ Use TikTok Ads Manager for tactical optimization, but reconcile against orders, 
 
 For web signals, Pixel + Events API is the default robust setup when feasible. If the same event is sent through both, pass `event_id` through both channels for deduplication.
 
+For app campaigns, verify the current iOS and MMP stack before launch. Common planning examples include Adjust, AppsFlyer, Singular, Branch, Airbridge, Tenjin, TikTok SDK, SKAN settings, and TikTok's modeled/aggregate iOS measurement options where available. Use the account's MMP and app analytics as the source of truth for retention, value, and LTV.
+
 Use the current standard event names for new setups. TikTok's 2025 standard-event update renamed `SubmitForm` to `Lead` and `CompletePayment` to `Purchase`; legacy names may continue to work during the support window, but new planning should use `Lead` and `Purchase`.
 
 For brand and upper-funnel work, use TikTok Brand Lift Study or Conversion Lift Study where managed access and budget allow. Otherwise define proxy reads in advance: reach, frequency, view quality, branded search, direct traffic, profile visits, Shop activity, and downstream retargeting pools.

@@ -87,6 +87,8 @@ Control claims and compliance; let the creator control native delivery.
 
 Refresh the hook first when the body still converts. Replace the concept when multiple hook refreshes fail.
 
+Use numeric thresholds as account-local triggers, not universal rules. Examples that can start a diagnosis: hook rate falling materially from the account's winner baseline, frequency rising faster than creative refresh capacity, or 2s/6s view rates dropping before CPA moves. For a new account, record the first winners as benchmarks before setting kill rules.
+
 ## Comment Mining
 
 Use comments as qualitative research:

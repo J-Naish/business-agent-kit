@@ -43,7 +43,7 @@ TikTok learning volatility commonly declines after about 25 campaign results or 
 
 - Avoid targeting, bid, budget, objective, optimization-event, and major creative-volume changes unless something is broken.
 - Use daily budgets for ongoing campaigns unless the campaign is a fixed-duration event.
-- After learning, avoid sudden large budget jumps without a reason.
+- After learning, avoid sudden large budget jumps without a reason. A conservative example is to scale in measured steps, often around 20% at a time, then watch delivery, CPA/ROAS, and creative fatigue before the next move.
 - Batch changes and keep a change log.
 - Scale creative supply before forcing media spend.
 
