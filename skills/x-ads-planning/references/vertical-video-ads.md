@@ -14,6 +14,7 @@ Vertical Video Ads are full-screen, sound-on video ads in X's Immersive Media Vi
 | Maximum frame rate | 60 fps |
 | Video codec | H.264, Baseline/Main/High Profile, 4:2:0 color space |
 | Audio codec | AAC LC |
+| Audio behavior | Sound-on environment; still make the ad understandable without sound |
 
 Verify current availability, specs, and placement preview in X Ads Manager.
 
@@ -25,6 +26,8 @@ Verify current availability, specs, and placement preview in X Ads Manager.
 - App walkthroughs.
 - Launches, events, and cultural moments.
 
+X positions Vertical Video Ads around the Immersive Media Viewer and has stated that a meaningful share of daily user time is spent there. Use this as a mobile-first attention format, not simply a cropped version of a feed video.
+
 ## Creative Practices
 
 - Fill the vertical frame intentionally.
@@ -33,6 +36,7 @@ Verify current availability, specs, and placement preview in X Ads Manager.
 - Keep the product or brand cue visible early.
 - Use sound intentionally, but make the video understandable without sound.
 - Put the CTA in a safe central area.
+- Plan for the CTA to appear quickly after viewing begins where the format supports it.
 
 ## Structure
 

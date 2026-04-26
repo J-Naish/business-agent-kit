@@ -6,13 +6,14 @@ Image Ads are Promoted Ads that combine one image with post copy and optional X 
 
 | Item | Guidance |
 |---|---|
-| Recommended formats | PNG or JPEG |
+| Recommended formats | PNG or JPEG. Do not assume WebP support unless the current account spec explicitly lists it. |
 | File size | Max 5 MB |
+| GIF behavior | GIFs uploaded to Image Ads render as static images in current official specs |
 | Common aspect ratios | 1:1, 1.91:1, 4:5, 2:3, 16:9, 9:16 where supported |
 | Common sizes | 1080x1080, 2064x1080, 1440x1800, 1080x1620, 1920x1080, 1080x1920 |
 | Copy | Up to 280 characters; links reduce available copy length |
 
-X expanded aspect-ratio support in 2026. Verify the selected placement and creative preview before launch.
+X expanded aspect-ratio support in 2026 to let advertisers reuse creatives from other social platforms without reformatting. Treat 4:5 and 2:3 as useful portability options, but verify the selected placement and creative preview before launch.
 
 ## Feature Variants
 
@@ -24,6 +25,8 @@ X expanded aspect-ratio support in 2026. Verify the selected placement and creat
 | Conversation Button | Encourage users to post with prefilled text or a hashtag |
 | Poll | Create lightweight interaction and audience feedback |
 
+Conversation Buttons and Polls may require the currently supported composer/workflow rather than the ordinary Post composer. Verify availability before recommending them as self-serve features.
+
 ## Creative Practices
 
 - Make one focal point obvious.
@@ -32,6 +35,7 @@ X expanded aspect-ratio support in 2026. Verify the selected placement and creat
 - Show the product, outcome, proof, or use case quickly.
 - Keep important content away from edges because cropping can vary.
 - Match the image, copy, card headline, and landing page.
+- Keep ordinary promoted-copy hashtags out of the ad unless the selected X feature explicitly requires one.
 
 ## Copy Practices
 

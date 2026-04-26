@@ -11,10 +11,13 @@ Dynamic Product Ads help advertisers deliver relevant products from a catalog to
 
 ## Requirements
 
-- Product catalog connected and approved.
-- X Pixel and/or Conversion API events configured.
+- Product catalog uploaded and managed in **X Shopping Manager**.
+- X Pixel and/or Conversion API / Conversions API events configured. Without Pixel/CAPI, DPA can be limited to link-click optimization.
 - Key events such as Page View, Content View, Add to Cart, and Purchase where relevant.
+- `contents` parameters or product identifiers that match catalog products.
 - Product feed with accurate IDs, titles, prices, availability, images, URLs, and categories.
+- Feed file and sync process that can keep product data current. X Shopping Manager supports large catalogs; current docs cite up to 1M products or an 8GB feed file.
+- Product sets created with filters for campaign-specific merchandising.
 - UTMs and product-level reporting where possible.
 
 ## Campaign Design
@@ -26,6 +29,8 @@ Dynamic Product Ads help advertisers deliver relevant products from a catalog to
 | Cross-sell / upsell | Existing customers | Promote complementary products |
 
 Keep retargeting and prospecting separate when budget, reporting, or audience intent differs.
+
+For retargeting campaigns, create Catalog Activity Audiences during DPA setup. Use relevant List Custom Audiences where they improve audience size or quality.
 
 ## Creative and Copy
 

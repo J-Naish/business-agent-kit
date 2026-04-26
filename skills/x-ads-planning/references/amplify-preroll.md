@@ -18,10 +18,14 @@ Amplify Pre-roll can be available through self-serve or eligible account workflo
 
 | Element | Guidance |
 |---|---|
-| Length | Keep concise; 6-15 seconds is often practical |
+| File type | MP4 or MOV |
+| File size | 1 GB max |
+| Length | 15 seconds or less recommended; 2:20 max |
+| Aspect ratio | 1:1 recommended; 9:16 can take similar real estate; mirror publisher content aspect ratio when possible |
+| Size | 1200x1200 recommended; 600x600 minimum for 1:1; 640x360 minimum if not 1:1 |
 | Opening | Brand or product cue early |
 | Message | One clear idea |
-| Sound | Design for sound-on but include captions or visual clarity |
+| Sound | Design for sound-on but include captions or text overlays |
 | CTA | Use when the campaign has a downstream action |
 
 ## Targeting and Context

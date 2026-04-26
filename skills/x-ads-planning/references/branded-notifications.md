@@ -4,7 +4,13 @@ Branded Notifications let people opt in to receive future messages from a brand 
 
 ## Availability
 
-Availability may depend on account eligibility, market, buying path, and X approval. Verify current access before building the plan around this feature.
+Branded Notifications are eligibility-gated and operationally heavier than standard ads.
+
+- Available to managed advertisers in the US and Canada, and globally for advertisers working with X Next.
+- Requires a public, verified X account.
+- Configured and launched through **Arrow**, a third-party autoresponse platform by IC Group in collaboration with X Next.
+- Requires granting Arrow access to the brand handle through X OAuth.
+- Verify current market, account, X Next, and approval requirements before building the plan around this feature.
 
 ## Best Uses
 
@@ -18,11 +24,20 @@ Availability may depend on account eligibility, market, buying path, and X appro
 ## Flow
 
 ```text
-Opt-in ad
-  -> User opts in
-  -> Scheduled notification
+Promoted CTA post
+  -> User opts in by engaging
+  -> Arrow listens for opt-ins via X APIs
+  -> Automated @mention notification post
   -> Follow-up content or conversion destination
 ```
+
+## Campaign Formats
+
+| Format | Use |
+|---|---|
+| Scheduled Notifications | Instant opt-in notification plus one scheduled notification |
+| Subscription Notifications | Instant opt-in notification plus multiple scheduled notifications |
+| Instant Notifications | Instant notification after opt-in |
 
 ## Planning Inputs
 
@@ -43,4 +58,4 @@ Opt-in ad
 
 ## Measurement
 
-Use opt-in rate, notification engagement, click-through, conversion rate, and incremental lift where possible.
+Use opt-in rate, notification engagement, click-through, conversion rate, and incremental lift where possible. X Ads Manager provides full metrics for promoted CTA posts, but notification-post reporting can be limited. Users' device and account notification settings can prevent notification posts from appearing.

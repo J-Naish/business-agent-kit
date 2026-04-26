@@ -2,6 +2,20 @@
 
 X Live supports real-time broadcasts for product launches, conferences, watch parties, interviews, entertainment, sports, and other live moments.
 
+X Live is a high-touch format. Verify current availability, technical support, and promotion options with X before presenting it as a standard self-serve placement.
+
+## Stream Specs
+
+| Item | Guidance |
+|---|---|
+| Protocol | RTMP |
+| Video codec | H.264/AVC |
+| Video bitrate | 9 Mbps recommended; 12 Mbps maximum |
+| Audio codec | AAC-LC |
+| Audio bitrate | 128 kbps maximum |
+| Resolution | 1280x720 recommended; 1920x1080 maximum |
+| Frame rate | 30 FPS recommended; 60 FPS maximum |
+
 ## Best Uses
 
 - Product announcements.

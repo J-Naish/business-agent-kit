@@ -25,6 +25,15 @@ Amplify Sponsorship is generally a managed-service product and may not be availa
 
 ## Creative Guidance
 
+| Element | Guidance |
+|---|---|
+| File type | MP4 or MOV |
+| File size | 1 GB max |
+| Length | 6 seconds or less recommended; 2:20 max |
+| Aspect ratio | 16:9 or 1:1 recommended depending on publisher content |
+| Size | 1200x1200 recommended; 600x600 minimum for 1:1 |
+| Cropping | If height exceeds width, video can crop to 1:1 in feed |
+
 - Make the brand cue clear early.
 - Align tone with the publisher and content moment.
 - Avoid generic spots that could run anywhere.

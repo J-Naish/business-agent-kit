@@ -1,6 +1,20 @@
-# Search Keyword Ads
+# Keywords Campaign / Search Ads
 
-Search Keyword Ads reach people based on what they search for or engage with on X. Use them when intent, topic, or cultural context matters.
+Keywords campaigns reach people based on what they search for on X and can serve promoted posts in Search Results. Keep this separate from **keyword targeting**, which is a targeting feature available in broader campaign setup.
+
+## Product Behavior
+
+| Item | Guidance |
+|---|---|
+| Campaign setup | Select Keywords from the campaign objective/workflow where available |
+| Supported campaign types | App Installs, App Re-engagements, Website Traffic, Website Conversions / Sales |
+| Required placement | Search Results is mandatory/default |
+| Additional placements | Home Timeline and Replies can serve when contextually relevant |
+| Keyword volume | Up to 200 keywords at one time in the Keywords campaign workflow |
+| Recommended minimum | At least 25 keywords per ad group |
+| Matching behavior | Exact-match style; trims extra whitespace; not case-sensitive |
+| Expansion | Can match related Hashtags, Cashtags, and @handles |
+| Language | X does not translate non-English keywords automatically |
 
 ## Best Uses
 
@@ -22,6 +36,8 @@ Search Keyword Ads reach people based on what they search for or engage with on 
 
 Use enough keywords to give delivery room, but keep ad groups thematically coherent.
 
+For general keyword targeting outside this campaign workflow, current official docs list up to 750 keywords per ad group.
+
 ## Campaign Design
 
 - Group keywords by intent or message.
@@ -29,18 +45,20 @@ Use enough keywords to give delivery room, but keep ad groups thematically coher
 - Use Website Cards when traffic or conversion is the goal.
 - Use separate ad groups for very different intent levels.
 - Exclude or avoid irrelevant terms that create poor-quality clicks.
+- Do not rely on platform translation for non-English keywords; build local-language keyword sets explicitly.
 
 ## Measurement
 
 | Goal | Metrics |
 |---|---|
-| Traffic | CPC, CTR, landing page behavior |
+| Traffic | CPC, CTR, landing-page behavior |
 | Conversion | CPA, CVR, ROAS, qualified actions |
 | Awareness | Reach, CPM, engagement quality |
 
 ## Common Mistakes
 
 - Mixing broad awareness keywords and high-intent conversion keywords in the same ad group.
+- Confusing Keywords campaigns with ordinary keyword targeting.
 - Using generic copy that does not match the search intent.
 - Judging only on CTR.
-- Not using UTMs or landing page analytics.
+- Not using UTMs or landing-page analytics.

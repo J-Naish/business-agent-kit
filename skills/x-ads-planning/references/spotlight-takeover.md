@@ -1,10 +1,10 @@
 # Spotlight Takeover
 
-Spotlight Takeover is an X Takeover product that places brand creative alongside what's trending, where conversations start in the Explore tab. Some teams may refer to legacy or related products as Trend Takeover; use the current X product name when planning.
+Spotlight Takeover is an X Takeover product that places brand creative near high-attention Explore and trending contexts. Some older docs, policy pages, or case studies may use Trend Takeover or Trend Takeover+ terminology. Use **Spotlight Takeover** as the main current planning label unless the X account team confirms a separate Trend Takeover SKU for the campaign.
 
 ## Availability
 
-Spotlight Takeover is a managed-service premium placement. Confirm current naming, availability, pricing, market, dates, creative specs, and approval process with X.
+Spotlight Takeover is a managed-service premium placement. Confirm current naming, availability, pricing, market, dates, creative specs, exclusivity, and approval process with X.
 
 ## Best Uses
 

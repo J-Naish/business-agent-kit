@@ -1,0 +1,118 @@
+# Diagnostic Decision Trees
+
+Use this reference for existing X Ads accounts with performance issues.
+
+## Spend Is Low or Delivery Is Limited
+
+Likely causes:
+
+- Budget, bid, or target too restrictive.
+- Audience too narrow after respected constraints and exclusions.
+- Optimized Targeting disabled when scale is needed.
+- Creative disapproved or low quality.
+- Account, market, or format eligibility issue.
+- Premium/managed product not actually available in the account.
+
+Actions:
+
+- Check delivery status, disapprovals, billing, funding source, and campaign dates first.
+- Broaden flexible targeting inputs or enable Optimized Targeting where appropriate.
+- Reduce unnecessary ad-group fragmentation.
+- Confirm objective, bid type, and optimization goal match the desired result.
+
+## CTR Is Low
+
+Likely causes:
+
+- Weak first line, first frame, or visual contrast.
+- Message does not match the audience, keyword, or conversation context.
+- Generic creative reused without X-native framing.
+- Hashtag/URL/emoji clutter or poor aesthetic quality.
+
+Actions:
+
+- Replace cosmetic variants with distinct concepts.
+- Match ad copy to keyword/search intent or follower-look-alike hypothesis.
+- Improve visual clarity and remove clutter.
+- Test a stronger hook, proof point, offer, or product demonstration.
+
+## Clicks Are Cheap but Conversions Are Weak
+
+Likely causes:
+
+- Objective optimized for traffic or engagement when the business needs conversions.
+- Landing page has weak message match, slow load, form friction, or low trust.
+- Conversion event is too shallow.
+- Audience signal is broad but not qualified.
+
+Actions:
+
+- Move to Website conversions / Sales when tracking and volume support it.
+- Audit landing-page speed, offer, proof, form length, and mobile experience.
+- Split reporting by prospecting vs retargeting and by keyword/audience theme.
+- Use CRM or order quality to identify whether cheap clicks are useful.
+
+## CPA or ROAS Is Volatile
+
+Likely causes:
+
+- Low conversion volume or delayed conversion reporting.
+- Too many simultaneous changes.
+- Budget too small for the number of ad groups/creatives.
+- Retargeting and prospecting mixed in one read.
+- Pixel/CAPI/catalog event issues.
+
+Actions:
+
+- Check event health and conversion delay before changing strategy.
+- Consolidate structure.
+- Separate retargeting from prospecting when possible.
+- Batch changes and wait for a meaningful observation window.
+
+## Lead Quality Is Low
+
+Likely causes:
+
+- Optimizing to raw form fills instead of qualified leads.
+- Offer attracts low-intent users.
+- Landing page overpromises or under-qualifies.
+- Targeting is too broad without enough creative qualification.
+
+Actions:
+
+- Feed CRM quality back into reporting or offline analysis.
+- Add qualification to the landing page/form.
+- Use copy to repel poor-fit users as well as attract good-fit users.
+- Track qualified lead rate, not only CPL.
+
+## DPA Performance Is Weak
+
+Likely causes:
+
+- Product IDs do not match between events and catalog.
+- Feed has bad titles, prices, availability, or images.
+- Retargeting window is too broad or too narrow for the purchase cycle.
+- Product set includes low-margin or unavailable products.
+
+Actions:
+
+- Audit X Shopping Manager feed health and event match.
+- Review product-level performance and inventory.
+- Separate prospecting, retargeting, and cross-sell/upsell roles.
+- Optimize to margin or contribution when revenue ROAS is misleading.
+
+## App Campaign Results Differ From MMP
+
+Likely causes:
+
+- Attribution windows differ between X and the MMP.
+- SKAdNetwork or privacy constraints affect iOS reporting.
+- Events are not mapped correctly into X Events Manager.
+- Reporting is not finalized yet.
+
+Actions:
+
+- Align attribution windows in X and MMP.
+- Check event status in Events Manager.
+- Reconcile against app analytics and LTV.
+- Allow 24-48 hours for reporting finalization where relevant.

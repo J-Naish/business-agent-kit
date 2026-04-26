@@ -6,23 +6,42 @@ Use this reference before writing X Ads copy or specifying creative assets.
 
 - Make the first line or first frame earn attention quickly.
 - Use one ad for one message.
-- Match the creative to the destination, card, or app action.
-- Use native X behavior: concise language, timely relevance, conversation context, and clear point of view.
-- Keep hashtags, emojis, raw URLs, and clutter minimal unless the format explicitly needs them.
+- Match the creative to the destination, card, app action, keyword, or conversation context.
+- Use native X behavior: concise language, timely relevance, conversation context, and a clear point of view.
+- Keep ordinary paid ad copy free of hashtags, raw URLs, emoji clutter, and visual clutter unless the selected ad feature explicitly requires it.
 - Design mobile-first and verify creative previews in X Ads Manager.
+- Treat cross-platform creative portability as useful, not automatic. X supports more aspect ratios, but the message still needs to feel native to X.
 
 ## Aesthetic Score Guidance
 
-X's Aesthetic Score is a creative-quality signal. Treat it as a quality filter, not a substitute for business outcomes.
+X has publicly moved toward stronger ad-quality and aesthetic controls. Treat Aesthetic Score guidance as an operational quality filter, not as a guaranteed visible metric or fixed discount.
 
-Common practices:
+Use this checklist:
 
-- Avoid hashtags in regular ad copy unless using a Branded Hashtag or Conversation Button strategy.
+- Do not use hashtags in ordinary promoted ad copy. A June 27, 2025 public restriction was widely reported; preserve exceptions only for selected X-managed features such as Conversation Buttons or Branded Hashtags where the current workflow explicitly requires a hashtag.
 - Avoid raw URLs in copy; use Website Cards or App Cards when a click destination is needed.
-- Keep copy grammatically clean and easy to scan.
+- Keep emojis minimal and brand-appropriate.
+- Use clean grammar, punctuation, and capitalization.
 - Use polished, high-resolution assets.
-- Avoid low-quality screenshots, cluttered text overlays, and excessive promotional language.
+- Avoid low-quality screenshots, cluttered text overlays, gimmicky crops, and indecipherable visuals.
+- Match the ad, card, CTA, and landing page.
 - Refresh creative when fatigue appears.
+
+Do not report "Aesthetic Score" as a normal KPI unless the current account exposes it. Use it as a launch checklist and creative QA standard.
+
+## Conversation Buttons and Polls
+
+Conversation Buttons and Media Polls are not ordinary Post-composer features in current X specs; X points advertisers to supported composer/workflow options such as Brand Networks. Verify availability before recommending them as self-serve features.
+
+| Feature | Key specs |
+|---|---|
+| Conversation Button hashtag | 21 characters including `#` |
+| Pre-populated user post | 256 characters |
+| Conversation Button headline | 23 characters |
+| Thank-you text / optional URL | 23 characters |
+| Poll options | 2-4 options |
+| Poll option copy | 25 characters |
+| Poll duration | 5 minutes to 7 days |
 
 ## Copy Framework
 
@@ -67,6 +86,7 @@ Action: tell the user what to do next
 | Carousel Ads | Multi-step story, product set, benefit stack |
 | Collection Ads | Product discovery and multi-destination shopping |
 | Dynamic Product Ads | Catalog-personalized retargeting or prospecting |
+| Keywords campaign / Search Ads | Intent-matched response to active searches |
 
 ## Testing
 

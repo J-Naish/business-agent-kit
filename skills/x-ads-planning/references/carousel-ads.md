@@ -10,9 +10,11 @@ Carousel Ads are Promoted Ads with multiple horizontally swipeable images or vid
 | Image carousel sizes | Common specs include 800x418, 800x800, and expanded ratios such as 1440x1800, 1080x1620, 1080x1080, 2064x1080, 1920x1080, 1080x1920 |
 | Video carousel sizes | Common specs include 800x450, 800x800, and expanded ratios where supported |
 | Aspect ratio | Keep one aspect ratio within a carousel |
-| Destination | Each card can support its own destination where available |
+| Mixed media | Keep image and video aspect ratios consistent; 1:1 is the safest mixed-media choice |
+| Destination | One destination for single-destination carousels; up to six unique web destinations for multi-destination Website Carousels |
+| Website title | Up to 70 characters; 50 or fewer is safer for truncation |
 
-Verify current creative specifications in X Ads Manager because supported ratios changed in 2026.
+X expanded 4:5 and 2:3 support in 2026 to improve creative portability from Meta, TikTok, Instagram, and other social platforms. Verify current creative specifications in X Ads Manager before launch.
 
 ## Best Uses
 
