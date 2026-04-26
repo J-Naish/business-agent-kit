@@ -31,7 +31,7 @@ Do not report "Aesthetic Score" as a normal KPI unless the current account expos
 
 ## Conversation Buttons and Polls
 
-Conversation Buttons and Media Polls are not ordinary Post-composer features in current X specs; X points advertisers to supported composer/workflow options such as Brand Networks. Verify availability before recommending them as self-serve features.
+Conversation Buttons and Media Polls are not ordinary Post-composer features in current X specs; X points advertisers to supported composer/workflow options such as Brand Networks (`https://composer.bn.co/`). Verify availability before recommending them as self-serve features.
 
 | Feature | Key specs |
 |---|---|
@@ -39,9 +39,12 @@ Conversation Buttons and Media Polls are not ordinary Post-composer features in 
 | Pre-populated user post | 256 characters |
 | Conversation Button headline | 23 characters |
 | Thank-you text / optional URL | 23 characters |
+| Conversation Button media | Must be paired with image or video media |
 | Poll options | 2-4 options |
 | Poll option copy | 25 characters |
 | Poll duration | 5 minutes to 7 days |
+
+Poll duration starts when the post is created, not when the post is promoted. This matters when building polls before the paid flight starts.
 
 ## Copy Framework
 

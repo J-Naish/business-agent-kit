@@ -30,7 +30,7 @@ Related managed branded features can include Hashmoji, Hashfetti, Custom Likes /
 Current indexed X specs for Branded Hashtags include:
 
 - Up to 5 hashtags associated with an emoji.
-- Desired hashtag should not exceed 250 mentions on X over the previous 30 days unless directly related to brand conversation.
+- Desired hashtag should not exceed 250 mentions on X over the previous 30 days unless directly related to brand conversation; current indexed X specs use a >70% brand-conversation threshold.
 - Emoji design at 72x72 pixels and visible at 16x16.
 - Must work on light and dark backgrounds.
 - Simple design; avoid multiple faces/logos that become indistinguishable when small.

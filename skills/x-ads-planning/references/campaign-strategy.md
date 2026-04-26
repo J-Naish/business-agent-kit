@@ -63,6 +63,17 @@ X does not list a native lead-generation objective comparable to Meta Lead Ads o
 | Custom Audiences | Customer lists, website visitors, app users, engagement audiences | Retargeting, suppression, high-value seeds |
 | Exclusions | Excluded audiences, excluded keywords, Do Not Reach Lists | Guardrails and suppression |
 
+### AND / OR Targeting Logic
+
+X targeting uses additive and subtractive layers. This is easy to miss when designing ad groups.
+
+| Logic | Targeting types | Effect |
+|---|---|---|
+| Additive / OR | Interests, keywords, conversation topics, movies/TV, events, follower look-alikes | Expands the eligible audience; a user can match any selected item |
+| Subtractive / AND | Geo location, age, gender, device model, platform, language | Narrows the eligible audience; all selected constraints are respected |
+
+Example: if an ad group targets women in Japan, ages 25-44, plus 5 conversation topics and 20 follower look-alike handles, the user must match the geo/age/gender constraints and can match any of the selected conversation topics or handles.
+
 ### Keyword Targeting vs Keywords Campaign
 
 Keep these separate:
@@ -85,6 +96,12 @@ Optimized Targeting is X's AI-driven audience expansion system. It can reach bey
 Use it when scale and performance matter more than strict manual audience boundaries. Be careful with regulated categories, narrow geos, strict audience tests, or cases where reporting must isolate one targeting input.
 
 Current X guidance says Optimized Targeting is automatically selected for campaigns using the Sales Objective and automatically applied in the Simple Ads flow. In Advanced campaign flow, verify whether the toggle can be changed.
+
+### Conversation Targeting
+
+Conversation targeting covers 10,000+ topics across 25+ categories and uses a 28-day lookback for people who posted, engaged with, or dwelled on posts about a topic.
+
+Language support is strongest in English-speaking markets. X also provides limited support for Japanese, Korean, Portuguese, Spanish, and French; coverage outside English may be less comprehensive. For non-English campaigns, check forecasted reach for each topic and add other targeting options if reach is low or unavailable.
 
 ### Targeting Principles
 

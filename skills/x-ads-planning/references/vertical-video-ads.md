@@ -36,7 +36,7 @@ X positions Vertical Video Ads around the Immersive Media Viewer and has stated 
 - Keep the product or brand cue visible early.
 - Use sound intentionally, but make the video understandable without sound.
 - Put the CTA in a safe central area.
-- Plan for the CTA to appear quickly after viewing begins where the format supports it.
+- If using a website/app CTA button, plan for it to appear automatically after the viewer has watched one second of the ad.
 
 ## Structure
 
