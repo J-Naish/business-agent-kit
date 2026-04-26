@@ -3,7 +3,7 @@
 ## Contents
 
 - [Glossary](#glossary)
-- [Practice-first operating principles](#practice-first-operating-principles)
+- [Operating practice](#operating-practice)
 - [Campaign-type cheat sheet](#campaign-type-cheat-sheet)
 - [1. Surfaces and basic characteristics](#1-surfaces-and-basic-characteristics)
 - [2. Prerequisites](#2-prerequisites)
@@ -23,11 +23,11 @@
 
 ---
 
-## Practice-first operating principles
+## Operating practice
 
 App campaigns are highly automated. The real levers are event choice, event quality, budget-to-bid ratio, creative variety, geo/platform split, and patience during learning.
 
-### What actually moves App campaign performance
+### What matters most
 
 - **Pick the deepest event with stable volume, not the deepest event available.** Bidding to purchase is correct only when purchases are frequent enough. If not, use a proxy event that correlates with LTV and audit that correlation.
 - **Creative is the main controllable lever.** Ship distinct concepts, especially video. App campaigns need variety across motivations, use cases, objections, gameplay/product moments, and user benefits.
@@ -37,8 +37,6 @@ App campaigns are highly automated. The real levers are event choice, event qual
 - **ACe needs incrementality skepticism.** Re-engagement campaigns can capture users who would have returned organically. Use holdouts or conservative reporting where stakes are high.
 - **Learning is easy to break.** Changing bid targets, budgets, geos, or creative wholesale can reset momentum. Add creative gradually and make target moves deliberately.
 
-### Generalizable practitioner heuristics
-
 - **Launch shallower, graduate deeper.** For cold app acquisition, tCPI or a higher-volume in-app event can seed learning; move toward tCPA/tROAS only when the deeper event has stable volume and reliable value.
 - **Proxy events need business validation.** Tutorial complete, add-to-cart, paywall view, level complete, or trial start are useful only if they correlate with retention/LTV. Audit that correlation periodically.
 - **Video refresh is usually the first creative priority.** Text assets can last longer; video fatigue tends to show earlier, especially at scale.
@@ -47,7 +45,7 @@ App campaigns are highly automated. The real levers are event choice, event qual
 - **Web-to-App Connect is a strategic lever when web traffic exists.** Deep links, event passing, and attribution plumbing are operationally heavy, but can improve user quality when the same users discover on web and convert in app.
 - **Seasonal spikes require target planning.** If CPM/CPI rises predictably, adjust targets and budgets before the peak rather than reacting mid-spike.
 
-### How to diagnose App issues
+### Diagnosis
 
 | Symptom | First checks | Likely action |
 |---|---|---|
@@ -57,7 +55,7 @@ App campaigns are highly automated. The real levers are event choice, event qual
 | iOS numbers disagree | SKAN schema, SDK init, postback timing, MMP mapping | Treat normal gaps as methodology; investigate large gaps |
 | Creative fatigue | Asset ratings, spend concentration, age of concepts | Add new video/concept families, not just trims |
 
-### Common practice mistakes
+### Common traps
 
 - Optimizing forever to installs when retention or revenue is the real goal.
 - Jumping to tROAS before purchase/value volume is stable.

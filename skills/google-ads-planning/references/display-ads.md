@@ -3,7 +3,7 @@
 ## Contents
 
 - [1. Ad formats](#1-ad-formats)
-- [Practice-first operating principles](#practice-first-operating-principles)
+- [Operating practice](#operating-practice)
 - [2. Submission specs for Responsive Display Ads (RDA)](#2-submission-specs-for-responsive-display-ads-rda)
 - [3. Submission specs for uploaded display ads](#3-submission-specs-for-uploaded-display-ads)
 - [4. Creative-design best practices](#4-creative-design-best-practices)
@@ -19,11 +19,11 @@
 
 ---
 
-## Practice-first operating principles
+## Operating practice
 
 Display should have a clear job: remarketing, warm re-engagement, cheap incremental reach, or carefully controlled prospecting. Do not evaluate every Display campaign like Search.
 
-### What actually moves Display performance
+### What matters most
 
 - **Role clarity matters more than settings.** Remarketing, prospecting, brand reach, and customer re-engagement should usually be separate because their CPA, frequency, creative, and measurement logic differ.
 - **Low CPM is useful only after quality constraints.** Cheap reach can beat over-targeting when the audience is already good enough and the campaign has bidding/creative discipline. It becomes waste when placements, geography, brand safety, or conversion quality are poor.
@@ -33,8 +33,6 @@ Display should have a clear job: remarketing, warm re-engagement, cheap incremen
 - **Creative message beats visual polish.** Clear value prop, reason to act, and CTA usually matter more than decorative image quality. In visual categories, the image becomes the message; in most lead-gen categories, the headline/offer carries conversion.
 - **Placement hygiene should be focused, not maximalist.** Exclude known bad inventory and inappropriate app/content categories, but avoid enormous exclusion lists that simply raise CPM without improving outcomes.
 
-### Generalizable practitioner heuristics
-
 - **Broad enough + cheap enough can beat precise targeting.** Once a warm audience or prospecting signal is good enough, excessive audience layering can raise CPM faster than it raises CVR. The exception is compliance-heavy or very narrow-fit products where bad impressions carry real cost.
 - **Standalone Display is usually not the first cold-acquisition engine.** P-MAX and Demand Gen often cover broad visual inventory better. Use Display when it has a differentiated job: remarketing, frequency-controlled reach, customer reactivation, or curated B2B placements.
 - **Mobile app inventory should be reviewed deliberately.** For non-app advertisers, app placements can create low-quality clicks or accidental engagement. Exclude categories or placements when quality is poor, but avoid reflexively blocking all scale before testing.
@@ -42,7 +40,7 @@ Display should have a clear job: remarketing, warm re-engagement, cheap incremen
 - **Display creative fatigue is real.** For active campaigns, plan refreshes around new concepts and offers, not just resized banners.
 - **Do not let Display and P-MAX fight for the same job.** If P-MAX is already handling conversion-oriented broad reach, make Display own remarketing, win-back, controlled reach, or a different message.
 
-### How to diagnose Display issues
+### Diagnosis
 
 | Symptom | First checks | Likely action |
 |---|---|---|
@@ -51,7 +49,7 @@ Display should have a clear job: remarketing, warm re-engagement, cheap incremen
 | Prospecting does not spend | Audience too narrow, bid target too tight, assets weak | Broaden, relax target, improve RDA coverage |
 | High VTC share | VTC window, viewability, primary conversion settings | Report VTC separately, shorten window, use click/engaged signals |
 
-### Common practice mistakes
+### Common traps
 
 - Running Display prospecting and P-MAX against the same goal and audience without defining different jobs.
 - Chasing the lowest CPM while ignoring placement quality and downstream lead/sales quality.

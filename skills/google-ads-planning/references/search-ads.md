@@ -3,7 +3,7 @@
 ## Contents
 
 - [Glossary](#glossary)
-- [Practice-first operating principles](#practice-first-operating-principles)
+- [Operating practice](#operating-practice)
 - [Decision matrix by monthly CV volume](#decision-matrix-by-monthly-cv-volume)
 - [1. Account and campaign structure design](#1-account-and-campaign-structure-design)
 - [2. Keyword strategy](#2-keyword-strategy)
@@ -24,11 +24,11 @@
 
 ---
 
-## Practice-first operating principles
+## Operating practice
 
 Search works when explicit intent, a relevant promise, a strong landing page, and a reliable conversion signal line up. Do not treat it as a pure keyword/settings exercise.
 
-### What actually moves Search performance
+### What matters most
 
 - **Conversion action quality is the first lever.** A Search campaign optimized to raw form submits will buy different auctions from one optimized to qualified leads or purchases. For lead gen, import CRM/offline quality when possible; otherwise, use a proxy only when it correlates with qualified outcomes.
 - **Brand and non-brand must be evaluated separately.** Branded Search often has high reported ROAS because much of the demand already exists. Keep brand isolated so it cannot hide weak non-brand performance or inflate account-level ROAS.
@@ -38,8 +38,6 @@ Search works when explicit intent, a relevant promise, a strong landing page, an
 - **Landing-page match beats clever ad copy.** The ad promise, keyword intent, page headline, proof, form/purchase path, and mobile speed need to agree.
 - **Bid targets should move gradually.** Large tCPA/tROAS swings suppress volume first and can create multi-week volatility. Use small steps unless business economics changed enough to justify a reset.
 
-### Generalizable practitioner heuristics
-
 - **Reported Search ROAS is most distorted when brand is mixed in.** A high blended ROAS can hide weak non-brand acquisition. For strategy work, always ask: "How does non-brand perform without brand lift?"
 - **Do not optimize match types as if it were 2018.** Close variants, Broad + Smart Bidding, and AI Max reduce the value of fine-grained match-type architecture. Keyword hygiene still matters, but query quality and conversion quality matter more.
 - **Portfolio bidding helps only when campaigns are economically similar.** Pooling brand and generic, low-CPA and high-CPA, or lead-quality-mismatched campaigns can make the portfolio optimize toward the wrong average.
@@ -47,7 +45,7 @@ Search works when explicit intent, a relevant promise, a strong landing page, an
 - **Search Partners should be a deliberate test.** It can add volume, but quality varies by vertical and geography. Evaluate separately before leaving it on as a default.
 - **Competitor campaigns need isolated economics.** They often have lower Quality Score, higher CPC, and weaker CVR. Run only when the strategic value or conquest economics justify it.
 
-### How to diagnose Search issues
+### Diagnosis
 
 | Symptom | First checks | Likely action |
 |---|---|---|
@@ -57,7 +55,7 @@ Search works when explicit intent, a relevant promise, a strong landing page, an
 | Brand looks great, non-brand weak | Brand isolation, incrementality, query mix | Report separately, test brand holdout where feasible |
 | AI Max sends odd traffic | Final URL expansion, URL exclusions, brand controls | Exclude weak pages, constrain generated text, keep AI Max off for strict LP control |
 
-### Common practice mistakes
+### Common traps
 
 - Splitting every match type or tiny keyword variant into its own campaign before there is enough data.
 - Treating Ad Strength as the goal instead of using it as a diagnostic.

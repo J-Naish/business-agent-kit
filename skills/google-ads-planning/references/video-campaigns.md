@@ -3,7 +3,7 @@
 ## Contents
 
 - [Glossary](#glossary)
-- [Practice-first operating principles](#practice-first-operating-principles)
+- [Operating practice](#operating-practice)
 - [Goal-based campaign-selection cheat sheet](#goal-based-campaign-selection-cheat-sheet)
 - [1. Ad-format catalog (YouTube-specific)](#1-ad-format-catalog-youtube-specific)
 - [2. Campaign goals and sub-types](#2-campaign-goals-and-sub-types)
@@ -22,11 +22,11 @@
 
 ---
 
-## Practice-first operating principles
+## Operating practice
 
 YouTube performance is creative-led. Targeting and bidding matter, but weak video cannot usually be fixed with settings.
 
-### What actually moves Video performance
+### What matters most
 
 - **The first 1-5 seconds decide attention.** Start with motion, face, product, problem, or pattern interrupt. Show the brand early enough to transfer memory, and state the value quickly.
 - **Use ABCD as a quality floor, not a guarantee.** Attract, Brand, Connect, Direct improves the odds, but weak offer or weak audience-message fit still fails.
@@ -36,8 +36,6 @@ YouTube performance is creative-led. Targeting and bidding matter, but weak vide
 - **Measure upper-funnel correctly.** Brand Lift, search lift, geo lift, MMM, and assisted conversion patterns are more meaningful than pure last-click CPA for awareness/reach campaigns.
 - **Production budget is not the lever after a basic quality floor.** Hook, offer, structure, brand timing, and CTA often outperform production polish.
 
-### Generalizable practitioner heuristics
-
 - **Repurposed TV creative usually needs surgery.** Move brand/value into the opening, tighten pacing, add on-screen text, and design for skip behavior. A TV cutdown is not automatically a YouTube ad.
 - **The end card is a conversion lever.** For direct response, use a clear offer, visual product/service reminder, and specific CTA. Generic "Learn more" is weaker when a more concrete action is available.
 - **CTV is usually brand/reach spend.** Evaluate CTV with reach, lift, search lift, or MMM-style contribution. Do not expect reliable last-click attribution.
@@ -45,7 +43,7 @@ YouTube performance is creative-led. Targeting and bidding matter, but weak vide
 - **Frequency caps matter more when interruption is high.** Non-skippable and small remarketing audiences need tighter controls than broad skippable reach.
 - **Video experiments are best for concept questions.** Use them to test hooks, offers, structure, and audience-message fit; do not spend large budgets testing tiny edits.
 
-### How to diagnose Video issues
+### Diagnosis
 
 | Symptom | First checks | Likely action |
 |---|---|---|
@@ -54,7 +52,7 @@ YouTube performance is creative-led. Targeting and bidding matter, but weak vide
 | High CPM/frequency | Audience too narrow, cap too loose, format mix | Broaden, cap frequency, test efficient reach |
 | Good VTC but weak business lift | Attribution window, VTC share, search lift, holdout | Discount VTC, use lift/geo test, report separately |
 
-### Common practice mistakes
+### Common traps
 
 - Repurposing TV creative without moving brand/value into the opening.
 - Measuring awareness campaigns like Search.

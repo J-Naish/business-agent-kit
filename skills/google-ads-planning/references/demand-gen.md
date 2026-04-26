@@ -3,7 +3,7 @@
 ## Contents
 
 - [1. Ad formats](#1-ad-formats)
-- [Practice-first operating principles](#practice-first-operating-principles)
+- [Operating practice](#operating-practice)
 - [2. Submission specs](#2-submission-specs)
 - [3. Surfaces (placements)](#3-surfaces-placements)
 - [4. Audience targeting](#4-audience-targeting)
@@ -21,11 +21,11 @@
 
 ---
 
-## Practice-first operating principles
+## Operating practice
 
 Demand Gen is a visual, social-style Google campaign type. Plan and evaluate it closer to paid social than to Search: it creates and warms demand more than it harvests explicit intent.
 
-### What actually moves Demand Gen performance
+### What matters most
 
 - **Creative and audience seed quality are the main levers.** Strong purchaser/customer lists, lookalikes, short video, lifestyle images, carousels, and product-feed creative usually matter more than tiny targeting tweaks.
 - **Use high-quality seeds for lookalikes.** Recent purchasers, high-LTV customers, qualified leads, or retained users are better seeds than all site visitors or all converters. Weak seeds produce weak lookalikes.
@@ -35,8 +35,6 @@ Demand Gen is a visual, social-style Google campaign type. Plan and evaluate it 
 - **Consolidate until volume supports splits.** Tiny ad groups by persona often trap the campaign in learning. Split only when creative, audience, bid target, or business goal truly differs.
 - **Budget must be meaningful.** Very small B2B or niche campaigns often fail because the system never gets enough signal. In those cases, use Demand Gen for remarketing/customer lists first.
 
-### Generalizable practitioner heuristics
-
 - **Demand Gen should have a defined funnel job.** Good jobs include cold visual prospecting, product discovery, mid-funnel education, creator/UGC-style proof, remarketing, and cross-sell. "Make more conversions like P-MAX" is too vague.
 - **Lookalike seed quality dominates lookalike settings.** Prefer recent purchasers, high-LTV customers, qualified leads, active subscribers, or retained app users. Avoid diluted seeds like all visitors when quality varies.
 - **Paid-social winners are useful starting points.** Creative that works on Meta/TikTok-style feeds often adapts better to Demand Gen than Search or Display banners do.
@@ -44,7 +42,7 @@ Demand Gen is a visual, social-style Google campaign type. Plan and evaluate it 
 - **Creative volume beats polish up to a point.** A steady pipeline of distinct angles usually beats a few heavily polished assets. Approval bottlenecks should be handled as an operating problem.
 - **Demand Gen can lift Search.** If last-click CPA looks weak, check branded Search, assisted conversion, and remarketing-pool movement before concluding there is no value.
 
-### How to diagnose Demand Gen issues
+### Diagnosis
 
 | Symptom | First checks | Likely action |
 |---|---|---|
@@ -53,7 +51,7 @@ Demand Gen is a visual, social-style Google campaign type. Plan and evaluate it 
 | Low spend | Audience too narrow, target too tight, asset/ad strength weak | Consolidate, broaden, relax target, add assets |
 | Looks weak by last click | Branded Search lift, assisted conversions, holdout feasibility | Evaluate incrementality or blended funnel impact |
 
-### Common practice mistakes
+### Common traps
 
 - Reusing Search copy as visual-feed copy.
 - Running 2-3 polished assets for months instead of refreshing concepts.

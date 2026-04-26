@@ -3,7 +3,7 @@
 ## Contents
 
 - [Glossary](#glossary)
-- [Practice-first operating principles](#practice-first-operating-principles)
+- [Operating practice](#operating-practice)
 - [Decision matrix](#decision-matrix)
 - [Quickstart](#quickstart)
 - [1. Major updates 2025–2026](#1-major-updates-20252026)
@@ -31,11 +31,11 @@
 
 ---
 
-## Practice-first operating principles
+## Operating practice
 
 Performance Max amplifies the quality of the inputs you give it: conversion goals, values, feed, creative, audience signals, landing pages, and exclusions. It is not a substitute for strategy.
 
-### What actually moves P-MAX performance
+### What matters most
 
 - **Measurement quality decides the campaign's direction.** P-MAX will aggressively optimize toward the selected primary goals. For lead gen, use Enhanced Conversions for leads and offline conversion imports when lead quality varies by query, geo, device, or audience.
 - **Consolidate for learning; split for control.** Split P-MAX only when the business needs separate budget, target CPA/ROAS, margin, geo/language, customer type, store goal, or product ownership. Splitting just to see cleaner reports often starves the model.
@@ -45,8 +45,6 @@ Performance Max amplifies the quality of the inputs you give it: conversion goal
 - **Feed quality is creative quality for retail.** Product titles, images, prices, availability, GTINs, product_type, and custom labels often move performance more than campaign switches.
 - **P-MAX ROAS needs skepticism.** Reported performance can be inflated by brand traffic, remarketing bias, modeled conversions, and VTC. Use Search terms insights, brand exclusions, experiments, geo tests, or customer holdouts when decisions are material.
 
-### Generalizable practitioner heuristics
-
 - **P-MAX is rarely one thing.** It can behave like Shopping, remarketing, brand Search, Display, YouTube, or prospecting depending on feed, assets, signals, and goals. Diagnose channel mix and query/category insights before making strategy claims.
 - **Brand exclusions are not just cleanup; they are incrementality controls.** Use them when P-MAX is taking credit for demand that Search or organic would capture anyway.
 - **URL expansion is powerful on strong commercial sites and dangerous on messy sites.** Keep it on when many landing pages are commercially useful; turn it off or exclude aggressively when the site has blog/support/careers/low-intent pages.
@@ -55,7 +53,7 @@ Performance Max amplifies the quality of the inputs you give it: conversion goal
 - **Feed-only P-MAX can be valid.** For asset-poor, SKU-heavy, or highly utilitarian catalogs, feed-led delivery may outperform weak generic creative. Full assets are not automatically better if the assets dilute purchase intent.
 - **New-customer acquisition mode needs clean definitions.** Use it only when customer lists and new/existing customer values are reliable; otherwise it can distort bidding.
 
-### How to diagnose P-MAX issues
+### Diagnosis
 
 | Symptom | First checks | Likely action |
 |---|---|---|
@@ -65,7 +63,7 @@ Performance Max amplifies the quality of the inputs you give it: conversion goal
 | Good products starved | Listing groups, product performance, margin/priority labels | Isolate long-tail or strategic SKUs, use custom labels |
 | Asset group noise | Too many themes in one group or too many tiny groups | Rebuild around coherent themes with full asset coverage |
 
-### Common practice mistakes
+### Common traps
 
 - Launching with one thin generic asset group and expecting automation to invent positioning.
 - Using audience signals as if they are strict targeting.

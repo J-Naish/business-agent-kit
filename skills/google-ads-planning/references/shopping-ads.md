@@ -3,7 +3,7 @@
 ## Contents
 
 - [Glossary](#glossary)
-- [Practice-first operating principles](#practice-first-operating-principles)
+- [Operating practice](#operating-practice)
 - [2. Merchant Center setup](#2-merchant-center-setup)
 - [3. Product feed: design and optimization](#3-product-feed-design-and-optimization)
 - [4. Product-title optimization](#4-product-title-optimization)
@@ -20,11 +20,11 @@
 
 ---
 
-## Practice-first operating principles
+## Operating practice
 
 Shopping performance is mostly feed, price, product-market fit, landing-page purchase friction, and margin-aware bidding. Campaign settings matter, but the feed is the targeting and creative layer.
 
-### What actually moves Shopping performance
+### What matters most
 
 - **Product titles are usually the first feed lever.** Front-load the terms buyers would search: category, key attribute, brand/model, size/color/material where relevant. Use brand-first only when brand is the search intent.
 - **Feed health is not just disapprovals.** Subtle GTIN errors, stale price/availability, weak product_type, poor images, or landing-page mismatches can suppress impressions without obvious account alarms.
@@ -34,8 +34,6 @@ Shopping performance is mostly feed, price, product-market fit, landing-page pur
 - **Standard Shopping still has a role.** It can be useful for diagnostics, long-tail SKU protection, inventory-heavy/asset-poor catalogs, or cases where P-MAX hides too much.
 - **Free listings are worth maintaining but not forecasting around.** Treat them as incremental visibility and remarketing-pool input, not the core growth engine.
 
-### Generalizable practitioner heuristics
-
 - **Title structure should follow buyer search behavior.** For generic category searches, lead with category and key attributes. For brand-led or model-led categories, lead with brand/model. Validate with search terms rather than applying one universal formula.
 - **Custom labels should map to business levers.** Margin tier is often the most useful; inventory status, velocity, hero/long-tail, promotion, and seasonality are useful when they change bidding or campaign inclusion.
 - **Supplemental feeds are the fastest testing layer.** Use them for title rewrites, labels, product_type corrections, and temporary merchandising fixes. Promote stable winners back into the primary feed to avoid long-term drift.
@@ -44,7 +42,7 @@ Shopping performance is mostly feed, price, product-market fit, landing-page pur
 - **Inventory-aware bidding can be simple.** Labels such as low/normal/high stock or days-of-cover can prevent wasted spend on soon-to-stock-out SKUs and prioritize products that can actually fulfill demand.
 - **Do not break product IDs casually.** Stable IDs preserve history and product continuity. Feed rebuilds that change IDs can create avoidable learning loss.
 
-### How to diagnose Shopping issues
+### Diagnosis
 
 | Symptom | First checks | Likely action |
 |---|---|---|
@@ -54,7 +52,7 @@ Shopping performance is mostly feed, price, product-market fit, landing-page pur
 | Low ROAS | Margin mix, product winners/losers, values, inventory | Segment by margin, isolate heroes/long-tail, use profit-aware values |
 | Long-tail never shows | Product grouping, P-MAX bias toward winners | Isolate long-tail SKUs with looser target if demand exists |
 
-### Common practice mistakes
+### Common traps
 
 - Trying to solve feed or pricing problems by changing campaign settings.
 - Using one ROAS target for products with very different margins.
