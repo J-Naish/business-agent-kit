@@ -62,7 +62,7 @@ Adapt the output to what the user actually asked for. **There is no requirement 
 |---|---|
 | User asks a focused question (e.g. "should I use P-MAX or Search for this?") | Direct answer with reasoning. No document. |
 | User wants planning guidance across the full picture | Structured response covering the relevant sections. Still inline by default. |
-| User explicitly asks for a written plan / spec / brief | Produce a written document, using the templates in [references/output-templates.md](references/output-templates.md) as a starting point. |
+| User explicitly asks for a written plan / spec / brief | Produce a written deliverable inline or as a Markdown file, depending on the requested handoff format. |
 | User is launching a multi-campaign account from scratch and the deliverable will be handed off | A written spec usually fits — but **confirm with the user before writing** rather than assuming. |
 
 When in doubt, ask whether they want a written deliverable or a conversational answer. Default to the lighter form.
@@ -411,7 +411,7 @@ Match the output shape to what the situation calls for. **The skill does not req
 
 - **Direct conversational answer** when the user asked a focused question.
 - **Structured inline response** when the user wants planning guidance but doesn't need a document.
-- **Written plan / spec** when the user explicitly asked for one, or when the deliverable is going to be handed off to another team / agency / client. Use [references/output-templates.md](references/output-templates.md) for the format and the user's project conventions for placement.
+- **Written plan / spec** when the user explicitly asked for one, or when the deliverable is going to be handed off to another team / agency / client. If a file is useful, create a concise Markdown file using the user's project conventions for placement and naming.
 
 If a written plan is the right deliverable, it typically covers:
 
@@ -424,6 +424,8 @@ If a written plan is the right deliverable, it typically covers:
 7. KPIs and success criteria.
 
 When unsure whether to produce a written document, ask the user.
+
+For Markdown-file deliverables, keep the structure practical rather than template-heavy: use clear sections, decision tables where they help handoff, explicit assumptions, and concrete launch/measurement actions. Avoid filling generic sections that do not change the campaign decision.
 
 ---
 
