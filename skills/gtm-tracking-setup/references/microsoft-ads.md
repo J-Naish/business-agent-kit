@@ -135,7 +135,7 @@ View-through tracking additionally requires the account property `IncludeViewThr
 
 ### `ExcludeFromBidding`
 
-When `true`, the goal is excluded from `Conversions`/`ConversionRate`/`CostPerConversion`/`ReturnOnAdSpend`/`Revenue` columns and from automated-bidding calculations. The `All*` columns still include it. Use this for micro-conversions (`view_item`, `add_to_cart`) tracked for observation/audiences without polluting bidding.
+When `true`, the goal is excluded from `Conversions`/`ConversionRate`/`CostPerConversion`/`ReturnOnAdSpend`/`RevenuePerConversion`/`Revenue` columns and from automated-bidding calculations. The `All*` columns still include it. Use this for micro-conversions (`view_item`, `add_to_cart`) tracked for observation/audiences without polluting bidding.
 
 ### Enhanced conversions
 

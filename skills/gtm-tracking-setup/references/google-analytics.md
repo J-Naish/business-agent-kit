@@ -83,9 +83,9 @@ Full quota reference: GA4 limits.
 
 ### E-commerce
 
-> "Required parameters" = events still fire without them, but they are essentially required because they are indispensable for monetization reports, optimization, and ROAS measurement.
+> "Prescribed / strongly recommended parameters" = events still fire without them, but these parameters are important for monetization reports, optimization, and ROAS measurement.
 
-| Event | Purpose | Required parameters |
+| Event | Purpose | Prescribed / strongly recommended parameters |
 |---------|------|---------------|
 | `view_item_list` | View product list | `items` |
 | `select_item` | Select product | `items` |
@@ -102,7 +102,7 @@ Full quota reference: GA4 limits.
 
 ### Lead Generation
 
-| Event | Purpose | Required parameters |
+| Event | Purpose | Prescribed / strongly recommended parameters |
 |---------|------|---------------|
 | `generate_lead` | Lead generation (form submission) | `currency`, `value` |
 | `qualify_lead` | Lead qualification | `currency`, `value` |

@@ -20,8 +20,8 @@
 
 | Setting | Behavior | Recommended Scenario |
 |---------|---------|---------------------|
-| **Every** | Counts every occurrence from the same user | E-commerce purchases (each purchase drives revenue) |
-| **One** | Counts only the first occurrence per user | Lead acquisition (a second submission adds little value) |
+| **Every** | Counts every conversion after an ad interaction | E-commerce purchases (each purchase drives revenue) |
+| **One** | Counts only one conversion per ad click | Lead acquisition (additional submissions from the same click add little value) |
 
 ### Conversion Window
 

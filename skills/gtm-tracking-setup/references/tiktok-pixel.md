@@ -30,9 +30,9 @@
 | **ApplicationApproval** | Application approved |
 | **FindLocation** | Store search |
 | **CustomizeProduct** | Product customization |
-| **Login** | Successful login |
 
 > **Event name migration**: CompletePayment→Purchase, SubmitForm→Lead (legacy names still auto-converted). ClickButton, PlaceAnOrder are soft-deprecated until 2027. Use the new names for new implementations.
+> **Login**: Confirm in the current TikTok Ads Manager / developer docs before using as a standard web event; it is not listed in the current public supported-standard-events table.
 
 ### Event Parameters
 

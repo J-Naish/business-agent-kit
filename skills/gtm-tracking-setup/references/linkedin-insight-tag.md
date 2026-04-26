@@ -46,7 +46,7 @@ DONATE, ADD_TO_LIST, START_TRIAL, OUTBOUND_CLICK, CONTACT, QUALIFIED_LEAD
 | `name` | Human-readable rule name |
 | `type` | Conversion type from the enum above |
 | `valueType` | `DYNAMIC` (overridden per event), `FIXED` (uses rule's stored value), or `NO_VALUE`. Default is `DYNAMIC`. |
-| `postClickAttributionWindowSize` | 1, 7, 30, or 90 days. Default 30. 365-day window allowed for `SUBMIT_APPLICATION`, `PURCHASE`, `ADD_TO_CART`, `QUALIFIED_LEAD`, `LEAD`. |
+| `postClickAttributionWindowSize` | 1, 7, 30, or 90 days. Default 30. 365-day window allowed for `SUBMIT_APPLICATION`, `PURCHASE`, `ADD_TO_CART`, `QUALIFIED_LEAD`, `LEAD`. Microsoft Learn error examples also mention 28 as an available value; verify against the active API version before using it. |
 | `viewThroughAttributionWindowSize` | 1, 7, 30, or 90 days. Default 7. 365-day window allowed for the same long-window types. |
 | `attributionType` | `LAST_TOUCH_BY_CAMPAIGN` (default) or `LAST_TOUCH_BY_CONVERSION`. |
 | `enabled` | Boolean. Only enabled rules count. |

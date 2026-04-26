@@ -23,12 +23,22 @@ Snap event names are uppercase, snake_case. The same names are used by both the 
 | 9 | `PURCHASE` | Purchase completed (`currency` + `value` required) |
 | 10 | `SIGN_UP` | Account / service signup |
 | 11 | `SUBSCRIBE` | Subscription action |
-| 12 | `START_TRIAL` | Trial start |
-| 13 | `LOGIN` | User login |
-| 14 | `SHARE` | Share action |
-| 15 | `SAVE` | Save / favorite |
-| 16 | `RESERVE` | Reservation |
-| 17 | `CUSTOM_EVENT_1` – `CUSTOM_EVENT_5` | Business-specific custom slots |
+| 12 | `AD_CLICK` | Ad click event |
+| 13 | `AD_VIEW` | Ad view event |
+| 14 | `COMPLETE_TUTORIAL` | Tutorial completed |
+| 15 | `LEVEL_COMPLETE` | Game / app level completed |
+| 16 | `INVITE` | Invite sent |
+| 17 | `LOGIN` | User login |
+| 18 | `SHARE` | Share action |
+| 19 | `RESERVE` | Reservation |
+| 20 | `ACHIEVEMENT_UNLOCKED` | Achievement unlocked |
+| 21 | `SPENT_CREDITS` | Credits spent |
+| 22 | `RATE` | Rating submitted |
+| 23 | `START_TRIAL` | Trial start |
+| 24 | `APP_INSTALL` | App installed |
+| 25 | `APP_OPEN` | App opened |
+| 26 | `SAVE` | Save / favorite |
+| 27 | `CUSTOM_EVENT_1` – `CUSTOM_EVENT_5` | Business-specific custom slots |
 
 > **There is no `LEAD` standard event.** Map GA4 `generate_lead` to `SIGN_UP` or a `CUSTOM_EVENT_*` slot. The official server-side GTM template maps inherited GA4 `generate_lead` to `SIGN_UP`.
 
@@ -56,7 +66,7 @@ Snap event names are uppercase, snake_case. The same names are used by both the 
 |---|---|
 | `currency` | ISO 4217 currency code. |
 | `value` | Numeric monetary value. |
-| `contents` | Array of product objects (`id`, `quantity`, `item_price`, `brand`). |
+| `contents` | Array of product objects (`id`, `quantity`, `item_price`, `delivery_category`). |
 | `content_ids` | Array of product IDs (alternative to `contents`). |
 | `content_category` | Product category. |
 | `num_items` | Total item count. |
@@ -193,7 +203,7 @@ function() {
     var product = { id: item.item_id || item.id || item.sku };
     if (item.quantity != null) product.quantity = String(item.quantity);
     if (item.price != null) product.item_price = String(item.price);
-    if (item.item_brand) product.brand = item.item_brand;
+    if (item.delivery_category) product.delivery_category = item.delivery_category;
     return product;
   }).filter(function(p) { return !!p.id; });
 }
