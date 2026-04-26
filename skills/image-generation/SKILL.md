@@ -104,6 +104,35 @@ Switch from Flash to Pro only when quality is decisive — for example: accurate
 
 ---
 
+## Pricing (approximate, Standard tier)
+
+Pricing changes — always check the live pricing pages before relying on these numbers.
+
+### Gemini
+
+Per-image output cost by resolution. Input is billed separately at $0.50/1M tokens (Flash) or $2/1M tokens (Pro).
+
+| Model | 512px | 1K | 2K | 4K |
+|---|---|---|---|---|
+| Nano Banana Flash (`gemini-3.1-flash-image-preview`) | ~$0.045 | ~$0.067 | ~$0.101 | ~$0.15 |
+| Nano Banana Pro (`gemini-3-pro-image-preview`) | — | ~$0.134 | ~$0.134 | ~$0.24 |
+
+Source: [Vertex AI generative AI pricing](https://cloud.google.com/vertex-ai/generative-ai/pricing).
+
+### OpenAI gpt-image-2
+
+Per-image cost by quality and aspect. Input is billed separately at $5/1M text-input tokens, $8/1M image-input tokens, $30/1M image-output tokens.
+
+| Quality | 1024×1024 | Non-square (e.g. 1024×1536, 1536×1024) |
+|---|---|---|
+| Low | ~$0.006 | ~$0.005 |
+| Medium | ~$0.053 | ~$0.041 |
+| High | ~$0.211 | ~$0.165 |
+
+For exact estimates, use OpenAI's [image generation calculator](https://developers.openai.com/api/docs/guides/image-generation#calculating-costs). Source: [OpenAI pricing](https://developers.openai.com/api/docs/pricing).
+
+---
+
 ## Workflow
 
 ### Before generating

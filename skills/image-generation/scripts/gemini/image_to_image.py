@@ -9,7 +9,10 @@ Options:
   --model <model_id>           Model ID (default: gemini-3.1-flash-image-preview)
   --aspect-ratio <ratio>       Aspect ratio (e.g. 16:9, 1:1, 9:16)
   --image-size <size>          Image size (e.g. 1K, 2K, 4K)
-  --images <path> [<path>...]  Additional reference images (Pro: up to 10, Flash: up to 13)
+  --images <path> [<path>...]  Additional reference images beyond the primary.
+                               Total references (primary + additional) cannot exceed
+                               Pro: 11 (6 object + 5 character),
+                               Flash: 14 (10 object + 4 character).
 """
 # /// script
 # requires-python = ">=3.10"

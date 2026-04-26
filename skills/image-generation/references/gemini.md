@@ -43,7 +43,7 @@ Verbatim example from Google:
 
 > *"Using the attached napkin sketch as the structure and the attached fabric sample as the texture, transform this into a high-fidelity 3D armchair render. Place it in a sun-drenched, minimalist living room."*
 
-Reference image limits: up to **14 objects (Flash) / 11 (Pro)**.
+Reference image limits (total, primary + additional): up to **14 (Flash, 10 object + 4 character) / 11 (Pro, 6 object + 5 character)**.
 
 ### 3. Real-time information (Google Search grounding)
 
