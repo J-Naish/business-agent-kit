@@ -56,12 +56,13 @@ Ad account
 
 4. **Improve Event Match Quality**
    - Send hashed customer information and browser/server parameters where policy and consent allow: email, phone, IP address, user agent, click IDs, and other matching parameters.
-   - Stronger matching can improve attribution and optimization quality.
+   - Stronger matching can improve attribution and optimization quality, but do not treat a specific score as guaranteed lift.
 
-### Step 3: Domain Verification and Event Priority
+### Step 3: Domain Verification and Event Governance
 
 1. Verify the domain in Business settings.
-2. Configure event priority where Aggregated Event Measurement or related iOS measurement controls are relevant.
+2. Check Events Manager diagnostics, event match quality, deduplication, value/currency consistency, and event latency.
+3. Configure Aggregated Event Measurement or related iOS measurement controls only where the current account UI requires it. Meta changes this area over time, so verify current Events Manager behavior before giving exact setup instructions.
 
 ---
 
@@ -71,7 +72,7 @@ Ad account
 
 #### Broad Audience
 
-- Use only geography, age, and gender constraints unless there is a clear reason to narrow further.
+- Use only geography, age, language, and gender constraints unless there is a clear reason to narrow further.
 - Let Meta's delivery system find likely converters.
 - This is the default modern starting point for many prospecting campaigns.
 
@@ -98,12 +99,14 @@ Use audience sizes that are large enough to deliver. Very small retargeting pool
 - Similarity ranges from 1% most similar to broader percentages for reach.
 - Use high-quality seeds: purchasers, high-LTV customers, qualified leads, retained app users, or high-value subscribers.
 - Avoid diluted seeds such as all visitors when quality varies heavily.
+- Treat Lookalikes as a signal or test, not the default targeting engine. Broad/Advantage+ delivery can outperform Lookalikes when conversion signal and creative quality are strong.
 
 #### Advantage+ Audience
 
 - Lets Meta expand beyond audience suggestions when it predicts better performance.
 - Uses conversion data, engagement, and delivery feedback to find likely responders.
 - Often works best with broad constraints and strong creative.
+- Audience suggestions are not the same as hard filters. Use audience controls and custom audience exclusions when the business needs real limits.
 
 ### Targeting Principles
 
@@ -112,6 +115,8 @@ Modern Meta targeting has moved from manually defining the perfect audience towa
 - First-party data is the foundation: customer lists, Pixel data, app events, and conversion history.
 - Avoid over-narrowing unless compliance, geography, language, or business logic requires it.
 - Creative quality helps targeting because Meta infers audience fit from the creative itself.
+- Detailed targeting exclusions have been removed from new ad sets. Do not design a strategy that depends on excluding interests/behaviors; use Custom Audience exclusions, account-level audience controls, or other current controls where available.
+- Sensitive categories, special ad categories, teen targeting, health/financial audiences, and regional policy constraints can limit targeting. Verify current policy and UI behavior for these cases.
 
 ---
 
@@ -121,17 +126,17 @@ Modern Meta targeting has moved from manually defining the perfect audience towa
 
 | Strategy | Summary | Pros | Cons | Use when |
 |---|---|---|---|---|
-| **Lowest cost** | Meta tries to get the most results for the budget | Simple, scalable | CPA is not tightly controlled | Initial tests or flexible CPA target |
-| **Cost cap** | Meta aims to keep average cost around the cap | Better CPA stability | May underspend | Clear CPA target |
-| **Bid cap** | Sets a maximum bid per auction | Strict auction-level control | Can severely restrict delivery | Strict economics or limited inventory tolerance |
-| **ROAS goal** | Optimizes toward a target return on ad spend | Revenue/value-aware | Needs reliable value data and volume | E-commerce or variable-value purchases |
+| **Lowest cost / Highest volume** | Meta tries to get the most results for the budget | Simple, scalable, best for learning | CPA is not tightly controlled | Default for launches and most unstable accounts |
+| **Cost per result goal / Cost cap** | Meta aims to keep average cost around the goal | Better CPA discipline | May underspend or stay unstable | Clear CPA target and stable volume |
+| **Bid cap** | Sets a maximum bid per auction | Strict auction-level control | Can severely restrict delivery | Advanced use with known economics |
+| **ROAS goal** | Optimizes toward a target return on ad spend | Revenue/value-aware | Needs reliable value data, volume, and value variance | E-commerce or variable-value purchases |
 
 ### Selection Path
 
 ```
-New launch -> Lowest cost for data collection
+New launch or unstable account -> Lowest cost / Highest volume for data collection
     ↓
-Stable conversion volume -> Cost cap for CPA control
+Stable conversion volume and defensible economics -> Cost per result goal / Cost cap
     ↓
 Strict margin or value control -> Bid cap or ROAS goal
 ```
@@ -159,6 +164,7 @@ Advantage+ sales campaigns are Meta's automated sales campaign type. They are es
 - Works best with strong conversion tracking, enough volume, and diverse creative.
 - Can combine prospecting and retargeting behavior inside one campaign.
 - Opportunity Score and account recommendations can provide optimization feedback, but they should not replace business judgment.
+- Existing-customer controls have changed across Advantage+ Shopping/Sales workflows. Verify current UI before prescribing an "Existing Customer Budget Cap"; where no cap exists, use customer definitions, audience breakdowns, manual Sales structures, custom audience exclusions, or ad set spending limits where appropriate.
 
 ### Setup Flow
 
@@ -197,6 +203,7 @@ Advantage+ sales campaigns are Meta's automated sales campaign type. They are es
 - Budget must be sufficient to support learning.
 - Creative should be diverse and high quality.
 - Measurement, landing page, and funnel issues should be fixed before expecting automation to scale.
+- Track new vs existing customer contribution, view-through share, and business revenue. Advantage+ Sales can look efficient in-platform while over-harvesting existing demand.
 
 ---
 
@@ -204,15 +211,17 @@ Advantage+ sales campaigns are Meta's automated sales campaign type. They are es
 
 ### Recommended Number of Ads per Ad Set
 
-- Start with **3-5 creative concepts** per ad set when the budget can support it.
+- Start with **3-5 distinct creative concepts** per test wave when the budget can support it.
 - Mix formats where useful: image, video, carousel, and catalog-led formats.
 - Adapt aspect ratio and design to placement requirements.
+- Meta has softened older "six ads per ad set" guidance, but that does not mean every account should run 20-50 ads. Scale ad volume with budget and delivery; if many ads receive no impressions, reduce the active set.
 
 ### Advantage+ Creative
 
 - Lets Meta automatically optimize creative elements such as cropping, text variations, enhancements, and format adaptations.
 - Can reduce manual testing burden.
 - Still requires human quality control and performance monitoring.
+- Use as a multiplier on strong human-defined concepts. Do not rely on it to invent the core offer, proof, or positioning.
 
 ### Flexible Ad Format
 
@@ -226,5 +235,5 @@ Advantage+ sales campaigns are Meta's automated sales campaign type. They are es
 |---|---:|---:|
 | Primary text | Up to 125 characters before truncation risk | 3-5 variants |
 | Headline | Up to 27 characters before truncation risk | 3-5 variants |
-| Description | Up to 27 characters; may not show on all placements | 1-3 variants |
+| Description | Usually 25-30 characters; may not show on all placements | 1-3 variants |
 | CTA | Choose from Meta's preset buttons | 1 |

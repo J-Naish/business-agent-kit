@@ -18,6 +18,7 @@ Creative quality is one of the most important levers in Meta ads. Budget, target
 - Creative is a major driver of delivery quality and conversion rate.
 - Meta's delivery system uses creative signals to infer who is likely to respond.
 - Creative strategy should define the audience, message, proof, format, and test plan before asset production starts.
+- AI retrieval/ranking systems such as Andromeda/GEM make creative inputs more important, but avoid unsupported claims such as a fixed percentage of performance being caused by creative.
 
 ---
 
@@ -35,6 +36,7 @@ Better pattern:
 
 - Reuse the winning message across meaningfully different formats.
 - Test different angles, tones, proof types, visual styles, and content structures.
+- Keep the active library proportional to budget. Larger accounts can test more creative breadth; smaller accounts often need fewer, clearer concepts.
 
 ### Creative Categories
 
@@ -77,20 +79,20 @@ Design rule: use 9:16 vertical as the master design when Reels and Stories matte
 
 | Element | Recommendation |
 |---|---|
-| First 3 seconds | Use a strong hook; this is the most important section |
+| First 1-3 seconds | Use a strong hook; this is the most important section |
 | Length | Feed: 15-60s; Reels: 15-30s; Stories: short and direct |
 | Aspect ratio | 9:16 for vertical-first delivery; 4:5 for Feed adaptations |
 | Captions | Add captions by default |
 | Tone | Match the buyer and offer; testimonial, interview, demo, and problem-led hooks often work well |
 | CTA | Include a clear action |
-| UGC-style | Useful when authenticity and relatability matter |
+| UGC-style | Useful when authenticity and relatability matter; not universal for premium, trust-sensitive, or regulated offers |
 
 ### Static Image Design
 
 | Element | Recommendation |
 |---|---|
-| Aspect ratio | 4:5 for Feed, plus 1:1 and 9:16 as needed |
-| Resolution | 1080x1350 or 1080x1080 minimum; higher resolution when possible |
+| Aspect ratio | 4:5 for Feed, 1:1 for broad compatibility, 9:16 for Stories/Reels |
+| Resolution | Feed: 1440x1800 or 1440x1440 when available; Stories/Reels: 1440x2560 or 1080x1920 |
 | Message | One clear offer or idea |
 | Text amount | Keep image text minimal even though the old 20% text rule is no longer a hard rule |
 | Quality | Use high-quality product, lifestyle, or graphic assets |
@@ -135,7 +137,7 @@ Prepare copy variations with different lengths and jobs.
 
 Recommended weekly cycle:
 
-1. Launch 5-10 new creative assets or concepts when budget supports it.
+1. Launch a small set of meaningfully different concepts when budget supports it.
 2. Let them run for about 7 days without unnecessary edits.
 3. Pause clear losers and scale winners.
 4. Extract insight from performance data.
@@ -150,14 +152,25 @@ Recommended weekly cycle:
 | CPA / ROAS | Business efficiency; final decision metric for conversion campaigns |
 | Frequency | High frequency can indicate fatigue |
 | Cost per 1,000 people reached | Rising cost can signal fatigue or auction pressure |
-| Hook rate / 3-second video views | Strength of the opening |
+| Hook rate / 3-second video views | Strength of the opening; benchmark by format/account, not universal |
+| Hold rate | Whether the hook and body match; high hook with weak hold can indicate curiosity without intent |
+| Qualified outcome rate | Lead or customer quality; prevents optimizing to cheap but poor-fit users |
 
 ### Creative Lifespan
 
 - Consider refreshing winning creative after 30-60 days or when fatigue signals appear.
-- Rising frequency plus falling CTR is a fatigue signal.
+- Rising frequency plus falling CTR, rising CPA, or declining hook/hold metrics is a fatigue signal.
 - When fatigue appears, refresh creative before making bid tweaks.
 - Add new creative regularly if the campaign depends on ongoing scale.
+
+### Concept vs Variant
+
+| Type | Meaning | Use |
+|---|---|---|
+| Concept | Different argument, buyer insight, proof type, format, or offer | Primary testing unit |
+| Variant | Different headline, crop, color, opening line, or CTA on the same idea | Refinement after a concept shows promise |
+
+Do not mistake 20 cosmetic variants for 20 tests. Meta may still deliver them as the same practical idea, and the account may learn little.
 
 ---
 

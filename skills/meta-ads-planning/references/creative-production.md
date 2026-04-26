@@ -27,9 +27,9 @@ In modern Meta ads, creative quality and diversity are often more important than
 |---|---:|---|
 | **Primary text** | Up to 125 characters before truncation risk | May collapse behind "See more" |
 | **Headline** | Up to 27 characters before truncation risk | May be truncated |
-| **Description** | Up to 27 characters | Often hidden depending on placement |
+| **Description** | Usually 25-30 characters; Facebook Feed commonly uses ~27 | Often hidden depending on placement |
 
-Note: descriptions often do not show on Instagram placements. Concentrate the core message in the primary text, headline, and visual.
+Note: descriptions often do not show on Instagram placements and may only appear on selected surfaces such as Marketplace, Audience Network, Facebook Search Results, or in-stream contexts. Concentrate the core message in the primary text, headline, and visual.
 
 ### 1-3. Copy Testing
 
@@ -114,8 +114,8 @@ Rules:
 
 | Item | Spec |
 |---|---|
-| Recommended size | 1080x1350 (4:5), 1080x1080 (1:1) |
-| Retina-ready | 1440x1440 or higher |
+| Recommended size | Feed: 1440x1800 (4:5), 1440x1440 (1:1); Stories/Reels: 1440x2560 or 1080x1920 (9:16) |
+| Minimum size | Feed: 600x750 (4:5), 600x600 (1:1) |
 | File type | JPG, PNG |
 | File size | Under 30 MB; smaller files load faster |
 | Text in image | Keep minimal; the old 20% text rule is no longer a hard rule, but cleaner images often deliver better |
@@ -126,6 +126,7 @@ Layout principles:
 
 - **One ad = one message.** Do not cram multiple claims into one image.
 - **Prefer 4:5 for Feed** when possible.
+- **Use 9:16 for Stories/Reels, not as a Feed image default.**
 - **Use high contrast** to stop the scroll.
 - **Avoid generic stock imagery** when original product, customer, or brand photography is available.
 
@@ -175,12 +176,15 @@ Formatting:
 
 | Item | Spec |
 |---|---|
-| Recommended size | 1080x1920 (9:16), 1080x1350 (4:5), 1080x1080 (1:1) |
+| Recommended size | Reels/Stories: 1440x2560 or 1080x1920 (9:16); Feed: 1440x1800 (4:5) or 1440x1440 (1:1) |
+| Minimum size | 120x120; use high-resolution source files for production |
 | Recommended length | Feed: 15-60s; Reels: 15-30s; Stories: short and direct |
-| File type | MP4, MOV |
+| File type | MP4, MOV; GIF may be accepted for some video placements |
 | File size | Up to 4 GB |
 | Codec | H.264 video, AAC audio |
-| Frame rate | Up to 30 fps is a practical default |
+| Audio/video technicals | Prefer square pixels, fixed frame rate, progressive scan, stereo AAC 128 kbps+ |
+| Frame rate | Up to 30 fps is a practical default unless source and placement justify otherwise |
+| Maximum length | Placement-dependent; concise ads usually outperform the theoretical maximum |
 
 ### 3-2. Structure Framework
 
@@ -202,10 +206,9 @@ Core structure: Hook -> Body -> CTA
 
 | Placement | Top margin | Bottom margin | Side margins |
 |---|---:|---:|---:|
-| Stories | Approx. 270px | Approx. 380px | Approx. 65px |
-| Reels | Approx. 270px | Approx. 670px | Approx. 65px |
+| Stories/Reels 9:16 | 14% | 20-35% | 6% each side |
 
-Rule: design around the Reels lower safe zone first; it is usually the strictest.
+Rule: design with a unified 9:16 safe zone. If the ad may run on Reels, use the conservative 35% bottom margin. Verify every final asset in Ads Manager placement previews because captions, CTAs, and device UI can change the obstruction area.
 
 ### 3-3. Design Practices
 
@@ -255,12 +258,13 @@ Headline:
 | Item | Spec |
 |---|---|
 | Cards | 2-10; start with 3-5 |
-| Image size | 1080x1080 |
-| Video size | 1080x1080 |
+| Image size | 1080x1080 minimum; use 1440x1440 where available |
+| Video size | 1080x1080 minimum; use 1440x1440 where available |
 | Video length | Short is usually better; keep each card focused |
 | File size | Keep files light for load speed |
 | Primary text | Keep concise |
 | Card headline | Up to 45 characters before truncation risk |
+| Card description | Optional; keep around 18 characters or omit if not needed |
 | Aspect ratio | Keep all cards consistent |
 
 ### 4-2. Card Structure

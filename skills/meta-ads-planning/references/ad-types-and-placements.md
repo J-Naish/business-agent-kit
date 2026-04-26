@@ -123,9 +123,8 @@ Summary: one static image plus text and CTA. The most basic and fastest format t
 
 | Item | Spec |
 |---|---|
-| Recommended resolution | 1080x1080 (1:1), 1080x1350 (4:5), 1080x1920 (9:16) |
-| Minimum resolution | 600x600 |
-| Retina-ready | 1440x1440 or higher recommended |
+| Recommended resolution | Feed: 1440x1440 (1:1) or 1440x1800 (4:5); Stories/Reels: 1440x2560 or 1080x1920 (9:16) |
+| Minimum resolution | Feed: 600x600 (1:1) or 600x750 (4:5) |
 | File type | JPG, PNG |
 | Max file size | 30 MB |
 
@@ -133,6 +132,7 @@ Performance characteristics:
 
 - Static images can still drive a large share of conversions.
 - 4:5 often performs better in Feed than 1:1 because it occupies more vertical space.
+- Do not treat 9:16 as a Facebook Feed image spec; use 9:16 for Stories/Reels or placement-specific full-screen inventory.
 - Fast to produce and useful for rapid concept testing.
 
 Use when: promoting one product or offer, limited production resources, fast A/B tests, retargeting.
@@ -143,11 +143,13 @@ Summary: video creative for Feed, Stories, Reels, and other video placements.
 
 | Item | Spec |
 |---|---|
-| Recommended resolution | 1080x1080, 1080x1350, 1080x1920 |
+| Recommended resolution | Feed: 1440x1440 (1:1) or 1440x1800 (4:5); Reels/Stories: 1440x2560 or 1080x1920 (9:16) |
+| Minimum resolution | 120x120; use higher source quality whenever possible |
 | Recommended length | Feed: 15-60s; Reels: 15-30s; Stories: up to 15s per story unit |
-| File type | MP4, MOV |
+| File type | MP4, MOV; GIF may be accepted for some video placements |
 | Max file size | 4 GB |
-| Codec | H.264 video, AAC audio |
+| Codec | H.264 video, AAC audio; prefer square pixels, fixed frame rate, progressive scan, and stereo AAC 128 kbps+ |
+| Maximum length | Placement-dependent; Facebook Feed video can support very long uploads, but ads usually perform better when concise |
 
 Performance characteristics:
 
@@ -163,9 +165,10 @@ Summary: 2-10 images or videos that users can swipe. Each card can have its own 
 | Item | Spec |
 |---|---|
 | Cards | 2-10; start with 3-5 |
-| Recommended resolution | 1080x1080 |
+| Recommended resolution | 1080x1080 minimum for square cards; use 1440x1440 when available |
 | Aspect ratio | Keep cards consistent, usually 1:1 or 4:5 |
 | Video cards | Keep short; 15s or less is often practical |
+| Card description | Optional; keep very short because it may be hidden or truncated |
 
 Use when: multiple products, step-by-step explanation, before/after, benefit sequence, comparison.
 
@@ -255,7 +258,7 @@ Use when: immersive brand experience, catalog browsing, mobile landing-page subs
 | Placement | Description | Formats | Notes |
 |---|---|---|---|
 | **Home Screen** | Between chat threads | Image | Reach during message checking |
-| **Sponsored Messages** | Message delivered in chat | Text + image | Existing contact or message-based audiences |
+| **Sponsored Messages** | Message delivered in chat | Text + image | Limited/relationship-based use; click-to-message ads are the mainstream acquisition path |
 
 #### Audience Network / Threads
 
@@ -270,7 +273,7 @@ Use when: immersive brand experience, catalog browsing, mobile landing-page subs
 | Tier | Placements | Characteristics | Recommended use |
 |---|---|---|---|
 | **High quality** | Facebook/Instagram Feed, Reels, Stories | Strong engagement and conversion potential | Most objectives, especially Sales/Leads |
-| **Medium quality** | Instagram Explore, Facebook Marketplace, In-Stream Video | Broader reach and contextual value | Awareness, Traffic, Sales tests |
+| **Medium quality** | Instagram Explore, Facebook Marketplace, In-Stream Video | Broader reach and contextual value; in-stream inventory exists but is less central than Feed/Reels/Stories for many accounts | Awareness, Traffic, Sales tests |
 | **Lower quality / variable** | Audience Network, Messenger, Right Column | Cheap impressions but variable intent | Awareness, reach expansion, or controlled tests |
 
 ### 3-3. Advantage+ Placements vs Manual Placements
@@ -291,24 +294,24 @@ Default: use **Advantage+ placements** for Sales, Leads, and App promotion unles
 
 | Placement | Recommended aspect ratio | Resolution |
 |---|---|---|
-| Feed | 4:5 preferred, 1:1 acceptable | 1080x1350, 1080x1080 |
-| Stories | 9:16 | 1080x1920 |
-| Reels | 9:16 | 1080x1920 |
+| Feed image | 4:5 preferred, 1:1 acceptable | 1440x1800, 1440x1440 |
+| Feed video | 4:5 or 1:1 for Feed; 9:16 can be useful for vertical-first video delivery where eligible | 1440x1800, 1440x1440, or 1080x1920 |
+| Stories | 9:16 | 1440x2560 or 1080x1920 |
+| Reels | 9:16 | 1440x2560 or 1080x1920 |
 | In-Stream Video | 16:9 | 1920x1080 |
 | Right Column | 1:1 | 1080x1080 |
 | Marketplace | 1:1 | 1080x1080 |
-| Messenger | 1.91:1 | 1200x628 |
+| Messenger | 1:1 or placement-specific message creative | Verify current Ads Manager preview |
 
 #### Safe Zones
 
 | Placement | Top margin | Bottom margin | Side margins | Safe area |
 |---|---:|---:|---:|---|
 | **Feed 1:1** | 10% | 10% | 10% | Center 80% |
-| **Feed 4:5** | Approx. 250px | Approx. 250px | Keep key content centered | Center region |
-| **Stories** | Approx. 270px | Approx. 380px | Approx. 65px | Center area |
-| **Reels** | Approx. 270px | Approx. 670px | Approx. 65px | Center/upper area; lower UI is heavy |
+| **Feed 4:5** | 8-12% | 15-20% | Keep key content centered | Center region |
+| **Stories/Reels 9:16** | 14% | 20-35% | 6% each side | Unified vertical safe area; use 35% bottom if Reels may run |
 
-Design rule: if a 9:16 asset keeps important text and objects out of Reels' lower UI area, it is usually safer across Stories and Reels.
+Design rule: use ratio-based safe zones rather than hard-coded pixels. For 9:16 assets, keep critical text, logos, product details, and CTA outside the top 14%, bottom 20-35%, and side 6% areas. Always verify with Ads Manager placement previews because UI overlays vary by device, placement, caption length, and product updates.
 
 ### 3-5. Placement Strategy by Business Type
 

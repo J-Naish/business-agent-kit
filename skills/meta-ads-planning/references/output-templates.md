@@ -90,7 +90,7 @@ Rules:
 #### Advantage+ Sales Campaign Settings
 
 - Existing customer definition: {Pixel event / Custom Audience / customer list}
-- Existing customer budget cap: {percentage if used}
+- Existing customer control: {current UI option / customer segment / exclusion / manual campaign workaround / not applicable}
 - Geography: {target locations}
 - Age and gender: {unrestricted or constrained}
 - Advantage+ creative: {on/off}
@@ -110,7 +110,7 @@ Rules:
   - Custom Audience: {none / website visitors / customer list / etc.}
   - Lookalike Audience: {none / source and percentage}
 - Optimization event: {Purchase / Lead / AddToCart / LandingPageView / etc.}
-- Attribution setting: {7-day click + 1-day view / 7-day click / 1-day click / other}
+- Attribution setting: {7-day click + 1-day engage-through + 1-day view / 7-day click / 1-day click / other}
 - Bid strategy: {Lowest cost / Cost cap amount / ROAS goal / Bid cap amount}
 
 #### Ad Settings
@@ -130,20 +130,31 @@ Rules:
 - Master aspect ratio: {9:16 for Reels-first / 4:5 for Feed-first}
 - Tone: {casual / professional / premium / energetic / etc.}
 - Quantity: {ads per ad set and total ads}
+- Testing posture: {concept test / variant refinement / scaling library / refresh batch}
+
+### Measurement and Incrementality Notes
+
+- Meta Pixel / Conversions API: {status}
+- Deduplication: {event_id status}
+- Primary event: {event}
+- Quality/value feedback: {CRM / offline / value / margin / none}
+- New vs existing customer reporting: {approach}
+- View-through handling: {separate / included / unavailable}
+- Source of truth: {orders / CRM / POS / app revenue / finance}
 
 ### Image Ads
 
 | # | Concept | Design pattern | Size | Production instruction |
 |---|---|---|---|---|
-| 1 | {concept} | {before/after / statistic / testimonial / etc.} | 1080x1350 | {instruction} |
-| 2 | {concept} | {pattern} | 1080x1350 | {instruction} |
+| 1 | {concept} | {before/after / statistic / testimonial / etc.} | 1440x1800 or 1440x1440 | {instruction} |
+| 2 | {concept} | {pattern} | 1440x1800 or 1440x1440 | {instruction} |
 
 ### Video Ads
 
 | Item | Spec |
 |---|---|
 | Aspect ratio | 9:16 for Reels/Stories, 4:5 for Feed |
-| Resolution | 1080x1920 or higher, 1080x1350 or higher |
+| Resolution | 1440x2560 or 1080x1920 for 9:16; 1440x1800 for 4:5; 1440x1440 for 1:1 |
 | Length | {15s / 30s / 60s} |
 | File type | MP4 / MOV |
 | Captions | Required by default |
@@ -159,6 +170,7 @@ Rules:
 **Safe-zone checklist:**
 
 - [ ] 9:16 asset keeps important text and objects out of the lower Reels UI area.
+- [ ] Critical elements avoid top 14%, bottom 20-35%, and side 6% safe zones.
 - [ ] Key text is centered or slightly above center.
 
 ### Carousel Ads
@@ -200,7 +212,7 @@ Structure pattern: {storytelling / feature sequence / step-by-step / product lis
 |---|---:|---:|---|
 | Primary text | 3-5 | Up to 125 characters before truncation risk | See variants below |
 | Headline | 3-5 | Up to 27 characters before truncation risk | See variants below |
-| Description | 1-3 | Up to 27 characters | May not display |
+| Description | 1-3 | Usually 25-30 characters | May not display |
 | CTA button | 1 | Preset | {Shop Now / Learn More / etc.} |
 
 ### Primary Text Variants

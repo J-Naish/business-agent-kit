@@ -93,9 +93,9 @@ Treat this as a starting point, not a rule. Direct response accounts with limite
 
 ### Budget Scaling Rules
 
-- Increase budget by no more than roughly **20-30% per week** when CAC/CPA remains acceptable.
+- Increase budget gradually when CAC/CPA remains acceptable. **20-30% per step** is a conservative pacing heuristic, not a universal platform law.
 - Large budget jumps can destabilize learning.
-- Scale by **concept**, not just by individual ad.
+- Scale by **concept and creative system**, not just by individual ad.
 - Monitor performance for several days after meaningful budget changes.
 
 ---
@@ -148,7 +148,7 @@ The learning phase is the initial period where Meta's delivery system explores a
 
 ### Requirements
 
-- Meta commonly uses 50 optimization events per ad set per week as a practical benchmark for stable learning.
+- Meta commonly uses roughly 50 optimization events per ad set per week as a practical benchmark for stable learning. Treat it as a planning benchmark, not a hard pass/fail rule.
 - Performance can be volatile during learning.
 - Avoid major edits during the learning phase unless there is a clear setup error.
 
@@ -166,6 +166,7 @@ The learning phase is the initial period where Meta's delivery system explores a
 - Provide enough budget for the target CPA and expected conversion volume.
 - Choose an optimization event that occurs frequently enough.
 - If conversion volume is too low, consider a higher-funnel event only as a temporary proxy and explain the quality tradeoff.
+- Prefer consolidation before moving to shallow events. More low-quality events do not improve learning.
 
 ---
 
@@ -198,9 +199,14 @@ The learning phase is the initial period where Meta's delivery system explores a
 
 | Window | Meaning | Use case |
 |---|---|---|
-| 7-day click + 1-day view | Common default | Most accounts |
+| 7-day click + 1-day engage-through + 1-day view | Common modern default where available | Most accounts, with reporting splits visible |
+| 7-day click | Click-based optimization/reporting emphasis | Standard purchase paths where view/engagement inflation is a concern |
 | 1-day click | Stricter click-based view | Tests, low-consideration products, incrementality-sensitive analysis |
+| 1-day engage-through | Non-link engagement or qualified video engagement followed by conversion | Video/Reels and social engagement influence; report separately |
+| 1-day view | Impression-only followed by conversion | Monitor separately; use cautiously for retargeting and high-frequency campaigns |
 | Longer click windows where available | Captures longer consideration | High-ticket, B2B, longer sales cycles |
+
+Note: reporting-tool and API behavior changes over time. Some sources report that longer view-through windows were removed from Ads Insights API in January 2026, and Meta's March 2026 attribution update reclassified non-link interactions into engage-through. Verify current Ads Manager/API behavior for the user's stack before relying on any specific window.
 
 ---
 
@@ -211,6 +217,7 @@ The learning phase is the initial period where Meta's delivery system explores a
 - Too many campaigns: signal is fragmented across small pockets.
 - Audience overlap: the account competes against itself.
 - Frequent structural changes: learning never stabilizes.
+- Dedicated retargeting budget is too large: platform ROAS looks strong while incremental contribution is weak.
 
 ### Creative Mistakes
 
@@ -224,6 +231,7 @@ The learning phase is the initial period where Meta's delivery system explores a
 - Using Advantage+ sales campaigns without enough signal or creative quality.
 - Making abrupt budget changes.
 - Overtrusting automated creative features without reviewing the outputs.
+- Treating detailed targeting exclusions, old interest stacks, or legacy Advantage+ Shopping controls as if they are still stable product mechanics.
 
 ---
 
@@ -241,6 +249,7 @@ The learning phase is the initial period where Meta's delivery system explores a
 | Targeting | Broad + high-quality Custom Audience / Lookalike signals |
 | Bid strategy | Lowest cost -> ROAS goal |
 | Budget allocation | Testing 10-20% / scaling 80-90% |
+| Measurement caution | Track new vs existing customers, margin, and incrementality |
 
 ### B2B Lead Generation
 
@@ -254,6 +263,7 @@ The learning phase is the initial period where Meta's delivery system explores a
 | Targeting | Broad + customer-list Lookalike + website visitor remarketing |
 | Bid strategy | Cost cap after stable volume |
 | Note | Test Instant Forms against website conversions for lead quality |
+| Measurement caution | Do not optimize to raw CPL without qualified lead or pipeline feedback |
 
 ### SaaS / Subscription
 
