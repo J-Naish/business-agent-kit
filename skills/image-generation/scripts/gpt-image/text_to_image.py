@@ -3,7 +3,7 @@
 OpenAI Image Generation — generate an image from a text prompt with gpt-image-2
 
 Usage:
-  python3 text_to_image_openai.py "prompt" [output filename] [options...]
+  python3 text_to_image.py "prompt" [output filename] [options...]
 
 Options:
   --model <model_id>           Model ID (default: gpt-image-2)

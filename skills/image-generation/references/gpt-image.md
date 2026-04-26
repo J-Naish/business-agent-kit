@@ -106,7 +106,7 @@ A note on cameras: high-level look beats deep camera specs. *"35mm film photogra
 1. **Quote the literal text** or use ALL CAPS so the model knows what's a directive vs what's a string to render:
    > *Place "GRAND OPENING" centered at the top in large bold sans-serif white text.*
 
-2. **Specify typography**: weight, family family (sans/serif/script/mono), kerning, color, placement.
+2. **Specify typography**: weight, family (sans/serif/script/mono), kerning, color, placement.
 
 3. **Demand verbatim accuracy** when fidelity matters:
    > *Render this text exactly as written, character by character, with no extra characters or marks.*

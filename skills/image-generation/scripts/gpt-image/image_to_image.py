@@ -3,7 +3,7 @@
 OpenAI Image Edit — edit an existing image with gpt-image-2
 
 Usage:
-  python3 image_to_image_openai.py "edit instruction" reference_image_path [output filename] [options...]
+  python3 image_to_image.py "edit instruction" reference_image_path [output filename] [options...]
 
 Options:
   --model <model_id>           Model ID (default: gpt-image-2)
