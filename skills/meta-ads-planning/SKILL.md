@@ -279,7 +279,6 @@ Produce the output that fits the user's request: a short recommendation, structu
 | Diagnostics | [diagnostic-decision-trees.md](references/diagnostic-decision-trees.md) | Existing-account failure modes and fixes |
 | Creative strategy | [creative-strategy.md](references/creative-strategy.md) | Diversity principles, placement rules, testing cadence, funnel strategy |
 | Format production | [creative-production.md](references/creative-production.md) | Production guidance by ad format |
-| Output templates | [output-templates.md](references/output-templates.md) | Strategy plan, design memo, creative brief templates |
 
 ### What a Full Specification Usually Includes
 
@@ -292,7 +291,7 @@ Produce the output that fits the user's request: a short recommendation, structu
 7. **Operating timeline:** launch, learning phase, and optimization phases.
 8. **KPIs and success criteria:** what success means and how it will be measured.
 
-Use [references/output-templates.md](references/output-templates.md) when a written deliverable is useful. Put files wherever the user requested, or follow the host project's normal artifact conventions if they are already clear.
+Put files wherever the user requested, or follow the host project's normal artifact conventions if they are already clear.
 
 For Markdown-file deliverables, keep the structure practical rather than template-heavy: use clear sections, decision tables where they help handoff, explicit assumptions, and concrete launch/measurement actions. Avoid filling generic sections that do not change the campaign decision.
 
