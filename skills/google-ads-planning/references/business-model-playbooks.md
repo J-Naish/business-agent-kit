@@ -176,3 +176,57 @@ Use this reference before choosing campaign types. Business model, sales motion,
 - Use geo splits only when budget, service area, inventory, or store economics differ.
 - Reconcile store traffic with POS, bookings, or store-level revenue where possible.
 - Avoid over-crediting branded/local searches without incrementality checks.
+
+---
+
+## Multi-ad-type combination patterns
+
+Use these patterns as starting points when a business model or funnel role needs more than one campaign type. Adjust the structure based on budget sufficiency, conversion volume, measurement quality, creative supply, and incrementality risk.
+
+### Search + P-MAX
+
+Most common pattern when high-intent capture and automated expansion both make sense.
+
+```
+Search (brand KW)              <- brand defense
+Search (high-intent KW)        <- exact-match capture
+P-MAX (full assets or feed)    <- automated expansion
+```
+
+Search exact match takes priority over P-MAX. Set P-MAX brand exclusions when brand capture would hide acquisition performance.
+
+### E-commerce full funnel
+
+Best fit when the feed, purchase tracking, margin view, and product-page quality are strong enough to support automated scale.
+
+```
+P-MAX (with feed)               <- main engine across Google surfaces
+Search (non-brand, high intent) <- captures intent P-MAX may miss
+Standard Shopping (optional)    <- protects diagnostics or underserved products
+Display remarketing             <- cart abandonment and product viewers
+```
+
+### B2B lead generation
+
+Best fit when Search intent is clear and lead quality can be monitored or imported from CRM.
+
+```
+Search (brand + problem KW)            <- capture high-intent users
+P-MAX (full assets, URL expansion off) <- expansion and remarketing
+Video (YouTube, optional)              <- education and trust
+```
+
+For P-MAX lead gen, keep URL expansion off or use strict URL exclusions when the site contains blog, careers, support, or low-intent pages.
+
+### Awareness to conversion
+
+Best fit when the goal is demand creation followed by capture, not immediate last-click CPA alone.
+
+```
+Video (YouTube Reach / Views) <- awareness phase
+Demand Gen / Display          <- awareness reinforcement and mid-funnel warming
+Search (brand KW)             <- capture branded search lift
+P-MAX                         <- broad conversion coverage
+```
+
+Evaluate this pattern with blended performance, brand-search lift, assisted conversions, audience growth, and incrementality tests where volume allows.

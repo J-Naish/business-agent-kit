@@ -462,42 +462,4 @@ When unsure whether to produce a written document, ask the user.
 
 For Markdown-file deliverables, keep the structure practical rather than template-heavy: use clear sections, decision tables where they help handoff, explicit assumptions, and concrete launch/measurement actions. Avoid filling generic sections that do not change the campaign decision.
 
----
-
-## Multi-ad-type combination patterns
-
-### Pattern 1: Search + P-MAX (most common)
-
-```
-Search (brand KW)              ← brand defense
-Search (high-intent KW)        ← exact-match capture
-P-MAX (full assets or feed)    ← AI fills the rest
-```
-
-Search exact match takes priority over P-MAX. Set P-MAX brand exclusion to prevent cannibalization.
-
-### Pattern 2: E-commerce full funnel
-
-```
-P-MAX (with feed)               ← main engine, all 7 channels
-Search (non-brand, high intent) ← captures intent P-MAX may miss
-Standard Shopping (optional)    ← for products P-MAX underdelivers on
-Display remarketing             ← cart abandonment, viewers
-```
-
-### Pattern 3: B2B lead generation
-
-```
-Search (brand + problem KW)            ← capture high-intent users
-P-MAX (full assets, URL expansion off) ← awareness + remarketing
-Video (YouTube, optional)              ← thought leadership, trust
-```
-
-### Pattern 4: Awareness → conversion
-
-```
-Video (YouTube Reach / Views) ← awareness phase
-Demand Gen / Display          ← awareness reinforcement, mid-funnel
-Search (brand KW)             ← capture branded search lift
-P-MAX                         ← full coverage
-```
+For common multi-campaign combinations by business model and funnel role, use [references/business-model-playbooks.md](references/business-model-playbooks.md).
