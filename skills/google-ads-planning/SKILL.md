@@ -7,6 +7,47 @@ description: Plan and design Google Ads campaigns end-to-end — choose the righ
 
 Plan a Google Ads program end-to-end: ad-type selection, campaign architecture, bidding, conversion measurement, and the operational decisions that turn a plan into a running account. This skill covers both new launches and improvements to existing accounts.
 
+## Practice-first stance
+
+Google Ads planning should prioritize the practices that make campaigns work, not just the settings that make campaigns valid. Campaign type, account structure, and bid settings matter, but they are secondary to measurement quality, conversion signal design, creative quality, feed/landing-page quality, budget sufficiency, and disciplined operating cadence.
+
+When answering Google Ads questions:
+
+1. Start from the business outcome and unit economics, not from campaign menus.
+2. Treat the conversion action as the core strategy. Automated bidding optimizes toward exactly what is counted, even when that action is a poor proxy for revenue or qualified demand.
+3. Prefer the deepest reliable conversion signal that has enough volume and acceptable latency. If the real outcome is sparse, use a proxy only when it is demonstrably correlated with the real outcome, and keep micro-conversions secondary or low-value by default.
+4. Separate platform performance from true incrementality. Branded Search, P-MAX, Display, Demand Gen, and YouTube can overstate impact through brand capture, view-through conversions, modeled conversions, and attribution overlap.
+5. Consolidate when the campaign needs learning data; split only when there is a real business-control reason: different budget, goal, margin, geo, language, conversion value, customer type, or reporting owner.
+6. Creative is a primary lever. In Search this means message, proof, offer, RSA asset diversity, and landing-page fit. In P-MAX, Demand Gen, Display, Video, and App campaigns it often matters more than targeting precision.
+7. Do not chase cheap traffic by default. Low CPC, CPM, CPV, or CPI is useful only when downstream quality, brand safety, and incrementality remain acceptable.
+8. Avoid constant intervention. Batch meaningful changes, keep a change log with intent, and let learning periods and conversion delay pass before judging.
+9. Use Google's automation deliberately. The human still owns conversion definitions, value rules, exclusions, brand controls, feed quality, asset quality, budgets, and incrementality tests.
+
+### High-leverage practice checklist
+
+Before proposing campaign settings, check these first:
+
+| Area | What to verify | Why it matters |
+|---|---|---|
+| Conversion design | Primary vs secondary actions, qualified-lead imports, dynamic values, deduplication | Bad signals make Smart Bidding optimize bad outcomes |
+| Incrementality | Brand vs non-brand, VTC handling, geo/holdout feasibility, finance source of truth | Platform ROAS is a steering signal, not finance truth |
+| Creative system | Number of distinct concepts, refresh cadence, offer clarity, proof, format coverage | Automation cannot rescue weak or stale creative |
+| Feed / landing page | Product titles, prices, availability, LP match, page speed, form friction | Ads amplify the destination and feed quality |
+| Budget and volume | Conversion volume, target CPA/ROAS realism, budget-to-bid ratio | Underfunded campaigns never learn properly |
+| Controls | Negative keywords, brand exclusions, URL exclusions, placement/content exclusions, suppression lists | Broad automation needs guardrails |
+| Operating cadence | Daily sanity, weekly review, monthly audit, quarterly strategy reset | Most failures come from either neglect or over-editing |
+
+### Operating cadence
+
+Use this as the default practice cadence unless the user's account context suggests otherwise:
+
+| Cadence | Focus | Avoid |
+|---|---|---|
+| Daily | Spend anomalies, conversion drops, tracking/policy/feed breakage | Daily target/budget micromanagement |
+| Weekly | Search terms, asset performance, budget pacing, lead/product quality, change-log review | Restructuring because of a few days of noise |
+| Monthly | Negative sweeps, creative refresh, feed/title improvements, landing-page review, budget reallocation | Letting launch-era assumptions persist |
+| Quarterly | Conversion action redesign, incrementality review, brand/non-brand split, account architecture, target economics | Reporting only platform ROAS |
+
 ## Output flexibility (don't always write a document)
 
 Adapt the output to what the user actually asked for. **There is no requirement to produce a written spec document** — sometimes a conversational answer or a structured inline response is the right deliverable.
@@ -33,7 +74,7 @@ Step 2: Ad-type selection        → Pick the campaign mix that fits
     ↓
 Step 3: Strategy formation       → Account structure, bidding, conversion design, budget split
     ↓
-Step 4: Detailed design + delivery → Per-ad-type playbooks; deliver as fits the situation
+Step 4: Practice-led detailed design + delivery → Per-ad-type playbooks; deliver as fits the situation
 ```
 
 ---
@@ -344,19 +385,19 @@ Quarterly: campaign-structure review, strategy-level rethink
 
 ## Step 4: Detailed design + delivery
 
-For each ad type that's been selected, consult the matching playbook for the deep design (keywords, RSAs, targeting, asset groups, signals, feed strategy, etc.).
+For each ad type that's been selected, consult the matching playbook for both practice and settings. The practice sections should drive the recommendation; settings are the implementation layer.
 
 ### Per-ad-type playbooks
 
 | Ad type | Playbook | Key design topics |
 |---|---|---|
-| Search | [references/search-ads.md](references/search-ads.md) | KW strategy, RSA copy, assets, STAG design, LP design |
-| Display | [references/display-ads.md](references/display-ads.md) | Targeting, RDA image / text specs, placements |
-| Shopping | [references/shopping-ads.md](references/shopping-ads.md) | Feed optimization, product titles, custom labels, product groups |
-| App | [references/app-campaigns.md](references/app-campaigns.md) | ACi / ACe / ACpre selection, asset design, Firebase / MMP measurement |
-| Video | [references/video-campaigns.md](references/video-campaigns.md) | Format choice, ABCD framework, Shorts design |
-| P-MAX | [references/pmax.md](references/pmax.md) | Asset-group design, asset specs, signals, search themes, feed integration |
-| Demand Gen | [references/demand-gen.md](references/demand-gen.md) | Format, lookalikes, surface mix, carousel, feed integration |
+| Search | [references/search-ads.md](references/search-ads.md) | Intent capture, brand/non-brand separation, broad match guardrails, RSA/LP practice, query quality |
+| Display | [references/display-ads.md](references/display-ads.md) | Remarketing vs prospecting role, cheap reach vs quality, VTC handling, frequency, placement hygiene |
+| Shopping | [references/shopping-ads.md](references/shopping-ads.md) | Feed quality, title strategy, margin labels, product groups, P-MAX coexistence |
+| App | [references/app-campaigns.md](references/app-campaigns.md) | Event-depth choice, budget-to-bid ratios, creative system, iOS/SKAN realities |
+| Video | [references/video-campaigns.md](references/video-campaigns.md) | Hook/offer/ABCD, Shorts/CTV role, frequency, lift measurement, DR vs awareness |
+| P-MAX | [references/pmax.md](references/pmax.md) | Conversion signal quality, asset-group practice, brand controls, URL expansion, feed/margin strategy |
+| Demand Gen | [references/demand-gen.md](references/demand-gen.md) | Social-style creative, lookalike seed quality, assisted demand, surface mix, P-MAX overlap |
 
 ### Delivering the output
 

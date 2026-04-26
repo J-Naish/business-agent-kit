@@ -3,6 +3,7 @@
 ## Contents
 
 - [Glossary](#glossary)
+- [Practice-first operating principles](#practice-first-operating-principles)
 - [Decision matrix by monthly CV volume](#decision-matrix-by-monthly-cv-volume)
 - [1. Account and campaign structure design](#1-account-and-campaign-structure-design)
 - [2. Keyword strategy](#2-keyword-strategy)
@@ -20,6 +21,40 @@
 - [14. AI Max for Search Campaigns](#14-ai-max-for-search-campaigns)
 - [Appendix A: Starter negative-keyword set](#appendix-a-starter-negative-keyword-set)
 - [Appendix B: A/B test design template](#appendix-b-ab-test-design-template)
+
+---
+
+## Practice-first operating principles
+
+Search works when explicit intent, a relevant promise, a strong landing page, and a reliable conversion signal line up. Do not treat it as a pure keyword/settings exercise.
+
+### What actually moves Search performance
+
+- **Conversion action quality is the first lever.** A Search campaign optimized to raw form submits will buy different auctions from one optimized to qualified leads or purchases. For lead gen, import CRM/offline quality when possible; otherwise, use a proxy only when it correlates with qualified outcomes.
+- **Brand and non-brand must be evaluated separately.** Branded Search often has high reported ROAS because much of the demand already exists. Keep brand isolated so it cannot hide weak non-brand performance or inflate account-level ROAS.
+- **Search terms reveal the truth.** If CPA is poor, inspect the query mix before changing bids. Relevant expensive queries usually point to offer, LP, CVR, or target-economics issues; irrelevant queries point to match-type, negative, or AI expansion controls.
+- **Broad match is a Smart Bidding tactic, not a manual-bidding tactic.** Use Broad + Smart Bidding when conversion tracking is clean, budget can absorb exploration, and negatives/brand controls are maintained. Keep Exact/Phrase where irrelevant clicks are expensive or compliance risk is high.
+- **RSA asset diversity matters more than cosmetic variants.** Provide distinct angles: problem, outcome, proof, offer, objection handling, brand trust, and urgency. Avoid 15 near-identical headlines.
+- **Landing-page match beats clever ad copy.** The ad promise, keyword intent, page headline, proof, form/purchase path, and mobile speed need to agree.
+- **Bid targets should move gradually.** Large tCPA/tROAS swings suppress volume first and can create multi-week volatility. Use small steps unless business economics changed enough to justify a reset.
+
+### How to diagnose Search issues
+
+| Symptom | First checks | Likely action |
+|---|---|---|
+| High spend, low quality | Search terms, conversion action, LP/form quality | Add negatives, improve CV signal, import quality, tighten LP path |
+| Low volume, acceptable CPA | Budget, bid target, match restriction, IS lost to rank/budget | Broaden match, relax targets, improve assets/Quality Score, raise budget |
+| High CPA, relevant queries | Offer, LP CVR, target economics, competition | Fix LP/offer, adjust target, segment high-value terms |
+| Brand looks great, non-brand weak | Brand isolation, incrementality, query mix | Report separately, test brand holdout where feasible |
+| AI Max sends odd traffic | Final URL expansion, URL exclusions, brand controls | Exclude weak pages, constrain generated text, keep AI Max off for strict LP control |
+
+### Common practice mistakes
+
+- Splitting every match type or tiny keyword variant into its own campaign before there is enough data.
+- Treating Ad Strength as the goal instead of using it as a diagnostic.
+- Adding micro-conversions as primary actions to "feed the algorithm" without proving correlation to revenue.
+- Letting Final URL expansion send traffic to blog, careers, support, policy, or generic pages.
+- Optimizing every few days before conversion delay and learning have stabilized.
 
 ---
 

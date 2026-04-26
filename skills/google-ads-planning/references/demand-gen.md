@@ -3,6 +3,7 @@
 ## Contents
 
 - [1. Ad formats](#1-ad-formats)
+- [Practice-first operating principles](#practice-first-operating-principles)
 - [2. Submission specs](#2-submission-specs)
 - [3. Surfaces (placements)](#3-surfaces-placements)
 - [4. Audience targeting](#4-audience-targeting)
@@ -17,6 +18,38 @@
 - [13. Common failure patterns (Demand Gen specific)](#13-common-failure-patterns-demand-gen-specific)
 - [14. Operations checklist](#14-operations-checklist)
 - [15. Ad policies](#15-ad-policies)
+
+---
+
+## Practice-first operating principles
+
+Demand Gen is a visual, social-style Google campaign type. Plan and evaluate it closer to paid social than to Search: it creates and warms demand more than it harvests explicit intent.
+
+### What actually moves Demand Gen performance
+
+- **Creative and audience seed quality are the main levers.** Strong purchaser/customer lists, lookalikes, short video, lifestyle images, carousels, and product-feed creative usually matter more than tiny targeting tweaks.
+- **Use high-quality seeds for lookalikes.** Recent purchasers, high-LTV customers, qualified leads, or retained users are better seeds than all site visitors or all converters. Weak seeds produce weak lookalikes.
+- **Creative must feel native to YouTube/Discover/Gmail.** Generic stock, logo-heavy banners, and Search-style copy usually underperform. Use hooks, product context, human/product-in-use visuals, and clear offer paths.
+- **Judge by role, not last-click alone.** Demand Gen can lift brand Search, assisted conversions, remarketing pools, and P-MAX performance. Direct CPA matters, but it may understate contribution when the campaign is mid-funnel.
+- **Avoid overlap with P-MAX unless the job is different.** Demand Gen should own a defined role: cold visual prospecting, product discovery, mid-funnel education, remarketing, or cross-sell.
+- **Consolidate until volume supports splits.** Tiny ad groups by persona often trap the campaign in learning. Split only when creative, audience, bid target, or business goal truly differs.
+- **Budget must be meaningful.** Very small B2B or niche campaigns often fail because the system never gets enough signal. In those cases, use Demand Gen for remarketing/customer lists first.
+
+### How to diagnose Demand Gen issues
+
+| Symptom | First checks | Likely action |
+|---|---|---|
+| Low CTR | Hook, first frame, native fit, offer clarity, asset ratios | Refresh concepts, add video/carousel, use social-style winners |
+| Good CTR, weak CVR | Landing page, audience seed, offer, conversion action | Improve LP/offer, refine seed, use qualified conversion |
+| Low spend | Audience too narrow, target too tight, asset/ad strength weak | Consolidate, broaden, relax target, add assets |
+| Looks weak by last click | Branded Search lift, assisted conversions, holdout feasibility | Evaluate incrementality or blended funnel impact |
+
+### Common practice mistakes
+
+- Reusing Search copy as visual-feed copy.
+- Running 2-3 polished assets for months instead of refreshing concepts.
+- Using all-converter or all-visitor lists as lookalike seeds when quality differs sharply.
+- Killing campaigns before conversion delay and assisted impact can show.
 
 ---
 

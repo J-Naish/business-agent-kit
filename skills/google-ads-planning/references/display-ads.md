@@ -3,6 +3,7 @@
 ## Contents
 
 - [1. Ad formats](#1-ad-formats)
+- [Practice-first operating principles](#practice-first-operating-principles)
 - [2. Submission specs for Responsive Display Ads (RDA)](#2-submission-specs-for-responsive-display-ads-rda)
 - [3. Submission specs for uploaded display ads](#3-submission-specs-for-uploaded-display-ads)
 - [4. Creative-design best practices](#4-creative-design-best-practices)
@@ -15,6 +16,38 @@
 - [11. Ad Strength and optimization](#11-ad-strength-and-optimization)
 - [12. Operations checklist](#12-operations-checklist)
 - [13. Relationship with Demand Gen campaigns (2025+)](#13-relationship-with-demand-gen-campaigns-2025)
+
+---
+
+## Practice-first operating principles
+
+Display should have a clear job: remarketing, warm re-engagement, cheap incremental reach, or carefully controlled prospecting. Do not evaluate every Display campaign like Search.
+
+### What actually moves Display performance
+
+- **Role clarity matters more than settings.** Remarketing, prospecting, brand reach, and customer re-engagement should usually be separate because their CPA, frequency, creative, and measurement logic differ.
+- **Low CPM is useful only after quality constraints.** Cheap reach can beat over-targeting when the audience is already good enough and the campaign has bidding/creative discipline. It becomes waste when placements, geography, brand safety, or conversion quality are poor.
+- **Optimized Targeting is dangerous for remarketing.** It can expand beyond the intended warm audience. Keep it off when the job is strict remarketing; consider it only when active prospecting is intended.
+- **View-through conversions should not drive the business story alone.** Display VTC can be inflated by impressions that did not create meaningful attention. Keep VTC separate or discounted unless a holdout/lift test justifies the credit.
+- **Frequency is a brand and CPA lever.** Small remarketing pools can be overexposed quickly. Frequency caps around 3-5 impressions per user per week are often a better starting point than unlimited delivery.
+- **Creative message beats visual polish.** Clear value prop, reason to act, and CTA usually matter more than decorative image quality. In visual categories, the image becomes the message; in most lead-gen categories, the headline/offer carries conversion.
+- **Placement hygiene should be focused, not maximalist.** Exclude known bad inventory and inappropriate app/content categories, but avoid enormous exclusion lists that simply raise CPM without improving outcomes.
+
+### How to diagnose Display issues
+
+| Symptom | First checks | Likely action |
+|---|---|---|
+| Cheap traffic, no business lift | Placement quality, VTC share, conversion action, engagement quality | Tighten goals, exclude weak inventory, test incrementality |
+| Remarketing CPA worsens | Optimized Targeting, frequency, audience recency, creative fatigue | Disable expansion, cap frequency, segment recency, refresh creative |
+| Prospecting does not spend | Audience too narrow, bid target too tight, assets weak | Broaden, relax target, improve RDA coverage |
+| High VTC share | VTC window, viewability, primary conversion settings | Report VTC separately, shorten window, use click/engaged signals |
+
+### Common practice mistakes
+
+- Running Display prospecting and P-MAX against the same goal and audience without defining different jobs.
+- Chasing the lowest CPM while ignoring placement quality and downstream lead/sales quality.
+- Optimizing to micro-conversions such as page views or newsletter signups when revenue quality matters.
+- Refreshing all creative at once in a stable Smart Bidding campaign.
 
 ---
 

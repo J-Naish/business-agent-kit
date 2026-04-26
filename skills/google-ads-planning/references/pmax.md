@@ -3,6 +3,7 @@
 ## Contents
 
 - [Glossary](#glossary)
+- [Practice-first operating principles](#practice-first-operating-principles)
 - [Decision matrix](#decision-matrix)
 - [Quickstart](#quickstart)
 - [1. Major updates 2025–2026](#1-major-updates-20252026)
@@ -27,6 +28,40 @@
 - [20. Common failure patterns](#20-common-failure-patterns)
 - [Appendix A: Symptom-based troubleshooting](#appendix-a-symptom-based-troubleshooting)
 - [Appendix B: Naming conventions, change log, checklist](#appendix-b-naming-conventions-change-log-checklist)
+
+---
+
+## Practice-first operating principles
+
+Performance Max amplifies the quality of the inputs you give it: conversion goals, values, feed, creative, audience signals, landing pages, and exclusions. It is not a substitute for strategy.
+
+### What actually moves P-MAX performance
+
+- **Measurement quality decides the campaign's direction.** P-MAX will aggressively optimize toward the selected primary goals. For lead gen, use Enhanced Conversions for leads and offline conversion imports when lead quality varies by query, geo, device, or audience.
+- **Consolidate for learning; split for control.** Split P-MAX only when the business needs separate budget, target CPA/ROAS, margin, geo/language, customer type, store goal, or product ownership. Splitting just to see cleaner reports often starves the model.
+- **Asset groups should be coherent business themes.** One asset group should connect a product/service theme, audience signal, landing page, message, images, and videos. A generic "all products/all services" asset group usually weakens learning and creative relevance.
+- **Audience signals guide; they do not target.** Customer Match, remarketing, custom segments, and search themes are starting hints. Do not promise the user that P-MAX will stay inside those audiences.
+- **Brand and URL controls are strategy controls.** Use brand exclusions when brand capture hides non-brand performance. Use URL exclusions or disable Final URL expansion when the site contains informational, support, hiring, or low-intent pages.
+- **Feed quality is creative quality for retail.** Product titles, images, prices, availability, GTINs, product_type, and custom labels often move performance more than campaign switches.
+- **P-MAX ROAS needs skepticism.** Reported performance can be inflated by brand traffic, remarketing bias, modeled conversions, and VTC. Use Search terms insights, brand exclusions, experiments, geo tests, or customer holdouts when decisions are material.
+
+### How to diagnose P-MAX issues
+
+| Symptom | First checks | Likely action |
+|---|---|---|
+| High reported ROAS but weak business lift | Brand capture, remarketing share, VTC ratio, incremental revenue | Add brand exclusions, separate reporting, run experiment/holdout |
+| Low-quality leads | Primary CV action, offline imports, URL expansion, lead form quality | Import qualified leads, remove weak primary goals, exclude weak pages |
+| Low spend | Policy/feed issues, target too tight, budget too small, weak assets | Relax target, fix eligibility, broaden products/assets, consolidate |
+| Good products starved | Listing groups, product performance, margin/priority labels | Isolate long-tail or strategic SKUs, use custom labels |
+| Asset group noise | Too many themes in one group or too many tiny groups | Rebuild around coherent themes with full asset coverage |
+
+### Common practice mistakes
+
+- Launching with one thin generic asset group and expecting automation to invent positioning.
+- Using audience signals as if they are strict targeting.
+- Mixing brand, remarketing, and prospecting results into one success story.
+- Optimizing to raw leads when sales quality varies.
+- Changing budget, tROAS/tCPA, conversion goals, and asset groups all at once.
 
 ---
 

@@ -3,6 +3,7 @@
 ## Contents
 
 - [Glossary](#glossary)
+- [Practice-first operating principles](#practice-first-operating-principles)
 - [Goal-based campaign-selection cheat sheet](#goal-based-campaign-selection-cheat-sheet)
 - [1. Ad-format catalog (YouTube-specific)](#1-ad-format-catalog-youtube-specific)
 - [2. Campaign goals and sub-types](#2-campaign-goals-and-sub-types)
@@ -18,6 +19,38 @@
 - [12. Brand safety and surface management](#12-brand-safety-and-surface-management)
 - [13. Video-creative operations](#13-video-creative-operations)
 - [14. Common failure patterns and mitigations (video-specific)](#14-common-failure-patterns-and-mitigations-video-specific)
+
+---
+
+## Practice-first operating principles
+
+YouTube performance is creative-led. Targeting and bidding matter, but weak video cannot usually be fixed with settings.
+
+### What actually moves Video performance
+
+- **The first 1-5 seconds decide attention.** Start with motion, face, product, problem, or pattern interrupt. Show the brand early enough to transfer memory, and state the value quickly.
+- **Use ABCD as a quality floor, not a guarantee.** Attract, Brand, Connect, Direct improves the odds, but weak offer or weak audience-message fit still fails.
+- **Match format to objective.** Bumpers/non-skippable are reach and recall tools. Skippable/Demand Gen-style video is the better route for direct response. CTV is primarily brand/reach measurement, not last-click performance.
+- **Build for Shorts and mobile separately.** Vertical assets, safe zones, on-screen text, and first-frame clarity are not optional when Shorts inventory is material.
+- **Frequency is a performance and brand lever.** Overexposure can damage both CPA and sentiment. Start tighter for remarketing and non-skippable formats.
+- **Measure upper-funnel correctly.** Brand Lift, search lift, geo lift, MMM, and assisted conversion patterns are more meaningful than pure last-click CPA for awareness/reach campaigns.
+- **Production budget is not the lever after a basic quality floor.** Hook, offer, structure, brand timing, and CTA often outperform production polish.
+
+### How to diagnose Video issues
+
+| Symptom | First checks | Likely action |
+|---|---|---|
+| Low view rate | First frame, first 2 seconds, audience-message fit, format | Recut hook, add motion/product, test thumbnails/opening |
+| Views but no action | Offer, CTA, end card, LP, campaign objective | Strengthen CTA/end card, use Demand Gen for DR, improve LP |
+| High CPM/frequency | Audience too narrow, cap too loose, format mix | Broaden, cap frequency, test efficient reach |
+| Good VTC but weak business lift | Attribution window, VTC share, search lift, holdout | Discount VTC, use lift/geo test, report separately |
+
+### Common practice mistakes
+
+- Repurposing TV creative without moving brand/value into the opening.
+- Measuring awareness campaigns like Search.
+- Running horizontal-only assets when Shorts inventory matters.
+- Using generic "Learn more" CTAs when a specific offer/action is available.
 
 ---
 

@@ -3,6 +3,7 @@
 ## Contents
 
 - [Glossary](#glossary)
+- [Practice-first operating principles](#practice-first-operating-principles)
 - [Campaign-type cheat sheet](#campaign-type-cheat-sheet)
 - [1. Surfaces and basic characteristics](#1-surfaces-and-basic-characteristics)
 - [2. Prerequisites](#2-prerequisites)
@@ -19,6 +20,39 @@
 - [13. Operating cadence and scaling](#13-operating-cadence-and-scaling)
 - [14. Web to App Connect](#14-web-to-app-connect)
 - [15. Common failure patterns and mitigations](#15-common-failure-patterns-and-mitigations)
+
+---
+
+## Practice-first operating principles
+
+App campaigns are highly automated. The real levers are event choice, event quality, budget-to-bid ratio, creative variety, geo/platform split, and patience during learning.
+
+### What actually moves App campaign performance
+
+- **Pick the deepest event with stable volume, not the deepest event available.** Bidding to purchase is correct only when purchases are frequent enough. If not, use a proxy event that correlates with LTV and audit that correlation.
+- **Creative is the main controllable lever.** Ship distinct concepts, especially video. App campaigns need variety across motivations, use cases, objections, gameplay/product moments, and user benefits.
+- **Budget-to-bid ratio matters.** Underfunded tCPI/tCPA campaigns cannot explore enough auctions. Respect the setup guidance before diagnosing the algorithm.
+- **Do not mix unequal actions under one target.** If trial start, subscription, purchase, and tutorial completion have different values, define values or choose the primary event carefully.
+- **iOS attribution will not reconcile perfectly.** SKAN, MMP, and Google's reported numbers can diverge. Use each for its role: SKAN for directional privacy-safe truth, MMP for cross-network ops, Google numbers for bidding reality.
+- **ACe needs incrementality skepticism.** Re-engagement campaigns can capture users who would have returned organically. Use holdouts or conservative reporting where stakes are high.
+- **Learning is easy to break.** Changing bid targets, budgets, geos, or creative wholesale can reset momentum. Add creative gradually and make target moves deliberately.
+
+### How to diagnose App issues
+
+| Symptom | First checks | Likely action |
+|---|---|---|
+| Installs but poor quality | Optimization event, post-install funnel, MMP/Firebase mapping | Move deeper if volume allows, improve event quality, use value bidding |
+| Low spend | Budget-to-bid ratio, app eligibility, policy, geo, bid target | Raise budget/target, fix eligibility, broaden geo/assets |
+| tROAS unstable | Purchase volume, value schema, campaign splits | Use proxy event, consolidate, fix value mapping |
+| iOS numbers disagree | SKAN schema, SDK init, postback timing, MMP mapping | Treat normal gaps as methodology; investigate large gaps |
+| Creative fatigue | Asset ratings, spend concentration, age of concepts | Add new video/concept families, not just trims |
+
+### Common practice mistakes
+
+- Optimizing forever to installs when retention or revenue is the real goal.
+- Jumping to tROAS before purchase/value volume is stable.
+- Uploading many cuts of the same creative concept and calling it variety.
+- Changing targets and creative during the first learning window because early results look noisy.
 
 ---
 
