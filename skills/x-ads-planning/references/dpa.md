@@ -34,6 +34,8 @@ Keep retargeting and prospecting separate when budget, reporting, or audience in
 
 For retargeting campaigns, create Catalog Activity Audiences during DPA setup. Use relevant List Custom Audiences where they improve audience size or quality.
 
+Use DPA only when feed and event quality are strong enough to support personalization. For weak catalogs or very small retargeting pools, a product-focused image, carousel, or collection test may be more useful than forcing DPA.
+
 ## Creative and Copy
 
 Catalog information does much of the work. Use copy to add context:
@@ -58,6 +60,7 @@ Avoid overusing discount language if it weakens brand positioning or trains low-
 ## Common Mistakes
 
 - Bad product IDs that break event-to-catalog matching.
+- Missing value, currency, `contents`, or purchase/content parameters needed for useful event matching and reporting.
 - Out-of-stock products in the feed.
 - Weak product images.
 - Retargeting windows that are too broad for the purchase cycle.

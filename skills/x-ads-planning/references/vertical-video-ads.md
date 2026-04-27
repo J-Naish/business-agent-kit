@@ -39,6 +39,8 @@ X positions Vertical Video Ads around the Immersive Media Viewer and has stated 
 - Use sound intentionally, but make the video understandable without sound.
 - Put the CTA in a safe central area.
 - If using a website/app CTA button, plan for it to appear automatically after the viewer has watched one second of the ad.
+- Do not reuse a horizontal or square feed cut without rebuilding the opening, safe zones, and sound-on pacing for the Immersive Media Viewer.
+- Treat X's vertical surface as its own test when the budget allows; otherwise blended feed/video results can hide placement-specific learning.
 
 ## Structure
 

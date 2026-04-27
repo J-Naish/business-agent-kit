@@ -15,6 +15,8 @@ Use this reference before finalizing X Ads objectives, bidding, and reporting.
 
 X documentation uses both **Conversion API** and **Conversions API** in different surfaces. Treat them as the same server-side conversion-sharing concept, but preserve the current UI label when writing implementation instructions.
 
+For conversion campaigns at scale, Pixel-only measurement is fragile. Prefer Pixel + server-side Conversion API / Conversions API where feasible, then reconcile to business data.
+
 ## Event Design
 
 Prefer the deepest reliable event with enough volume:
@@ -33,9 +35,11 @@ Do not optimize permanently to weak micro-conversions if they do not correlate w
 
 - Separate X-reported conversions from business source-of-truth revenue, CRM, or app analytics.
 - Keep post-engagement and post-view attribution windows visible in reporting.
+- Use click-only or view-through-discounted reporting for internal direct-response reads when view-through credit is not calibrated.
 - For app campaigns, align X attribution windows with the MMP dashboard to reduce discrepancies.
 - Use holdouts, geo tests, pre/post analysis, lift studies, or audience exclusions when volume and budget allow.
 - Report retargeting separately from prospecting when possible.
+- Use UTMs consistently. For mature accounts, triangulate X Ads Manager, GA4/warehouse, CRM/orders, post-purchase survey, MMP, and MMM/geo-lift where available.
 
 ## App Measurement
 
@@ -49,9 +53,12 @@ Before recommending Dynamic Product Ads, verify:
 
 - X Pixel or Conversion API / Conversions API is implemented, unless the campaign will be limited to link-click optimization.
 - Product events include product identifiers that match the catalog.
+- DPA events include required product/event parameters such as product IDs, value, currency, and purchase/content actions where applicable.
 - X Shopping Manager catalog is uploaded, approved, and regularly updated.
 - Product feed includes accurate titles, prices, availability, images, URLs, categories, and sale prices where relevant.
 - Product sets are organized around meaningful categories, margins, inventory, or campaign goals.
+
+For server-side events, confirm the implementation captures `twclid` where available, hashes user identifiers correctly, and uses a stable `conversion_id` for deduplication when Pixel and CAPI both send the same event.
 
 ## Measurement Gaps vs Meta
 

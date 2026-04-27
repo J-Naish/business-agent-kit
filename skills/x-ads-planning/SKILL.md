@@ -279,6 +279,8 @@ Produce the output that fits the user's request: a short recommendation, structu
 | Policy and account requirements | [policy-and-account-requirements.md](references/policy-and-account-requirements.md) | Account eligibility, Verified Organizations, HLC, cause-based, healthcare, finance, restricted categories |
 | Diagnostics | [diagnostic-decision-trees.md](references/diagnostic-decision-trees.md) | Existing-account failure modes and fixes |
 | Creative fundamentals | [creative-fundamentals.md](references/creative-fundamentals.md) | Aesthetic Score, copy, hooks, CTA, testing |
+| Creative strategy | [creative-strategy.md](references/creative-strategy.md) | X-native voice, creator/founder handles, fatigue, replies, video posture |
+| Creative testing | [creative-testing.md](references/creative-testing.md) | Post count, concept tests, audience-thesis tests, refresh rules |
 | Format-specific details | Format files linked above | Specs, use cases, mistakes |
 
 ### Platform Notes

@@ -33,6 +33,7 @@ Likely causes:
 - Budget, bid, or target too restrictive.
 - Audience too narrow after respected constraints and exclusions.
 - Optimized Targeting disabled when scale is needed.
+- Maximum bid or Target cost is below what the auction can clear.
 - Creative disapproved or low quality.
 - Account, market, or format eligibility issue.
 - Premium/managed product not actually available in the account.
@@ -43,6 +44,7 @@ Actions:
 - Broaden flexible targeting inputs or enable Optimized Targeting where appropriate.
 - Reduce unnecessary ad-group fragmentation.
 - Confirm objective, bid type, and optimization goal match the desired result.
+- If the campaign is under 24 hours old, separate normal ramp-up from true no-delivery before rebuilding.
 
 ## CTR Is Low
 
@@ -59,6 +61,7 @@ Actions:
 - Match ad copy to keyword/search intent or follower-look-alike hypothesis.
 - Improve visual clarity and remove clutter.
 - Test a stronger hook, proof point, offer, or product demonstration.
+- Read replies and quote-post context; low-quality or hostile replies often explain weak downstream action.
 
 ## Clicks Are Cheap but Conversions Are Weak
 
@@ -85,6 +88,7 @@ Likely causes:
 - Budget too small for the number of ad groups/creatives.
 - Retargeting and prospecting mixed in one read.
 - Pixel/CAPI/catalog event issues.
+- View-through or post-engagement attribution is being read as final revenue truth.
 
 Actions:
 
@@ -92,6 +96,7 @@ Actions:
 - Consolidate structure.
 - Separate retargeting from prospecting when possible.
 - Batch changes and wait for a meaningful observation window.
+- Use 3-7 day rolling reads and external source-of-truth reporting before making major changes.
 
 ## Lead Quality Is Low
 
@@ -140,3 +145,21 @@ Actions:
 - Check event status in Events Manager.
 - Reconcile against app analytics and LTV.
 - Allow 24-48 hours for reporting finalization where relevant.
+
+## Keyword Campaign Underperforms
+
+Likely causes:
+
+- Keywords are too broad, ambiguous, or mixed across intent levels.
+- Negative keywords are missing.
+- Creative does not answer the search/post context.
+- Optimized Targeting or additional placements make the keyword read less pure.
+- The campaign was paused before enough search/keyword data accumulated.
+
+Actions:
+
+- Split brand/category/problem/competitor/event keywords.
+- Add excluded keywords for irrelevant meanings and unsafe contexts.
+- Rewrite copy to answer the keyword intent in the first line.
+- Review keyword breakdowns and expand from winners.
+- Use UTMs and landing-page analytics to judge quality, not CTR alone.

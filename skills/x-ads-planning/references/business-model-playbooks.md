@@ -10,6 +10,7 @@ Default strategy:
 - Use **Dynamic Product Ads** only when X Shopping Manager, feed quality, and product events are ready.
 - Separate prospecting and retargeting when budget, reporting, or audience intent differs.
 - Track purchase value, contribution margin, new vs returning customers, and product-level performance.
+- Treat X as a better fit for niche/community-driven commerce, retargeting, product drops, and conversation-timed offers than for generic evergreen DTC without an X audience.
 
 Recommended structure:
 
@@ -35,6 +36,7 @@ Design notes:
 - Segment product sets by category, margin, seasonality, inventory, or customer type when that changes economics.
 - Monitor new vs returning customer mix separately from aggregate ROAS.
 - Use DPA Prospecting only after product feed and event quality are trustworthy.
+- If the category is not naturally discussed on X, start small and compare against Meta, Google, TikTok, email, and search lift before scaling.
 
 ## Lead Generation
 
@@ -105,6 +107,7 @@ Design notes:
 - Use founder/POV and category conversation angles when product search demand is limited.
 - Separate high-intent keyword campaigns from broad thought-leadership amplification.
 - Retarget site/content engagers with proof and objection handling.
+- Do not try to recreate LinkedIn firmographic targeting. X is better used for keywords, follower look-alikes, founder/creator distribution, and conversation context.
 
 ## App
 
@@ -174,6 +177,8 @@ Recommended structure:
 | Pre-event | Video, Image, Branded Notifications, Takeover | Reach, reminders, registrations |
 | Live | X Live, Promoted clips, engagement ads | Viewers, watch time, engagement |
 | Post-event | Highlight clips, retargeting, conversion ads | Clip views, site actions, leads, sales |
+
+X is strongest for live/event plans when the brand has a real reason to be in the conversation: sports, entertainment, finance, gaming, tech launches, conferences, news, music, fashion, or fandoms. If the brand has no cultural permission, use lighter auction support before recommending managed takeovers.
 
 ### Conversion Design
 

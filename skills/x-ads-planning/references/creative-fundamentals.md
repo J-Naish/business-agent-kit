@@ -107,3 +107,5 @@ Test concepts before cosmetic variants.
 | Variant | Crop, headline, CTA, color, opening frame |
 
 Use several meaningfully different creatives when budget supports it. Avoid launching many near-identical variants that split learning without answering a strategic question.
+
+For deeper practice guidance, use [creative-strategy.md](creative-strategy.md) and [creative-testing.md](creative-testing.md). Keep this file for launch QA and format-level basics.

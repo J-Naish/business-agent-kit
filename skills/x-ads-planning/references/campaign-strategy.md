@@ -20,6 +20,19 @@ Campaign
 
 One campaign can contain multiple ad groups, and each ad group can contain one or more ads. X can auto-optimize toward better-performing ads within an ad group.
 
+## Structure Practice
+
+Keep the first structure simple:
+
+| Decision | Default |
+|---|---|
+| Campaign | One objective and one primary business goal |
+| Ad group | One main audience thesis or control need |
+| Ads | Multiple posts so X can choose winners |
+| Measurement | Pixel/CAPI/MMP/catalog/CRM ready before optimizing deep events |
+
+Split only when the split changes a real decision: objective, market, device/OS, audience thesis, prospecting vs retargeting, premium vs auction, regulated category, creative test, or measurement read. Avoid overlapping campaigns with similar audiences and nearly identical creative.
+
 ## Objective Selection
 
 X objective naming is not perfectly consistent across public docs and account flows. Official public campaign pages still list **Website conversions**, while other current X surfaces refer to **Sales** or **Conversions**. Use dual wording where needed and verify the current account UI before launch.
@@ -106,11 +119,30 @@ Language support is strongest in English-speaking markets. X also provides limit
 ### Targeting Principles
 
 - Start broad enough for delivery, then narrow only for business, compliance, or measurement reasons.
+- Test one main audience thesis at a time when learning what works. X optimization guidance favors using one type of audience targeting per campaign to make results interpretable.
 - Use keyword and conversation targeting when the campaign depends on real-time intent or cultural context.
 - Use follower look-alikes as a signal, not as a guarantee of buyer quality.
 - Use Lookalike Audiences and Custom Audiences for seed-based scale, retargeting, and exclusions.
 - Avoid mixing many targeting ideas in one ad group if it will make learning or reporting unreadable.
 - For Housing, Lending, and Credit ads in relevant regions, verify restricted targeting and prediction-model requirements before launch.
+
+### Follower Look-Alike Practice
+
+Follower look-alikes are most useful when the selected handles describe a real buyer/community graph.
+
+Good seeds:
+
+- Direct competitors.
+- Category publications, newsletters, podcasts, analysts, and creators.
+- Adjacent tools or products used by the same buyer.
+- Conference, event, or community accounts.
+
+Weak seeds:
+
+- Celebrity or mass-market accounts unrelated to the buyer.
+- Mixed handle lists from unrelated verticals.
+- Very small or inactive handles that cannot describe a useful audience.
+- Your own customer/employee handles in prospecting without suppression logic.
 
 ## Budget and Bidding
 
@@ -130,6 +162,13 @@ Common bid postures:
 | Automatic | Early learning, limited history, or maximizing delivery within budget |
 | Maximum bid | You need a hard ceiling on bid economics |
 | Target cost | You have stable conversion data and a realistic target |
+
+Practical bidding posture:
+
+- Start with Automatic when history is limited, conversion signal is still building, or the objective requires maximum delivery.
+- Use Target cost only where the account/objective supports it and the target is based on historical performance, not aspirational CPA.
+- Use Maximum bid for hard ceilings, constrained upper-funnel buys, or delivery control; too-low bids are a common no-delivery cause.
+- Read 3-7 day rolling performance for conversion campaigns before making non-emergency bid changes.
 
 ## Measurement
 
@@ -154,3 +193,5 @@ Use platform metrics for optimization, but reconcile with business data such as 
 | Monthly | Structure review, measurement health, source-of-truth reconciliation |
 
 Avoid changing budget, bid, targeting, creative, and conversion events all at once unless the setup is clearly wrong.
+
+For conversion campaigns, treat the first week as a stabilization window unless delivery, tracking, policy, or destination quality is broken. X does not expose a Meta-style learning label, but practitioners commonly observe volatile early delivery and CPA.

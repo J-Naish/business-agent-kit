@@ -40,6 +40,13 @@ Use enough keywords to give delivery room, but keep ad groups thematically coher
 
 For general keyword targeting outside this campaign workflow, current official docs list up to 750 keywords per ad group.
 
+Practical launch posture:
+
+- Use 25-50 tightly themed keywords when keyword targeting is the main audience thesis.
+- Avoid very large mixed-intent lists unless the goal is broad discovery and reporting can tolerate noise.
+- Do not duplicate hashtag and non-hashtag versions just for coverage; X includes hashtag variants automatically in ordinary keyword targeting.
+- Add negatives early for irrelevant meanings, job seekers, freebie terms, unsafe contexts, and competitor conflicts.
+
 ## Campaign Design
 
 - Group keywords by intent or message.
@@ -48,6 +55,7 @@ For general keyword targeting outside this campaign workflow, current official d
 - Use separate ad groups for very different intent levels.
 - Exclude or avoid irrelevant terms that create poor-quality clicks.
 - Do not rely on platform translation for non-English keywords; build local-language keyword sets explicitly.
+- Let keyword campaigns gather enough data before pausing. A weak first few days can reflect warm-up, sparse search volume, or a poor keyword/creative match rather than a failed channel.
 
 ## Measurement
 
@@ -78,3 +86,4 @@ For general keyword targeting outside this campaign workflow, current official d
 - Review keyword clusters weekly and add/remove terms in batches.
 - Keep separate ad groups for materially different intent levels.
 - Rebuild local-language keyword sets manually; do not assume translation.
+- Expand winners by adding adjacent problem language, competitor alternatives, event terms, and follower look-alike handles that share the same audience.

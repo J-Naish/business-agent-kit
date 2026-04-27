@@ -24,6 +24,8 @@ Use this reference to check whether the proposed X Ads structure can produce eno
 
 If the answer is no, narrow the structure or optimize to a higher-volume interim signal temporarily.
 
+Practitioner heuristics often treat roughly 15-25 meaningful events per week per ad group as a lower bound for conversion learning. Use this as a planning check, not as platform law. If the budget cannot get near that range, consolidate or optimize to a higher-volume proxy temporarily.
+
 ## Planning Math
 
 Use these calculations before proposing structure:
@@ -63,6 +65,8 @@ These are planning ranges, not platform rules. Adjust for market CPM/CPC/CPA and
 | Large | Full-funnel structure with controlled testing, DPA/catalog, app or premium placements where justified. |
 | Managed / launch burst | Separate media plan for Takeovers, Amplify Sponsorship, X Live, Branded Notifications, or Branded Hashtags. |
 
+For very small budgets, do not try to test keyword, follower look-alike, conversation targeting, DPA, retargeting, and several formats at once. Pick one audience thesis and a few strong posts.
+
 ## Premium and Managed Product Cost Checks
 
 Timeline Takeover, Spotlight Takeover, Amplify Sponsorship, X Live, Branded Notifications, and Branded Hashtags can have market-specific minimums, reservation rules, third-party tooling costs, or bundled media requirements. Do not encode a fixed minimum spend unless X provides a current quote for the exact market and date.
@@ -91,5 +95,7 @@ Shift based on actual conversion quality, not only cheap platform outcomes.
 
 - Avoid judging a conversion campaign before enough conversion delay has passed.
 - Batch budget and bid changes; avoid changing budget, targeting, creative, and event definitions together.
-- Increase budgets gradually unless the campaign is clearly underfunded or tied to a fixed event date.
+- Increase budgets gradually unless the campaign is clearly underfunded or tied to a fixed event date. A conservative practitioner example is +15-20% every few days, then watch delivery, CPA/ROAS, frequency, and creative fatigue.
 - Keep a change log with date, campaign/ad group, change, reason, and expected observation window.
+
+Horizontal scaling is often safer than aggressive vertical scaling on X: duplicate a proven ad group and change one real input, such as audience theme, geo, creative concept, or device/OS, rather than sharply increasing one budget.

@@ -22,10 +22,12 @@ Verify current character handling and link behavior in X Ads Manager before laun
 - Fast message testing before producing visual assets.
 - Promoting an organic post that already has strong engagement.
 - Thread or conversation entry points.
+- B2B/SaaS offers where the idea, POV, or proof is stronger than the visual.
 
 ## Creative Practices
 
 - Lead with a clear point of view or benefit.
+- Put the hook in the first line; do not bury the main point below truncation.
 - Keep one message per ad.
 - Avoid generic corporate language.
 - Avoid raw URLs when a Website Card is a better click experience.
