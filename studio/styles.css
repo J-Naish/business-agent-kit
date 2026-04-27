@@ -1,0 +1,95 @@
+@import "tailwindcss";
+
+/* Latin sans-serif */
+@import "@fontsource-variable/geist/index.css";
+@import "@fontsource-variable/montserrat/index.css";
+@import "@fontsource-variable/outfit/index.css";
+@import "@fontsource-variable/raleway/index.css";
+@import "@fontsource-variable/source-sans-3/index.css";
+@import "@fontsource-variable/nunito/index.css";
+@import "@fontsource-variable/space-grotesk/index.css";
+@import "@fontsource-variable/josefin-sans/index.css";
+@import "@fontsource-variable/oswald/index.css";
+
+/* Latin serif */
+@import "@fontsource-variable/playfair-display/index.css";
+@import "@fontsource-variable/lora/index.css";
+@import "@fontsource-variable/crimson-pro/index.css";
+@import "@fontsource-variable/bitter/index.css";
+@import "@fontsource-variable/fraunces/index.css";
+@import "@fontsource/dm-serif-display/index.css";
+
+/* Latin display / handwritten */
+@import "@fontsource-variable/caveat/index.css";
+@import "@fontsource-variable/dancing-script/index.css";
+@import "@fontsource/bebas-neue/index.css";
+
+/* Monospace */
+@import "@fontsource-variable/geist-mono/index.css";
+@import "@fontsource-variable/jetbrains-mono/index.css";
+
+@theme {
+  /* ==========================================================================
+   * Design Tokens
+   * Shared design tokens for slides, forms, creatives, emails, and Remotion.
+   * Use them as Tailwind classes, such as bg-brand and text-on-brand,
+   * or reference them directly as CSS variables, such as var(--color-brand).
+   * ========================================================================== */
+
+  /* --- Colors ---
+   * Define project brand and UI colors here.
+   * Example:
+   * --color-brand: #2563eb;
+   * --color-brand-dark: #1e40af;
+   * --color-accent: #f59e0b;
+   * --color-surface: #ffffff;
+   * --color-surface-muted: #f5f5f5;
+   * --color-on-surface: #111111;
+   * --color-on-surface-muted: #888888;
+   */
+
+  /* --- Fonts ---
+   * All 20 font families are available as Tailwind classes, such as
+   * font-playfair-display. Use variables such as var(--font-geist)
+   * when referencing a font directly from CSS.
+   */
+
+  /* Latin sans-serif */
+  --font-geist: "Geist Variable", sans-serif;
+  --font-montserrat: "Montserrat Variable", sans-serif;
+  --font-outfit: "Outfit Variable", sans-serif;
+  --font-raleway: "Raleway Variable", sans-serif;
+  --font-source-sans-3: "Source Sans 3 Variable", sans-serif;
+  --font-nunito: "Nunito Variable", sans-serif;
+  --font-space-grotesk: "Space Grotesk Variable", sans-serif;
+  --font-josefin-sans: "Josefin Sans Variable", sans-serif;
+  --font-oswald: "Oswald Variable", sans-serif;
+
+  /* Latin serif */
+  --font-playfair-display: "Playfair Display Variable", serif;
+  --font-lora: "Lora Variable", serif;
+  --font-crimson-pro: "Crimson Pro Variable", serif;
+  --font-bitter: "Bitter Variable", serif;
+  --font-fraunces: "Fraunces Variable", serif;
+  --font-dm-serif-display: "DM Serif Display", serif;
+
+  /* Latin display / handwritten */
+  --font-caveat: "Caveat Variable", cursive;
+  --font-dancing-script: "Dancing Script Variable", cursive;
+  --font-bebas-neue: "Bebas Neue", sans-serif;
+
+  /* Monospace */
+  --font-geist-mono: "Geist Mono Variable", monospace;
+  --font-jetbrains-mono: "JetBrains Mono Variable", monospace;
+}
+
+body {
+  margin: 0;
+}
+
+@media print {
+  body {
+    margin: 0;
+    padding: 0;
+  }
+}
