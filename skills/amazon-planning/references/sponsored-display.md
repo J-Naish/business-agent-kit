@@ -32,6 +32,14 @@ Sponsored Display is not a replacement for weak product detail pages. If CVR is 
 | Remarketing | Separate view and purchase windows by purchase cycle. |
 | Awareness | Use reach or vCPM-style objectives where available; evaluate with reach and assisted metrics. |
 
+Operating rules:
+
+- Keep remarketing and prospecting separate.
+- Match view and purchase windows to the product's purchase cycle.
+- Use own-ASIN defense for hero products in competitive categories.
+- Conquest only when the advertised offer is visibly stronger on price, rating, reviews, delivery, feature, or bundle.
+- Use custom creative for upper-funnel and competitor contexts instead of relying only on auto-generated listing assets.
+
 ## Creative
 
 Sponsored Display may use auto-generated creative and custom creative depending on marketplace and setup.

@@ -34,6 +34,13 @@ Sponsored Brands usually work best after the brand has retail-ready hero ASINs, 
 
 Match the destination to the query. Category queries often need choice; specific product queries often need a direct detail page.
 
+Routing rules:
+
+- Brand terms can route to the Store if navigation and hero products are strong.
+- Category terms should route to the most relevant Store subpage or curated product set, not a generic homepage.
+- Video education should continue to the product detail page or Store page that proves the same message.
+- Avoid Store subpages with weak inventory, few relevant ASINs, or out-of-stock hero products.
+
 ## Targeting
 
 Sponsored Brands can use keyword and product/category targeting where available.
@@ -85,6 +92,8 @@ Recommended splits:
 - Competitor conquesting: competitor terms or ASINs.
 - Video education: separate campaign for video to read creative performance.
 - Store/category: separate campaigns by Store destination where budgets allow.
+
+Do not fund Sponsored Brands only on branded keywords. Use a separate category-growth budget if the brand needs new-to-brand demand, then judge that budget with NTB, Store visits, query share, and assisted demand, not only direct ACoS.
 
 ## Measurement
 

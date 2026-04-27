@@ -101,6 +101,17 @@ Verify access, clean room permissions, lookback windows, and whether the user ca
 | Good ACoS, rising TACoS | Paid sales cannibalizing organic or total sales not growing | Review organic rank, incrementality, brand defense, budget allocation |
 | Strong ROAS, stockouts | Ads outpacing inventory | Reduce budgets, protect hero ASINs, adjust launch calendar |
 
+## Objective-Based Scorecard
+
+| Objective | Primary metrics | Guardrails |
+|---|---|---|
+| Profit | Contribution margin, ACoS, TACoS, ROAS | Inventory, returns, discounts, storage, and fulfillment fees |
+| Launch | Sales velocity, CTR, CVR, rank, reviews, TACoS | Budget cap, stockout risk, review trust |
+| New customer | NTB orders/sales, CAC, repeat rate | Margin, retention, promotion cost |
+| Awareness | Reach, frequency, video completion, branded search, DPV | Downstream capture and incrementality |
+| Retention | Repeat purchase, Subscribe & Save, BTP redemption, LTV | Discount dependency |
+| Listing improvement | Unit Session Percentage, CTR, CVR, SQP funnel share | Traffic mix and attribution changes |
+
 ## Pre-Launch Checklist
 
 - Product detail page is complete and compliant.

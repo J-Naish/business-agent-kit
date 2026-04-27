@@ -97,6 +97,13 @@ Advertising can create stockout risk. Before scaling:
 - Reduce bids or budgets when inventory is constrained.
 - Plan post-event inventory before promotional spikes.
 
+Use inventory as a marketing control:
+
+- Protect hero ASINs before seasonal pushes, deals, Streaming TV, or DSP.
+- Keep enough cover to avoid stockout and low-inventory penalties, but do not overbuy into aged-inventory or storage-utilization pressure.
+- Review slow movers early enough to discount, bundle, remove, or reposition before storage costs compound.
+- Treat inbound delays as a media input: reduce discovery and competitor campaigns before the stockout happens.
+
 ## Promotion Planning
 
 Common levers include coupons, deals, price discounts, bundles, Brand Tailored Promotions, and external traffic. Match promotion type to objective:
@@ -117,6 +124,16 @@ Also consider Amazon-specific promotion and fulfillment tools where available:
 - Brand Tailored Promotions for Brand Registry-gated audience segments.
 - Buy with Prime or Multi-Channel Fulfillment when the brand also sends traffic to its own DTC site.
 - Amazon Warehousing & Distribution or upstream storage products when bulk storage and FBA replenishment economics matter.
+
+Promotion decision rule:
+
+| Situation | Prefer |
+|---|---|
+| New launch with low review trust | Vine where eligible, coupon, modest Sponsored Products discovery |
+| Peak event with proven demand | Deal or Prime-exclusive offer plus exact/category budget protection |
+| Repeatable consumable | Subscribe & Save and Brand Tailored Promotions |
+| Cart abandoners or lapsed customers | Brand Tailored Promotions where audience is large enough |
+| Clearance | Price cut, Outlet/deal where eligible, capped remarketing; avoid burning broad discovery budget |
 
 ## Common Mistakes
 

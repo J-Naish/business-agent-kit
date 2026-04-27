@@ -94,6 +94,13 @@ Do not graduate a query based on one order if the product has high variance. Use
 
 Useful reports include Search Term Report, Advertised Product report, Purchased Product report, Placement report, and Search Query Performance where Brand Analytics access is available. For automation or BI workflows, verify current Amazon Ads API and Selling Partner API availability.
 
+Default graduation rules:
+
+- A converting query with acceptable economics or strategic value should move into manual exact or a dedicated campaign.
+- A query with enough clicks/spend and no strategic fit should become a negative exact or phrase, depending on pattern.
+- A broad or automatic campaign should keep discovering; it should not permanently own the highest-value exact terms.
+- Do not over-negate early in launch. Amazon needs enough traffic to reveal unexpected query and ASIN pockets.
+
 ## Newer Capabilities to Verify
 
 - **Sponsored Products video**: video can appear on Sponsored Products inventory in supported accounts. Use when demonstration materially improves conversion.
@@ -110,6 +117,8 @@ During launch, budget must support both discovery and harvest. If budget is very
 - A small number of high-fit product targets.
 
 Avoid spreading a small budget across every format and match type.
+
+Separate brand, non-brand, competitor, discovery, and product-targeting roles as soon as budgets and data justify it. Blended campaigns hide whether the account is creating demand, harvesting existing demand, or buying inefficient competitor traffic.
 
 ## Creative and Retail Readiness
 

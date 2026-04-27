@@ -1,11 +1,40 @@
 ---
 name: amazon-planning
-description: Plan Amazon marketplace and Amazon Ads strategy across listing optimization, product detail pages, creative, fulfillment, pricing, Sponsored Products, Sponsored Brands, Sponsored Display, and Amazon DSP. Use when the user asks about Amazon selling, marketplace launch, listing conversion, A+ Content, Stores, Brand Registry, FBA, ACoS, TACoS, ROAS, Amazon SEO, or Amazon advertising campaign planning.
+description: Plan Amazon marketplace and Amazon Ads strategy with a practice-first approach across product-market validation, listing optimization, product detail pages, creative, fulfillment, inventory, pricing, reviews, Brand Registry, Sponsored Products, Sponsored Brands, Sponsored Display, Streaming TV, and Amazon DSP. Use when the user asks about Amazon selling, marketplace launch, listing conversion, A+ Content, Stores, Brand Registry, FBA, ACoS, TACoS, ROAS, Amazon SEO, product launch, or Amazon advertising campaign planning.
 ---
 
 # Amazon Planning
 
 Use this skill to design Amazon marketplace and advertising strategy from business context through listing specifications, campaign structure, creative requirements, and operating guidance. It covers both marketplace readiness and Amazon Ads planning because ad performance depends heavily on product detail page quality, availability, price competitiveness, and review trust.
+
+## Practice-first stance
+
+Amazon planning should prioritize the practices that make a marketplace business work, not just the settings that make a listing or campaign valid. Ads, bids, and campaign types matter, but they sit on top of retail readiness, contribution margin, product-market fit, catalog integrity, inventory discipline, review trust, and offer competitiveness.
+
+Before proposing listing or campaign settings, check these first:
+
+| Area | What to verify | Why it matters |
+|---|---|---|
+| Product-market fit | Search demand, competitor strength, review moat, differentiation, category compliance | Many Amazon launches fail because the offer cannot win the SERP economically |
+| Unit economics | Contribution margin after referral fees, fulfillment, storage, returns, promotions, and ads | ACoS targets are meaningless without break-even economics |
+| Retail readiness | Main image, title, price, reviews, delivery promise, A+ Content, variations, buyability | Ads amplify the current offer; they do not fix a weak product detail page |
+| Inventory | Weeks of cover, inbound lead time, FBA/FBM/SFP fit, low-inventory and aged-inventory risk | Stockouts kill ranking momentum; overstock destroys cash and margin |
+| Trust and compliance | Vine/review plan, claims, safety/category requirements, variation legitimacy, account health | Trust and policy failures interrupt scale faster than media issues |
+| Query intelligence | Search Query Performance, search term reports, Brand Analytics, review language | Amazon SEO and PPC should be one feedback loop |
+| Measurement | ACoS, TACoS, contribution margin, NTB, incrementality, AMC where available | Platform-attributed sales are a steering signal, not final finance truth |
+| Operating cadence | Daily launch sanity, weekly mining, monthly catalog/fee review, quarterly strategy reset | Amazon performance decays when listings, inventory, and ads are operated separately |
+
+### Core operating rules
+
+- Start from the business outcome and unit economics, not from Amazon's product menus.
+- Treat retail readiness as the launch gate. If image, price, delivery, reviews, inventory, or compliance are weak, narrow spend until fixed.
+- Use ads as a discovery-to-harvest loop: discover queries/ASINs, graduate winners, add negatives, then feed learning back into listing copy and creative.
+- Judge by TACoS, contribution margin, rank, and new-to-brand quality, not ACoS alone.
+- Separate brand defense, category growth, competitor conquesting, discovery, remarketing, and awareness when they need different bids, budgets, or KPIs.
+- Keep variation families clean. Do not use variations, merges, or discontinued ASINs to transfer review equity.
+- Treat inventory as a marketing constraint. Reduce bids before stockouts, and do not create aged-inventory or low-inventory fees through poor demand planning.
+- Use Brand Registry tools as operating infrastructure: A+ Content, Stores, Vine, Search Query Performance, Manage Your Experiments, Brand Tailored Promotions, AMC, and brand protection tools where available.
+- Avoid brittle universal benchmarks. Amazon category, marketplace, margin, review, price, and delivery differences can make the same ACoS excellent or unacceptable.
 
 ## Workflow
 
@@ -39,7 +68,7 @@ First look for any user-provided brief, product sheet, analytics export, categor
 | Account status | Selling plan, Brand Registry, account health, category approvals, advertising eligibility |
 | Current performance | Sales, sessions, unit session percentage, ACoS, TACoS, CTR, CVR, reviews, Featured Offer eligibility |
 | Listing assets | Images, video, A+ Content, Store, title, bullet points, product description, search terms |
-| Fulfillment | Fulfillment by Amazon (FBA), seller-fulfilled, hybrid strategy, inventory coverage |
+| Fulfillment | Fulfillment by Amazon (FBA), Fulfilled by Merchant, Seller Fulfilled Prime, hybrid strategy, inventory coverage |
 | Measurement | Amazon Attribution, Brand Analytics, Search Query Performance, Amazon Marketing Cloud (AMC), MMP or external analytics |
 
 ## Step 2: Choose Planning Path
@@ -54,6 +83,7 @@ Use this path when the product detail page, offer, creative, fulfillment, or org
 | Product detail page | [product-page-design.md](references/product-page-design.md) | Designing titles, bullet points, descriptions, A+ Content, variations, or Amazon SEO |
 | Listing creative | [listing-creative.md](references/listing-creative.md) | Planning images, video, Store assets, and creative QA |
 | Fulfillment and pricing | [fulfillment-pricing.md](references/fulfillment-pricing.md) | Choosing fulfillment, price, fees, inventory, and Featured Offer strategy |
+| Marketplace strategy | [marketplace-strategy.md](references/marketplace-strategy.md) | Validating product-market fit, ASIN roles, 1P/3P/hybrid posture, global expansion, or brand protection |
 
 Use listing optimization for:
 
@@ -78,6 +108,7 @@ Use this path when the account is retail-ready enough to run traffic or when the
 |---|---|---|
 | Campaign architecture | [campaign-strategy.md](references/campaign-strategy.md) | Building funnel strategy, budget allocation, keyword strategy, seasonality, or launch phases |
 | KPI and economics | [kpi-benchmarks.md](references/kpi-benchmarks.md) | Setting ACoS/ROAS/TACoS targets, break-even ACoS, benchmarks, or weekly operating rules |
+| Diagnostics | [diagnostic-decision-trees.md](references/diagnostic-decision-trees.md) | Diagnosing performance problems before changing bids, listings, inventory, or campaign structure |
 
 ### Business Goal to Ad Product
 
@@ -105,6 +136,8 @@ For small budgets, concentrate spend before expanding formats. Sponsored Product
 ### C. Integrated Marketplace Plan
 
 Use this path for a new Amazon launch, major relaunch, or account rebuild. Design listing readiness first, then ads. Ads drive traffic; product detail page quality, availability, price, reviews, and delivery promise determine whether that traffic becomes profitable demand.
+
+Read [launch-playbook.md](references/launch-playbook.md) when planning a new product, relaunch, Prime Day/BFCM push, international launch, or full-funnel launch sequence.
 
 ## Step 3: Design the System
 

@@ -47,6 +47,13 @@ ProWidget USB-C Laptop Stand, Adjustable Aluminum Riser, Foldable Desk Stand for
 
 Amazon tightened title policy in 2025 in several marketplaces and categories. Before writing final titles, verify category-specific character limits, repeated-word limits, and disallowed special characters. Many categories still allow up to roughly 200 characters, but some categories use shorter caps.
 
+### Title Decision Rules
+
+- **Brand-front title**: use when brand demand, premium positioning, replacement/repeat purchase, or brand trust matters.
+- **Benefit-front title**: use when the brand is unknown and a clear differentiator is the main reason to click.
+- Keep the first mobile-visible segment understandable without reading the full title.
+- Do not use the character limit as a target; readability and conversion matter more than keyword density.
+
 ## Bullet Points
 
 Use bullet points to convert, not just describe.
@@ -102,6 +109,16 @@ Guidelines:
 - Respect current byte/character limits in the target marketplace.
 - In the U.S., a conservative planning limit is roughly 249-250 bytes; exceeding the active limit can cause the field to be ignored or de-indexed. Verify the current category/schema limit before upload.
 
+Also check other indexed or filter-driving fields where available:
+
+- Subject Matter.
+- Target Audience.
+- Intended Use.
+- Other Attributes.
+- Color, material, size, style, pattern, and compatibility fields.
+
+These structured attributes can matter more than stuffing extra words into the search terms field because they affect filters, relevance, and catalog understanding.
+
 ## A+ Content
 
 Use A+ Content to increase conversion and brand trust.
@@ -141,6 +158,8 @@ Treat ads and SEO as a loop. Ads reveal converting queries; listings should abso
 
 Use Search Query Performance, Brand Analytics, search term reports, and customer review language as the feedback loop for Amazon SEO where available. Search Query Performance is especially useful for seeing query-level impression share, click share, cart-add share, and purchase share relative to the marketplace.
 
+Avoid over-relying on unofficial algorithm labels such as "A9" or "A10." The durable practice is to improve relevance, structured product data, conversion evidence, price, availability, reviews, and customer satisfaction. Amazon's newer semantic shopping experiences make clear use cases, attributes, and customer language more important than repetitive keyword stuffing.
+
 ## Review and Trust Plan
 
 For new products, plan trust-building before scaling ads:
@@ -149,6 +168,13 @@ For new products, plan trust-building before scaling ads:
 - Compliant review requests.
 - Clear support, warranty, return, and usage information.
 - Secondary images and A+ modules that answer the objections shoppers would otherwise take to reviews.
+
+Use review mining as a research input:
+
+- Extract purchase triggers and objections.
+- Identify unclear size, fit, compatibility, ingredient, or quality issues.
+- Turn repeated objections into images, bullets, A+ modules, or product improvements.
+- Use customer phrasing to improve titles, bullets, search terms, Sponsored Brands copy, and video scripts.
 
 ## Product Detail Page Audit
 

@@ -54,6 +54,8 @@ Typical requirements include a registered or pending trademark, a matching brand
 - **Amazon Vine** can help new eligible Brand Registered products obtain early reviews through Amazon's official reviewer program. Pricing and enrollment limits vary by marketplace and date; some markets use tiered enrollment by unit count, including a small free tier.
 - **Brand Tailored Promotions** are not ad campaigns. They are Brand Registry-gated audience promotion tools in Seller Central, commonly used for segments such as followers, repeat customers, high-spend customers, at-risk customers, recent customers, cart abandoners, and potential new customers where available.
 - **Search Query Performance** is a Brand Analytics report that helps compare brand or ASIN performance against marketplace query demand. Use it for keyword gaps, share-of-voice, conversion-share, and listing/ad feedback loops where available.
+- **Project Zero and Transparency** are advanced brand-protection layers. Treat them as counterfeit-risk and enforcement tools, not general growth features.
+- **Manage Your Experiments** is most useful when traffic is high enough to test one meaningful listing element at a time.
 
 ## Category and Compliance Readiness
 
@@ -81,3 +83,5 @@ Do not recommend aggressive ad spend until these items are credible:
 - Main image and product detail page comply with Amazon policies.
 - Pricing is competitive enough to win traffic and, where relevant, the Featured Offer.
 - Brand Registry status is known if Sponsored Brands, Stores, A+ Content, or Brand Analytics are part of the plan.
+- Review and trust plan is credible for the category's review moat.
+- Variation families are legitimate and not built around review pooling.

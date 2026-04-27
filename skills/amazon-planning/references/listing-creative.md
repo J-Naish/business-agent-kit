@@ -22,6 +22,7 @@ Planning guidance:
 - Use the clearest hero angle, not the most artistic angle.
 - Avoid packaging-only images unless the packaging is the product.
 - For multipacks or bundles, make quantity unmistakable and compliant.
+- Run a thumbnail-pop check by viewing the image at small mobile/search sizes. If the silhouette, product type, and differentiating value are not clear, the image is not ready for paid traffic.
 
 ## Secondary Image Sequence
 
@@ -41,6 +42,8 @@ Use secondary images to answer shopper questions before they scroll to reviews.
 Do not overload infographics. Text must be readable on mobile.
 
 Do not assume every uploaded image slot will render on the live product detail page. Many marketplaces surface the first seven visual slots most prominently, and video can reduce visible image slots. Prioritize the first 6-7 assets.
+
+Build the secondary sequence around shopper objections, not internal feature priorities. The best next image is the one that answers why the shopper would hesitate after clicking.
 
 ## Product Video
 
@@ -71,6 +74,8 @@ A+ Content should not repeat the bullet points in prettier form. Use it to:
 Use Premium A+ Content only when the brand has enough assets and the product economics justify richer modules.
 
 Premium A+ Content may be free during Amazon promotional periods once the brand meets operational eligibility requirements. Treat eligibility, not only budget, as the gating question.
+
+Prioritize Premium A+ Content for high-AOV, high-traffic, comparison-heavy, or demonstration-heavy products. For low-traffic ASINs, improve main image, title, offer, and basic A+ first.
 
 ## Stores
 
