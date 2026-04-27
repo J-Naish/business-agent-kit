@@ -40,7 +40,7 @@ First look for any user-provided brief, product sheet, analytics export, categor
 | Current performance | Sales, sessions, unit session percentage, ACoS, TACoS, CTR, CVR, reviews, Featured Offer eligibility |
 | Listing assets | Images, video, A+ Content, Store, title, bullet points, product description, search terms |
 | Fulfillment | Fulfillment by Amazon (FBA), seller-fulfilled, hybrid strategy, inventory coverage |
-| Measurement | Amazon Attribution, Brand Analytics, Search Query Performance, Amazon Marketing Cloud, MMP or external analytics |
+| Measurement | Amazon Attribution, Brand Analytics, Search Query Performance, Amazon Marketing Cloud (AMC), MMP or external analytics |
 
 ## Step 2: Choose Planning Path
 
@@ -68,10 +68,11 @@ Use this path when the account is retail-ready enough to run traffic or when the
 
 | Ad product | Role | Typical prerequisites | Reference |
 |---|---|---|---|
-| **Sponsored Products** | Product-level ads in shopping results and product pages; usually the performance core | Professional selling plan, eligible product, Featured Offer eligibility for many placements | [sponsored-products.md](references/sponsored-products.md) |
-| **Sponsored Brands** | Brand-level ads with logo, headline, products, Store, or video | Brand Registry and eligible Store/assets | [sponsored-brands.md](references/sponsored-brands.md) |
-| **Sponsored Display** | Contextual, audience, remarketing, and display placements on and off Amazon | Eligibility varies by marketplace, seller/vendor status, and Brand Registry | [sponsored-display.md](references/sponsored-display.md) |
-| **Amazon DSP** | Programmatic display, online video, streaming TV, audio, and audience activation | Self-service or managed access; larger budget and measurement discipline | [amazon-dsp.md](references/amazon-dsp.md) |
+| **Sponsored Products** | Product-level ads in shopping results, product pages, and select premium apps/websites; usually the performance core | Eligible product and Featured Offer eligibility; selling-plan requirements vary by marketplace/account | [sponsored-products.md](references/sponsored-products.md) |
+| **Sponsored Brands** | Brand-level ads with product collections, Store spotlight, or video | Brand Registry; Store required for Store Spotlight | [sponsored-brands.md](references/sponsored-brands.md) |
+| **Sponsored Display** | Contextual, audience, remarketing, and display/video placements on and off Amazon | Eligibility varies by marketplace, seller/vendor status, Brand Registry, and non-endemic beta access | [sponsored-display.md](references/sponsored-display.md) |
+| **Streaming TV / Sponsored TV** | Self-service streaming TV path for TV-like reach with Amazon signals | Availability, naming, and eligibility vary by marketplace; formerly or still surfaced as Sponsored TV in some regions | [streaming-tv.md](references/streaming-tv.md) |
+| **Amazon DSP** | Programmatic display, online video, streaming TV, audio, Performance+, Brand+, and audience activation | Self-service or managed access; larger budget and measurement discipline | [amazon-dsp.md](references/amazon-dsp.md) |
 
 | Strategy area | Reference | Read when |
 |---|---|---|
@@ -85,10 +86,10 @@ Use this path when the account is retail-ready enough to run traffic or when the
 | Capture high-intent demand | Sponsored Products exact/product targeting | Sponsored Display remarketing | Start with query and ASIN intent closest to purchase. |
 | Discover converting queries | Sponsored Products automatic + manual broad/phrase | Sponsored Brands category terms | Use search term mining, then graduate winners into manual control. |
 | New customer acquisition | Sponsored Products category keywords | Sponsored Brands product collection or video | Track new-to-brand where available and avoid judging only on short-term ACoS. |
-| Brand awareness | Sponsored Brands video/Store spotlight | Amazon DSP online video or streaming TV | Use reach and branded search lift, not only direct sales. |
+| Brand awareness | Sponsored Brands video/Store spotlight | Streaming TV, Amazon DSP online video, Brand+ | Use reach and branded search lift, not only direct sales. |
 | Competitor conquesting | Sponsored Products product targeting | Sponsored Display product targeting | Compare price, rating, delivery promise, and reviews before bidding aggressively. |
 | New product launch | Sponsored Products discovery + exact core terms | Sponsored Brands video, Vine, A+ Content | Do not scale spend before retail readiness, stock, and review plan are credible. |
-| Repeat purchase and loyalty | Sponsored Display audiences | Brand Tailored Promotions, DSP remarketing | Match audience windows to purchase cycle. |
+| Repeat purchase and loyalty | Sponsored Display audiences | Brand Tailored Promotions, DSP remarketing | Brand Tailored Promotions are Seller Central audience/coupon tools, not Ads Console campaigns; match audience windows to purchase cycle. |
 
 ### Budget Posture
 
@@ -99,7 +100,7 @@ For small budgets, concentrate spend before expanding formats. Sponsored Product
 | Very small / test | Sponsored Products only; separate automatic discovery and manual exact winners |
 | Early growth | Sponsored Products plus Sponsored Brands or Sponsored Brands video for category presence |
 | Scaling | Sponsored Products, Sponsored Brands, Sponsored Display with clear funnel roles |
-| Enterprise / full funnel | Sponsored ads plus Amazon DSP, Amazon Marketing Cloud, and incrementality testing where available |
+| Enterprise / full funnel | Sponsored ads plus Streaming TV or Amazon DSP, AMC, and incrementality testing where available |
 
 ### C. Integrated Marketplace Plan
 
@@ -120,7 +121,7 @@ Use this path for a new Amazon launch, major relaunch, or account rebuild. Desig
 2. **Targeting design**: keyword match types, product targeting, category targeting, audiences, remarketing windows.
 3. **Bid and budget design**: bid strategy, daily budget, placement adjustments, test budget, scale rules.
 4. **Creative design**: format-specific copy, video, Store routing, custom image, and retail-readiness checks.
-5. **Measurement design**: ACoS, ROAS, TACoS, new-to-brand, organic rank, inventory, contribution margin, incrementality where feasible.
+5. **Measurement design**: ACoS, ROAS, TACoS, new-to-brand, organic rank, inventory, contribution margin, AMC where available, and incrementality where feasible.
 
 ### Naming Convention
 
@@ -164,6 +165,8 @@ Include:
 ## Platform Guidance
 
 Amazon rules, fees, specs, and eligibility vary by marketplace, account type, category, and date. Treat all numeric specs as planning inputs that must be verified in the target account before launch. Avoid hard-coding one country, currency, Seller Central path, or local legal requirement unless the user explicitly targets that marketplace.
+
+Current Amazon Ads surfaces change quickly. Before finalizing a plan, verify whether the target account has access to newer capabilities such as Sponsored Products video, Sponsored Products/Sponsored Brands prompts, Streaming TV/Sponsored TV naming, AMC for sponsored ads, Sponsored Display non-endemic beta access, Performance+, Brand+, and Campaign Manager.
 
 ## Related Capabilities
 

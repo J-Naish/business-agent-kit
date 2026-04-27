@@ -13,6 +13,8 @@ Common requirements:
 - No added text, badges, borders, watermarks, props, or inset graphics unless category rules allow them.
 - Product must match what the customer receives.
 - High enough resolution to support zoom where available.
+- A practical planning target is at least 1,000 px on the longest side for zoom eligibility, with 2,000 px or higher commonly used for high-quality PDP assets. Verify current marketplace/category specs.
+- JPEG is usually the safest default; TIFF, PNG, or GIF may be accepted depending on the upload path and category.
 
 Planning guidance:
 
@@ -34,13 +36,17 @@ Use secondary images to answer shopper questions before they scroll to reviews.
 | 5 | Size/fit | Reduce uncertainty about dimensions or compatibility |
 | 6 | Comparison | Clarify variants, bundle, or better-than-alternative logic |
 | 7 | Instructions/trust | Show installation, care, warranty, safety, or contents |
-| 8 | Lifestyle or video thumbnail support | Reinforce aspiration or practical usage |
+| 8 | Reserve / surface-dependent asset | Reinforce aspiration or practical usage where the marketplace renders the slot |
 
 Do not overload infographics. Text must be readable on mobile.
+
+Do not assume every uploaded image slot will render on the live product detail page. Many marketplaces surface the first seven visual slots most prominently, and video can reduce visible image slots. Prioritize the first 6-7 assets.
 
 ## Product Video
 
 Use video when motion, setup, before/after, texture, scale, or use case materially improves understanding.
+
+Product detail page video upload often requires Brand Registry or equivalent brand/vendor eligibility. Verify access before building a video-heavy launch plan. Common planning specs include short 16:9 video, `.mp4` or `.mov`, high-resolution source, and marketplace-specific file-size/duration limits.
 
 Recommended structure:
 
@@ -63,6 +69,8 @@ A+ Content should not repeat the bullet points in prettier form. Use it to:
 - Cross-sell adjacent products.
 
 Use Premium A+ Content only when the brand has enough assets and the product economics justify richer modules.
+
+Premium A+ Content may be free during Amazon promotional periods once the brand meets operational eligibility requirements. Treat eligibility, not only budget, as the gating question.
 
 ## Stores
 
@@ -96,3 +104,4 @@ Before launch, check:
 - Adding claims that legal or Amazon policy cannot support.
 - Ignoring competitor image conventions in the category.
 - Sending Sponsored Brands or DSP traffic to a Store that does not match the ad promise.
+- Planning video, Premium A+ Content, or Store-heavy assets before confirming Brand Registry and account access.

@@ -1,6 +1,6 @@
 # Sponsored Display
 
-Sponsored Display supports contextual, audience, and remarketing use cases on and off Amazon. Availability, targeting, bidding, placements, and creative options vary by marketplace and advertiser type, so verify current Amazon Ads UI before launch.
+Sponsored Display supports contextual, audience, remarketing, display, and video use cases on and off Amazon. Availability, targeting, bidding, placements, and creative options vary by marketplace and advertiser type, so verify current Amazon Ads UI before launch.
 
 ## Role
 
@@ -11,6 +11,7 @@ Use Sponsored Display to:
 - Place ads on relevant product detail pages or categories.
 - Defend own ASIN pages from competitors.
 - Extend reach beyond Sponsored Products and Sponsored Brands.
+- Support non-endemic awareness or consideration in beta where available, even when the business does not sell in the Amazon store.
 
 Sponsored Display is not a replacement for weak product detail pages. If CVR is low, fix listing and offer first.
 
@@ -19,9 +20,7 @@ Sponsored Display is not a replacement for weak product detail pages. If CVR is 
 | Mode | Use |
 |---|---|
 | Contextual targeting | Serve ads around selected products or categories; useful for competitor, complementary, and defensive coverage. |
-| Audience targeting | Reach or remarket to shopper audiences where available. |
-| Views remarketing | Re-engage shoppers who viewed products but did not buy. |
-| Purchases remarketing | Encourage repeat purchase, replenishment, or cross-sell where available. |
+| Audiences | Reach or remarket to shopper audiences where available, including Amazon Audiences, views remarketing, purchases remarketing, Sponsored TV remarketing, and AMC custom/lookalike audiences where supported. |
 
 ## Campaign Roles
 
@@ -43,8 +42,9 @@ Use custom creative when:
 - The campaign is upper-funnel or competitor-focused.
 - The category needs education or objection handling.
 - Brand differentiation matters.
+- You need multi-asset creative such as lifestyle image, headline, and logo, or video creative where available.
 
-Auto-generated creative can work for simple remarketing or highly recognizable products, but it often needs strong listing assets to perform.
+Auto-generated creative can work for simple remarketing or highly recognizable products, but it often needs strong listing assets to perform. Multi-asset and video creative can materially change performance for upper-funnel or competitor contexts; verify current asset controls before production.
 
 ## Bidding and Optimization
 
@@ -52,9 +52,11 @@ Separate campaigns by optimization objective and audience temperature. A views r
 
 Common objectives:
 
-- Conversion or purchase optimization.
-- Page visits or consideration.
-- Reach or viewable impressions where available.
+- Optimize for conversions, typically CPC.
+- Optimize for page visits, typically CPC.
+- Optimize for reach, typically vCPM.
+
+Exact objective names, pricing, and starting bid guidance vary by marketplace and UI version. Use Amazon's current names in the account when writing launch instructions.
 
 ## Measurement
 
@@ -65,6 +67,7 @@ Track:
 - Detail page views and add-to-cart where available.
 - Frequency and saturation.
 - Incremental total sales and TACoS impact.
+- Sponsored TV to Sponsored Display remarketing impact where available.
 
 Do not blend remarketing and prospecting performance. Remarketing often looks more efficient because the audience already showed intent.
 
@@ -75,3 +78,4 @@ Do not blend remarketing and prospecting performance. Remarketing often looks mo
 - Overvaluing view-through sales without incrementality context.
 - Running one audience window for products with very different purchase cycles.
 - Ignoring frequency and creative fatigue.
+- Treating views remarketing and purchases remarketing as separate top-level targeting systems rather than audience subtypes.

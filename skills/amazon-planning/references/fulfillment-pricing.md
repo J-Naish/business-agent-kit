@@ -7,7 +7,8 @@ Use this reference to plan fulfillment method, pricing, fee risk, inventory, pro
 | Method | Role | Strengths | Risks |
 |---|---|---|---|
 | Fulfillment by Amazon (FBA) | Amazon stores, picks, packs, ships, and handles customer service/returns | Prime eligibility, delivery trust, operational scale, often stronger Featured Offer competitiveness | Fulfillment fees, storage fees, long-term inventory risk, less direct control |
-| Seller-fulfilled / Merchant Fulfilled Network | Seller handles storage and shipping | More control, useful for bulky/fragile/custom products, can reduce some fees | Delivery promise, customer service, tracking, and account health burden |
+| Fulfilled by Merchant (seller-fulfilled) | Seller handles storage and shipping | More control, useful for bulky/fragile/custom products, can reduce some fees | Delivery promise, customer service, tracking, and account health burden |
+| Seller Fulfilled Prime | Seller ships from its own operation while meeting Prime delivery standards where eligible | Prime badge without FBA; useful for strong logistics teams | Strict delivery, handling-time, volume, and performance requirements vary by marketplace |
 | Hybrid | FBA for core demand and seller-fulfilled backup or special SKUs | Balances resilience and control | Requires inventory discipline and channel coordination |
 
 ## FBA Planning
@@ -24,8 +25,12 @@ Watch:
 - Fulfillment fee by size/weight tier.
 - Monthly storage fees.
 - Aged inventory and removal/disposal fees.
-- Low inventory or placement-related fees where applicable.
+- Inbound Placement Service Fee or similar placement-related fees where applicable.
+- Low-Inventory-Level Fee or similar days-of-supply fees where applicable.
+- Storage Utilization Surcharge or other utilization-based storage fees where applicable.
 - Packaging, prep, labeling, and inbound placement requirements.
+
+Since 2024, several marketplaces, especially the U.S., have shifted more FBA cost pressure into inbound placement, low-inventory, aged-inventory, and storage-utilization fees. Treat these as first-class unit-economics inputs, not minor operational details.
 
 ## Pricing Strategy
 
@@ -51,6 +56,8 @@ The Featured Offer is influenced by factors such as:
 - Customer service and return performance.
 
 If a product repeatedly loses Featured Offer eligibility, diagnose offer quality before increasing ad spend.
+
+Do not treat Featured Offer as a static single-winner state. Amazon can rotate eligible offers, and ad eligibility or conversion can change when price, delivery promise, inventory, or seller performance shifts.
 
 ## Profit and Break-Even ACoS
 
@@ -101,6 +108,15 @@ Common levers include coupons, deals, price discounts, bundles, Brand Tailored P
 | Review count disadvantage | Temporary incentive through price, not review manipulation |
 | Repeat purchase | Audience-based promotion where available |
 | Inventory clearance | Discount plus controlled remarketing; protect brand perception |
+
+Also consider Amazon-specific promotion and fulfillment tools where available:
+
+- Subscribe & Save for replenishable categories.
+- Prime Exclusive Discount for Prime member offers and major retail events.
+- Lightning Deals, Best Deals, and event deals where eligibility and fees justify them.
+- Brand Tailored Promotions for Brand Registry-gated audience segments.
+- Buy with Prime or Multi-Channel Fulfillment when the brand also sends traffic to its own DTC site.
+- Amazon Warehousing & Distribution or upstream storage products when bulk storage and FBA replenishment economics matter.
 
 ## Common Mistakes
 

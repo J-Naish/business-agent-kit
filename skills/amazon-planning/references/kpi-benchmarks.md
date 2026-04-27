@@ -12,7 +12,7 @@ Use benchmarks as planning ranges, not promises. Amazon performance varies by ma
 | CPC | Cost Per Click | `ad spend / clicks` | Auction cost per click. |
 | CTR | Click-Through Rate | `clicks / impressions` | Ad relevance and creative/query fit. |
 | CVR | Conversion Rate | `orders / clicks` | Product detail page and offer conversion. |
-| NTB | New-to-Brand | Amazon's new-to-brand metric where available | Share or volume of purchases from customers new to the brand over Amazon's lookback window. |
+| NTB | New-to-Brand | Amazon's new-to-brand metric where available | Share or volume of purchases from customers new to the brand over Amazon's lookback window; sub-metrics vary by ad product. |
 | DPV | Detail Page View | Product detail page visit | Consideration signal. |
 
 ## Metric Relationships
@@ -27,13 +27,13 @@ If ACoS is too high, diagnose whether the issue is CPC, CVR, average selling pri
 
 ## ACoS and ROAS
 
-| ACoS | ROAS | Interpretation |
+| ACoS | ROAS | How to read it |
 |---|---|---|
-| 10% | 10.0x | Very efficient; often brand terms or mature winners |
-| 20% | 5.0x | Strong in many categories if margin supports it |
-| 30% | 3.3x | Common planning zone; check category and margin |
-| 40% | 2.5x | High for many products; may be acceptable during launch |
-| 50%+ | 2.0x or lower | Requires explicit strategic rationale and margin review |
+| 10% | 10.0x | Often efficient, but can still be overpriced if it is mostly cannibalized brand demand. |
+| 20% | 5.0x | Viability depends on category, margin, price, and objective; do not treat as universally strong. |
+| 30% | 3.3x | May be healthy for some categories or launches and too high for others. Compare to break-even ACoS and TACoS. |
+| 40% | 2.5x | Requires a growth, new-to-brand, rank, or launch rationale unless margins are high. |
+| 50%+ | 2.0x or lower | Usually needs explicit strategic rationale, budget cap, and post-test decision rule. |
 
 ## Break-Even ACoS
 
@@ -63,8 +63,32 @@ Use these as rough directional ranges only:
 | Sponsored Brands | Lower direct conversion than Sponsored Products in many accounts, but can drive Store visits, video engagement, and new-to-brand demand. |
 | Sponsored Display | Performance varies widely by contextual, audience, and remarketing setup. Separate prospecting from remarketing. |
 | Amazon DSP | Direct ROAS may be lower for upper funnel; assess reach, incrementality, and assisted demand. |
+| Streaming TV / Sponsored TV | Direct ROAS is usually the wrong primary read; assess reach, frequency, branded search, detail page views, and downstream assisted demand. |
 
 Avoid universal CPC, CTR, CVR, and ACoS claims unless sourced for the exact marketplace, category, and period.
+
+## Attribution and Measurement Changes
+
+Amazon attribution and reporting methods change. When reviewing year-over-year or pre/post performance, identify whether the account is using updated view attribution, shopping-signal-enhanced last-touch attribution, Multi-Touch Attribution beta, or unified reporting variants.
+
+Use these checks:
+
+- Separate click-attributed sales from view-through and assisted sales where reporting allows.
+- Compare tightened and broader view metrics only when both are available and clearly labeled.
+- Use AMC for path-to-purchase, frequency, audience overlap, new-to-brand, and incrementality questions where access exists.
+- Do not compare 2026 ROAS directly against older periods without checking whether attribution methodology changed.
+
+## Amazon Marketing Cloud and Audience Measurement
+
+AMC is no longer only a DSP-heavy enterprise topic. Amazon has expanded AMC access to sponsored ads advertisers, including self-service access in supported accounts and partner-mediated access in others. Use AMC when the plan needs:
+
+- Sponsored Products or Sponsored Brands audience bid boosting.
+- Sponsored Display audience activation.
+- DSP path-to-purchase and frequency analysis.
+- New-to-brand analysis across ad products.
+- Incrementality, overlap, or long-lookback cohort questions.
+
+Verify access, clean room permissions, lookback windows, and whether the user can operate AMC directly or through a partner.
 
 ## Diagnostic Rules
 

@@ -45,6 +45,8 @@ ProWidget USB-C Laptop Stand, Adjustable Aluminum Riser, Foldable Desk Stand for
 - Use shopper language, not only internal product names.
 - Include size, quantity, compatibility, or material when it changes purchase fit.
 
+Amazon tightened title policy in 2025 in several marketplaces and categories. Before writing final titles, verify category-specific character limits, repeated-word limits, and disallowed special characters. Many categories still allow up to roughly 200 characters, but some categories use shorter caps.
+
 ## Bullet Points
 
 Use bullet points to convert, not just describe.
@@ -85,6 +87,8 @@ Use the product description for:
 
 If A+ Content is available, let the description support details that A+ does not cover.
 
+Avoid legacy HTML formatting in product descriptions unless the target marketplace explicitly supports it. Amazon removed support for most HTML tags in product descriptions years ago; plain text with simple line breaks is the safer default.
+
 ## Backend Search Terms
 
 Use backend search terms for relevant synonyms and alternate phrasing that do not fit naturally in visible copy.
@@ -96,6 +100,7 @@ Guidelines:
 - Avoid competitor trademarks unless policy and local law allow it.
 - Do not include irrelevant high-volume terms.
 - Respect current byte/character limits in the target marketplace.
+- In the U.S., a conservative planning limit is roughly 249-250 bytes; exceeding the active limit can cause the field to be ignored or de-indexed. Verify the current category/schema limit before upload.
 
 ## A+ Content
 
@@ -112,11 +117,15 @@ Common module strategy:
 | Technical/spec | Reduce compatibility and fit uncertainty |
 | Brand story | Build trust when brand matters |
 
+Premium A+ Content is often eligibility-gated rather than purely budget-gated. Verify current eligibility, but common gates include Brand Registry, published Brand Story coverage, and a minimum number of approved A+ Content projects in a recent lookback window.
+
 ## Variations
 
 Use parent-child variations only when products are true variations under Amazon's category rules, such as size, color, flavor, quantity, or style.
 
 Do not merge unrelated products to pool reviews. Variation misuse can cause suppressed listings or account risk.
+
+Plan variations around the category's allowed variation themes, not around an internal merchandising preference. Variation theme mismatch is a common cause of listing rejection or later suppression.
 
 ## Amazon SEO
 
@@ -129,6 +138,17 @@ Amazon search performance is influenced by relevance and performance:
 | Shopper trust | Ratings, reviews, images, A+ Content, delivery promise, return confidence |
 
 Treat ads and SEO as a loop. Ads reveal converting queries; listings should absorb those learnings into visible copy and backend terms where appropriate.
+
+Use Search Query Performance, Brand Analytics, search term reports, and customer review language as the feedback loop for Amazon SEO where available. Search Query Performance is especially useful for seeing query-level impression share, click share, cart-add share, and purchase share relative to the marketplace.
+
+## Review and Trust Plan
+
+For new products, plan trust-building before scaling ads:
+
+- Amazon Vine where eligible and economically sensible.
+- Compliant review requests.
+- Clear support, warranty, return, and usage information.
+- Secondary images and A+ modules that answer the objections shoppers would otherwise take to reviews.
 
 ## Product Detail Page Audit
 

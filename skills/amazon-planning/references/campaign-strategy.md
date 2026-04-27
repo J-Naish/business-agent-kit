@@ -8,7 +8,7 @@ Amazon Ads works best when each campaign has a clear job.
 
 | Funnel role | Primary ad products | Main goal | Typical KPI |
 |---|---|---|---|
-| Awareness | Sponsored Brands video, Sponsored Brands Store spotlight, Sponsored Display reach, Amazon DSP | Create brand/category awareness | Reach, impressions, video completion, branded search |
+| Awareness | Sponsored Brands video, Sponsored Brands Store spotlight, Sponsored Display reach, Streaming TV / Sponsored TV, Amazon DSP Brand+ | Create brand/category awareness | Reach, impressions, video completion, branded search |
 | Consideration | Sponsored Brands, Sponsored Display contextual/audiences, DSP display/video | Bring shoppers to product detail pages or Store | CTR, detail page views, Store visits, new-to-brand |
 | Conversion | Sponsored Products, Sponsored Brands, Sponsored Display conversion optimization | Capture high-intent demand | CVR, ACoS, ROAS, orders |
 | Loyalty | Sponsored Display remarketing, DSP remarketing, Brand Tailored Promotions | Repeat purchase and basket expansion | Repeat rate, LTV, TACoS |
@@ -21,7 +21,7 @@ Early accounts usually need a performance core before broad expansion.
 |---|---|---|
 | Launch / first learning period | 60-80% Sponsored Products, 10-25% Sponsored Brands, 0-15% Sponsored Display | Mine search terms, test retail readiness, and establish controlled demand capture. |
 | Growth | 45-65% Sponsored Products, 20-35% Sponsored Brands, 10-25% Sponsored Display | Expand category presence and remarketing while keeping conversion engine strong. |
-| Full funnel | Sponsored ads plus DSP with role-based budgets | Use broader reach only when measurement and creative volume support it. |
+| Full funnel | Sponsored ads plus Streaming TV or DSP with role-based budgets | Use broader reach only when measurement and creative volume support it. |
 
 Adjust allocation based on category demand, margin, review count, price competitiveness, and inventory. Do not give every ad product a budget if the total spend is too small to generate learnings.
 
@@ -49,6 +49,7 @@ Separate campaigns when targets need different bids, budgets, match types, funne
 | Broad | Discovery; requires disciplined search term and negative keyword review. |
 | Automatic | Query and ASIN mining; split match groups when budget and data justify it. |
 | Product targeting | ASIN/category conquesting, defense, complementary placement, review/price comparison plays. |
+| Audience bid boosting | AMC-built or Amazon audiences applied as bid modifiers for Sponsored Products/Sponsored Brands where available. |
 
 ## Keyword Research
 
@@ -113,6 +114,16 @@ Move converting queries and ASINs into manual exact or product-targeting campaig
 ### Phase 4: Scale
 
 Increase budgets and bids on proven targets, expand Sponsored Brands and Sponsored Display, and test DSP only when the performance core and measurement are stable.
+
+### Phase 5: Full-Funnel Expansion
+
+When sponsored ads, inventory, and measurement are stable, consider:
+
+- Streaming TV / Sponsored TV for self-service upper-funnel reach.
+- Amazon DSP Brand+ for awareness and reach/frequency.
+- Amazon DSP Performance+ for AI-assisted ROAS or CPA optimization.
+- AMC audiences for Sponsored Products, Sponsored Brands, Sponsored Display, and DSP activation where available.
+- Incrementality testing or AMC analysis before treating view-through-heavy results as fully incremental.
 
 ## Seasonality
 
