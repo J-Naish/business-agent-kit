@@ -2,6 +2,8 @@
 
 Use this reference for existing-account improvement. Diagnose the failure mode before proposing changes. Most Google Ads problems are caused by one of five things: bad signal, wrong traffic, weak destination, unrealistic economics, or premature optimization.
 
+If the user provides account data in any form — exports, copied tables, screenshots, dashboards, CRM data, Merchant Center diagnostics, or metric summaries — read [account-data-diagnostics.md](account-data-diagnostics.md) first. That reference defines how to inspect source, date range, row grain, missing fields, Ads/GA4/CRM/feed reconciliation, and spend-weighted priority before using the symptom trees below.
+
 ## First-pass triage
 
 | Check | If broken | Priority |

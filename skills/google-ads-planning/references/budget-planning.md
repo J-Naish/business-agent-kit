@@ -105,3 +105,112 @@ When answering budget viability, include:
 3. Learning viability: whether Smart Bidding or automation is realistic.
 4. Structure implication: how many campaigns/ad groups are justified.
 5. What not to launch yet: campaign types that would be underfunded or unmeasurable.
+
+---
+
+## Bidding strategy escalation and de-escalation
+
+This section unpacks the bidding decision matrix in [SKILL.md](../SKILL.md). Use it to choose, change, and roll back bid strategies in real accounts.
+
+### How Smart Bidding learns
+
+- Learning lasts up to ~50 conversion events or ~3 conversion cycles, whichever comes first ([Google Ads Help](https://support.google.com/google-ads/answer/13020501)). Don't judge results before that window closes.
+- **Strategy switches** (Max Clicks → Max Conv, Max Conv → Max Conv Value, etc.) trigger a new learning period.
+- **Target-value changes** (the tCPA / tROAS number) do **not** trigger learning, but bids shift quickly. Prefer target adjustment over strategy switching when the goal is unchanged.
+- Bid strategy status `Limited` typically means low conversion volume, budget capping, or an aggressive target. Investigate the cause before adjusting.
+
+### Volume thresholds — official vs practitioner
+
+| Strategy | Official minimum | Practitioner standard |
+|---|---|---|
+| tCPA (Search/Shopping/Display) | No published minimum; "≥30 conversions" appears in measurement guidance, not migration rules | 30+ / 30d, with ≥3 conversion cycles and ≥4 weeks of stable data (Optmyzr) |
+| tROAS (Search/Shopping/Display) | **15 / 30d** ([Help](https://support.google.com/google-ads/answer/6268637)) | 50+ / 30d for stable optimization |
+| tROAS (Video Action) | **30 / 30d** | Same |
+| tROAS (Hotel) | **50 / week / campaign** | Same |
+| tROAS (Travel) | **50 / 7d / campaign** | Same |
+| Demand Gen — Max Conv → tCPA/tROAS | **50 conversions** before migration ([Help](https://support.google.com/google-ads/answer/14509385)) | Same |
+| Demand Gen value bidding | 50 conv with value / 35d (≥10 in last 7d), or 100 / 35d at account level | Same |
+
+### Conversion latency and the conversion window
+
+- App tROAS: choose a window covering ≥90% of conversions but **<30 days** ([Help](https://support.google.com/google-ads/answer/12073727)).
+- Other campaign types: no official window cap; rely on the bid strategy report's "conversion delay" column.
+- B2B sales cycles >30 days: extend window to 60–90d, but **GCLIDs expire at 90 days** — anything longer must be measured outside the platform (CRM, MMP) and fed back via OCI.
+- High-latency accounts should not be judged on rolling 7-day windows; the algorithm down-weights recent click data automatically.
+
+### Portfolio bid strategies
+
+Use a portfolio strategy when:
+
+- Multiple campaigns share the same offer and CPA/ROAS goal.
+- You need bid floors / ceilings (only available in portfolios).
+- Combined volume across campaigns reaches the threshold even if no single campaign does.
+
+Avoid when campaigns have different KPIs, margins, or per-campaign budget control. **P-MAX cannot use portfolio bid strategies** ([Help](https://support.google.com/google-ads/answer/6263072)) — keep it on Max Conv / Max Conv Value at lower volume.
+
+### Rollback procedure
+
+The "Google Ads death spiral" / "CPA bottleneck": tight target → suppressed bids → fewer auctions → falling conversions → algorithm tightens further. Once the downgrade signals in SKILL.md trigger, run this sequence:
+
+1. **Stop scaling damage.** Remove the tCPA/tROAS target. The strategy stays Maximize Conversions / Maximize Conversion Value with no target.
+2. **Wait 2–3 weeks** for volume and CPA to stabilize on the looser strategy. Don't change other settings during this window.
+3. **Reset the target above the new average**, not at the old target. The new average reflects the actual auction reality.
+4. **Stair-step from there**: ±10–15% changes, ≥2 weeks between moves.
+
+Never set the initial tCPA below the campaign's current average — this is the most cited cause of instant volume collapse.
+
+### Lead-quality gate (lead-gen specific)
+
+Smart Bidding optimizes for whatever you mark as Primary. With raw form-fill conversions, it will find the cheapest leads in the cheapest geos and tank SQL rate while CPA looks great. Before enabling tCPA on a lead-gen campaign:
+
+- Implement Offline Conversion Import or Enhanced Conversions for Leads (ECfL preferred for new builds).
+- Send back the deepest reliable stage with enough volume — typically SQL or Opportunity, not raw lead.
+- Use campaign-specific conversion goals; do not mix mid-funnel and bottom-funnel actions in the same Primary set ("goal hijacking").
+
+### Value-based bidding maturity ladder
+
+Move up only when the lower rung produces reliable signal. Pass *margin* or *contribution*, not gross revenue.
+
+| Rung | Signal | Use when |
+|---|---|---|
+| 1. CPA | Conversion count | Volume thin, no value data |
+| 2. CPS (cost per sale) | Sales / qualified leads only | Multiple Primary CVs would dilute |
+| 3. ROAS | Revenue | Stable AOV, mixed product mix |
+| 4. Profit-aware ROAS | Margin or contribution | Margins vary by SKU, geo, customer type |
+| 5. LTV-aware | Predicted LTV | Repeat purchase or subscription business |
+
+Worked example (Vallaeys/Optmyzr): B2B with $3,000 AOV, 45% margin, 20% lead-to-close → conversion value passed = $3,000 × 0.45 × 0.20 = $270/lead. Add expected expansion ($5,000 LTV) → ~$720/lead.
+
+Use **value rules** to apply geo / device / audience multipliers for what Smart Bidding can't observe — margin differences, B2B vs B2C mix, repeat-customer probability.
+
+### Seasonality adjustments and Data exclusions
+
+| Tool | Use for | Don't use for |
+|---|---|---|
+| **Seasonality adjustment** | Predictable 1–7 day spikes (BFCM, flash sale, scheduled event). Official cap is 14 days; effect decays after 4–7 days in practice ([JumpFly](https://www.jumpfly.com/blog/control-your-bids-with-google-ads-data-exclusions-and-seasonality-adjustments/)) | Ongoing seasons (e.g. all of Q4) — Smart Bidding learns those natively. Permanent CR shifts. |
+| **Data exclusion** | Periods of broken tracking, pause, or known measurement gaps | Underperformance you'd like to forget |
+
+Pattern for major events: seasonality adjustment **during** → data exclusion **after** to keep post-event noise out of training.
+
+### Budget-to-bid ratio — full table
+
+| Campaign type | Daily-budget floor | Source |
+|---|---|---|
+| Search / Shopping | 3–5× tCPA, 1× absolute minimum | Practitioner consensus (StoreGrowers, 30characters) |
+| P-MAX | 3× tCPA or $150/day floor | Practitioner consensus (SEJ) |
+| Demand Gen | 20× tCPA or $100/day, whichever higher | Practitioner synthesis (Lunio) |
+| App ACi tCPI | ≥50× tCPI bid | Official ([Help](https://support.google.com/google-ads/answer/12073727)) |
+| App ACi tCPA | ≥10× bid | Official |
+| App ACe tCPA | ≥15× bid | Official |
+| Shopping / P-MAX (no history) | 2× expected target spend during learning | Official ([Help](https://support.google.com/google-ads/answer/15624876)) |
+
+Click volume matters more than absolute budget multiple: a $200 budget at $5 CPCs gives Smart Bidding more learning fuel than $500 at $40 CPCs (Sarah Stemen). Verify the floor produces meaningful click volume — adjust if it doesn't.
+
+### Decision priority when budget is tight
+
+When budget can't cover all the floors above, prioritize in this order:
+
+1. Fund the campaign with the cleanest conversion signal at full ratio.
+2. Brand search at minimal but non-zero spend (assume some would convert organically).
+3. Other campaigns at 1× tCPA only if conversion signal is reliable.
+4. Cut split-tests and expansion campaigns before underfunding the primary loop.

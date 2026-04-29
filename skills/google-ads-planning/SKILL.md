@@ -156,16 +156,19 @@ Determine which of the two situations applies. If unclear, ask.
 
 For existing accounts, run a diagnostic after Step 1. Use [references/diagnostic-decision-trees.md](references/diagnostic-decision-trees.md) to rank likely root causes before proposing changes.
 
+If the user provides account data in any form — CSV/XLSX exports, copied tables, screenshots, Looker Studio charts, CRM reports, Merchant Center diagnostics, API extracts, or metric summaries — first use [references/account-data-diagnostics.md](references/account-data-diagnostics.md). Do not diagnose from platform KPIs alone when Ads, GA4, CRM/POS/app, or Merchant Center data can confirm whether spend is creating real business outcomes.
+
 1. **Inventory** — Account structure, list of running campaigns, current KPI performance.
-2. **Issue identification** — Hear the user's pain point, then audit with the diagnostic decision trees:
+2. **Data read, when available** — Identify source, date range, row grain, filters, attribution/date basis, conversion definitions, and missing fields. Separate supported findings from limitations.
+3. **Issue identification** — Hear the user's pain point, then audit with the diagnostic decision trees:
    - Is the bid strategy appropriate for the conversion volume? (Smart bidding starves with too few conversions.)
    - Account-structure issues — over-fragmentation of campaigns? mixed themes inside an ad group?
    - Are negative keywords adequate? Is the search-terms report showing wasted clicks?
    - Is conversion tracking set up correctly?
    - Any ad groups with low Quality Score?
    - Is budget allocated to the high-performing campaigns?
-3. **Improvement proposals** — Ranked actions with evidence, expected stabilization window, and changes to avoid.
-4. **Execution** — Document the agreed changes in whatever form fits (conversational, structured response, or written deliverable).
+4. **Improvement proposals** — Ranked actions with evidence, expected stabilization window, and changes to avoid.
+5. **Execution** — Document the agreed changes in whatever form fits (conversational, structured response, or written deliverable).
 
 ---
 
@@ -389,18 +392,69 @@ Establish a single naming convention before launch. Naming directly impacts filt
 
 ### Bidding strategy by phase
 
-| Phase | Condition | Recommended strategy |
+Don't judge on conversion volume alone. Check four axes before changing the bid strategy:
+
+1. **Volume** — primary conversions in the last 30 days
+2. **Latency** — median click → conversion time vs the conversion window
+3. **CPA stability** — coefficient of variation σ/μ over the last 8 weeks; high variance breaks Smart Bidding targets
+4. **Signal depth** — purchase / SQL / qualified-lead vs micro-CVs
+
+Since 2022, tCPA and tROAS are **optional targets on Maximize Conversions / Maximize Conversion Value**, not standalone strategies. Strategy switches trigger a new learning period; *target-value changes do not* ([Google Ads Help](https://support.google.com/google-ads/answer/13020501)). Prefer adjusting the target over switching strategies when the goal is unchanged.
+
+| Phase | Volume / 30d | Other gates | Strategy |
+|---|---|---|---|
+| 1. Pre-data | 0 CV | – | Manual CPC / Maximize Clicks |
+| 2. Learn | <15 | primary CV live | Maximize Conversions (no target) |
+| 3a. Stabilize | 15–30 | – | Maximize Conversions; consider portfolio if multiple campaigns share the goal |
+| 3b. Optimize | 30+, ≥3 conversion cycles | latency <14d, σ/μ <0.4, primary = purchase/SQL | Add tCPA target at observed average — never below |
+| 3c. Hold | 30+ but latency >30d or σ/μ >0.4 | – | Stay on Maximize Conversions; fix the signal first (OCI / ECfL) |
+| 4a. Value-warm | 50+ | values reliable | Maximize Conversion Value (no target) |
+| 4b. Value-target | 50+ for 30+ days | margin-adjusted value | Add tROAS target |
+
+The volumes above are practitioner thresholds. Google's published minimum for tROAS on Search/Shopping/Display is **15 conversions / 30d** ([Google Ads Help](https://support.google.com/google-ads/answer/6268637)); the "30 / 50" widely repeated for tCPA / tROAS comes from measurement-stability advice (≥30 conversions to evaluate Smart Bidding fairly), not from a transition rule.
+
+#### Per-campaign-type thresholds
+
+| Campaign type | tCPA viable | tROAS viable | Notes |
+|---|---|---|---|
+| Search (non-brand) | 30 / 30d | 50 / 30d | Always separate from brand — brand inflates apparent ROAS |
+| Shopping (Standard) | 20 / 30d | 40 / 30d | Feed quality is upstream of bidding |
+| **P-MAX** | 50 / 30d (struggles below 30, thrives above 60) | 75–100 / 30d | Portfolio bid strategies **not supported** |
+| Demand Gen | 50 / 30d (Google's published migration threshold) | only with reliable values | Use tCPC for traffic-style goals where tCPA is too aggressive |
+| Video (Action) | 50 / 30d | 30 / 30d (Google minimum) | tROAS only with reliable conversion values |
+| App | tCPI from launch / tCPA after baseline | tROAS with in-app value | Budget rules below |
+
+#### Downgrade signals
+
+Smart Bidding can enter a "death spiral": tight targets suppress bids, volume collapses, the algorithm tightens further. Watch for these signals and roll back before damage scales:
+
+| Signal | Likely cause | Action |
 |---|---|---|
-| 1. Launch | No conversion data yet | Manual CPC or Maximize Clicks |
-| 2. Data collection | Conversion tracking live | Maximize Conversions |
-| 3. Optimization | 30+ conversions in 30 days | Target CPA (start from observed average CPA) |
-| 4. Scale | 50+ conversions in 50 days, conversion value available | Target ROAS / Maximize Conversion Value |
+| Daily budget under-spent >20% for 7+ days | Target too tight; algorithm priced out | Loosen target by 10–15% or remove it |
+| Impression-share-rank loss climbing while CPA looks fine | Algorithm priced out | Same |
+| Actual CPA drifting up despite a flat target | Conversion signal eroded | Audit signal (lead quality, value rules), then reset target above the new average |
+| Volume drops below 15 / 30d | Below Google's floor | Drop the target → Max Conversions for 2–3 weeks → re-introduce target above the new average |
+| Lead CPA stable but SQL rate falling | Algorithm finding cheap, low-quality leads | OCI / ECfL with SQL or opportunity stage as the optimization target, not raw form fills |
+| One-off conversion drop (tag broken, promo ended) | Tracking gap or transient event | Apply Data Exclusion ([Google Ads Help](https://support.google.com/google-ads/answer/10370710)) — do not change strategy |
 
-When changing bid settings:
+When changing targets:
 
-- Avoid major changes during the 2–3 week learning period.
-- Don't move Target CPA / ROAS by more than 20% at a time.
-- Treat budget-to-target ratios as practical ranges, not platform rules: below 1× target CPA/day is usually too slow, 1–3× can work for narrow tests, 3–5× is a healthier performance budget, and 10×+ is for aggressive scaling or faster learning when economics allow.
+- Stair-step: ±10–15% per change, wait ≥2 weeks (one full learning cycle).
+- Never set initial tCPA below the campaign's current average — the most common cause of instant volume collapse.
+
+#### Budget-to-bid ratio
+
+| Campaign type | Daily-budget floor | Source |
+|---|---|---|
+| Search / Shopping | 3–5× tCPA (1× minimum) | Practitioner consensus |
+| P-MAX | 3× tCPA or $150/day, whichever higher | Practitioner consensus |
+| Demand Gen | 20× tCPA or $100/day, whichever higher | Practitioner consensus |
+| App ACi tCPI | **≥50× tCPI bid** | Official ([Google Ads Help](https://support.google.com/google-ads/answer/12073727)) |
+| App ACi tCPA | **≥10× bid** | Official |
+| App ACe tCPA | **≥15× bid** | Official |
+| Shopping / P-MAX (no history) | **2× target spend** while learning settles | Official ([Google Ads Help](https://support.google.com/google-ads/answer/15624876)) |
+
+For the rollback procedure, value-based bidding ladder, seasonality-adjustment limits, and lead-quality gating, see [references/budget-planning.md](references/budget-planning.md).
 
 ### Conversion design
 
@@ -463,9 +517,10 @@ Use the cadence table in [Practice-first stance](#cadence) as the canonical oper
 |---|---|
 | Conversion tracking inconsistent | Verify with GTM Preview + GA4 DebugView |
 | Enhanced Conversions not enabled | Turn it on — cookie-restriction defense is required |
-| Bid targets unrealistic | Start from observed historical numbers, then tighten gradually |
-| Frequent changes during learning period | Hold off on big changes for 2–3 weeks after a change |
-| P-MAX underbudgeted | Keep at least 1–3× target CPA/day for a narrow test and 3–5×+ when you expect stable learning |
+| Initial tCPA set below current average CPA | Start at observed average or above; never below — instant volume collapse |
+| Frequent changes during learning | Stair-step targets ±10–15% with ≥2 weeks between changes; strategy switches re-trigger learning, target-value changes don't |
+| P-MAX underbudgeted | Floor at 3× tCPA or $150/day. Below ~30 conv/30d, drop the tCPA target rather than starve the campaign |
+| Goal hijacking — multiple Primary CVs of mixed depth | Keep one primary action per campaign goal; demote micro-CVs to Secondary |
 | Judging on VTC / EVC-inclusive ROAS only | Also evaluate click-only, EVC, and business-source-of-truth results in parallel |
 | Mismatched ad → LP | Provide a dedicated LP per ad group |
 
@@ -498,6 +553,7 @@ Use these inside the workflow, not just as optional reading:
 | [references/business-model-playbooks.md](references/business-model-playbooks.md) | Choosing strategy by business model | B2B lead gen, local service, e-commerce, high-ticket, app, store visit |
 | [references/budget-planning.md](references/budget-planning.md) | Deciding what the budget can realistically support | CPA/ROAS economics, expected CV volume, campaign mix viability |
 | [references/measurement.md](references/measurement.md) | Designing CV signals, choosing attribution, planning incrementality, diagnosing measurement issues | Consent Mode v2, Enhanced Conversions, OCI/ECfL, modeled CV, VTC policy, attribution, lift studies, iOS/SKAN, Tag Gateway/sGTM |
+| [references/account-data-diagnostics.md](references/account-data-diagnostics.md) | Interpreting account data supplied as CSV/XLSX, screenshots, copied tables, dashboards, CRM/feed reports, or metric summaries | Data intake, required fields, Ads/GA4/CRM/Merchant reconciliation, practical if-this-then-that decisions, prioritization |
 | [references/diagnostic-decision-trees.md](references/diagnostic-decision-trees.md) | Improving an existing account or diagnosing poor performance | Spend/CV issues, lead quality, CTR/CVR, CPC increases, P-MAX/Demand Gen traps |
 | [references/creative-strategy.md](references/creative-strategy.md) | Designing assets, copy, creative briefs, or production handoffs | Angles, proof, objections, format fit, P-MAX/Demand Gen/video creative systems, shared asset-size baselines |
 
