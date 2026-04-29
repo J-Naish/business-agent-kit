@@ -99,9 +99,7 @@ Use [creative-strategy.md](creative-strategy.md#demand-gen-baseline) for product
 | **YouTube Shorts** | CPM | Vertical image / video | Inserted between Shorts; 9:16 recommended |
 | **Discover** | CPC | Image / carousel | Google app feed; mobile-primary |
 | **Gmail** | CPC | Image | Promotions / Social tabs; expandable |
-| **GDN** (added April 2025) | CPM / CPC | Image | 2M+ sites and apps ([Google Ads Help](https://support.google.com/google-ads/answer/15890515?hl=en)) |
-| **Google Video Partners** | CPM | Video | Third-party video inventory |
-| **Google Maps** | — | Promoted pins | Shown during local search. Availability can vary by account, country, and rollout status |
+| **GDN** (added April 2025) | CPM / CPC | Image / video | Expanded Demand Gen inventory across 3M+ sites and apps; Google Video Partners within Demand Gen was renamed to GDN ([Google Ads Help](https://support.google.com/google-ads/answer/15890515?hl=en)) |
 
 ### 3-2. Surface-by-surface selection (March 2025+)
 
@@ -455,7 +453,7 @@ Per-asset performance labels:
 |---|---|---|
 | **Funnel position** | Top–mid (demand creation, consideration) | Full funnel (especially CV maximization) |
 | **Audience control** | High (parameters specified) | Low (full AI automation) |
-| **Surfaces** | YouTube / Discover / Gmail / GDN / Maps where available | All 7 channels (including Search) |
+| **Surfaces** | YouTube / Discover / Gmail / GDN | All 7 channels (including Search and Maps) |
 | **Formats** | Image / video / carousel / product feed | Text / image / video |
 | **Lookalike** | Available (Demand Gen exclusive) | Not available |
 | **Reporting transparency** | High (per surface, per asset) | Improving but limited |
@@ -470,7 +468,7 @@ Per-asset performance labels:
 
 | Item | Demand Gen | Display |
 |---|---|---|
-| **Surfaces** | YouTube + Discover + Gmail + GDN + Maps where available | GDN only |
+| **Surfaces** | YouTube + Discover + Gmail + GDN | GDN only |
 | **Formats** | Image / video / carousel / product feed | Banner / rich media / video |
 | **Lookalike** | Available | Not available (use Optimized Targeting instead) |
 | **Content targeting** | Not available | Available (KW / topic / placement specification) |

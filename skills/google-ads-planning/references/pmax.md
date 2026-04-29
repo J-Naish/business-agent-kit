@@ -297,7 +297,7 @@ Search themes guide P-MAX's Search-channel delivery. Unlike Search-campaign keyw
 
 | Item | Spec |
 |------|------|
-| Cap | 25 themes per asset group |
+| Cap | 50 themes per asset group |
 | Behavior | In addition to AI-predicted matching, also expands to terms within the specified themes (additive) |
 | Match types | None — the AI auto-expands to related terms |
 
@@ -336,11 +336,11 @@ P-MAX supports self-managed campaign-level negative keywords for Search and Shop
 
 | Item | Spec |
 |------|------|
-| Cap | Verify in the Google Ads UI before implementation; official Help confirms the feature but does not provide a stable campaign-level cap |
+| Cap | 10,000 negative keywords per campaign |
 | Shared lists | Supported (apply to multiple P-MAX campaigns at once) |
 | Scope | Primarily affects Search and Shopping channels (no effect on Display, YouTube, etc.) |
 
-> Caps may change. Verify the current cap in the Google Ads UI under Campaign → Negative keywords.
+> Account-level negatives remain capped separately at 1,000. Verify the current UI before large bulk operations because limits can change.
 
 **Negative-keyword strategy:**
 

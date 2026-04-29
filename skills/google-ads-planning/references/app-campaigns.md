@@ -476,7 +476,7 @@ Apple's privacy-preserving framework. Aggregates attribution at a population lev
 
 ### 9-5. AdAttributionKit (AAK) migration
 
-Apple announced AdAttributionKit (AAK) at WWDC 2025 as the successor to SKAN. MMP and ad-platform support is still in flux — check the latest status periodically.
+Apple introduced AdAttributionKit (AAK) at WWDC 2024 as Apple's newer privacy-preserving attribution framework built on SKAN fundamentals. WWDC 2025 added AAK updates, including overlapping conversion-window support and additional postback controls. MMP and ad-platform support is still in flux — check the latest status periodically.
 
 ---
 

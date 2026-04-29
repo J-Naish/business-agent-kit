@@ -276,11 +276,14 @@ Practical rule: **import at least daily**, ideally hourly via API. Weekly batche
 
 ECfL is more durable than OCI: it works without a stored click ID, supports cross-device matching, and is the canonical path for new builds.
 
+Upload timing differs by product: standard OCI imports can use GCLIDs retained for up to 90 days, while enhanced conversions for leads imports uploaded more than 63 days after the associated last click are not imported.
+
 ### Common rejection / failure modes
 
 | Symptom | Cause | Fix |
 |---|---|---|
-| "Click ID outside 90-day window" | gclid older than 90 days | Upload sooner; for very long sales cycles, switch to ECfL (no click ID needed) |
+| "Click ID outside 90-day window" | gclid older than 90 days | Upload sooner; for very long sales cycles, import a closer qualified-stage proxy or use ECfL where user-provided data is captured early |
+| "Enhanced conversions for leads import too old" | ECfL offline event uploaded more than 63 days after the associated last click | Upload daily or import a closer funnel event; do not design ECfL around >63-day upload latency |
 | "Conversion time before click time" | Timezone misconfiguration | Verify CRM and Google Ads use the same time zone; add 1–2 day buffer; do not round timestamps |
 | "Click not yet processed" | Trying to import a CV within ~6 hours of click | Delay import 6+ hours; batch hourly is fine |
 | "No 'Import from clicks' conversion action" | CV action created after the click occurred | Backfill is impossible; align CV action setup with launch date |
@@ -414,7 +417,7 @@ DDA evaluates the full path across mobile/desktop/tablet, across Search, Display
 |---|---|---|
 | Click-through | 1–90 days | **30 days** (most CV actions) |
 | View-through | 1–30 days | **1 day** |
-| Engaged-view | 1–30 days | **1 day** for Video Action / Demand Gen / P-MAX; **3 days** for store visits / store sales |
+| Engaged-view | 1–30 days | **3 days** for web conversions / offline imports and store visits / store sales; **1 day** for Video Action / Demand Gen / P-MAX and Web to App Connect in-app actions; **2 days** for ACi; **1 day** for ACe |
 
 Choose the window that matches conversion latency, not vanity. Long windows inflate counts and slow learning; short windows under-count high-consideration purchases.
 
@@ -731,7 +734,7 @@ Inside Google Ads, lift studies measure Google's view of Google. They do not cap
 | Demand Gen CPA looks bad | Last-click CPA may understate mid-funnel value, while Platform Comparable or VTC-optimized views may overstate it | Segment click vs EVC vs impression; consider blended CPA against business outcome |
 | PMax revenue great, business revenue flat | Brand capture, remarketing bias, EVC/VTC interpretation, low-margin product mix | Brand exclusions, NCA mode, segment by ad event type and margin (see [pmax.md §7](pmax.md)) |
 | iOS App tROAS unstable | Volume below 30–50 daily revenue conversions; SKAN signal sparsity | Drop back to ACi tCPA, deepen ATT prompt UX, enable ICM |
-| EEA campaigns silently lost remarketing | CMv2 non-compliant since July 2025 enforcement | Re-implement CMv2 properly; lost period is non-recoverable |
+| EEA/UK/CH campaigns silently lost remarketing | CMv2 / required consent signals missing for users in regulated regions | Re-implement CMv2 properly; lost period is non-recoverable |
 | Conversion adjustments not affecting bids | Adjustments arriving > 7 days post-conversion | Move to within-7-day import cadence; for very long cycles, switch Primary to a closer proxy |
 
 ---

@@ -83,7 +83,7 @@ The legacy SKAG (one keyword per ad group) approach is no longer recommended for
 | Item | Recommendation |
 |------|------|
 | KWs per ad group | Enough to express one shared theme and intent without fragmenting learning |
-| Ads per ad group | 3–5 RSAs |
+| Ads per ad group | Up to 3 enabled RSAs (account hard limit per [Google Ads Help](https://support.google.com/google-ads/answer/6372658)); 2–3 with distinct messages is the practical default |
 | Ad groups per campaign | As few as the business logic allows; add groups when theme, LP, economics, or message differ |
 | Relevance | Ad copy and LP must closely match the theme of each ad group |
 
@@ -358,7 +358,7 @@ Use Google Ads' **Seasonality Adjustments** feature.
 
 ### Combining with Dynamic Search Ads (DSA)
 
-DSA is being upgraded into AI Max, so verify current creation and migration behavior before designing around DSA as a long-term structure ([Google Ads Help](https://support.google.com/google-ads/answer/2471185?hl=en), [Google launch update](https://blog.google/products/ads-commerce/dsa-upgrade-to-ai-max-2026/)).
+DSA is being upgraded into AI Max. Starting in September 2026, campaigns using Dynamic Search Ads, automatically created assets, and the campaign-level broad match setting are scheduled to upgrade to AI Max automatically ([Google Ads Help](https://support.google.com/google-ads/answer/2471185?hl=en), [Google launch update](https://blog.google/products/ads-commerce/dsa-upgrade-to-ai-max-2026/)).
 
 - Strong pattern: cover core KWs with RSA, discover KW gaps with DSA
 - They can coexist in the same campaign (but not in the same ad group)
@@ -430,7 +430,7 @@ In RSAs, mix both styles in your headlines and let Google's AI find the best com
 
 ## 6. Ad assets
 
-Setting four or more types of assets is the standard recommendation. Assets are free, and they help Quality Score and Ad Rank directly.
+Setting four or more types of assets is the standard recommendation. Assets are free, and their expected impact can affect Ad Rank and eligibility for richer ad formats.
 
 ### Core assets and recommended setup
 
@@ -458,7 +458,7 @@ Setting four or more types of assets is the standard recommendation. Assets are 
 
 ### Ad / LP consistency
 
-When the three Quality Score factors (expected CTR, ad relevance, LP experience) are all "above average", CPC tends to drop substantially and CVR rises substantially compared to "below average" ads. Exact magnitude varies by industry / account / KW competition, but improving Quality Score is one of the highest-ROI levers available.
+When the three Quality Score components (expected CTR, ad relevance, LP experience) are all "above average", the underlying ad quality is usually strong. Higher ad quality can improve eligibility, Ad Rank, and CPC efficiency, but the 1–10 Quality Score itself is a diagnostic metric, not an auction input.
 
 ### LP design fundamentals
 
@@ -492,7 +492,7 @@ When the three Quality Score factors (expected CTR, ad relevance, LP experience)
 
 ### Quality Score and the LP
 
-From 2025 onward, Google's new prediction model puts more weight on LP UX and transparency:
+Quality Score and ad-quality diagnostics still center on relevance and landing-page experience:
 
 - Content relevance (ad KW vs. LP content alignment)
 - Easy navigation
@@ -825,7 +825,7 @@ Set a total budget for a defined period and let Google's AI optimize daily alloc
 | 2 | No negative KWs | Apply a generic negative list from day one (see [Appendix A](#appendix-a-starter-negative-keyword-set)). Review search terms weekly |
 | 3 | Starting with Broad everywhere | Begin with Exact / Phrase, expand in stages |
 | 4 | Cramming unrelated KWs into one ad group | Group keywords around a single intent, LP, and message |
-| 5 | Only one ad variant | 3–5 RSAs per ad group with distinct messages |
+| 5 | Only one ad variant | 2–3 RSAs per ad group with distinct messages (account hard limit is 3 enabled RSAs) |
 | 6 | LP is the homepage | Build a dedicated LP per ad-group theme |
 | 7 | Blindly accepting platform recommendations | Use them as input but decide based on your own data and goals |
 | 8 | Smart Bidding with too little CV data | Build more true conversion volume first. Use micro-CVs for observation unless a proxy is proven to predict quality |
@@ -847,7 +847,7 @@ Set a total budget for a defined period and let Google's AI optimize daily alloc
 
 ## 14. AI Max for Search Campaigns
 
-A layer that adds AI-assisted matching, ad-copy generation, and landing-page selection to Search campaigns ([Google Ads Help](https://support.google.com/google-ads/answer/15910187?hl=en)). Availability and controls can vary by account, so verify in the Google Ads UI before planning around it.
+A generally available layer that adds AI-assisted matching, ad-copy generation, and landing-page selection to Search campaigns ([Google Ads Help](https://support.google.com/google-ads/answer/15910187?hl=en)). UI access is broadly available, while API / Editor support and specific controls may still vary, so verify operational support before relying on bulk workflows.
 
 ### Three core features
 

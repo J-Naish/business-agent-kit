@@ -85,7 +85,7 @@ Attributes that must be set on every product.
 | `description` | Product description | Up to 5,000 chars. Cover features, materials, and use cases |
 | `link` | Product detail page URL | Must match the landing page exactly |
 | `image_link` | Main product image URL | Details in Section 4 |
-| `availability` | Inventory status | One of `in_stock` / `out_of_stock` / `preorder` |
+| `availability` | Inventory status | One of `in_stock` / `out_of_stock` / `preorder` / `backorder` |
 | `price` | Price | With currency code (e.g. `2980 USD`). Must match the LP price exactly |
 
 ### 2-2. Conditionally-required attributes
@@ -570,11 +570,11 @@ Check at the product level periodically:
 | Item | Standard Shopping | Performance Max |
 |---|---|---|
 | Surfaces | Search results, Shopping tab, image search | Search, Shopping, Display, YouTube, Gmail, Discover, Maps |
-| Keyword control | Negative keywords supported | Campaign-level negatives supported (since January 2025; cap of 10,000). Shared negative-keyword lists supported (since August 2025) |
+| Keyword control | Negative keywords supported | Campaign-level negatives supported; current campaign-level cap is 10,000. Shared negative-keyword lists are supported. |
 | Search-terms report | Detailed search-terms report | "Search-term insights" (overview level) |
 | Bid control | Manual CPC supported | Smart Bidding only |
 | Product-group control | Detailed product-group settings | Asset groups + listing groups |
-| Required assets | Product feed only | Product feed + text + images + video |
+| Required assets | Product feed only | Product feed only is sufficient to launch; text / image / video assets are auto-generated and can be supplied to broaden surface coverage ([Google Ads Help](https://support.google.com/google-ads/answer/10724817)) |
 | Recommended CV count | No firm minimum | 30+ per month recommended |
 | Transparency | High | Lower than Standard Shopping |
 
