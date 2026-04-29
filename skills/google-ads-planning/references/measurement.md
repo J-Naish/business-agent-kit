@@ -135,15 +135,12 @@ Practical default: **Advanced** for most Google Ads accounts targeting EEA/UK, b
 
 ### Regional requirements
 
-| Region | CMv2 status | Consequence of non-compliance |
-|---|---|---|
-| **EEA (27 countries) + UK + Switzerland** | **Mandatory** for personalized advertising and audience features ([Google Ads Help](https://support.google.com/google-ads/answer/13695607?hl=en)) | Remarketing audiences not populated, personalized ads disabled, conversion tracking degraded for affected traffic, no backfill of lost data |
-| United States | Not mandatory at federal or Google level | Google "recommends." State laws (CPRA, VCDPA, etc.) require notice/opt-out separately |
-| Brazil (LGPD) | Not gated by Google | LGPD enforcement separate; ANPD fines escalating |
-| Japan (APPI) | Not gated by Google | APPI cross-border-transfer disclosure rules apply separately |
-| Canada (PIPEDA / Quebec Law 25) | Not gated by Google | Provincial laws require their own consent flows |
+For Google Ads planning, the main operational gating is EEA / UK / Switzerland traffic. Consent Mode v2 is mandatory there for personalized advertising and audience features ([Google Ads Help](https://support.google.com/google-ads/answer/13695607?hl=en)).
 
-The EEA-only gating has held since the March 2024 deadline; speculation about expanding gating to other regions in 2025 did not materialize.
+| Region | Planning consequence |
+|---|---|
+| **EEA + UK + Switzerland** | Remarketing audiences, personalized ads, conversion modeling, EC, and audience features can degrade or stop working if required consent signals are missing. Lost signal is not backfilled. |
+| Other regions | Confirm local privacy and consent requirements separately with legal / privacy owners. Do not assume CMv2 replaces local compliance work. |
 
 ### Modeling thresholds
 
@@ -598,7 +595,7 @@ Inside Google Ads, lift studies measure Google's view of Google. They do not cap
 | PMax incremental on top of Search/Shopping? | **PMax Uplift Experiment** | $5k+ | 4–6 weeks | **Self-serve** |
 | Multi-channel campaign incremental nationally? | **Geo holdout** (GeoLift / CausalImpact) | 6+ months geo data, ≥ 20 geos | 4–8 weeks test + analysis | DIY / agency |
 | Did email/CRM push drive net-new revenue? | **Customer Match holdout** | ≥ 50k list members | 2–4 weeks | DIY |
-| Right budget split across channels next year? | **MMM** (Meridian / Robyn) | 2 yrs weekly data | 6–12 weeks initial build | DIY / vendor |
+| Right budget split across channels next year? | **MMM** | 2 yrs weekly data | 6–12 weeks initial build | Analytics team / vendor |
 | Did revenue change after we turned X on? | **CausalImpact pre/post** | 3+ months pre-period, control series | 2–4 weeks post | DIY |
 
 ### Conversion Lift (Google Ads native)
@@ -611,8 +608,8 @@ Inside Google Ads, lift studies measure Google's view of Google. They do not cap
 
 ### Brand Lift
 
-- **US minimum**: $10,000 for basic Brand Lift; combined Brand + Search Lift = **also $10,000** (not additive).
-- **Recommended**: ≥ 1.5M impressions across measured campaigns.
+- **Minimums vary by country, account, measured metric, and buying path.** Confirm eligibility, spend thresholds, and setup path in the UI or with the Google rep before promising a Brand Lift study.
+- **Recommended planning posture**: enough impressions and budget to detect the selected metric; avoid promising a readout for very small reach campaigns.
 - **Measures**: ad recall, awareness, consideration, favorability, brand interest, purchase intent, brand association.
 - **Methodology**: in-product survey, exposed vs. control users.
 - **Self-serve**: NOT self-serve in most accounts — requires Google account rep.
@@ -638,7 +635,7 @@ Inside Google Ads, lift studies measure Google's view of Google. They do not cap
 **GeoLift minimum data**: ≥ 6 months daily or ≥ 1 year weekly geo-level data; ≥ 20 distinct geos; clear KPI time series.
 
 **Common pitfalls**:
-- Spillover between adjacent DMAs contaminating the control
+- Spillover between adjacent markets / regions contaminating the control
 - Other campaigns running in treated geos
 - Pre-period too short for stable counterfactual fit
 - Treating a single test as conclusive — geo tests have wide CIs; replicate
@@ -653,25 +650,21 @@ Inside Google Ads, lift studies measure Google's view of Google. They do not cap
 
 **Cross-platform leakage** is the structural weakness. Google can't suppress a holdout user from being reached on Meta, TikTok, organic, or email. The clean version is to coordinate holdouts across all paid channels simultaneously; otherwise you're measuring "Google on top of everything else."
 
-### MMM (Meridian / Robyn)
+### MMM as an advanced appendix topic
 
-| Tool | Maintainer | Best fit |
-|---|---|---|
-| **Meridian** | Google (open source, GA Jan 29, 2025) | Bayesian causal-inference; native Google search-volume + YouTube reach/freq inputs; best when Google ecosystem dominates the mix |
-| **Robyn** | Meta (open source) | Ridge-regression based; platform-agnostic; better when paid social dominates |
+MMM is useful when budget allocation across channels matters more than within-campaign optimization, usually with at least 2 years of weekly data. Treat tool choice as an analytics-team decision; for this planning skill, the important advice is:
 
-**MMM beats lift studies when**: ≥ 2 years weekly data; budget allocation across channels matters more than within-channel optimization; privacy regime makes user-level lift increasingly noisy.
-
-**Lift beats MMM when**: fast read (2–4 weeks) on a specific campaign; insufficient historical data; question is causal at campaign level not channel level.
-
-**Best practice 2025–2026**: triangulate. MMM for top-down allocation, lift studies for bottom-up validation, MTA for in-flight signal.
+- Use MMM for top-down channel allocation and saturation questions.
+- Use lift studies or geo holdouts for a faster causal read on a specific campaign.
+- Use platform attribution only as an in-flight steering signal, not as final business truth.
+- Triangulate MMM, lift, and platform data instead of treating any one model as definitive.
 
 ### Honest caveats
 
 1. Self-serve Conversion Lift for Search / Shopping / PMax still requires a rep in many accounts, despite Google's "$5k for everyone" framing.
 2. Bayesian credible intervals depend on Google's prior — not fully transparent.
 3. Within-walled-garden lift overstates pure Google incrementality (Meta + organic leakage).
-4. Geo tests are sample-size limited at country level (US has ~210 DMAs; subtract major metros and N is small for sub-5% lift detection).
+4. Geo tests are sample-size limited at country level; after excluding major markets, the number of comparable test/control regions can be too small for detecting modest lift.
 5. **PMax cannibalization of Search remains the single largest unresolved measurement issue.** Optmyzr (Feb 2025, n=503) and Adalysis (3,300 PMax campaigns, 1.2M search terms) both documented severe overlap; standard reports attribute both to PMax.
 6. MMM is only as good as the data it ingests — short or noisy histories produce confidently wrong answers.
 7. Customer Match match rates of 50–70% mean your holdout is only partially "real."
@@ -769,7 +762,7 @@ A "good enough" stack scales with spend. Don't over-engineer for accounts that a
 - OCI / ECfL via API for CRM-driven businesses
 - Customer Match holdouts on retention / re-engagement
 - Quarterly Conversion Lift on material campaigns
-- Annual or bi-annual MMM read (Meridian / vendor) if ≥ 2 yrs data
+- Annual or bi-annual MMM read if ≥ 2 yrs data
 
 ### > $250,000 / month spend
 

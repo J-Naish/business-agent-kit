@@ -123,29 +123,18 @@ The shortest path for a first-time P-MAX launch. Refer to detailed sections belo
 
 ---
 
-## 1. Major updates 2025–2026
+## 1. Volatile capability checks
 
-> Beta-feature availability differs by account, country, and timing. Verify in the Google Ads UI before implementation.
+P-MAX capabilities change frequently by account, country, and UI rollout. Before implementation, verify the current state of features that materially affect the plan:
 
-| When | Update |
-|------|----------------|
-| Jan 2025 | Self-service campaign-level negative keywords for Search and Shopping inventory ([Google Ads Help](https://support.google.com/google-ads/answer/15726455?hl=en)) |
-| Jan 2025 | Age-based demographic exclusion beta ([campaign settings Help](https://support.google.com/google-ads/answer/15864837?hl=en)) |
-| Mar 2025 | Search-terms report introduced for Search and Shopping inventory ([P-MAX evaluation Help](https://support.google.com/google-ads/answer/16279166?hl=en)) |
-| May 2025 | Channel performance report introduced ([Google Ads Help](https://support.google.com/google-ads/answer/16260130?hl=en)) |
-| Jul 2025 | Gender-based demographic exclusion beta ([campaign settings Help](https://support.google.com/google-ads/answer/15864837?hl=en)) |
-| Aug 2025 | Demographic-exclusion consolidation: age and gender managed together ([campaign settings Help](https://support.google.com/google-ads/answer/15864837?hl=en)) |
-| 2025 | Strengthened asset auto-generation via Gemini |
-| 2025 | Asset-level impressions / clicks / cost data added |
-| 2025 | Shared negative-keyword list support ([negative keyword lists Help](https://support.google.com/google-ads/answer/2453983?hl=en)) |
-| 2025 | High-Value New Customer Mode rollout |
-| 2025 | Option to allow Shopping ads on searches that mention excluded brands ([brand exclusions Help](https://support.google.com/google-ads/answer/14505308?hl=en-419)) |
-| Nov 2025 | Waze ad inventory added (US-only, Store Goals only) |
-| Nov 2025 | Search Partners added to channel report |
-| Jan 2026 | P-MAX asset testing through optimization experiments ([Google Ads Help](https://support.google.com/google-ads/answer/16030588?hl=en-EN)) |
-| Jan 2026 | Channel-level reporting in the Google Ads API ([API release notes](https://developers.google.com/google-ads/api/docs/release-notes)) |
-| Feb 2026 | Search Partners placement visibility |
-| Feb 2026 | Parked domains (AdSense for Domains) permanently removed from the Search Partners network |
+| Capability | Why it matters |
+|---|---|
+| Campaign-level negative keywords and shared lists | Determines how much Search / Shopping query control the plan can promise |
+| Search terms and channel performance reporting | Determines how confidently you can diagnose query, channel, and cannibalization issues |
+| Brand exclusions and Shopping brand-serving options | Determines whether P-MAX is allowed to capture own-brand or excluded-brand demand |
+| Demographic exclusions | Determines whether age, gender, or device restrictions can be used as real control levers |
+| Asset testing and asset-level reporting | Determines whether creative tests can be designed as experiments or only as operational refreshes |
+| Store Goals inventory such as Maps / Waze | Relevant only for local / store-visit strategies; confirm regional availability |
 
 ---
 
@@ -660,7 +649,9 @@ P-MAX for Store Goals is a dedicated variant for optimizing local actions: store
 
 ### 15-3. Channels
 
-Google Search / Google Maps / YouTube / GDN / Gmail / Discover / **Waze** (Nov 2025+, US only)
+Google Search / Google Maps / YouTube / GDN / Gmail / Discover.
+
+Regional or account-specific inventory can be added over time. For example, Waze inventory may be available for eligible Store Goals campaigns in supported markets; confirm current availability before including it in a plan.
 
 ### 15-4. Setup requirements
 
@@ -670,14 +661,14 @@ Google Search / Google Maps / YouTube / GDN / Gmail / Discover / **Waze** (Nov 2
 | Store-visit measurement enabled | Compatible with Google's store-visit conversion measurement |
 | Multi-store | Configure store groups for regional delivery optimization |
 
-### 15-5. Waze integration (Nov 2025+, US only)
+### 15-5. Regional inventory checks
 
 | Item | Detail |
 |------|------|
-| Display format | "Promoted Places" pin on the navigation map |
-| Eligibility | Campaigns targeting Store Visits / Store Sales / Local Action Directions |
-| Setup | Automatic — no extra config; existing assets surface in Waze |
-| Region | US only. International rollout planned 2026+ |
+| What to verify | Whether additional local inventory such as navigation surfaces is available for the target market and campaign goal |
+| Eligibility | Usually tied to Store Visits, Store Sales, or Local Action goals |
+| Setup | Confirm whether inventory is automatic or requires account / campaign-level enablement |
+| Planning stance | Treat regional inventory as upside, not as a guaranteed default channel |
 
 ---
 
@@ -764,20 +755,7 @@ Campaign-level A/B tests for evaluating P-MAX's impact.
 
 ---
 
-## 18. Gemini AI integration
-
-### 18-1. Gemini-powered features (2025+)
-
-| Feature | Detail |
-|------|------|
-| Text-asset auto-generation | Gemini auto-generates long headlines and descriptions |
-| Sitelink auto-generation | Auto-suggests sitelinks based on LP content |
-| Image generation | Imagen 2-based ad-image generation (lifestyle, people) |
-| Image editing | Background swap, person addition for existing images |
-| High-performance look-alike generation | Generates new images similar to "Best"-rated ones |
-| Shareable preview | Share an ad preview via link (no Google Ads login required) |
-
-### 18-2. Rules for using AI-generated assets
+## 18. AI-generated asset rules
 
 | Rule | Reason |
 |-------|------|

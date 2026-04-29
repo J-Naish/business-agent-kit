@@ -89,29 +89,16 @@ The legacy SKAG (one keyword per ad group) approach is no longer recommended for
 
 **Hybrid approach**: Keep SKAG for high-value, niche KWs while running everything else as STAG.
 
-### Account-design frameworks (originating in the Japanese market)
+### Modern consolidated structure
 
-These are widely-used frameworks in the Japanese paid-search community. They are language-agnostic and the principles travel well.
+The globally useful principle is simple: keep the account structure concentrated enough for automation to learn, while preserving splits that reflect real business control needs. Avoid over-segmenting campaigns or ad groups only for reporting neatness.
 
-#### Hagakure structure
-
-The foundational philosophy: keep account structure simple so machine learning can function. Avoid over-segmenting ad groups and concentrate data into fewer ad groups. This lets impressions, clicks, and CV data accumulate so Google's AI can optimize effectively.
-
-#### GORIN
-
-Builds on Hagakure with efficient delivery: right user, right time, right message.
-
-#### MUGEN
-
-Builds on Hagakure and GORIN. Maintains ML-driven optimization while expanding reach to new users.
-
-| Pillar | Content |
-|----|------|
-| Smart automated bidding | Automates KPI optimization |
-| Dynamic Search Ads (DSA) | Covers KWs you didn't manually add — expands reach |
-| RSA | Improves ad quality |
-
-> **Note**: Adopting MUGEN before the Hagakure / GORIN foundation is in place risks runaway spend and CPA inflation.
+| Principle | Practical meaning |
+|---|---|
+| Consolidate learning signal | Put related queries, ads, and conversions together when they share goal, economics, and landing-page intent |
+| Split for control | Separate only when budget, target CPA/ROAS, margin, geo/language, compliance, customer type, or owner differs |
+| Align intent, message, and LP | Each ad group should have a clear search theme, relevant RSA assets, and a matching landing page |
+| Expand with guardrails | Use Broad match, Smart Bidding, DSA / AI Max, and RSAs only when conversion tracking, negatives, URL controls, and brand controls are ready |
 
 ### Google's 2025–2026 recommended structure
 
@@ -124,17 +111,18 @@ Builds on Hagakure and GORIN. Maintains ML-driven optimization while expanding r
 
 ## 2. Keyword strategy
 
-### Keyword research tools
+### Keyword research inputs
 
-| Tool | Notes | Cost |
-|--------|------|------|
-| Google Keyword Planner | Official. Monthly search volume, competition, suggested CPC | Free |
-| Rakko Keyword | Comprehensive suggest-KW gathering. Strong for the Japanese market | Free / paid |
-| SEMrush | Comprehensive KW research and competitor analysis | Mid-tier paid |
-| Ahrefs | Backlink analysis + KW research | High-tier paid |
-| SpyFu | Specialized PPC competitor analysis (their bid KWs, copy, budgets) | Low-tier paid |
-| Google Search Console | Actual queries driving traffic to your site | Free |
-| Google Search autocomplete | Real-time search trends | Free |
+Use sources that reveal demand, auction economics, and current user language. Tool choice can vary by market; the planning logic should not depend on one local tool.
+
+| Source | Use |
+|--------|------|
+| Google Keyword Planner | Official search volume, competition, and suggested CPC ranges |
+| Google Search Console | Actual organic queries already reaching the site |
+| Search terms from existing Google Ads campaigns | Paid query reality: irrelevant spend, converting terms, and expansion opportunities |
+| SERP and autocomplete review | Current wording, modifiers, and intent patterns |
+| Competitive research tools | Directional view of competitor themes, not a source of truth |
+| CRM / sales-call language | Buyer vocabulary and qualification terms that keyword tools often miss |
 
 ### Research process
 

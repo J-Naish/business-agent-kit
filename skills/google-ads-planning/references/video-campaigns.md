@@ -135,15 +135,7 @@ Reach users listening to music or podcasts on YouTube.
 
 ### 1-7. Masthead ads
 
-Premium placement at the top of the YouTube home page.
-
-| Item | Spec |
-|---|---|
-| Placement | Top of the YouTube home page |
-| Pricing | CPM (reservation) or CPH (Cost Per Hour, time-based — currently in pilot) |
-| Cost ballpark | ~$300,000–$400,000 per day (varies by region and timing) |
-| Purchase method | Reserved via your Google rep, or via DV360 / Google Ads Reservation |
-| Recommended use | Major launches, event announcements, max-reach in a short window |
+Premium reserved YouTube inventory for major launches or event announcements. Treat it as a special reach buy, not a default campaign-planning option. Pricing, availability, and purchase workflow vary by market and timing; confirm through Google reservation workflows before including it in a plan.
 
 ### 1-8. Companion banners
 
@@ -491,10 +483,9 @@ Important info shouldn't be hidden by UI elements (like / comment / share button
 
 ### 9-1. Characteristics of CTV viewing
 
-- In the U.S., YouTube's TV-screen viewing share has surpassed Netflix, Hulu, and Prime Video (2025 U.S. data; situations vary by region).
-- CTV often produces high completion rates, especially for non-skippable and bumper-style formats.
-- About 26% of CTV viewing is co-viewing (one ad reaches multiple people).
-- YouTube ads on CTV have shown around a 10% higher brand-recall lift than linear-TV ads.
+- CTV is primarily a reach, recall, and brand-impact environment rather than a last-click performance channel.
+- Completion rates can be strong, especially for non-skippable and bumper-style formats, but the business readout should rely on reach, frequency, lift, search lift, or MMM-style contribution.
+- Co-viewing can increase exposed audience, but it makes user-level attribution less precise.
 
 ### 9-2. CTV creative points
 
@@ -519,12 +510,7 @@ Important info shouldn't be hidden by UI elements (like / comment / share button
 
 ### 10-1. VAC → Demand Gen migration
 
-Video Action Campaigns are being upgraded to Demand Gen; verify current migration state before planning a VAC-based structure ([Google Ads Help](https://support.google.com/google-ads/answer/15110871?hl=en)).
-
-| Period | Event |
-|---|---|
-| April 2025 | Video Action Campaign (VAC) creation closes for new campaigns ([create VAC Help](https://support.google.com/google-ads/answer/10146226?hl=en)) |
-| July 2025 | Existing VACs auto-migrate to Demand Gen ([migration Help](https://support.google.com/google-ads/answer/15110871?hl=en)) |
+Video Action Campaigns are being upgraded to Demand Gen. For conversion-oriented video planning, use Demand Gen as the current default path and verify the migration state of any legacy VACs before making account changes ([Google Ads Help](https://support.google.com/google-ads/answer/15110871?hl=en)).
 
 ### 10-2. Demand Gen characteristics
 

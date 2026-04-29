@@ -55,18 +55,16 @@ Terms used across playbooks live in [SKILL.md glossary](../SKILL.md#common-googl
 | 6 | Google Ads link | Link to the Google Ads account |
 | 7 | Program enrollment | Enable "Shopping ads" and "Free listings" |
 
-### 1-2. Major changes in Merchant Center Next (new UI)
+### 1-2. Merchant Center capability checks
 
-Updates rolling out in 2025–2026:
+Merchant Center features and UI labels shift frequently. For planning, verify only the capabilities that affect feed quality, eligibility, or merchandising:
 
-- **Product Studio**: AI image editing for products (background removal, image animation, resolution upscaling)
-- **AI insights**: Automated analysis of product performance with improvement suggestions
-- **Promotion targeting**: Promotions can now be set with conditions like new customers only, by region, etc.
-- **Creative Content**: Auto-link videos from social and YouTube as Google Ads assets
-- **Product ID separation**: When online and in-store versions have different attributes (price, inventory, etc.), separate IDs may be required depending on current Merchant Center policy.
-- **Merchant API migration**: Treat Merchant API as the forward-looking integration path for programmatic product data management.
-
-> Merchant Center features, scope, and deadlines can shift. Verify current requirements in Merchant Center before implementation.
+| Capability | Planning relevance |
+|---|---|
+| Product diagnostics and automatic item updates | Prevents silent loss from price, availability, image, or landing-page mismatch |
+| Promotions, product ratings, shipping, and return annotations | Can improve CTR/CVR without changing campaigns |
+| Supplemental feeds and programmatic feed management | Useful when titles, custom labels, or inventory data need frequent updates |
+| Product ID policy for online / local variants | Matters when online and in-store price, availability, or inventory differ |
 
 ---
 
@@ -86,7 +84,7 @@ Attributes that must be set on every product.
 | `link` | Product detail page URL | Must match the landing page exactly |
 | `image_link` | Main product image URL | Details in Section 4 |
 | `availability` | Inventory status | One of `in_stock` / `out_of_stock` / `preorder` / `backorder` |
-| `price` | Price | With currency code (e.g. `2980 USD`). Must match the LP price exactly |
+| `price` | Price | With currency code (e.g. `99.99 USD`). Must match the LP price exactly |
 
 ### 2-2. Conditionally-required attributes
 

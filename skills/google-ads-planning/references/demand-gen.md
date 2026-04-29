@@ -482,20 +482,18 @@ Per-asset performance labels:
 
 ---
 
-## 12. Major 2025–2026 updates
+## 12. Volatile capability checks
 
-| Period | Update |
+Demand Gen controls and surfaces change often. Before implementation, verify the capabilities that affect campaign design:
+
+| Capability | Why it matters |
 |---|---|
-| **Jan–Mar 2025** | Per-surface selection becomes available account-wide. YouTube Shorts-only campaigns supported ([channel controls Help](https://support.google.com/google-ads/answer/15973205?hl=en)) |
-| **Feb 2025** | Vertical 9:16 image ads supported on YouTube Shorts |
-| **Apr 2025** | **GDN image inventory added to Demand Gen** ([GDN integration Help](https://support.google.com/google-ads/answer/15890515?hl=en)); new VAC creation discontinued ([VAC migration Help](https://support.google.com/google-ads/answer/15110871?hl=en)) |
-| **May 2025** | **Target CPC bidding** available in click-goal Demand Gen campaigns ([Google Ads Help](https://support.google.com/google-ads/answer/16262529?hl=en)) |
-| **Jul 2025** | Existing VAC (Video Action Campaigns) begin auto-migration to Demand Gen ([Google Ads Help](https://support.google.com/google-ads/answer/15110871?hl=en)) |
-| **Sep 2025** | Migration of accounts with VAC delivery completes in batches ([Google Ads Help](https://support.google.com/google-ads/answer/15110871?hl=en)) |
-| **Oct–Dec 2025** | Expanded channel controls, AI creative features, new-customer-acquisition options, local offers, and checkout-link style commerce features; verify availability in the UI and current Help before relying on these |
-| **Jan 2026** | Connected-TV commerce features, attributed brand-search reporting where available, and travel-feed support |
-| **2026** | VTC optimization for Demand Gen is available as an open beta for YouTube inventory and is off by default; enable only when impression-based optimization fits the evaluation model ([Google Ads Help](https://support.google.com/google-ads/answer/16399666)) |
-| **Mar 2026 onward** | Treat Lookalike reach settings as directional controls unless strict targeting behavior is confirmed in the current UI |
+| Surface selection across YouTube, Discover, Gmail, and GDN | Determines whether the plan can isolate Shorts, owned Google surfaces, or GDN inventory |
+| Target CPC for traffic / click goals | Relevant only when Demand Gen is being used for traffic rather than conversion optimization |
+| Product-feed and commerce features | Relevant for e-commerce Demand Gen; confirm Merchant Center region and feed eligibility |
+| VTC optimization | Enable only when impression-based optimization fits the measurement model |
+| Attributed brand-search and assist reporting | Useful for mid-funnel readouts, but do not treat it as a substitute for incrementality |
+| Lookalike reach behavior | Treat reach settings as directional unless the current UI confirms strict targeting behavior |
 
 ---
 

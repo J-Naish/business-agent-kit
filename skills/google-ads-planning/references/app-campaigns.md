@@ -192,13 +192,16 @@ Pre-launch pre-registration campaigns. **Android only.**
 | Recommended | 30–50 / day | Stable optimization |
 | Ideal | 100+ / day | High-precision optimization. Also helps clear iOS SKAN privacy thresholds |
 
-### 4-3. Firebase SDK setup steps
+### 4-3. Firebase planning checks
 
-1. **Embed the Firebase SDK in the app**
-2. **Enable Google Analytics in the Firebase project**
-3. **Define custom events** (purchase, subscribe, level_complete, etc.)
-4. **Link the Firebase project to the Google Ads account**
-5. **Import the events as conversion actions in Google Ads**
+Implementation details belong in Firebase / app analytics documentation. For Google Ads planning, confirm:
+
+| Check | Why it matters |
+|---|---|
+| Firebase and Google Ads are linked | Required for Google Ads to receive app events and audiences |
+| The primary bidding event source is explicit | Prevents duplicate imports from Firebase and an MMP |
+| Target events are named and mapped consistently | Prevents campaign goals from drifting across teams |
+| Event volume is sufficient for the chosen bid strategy | Thin event volume makes tCPA / tROAS unstable |
 
 ### 4-4. Running Firebase + MMP together
 

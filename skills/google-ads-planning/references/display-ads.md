@@ -429,7 +429,7 @@ Display (3-campaign structure)
 | Setting | Notes |
 |---|---|
 | **Geography** | Watch the default "Presence or interest" setting. If you don't want interest-based delivery, change to "Presence only" |
-| **Language** | Filters by browser language. For Japanese-language sites, use "Japanese" + "English" (bilingual fallback) |
+| **Language** | Filters by browser language. Use the site's primary language; add secondary languages only when analytics, search terms, or market context show meaningful demand |
 | **Device** | Under Smart Bidding, device bid adjustments are effectively neutralized. For device-specific strategies, split structurally (campaign-level) |
 
 ---
