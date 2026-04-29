@@ -183,6 +183,16 @@ Use this reference before choosing campaign types. Business model, sales motion,
 
 Use these patterns as starting points when a business model or funnel role needs more than one campaign type. Adjust the structure based on budget sufficiency, conversion volume, measurement quality, creative supply, and incrementality risk.
 
+### Modern automation stack
+
+A common 2025–2026 automation stack is:
+
+1. **Performance Max** — primary conversion engine when the account has enough signal and guardrails.
+2. **Demand Gen** — visual-rich prospecting, product discovery, and mid-funnel warming.
+3. **AI Max for Search** — AI-augmented Search expansion when conversion signal, URL controls, and brand controls are ready.
+
+Use this as an option to evaluate, not a default to force. If budget, measurement, creative, or feed quality cannot support the stack, narrow the structure first.
+
 ### Search + P-MAX
 
 Most common pattern when high-intent capture and automated expansion both make sense.

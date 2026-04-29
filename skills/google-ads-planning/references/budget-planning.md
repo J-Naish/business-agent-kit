@@ -68,6 +68,17 @@ These are operating thresholds, not platform requirements. If the conversion act
 | Budget can produce 50+ true CVs/month | P-MAX, Broad + Smart Bidding, and controlled expansion can be tested |
 | Budget can support separate goals with volume in each | Split by business economics: brand/non-brand, margin, category, customer type, geo, or funnel role |
 
+### Rough monthly-budget shorthand
+
+Use these only as rough orders of magnitude. Always override them with local CPCs, expected CVR, target economics, and expected true conversion volume.
+
+| Monthly budget | Recommended structure |
+|---|---|
+| Up to ~$1,000 | Single Search campaign (brand KW + high-intent KW) |
+| ~$1,000–$3,000 | Search + P-MAX or Display remarketing, only if signal and budget can support it |
+| ~$3,000–$10,000 | Search + P-MAX + Video or Display when the role is clear |
+| Above $10,000 | Full-funnel structure; separate campaigns by goal, economics, and measurement quality |
+
 ---
 
 ## Budget allocation principles
@@ -110,7 +121,7 @@ When answering budget viability, include:
 
 ## Bidding strategy escalation and de-escalation
 
-This section unpacks the bidding decision matrix in [SKILL.md](../SKILL.md). Use it to choose, change, and roll back bid strategies in real accounts.
+Use this section to choose, change, and roll back bid strategies in real accounts. [SKILL.md](../SKILL.md) routes here whenever bidding, budget sufficiency, or Smart Bidding stability affects the plan.
 
 ### How Smart Bidding learns
 
@@ -118,6 +129,10 @@ This section unpacks the bidding decision matrix in [SKILL.md](../SKILL.md). Use
 - **Strategy switches** (Max Clicks → Max Conv, Max Conv → Max Conv Value, etc.) trigger a new learning period.
 - **Target-value changes** (the tCPA / tROAS number) do **not** trigger learning, but bids shift quickly. Prefer target adjustment over strategy switching when the goal is unchanged.
 - Bid strategy status `Limited` typically means low conversion volume, budget capping, or an aggressive target. Investigate the cause before adjusting.
+
+### Strategy names vs target settings
+
+For **Search** campaigns, the standalone "Target CPA" and "Target ROAS" strategies were folded into Maximize Conversions / Maximize Conversion Value as **optional targets** in July 2022 and remain that way ([Google Ads Help](https://support.google.com/google-ads/answer/10353027)). The same pattern applies to Demand Gen and P-MAX. **Shopping, Display, Video Action, and App** can still expose Target CPA / Target ROAS as named strategies. The algorithm is identical either way: Maximize Conversions with a target CPA behaves like standalone Target CPA. Across every campaign type, prefer adjusting the target over switching strategies when the goal is unchanged.
 
 ### Volume thresholds — official vs practitioner
 

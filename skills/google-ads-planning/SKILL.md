@@ -154,21 +154,11 @@ Determine which of the two situations applies. If unclear, ask.
 
 ### Improvement workflow
 
-For existing accounts, run a diagnostic after Step 1. Use [references/diagnostic-decision-trees.md](references/diagnostic-decision-trees.md) to rank likely root causes before proposing changes.
+For existing accounts, run a diagnostic after Step 1 before proposing changes.
 
-If the user provides account data in any form — CSV/XLSX exports, copied tables, screenshots, Looker Studio charts, CRM reports, Merchant Center diagnostics, API extracts, or metric summaries — first use [references/account-data-diagnostics.md](references/account-data-diagnostics.md). Do not diagnose from platform KPIs alone when Ads, GA4, CRM/POS/app, or Merchant Center data can confirm whether spend is creating real business outcomes.
-
-1. **Inventory** — Account structure, list of running campaigns, current KPI performance.
-2. **Data read, when available** — Identify source, date range, row grain, filters, attribution/date basis, conversion definitions, and missing fields. Separate supported findings from limitations.
-3. **Issue identification** — Hear the user's pain point, then audit with the diagnostic decision trees:
-   - Is the bid strategy appropriate for the conversion volume? (Smart bidding starves with too few conversions.)
-   - Account-structure issues — over-fragmentation of campaigns? mixed themes inside an ad group?
-   - Are negative keywords adequate? Is the search-terms report showing wasted clicks?
-   - Is conversion tracking set up correctly?
-   - Any ad groups with low Quality Score?
-   - Is budget allocated to the high-performing campaigns?
-4. **Improvement proposals** — Ranked actions with evidence, expected stabilization window, and changes to avoid.
-5. **Execution** — Document the agreed changes in whatever form fits (conversational, structured response, or written deliverable).
+- If the user provides account data in any form — CSV/XLSX exports, copied tables, screenshots, dashboards, CRM reports, Merchant Center diagnostics, API extracts, or metric summaries — first use [references/account-data-diagnostics.md](references/account-data-diagnostics.md).
+- If the user only describes symptoms, use [references/diagnostic-decision-trees.md](references/diagnostic-decision-trees.md) to rank likely root causes.
+- Always separate supported findings from limitations, rank actions by business impact and evidence, and include expected stabilization windows plus changes to avoid.
 
 ---
 
@@ -229,79 +219,20 @@ Do not recommend a campaign type just because it is available. If budget, conver
 | **P-MAX** | All 7 channels | CPA / ROAS | Full funnel | Very high | All verticals |
 | **Demand Gen** | YouTube / Discover / Gmail / GDN | CPC / CPA / CPM | Top–mid | High | All verticals |
 
-### Per-campaign-type notes
+### Selection references
 
-**Search**
-- Text ads on Google Search results — best for high-intent users at the bottom of the funnel.
-- Responsive Search Ads (RSA): up to 15 headlines + 4 descriptions; AI mixes the best combination.
-- AI Max for Search ([Google Ads Help](https://support.google.com/google-ads/answer/15910187?hl=en), [launch note](https://blog.google/products/ads-commerce/google-ai-max-for-search-campaigns/)): broad match + auto-generated headlines + auto LP selection. Google reported ~14% conversion lift in its launch data.
-- Best fit: lead generation, B2B, e-commerce on specific products, capturing high-intent demand.
+Use the cheat sheet only for first-pass direction. Before finalizing the mix, read:
 
-**Display**
-- Image / video ads across 2M+ sites and apps in the GDN. Reaches roughly 90% of internet users.
-- Responsive Display Ads (RDA): images + text combined automatically per placement.
-- Targeting: audiences (interest / custom / similar), content (topic / placement), remarketing.
-- Best fit: brand awareness, remarketing, prospecting.
-
-**Shopping**
-- Product image / price / store name in a list format on search results. Requires a Merchant Center feed.
-- Standard Shopping: manual bidding, fine-grained control.
-- P-MAX Shopping: AI-driven across all channels (replaces Smart Shopping).
-- Best fit: e-commerce, online retail, products with strong price competitiveness.
-
-**Video (YouTube)**
-- Video ads on YouTube and partner properties.
-- Formats: skippable / non-skippable / bumper (6s) / in-feed / masthead / outstream.
-- 2025 changes: Video Action Campaigns (VAC) upgraded into Demand Gen ([Google Ads Help](https://support.google.com/google-ads/answer/15110871?hl=en)); vertical Shorts ads supported across all formats.
-- Best fit: brand awareness, new product launches, how-to messaging.
-
-**App**
-- Specialized for app installs / engagement / pre-registration. Auto-distributes across all app surfaces.
-- ACi (install) / ACe (engagement) / ACpre (pre-registration).
-- Keywords and placements can't be set manually (full automation).
-- Best fit: app user acquisition and re-engagement.
-
-**P-MAX (Performance Max)**
-- One campaign can serve across Google's major inventory: Search, Display, YouTube, Gmail, Discover, Maps, and Shopping placements when a Merchant Center feed is connected. In current reporting, Shopping-style delivery is often analyzed through product-data segments rather than as a standalone channel.
-- Asset groups + audience signals + search themes are AI-optimized end-to-end.
-- Current volatile capabilities to verify before implementation: campaign-level negative keywords for Search/Shopping inventory ([Google Ads Help](https://support.google.com/google-ads/answer/15726455?hl=en)), channel performance reporting ([Google Ads Help](https://support.google.com/google-ads/answer/16260130?hl=en)), demographic exclusions ([campaign settings Help](https://support.google.com/google-ads/answer/15864837?hl=en)), and P-MAX experiments ([Google Ads Help](https://support.google.com/google-ads/answer/12997711?hl=en)).
-- Best fit: e-commerce sales, lead-gen scale, store visits, lean teams.
-
-**Demand Gen**
-- Visual-rich ads on YouTube / Discover / Gmail / GDN. The Google equivalent of Meta's social-style ads.
-- Image / carousel / video / product-feed-driven ads supported.
-- Volatile additions to verify before implementation: GDN inventory and channel controls ([Google Ads Help](https://support.google.com/google-ads/answer/15890515?hl=en)), Target CPC ([Google Ads Help](https://support.google.com/google-ads/answer/16262529?hl=en)), and new-customer-acquisition / lifecycle goals ([Google Ads Help](https://support.google.com/google-ads/answer/12080169?hl=en)).
-- Best fit: mid-funnel, social-style visual ads, YouTube Shorts.
-
-### Recommended mix by business model
-
-| Business model | First choice | Second choice | Conditions |
-|---|---|---|---|
-| **E-commerce** | P-MAX (with feed) | Search (high-intent KW) + Shopping | Feed required. P-MAX shines at 30+ conversions / month. |
-| **Lead gen (B2B)** | Search | P-MAX (full assets) | Search intent is sharp. For P-MAX, turn off URL expansion. |
-| **Lead gen (B2C)** | Search + P-MAX | Display (remarketing) | Capture intent on Search, expand reach with P-MAX. |
-| **App** | App campaign | Video (YouTube) | Choose ACi / ACe / ACpre based on the goal. |
-| **Brand awareness** | Video (YouTube) | Display / Demand Gen | Driven by whether video assets exist. |
-| **Store visits** | P-MAX (Store Goals) | Search (geo KW) | Google Business Profile linkage required. |
-
-### Budget guidance
-
-| Monthly budget | Recommended structure |
+| Decision | Reference |
 |---|---|
-| Up to ~$1,000 | Single Search campaign (brand KW + high-intent KW) |
-| ~$1,000 – $3,000 | Search + (P-MAX or Display remarketing) |
-| ~$3,000 – $10,000 | Search + P-MAX + (Video or Display) |
-| Above $10,000 | Full-funnel; separate campaigns by goal |
+| Default mix by business model and funnel role | [references/business-model-playbooks.md](references/business-model-playbooks.md) |
+| Budget sufficiency, expected conversion volume, and what not to launch yet | [references/budget-planning.md](references/budget-planning.md) |
+| Search / AI Max details | [references/search-ads.md](references/search-ads.md) |
+| P-MAX controls, feed/asset groups, and volatile capability checks | [references/pmax.md](references/pmax.md) |
+| Demand Gen surfaces, channel controls, and social-style creative fit | [references/demand-gen.md](references/demand-gen.md) |
+| Display, Shopping, Video, or App details | The matching playbook in [Step 4](#step-4-detailed-design--delivery) |
 
-(Numbers are rough orders of magnitude — adjust to local market CPCs and the target vertical's economics.)
-
-### Modern automation stack (2025–2026)
-
-A common modern stack to consider:
-
-1. **Performance Max** — primary conversion engine
-2. **Demand Gen** — visual-rich prospecting
-3. **AI Max for Search** — AI-augmented Search
+Verify current Google documentation before implementing volatile features such as AI Max, P-MAX negative keywords/channel reporting, and Demand Gen channel controls.
 
 ### After selection, confirm direction with the user
 
@@ -390,112 +321,23 @@ Establish a single naming convention before launch. Naming directly impacts filt
 - **PascalCase tokens** (`NonBrand`, `AllProducts`).
 - **Maintain a shared abbreviation list.** Prevents drift across the account.
 
-### Bidding strategy by phase
+### Bidding strategy
 
-Don't judge on conversion volume alone. Check four axes before changing the bid strategy:
+Use [references/budget-planning.md](references/budget-planning.md) before selecting, changing, or rolling back bid strategies. At minimum, check:
 
-1. **Volume** — primary conversions in the last 30 days
-2. **Latency** — median click → conversion time vs the conversion window
-3. **CPA stability** — coefficient of variation σ/μ over the last 8 weeks; high variance breaks Smart Bidding targets
-4. **Signal depth** — purchase / SQL / qualified-lead vs micro-CVs
+1. Primary conversion volume in the last 30 days.
+2. Conversion latency vs the conversion window.
+3. CPA / ROAS stability.
+4. Signal depth: purchase / SQL / qualified lead vs micro-CVs.
+5. Budget-to-bid ratio.
 
-Since 2022, tCPA and tROAS are **optional targets on Maximize Conversions / Maximize Conversion Value**, not standalone strategies. Strategy switches trigger a new learning period; *target-value changes do not* ([Google Ads Help](https://support.google.com/google-ads/answer/13020501)). Prefer adjusting the target over switching strategies when the goal is unchanged.
-
-| Phase | Volume / 30d | Other gates | Strategy |
-|---|---|---|---|
-| 1. Pre-data | 0 CV | – | Manual CPC / Maximize Clicks |
-| 2. Learn | <15 | primary CV live | Maximize Conversions (no target) |
-| 3a. Stabilize | 15–30 | – | Maximize Conversions; consider portfolio if multiple campaigns share the goal |
-| 3b. Optimize | 30+, ≥3 conversion cycles | latency <14d, σ/μ <0.4, primary = purchase/SQL | Add tCPA target at observed average — never below |
-| 3c. Hold | 30+ but latency >30d or σ/μ >0.4 | – | Stay on Maximize Conversions; fix the signal first (OCI / ECfL) |
-| 4a. Value-warm | 50+ | values reliable | Maximize Conversion Value (no target) |
-| 4b. Value-target | 50+ for 30+ days | margin-adjusted value | Add tROAS target |
-
-The volumes above are practitioner thresholds. Google's published minimum for tROAS on Search/Shopping/Display is **15 conversions / 30d** ([Google Ads Help](https://support.google.com/google-ads/answer/6268637)); the "30 / 50" widely repeated for tCPA / tROAS comes from measurement-stability advice (≥30 conversions to evaluate Smart Bidding fairly), not from a transition rule.
-
-#### Per-campaign-type thresholds
-
-| Campaign type | tCPA viable | tROAS viable | Notes |
-|---|---|---|---|
-| Search (non-brand) | 30 / 30d | 50 / 30d | Always separate from brand — brand inflates apparent ROAS |
-| Shopping (Standard) | 20 / 30d | 40 / 30d | Feed quality is upstream of bidding |
-| **P-MAX** | 50 / 30d (struggles below 30, thrives above 60) | 75–100 / 30d | Portfolio bid strategies **not supported** |
-| Demand Gen | 50 / 30d (Google's published migration threshold) | only with reliable values | Use tCPC for traffic-style goals where tCPA is too aggressive |
-| Video (Action) | 50 / 30d | 30 / 30d (Google minimum) | tROAS only with reliable conversion values |
-| App | tCPI from launch / tCPA after baseline | tROAS with in-app value | Budget rules below |
-
-#### Downgrade signals
-
-Smart Bidding can enter a "death spiral": tight targets suppress bids, volume collapses, the algorithm tightens further. Watch for these signals and roll back before damage scales:
-
-| Signal | Likely cause | Action |
-|---|---|---|
-| Daily budget under-spent >20% for 7+ days | Target too tight; algorithm priced out | Loosen target by 10–15% or remove it |
-| Impression-share-rank loss climbing while CPA looks fine | Algorithm priced out | Same |
-| Actual CPA drifting up despite a flat target | Conversion signal eroded | Audit signal (lead quality, value rules), then reset target above the new average |
-| Volume drops below 15 / 30d | Below Google's floor | Drop the target → Max Conversions for 2–3 weeks → re-introduce target above the new average |
-| Lead CPA stable but SQL rate falling | Algorithm finding cheap, low-quality leads | OCI / ECfL with SQL or opportunity stage as the optimization target, not raw form fills |
-| One-off conversion drop (tag broken, promo ended) | Tracking gap or transient event | Apply Data Exclusion ([Google Ads Help](https://support.google.com/google-ads/answer/10370710)) — do not change strategy |
-
-When changing targets:
-
-- Stair-step: ±10–15% per change, wait ≥2 weeks (one full learning cycle).
-- Never set initial tCPA below the campaign's current average — the most common cause of instant volume collapse.
-
-#### Budget-to-bid ratio
-
-| Campaign type | Daily-budget floor | Source |
-|---|---|---|
-| Search / Shopping | 3–5× tCPA (1× minimum) | Practitioner consensus |
-| P-MAX | 3× tCPA or $150/day, whichever higher | Practitioner consensus |
-| Demand Gen | 20× tCPA or $100/day, whichever higher | Practitioner consensus |
-| App ACi tCPI | **≥50× tCPI bid** | Official ([Google Ads Help](https://support.google.com/google-ads/answer/12073727)) |
-| App ACi tCPA | **≥10× bid** | Official |
-| App ACe tCPA | **≥15× bid** | Official |
-| Shopping / P-MAX (no history) | **2× target spend** while learning settles | Official ([Google Ads Help](https://support.google.com/google-ads/answer/15624876)) |
-
-For the rollback procedure, value-based bidding ladder, seasonality-adjustment limits, and lead-quality gating, see [references/budget-planning.md](references/budget-planning.md).
+Do not set targets from aspiration. Start from observed performance, avoid initial tCPA/tROAS targets that are tighter than current actuals, and adjust gradually.
 
 ### Conversion design
 
-| Type | Used for | Examples |
-|---|---|---|
-| Primary CV | Bid optimization | Purchase, inquiry, qualified lead |
-| Secondary CV | Monitoring only | Resource downloads, newsletter signup |
-| Micro CV | Engagement signals | Scroll depth, dwell time |
+Use [references/measurement.md](references/measurement.md) for Primary / Secondary / Micro CV design, value passing, Consent Mode v2, Enhanced Conversions, OCI / ECfL, Tag Gateway / sGTM, VTC / EVC handling, attribution, iOS/SKAN, and incrementality methods.
 
-Modern setup to prioritize:
-
-- **Enhanced Conversions** — Hashed first-party data sent to Google. Treat as a default part of a durable measurement setup.
-- **Offline Conversion Import / Enhanced Conversions for Leads** (for lead gen) — Push qualified-lead, opportunity, or closed-won data from CRM back into Google Ads. Prefer ECfL over OCI for new builds.
-- **Google Tag Gateway** — Default for any account on EEA/UK traffic or > $50k/month spend. Replaces ad-hoc 1P-domain hacks.
-- **Server-side tagging (sGTM)** — Use when the technical stack and measurement needs justify it; usually only above ~$250k/month spend or for multi-platform CAPI.
-
-For details — Consent Mode v2 setup, EC/OCI/ECfL choice, modeled-CV interpretation, attribution, VTC policy, iOS/SKAN, and incrementality methods — see [references/measurement.md](references/measurement.md).
-
-#### View-through conversions (VTC) and engaged-view conversions (EVC) — unified policy
-
-VTC measures users who saw the ad without clicking and converted later. EVC measures a deeper video engagement without a click: e.g. watching enough of a YouTube / Shorts / in-feed ad and then converting within the EVC window. Treat them separately:
-
-| Principle | Description |
-|---|---|
-| **Default VTC stance = monitoring first** | Don't let impression-only credit drive the business story unless the campaign type and setting explicitly make VTC biddable. Track VTC as a supporting signal and segment by ad event type. |
-| **EVC is not the same as VTC** | EVC flows into the Conversions column for supported video-based campaign types and is a stronger non-click signal than a plain impression. Still report click vs EVC separately for serious decisions. |
-| **Keep the window short** | 1-day VTC window (default). Longer windows blur causality and inflate the count. |
-| **Don't headline blended CPA / ROAS blindly** | Report click-based, EVC, and VTC-included views separately when the decision is material. |
-| **Watch the VTC ratio** | If VTC is >50% of total reported conversions, the campaign's direct effect is likely overstated unless an incrementality test supports it. |
-
-**VTC handling per ad type:**
-
-| Ad type | Correct handling | Recommendation |
-|---|---|---|
-| **Search / Shopping** | Click-driven; VTC is not a meaningful optimization signal | No special handling beyond normal attribution checks. |
-| **Display** | Standard VTC is reporting-only in the VTC / All conversions columns | Use VTC as assist evidence; use click/EVC/business outcomes for bidding decisions. |
-| **Video** | EVC can be in Conversions; plain VTC should stay assist-only | Report click, EVC, and VTC separately; use lift/search-lift for upper-funnel value. |
-| **P-MAX standard** | EVC can be in Conversions; standard VTC is not included in Conversions by default | Audit ad event type and channel mix; avoid calling VTC-included ROAS "real ROAS." |
-| **P-MAX Store Goals** | VTC can be included for store-goal measurement | Reconcile with POS / store revenue where possible. |
-| **Demand Gen** | EVC is included; VTC optimization is available for YouTube inventory but is off by default; Platform Comparable columns can include VTC for reporting only | Enable VTC optimization only when the goal is social-style scale and reporting can tolerate impression-credit inflation. |
-| **App** | VTC optimization exists for eligible app campaigns, especially Android installs | Use when install scale matters, but separate prospecting from re-engagement and monitor retained-user quality. |
+Keep the high-level rule in the active plan: choose the deepest reliable Primary conversion with workable volume and latency, keep weak proxies secondary unless validated, and separate click-based, EVC, VTC, and business-source-of-truth results when the decision is material.
 
 ### Budget allocation
 
@@ -559,11 +401,7 @@ Use these inside the workflow, not just as optional reading:
 
 ### Delivering the output
 
-Match the output shape to what the situation calls for. **The skill does not require producing a written deliverable** — it adapts:
-
-- **Direct conversational answer** when the user asked a focused question.
-- **Structured inline response** when the user wants planning guidance but doesn't need a document.
-- **Written plan / spec** when the user explicitly asked for one, or when the deliverable is going to be handed off to another team / agency / client. If a file is useful, create a concise Markdown file using the user's project conventions for placement and naming.
+Match the output shape to [Output flexibility](#output-flexibility-dont-always-write-a-document). Do not create a written deliverable unless the user asks for one or the plan is clearly being handed off to another team / agency / client.
 
 If a written plan is the right deliverable, it typically covers:
 
@@ -574,8 +412,6 @@ If a written plan is the right deliverable, it typically covers:
 5. Measurement design — CV definitions, VTC policy, tracking setup.
 6. Operating timeline — launch → learning → optimization phases.
 7. KPIs and success criteria.
-
-When unsure whether to produce a written document, ask the user.
 
 For Markdown-file deliverables, keep the structure practical rather than template-heavy: use clear sections, decision tables where they help handoff, explicit assumptions, and concrete launch/measurement actions. Avoid filling generic sections that do not change the campaign decision.
 
