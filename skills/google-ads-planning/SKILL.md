@@ -40,8 +40,9 @@ Use this as the default practice cadence unless the user's account context sugge
 
 | Cadence | Focus | Avoid |
 |---|---|---|
-| Daily | Spend anomalies, conversion drops, tracking/policy/feed breakage | Daily target/budget micromanagement |
-| Weekly | Search terms, asset performance, budget pacing, lead/product quality, change-log review | Restructuring because of a few days of noise |
+| Daily | Spend anomalies, conversion drops, tracking/policy/feed breakage, budget pacing | Daily target/budget micromanagement |
+| Weekly | Search terms, negative-keyword additions, asset performance, lead/product quality, change-log review, VTC/EVC ratio checks | Restructuring because of a few days of noise |
+| Biweekly | Bid-target adjustments, ad-copy/creative performance review, controlled test reads | Changing bids, budgets, assets, and goals at the same time |
 | Monthly | Negative sweeps, creative refresh, feed/title improvements, landing-page review, budget reallocation | Letting launch-era assumptions persist |
 | Quarterly | Conversion action redesign, incrementality review, brand/non-brand split, account architecture, target economics | Reporting only platform ROAS |
 
@@ -258,7 +259,7 @@ Do not recommend a campaign type just because it is available. If budget, conver
 - Best fit: app user acquisition and re-engagement.
 
 **P-MAX (Performance Max)**
-- One campaign covers all 7 channels: Search, Shopping, Display, YouTube, Gmail, Discover, Maps.
+- One campaign can serve across Google's major inventory: Search, Display, YouTube, Gmail, Discover, Maps, and Shopping placements when a Merchant Center feed is connected. In current reporting, Shopping-style delivery is often analyzed through product-data segments rather than as a standalone channel.
 - Asset groups + audience signals + search themes are AI-optimized end-to-end.
 - Current volatile capabilities to verify before implementation: campaign-level negative keywords for Search/Shopping inventory ([Google Ads Help](https://support.google.com/google-ads/answer/15726455?hl=en)), channel performance reporting ([Google Ads Help](https://support.google.com/google-ads/answer/16260130?hl=en)), demographic exclusions ([campaign settings Help](https://support.google.com/google-ads/answer/15864837?hl=en)), and P-MAX experiments ([Google Ads Help](https://support.google.com/google-ads/answer/12997711?hl=en)).
 - Best fit: e-commerce sales, lead-gen scale, store visits, lean teams.
@@ -454,13 +455,7 @@ Use [references/budget-planning.md](references/budget-planning.md) before applyi
 
 ### Operating cadence
 
-```
-Daily:     outlier checks (sudden CPC spikes, CV drops)
-Weekly:    search-terms report, negative-keyword additions, VTC ratio check
-Biweekly:  bid adjustments, ad-copy performance review
-Monthly:   keyword adds / pauses, budget reallocation
-Quarterly: campaign-structure review, strategy-level rethink
-```
+Use the cadence table in [Practice-first stance](#cadence) as the canonical operating rhythm. Per-ad-type playbooks may add channel-specific checks, but should not override the basic rule: monitor anomalies frequently, batch meaningful changes, and avoid reacting to short-term noise.
 
 ### Common pitfalls
 
