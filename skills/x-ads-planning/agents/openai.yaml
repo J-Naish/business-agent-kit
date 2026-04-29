@@ -1,0 +1,10 @@
+interface:
+  display_name: "X Ads Planning"
+  short_description: "Plan high-performing X Ads campaigns"
+  icon_small: "./assets/x.svg"
+  icon_large: "./assets/x.svg"
+  brand_color: "#000000"
+  default_prompt: "Use $x-ads-planning to design an X Ads campaign plan from business goals, audience signals, creative, budget, measurement, and policy constraints."
+
+policy:
+  allow_implicit_invocation: true

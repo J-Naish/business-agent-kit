@@ -1,0 +1,10 @@
+interface:
+  display_name: "TikTok Ads Planning"
+  short_description: "Plan high-performing TikTok Ads campaigns"
+  icon_small: "./assets/tiktok.svg"
+  icon_large: "./assets/tiktok.svg"
+  brand_color: "#00F2EA"
+  default_prompt: "Use $tiktok-ads-planning to design a TikTok Ads campaign plan from business goals, budget, creative supply, commerce setup, and measurement constraints."
+
+policy:
+  allow_implicit_invocation: true

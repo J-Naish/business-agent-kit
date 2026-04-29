@@ -1,0 +1,10 @@
+interface:
+  display_name: "GTM Tracking Setup"
+  short_description: "Build importable GTM tracking containers"
+  icon_small: "./assets/google-tag-manager.svg"
+  icon_large: "./assets/google-tag-manager.svg"
+  brand_color: "#246FDB"
+  default_prompt: "Use $gtm-tracking-setup to design a GTM tracking plan and importable container JSON for analytics and ad-platform conversions."
+
+policy:
+  allow_implicit_invocation: true

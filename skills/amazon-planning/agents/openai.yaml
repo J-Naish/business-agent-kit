@@ -1,0 +1,10 @@
+interface:
+  display_name: "Amazon Planning"
+  short_description: "Plan Amazon marketplace and ads strategy"
+  icon_small: "./assets/amazon.svg"
+  icon_large: "./assets/amazon.svg"
+  brand_color: "#FF9900"
+  default_prompt: "Use $amazon-planning to design an Amazon marketplace and ads plan from retail readiness, unit economics, listing quality, inventory, and campaign goals."
+
+policy:
+  allow_implicit_invocation: true

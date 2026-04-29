@@ -1,0 +1,10 @@
+interface:
+  display_name: "Google Workspace CLI"
+  short_description: "Operate Google Workspace with gws CLI"
+  icon_small: "./assets/google.svg"
+  icon_large: "./assets/google.svg"
+  brand_color: "#4285F4"
+  default_prompt: "Use $gws to perform Google Workspace CLI tasks across Gmail, Calendar, Drive, Docs, Sheets, Slides, Forms, Chat, Tasks, Keep, and Apps Script."
+
+policy:
+  allow_implicit_invocation: true
