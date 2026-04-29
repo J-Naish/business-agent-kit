@@ -2,28 +2,6 @@
 
 Use this reference when designing conversion actions, deciding what to bid on, judging whether reported numbers are trustable, or planning an incrementality test. This reference is the *decision layer* — it does not cover GTM tag implementation, dataLayer design, or pixel firing logic. For those, use the `gtm-tracking-setup` skill.
 
-## Contents
-
-- [Scope and what this reference does not cover](#scope-and-what-this-reference-does-not-cover)
-- [Operating principles](#operating-principles)
-- [1. Measurement stack at a glance](#1-measurement-stack-at-a-glance)
-- [2. Conversion-action design](#2-conversion-action-design)
-- [3. Consent Mode v2](#3-consent-mode-v2)
-- [4. Enhanced Conversions (web and leads)](#4-enhanced-conversions-web-and-leads)
-- [5. Offline Conversion Import (OCI)](#5-offline-conversion-import-oci)
-- [6. Server-side tagging and Google Tag Gateway](#6-server-side-tagging-and-google-tag-gateway)
-- [7. Modeled conversions](#7-modeled-conversions)
-- [8. Attribution model](#8-attribution-model)
-- [9. View-through conversions (VTC) and engaged-view (EVC)](#9-view-through-conversions-vtc-and-engaged-view-evc)
-- [10. GA4 and Google Ads — source of truth](#10-ga4-and-google-ads--source-of-truth)
-- [11. iOS and app measurement](#11-ios-and-app-measurement)
-- [12. Incrementality testing](#12-incrementality-testing)
-- [13. Measurement health checks](#13-measurement-health-checks)
-- [14. Common pitfalls and fixes](#14-common-pitfalls-and-fixes)
-- [Appendix A: Minimum-viable measurement setup by account size](#appendix-a-minimum-viable-measurement-setup-by-account-size)
-
----
-
 ## Scope and what this reference does not cover
 
 | In scope | Out of scope (use other skill / reference) |

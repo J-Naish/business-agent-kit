@@ -1,26 +1,5 @@
 # Google Demand Gen
 
-## Contents
-
-- [1. Ad formats](#1-ad-formats)
-- [Operating practice](#operating-practice)
-- [2. Submission specs](#2-submission-specs)
-- [3. Surfaces (placements)](#3-surfaces-placements)
-- [4. Audience targeting](#4-audience-targeting)
-- [5. Creative-design best practices](#5-creative-design-best-practices)
-- [6. Bidding strategies (Demand Gen specific)](#6-bidding-strategies-demand-gen-specific)
-- [7. Product-feed integration (e-commerce)](#7-product-feed-integration-e-commerce)
-- [8. Campaign structure and operating design](#8-campaign-structure-and-operating-design)
-- [9. Measurement and evaluation](#9-measurement-and-evaluation)
-- [10. A/B testing (experiments)](#10-ab-testing-experiments)
-- [11. Relationship with other campaigns](#11-relationship-with-other-campaigns)
-- [12. Major 2025–2026 updates](#12-major-20252026-updates)
-- [13. Common failure patterns (Demand Gen specific)](#13-common-failure-patterns-demand-gen-specific)
-- [14. Operations checklist](#14-operations-checklist)
-- [15. Ad policies](#15-ad-policies)
-
----
-
 ## Operating practice
 
 Demand Gen is a visual, social-style Google campaign type. Plan and evaluate it closer to paid social than to Search: it creates and warms demand more than it harvests explicit intent.
@@ -99,80 +78,13 @@ Combines a Merchant Center product feed with image / video creative. Three sub-t
 
 ## 2. Submission specs
 
-### Text assets
+Use [creative-strategy.md](creative-strategy.md#demand-gen-baseline) for production specs. Demand Gen-specific planning rules:
 
-| Item | Spec | Quantity |
-|---|---|---|
-| **Headline** | Up to 40 characters (effectively 20 in CJK) | Up to 5 |
-| **Long headline** | Up to 90 characters (effectively 45 in CJK) | Up to 5 |
-| **Description** | Up to 90 characters (effectively 45 in CJK) | Up to 5 |
-| **Business name** | Up to 25 characters (effectively 12–13 in CJK) | 1 (required) |
-| **CTA** | Pick-list or custom (≤10 chars) | 1 |
-| **Final URL** | Required | 1 |
-
-**CJK character counting:** Japanese / Chinese / Korean characters count as 2 chars each. Latin alphanumerics count as 1 each.
-
-### Image assets
-
-| Aspect ratio | Min size | Recommended | File size |
-|---|---|---|---|
-| **Landscape 1.91:1 (required)** | 600×314 px | 1200×628 px | ≤5 MB |
-| **Square 1:1 (required)** | 300×300 px | 1200×1200 px | ≤5 MB |
-| **Portrait 4:5 (optional)** | 480×600 px | 960×1200 px | ≤5 MB |
-| **Logo 1:1** | 144×144 px | 1200×1200 px | ≤150 KB |
-
-- File formats: JPG / PNG / static GIF
-- Recommended count: 15–20 images total across aspect ratios
-- Portrait is optional but recommended for YouTube Shorts and Discover reach
-
-### Video assets
-
-| Aspect ratio | Recommended resolution | Use |
-|---|---|---|
-| **Landscape 16:9** | 1920×1080 px | YouTube In-Stream, standard |
-| **Square 1:1** | 1080×1080 px | Discover, Gmail |
-| **Vertical 9:16** | 1080×1920 px | YouTube Shorts |
-
-| Item | Spec |
-|---|---|
-| File format | MP4 (H.264) or MPG (MPEG-2 / 4) |
-| Maximum file size | 256 GB or 12 hours, whichever is shorter |
-| Minimum resolution | 720p |
-| Minimum length | 5 seconds (YouTube requires ≥6 s) |
-| Recommended Shorts length | 10–20 seconds (max 1 minute) |
-| Count | 1–5 |
-
-### Carousel ad
-
-| Item | Spec |
-|---|---|
-| Card count | 2–10 |
-| Card headline | ≤40 characters |
-| Card description | ≤40 characters |
-| Card image | Same aspect ratio across all cards |
-| Supported aspect ratios | 1.91:1 / 4:5 / 1:1 |
-| CTA | Required |
-
-### CTA options
-
-**Carousel / image ads:** Apply now / Book now / Contact us / Download / Learn more / Visit site / Shop now / Sign up / Get quote / Subscribe / See more.
-
-**Video ads:** All of the above, plus Buy / Donate / Order now / Play now / Start now / Watch.
-
-**Recommended:** Use "Automatic." Google AI picks the best CTA per user.
-
-### Asset-count summary
-
-| Asset | Minimum | Recommended | Cap |
-|---|---|---|---|
-| Landscape image (1.91:1) | 1 | 5–10 | 20 (across all images) |
-| Square image (1:1) | 1 | 5–10 | 20 (across all images) |
-| Portrait image (4:5) | 0 | 3–5 | 20 (across all images) |
-| Logo (1:1) | 1 | 1–2 | — |
-| Headline | 1 | **5** | 5 |
-| Long headline | 1 | **5** | 5 |
-| Description | 1 | **5** | 5 |
-| Video | 0 | 2–3 | 5 |
+- Include landscape, square, and vertical assets when possible; vertical creative is important for Shorts.
+- Each headline, description, image, video, and carousel card must stand alone because Google assembles combinations dynamically.
+- Use "Automatic" CTA unless there is a specific reason to force a CTA.
+- For carousel, keep card quality and message consistent; one weak card can damage the unit.
+- For commerce, verify Merchant Center feed region and delivery settings before using product-feed creative.
 
 ---
 

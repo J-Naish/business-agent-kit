@@ -1,28 +1,5 @@
 # Google App Campaigns
 
-## Contents
-
-- [Glossary](#glossary)
-- [Operating practice](#operating-practice)
-- [Campaign-type cheat sheet](#campaign-type-cheat-sheet)
-- [1. Surfaces and basic characteristics](#1-surfaces-and-basic-characteristics)
-- [2. Prerequisites](#2-prerequisites)
-- [3. Choosing the campaign type](#3-choosing-the-campaign-type)
-- [4. Building the measurement foundation](#4-building-the-measurement-foundation)
-- [5. Designing campaign structure](#5-designing-campaign-structure)
-- [6. Bidding and budget design](#6-bidding-and-budget-design)
-- [7. Building text assets](#7-building-text-assets)
-- [8. Building image assets](#8-building-image-assets)
-- [9. Building video assets](#9-building-video-assets)
-- [10. HTML5 / playable ads](#10-html5--playable-ads)
-- [11. Asset operations and Ad Strength](#11-asset-operations-and-ad-strength)
-- [12. iOS campaign considerations](#12-ios-campaign-considerations)
-- [13. Operating cadence and scaling](#13-operating-cadence-and-scaling)
-- [14. Web to App Connect](#14-web-to-app-connect)
-- [15. Common failure patterns and mitigations](#15-common-failure-patterns-and-mitigations)
-
----
-
 ## Operating practice
 
 App campaigns are highly automated. The real levers are event choice, event quality, budget-to-bid ratio, creative variety, geo/platform split, and patience during learning.
@@ -62,27 +39,7 @@ App campaigns are highly automated. The real levers are event choice, event qual
 - Uploading many cuts of the same creative concept and calling it variety.
 - Changing targets and creative during the first learning window because early results look noisy.
 
----
-
-## Glossary
-
-| Abbreviation | Full term | Definition |
-|---|---|---|
-| ACe | App Campaigns for engagement | Re-engagement campaigns for existing users |
-| ACi | App Campaigns for installs | New-install acquisition campaigns |
-| ACpre | App Campaigns for pre-registration | Pre-launch pre-registration campaigns |
-| MMP (AAP) | Mobile Measurement Partner | AppsFlyer, Adjust, Singular, etc. Sometimes referred to as AAP (App Attribution Partner) in Google Help docs |
-| ATT | App Tracking Transparency | Apple's iOS tracking-consent framework |
-| CPI | Cost Per Install | Ad spend per install |
-| tCPI | Target CPI | Target cost per install |
-| tCPA | Target CPA | Target cost per action |
-| tROAS | Target ROAS | Target return on ad spend |
-| SKAN | SKAdNetwork | Apple's privacy-preserving attribution framework for iOS |
-| AAK | AdAttributionKit | Apple's successor framework to SKAN |
-| SDK | Software Development Kit | Library embedded in the app (Firebase SDK, etc.) |
-| Deep link | Deep Link | A link that opens directly to a specific screen inside the app |
-
----
+Terms used across playbooks live in [SKILL.md glossary](../SKILL.md#common-google-ads-glossary).
 
 ## Campaign-type cheat sheet
 
@@ -405,185 +362,22 @@ When using tROAS, the team must agree on the definition of the `value` (conversi
 
 ---
 
-## 7. Building text assets
+## 7. App creative assets
 
-### 7-1. Text asset specs
+Use [creative-strategy.md](creative-strategy.md#app-campaign-baseline) for production specs. Planning rules:
 
-| Item | Limit | Notes |
-|---|---|---|
-| Headlines | Up to 5 | 30 characters each |
-| Descriptions | Up to 5 | 90 characters each |
-
-**Important:** Each text item is treated as an independent asset. It may show alone, in combination, or as a description-only / headline-only variant. Write each one so it stands alone.
-
-### 7-2. Best practices
-
-**Do:**
-
-| Rule | Why |
-|---|---|
-| Write each text as a self-contained sentence | Texts may appear alone or combined |
-| Vary length (short / medium / long) | Different surfaces have different character limits |
-| Surface a clear USP | Differentiation from competitors is the most important angle |
-| Include specific numbers | "1M downloads," "4.8-star rating," etc. add credibility |
-| Match CTA to the goal | Install → "Download now"; game → "Start playing" |
-
-**Don't:**
-
-| Anti-pattern | Why |
-|---|---|
-| Putting the app name in a headline | The app name is auto-rendered by the format |
-| "Tap to install"-style CTA in copy | The CTA button is built into the format |
-| All texts the same length | Surface-specific optimization can't engage |
-| Headline / description content overlap | Combinations become redundant |
-
-### 7-3. Text asset example (fitness app)
-
-**Headlines (30 chars each):**
-
-| # | Text | Angle |
-|---|---|---|
-| 1 | Real workouts at home | Feature |
-| 2 | 1M people picked this fitness app | Social proof |
-| 3 | Free 7-day trial | Offer |
-| 4 | AI builds your custom plan | Differentiation |
-| 5 | Build the habit starting today | Benefit |
-
-**Descriptions (90 chars each):**
-
-| # | Text | Angle |
-|---|---|---|
-| 1 | 500+ workout videos. From beginner to advanced — auto-recommended plans tailored to your goal | Feature detail |
-| 2 | Start with just 5 minutes a day. The AI trainer customizes your plan to your fitness and goal | Ease |
-| 3 | 4.8 on the App Store. Join the 1M-strong community building their ideal physique | Credibility |
+- Text assets should be self-contained, varied in length, and built around different motivations or objections.
+- Images should show the app UI or product moment; avoid generic lifestyle-only visuals.
+- Video is the first creative priority for scale. Cover landscape, square, and vertical where possible.
+- Apply the ABCD logic: hook early, show the app/brand early, connect to the user motivation, and close with a clear action.
+- If no video is uploaded, Google may auto-generate one from store assets; treat that as a fallback, not a creative strategy.
+- Playable / HTML5 ads are mainly for games or apps where interaction materially improves user quality. They are usually unnecessary for utility, SaaS, or content apps.
 
 ---
 
-## 8. Building image assets
+## 8. Asset operations and Ad Strength
 
-### 8-1. Image asset specs
-
-| Format | Aspect ratio | Recommended size | File format | Max size |
-|---|---|---|---|---|
-| **Landscape** | 1.91:1 | 1200×628 px | JPG / PNG | 1,024 KB |
-| **Square** | 1:1 | 1200×1200 px | JPG / PNG | 1,024 KB |
-| **Portrait** | 2:3 | 1000×1500 px | JPG / PNG | 1,024 KB |
-
-**Priority:** If you only ship one image, ship **landscape (1200×628 px)** first — used on the most surfaces. Ideally cover all formats.
-
-### 8-2. Best practices
-
-| Rule | Description |
-|---|---|
-| Fill the frame | Minimize whitespace; use the full image area |
-| Keep text light (≤20–25% of image area) | Text-heavy images tend to underperform. Not a hard Google rule, but the lighter the text, the higher the visual impact |
-| Don't overlay logo or CTA | The format auto-renders these |
-| Use high resolution | Blurry images dramatically reduce CTR |
-| Include app-UI screenshots | Conveys real usage and sets expectations for after install |
-
-**Surface-specific notes:**
-
-| Surface | Optimal format | Notes |
-|---|---|---|
-| Native ads | Landscape | Most-used format |
-| Interstitial | Portrait | Full-screen; emphasize impact |
-| Display banner | Square | In-app banner slots |
-
-### 8-3. Image variations to test
-
-| Variation | Notes |
-|---|---|
-| With or without people | Including people similar to the target audience can lift CTR |
-| App UI vs lifestyle | Feature-focused vs use-case-focused |
-| Text overlay vs visual-only | Numerical proof ("4.8 stars") vs pure visual |
-| Light vs dark color scheme | Match the audience and the app's tone |
-
----
-
-## 9. Building video assets
-
-### 9-1. Video asset specs
-
-| Item | Spec |
-|---|---|
-| Upload destination | Must be uploaded to YouTube first |
-| Recommended length | 10–30 seconds |
-| Maximum count | 20 per ad group |
-
-**Format-by-format use:**
-
-| Format | Aspect ratio | Main surfaces |
-|---|---|---|
-| Landscape | 16:9 | YouTube in-stream |
-| Vertical | 9:16 | YouTube Shorts, in-app interstitial |
-| Square | 1:1 | Display network, feed surfaces |
-
-### 9-2. Best practices (the ABCD framework)
-
-Google's recommended ABCD framework for video ads:
-
-| Step | Content | How to apply |
-|---|---|---|
-| **A**ttract | Hook attention up front | Surface a pain point or unexpected element in the first 3 seconds |
-| **B**rand | Introduce the brand naturally | Show logo or app icon within the first 5 seconds |
-| **C**onnect | Build emotional connection | Use a story or scene viewers can relate to |
-| **D**irect | Direct to action | Clear CTA to close: "Download now," etc. |
-
-### 9-3. Detailed video guidelines
-
-**Strongly recommended rules:**
-
-| Rule | Why |
-|---|---|
-| Include audio | Silent ads tend to underperform significantly |
-| Show the app UI early | Concretely depicts the post-install experience |
-| Keep pacing fast | Multiple cuts; brisk progression. Prevents drop-off |
-| Design for small screens | Mobile viewing is the default. Tight framing, bright visuals |
-| Don't say "click here" | Risk of policy violation |
-
-**Use by length:**
-
-| Length | Surfaces | Use |
-|---|---|---|
-| 10–15 s | Display, Play Store | Quick attention. Feature highlights |
-| 15–30 s | YouTube, Display | Main pitch. ABCD-structured |
-| 30–60 s | YouTube Shorts (vertical) | Shorts placements. Casual tone |
-
-### 9-4. When you don't have video
-
-If no video assets are uploaded, Google auto-generates videos from the app-store listing (screenshots, etc.). However, auto-generated videos tend to underperform manually produced ones.
-
-**Strongly recommended:** At minimum, ship one landscape (16:9) and one vertical (9:16). Without video, YouTube inventory is hard to capture, and reliance on auto-generated video tends to drop quality.
-
----
-
-## 10. HTML5 / playable ads
-
-### 10-1. Overview
-
-Interactive playable ads. The user experiences a slice of the app inside the ad itself. **Primarily for game apps.**
-
-### 10-2. Specs
-
-| Item | Spec |
-|---|---|
-| Format | HTML5 |
-| Maximum count | 20 per ad group |
-| Audio / video | Not supported inside HTML5 |
-| Surface | Display network (in-app) |
-
-### 10-3. Notes
-
-- HTML5 ads have significantly higher CPM than other asset types
-- Higher CPM flows through to CPI / CPA
-- Outside game apps, the cost-effectiveness rarely makes sense
-- Run a test period before scaling and evaluate ROI carefully
-
----
-
-## 11. Asset operations and Ad Strength
-
-### 11-1. Ad Strength
+### 8-1. Ad Strength
 
 Keep each ad group's Ad Strength at "Good" or above.
 
@@ -592,7 +386,7 @@ Keep each ad group's Ad Strength at "Good" or above.
 - Asset diversity (theme and format)
 - Adherence to Google's best practices
 
-### 11-2. Evaluating asset performance
+### 8-2. Evaluating asset performance
 
 Each asset is given a performance rating:
 
@@ -619,7 +413,7 @@ Each asset is given a performance rating:
 - "Low" + low spend → may be insufficient learning. Watch a bit longer or replace
 - Zero spend → Google is preferring auto-generated assets. Review the asset's quality and format
 
-### 11-3. Asset update rules
+### 8-3. Asset update rules
 
 | Rule | Why |
 |---|---|
@@ -631,9 +425,9 @@ Each asset is given a performance rating:
 
 ---
 
-## 12. iOS campaign considerations
+## 9. iOS campaign considerations
 
-### 12-1. Impact of ATT (App Tracking Transparency)
+### 9-1. Impact of ATT (App Tracking Transparency)
 
 Since iOS 14.5, the ATT prompt requires user consent. Typical opt-in rates are around 15–30%, though the actual rate varies dramatically by app category, region, and prompt design.
 
@@ -642,7 +436,7 @@ Since iOS 14.5, the ATT prompt requires user consent. Typical opt-in rates are a
 - Data may take up to 5 days to appear
 - Optimization precision is lower than on Android
 
-### 12-2. SKAdNetwork (SKAN)
+### 9-2. SKAdNetwork (SKAN)
 
 Apple's privacy-preserving framework. Aggregates attribution at a population level for users who don't opt in to ATT.
 
@@ -660,7 +454,7 @@ Apple's privacy-preserving framework. Aggregates attribution at a population lev
 
 > **Note:** These are platform recommendations; Apple does not publicly disclose the threshold. Required volume varies by category and campaign mix.
 
-### 12-3. iOS operating best practices
+### 9-3. iOS operating best practices
 
 | Rule | Why |
 |---|---|
@@ -670,7 +464,7 @@ Apple's privacy-preserving framework. Aggregates attribution at a population lev
 | Always implement Firebase SDK | Required for iOS on-device measurement |
 | Maintain sufficient install volume | To clear SKAN thresholds |
 
-### 12-4. iOS implementation checklist
+### 9-4. iOS implementation checklist
 
 | Task | Description |
 |---|---|
@@ -680,15 +474,15 @@ Apple's privacy-preserving framework. Aggregates attribution at a population lev
 | Firebase SDK on-device measurement | Required to meet iOS privacy requirements |
 | Verify MMP-side SKAN support | Check the MMP's (AppsFlyer, Adjust, etc.) SKAN 4.0 readiness and configuration |
 
-### 12-5. AdAttributionKit (AAK) migration
+### 9-5. AdAttributionKit (AAK) migration
 
 Apple announced AdAttributionKit (AAK) at WWDC 2025 as the successor to SKAN. MMP and ad-platform support is still in flux — check the latest status periodically.
 
 ---
 
-## 13. Operating cadence and scaling
+## 10. Operating cadence and scaling
 
-### 13-1. Operating cadence
+### 10-1. Operating cadence
 
 | Cadence | Items |
 |---|---|
@@ -697,7 +491,7 @@ Apple announced AdAttributionKit (AAK) at WWDC 2025 as the successor to SKAN. MM
 | **Biweekly** | Bid micro-adjustments (within ±20%), test new ad groups |
 | **Monthly** | Account-wide ROI review, structure audit, new-campaign consideration |
 
-### 13-2. Scaling strategy
+### 10-2. Scaling strategy
 
 **Prerequisites for scaling:**
 - CPA stable for 5–7 days
@@ -711,7 +505,7 @@ Apple announced AdAttributionKit (AAK) at WWDC 2025 as the successor to SKAN. MM
 | Change bids by at most 20% per 24 hours | Big changes reset learning |
 | For target changes, create a new campaign | Switching tCPI → tCPA in place is not recommended |
 
-### 13-3. Capturing YouTube traffic
+### 10-3. Capturing YouTube traffic
 
 YouTube provides the largest reach, but YouTube delivery may not occur if bids are too low.
 
@@ -720,7 +514,7 @@ YouTube provides the largest reach, but YouTube delivery may not occur if bids a
 - Test gradual bid increases to test access to YouTube inventory
 - Follow the ABCD framework
 
-### 13-4. Connecting with App Store Optimization (ASO)
+### 10-4. Connecting with App Store Optimization (ASO)
 
 App campaigns use the app-store listing for auto-generation of text and creative. Optimizing the store directly impacts campaign performance.
 
@@ -734,13 +528,13 @@ App campaigns use the app-store listing for auto-generation of text and creative
 
 ---
 
-## 14. Web to App Connect
+## 11. Web to App Connect
 
-### 14-1. Overview
+### 11-1. Overview
 
 Web to App Connect enables seamless transitions from web campaigns (Search, Shopping, P-MAX, etc.) into the app. It measures app installs and in-app actions driven by web campaigns.
 
-### 14-2. Supported campaign types
+### 11-2. Supported campaign types
 
 | Campaign type | Support |
 |---|---|
@@ -751,7 +545,7 @@ Web to App Connect enables seamless transitions from web campaigns (Search, Shop
 | Demand Gen | Supported (expanded 2025) |
 | Hotel Ads | Supported (expanded 2025) |
 
-### 14-3. Key features
+### 11-3. Key features
 
 | Feature | Description |
 |---|---|
@@ -760,15 +554,15 @@ Web to App Connect enables seamless transitions from web campaigns (Search, Shop
 | Web-to-app acquisition | Measures how many app installs were driven by web campaigns |
 | Unified overview card | Side-by-side comparison of web and app performance |
 
-### 14-4. Impact
+### 11-4. Impact
 
 Web to App Connect can improve continuity between web discovery and app conversion. On iOS especially, it can surface web-campaign contribution to app installs that would otherwise be harder to see.
 
 ---
 
-## 15. Common failure patterns and mitigations
+## 12. Common failure patterns and mitigations
 
-### 15-1. Campaign-design failures
+### 12-1. Campaign-design failures
 
 | Failure | Problem | Mitigation |
 |---|---|---|
@@ -776,7 +570,7 @@ Web to App Connect can improve continuity between web discovery and app conversi
 | Cramming all assets and all geos into one campaign | Language and LTV differences ignored; optimization fails | Split appropriately by OS / geo / language |
 | Too many iOS campaigns | Signal fragmentation reduces learning precision | Keep to ~8 or fewer in principle; split exceptionally for big geo / language / goal differences |
 
-### 15-2. Budget / bid failures
+### 12-2. Budget / bid failures
 
 | Failure | Problem | Mitigation |
 |---|---|---|
@@ -785,7 +579,7 @@ Web to App Connect can improve continuity between web discovery and app conversi
 | Single-step scaling >20% | Learning destabilizes; CPA spikes | Step in 20% increments every 48–72 hours |
 | Switching tCPI → tCPA in the same campaign | Loses learning data | Create a new campaign for the switch |
 
-### 15-3. Creative failures
+### 12-3. Creative failures
 
 | Failure | Problem | Mitigation |
 |---|---|---|
@@ -794,7 +588,7 @@ Web to App Connect can improve continuity between web discovery and app conversi
 | No video assets uploaded | YouTube delivery is constrained | Always upload at least landscape + vertical |
 | Too much text in images | Lower visibility, lower performance | Keep text light (≤20–25% of image area) |
 
-### 15-4. Measurement failures
+### 12-4. Measurement failures
 
 | Failure | Problem | Mitigation |
 |---|---|---|
@@ -802,7 +596,7 @@ Web to App Connect can improve continuity between web discovery and app conversi
 | Judging iOS based on <2 days of data | Modeled data hasn't landed yet | Use at least 3–5 days of data |
 | No Firebase / MMP | In-app actions can't be measured | Build the measurement foundation before launching |
 
-### 15-5. Operations failures
+### 12-5. Operations failures
 
 | Failure | Problem | Mitigation |
 |---|---|---|

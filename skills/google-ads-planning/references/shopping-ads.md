@@ -1,25 +1,5 @@
 # Google Shopping Ads
 
-## Contents
-
-- [Glossary](#glossary)
-- [Operating practice](#operating-practice)
-- [2. Merchant Center setup](#2-merchant-center-setup)
-- [3. Product feed: design and optimization](#3-product-feed-design-and-optimization)
-- [4. Product-title optimization](#4-product-title-optimization)
-- [5. Product image requirements and best practices](#5-product-image-requirements-and-best-practices)
-- [6. Campaign structure](#6-campaign-structure)
-- [7. Shopping-specific bidding](#7-shopping-specific-bidding)
-- [8. Product groups and negative keywords](#8-product-groups-and-negative-keywords)
-- [9. Policies and review](#9-policies-and-review)
-- [10. Measurement and evaluation](#10-measurement-and-evaluation)
-- [11. Operating cadence and checklists](#11-operating-cadence-and-checklists)
-- [12. Standard Shopping vs Performance Max](#12-standard-shopping-vs-performance-max)
-- [13. Free Listings](#13-free-listings)
-- [14. Common failure patterns and mitigations](#14-common-failure-patterns-and-mitigations)
-
----
-
 ## Operating practice
 
 Shopping performance is mostly feed, price, product-market fit, landing-page purchase friction, and margin-aware bidding. Campaign settings matter, but the feed is the targeting and creative layer.
@@ -59,32 +39,11 @@ Shopping performance is mostly feed, price, product-market fit, landing-page pur
 - Breaking product IDs during feed rebuilds, which loses continuity.
 - Ignoring Merchant Center diagnostics and served-rate by SKU.
 
----
+Terms used across playbooks live in [SKILL.md glossary](../SKILL.md#common-google-ads-glossary).
 
-## Glossary
+## 1. Merchant Center setup
 
-Abbreviations used in this guide.
-
-| Abbreviation | Full term | Definition |
-|---|---|---|
-| GMC | Google Merchant Center | The platform for sending and managing product data to Google |
-| PLA | Product Listing Ads | Shopping ads showing product image, price, and store name |
-| GTIN | Global Trade Item Number | Universal product identifier (UPC / EAN / JAN, etc.) |
-| MPN | Manufacturer Part Number | Manufacturer's part number |
-| SKU | Stock Keeping Unit | Inventory-tracking unit |
-| ROAS | Return on Ad Spend | Total CV value ÷ ad spend |
-| CPA | Cost Per Acquisition | Ad spend per CV |
-| CTR | Click Through Rate | Click rate (clicks ÷ impressions) |
-| CPC | Cost Per Click | Cost per click |
-| CVR | Conversion Rate | CV ÷ clicks |
-| PMax | Performance Max | Campaign type that auto-distributes across all Google surfaces |
-| RLSA | Remarketing Lists for Search Ads | Bid adjustment using remarketing lists (applied as "Audience (observation)" in Shopping) |
-
----
-
-## 2. Merchant Center setup
-
-### 2-1. Initial-setup checklist
+### 1-1. Initial-setup checklist
 
 | # | Item | Description |
 |---|---|---|
@@ -96,7 +55,7 @@ Abbreviations used in this guide.
 | 6 | Google Ads link | Link to the Google Ads account |
 | 7 | Program enrollment | Enable "Shopping ads" and "Free listings" |
 
-### 2-2. Major changes in Merchant Center Next (new UI)
+### 1-2. Major changes in Merchant Center Next (new UI)
 
 Updates rolling out in 2025–2026:
 
@@ -111,25 +70,25 @@ Updates rolling out in 2025–2026:
 
 ---
 
-## 3. Product feed: design and optimization
+## 2. Product feed: design and optimization
 
 The product feed is the **foundation of Shopping ad quality.** Feed quality directly impacts CTR, CVR, and CPC.
 
-### 3-1. Required attributes
+### 2-1. Required attributes
 
 Attributes that must be set on every product.
 
 | Attribute | Description | Notes |
 |---|---|---|
 | `id` | Unique product identifier | Use SKU; immutable |
-| `title` | Product title | Up to 150 chars. Details in Section 4 |
+| `title` | Product title | Up to 150 chars. Details in Section 3 |
 | `description` | Product description | Up to 5,000 chars. Cover features, materials, and use cases |
 | `link` | Product detail page URL | Must match the landing page exactly |
-| `image_link` | Main product image URL | Details in Section 5 |
+| `image_link` | Main product image URL | Details in Section 4 |
 | `availability` | Inventory status | One of `in_stock` / `out_of_stock` / `preorder` |
 | `price` | Price | With currency code (e.g. `2980 USD`). Must match the LP price exactly |
 
-### 3-2. Conditionally-required attributes
+### 2-2. Conditionally-required attributes
 
 Required depending on category or situation.
 
@@ -148,7 +107,7 @@ Required depending on category or situation.
 | `item_group_id` | Variant products | Group ID for color / size variants |
 | `shipping` | Shipping info | Can be set in bulk via GMC settings |
 
-### 3-3. Custom labels (custom_label_0–4)
+### 2-3. Custom labels (custom_label_0–4)
 
 Up to 5 custom labels. **The most important tool for campaign structure, bidding, and budget allocation.**
 
@@ -165,7 +124,7 @@ Up to 5 custom labels. **The most important tool for campaign structure, bidding
 - Seasonality labels let you automate budget pumps before peak season and pull-back after.
 - Sales-performance labels concentrate budget on bestsellers.
 
-### 3-4. Description best practices
+### 2-4. Description best practices
 
 | Rule | Description |
 |---|---|
@@ -175,7 +134,7 @@ Up to 5 custom labels. **The most important tool for campaign structure, bidding
 | No promotional copy | Don't put "Free shipping" or "On sale now" in the description |
 | No keyword stuffing | Unnatural keyword cramming is a policy violation |
 
-### 3-5. Feed updating and uploads
+### 2-5. Feed updating and uploads
 
 | Method | Characteristics | Recommended for |
 |---|---|---|
@@ -189,7 +148,7 @@ Up to 5 custom labels. **The most important tool for campaign structure, bidding
 - **Daily updates recommended.** Price / inventory mismatch is the leading cause of disapprovals — frequent updates are the most reliable defense.
 - For scheduled fetches, the minimum interval is **30 minutes**.
 
-### 3-6. Supplemental feeds
+### 2-6. Supplemental feeds
 
 Add or override data without changing the main feed.
 
@@ -202,11 +161,11 @@ Add or override data without changing the main feed.
 
 ---
 
-## 4. Product-title optimization
+## 3. Product-title optimization
 
 Product title is **the single most important optimization point for Shopping ads.** It's Google's primary signal for matching queries to products and the deciding factor in user clicks.
 
-### 4-1. Basic rules
+### 3-1. Basic rules
 
 | Rule | Description |
 |---|---|
@@ -216,7 +175,7 @@ Product title is **the single most important optimization point for Shopping ads
 | No ALL CAPS | Don't write entire titles in uppercase |
 | Include specific attributes | Brand, color, size, material, etc. improve search-match accuracy |
 
-### 4-2. Title structures by category
+### 3-2. Title structures by category
 
 The optimal title structure depends on category.
 
@@ -228,7 +187,7 @@ The optimal title structure depends on category.
 | **Food / beverage** | Brand + product name + flavor / variety + volume + count | Brand Name Green Tea 525 ml × 24 pack |
 | **Beauty / cosmetics** | Brand + product name + type + benefit + volume | SK-II Facial Treatment Essence Toner Hydrating 230 ml |
 
-### 4-3. Title-optimization tips
+### 3-3. Title-optimization tips
 
 - **High brand awareness** → lead with the brand.
 - **Low brand awareness** → lead with the product type (the searched-for generic noun).
@@ -237,46 +196,20 @@ The optimal title structure depends on category.
 
 ---
 
-## 5. Product image requirements and best practices
+## 4. Product image requirements and best practices
 
-### 5-1. Image-size requirements
+Use [creative-strategy.md](creative-strategy.md#shopping--feed-creative-baseline) for shared Shopping feed/image guidance. Shopping-specific image rules:
 
-| Item | General products | Apparel |
-|---|---|---|
-| Minimum size | 100 × 100 px | 250 × 250 px |
-| Recommended size | **1,500 × 1,500 px or larger** | **1,500 × 1,500 px or larger** |
-| Maximum size | 64 megapixels | 64 megapixels |
-| Maximum file size | 16 MB | 16 MB |
-
-### 5-2. Image rules
-
-| Rule | Description |
-|---|---|
-| Product fills 75–90% of the image | Too much or too little whitespace are both rejected |
-| White background recommended | Main image on white. Lifestyle imagery via `additional_image_link` |
-| No added text, watermarks, or decoration | No post-overlaying watermarks, text, or decoration (disapproval risk). However, **logos and text printed on the product itself or its packaging** are typically fine |
-| No promotional text | Text overlays like "SALE" or "Free shipping" not allowed |
-| No borders or frames | Don't add frames around the image |
-| No placeholder images | "No Image Available" type placeholders are disapproved |
-
-### 5-3. Additional images (`additional_image_link`)
-
-- Up to 10 images
-- Use for lifestyle imagery, alternate angles, details, packaging, etc.
-- Complements info that the main image can't show
-
-### 5-4. Image best practices
-
-- **Use high-resolution, sharp images** (blurry / noisy hurts perception).
-- **Provide multiple angles** (front, side, back, in use).
-- **Keep image URLs stable** (avoid timestamped URLs; URL changes force Google to re-crawl).
-- **Use Product Studio** for AI editing (background removal, resolution lift) — free.
+- Main image should make the product legible at thumbnail size.
+- Match the product variant shown on the landing page.
+- Avoid promotional overlays, borders, watermarks, or misleading lifestyle-only images.
+- Use additional images for use cases, detail shots, scale, and bundles where they help purchase confidence.
 
 ---
 
-## 6. Campaign structure
+## 5. Campaign structure
 
-### 6-1. Naming conventions
+### 5-1. Naming conventions
 
 A consistent naming convention improves operational efficiency.
 
@@ -291,7 +224,7 @@ A consistent naming convention improves operational efficiency.
 - `US Shopping Brand Sofa 2026`
 - `US Shopping Remarketing AllProducts 2026`
 
-### 6-2. Campaign-split logic
+### 5-2. Campaign-split logic
 
 | Split axis | Reason |
 |---|---|
@@ -322,7 +255,7 @@ Shopping ads don't accept keywords as input, so brand / non-brand separation wor
 - Perfect separation isn't possible. Check the search-terms report regularly for leakage.
 - Use caution when excluding competitor brand names — legal and policy considerations apply.
 
-### 6-3. Recommended campaign-structure template
+### 5-3. Recommended campaign-structure template
 
 For e-commerce sellers, a basic 3-campaign structure:
 
@@ -346,7 +279,7 @@ For e-commerce sellers, a basic 3-campaign structure:
   └── Priority: Low
 ```
 
-### 6-4. Budget guidelines
+### 5-4. Budget guidelines
 
 **Daily budget logic:**
 
@@ -371,9 +304,9 @@ Example: estimated CPC $0.30 → minimum daily budget ~$3/day.
 
 ---
 
-## 7. Shopping-specific bidding
+## 6. Shopping-specific bidding
 
-### 7-1. Setting Manual CPC
+### 6-1. Setting Manual CPC
 
 **Max-CPC formula:**
 
@@ -386,7 +319,7 @@ Example: product price $100, margin 40%, CVR 2%
 
 **Start initial bids at 50–75% of break-even** and adjust based on performance.
 
-### 7-2. Migrating from Manual to Smart Bidding
+### 6-2. Migrating from Manual to Smart Bidding
 
 | Stage | Condition | Action |
 |---|---|---|
@@ -397,7 +330,7 @@ Example: product price $100, margin 40%, CVR 2%
 
 **Important: don't set Target ROAS on a brand-new campaign.** With insufficient CV data, AI learning is unstable — delivery either drops sharply or scales inefficiently.
 
-### 7-3. Bid-adjustment logic
+### 6-3. Bid-adjustment logic
 
 **Margin-based bidding:**
 
@@ -419,7 +352,7 @@ In Shopping, audiences can be added in "observation" mode and bid adjustments ap
 
 > Similar Audiences was sunset in August 2023. Use Smart Bidding signal optimization or Customer Match instead.
 
-### 7-4. Campaign priority
+### 6-4. Campaign priority
 
 In Standard Shopping, when **the same product is in multiple campaigns**, priority decides which campaign bids.
 
@@ -433,9 +366,9 @@ In Standard Shopping, when **the same product is in multiple campaigns**, priori
 
 ---
 
-## 8. Product groups and negative keywords
+## 7. Product groups and negative keywords
 
-### 8-1. Product-group design
+### 7-1. Product-group design
 
 In Shopping, you don't bid by keyword — you bid via **product groups.**
 
@@ -466,7 +399,7 @@ All products
 
 **Always set the bid on "Everything else."** Otherwise unclassified products spend on the default bid.
 
-### 8-2. Negative keywords
+### 7-2. Negative keywords
 
 Shopping ads can't control display via keywords, so **negative keywords are the only way to control search queries.**
 
@@ -494,7 +427,7 @@ Shopping ads can't control display via keywords, so **negative keywords are the 
 | Irrelevant products | Categories or types you don't carry |
 | Used / unwanted | used, junk, "looking to sell" |
 
-### 8-3. Using the search-terms report
+### 7-3. Using the search-terms report
 
 - Review **weekly**.
 - Add irrelevant or non-converting queries to negatives.
@@ -502,43 +435,21 @@ Shopping ads can't control display via keywords, so **negative keywords are the 
 
 ---
 
-## 9. Policies and review
+## 8. Policies and review
 
-### 9-1. Prohibited products
-
-Cannot be advertised in Shopping.
-
-| Category | Examples |
-|---|---|
-| Counterfeits | Knockoffs of branded products |
-| Dangerous products | Weapons, ammunition, explosives, fireworks, drugs, drug paraphernalia |
-| Promotion of dishonest behavior | Hacking tools, academic dishonesty services |
-| Inappropriate content | Hate or violence-promoting content |
-
-### 9-2. Restricted products
-
-Allowed with additional conditions or constraints.
-
-| Category | Restriction |
-|---|---|
-| Alcohol | Per local law. No targeting minors |
-| Adult products | Adult-product flag required. Some countries: not allowed |
-| Pharmaceuticals / health | Per local regulation. Prescription drugs generally not allowed |
-| HFSS food / beverage | High-fat / sugar / salt food can't be targeted to minors |
-
-### 9-3. Common disapproval causes and fixes
+Shopping policy work is mostly feed hygiene plus category compliance. Check the current Merchant Center policy before launch for regulated products and country-specific restrictions.
 
 | Reason | Cause | Fix |
 |---|---|---|
+| Prohibited product | Counterfeits, dangerous products, dishonest-behavior services, inappropriate content | Remove from the feed and block recurrence upstream |
+| Restricted product | Alcohol, adult products, healthcare/pharma, HFSS food/beverage, other regulated categories | Confirm country rules, required attributes, certifications, and targeting limits |
 | Price mismatch | Price differs in feed vs LP | Increase feed update frequency. Implement structured data (schema.org) |
 | Availability mismatch | `in_stock` in feed but out of stock on LP | Implement automated inventory-linked feed updates |
-| Image issues | Size too small, text overlays, placeholders | Replace images per Section 5 |
+| Image issues | Size too small, text overlays, placeholders | Replace images per Section 4 |
 | Bad GTIN / MPN | Identifier wrong or missing | Validate with GTIN validator. Declare GTIN-exempt for custom items |
 | 404 LP | Broken link | Implement URL monitoring; check links before feed submission |
 | Shipping info issues | Shipping cost / lead time not configured | Fill GMC shipping settings completely |
 | Policy-violating content | Prohibited / restricted-category items | Remove offending products from the feed |
-
-### 9-4. Review escalation
 
 If you disagree with a disapproval:
 1. Check the disapproval reason in GMC's "Diagnostics" tab.
@@ -550,9 +461,9 @@ If you disagree with a disapproval:
 
 ---
 
-## 10. Measurement and evaluation
+## 9. Measurement and evaluation
 
-### 10-1. Conversion setup
+### 9-1. Conversion setup
 
 For Shopping (e-commerce), tracking CV value (revenue) accurately is especially important.
 
@@ -563,7 +474,7 @@ For Shopping (e-commerce), tracking CV value (revenue) accurately is especially 
 | Attribution | Data-Driven Attribution (DDA) |
 | CV measurement window | 30 days post-click (default). Consider 60–90 days for high-ticket items |
 
-### 10-2. Key KPIs
+### 9-2. Key KPIs
 
 | Metric | Definition | Guideline |
 |---|---|---|
@@ -573,7 +484,7 @@ For Shopping (e-commerce), tracking CV value (revenue) accurately is especially 
 | CPC | Spend ÷ clicks | Varies by category and competition |
 | Impression share | Impressions ÷ eligible impressions | Indicates budget / bid sufficiency |
 
-### 10-3. Profit-based evaluation
+### 9-3. Profit-based evaluation
 
 Don't evaluate on ROAS alone — **evaluate gross-profit profitability.**
 
@@ -586,7 +497,7 @@ Example:
 - Ad profit = ($10,000 × 0.4) − $2,500 = **$1,500**
 - ROAS = 400% (looks fine, but at lower margins, 400% ROAS can still lose money)
 
-### 10-4. Common measurement traps
+### 9-4. Common measurement traps
 
 | Trap | Problem | Fix |
 |---|---|---|
@@ -595,7 +506,7 @@ Example:
 | Enhanced Conversions not enabled | Cookie restrictions are increasing CV under-counting | Hash and send first-party data (email, etc.) via Enhanced Conversions |
 | Inconsistent reporting metrics | Revenue ROAS and gross-profit ROAS lead to different decisions | Standardize on three metrics: **Revenue ROAS** (from Google Ads UI), **Gross-profit ROAS** (gross profit ÷ ad spend, calculated separately), **Ad profit** (gross profit − ad spend) |
 
-### 10-5. Product-level analysis
+### 9-5. Product-level analysis
 
 Check at the product level periodically:
 
@@ -608,9 +519,9 @@ Check at the product level periodically:
 
 ---
 
-## 11. Operating cadence and checklists
+## 10. Operating cadence and checklists
 
-### 11-1. Daily checks
+### 10-1. Daily checks
 
 | Item | Action |
 |---|---|
@@ -618,7 +529,7 @@ Check at the product level periodically:
 | Product disapprovals | Check GMC "Diagnostics" tab. Address new disapprovals same day |
 | Outlier alerts | Watch for sudden CPC spikes, CTR drops, CV drops |
 
-### 11-2. Weekly checks
+### 10-2. Weekly checks
 
 | Item | Action |
 |---|---|
@@ -628,7 +539,7 @@ Check at the product level periodically:
 | Competitor pricing | Spot-check competitor pricing on key products in search results |
 | Impression share | Audit lost share due to budget / bid |
 
-### 11-3. Monthly checks
+### 10-3. Monthly checks
 
 | Item | Action |
 |---|---|
@@ -640,7 +551,7 @@ Check at the product level periodically:
 | Add new products | Confirm new products are included in the feed |
 | Seasonal prep | Prepare for next month's seasonal events (labels, budget, bids) |
 
-### 11-4. Quarterly checks
+### 10-4. Quarterly checks
 
 | Item | Action |
 |---|---|
@@ -652,9 +563,9 @@ Check at the product level periodically:
 
 ---
 
-## 12. Standard Shopping vs Performance Max
+## 11. Standard Shopping vs Performance Max
 
-### 12-1. Comparison table
+### 11-1. Comparison table
 
 | Item | Standard Shopping | Performance Max |
 |---|---|---|
@@ -667,7 +578,7 @@ Check at the product level periodically:
 | Recommended CV count | No firm minimum | 30+ per month recommended |
 | Transparency | High | Lower than Standard Shopping |
 
-### 12-2. Priority logic change (2024)
+### 11-2. Priority logic change (2024)
 
 **Before:** PMax automatically took priority over Standard Shopping for the same product.
 
@@ -677,7 +588,7 @@ This change restored Standard Shopping's competitiveness and made hybrid (runnin
 
 > The exact application timing of this change can vary by account. Verify behavior in your own account via the search-terms report.
 
-### 12-3. When to use which
+### 11-3. When to use which
 
 | Situation | Recommendation |
 |---|---|
@@ -688,7 +599,7 @@ This change restored Standard Shopping's competitiveness and made hybrid (runnin
 | Sufficient CV data (30+/month) | Consider adding Performance Max |
 | Have text / image / video assets ready | Performance Max |
 
-### 12-4. PMax control levers
+### 11-4. PMax control levers
 
 PMax is automation-heavy, but you still have the following levers.
 
@@ -711,7 +622,7 @@ PMax doesn't provide a detailed search-terms report. Use these signals instead:
 - **Per-product performance**: judge winners / losers by per-product ROAS / CV / spend
 - **Per-asset performance**: judge swaps based on Best / Good / Low ratings on text / image / video
 
-### 12-5. Hybrid operation
+### 11-5. Hybrid operation
 
 **Recommended approach:**
 
@@ -724,9 +635,9 @@ PMax doesn't provide a detailed search-terms report. Use these signals instead:
 
 ---
 
-## 13. Free Listings
+## 12. Free Listings
 
-### 13-1. Overview
+### 12-1. Overview
 
 Started in 2020 — a free listing slot. Just submitting the product feed to GMC can surface products on Google's surfaces without paid ads.
 
@@ -736,7 +647,7 @@ Started in 2020 — a free listing slot. Just submitting the product feed to GMC
 - Google Image Search
 - Google Lens
 
-### 13-2. Difference from paid ads
+### 12-2. Difference from paid ads
 
 | Item | Paid Shopping ads | Free Listings |
 |---|---|---|
@@ -745,7 +656,7 @@ Started in 2020 — a free listing slot. Just submitting the product feed to GMC
 | Control | Bid- and budget-controllable | Algorithm-driven |
 | Traffic scale | Large (carousel captures most clicks) | Limited compared to paid |
 
-### 13-3. Merchant Center capabilities to leverage
+### 12-3. Merchant Center capabilities to leverage
 
 Additional GMC features that can boost Shopping ads.
 
@@ -779,19 +690,19 @@ Display star ratings on products — a click-decision booster.
 - Implement structured data (schema.org `Product` markup: `price`, `availability`) on the LP — improves Google's auto-validation accuracy
 - Monitor 404s and price mismatches via external tools or your own scripts; effective at preventing disapprovals
 
-### 13-4. Optimizing Free Listings
+### 12-4. Optimizing Free Listings
 
 Even without paid ads, raising feed quality increases free-listing visibility.
 
 - Fill in every recommended attribute (GTIN, google_product_category, color, size, etc.)
-- Optimize titles and descriptions (Section 4)
-- Use high-quality images (Section 5)
+- Optimize titles and descriptions (Section 3)
+- Use high-quality images (Section 4)
 - Increase feed update frequency (daily recommended)
 - Connect product reviews / ratings
 
 ---
 
-## 14. Common failure patterns and mitigations
+## 13. Common failure patterns and mitigations
 
 | # | Failure | Cause | Mitigation |
 |---|---|---|---|

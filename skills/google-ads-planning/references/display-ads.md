@@ -1,24 +1,5 @@
 # Google Display Ads
 
-## Contents
-
-- [1. Ad formats](#1-ad-formats)
-- [Operating practice](#operating-practice)
-- [2. Submission specs for Responsive Display Ads (RDA)](#2-submission-specs-for-responsive-display-ads-rda)
-- [3. Submission specs for uploaded display ads](#3-submission-specs-for-uploaded-display-ads)
-- [4. Creative-design best practices](#4-creative-design-best-practices)
-- [5. Ad policies and rules](#5-ad-policies-and-rules)
-- [6. Targeting strategy](#6-targeting-strategy)
-- [7. Bidding strategies (Display-specific)](#7-bidding-strategies-display-specific)
-- [8. Measurement and evaluation (Display version)](#8-measurement-and-evaluation-display-version)
-- [9. Campaign structure and operating design](#9-campaign-structure-and-operating-design)
-- [10. Brand safety and placement management](#10-brand-safety-and-placement-management)
-- [11. Ad Strength and optimization](#11-ad-strength-and-optimization)
-- [12. Operations checklist](#12-operations-checklist)
-- [13. Relationship with Demand Gen campaigns (2025+)](#13-relationship-with-demand-gen-campaigns-2025)
-
----
-
 ## Operating practice
 
 Display should have a clear job: remarketing, warm re-engagement, cheap incremental reach, or carefully controlled prospecting. Do not evaluate every Display campaign like Search.
@@ -88,166 +69,19 @@ Use when you want pixel-level design control.
 
 ---
 
-## 2. Submission specs for Responsive Display Ads (RDA)
+## 2. Submission specs
 
-### Image assets
+Use [creative-strategy.md](creative-strategy.md#display-baseline) for production specs. Display-specific planning rules:
 
-| Item | Spec |
-|---|---|
-| **Landscape (required)** | Aspect ratio 1.91:1 / recommended 1200×628 px / minimum 600×314 px |
-| **Square (required)** | Aspect ratio 1:1 / recommended 1200×1200 px / minimum 300×300 px |
-| **Portrait (optional)** | Aspect ratio 4:5 / recommended 1200×1500 px / minimum 320×400 px |
-| File format | JPEG or PNG (animated GIF not supported) |
-| File size | ≤5 MB each |
-| Maximum count | **15 images** |
-| Recommended count | 5–10 per aspect ratio |
-
-**Note:** Google may crop or resize images to fit each placement. Keep important elements near the center (the safe zone).
-
-### Logos
-
-| Item | Spec |
-|---|---|
-| **Square logo** | Aspect ratio 1:1 / recommended 1200×1200 px / minimum 128×128 px |
-| **Landscape logo (optional)** | Aspect ratio 4:1 / recommended 1200×300 px / minimum 512×128 px |
-| File format | PNG with transparent background recommended (or JPG) |
-| File size | ≤5 MB each |
-| Maximum count | **5 logos** |
-
-### Text assets
-
-| Item | Spec | Notes |
-|---|---|---|
-| **Short headline** | Up to 30 characters × up to 5 | CJK characters are counted as 2 chars each (effectively 15 in CJK) |
-| **Long headline** | Up to 90 characters × 1 | Effectively 45 in CJK |
-| **Description** | Up to 90 characters × up to 5 | Effectively 45 in CJK |
-| **Business name** | Up to 25 characters × 1 | Effectively 12–13 in CJK |
-| **CTA (call-to-action phrase)** | Picked from a dropdown | "Auto" recommended; manual selection allowed |
-
-**CJK character counting:** Japanese / Chinese / Korean characters count as 2 chars each. Latin alphanumerics count as 1 each.
-
-### Video assets (optional)
-
-| Item | Spec |
-|---|---|
-| Maximum count | 5 |
-| Maximum duration | 30 seconds |
-| Recommended aspect ratios | 16:9, 1:1, 4:3, 9:16 |
-| Submission method | Specify the YouTube video URL |
-
-### Asset-count summary
-
-| Asset | Minimum | Recommended | Cap |
-|---|---|---|---|
-| Landscape image (1.91:1) | 1 | 5–10 | 15 (across all images) |
-| Square image (1:1) | 1 | 5–10 | 15 (across all images) |
-| Portrait image (4:5) | 0 | 2–5 | 15 (across all images) |
-| Logo (1:1) | 1 | 2–3 | 5 |
-| Logo (4:1) | 0 | 1–2 | 5 (across all logos) |
-| Short headline | 1 | **5** | 5 |
-| Long headline | 1 | 1 | 1 |
-| Description | 1 | **5** | 5 |
-| Video | 0 | 1–3 | 5 |
-
-**Why upload more assets:** With multiple variations, Google AI can test more combinations and serve the optimal ad per surface and user. More useful variation usually improves learning quality, provided the assets are genuinely distinct.
+- Prefer Responsive Display Ads unless strict layout control is required.
+- Uploaded display ads are useful for brand-control cases, but production should prioritize high-inventory sizes first.
+- Keep important visual elements centered because Google may crop responsive assets.
+- Text-heavy images usually underperform and can create policy / delivery risk.
+- If video is used, evaluate EVC and VTC separately from click-based CPA.
 
 ---
 
-## 3. Submission specs for uploaded display ads
-
-### 3-1. Static image ads
-
-#### Supported sizes
-
-**Rectangles and squares**
-
-| Size | Name | Use |
-|---|---|---|
-| 300×250 | Medium Rectangle | **Most important.** High inventory on both desktop and mobile |
-| 336×280 | Large Rectangle | Desktop. High performance |
-| 250×250 | Square | Desktop and mobile |
-| 200×200 | Small Square | Desktop and mobile |
-
-**Horizontal banners**
-
-| Size | Name | Use |
-|---|---|---|
-| 728×90 | Leaderboard | **Important.** Common at the top of desktop pages |
-| 468×60 | Banner | Desktop. Legacy size |
-| 970×90 | Large Leaderboard | Desktop. For wider sites |
-| 970×250 | Billboard | Desktop. Large display |
-| 800×250 | — | Desktop |
-
-**Vertical skyscrapers**
-
-| Size | Name | Use |
-|---|---|---|
-| 300×600 | Half Page | **Important.** High visibility |
-| 160×600 | Wide Skyscraper | Desktop sidebar. Stable delivery volume |
-| 120×600 | Skyscraper | Desktop sidebar |
-| 300×1050 | Portrait | Desktop. Large display |
-
-**Mobile**
-
-| Size | Name | Use |
-|---|---|---|
-| 320×50 | Mobile Banner | **Mobile must-have.** Highest inventory volume |
-| 320×100 | Large Mobile Banner | **Mobile important.** High visibility |
-| 320×480 | Mobile Interstitial | Mobile interstitial |
-| 300×50 | — | Mobile |
-| 300×100 | — | Mobile |
-| 360×592 | — | Mobile |
-
-#### Sizes to prioritize
-
-When production resources are limited, build in this order:
-
-1. **300×250** — largest inventory; works on desktop and mobile
-2. **320×50** — highest mobile inventory
-3. **728×90** — desktop staple
-4. **320×100** — mobile, high visibility
-5. **300×600** — desktop, high visibility
-6. **160×600** — desktop sidebar staple
-
-#### File specs
-
-| Item | Spec |
-|---|---|
-| File format | JPEG, PNG, GIF (non-animated) |
-| File size | **≤150 KB** |
-
-### 3-2. Animated GIF ads
-
-| Item | Spec |
-|---|---|
-| File format | GIF |
-| File size | **≤150 KB** |
-| Animation length | **≤30 s** |
-| Frame rate | **≤5 fps** (≥200 ms between frames) |
-| Supported sizes | Same as static images |
-
-### 3-3. HTML5 ads
-
-| Item | Spec |
-|---|---|
-| File format | ZIP (compressed package) |
-| File size | **≤150 KB** (total of all assets) |
-| Media asset count | Up to 39 files |
-| Audio | Must start on user interaction (no autoplay) |
-| Video | Click-to-play or muted autoplay |
-| Supported sizes | Same as static images, plus 320×320, 360×592, etc. |
-
-### 3-4. AMPHTML ads
-
-| Item | Spec |
-|---|---|
-| Format | AMP-compliant HTML |
-| Characteristics | Fast rendering. Optimized for mobile |
-| Supported sizes | Same as HTML5 |
-
----
-
-## 4. Creative-design best practices
+## 3. Creative-design best practices
 
 ### 4-1. Image-design principles
 
@@ -334,89 +168,25 @@ When production resources are limited, build in this order:
 
 ---
 
-## 5. Ad policies and rules
+## 4. Ad policies and rules
 
-### 5-1. Editorial policy
+Treat Display policy work as a launch-risk screen, not a static policy manual. Verify the current Google Ads policy before launch, especially in regulated categories.
 
-Google Ads requires a clear, professional quality bar across every ad.
-
-#### Text rules
-
-| Category | Don't | Do |
-|---|---|---|
-| Excessive symbols | `!!!`, `???`, `★★★` | One punctuation mark at a time |
-| ALL CAPS (English) | `FREE SHIPPING NOW` | `Free Shipping Now` |
-| Meaningless symbols | `F₹€€!!`, `f-r-e-e` | Normal text |
-| Vague copy | "Buy this product here" | Name the product or benefit specifically |
-| Spaced-out characters | `B u y N o w` | `Buy Now` |
-| Phone numbers in body copy | Phone number inside the text | Use the call extension instead |
-
-#### Image rules
-
-| Category | Prohibited |
+| Area | What to check before launch |
 |---|---|
-| Blurry / low-resolution | Pixelated images |
-| Excessive color inversion / filtering | Unnatural processing |
-| Tilted / inverted images | Show the correct orientation |
-| Illegible text | In-image text too small to read |
-| Fake UI elements (buttons, etc.) | Images that look clickable when they aren't |
+| Editorial quality | No excessive symbols, gimmicky capitalization, vague copy, phone numbers in body copy, blurry images, fake UI, or illegible text |
+| Misleading / clickbait | No sensational phrasing, deceptive prompts, fear-based imagery, before/after body claims, or over-edited body-part imagery |
+| Restricted categories | Alcohol, gambling, healthcare/pharma, financial services, political ads, adult content, and other regulated verticals may need certification, geo limits, disclosures, or exclusions |
+| Prohibited content | Counterfeits, dangerous products, dishonest behavior, hate/violence, and other disallowed content must be excluded entirely |
+| Landing page | Domain must match, page must work, browser navigation must not be blocked, content must be useful, and mobile rendering must be acceptable |
 
-### 5-2. No clickbait or misleading ads
-
-These tactics result in disapproval:
-
-| Prohibited tactic | Examples |
-|---|---|
-| Sensationalism | "Shocking truth revealed", "Unbelievable results" |
-| Click-bait phrasing | "Click here to confirm", "Don't miss this" |
-| Before / after body images | Comparison images showing dramatic body change |
-| Disaster / accident imagery | Real accident photos used to drive fear |
-| Emotional manipulation | Fear / guilt around death, arrest, or illness |
-| Over-zoomed body parts | Obviously edited zoom-in images |
-
-### 5-3. Restricted content
-
-Allowed but constrained:
-
-| Category | Restriction |
-|---|---|
-| Alcohol | Per local law; no targeting minors |
-| Gambling | Pre-certification required; geographic restrictions |
-| Healthcare / pharma | Per local law and certification |
-| Financial services | Required disclosures (rates, fees) in some markets |
-| Political ads | Identity verification, geographic restrictions |
-
-### 5-4. Prohibited content
-
-| Category | Content |
-|---|---|
-| Counterfeits | Promotion of counterfeit branded goods |
-| Dangerous products | Drugs, weapons, explosives, etc. |
-| Enabling dishonest behavior | Hacking, fake document services, etc. |
-| Inappropriate content | Hate, violence, adult content, etc. |
-
-### 5-5. Landing-page requirements
-
-| Requirement | Description |
-|---|---|
-| Match the displayed URL | Display URL and landing-page domain must match |
-| Page must work | No under-construction or error pages |
-| Browser back button | Must not be disabled |
-| Useful content | Must offer value to the user |
-| Mobile-ready | Must render correctly on mobile |
-
-### 5-6. Handling policy violations
-
-1. **Warning**: usually a 7-day warning is issued for the first violation
-2. **Ad disapproval**: the specific ad is paused
-3. **Account suspension**: possible for repeated serious violations
-4. **Appeal**: can be filed from the Google Ads UI
+If disapproved, diagnose the exact policy reason in Google Ads, fix the ad or LP, document the change, and request review only when the underlying issue has been resolved.
 
 ---
 
-## 6. Targeting strategy
+## 5. Targeting strategy
 
-### 6-1. Audience targeting
+### 5-1. Audience targeting
 
 | Type | Content | Best for |
 |---|---|---|
@@ -428,7 +198,7 @@ Allowed but constrained:
 | **Demographics** | Age, gender, household income, parental status | Attribute-based filtering |
 | **Life events** | Marriage, moving, graduation, etc. | Reach at moments of life-stage change |
 
-### 6-2. Content targeting
+### 5-2. Content targeting
 
 | Type | Content |
 |---|---|
@@ -436,7 +206,7 @@ Allowed but constrained:
 | **Topics** | Pages related to specified topics |
 | **Placements** | Specific websites, apps, or YouTube channels |
 
-### 6-3. Optimized Targeting
+### 5-3. Optimized Targeting
 
 - On by default at the ad-group level for Display campaigns
 - Google AI expands beyond the manually-set targeting to users likely to convert
@@ -444,7 +214,7 @@ Allowed but constrained:
 - Helpful in the early stage or with low conversion volume; precision improves with more conversion data
 - Consider turning OFF when you want to keep tight control (recommend A/B testing ON/OFF for Prospecting vs Remarketing)
 
-### 6-4. Targeting vs Observation
+### 5-4. Targeting vs Observation
 
 When adding audience segments to a Display campaign, choose between Targeting and Observation:
 
@@ -455,7 +225,7 @@ When adding audience segments to a Display campaign, choose between Targeting an
 
 **Pattern:** Use Targeting for remarketing lists (where narrowing is the point), and Observation for affinity / demographics (gather data first, then potentially switch to Targeting later).
 
-### 6-5. Old-term → current-UI mapping
+### 5-5. Old-term → current-UI mapping
 
 | Old term | Current (as of 2026) | Notes |
 |---|---|---|
@@ -464,7 +234,7 @@ When adding audience segments to a Display campaign, choose between Targeting an
 | Lookalike segments | **Demand Gen only** (not available in Display campaigns) | In Demand Gen, expand from Customer Match etc. |
 | Audience expansion | Merged into **Optimized Targeting** | Renamed and re-UI'd |
 
-### 6-6. Targeting design notes
+### 5-6. Targeting design notes
 
 | Note | Description |
 |---|---|
@@ -475,9 +245,9 @@ When adding audience segments to a Display campaign, choose between Targeting an
 
 ---
 
-## 7. Bidding strategies (Display-specific)
+## 6. Bidding strategies (Display-specific)
 
-### 7-1. Smart Bidding (recommended)
+### 6-1. Smart Bidding (recommended)
 
 | Strategy | Goal | When to use |
 |---|---|---|
@@ -486,7 +256,7 @@ When adding audience segments to a Display campaign, choose between Targeting an
 | **Maximize Conversion Value** | Maximize CV value (e.g. revenue) | CV value is set up |
 | **Target ROAS** | Maximize CV value at the specified ROAS | Sufficient CV-value data |
 
-### 7-2. Display-specific bid strategies
+### 6-2. Display-specific bid strategies
 
 | Strategy | Goal | Notes |
 |---|---|---|
@@ -494,7 +264,7 @@ When adding audience segments to a Display campaign, choose between Targeting an
 
 **Note:** Enhanced CPC (eCPC) is no longer available for Search and Display campaigns; campaigns that were not proactively migrated now effectively use Manual CPC ([Google Ads Help](https://support.google.com/google-ads/answer/2464964?hl=en)).
 
-### 7-3. Bid-strategy decision flow for Display
+### 6-3. Bid-strategy decision flow for Display
 
 ```
 Is conversion tracking live?
@@ -508,11 +278,11 @@ Is conversion tracking live?
 
 ---
 
-## 8. Measurement and evaluation (Display version)
+## 7. Measurement and evaluation (Display version)
 
 Display ads behave differently from Search — "non-click contribution," "view-through touchpoints," and "accidental clicks" are common. Evaluating Display purely on Search-style CPA either undervalues Display or leaves wasteful delivery untouched.
 
-### 8-1. View-through conversions (VTC)
+### 7-1. View-through conversions (VTC)
 
 Counted when the user saw the ad, did not interact with it, and later converted within the view-through window.
 
@@ -534,7 +304,7 @@ Per the unified VTC policy in SKILL.md, treat VTC as follows:
 
 **Note:** Overweighting VTC risks budget flowing to impressions that don't actually drive conversions. Keeping the VTC window short (1 day) helps prevent inflation. Always track click-based / EVC performance and VTC-assisted contribution separately.
 
-### 8-2. Primary vs Secondary conversions
+### 7-2. Primary vs Secondary conversions
 
 Google Ads lets you classify CV actions as Primary or Secondary.
 
@@ -551,7 +321,7 @@ Google Ads lets you classify CV actions as Primary or Secondary.
 | B2B lead gen | Form submit | Resource downloads, click-to-call, VTC |
 | Awareness goal | — (no CV; vCPM bidding) | Site visits, time on page |
 
-### 8-3. KPIs by goal
+### 7-3. KPIs by goal
 
 The right metrics for Display vary dramatically by goal.
 
@@ -562,7 +332,7 @@ The right metrics for Display vary dramatically by goal.
 | **Conversion acquisition** | CPA, CV count, ROAS | VTC, assist CV, LTV |
 | **Remarketing** | CPA, CV count, ROAS | VTC, frequency, list utilization |
 
-### 8-4. Incremental evaluation (lightweight)
+### 7-4. Incremental evaluation (lightweight)
 
 Methods for verifying that Display is actually generating incremental conversions.
 
@@ -574,7 +344,7 @@ Methods for verifying that Display is actually generating incremental conversion
 | **Prospecting vs Remarketing split** | Split into separate campaigns to surface each side's incremental contribution | Mid |
 | **Conversion Lift** | Use the platform lift-measurement workflow when eligible | High |
 
-### 8-5. Landing-page requirements (Display-specific)
+### 7-5. Landing-page requirements (Display-specific)
 
 Users land on Display ads passively, so LP drop-off is more common than from Search.
 
@@ -587,9 +357,9 @@ Users land on Display ads passively, so LP drop-off is more common than from Sea
 
 ---
 
-## 9. Campaign structure and operating design
+## 8. Campaign structure and operating design
 
-### 9-1. Why split campaigns
+### 8-1. Why split campaigns
 
 | Split axis | Examples | Reason |
 |---|---|---|
@@ -597,7 +367,7 @@ Users land on Display ads passively, so LP drop-off is more common than from Sea
 | **By product** | Product A / Product B | Manage budgets independently |
 | **By geography** | Domestic / international | Different targeting and messaging |
 
-### 9-2. Recommended campaign-structure template
+### 8-2. Recommended campaign-structure template
 
 For Display, the foundational rule is: **don't mix Prospecting (new users) with Remarketing.** A 3-campaign structure is the recommended template.
 
@@ -632,7 +402,7 @@ Display (3-campaign structure)
 - Turn Optimized Targeting OFF on Remarketing to keep audience control tight.
 - Heavy accidental-click traffic from in-app inventory? Use placement exclusions (see Section 10).
 
-### 9-3. Ad-group design
+### 8-3. Ad-group design
 
 | Principle | Description |
 |---|---|
@@ -641,7 +411,7 @@ Display (3-campaign structure)
 | Message match | Creative tailored to each target audience |
 | Ad count | 3–4 Responsive Display Ads per ad group |
 
-### 9-4. Frequency cap
+### 8-4. Frequency cap
 
 | Item | Setting |
 |---|---|
@@ -654,7 +424,7 @@ Display (3-campaign structure)
 - Remarketing: 1–3 / day
 - Loosen the cap when delivery volume is low to validate
 
-### 9-5. Geo, language, and device settings
+### 8-5. Geo, language, and device settings
 
 | Setting | Notes |
 |---|---|
@@ -664,9 +434,9 @@ Display (3-campaign structure)
 
 ---
 
-## 10. Brand safety and placement management
+## 9. Brand safety and placement management
 
-### 10-1. Inventory types
+### 9-1. Inventory types
 
 | Type | Content | Recommended for |
 |---|---|---|
@@ -674,7 +444,7 @@ Display (3-campaign structure)
 | **Standard inventory** | Content suitable for the majority of brands | **Default recommended** |
 | **Limited inventory** | Strict exclusion of strong language and sexual content | Brands with strict guidelines |
 
-### 10-2. Content-type exclusions
+### 9-2. Content-type exclusions
 
 #### Sensitive content exclusions
 
@@ -695,7 +465,7 @@ Display (3-campaign structure)
 | Below the fold | Ad slots that require scrolling to be seen |
 | Parked domains | Empty domains; recommend exclusion |
 
-### 10-3. Placement exclusions
+### 9-3. Placement exclusions
 
 | Level | Description |
 |---|---|
@@ -714,7 +484,7 @@ Display (3-campaign structure)
 | Underperforming sites | Identify low-CTR / low-CVR sites in the placement report |
 | Brand-incompatible sites | Sites that don't match the industry or brand image |
 
-### 10-4. Weekly placement-review process
+### 9-4. Weekly placement-review process
 
 1. **Check the placement report**: Campaign → Content → Where ads showed; review every site / app delivered to.
 2. **Spot accidental-click signals**: Placements with abnormally high CTR (e.g. >5%) and zero CVs are likely accidental clicks.
@@ -722,7 +492,7 @@ Display (3-campaign structure)
 4. **Verify brand fit**: Eyeball the site name / URL of each delivered placement and exclude anything brand-inappropriate.
 5. **Build up the exclusion list**: Maintain an account-level exclusion list and apply it to new campaigns.
 
-### 10-5. Excluding mobile apps
+### 9-5. Excluding mobile apps
 
 Mobile apps have many accidental taps and frequently include brand-incompatible apps.
 
@@ -736,13 +506,13 @@ Mobile apps have many accidental taps and frequently include brand-incompatible 
 
 ---
 
-## 11. Ad Strength and optimization
+## 10. Ad Strength and optimization
 
-### 11-1. What is Ad Strength
+### 10-1. What is Ad Strength
 
 A rating shown when creating Responsive Display Ads. Evaluates asset volume, diversity, and quality on a 4-tier scale: Poor / Average / Good / Excellent.
 
-### 11-2. Aiming for "Excellent"
+### 10-2. Aiming for "Excellent"
 
 | Element | Recommendation |
 |---|---|
@@ -753,7 +523,7 @@ A rating shown when creating Responsive Display Ads. Evaluates asset volume, div
 | Square images | 5+ |
 | Logos | At least 1; ideally both 1:1 and 4:1 |
 
-### 11-3. Asset performance report
+### 10-3. Asset performance report
 
 Once enough data accumulates, each asset (headline, description, image) gets a performance label:
 
@@ -764,7 +534,7 @@ Once enough data accumulates, each asset (headline, description, image) gets a p
 | Low | Underperforming peers of the same kind | Replace with new assets |
 | Learning | Still gathering data | Wait for results |
 
-### 11-4. Creative refresh cycle
+### 10-4. Creative refresh cycle
 
 | Period | Action |
 |---|---|
@@ -775,7 +545,7 @@ Once enough data accumulates, each asset (headline, description, image) gets a p
 
 ---
 
-## 12. Operations checklist
+## 11. Operations checklist
 
 ### Pre-launch checks
 
@@ -818,7 +588,7 @@ Once enough data accumulates, each asset (headline, description, image) gets a p
 
 ---
 
-## 13. Relationship with Demand Gen campaigns (2025+)
+## 12. Relationship with Demand Gen campaigns (2025+)
 
 ### Overview
 

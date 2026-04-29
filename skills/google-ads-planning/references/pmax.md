@@ -1,36 +1,5 @@
 # P-MAX (Performance Max) operating manual
 
-## Contents
-
-- [Glossary](#glossary)
-- [Operating practice](#operating-practice)
-- [Decision matrix](#decision-matrix)
-- [Quickstart](#quickstart)
-- [1. Major updates 2025–2026](#1-major-updates-20252026)
-- [2. Campaign structure design](#2-campaign-structure-design)
-- [3. Asset-group design](#3-asset-group-design)
-- [4. Asset specs and submission requirements](#4-asset-specs-and-submission-requirements)
-- [5. Audience signals](#5-audience-signals)
-- [6. Search themes and URL expansion](#6-search-themes-and-url-expansion)
-- [7. Negative keywords and brand exclusion](#7-negative-keywords-and-brand-exclusion)
-- [8. Bid strategy](#8-bid-strategy)
-- [9. Conversion-measurement optimization](#9-conversion-measurement-optimization)
-- [10. Product-feed integration (e-commerce)](#10-product-feed-integration-e-commerce)
-- [11. Feed-only vs. full assets](#11-feed-only-vs-full-assets)
-- [12. New-customer acquisition mode](#12-new-customer-acquisition-mode)
-- [13. Demographic controls](#13-demographic-controls)
-- [14. Coexistence with other campaigns](#14-coexistence-with-other-campaigns)
-- [15. P-MAX for Store Goals](#15-p-max-for-store-goals)
-- [16. Reporting and insights](#16-reporting-and-insights)
-- [17. A/B testing (Experiments)](#17-ab-testing-experiments)
-- [18. Gemini AI integration](#18-gemini-ai-integration)
-- [19. Learning period and operating cadence](#19-learning-period-and-operating-cadence)
-- [20. Common failure patterns](#20-common-failure-patterns)
-- [Appendix A: Symptom-based troubleshooting](#appendix-a-symptom-based-troubleshooting)
-- [Appendix B: Naming conventions, change log, checklist](#appendix-b-naming-conventions-change-log-checklist)
-
----
-
 ## Operating practice
 
 Performance Max amplifies the quality of the inputs you give it: conversion goals, values, feed, creative, audience signals, landing pages, and exclusions. It is not a substitute for strategy.
@@ -71,30 +40,7 @@ Performance Max amplifies the quality of the inputs you give it: conversion goal
 - Optimizing to raw leads when sales quality varies.
 - Changing budget, tROAS/tCPA, conversion goals, and asset groups all at once.
 
----
-
-## Glossary
-
-Abbreviations and terms used in this manual.
-
-| Abbr. | Full term | Definition |
-|------|---------|------|
-| P-MAX | Performance Max | A campaign type where Google's AI auto-optimizes across all Google channels |
-| AG | Asset group | A set of creative (text, image, video) and signals inside a P-MAX campaign |
-| LG | Listing group | A filter that controls which products from your feed are eligible for an AG |
-| CL | Custom label | Classification labels you attach to Merchant Center products (5 slots: 0–4) |
-| CV | Conversion | Completion of the goal action (purchase, inquiry, etc.) |
-| CV value | Conversion value | The monetary value tied to one CV (revenue, lead score, etc.) |
-| CPA | Cost per acquisition | Spend ÷ conversions |
-| ROAS | Return on ad spend | Total CV value ÷ spend |
-| VTC | View-through conversion | A CV that occurred after an impression but without a click |
-| tCPA | Target CPA | A bid strategy with a CPA target |
-| tROAS | Target ROAS | A bid strategy with a ROAS target |
-| GMC | Google Merchant Center | The platform that manages your product feed |
-| URL expansion | Final URL Expansion | Auto-routes traffic to LPs other than the one specified |
-| Feed-only | Feed-Only campaign | Runs without text / image / video assets, using only the product feed |
-
----
+Terms used across playbooks live in [SKILL.md glossary](../SKILL.md#common-google-ads-glossary).
 
 ## Decision matrix
 
@@ -302,85 +248,13 @@ An asset group contains:
 
 ## 4. Asset specs and submission requirements
 
-### 4-1. Text assets
+Use [creative-strategy.md](creative-strategy.md#p-max-asset-baseline) for production specs. Strategy rules stay here:
 
-| Asset | Min | Max | Char limit | Notes |
-|------------|-------|-------|----------|------|
-| Headline | 3 | 15 | 30 chars | Include at least one ≤15 chars |
-| Long headline | 1 | 5 | 90 chars | |
-| Description | 2 | 5 | 90 chars | Include at least one ≤60 chars |
-| Business name | 1 | 1 | 25 chars | |
-| Display URL path | 0 | 2 | 15 chars each | |
-| CTA | 1 | 1 | — | Auto-selected by Google or set manually |
-
-> **Japanese / Chinese / Korean**: 1 full-width character counts as 2 characters.
-
-**Best practices:**
-- Register 10+ headlines to give the AI more learning material
-- Each headline should stand alone (they will be combined dynamically)
-- Mix brand, USP, CTA, price / discount, and social proof (volumes, reviews) in balance
-- For ad-copy best practices per channel, see [search-ads.md](search-ads.md)
-
-### 4-2. Image assets
-
-| Aspect ratio | Use | Min | Max | Recommended size | Min size |
-|------------|------|-------|-------|----------|----------|
-| Landscape (1.91:1) | GDN, Discover, Gmail | 1 | 20 | 1200×628 | 600×314 |
-| Square (1:1) | GDN, Discover, Gmail | 1 | 20 | 1200×1200 | 300×300 |
-| Portrait (4:5) | Mobile placements | 0 | 20 | 960×1200 | 480×600 |
-| Logo (square 1:1) | All placements | 1 | 5 | 1200×1200 | 128×128 |
-| Logo (landscape 4:1) | Some placements | 0 | 5 | 1200×300 | 512×128 |
-
-| Spec | Requirement |
-|------|------|
-| File format | JPEG or PNG |
-| Max file size | 5 MB |
-| Subject placement | Within the central 80% of the frame |
-
-**Best practices:**
-- Landscape (1.91:1) and square (1:1) are required. Portrait (4:5) is also recommended
-- Avoid heavy text inside images (keep ≤20% of the image area)
-- Use professional-quality imagery
-- Mix product shots, in-use shots, people, and lifestyle imagery
-- For per-channel image best practices, see [display-ads.md](display-ads.md)
-
-### 4-3. Video assets
-
-| Item | Requirement |
-|------|------|
-| Hosting | YouTube (must be uploaded in advance) |
-| Min length | 10 sec |
-| Recommended length | 15+ sec |
-| Max file size | 256 GB |
-| Recommended resolution | 1080p Full HD |
-| Format | MPEG-2 / MPEG-4 (.MPG) |
-| Per-AG cap | 5 videos per aspect ratio |
-
-| Aspect ratio | Use | Recommended count |
-|------------|------|-------|
-| Landscape (16:9) | YouTube in-stream | 1+ |
-| Vertical (9:16) | YouTube Shorts | 1+ (10–60s; required for Shorts delivery) |
-| Square (1:1) | Mobile placements | Recommended |
-
-**Best practices:**
-- If you don't supply video, Google auto-generates one from your images. Quality is poor — **strongly recommend supplying your own**
-- Minimum set: 1× landscape (16:9), 1× vertical (9:16)
-- For per-channel video best practices, see [video-campaigns.md](video-campaigns.md)
-
-### 4-4. Recommended asset counts
-
-Targets to reach an "Excellent" Ad Strength rating.
-
-| Asset | Recommended count |
-|------------|----------|
-| Headline | 11–15 |
-| Long headline | 3–5 |
-| Description | 4–5 |
-| Landscape image | 5–15 |
-| Square image | 5–15 |
-| Portrait image | 3–5 |
-| Logo | 1–3 |
-| Video | 3–5 (covering all 3 aspect ratios) |
+- Text: supply 11+ headlines and 4+ descriptions with distinct angles, not paraphrases.
+- Images: cover landscape and square at minimum; add portrait when mobile visual inventory matters.
+- Video: provide at least one landscape and one vertical video. Avoid relying on auto-generated videos.
+- Retail: feed quality and custom labels matter as much as uploaded creative.
+- Each asset group should have enough format coverage to serve across channels while staying coherent with the asset group's product/service theme.
 
 ---
 
@@ -1021,67 +895,10 @@ Reverse lookup: identify the cause from the symptom and decide the action.
 
 ## Appendix B: Naming conventions, change log, checklist
 
-### Naming-convention templates
+Use the account-level naming pattern in [../SKILL.md](../SKILL.md). For P-MAX specifically:
 
-For consistency and easy handoffs, use a unified naming convention.
-
-**Campaign naming:**
-```
-[P-MAX] [Goal] [Segment] [Bid strategy]
-```
-
-| Example | Description |
-|-----|------|
-| `P-MAX_EC_HighMargin_tROAS400` | E-commerce high-margin, tROAS 400% |
-| `P-MAX_EC_AllProducts_MaxCV` | E-commerce all products, Maximize Conversion Value |
-| `P-MAX_Lead_ServiceA_tCPA50` | Lead-gen service A, tCPA $50 |
-| `P-MAX_StoreGoals_NYC_MaxCV` | Store Goals (NYC) |
-
-**Asset-group naming:**
-```
-[Category / Target] [Messaging axis]
-```
-
-| Example | Description |
-|-----|------|
-| `Mens_Shoes_Price` | Men's shoes — price-led |
-| `SaaS_Enterprise_ROI` | SaaS enterprise — ROI-led |
-| `Summer_Sale_2026` | 2026 summer sale promotion |
-
-**Custom-label naming:**
-```
-CL[number]_[axis]_[value]
-```
-
-| Example | Description |
-|-----|------|
-| `CL0_margin_high` | Custom label 0: high margin |
-| `CL1_rank_bestseller` | Custom label 1: best seller |
-
-### Change-log template
-
-In P-MAX, every change risks resetting learning — log everything.
-
-| Date | Change | Hypothesis | Expected effect | Next review | Result |
-|------|---------|------|------------|----------|------|
-| 2026-02-23 | tROAS 300% → 350% | CVs stable; room to improve ROAS | ROAS up (slight delivery dip acceptable) | 2026-03-09 | — |
-| 2026-02-23 | Replaced 3 headlines (Low-rated) | New headlines improve CTR | CTR up, CV maintained | 2026-03-09 | — |
-
-### Asset-production checklist
-
-| Item | Criterion | Check |
-|------------|------|------|
-| Headlines | 11+ (min 3, at least 1 ≤15 chars) | □ |
-| Long headlines | 3+ (min 1) | □ |
-| Descriptions | 4+ (min 2, at least 1 ≤60 chars) | □ |
-| Landscape images (1.91:1) | 5+ (recommended 1200×628) | □ |
-| Square images (1:1) | 5+ (recommended 1200×1200) | □ |
-| Portrait images (4:5) | 3+ (recommended 960×1200) | □ |
-| Logo (1:1) | 1+ (recommended 1200×1200) | □ |
-| Video (16:9) | 1+ (15+ sec recommended) | □ |
-| Video (9:16) | 1+ (10–60 sec; Shorts-eligible) | □ |
-| Image text | ≤20% of image area | □ |
-| Subject placement | Within central 80% of frame | □ |
-| File format | JPEG or PNG (image) / MP4 recommended (video) | □ |
-| File size | ≤5 MB (image) / ≤256 GB (video) | □ |
-| Ad Strength | "Excellent" | □ |
+- Campaign names should expose goal, segment, and bid strategy: `P-MAX_EC_HighMargin_tROAS400`.
+- Asset-group names should expose category / audience and message axis: `Mens_Shoes_Price`, `SaaS_Enterprise_ROI`.
+- Feed custom labels should expose the segmentation axis: `CL0_margin_high`, `CL1_rank_bestseller`.
+- Log every bid, budget, asset, feed, URL expansion, brand exclusion, and conversion-setting change with hypothesis, expected effect, next review date, and result.
+- Use [creative-strategy.md](creative-strategy.md#p-max-asset-baseline) for the P-MAX asset checklist instead of duplicating specs here.

@@ -54,6 +54,63 @@ Use this as the default practice cadence unless the user's account context sugge
 - Use geo holdouts, Customer Match holdouts, campaign experiments, conversion lift, or pre/post analysis when budget and volume allow.
 - Reconcile against revenue, pipeline, CRM, app LTV, or contribution margin. Do not sum platform-reported revenue across channels as if it were deduplicated.
 
+### Common Google Ads glossary
+
+Use these shared terms instead of repeating basic definitions in each campaign-type playbook.
+
+| Term | Meaning |
+|---|---|
+| CV | Conversion: the action the campaign is meant to drive |
+| CV value | Monetary or scored value attached to a conversion |
+| CPA | Cost per acquisition: spend / conversions |
+| ROAS | Return on ad spend: conversion value / spend |
+| CTR | Click-through rate: clicks / impressions |
+| CPC | Cost per click |
+| CPM | Cost per thousand impressions |
+| CPV | Cost per video view |
+| CVR | Conversion rate: conversions / clicks or interactions |
+| IS | Impression share |
+| LP | Landing page |
+| DDA | Data-driven attribution |
+| VTC | View-through conversion: impression without click or engagement, then conversion |
+| EVC | Engaged-view conversion: meaningful video engagement, then conversion |
+| RSA | Responsive Search Ad |
+| RDA | Responsive Display Ad |
+| DSA | Dynamic Search Ad |
+| P-MAX / PMax | Performance Max |
+| DGen | Demand Gen |
+| GMC | Google Merchant Center |
+| GTIN | Global Trade Item Number |
+| SKU | Stock Keeping Unit |
+| NCA | New customer acquisition |
+| ACi | App campaign for installs |
+| ACe | App campaign for engagement |
+| ACpre | App campaign for pre-registration |
+| SKAN | SKAdNetwork |
+| AAK | AdAttributionKit |
+| MMP / AAP | Mobile Measurement Partner / App Attribution Partner |
+| LTV | Lifetime value |
+| KW | Keyword |
+| tCPA | Target CPA |
+| tROAS | Target ROAS |
+| tCPI | Target CPI |
+| tCPV | Target CPV |
+| tCPM | Target CPM |
+| CPI | Cost per install |
+| CTA | Call to action |
+| VTR | View-through rate / video view rate, depending on report context |
+| CTV | Connected TV |
+| AG | Asset group |
+| LG | Listing group |
+| CL | Custom label |
+| PLA | Product Listing Ad |
+| MPN | Manufacturer Part Number |
+| RLSA | Remarketing Lists for Search Ads |
+| ATT | App Tracking Transparency |
+| SDK | Software Development Kit |
+| Deep link | Link that opens a specific screen inside an app |
+| Brand Lift | Study measuring changes in ad recall, awareness, consideration, or similar brand outcomes |
+
 ## Output flexibility (don't always write a document)
 
 Adapt the output to what the user actually asked for. **There is no requirement to produce a written spec document** — sometimes a conversational answer or a structured inline response is the right deliverable.
@@ -447,7 +504,7 @@ Use these inside the workflow, not just as optional reading:
 | [references/budget-planning.md](references/budget-planning.md) | Deciding what the budget can realistically support | CPA/ROAS economics, expected CV volume, campaign mix viability |
 | [references/measurement.md](references/measurement.md) | Designing CV signals, choosing attribution, planning incrementality, diagnosing measurement issues | Consent Mode v2, Enhanced Conversions, OCI/ECfL, modeled CV, VTC policy, attribution, lift studies, iOS/SKAN, Tag Gateway/sGTM |
 | [references/diagnostic-decision-trees.md](references/diagnostic-decision-trees.md) | Improving an existing account or diagnosing poor performance | Spend/CV issues, lead quality, CTR/CVR, CPC increases, P-MAX/Demand Gen traps |
-| [references/creative-strategy.md](references/creative-strategy.md) | Designing assets, copy, or creative briefs | Angles, proof, objections, format fit, P-MAX/Demand Gen/video creative systems |
+| [references/creative-strategy.md](references/creative-strategy.md) | Designing assets, copy, creative briefs, or production handoffs | Angles, proof, objections, format fit, P-MAX/Demand Gen/video creative systems, shared asset-size baselines |
 
 ### Delivering the output
 

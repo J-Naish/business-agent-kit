@@ -141,6 +141,85 @@ Judge creative by the metric that matches its job. Prospecting creative may firs
 
 ---
 
+## Asset production baselines
+
+Use this section for implementation handoff. Keep campaign playbooks focused on strategy and only repeat specs there when the spec changes the strategic decision.
+
+### Cross-channel principles
+
+- Upload all useful aspect ratios instead of relying on auto-crops.
+- Treat specs as volatile; verify in the Google Ads UI before production handoff.
+- For Japanese / Chinese / Korean text, remember many Google Ads limits count CJK characters as 2 characters.
+- Asset variety means distinct concepts, not only resized or recolored variants.
+
+### Common image ratios
+
+| Ratio | Common use | Practical production size |
+|---|---|---|
+| 1.91:1 landscape | P-MAX, Demand Gen, Display | 1200x628 |
+| 1:1 square | P-MAX, Demand Gen, Display, App | 1200x1200 |
+| 4:5 portrait | Demand Gen / Discovery-style placements | 960x1200 |
+| 9:16 vertical | Shorts / vertical video or image placements | 1080x1920 |
+| 1:1 logo | P-MAX / Demand Gen / Display | 1200x1200 source; export to platform limit |
+
+### P-MAX asset baseline
+
+| Asset | Minimum practical set | Better set |
+|---|---|---|
+| Text | 11+ headlines, 4 descriptions, final URL | Distinct angles: relevance, proof, offer, objection, CTA |
+| Images | 5 landscape + 5 square | Add 3-5 portrait where available |
+| Video | 1 landscape + 1 vertical | Add square and 2-3 concept variants |
+| Feed | Required for retail | Add custom labels for margin, inventory, seasonality, hero/long-tail |
+
+### Demand Gen baseline
+
+| Asset | Minimum practical set | Notes |
+|---|---|---|
+| Headline / long headline / description | Up to 5 each | Keep each asset self-contained; combinations are automated |
+| Images | Landscape + square; portrait strongly recommended | Useful for Discover / Shorts-adjacent inventory |
+| Video | Landscape + square + vertical where possible | Native vertical creative is important for Shorts |
+| Carousel | 2-10 cards | One weak card can hurt or disapprove the unit |
+| Product feed | Optional for commerce | Merchant Center region and delivery settings must match targeting |
+
+### Display baseline
+
+| Format | Minimum practical set | Notes |
+|---|---|---|
+| Responsive Display Ad | Landscape image, square image, logo, headlines, descriptions | Let Google assemble combinations, but keep each asset independently meaningful |
+| Uploaded display | Use only when brand/layout control matters | Prioritize common sizes such as 300x250, 336x280, 728x90, 300x600, 320x50, 970x250 |
+| Video in Display | Use when available and strategically useful | Evaluate EVC and VTC separately |
+
+### Video baseline
+
+| Format | Practical guidance |
+|---|---|
+| Skippable in-stream | 15-60s for most performance use; brand/value visible before the skip point |
+| Non-skippable | 15-30s depending on region / inventory |
+| Bumper | 6s or less |
+| In-feed | Thumbnail and opening frame matter; users choose to watch |
+| Shorts | 9:16, strong motion / text / product cue in frame one |
+| CTV | Treat as reach / brand impact unless the account has strong lift or MMM readout |
+
+### App campaign baseline
+
+| Asset | Practical guidance |
+|---|---|
+| Text | Multiple short lines around different motivations and objections |
+| Image | Square and landscape screenshots / product moments; avoid generic lifestyle-only visuals |
+| Video | 16:9, 1:1, and 9:16 where possible; show the in-app experience fast |
+| Playable / HTML5 | Use only when the app/game experience benefits from interaction and production QA is available |
+
+### Shopping / feed creative baseline
+
+For Shopping, the feed is the creative. Prioritize:
+
+- Product title: category, key attribute, brand/model, size/color/material where relevant.
+- Main image: product clear, no misleading overlays, strong thumbnail legibility.
+- Price / sale price / shipping / returns: match the landing page.
+- Reviews, promotions, and availability: use eligible Merchant Center features where they affect CTR/CVR.
+
+---
+
 ## Creative brief minimum
 
 When a creative brief is needed, include:

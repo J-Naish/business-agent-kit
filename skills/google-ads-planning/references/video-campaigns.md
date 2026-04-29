@@ -1,27 +1,5 @@
 # Google Video Campaigns (YouTube Ads)
 
-## Contents
-
-- [Glossary](#glossary)
-- [Operating practice](#operating-practice)
-- [Goal-based campaign-selection cheat sheet](#goal-based-campaign-selection-cheat-sheet)
-- [1. Ad-format catalog (YouTube-specific)](#1-ad-format-catalog-youtube-specific)
-- [2. Campaign goals and sub-types](#2-campaign-goals-and-sub-types)
-- [3. Bid strategy and budget design (video-specific)](#3-bid-strategy-and-budget-design-video-specific)
-- [4. Targeting design (YouTube-specific)](#4-targeting-design-youtube-specific)
-- [5. Video-creative submission specs](#5-video-creative-submission-specs)
-- [6. The ABCD framework (creative principles)](#6-the-abcd-framework-creative-principles)
-- [7. Creative design by format](#7-creative-design-by-format)
-- [8. YouTube Shorts ad design](#8-youtube-shorts-ad-design)
-- [9. Optimizing for CTV (Connected TV)](#9-optimizing-for-ctv-connected-tv)
-- [10. Demand Gen campaigns (the successor to Video Action)](#10-demand-gen-campaigns-the-successor-to-video-action)
-- [11. Measurement and evaluation metrics (video-specific)](#11-measurement-and-evaluation-metrics-video-specific)
-- [12. Brand safety and surface management](#12-brand-safety-and-surface-management)
-- [13. Video-creative operations](#13-video-creative-operations)
-- [14. Common failure patterns and mitigations (video-specific)](#14-common-failure-patterns-and-mitigations-video-specific)
-
----
-
 ## Operating practice
 
 YouTube performance is creative-led. Targeting and bidding matter, but weak video cannot usually be fixed with settings.
@@ -59,26 +37,7 @@ YouTube performance is creative-led. Targeting and bidding matter, but weak vide
 - Running horizontal-only assets when Shorts inventory matters.
 - Using generic "Learn more" CTAs when a specific offer/action is available.
 
----
-
-## Glossary
-
-| Abbreviation | Full term | Definition |
-|---|---|---|
-| CPV | Cost Per View | Cost per video view. Used by skippable ads |
-| CPM | Cost Per Mille | Cost per 1,000 impressions |
-| tCPV | Target CPV | Target view cost. Google adjusts bids around the set target |
-| tCPM | Target CPM | Target impression cost. Google adjusts bids to average the set target |
-| VTR | View-Through Rate | View rate — view completions divided by impressions |
-| CTR | Click-Through Rate | Click rate — clicks divided by impressions |
-| CTA | Call To Action | The button or copy on the ad that prompts the user to click, sign up, etc. |
-| CTV | Connected TV | Internet-connected televisions — smart TVs, streaming devices, etc. |
-| VAC | Video Action Campaign | Auto-migrated to Demand Gen in July 2025 |
-| Demand Gen | Demand Generation | CV-oriented campaign type that delivers to YouTube / Discover / Gmail (separate from the GDN-only Display campaign type) |
-| ABCD | Attract, Brand, Connect, Direct | Google's recommended video-creative framework |
-| Brand Lift | — | A study that measures changes in awareness / recall / favorability driven by ad exposure |
-
----
+Terms used across playbooks live in [SKILL.md glossary](../SKILL.md#common-google-ads-glossary).
 
 ## Goal-based campaign-selection cheat sheet
 
@@ -354,59 +313,15 @@ In Google Ads, you pick a goal first; the available sub-types depend on the goal
 
 ---
 
-## 5. Video-creative submission specs
+## 5. Video-creative specs
 
-### 5-1. Basic video file specs
+Use [creative-strategy.md](creative-strategy.md#video-baseline) for production specs. Planning rules:
 
-| Item | Spec |
-|---|---|
-| Upload destination | YouTube (upload to YouTube first, then use the URL in the ad) |
-| File format | MP4 (recommended), MOV, AVI, WMV, FLV, WebM, MPEG, ProRes, HEVC, etc. |
-| Maximum file size | 256 GB |
-| Frame rate | 30 fps recommended |
-| Audio codec | AAC-LC recommended |
-| Video codec | H.264 recommended |
-
-### 5-2. Aspect ratios and resolution
-
-| Orientation | Aspect ratio | Recommended resolution | Minimum resolution | Use |
-|---|---|---|---|---|
-| Landscape | 16:9 | 1920 × 1080 | 1280 × 720 | In-stream, CTV, desktop |
-| Vertical | 9:16 | 1080 × 1920 | 720 × 1280 | Shorts, mobile full-screen |
-| Square | 1:1 | 1080 × 1080 | 480 × 480 | In-feed, some surfaces |
-| Other landscape | 4:3 | 1440 × 1080 | 960 × 720 | Legacy support |
-
-> **Recommendation:** Ship a **set of landscape (16:9) + vertical (9:16)**. This covers the major surfaces more cleanly than relying on cropped or auto-adapted assets.
-
-**Minimum production set:**
-
-| Priority | Aspect ratio | Use | Notes |
-|---|---|---|---|
-| **Required** | 16:9 (landscape) | In-stream, CTV, desktop | The base format with the broadest delivery |
-| **Required** | 9:16 (vertical) | Shorts, mobile full-screen | Lay out for the safe zone. Don't crop a landscape video — produce vertically native |
-| Recommended | 1:1 (square) | In-feed, some surfaces | Catches additional placements; nice-to-have when budget allows |
-
-### 5-3. Length requirements by format
-
-| Format | Min | Recommended | Max |
-|---|---|---|---|
-| Skippable in-stream | No limit | 15 s to 3 min | No limit |
-| Non-skippable in-stream | 15 s | 15 s | 30 s (CTV inventory) |
-| Bumper | — | 6 s | 6 s |
-| Shorts | ≥5 s | 10–60 s | 60 s |
-| In-feed | ≥5 s | 60 s to 3 min | No limit |
-| Audio ads | — | 15 s | 15 s |
-
-### 5-4. Text assets (text accompanying the ad)
-
-| Element | Character limit | Notes |
-|---|---|---|
-| Headline | 15 chars (effectively 30 in single-byte) | Shown next to the CTA button |
-| Long headline | 45 chars (effectively 90 in single-byte) | Some surfaces (in-feed etc.) |
-| Description | 35 chars × 2 lines (effectively 70 in single-byte) | For in-feed ads |
-| CTA (action phrase) | 10 chars (single-byte) | "Learn more," "Buy now," etc. |
-| Final URL | — | Landing-page URL |
-| Display URL | Domain + path (15 chars × 2) | URL displayed on the ad |
+- Design for the objective first: reach, views, consideration, direct response, or CTV.
+- Put brand/product/value in the opening; do not rely on an end-card reveal.
+- Produce vertical 9:16 separately when Shorts inventory matters.
+- Use subtitles or on-screen text where muted viewing is likely.
+- Confirm current format-specific limits in the Google Ads UI before handoff.
 
 ---
 
