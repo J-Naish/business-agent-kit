@@ -1,0 +1,10 @@
+interface:
+  display_name: "Google Ads Planning"
+  short_description: "Design high-performing Google Ads campaigns"
+  icon_small: "./assets/google-ads.png"
+  icon_large: "./assets/google-ads.png"
+  brand_color: "#4285F4"
+  default_prompt: "Use $google-ads-planning to design a practical Google Ads campaign plan from business goals, budget, measurement, and creative constraints."
+
+policy:
+  allow_implicit_invocation: true
