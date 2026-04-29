@@ -142,6 +142,8 @@ If existing context (business profile, competitive analysis, brand assets, prior
 
 After Phase B, use [references/budget-planning.md](references/budget-planning.md) to check whether the budget can support the proposed campaign mix, expected conversion volume, and bid strategy. If the budget cannot produce enough meaningful signal, narrow the structure before moving to Step 2.
 
+Also check [references/measurement.md](references/measurement.md) when conversion tracking is not yet live, when EEA/UK/CH traffic is in scope (Consent Mode v2 is mandatory there), or when the user mentions tracking issues, lead quality problems, or measurement reconciliation. Bad signal makes every downstream choice worse.
+
 ---
 
 ## Step 2: Viability + ad-type selection
@@ -171,7 +173,7 @@ Do not recommend a campaign type just because it is available. If budget, conver
 **Search**
 - Text ads on Google Search results — best for high-intent users at the bottom of the funnel.
 - Responsive Search Ads (RSA): up to 15 headlines + 4 descriptions; AI mixes the best combination.
-- AI Max for Search (rolled out 2025): broad match + auto-generated headlines + auto LP selection. Reported ~14% conversion lift in Google's data.
+- AI Max for Search ([Google Ads Help](https://support.google.com/google-ads/answer/15910187?hl=en), [launch note](https://blog.google/products/ads-commerce/google-ai-max-for-search-campaigns/)): broad match + auto-generated headlines + auto LP selection. Google reported ~14% conversion lift in its launch data.
 - Best fit: lead generation, B2B, e-commerce on specific products, capturing high-intent demand.
 
 **Display**
@@ -189,7 +191,7 @@ Do not recommend a campaign type just because it is available. If budget, conver
 **Video (YouTube)**
 - Video ads on YouTube and partner properties.
 - Formats: skippable / non-skippable / bumper (6s) / in-feed / masthead / outstream.
-- 2025 changes: Video Action Campaigns (VAC) merged into Demand Gen; vertical Shorts ads supported across all formats.
+- 2025 changes: Video Action Campaigns (VAC) upgraded into Demand Gen ([Google Ads Help](https://support.google.com/google-ads/answer/15110871?hl=en)); vertical Shorts ads supported across all formats.
 - Best fit: brand awareness, new product launches, how-to messaging.
 
 **App**
@@ -201,13 +203,13 @@ Do not recommend a campaign type just because it is available. If budget, conver
 **P-MAX (Performance Max)**
 - One campaign covers all 7 channels: Search, Shopping, Display, YouTube, Gmail, Discover, Maps.
 - Asset groups + audience signals + search themes are AI-optimized end-to-end.
-- 2025 capabilities: 10,000 negative keywords supported, channel-level reporting, demographic exclusions, A/B testing.
+- Current volatile capabilities to verify before implementation: campaign-level negative keywords for Search/Shopping inventory ([Google Ads Help](https://support.google.com/google-ads/answer/15726455?hl=en)), channel performance reporting ([Google Ads Help](https://support.google.com/google-ads/answer/16260130?hl=en)), demographic exclusions ([campaign settings Help](https://support.google.com/google-ads/answer/15864837?hl=en)), and P-MAX experiments ([Google Ads Help](https://support.google.com/google-ads/answer/12997711?hl=en)).
 - Best fit: e-commerce sales, lead-gen scale, store visits, lean teams.
 
 **Demand Gen**
 - Visual-rich ads on YouTube / Discover / Gmail / GDN. The Google equivalent of Meta's social-style ads.
 - Image / carousel / video / product-feed-driven ads supported.
-- 2025–2026 additions: GDN inventory, Target CPC, new-customer-acquisition mode, channel-level surface selection.
+- Volatile additions to verify before implementation: GDN inventory and channel controls ([Google Ads Help](https://support.google.com/google-ads/answer/15890515?hl=en)), Target CPC ([Google Ads Help](https://support.google.com/google-ads/answer/16262529?hl=en)), and new-customer-acquisition / lifecycle goals ([Google Ads Help](https://support.google.com/google-ads/answer/12080169?hl=en)).
 - Best fit: mid-funnel, social-style visual ads, YouTube Shorts.
 
 ### Recommended mix by business model
@@ -353,8 +355,11 @@ When changing bid settings:
 Modern setup to prioritize:
 
 - **Enhanced Conversions** — Hashed first-party data sent to Google. Treat as a default part of a durable measurement setup.
-- **Offline Conversion Import** (for lead gen) — Push qualified-lead, opportunity, or closed-won data from CRM back into Google Ads.
-- **Server-side tagging** — Use when the technical stack and measurement needs justify it; it can reduce browser-side signal loss.
+- **Offline Conversion Import / Enhanced Conversions for Leads** (for lead gen) — Push qualified-lead, opportunity, or closed-won data from CRM back into Google Ads. Prefer ECfL over OCI for new builds.
+- **Google Tag Gateway** — Default for any account on EEA/UK traffic or > $50k/month spend. Replaces ad-hoc 1P-domain hacks.
+- **Server-side tagging (sGTM)** — Use when the technical stack and measurement needs justify it; usually only above ~$250k/month spend or for multi-platform CAPI.
+
+For details — Consent Mode v2 setup, EC/OCI/ECfL choice, modeled-CV interpretation, attribution, VTC policy, iOS/SKAN, and incrementality methods — see [references/measurement.md](references/measurement.md).
 
 #### View-through conversions (VTC) — unified policy
 
@@ -437,6 +442,7 @@ Use these inside the workflow, not just as optional reading:
 |---|---|---|
 | [references/business-model-playbooks.md](references/business-model-playbooks.md) | Choosing strategy by business model | B2B lead gen, local service, e-commerce, high-ticket, app, store visit |
 | [references/budget-planning.md](references/budget-planning.md) | Deciding what the budget can realistically support | CPA/ROAS economics, expected CV volume, campaign mix viability |
+| [references/measurement.md](references/measurement.md) | Designing CV signals, choosing attribution, planning incrementality, diagnosing measurement issues | Consent Mode v2, Enhanced Conversions, OCI/ECfL, modeled CV, VTC policy, attribution, lift studies, iOS/SKAN, Tag Gateway/sGTM |
 | [references/diagnostic-decision-trees.md](references/diagnostic-decision-trees.md) | Improving an existing account or diagnosing poor performance | Spend/CV issues, lead quality, CTR/CVR, CPC increases, P-MAX/Demand Gen traps |
 | [references/creative-strategy.md](references/creative-strategy.md) | Designing assets, copy, or creative briefs | Angles, proof, objections, format fit, P-MAX/Demand Gen/video creative systems |
 

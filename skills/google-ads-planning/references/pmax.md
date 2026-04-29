@@ -179,25 +179,25 @@ The shortest path for a first-time P-MAX launch. Refer to detailed sections belo
 
 ## 1. Major updates 2025–2026
 
-> The following reflects platform capabilities as of the time of writing. Beta-feature availability differs by account, country, and timing. Verify in the Google Ads UI before implementation.
+> Beta-feature availability differs by account, country, and timing. Verify in the Google Ads UI before implementation.
 
 | When | Update |
 |------|----------------|
-| Jan 2025 | Self-service campaign-level negative keywords (up to 10,000) |
-| Jan 2025 | Age-based demographic exclusion (beta) |
-| Mar 2025 | Search-terms report introduced (Search and Shopping inventory) |
-| May 2025 | Channel performance report introduced (open beta) |
-| Jul 2025 | Gender-based demographic exclusion (beta) |
-| Aug 2025 | Demographic-exclusion consolidation (manage age + gender together) |
+| Jan 2025 | Self-service campaign-level negative keywords for Search and Shopping inventory ([Google Ads Help](https://support.google.com/google-ads/answer/15726455?hl=en)) |
+| Jan 2025 | Age-based demographic exclusion beta ([campaign settings Help](https://support.google.com/google-ads/answer/15864837?hl=en)) |
+| Mar 2025 | Search-terms report introduced for Search and Shopping inventory ([P-MAX evaluation Help](https://support.google.com/google-ads/answer/16279166?hl=en)) |
+| May 2025 | Channel performance report introduced ([Google Ads Help](https://support.google.com/google-ads/answer/16260130?hl=en)) |
+| Jul 2025 | Gender-based demographic exclusion beta ([campaign settings Help](https://support.google.com/google-ads/answer/15864837?hl=en)) |
+| Aug 2025 | Demographic-exclusion consolidation: age and gender managed together ([campaign settings Help](https://support.google.com/google-ads/answer/15864837?hl=en)) |
 | 2025 | Strengthened asset auto-generation via Gemini |
 | 2025 | Asset-level impressions / clicks / cost data added |
-| 2025 | Shared negative-keyword list support |
+| 2025 | Shared negative-keyword list support ([negative keyword lists Help](https://support.google.com/google-ads/answer/2453983?hl=en)) |
 | 2025 | High-Value New Customer Mode rollout |
-| 2025 | Option to apply brand exclusions only to Shopping ads |
+| 2025 | Option to allow Shopping ads on searches that mention excluded brands ([brand exclusions Help](https://support.google.com/google-ads/answer/14505308?hl=en-419)) |
 | Nov 2025 | Waze ad inventory added (US-only, Store Goals only) |
 | Nov 2025 | Search Partners added to channel report |
-| Jan 2026 | Asset A/B tests (Experiments) extended to all campaigns |
-| Jan 2026 | Channel-level reporting in API v23 |
+| Jan 2026 | P-MAX asset testing through optimization experiments ([Google Ads Help](https://support.google.com/google-ads/answer/16030588?hl=en-EN)) |
+| Jan 2026 | Channel-level reporting in the Google Ads API ([API release notes](https://developers.google.com/google-ads/api/docs/release-notes)) |
 | Feb 2026 | Search Partners placement visibility |
 | Feb 2026 | Parked domains (AdSense for Domains) permanently removed from the Search Partners network |
 
@@ -421,7 +421,7 @@ Audience signals are not targeting — they are hints. They tell Google's algori
 
 Search themes guide P-MAX's Search-channel delivery. Unlike Search-campaign keywords, themes are starting points the AI auto-expands from.
 
-| Item | Spec (at the time of writing) |
+| Item | Spec |
 |------|------|
 | Cap | 25 themes per asset group |
 | Behavior | In addition to AI-predicted matching, also expands to terms within the specified themes (additive) |
@@ -436,7 +436,7 @@ Search themes guide P-MAX's Search-channel delivery. Unlike Search-campaign keyw
 
 ### 6-2. URL expansion (Final URL Expansion)
 
-URL expansion is on by default. Google routes traffic to LPs other than the specified Final URL based on the search query.
+URL expansion is on by default. Google routes traffic to LPs other than the specified Final URL based on the search query ([Google Ads Help](https://support.google.com/google-ads/answer/14337539?hl=en)).
 
 | Setting | Behavior | When to use |
 |------|------|----------|
@@ -458,11 +458,11 @@ URL expansion is on by default. Google routes traffic to LPs other than the spec
 
 ### 7-1. Negative keywords
 
-Since January 2025, P-MAX supports self-managed campaign-level negative keywords. Shared negative-keyword lists are also supported.
+P-MAX supports self-managed campaign-level negative keywords for Search and Shopping inventory ([Google Ads Help](https://support.google.com/google-ads/answer/15726455?hl=en)). Shared negative-keyword lists are also supported ([negative keyword lists Help](https://support.google.com/google-ads/answer/2453983?hl=en)).
 
-| Item | Spec (at the time of writing) |
+| Item | Spec |
 |------|------|
-| Cap | 10,000 per campaign |
+| Cap | Verify in the Google Ads UI before implementation; official Help confirms the feature but does not provide a stable campaign-level cap |
 | Shared lists | Supported (apply to multiple P-MAX campaigns at once) |
 | Scope | Primarily affects Search and Shopping channels (no effect on Display, YouTube, etc.) |
 
@@ -481,7 +481,7 @@ Since January 2025, P-MAX supports self-managed campaign-level negative keywords
 
 ### 7-2. Brand exclusion
 
-Brand exclusion prevents your ads from showing on queries that include specific brand names.
+Brand exclusion prevents your ads from showing on queries that include specific brand names ([Google Ads Help](https://support.google.com/google-ads/answer/16669487?hl=en)).
 
 | Setting | Effect | When to use |
 |------|------|----------|
@@ -701,7 +701,7 @@ P-MAX has dedicated modes for prioritizing new-customer acquisition.
 
 The table reflects availability as of February 2026. Availability varies by account and region. Confirm in Google Ads UI under Campaign settings → Demographic exclusions.
 
-| Demographic | Excludable values | Available since (at time of writing) |
+| Demographic | Excludable values | Availability note |
 |---------------|------------|---------|
 | Age | 18-24 / 25-34 / 35-44 / 45-54 / 55-64 / 65+ / Unknown | Apr 2025 (beta started Jan 2025) |
 | Gender | Male / Female / Unknown | Jul 2025 |
@@ -808,7 +808,7 @@ Google Search / Google Maps / YouTube / GDN / Gmail / Discover / **Waze** (Nov 2
 
 ### 16-1. Channel performance report (May 2025+)
 
-The most important report for the "P-MAX black-box" problem. See per-channel performance.
+The most important report for the "P-MAX black-box" problem. See per-channel performance ([Google Ads Help](https://support.google.com/google-ads/answer/16260130?hl=en)).
 
 | Channel | Visible metrics |
 |---------|--------------|
@@ -825,7 +825,7 @@ The most important report for the "P-MAX black-box" problem. See per-channel per
 
 ### 16-2. Search-terms report (Mar 2025+)
 
-See search terms used for Search and Shopping delivery in P-MAX. Same granularity as Search-campaign search terms.
+See search terms used for Search and Shopping delivery in P-MAX. Same granularity as Search-campaign search terms ([P-MAX evaluation Help](https://support.google.com/google-ads/answer/16279166?hl=en), [search terms report Help](https://support.google.com/google-ads/answer/2472708?hl=en)).
 
 **How to use:**
 - Add converting search terms as Exact-match KWs in the Search campaign (lock priority)
@@ -851,14 +851,16 @@ See search terms used for Search and Shopping delivery in P-MAX. Same granularit
 |---------|------|
 | Audience insights | Which audience segments contribute to CVs |
 | Diagnostic insights | Auto-detected issues (budget shortage, asset quality) |
-| Competitive insights | Auction Insights (Search channel only at the time of writing) |
+| Competitive insights | Auction Insights where available, especially Search-channel diagnostics |
 | Placement report | Sites, apps, and videos where the ad served |
 
 ---
 
 ## 17. A/B testing (Experiments)
 
-### 17-1. Asset A/B testing (Jan 2026+, all campaign types)
+### 17-1. Asset A/B testing
+
+For P-MAX, use optimization experiments for asset testing where available ([Google Ads Help](https://support.google.com/google-ads/answer/16030588?hl=en-EN)).
 
 | Item | Detail |
 |------|------|

@@ -187,13 +187,13 @@ Combines a Merchant Center product feed with image / video creative. Three sub-t
 | **YouTube Shorts** | CPM | Vertical image / video | Inserted between Shorts; 9:16 recommended |
 | **Discover** | CPC | Image / carousel | Google app feed; mobile-primary |
 | **Gmail** | CPC | Image | Promotions / Social tabs; expandable |
-| **GDN** (added April 2025) | CPM / CPC | Image | 2M+ sites and apps |
+| **GDN** (added April 2025) | CPM / CPC | Image | 2M+ sites and apps ([Google Ads Help](https://support.google.com/google-ads/answer/15890515?hl=en)) |
 | **Google Video Partners** | CPM | Video | Third-party video inventory |
 | **Google Maps** | — | Promoted pins | Shown during local search. Availability can vary by account, country, and rollout status |
 
 ### 3-2. Surface-by-surface selection (March 2025+)
 
-Since March 2025, all Demand Gen campaigns can choose surfaces individually.
+Demand Gen channel controls let campaigns choose surfaces individually across YouTube, Discover, Gmail, and the Google Display Network where available ([Google Ads Help](https://support.google.com/google-ads/answer/15973205?hl=en)).
 
 - Shorts-only campaigns are possible
 - Surface-level channel selection and exclusions; budget allocation is indirect through the eligible channels
@@ -206,8 +206,7 @@ Since March 2025, all Demand Gen campaigns can choose surfaces individually.
 
 ### 3-3. Reach scale
 
-- Demand Gen reaches roughly **2.9 billion users** in total.
-- About **68% of Demand Gen conversions** are incremental — coming from users who haven't seen the brand's Search ads in the last 30 days.
+- Demand Gen reach and incrementality figures are Google-published benchmarks, not account forecasts; verify the current claims before quoting them in client-facing plans ([Google Ads Blog](https://blog.google/products/ads-commerce/new-demand-gen-features-2025/)).
 
 ---
 
@@ -223,7 +222,7 @@ Since March 2025, all Demand Gen campaigns can choose surfaces individually.
 
 ### 4-2. Lookalike segments — Demand Gen only
 
-**The only Google Ads campaign type with native Lookalike audiences.** Uses first-party data as a seed and expands to similar users.
+**The only Google Ads campaign type with native Lookalike audiences.** Uses first-party data as a seed and expands to similar users ([Google Ads Help](https://support.google.com/google-ads/answer/15594567?hl=en)).
 
 | Reach setting | % of target population | Use |
 |---|---|---|
@@ -335,7 +334,7 @@ Demand Gen has different pricing models and user states per surface, so the crea
 | **Target CPA (tCPA)** | Maximize CV count at the specified CPA | After 50+ conversions are accumulated; budget ≥15× target CPA |
 | **Maximize Conversion Value** | Maximize CV value within the budget | When CV value (revenue, etc.) is set up |
 | **Target ROAS (tROAS)** | Maximize CV value at the specified ROAS | Sufficient CV-value data + clear ROAS goal |
-| **Target CPC (tCPC)** (2025+) | Control average CPC | Only available when the campaign goal is "clicks" — awareness or traffic |
+| **Target CPC (tCPC)** | Control average CPC | Only available when the campaign goal is "clicks" — awareness or traffic ([Google Ads Help](https://support.google.com/google-ads/answer/16262529?hl=en)) |
 
 ### 6-2. Bid-strategy decision flow for Demand Gen
 
@@ -576,13 +575,13 @@ Per-asset performance labels:
 
 | Period | Update |
 |---|---|
-| **Jan–Mar 2025** | Per-surface selection becomes available account-wide. YouTube Shorts-only campaigns supported |
+| **Jan–Mar 2025** | Per-surface selection becomes available account-wide. YouTube Shorts-only campaigns supported ([channel controls Help](https://support.google.com/google-ads/answer/15973205?hl=en)) |
 | **Feb 2025** | Vertical 9:16 image ads supported on YouTube Shorts |
-| **Apr 2025** | **GDN image inventory added to Demand Gen.** New VAC creation discontinued |
-| **May 2025** | **Target CPC bidding** available in click-goal Demand Gen campaigns |
-| **Jul 2025** | Existing VAC (Video Action Campaigns) begin auto-migration to Demand Gen |
-| **Sep 2025** | Migration of all accounts with VAC delivery in 2025 completes |
-| **Oct–Dec 2025** | Expanded channel controls, Google Maps support where available, AI creative features, new-customer-acquisition options, local offers, and checkout-link style commerce features |
+| **Apr 2025** | **GDN image inventory added to Demand Gen** ([GDN integration Help](https://support.google.com/google-ads/answer/15890515?hl=en)); new VAC creation discontinued ([VAC migration Help](https://support.google.com/google-ads/answer/15110871?hl=en)) |
+| **May 2025** | **Target CPC bidding** available in click-goal Demand Gen campaigns ([Google Ads Help](https://support.google.com/google-ads/answer/16262529?hl=en)) |
+| **Jul 2025** | Existing VAC (Video Action Campaigns) begin auto-migration to Demand Gen ([Google Ads Help](https://support.google.com/google-ads/answer/15110871?hl=en)) |
+| **Sep 2025** | Migration of accounts with VAC delivery completes in batches ([Google Ads Help](https://support.google.com/google-ads/answer/15110871?hl=en)) |
+| **Oct–Dec 2025** | Expanded channel controls, Google Maps support where available, AI creative features, new-customer-acquisition options, local offers, and checkout-link style commerce features; verify availability in the UI and current Help before relying on these |
 | **Jan 2026** | Connected-TV commerce features, attributed brand-search reporting where available, and travel-feed support |
 | **Mar 2026 onward** | Treat Lookalike reach settings as directional controls unless strict targeting behavior is confirmed in the current UI |
 

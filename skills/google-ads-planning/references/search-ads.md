@@ -289,7 +289,7 @@ Long-tail KWs (4+ word, specific phrases) tend to have lower CPC and higher CVR.
 
 ## 3. Bid-strategy operating details
 
-> **Note**: Enhanced CPC (eCPC) was retired at the end of March 2025 (Search, Display, Hotels). Existing eCPC campaigns were auto-migrated to Manual CPC.
+> **Note**: Enhanced CPC (eCPC) is no longer available for Search and Display campaigns, and campaigns that were not proactively migrated now effectively use Manual CPC ([Google Ads Help](https://support.google.com/google-ads/answer/2464964?hl=en)).
 
 ### tCPA vs tROAS
 
@@ -402,6 +402,8 @@ Use Google Ads' **Seasonality Adjustments** feature.
 | IF function | Show different copy based on device or audience |
 
 ### Combining with Dynamic Search Ads (DSA)
+
+DSA is being upgraded into AI Max, so verify current creation and migration behavior before designing around DSA as a long-term structure ([Google Ads Help](https://support.google.com/google-ads/answer/2471185?hl=en), [Google launch update](https://blog.google/products/ads-commerce/dsa-upgrade-to-ai-max-2026/)).
 
 - Strong pattern: cover core KWs with RSA, discover KW gaps with DSA
 - They can coexist in the same campaign (but not in the same ad group)
@@ -768,7 +770,7 @@ Use account history, unit economics, Keyword Planner estimates, and current auct
 | 3. Optimize match types | Check whether expansion is going where you want |
 | 4. Improve ad copy / LP | Read user intent from queries, refine copy / LP |
 
-> When AI Max is on, the search-terms report shows an "AI Max" match-type label. Inspect AI-expanded queries and exclude any unwanted ones.
+> When AI Max is on, the search-terms report shows AI Max-specific reporting, including views for AI Max traffic and match contribution ([Google Ads Help](https://support.google.com/google-ads/answer/16470459?hl=en)). Inspect AI-expanded queries and exclude any unwanted ones.
 
 ### Using Auction Insights
 
@@ -798,7 +800,7 @@ Use account history, unit economics, Keyword Planner estimates, and current auct
 
 ### Attribution
 
-From 2025 onward, the only attribution models in Google Ads are **DDA (data-driven) and last-click**. Linear, time-decay, and position-based are retired.
+The only supported Google Ads attribution models are **DDA (data-driven) and last-click**; first-click, linear, time-decay, and position-based models are no longer supported ([Google Ads Help](https://support.google.com/google-ads/answer/6259715?hl=en)).
 
 | Model | Eligibility | Notes |
 |--------|---------|------|
@@ -890,7 +892,7 @@ Set a total budget for a defined period and let Google's AI optimize daily alloc
 
 ## 14. AI Max for Search Campaigns
 
-A layer that adds AI-assisted matching, ad-copy generation, and landing-page selection to Search campaigns. Availability and controls can vary by account, so verify in the Google Ads UI before planning around it.
+A layer that adds AI-assisted matching, ad-copy generation, and landing-page selection to Search campaigns ([Google Ads Help](https://support.google.com/google-ads/answer/15910187?hl=en)). Availability and controls can vary by account, so verify in the Google Ads UI before planning around it.
 
 ### Three core features
 
@@ -906,9 +908,9 @@ A layer that adds AI-assisted matching, ad-copy generation, and landing-page sel
 - Accounts with narrow Exact / Phrase coverage may see more discovery benefit than already-broad accounts.
 - Judge it on query quality, CPA / ROAS, landing-page routing, and generated-text quality after the learning period.
 
-### Text guidelines (from Q1 2026)
+### Text guidelines
 
-You can control AI-generated copy via banned terms and natural-language instructions. Examples: "don't mention price", "don't use competitor names".
+You can control AI-generated copy and other AI Max settings from the AI Max / asset optimization controls where available ([setup Help](https://support.google.com/google-ads/answer/15909989?hl=en)). Examples: "don't mention price", "don't use competitor names".
 
 ### Recommended rollout
 
@@ -958,7 +960,7 @@ Configure URL exclusions so AI Max doesn't route to unintended pages.
 
 ### Search-terms report
 
-When AI Max is on, a new "AI Max" match-type label appears in the search-terms report so you can review and exclude AI-expanded queries. **Check the search-terms report daily for the first two weeks** after enabling, and watch for unwanted expansion.
+When AI Max is on, AI Max-specific reporting surfaces search terms, headlines, landing pages, and AI Max contribution views ([reporting Help](https://support.google.com/google-ads/answer/16470459?hl=en)). **Check the search-terms report daily for the first two weeks** after enabling, and watch for unwanted expansion.
 
 ---
 

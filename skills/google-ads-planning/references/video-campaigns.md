@@ -604,10 +604,12 @@ Important info shouldn't be hidden by UI elements (like / comment / share button
 
 ### 10-1. VAC → Demand Gen migration
 
+Video Action Campaigns are being upgraded to Demand Gen; verify current migration state before planning a VAC-based structure ([Google Ads Help](https://support.google.com/google-ads/answer/15110871?hl=en)).
+
 | Period | Event |
 |---|---|
-| April 2025 | Video Action Campaign (VAC) creation closes for new campaigns |
-| July 2025 | Existing VACs auto-migrate to Demand Gen |
+| April 2025 | Video Action Campaign (VAC) creation closes for new campaigns ([create VAC Help](https://support.google.com/google-ads/answer/10146226?hl=en)) |
+| July 2025 | Existing VACs auto-migrate to Demand Gen ([migration Help](https://support.google.com/google-ads/answer/15110871?hl=en)) |
 
 ### 10-2. Demand Gen characteristics
 
@@ -650,7 +652,7 @@ Demand Gen is sensitive to learning periods. Use the following rules to prevent 
 
 | Metric | Definition | Main use |
 |---|---|---|
-| **TrueView views** | 30-second view, video completion, or click (renamed from "Views" in October 2025) | Video Views primary KPI |
+| **TrueView views** | 30-second view, video completion, or click; verify current naming and Video views campaign behavior before reporting ([Google Ads Help](https://support.google.com/google-ads/answer/13982458?hl=en)) | Video Views primary KPI |
 | **View rate (VTR)** | TrueView views ÷ impressions | Evaluate creative attractiveness |
 | **View-rate baseline** | Account and campaign-history baseline | Benchmark creative attractiveness against your own history and comparable campaigns |
 | **CTR** | Clicks ÷ impressions | Evaluate the strength of action driving |
@@ -718,7 +720,7 @@ The following categories can be excluded from delivery:
 | Specific websites / apps | Account / campaign | Same |
 | Per-application max | — | 20,000 |
 
-- Account-level placement exclusion is supported (as of this writing) and applies across PMax / Demand Gen / YouTube / Display campaigns. Confirm at: Google Ads > Account settings > Placement exclusion list.
+- Account-level placement exclusion is supported and applies across PMax / Demand Gen / YouTube / Display campaigns where available. Confirm at: Google Ads > Account settings > Placement exclusion list.
 - Third-party exclusion lists (DoubleVerify, IAS, Zefr) are also supported.
 
 ### 12-4. Frequency cap

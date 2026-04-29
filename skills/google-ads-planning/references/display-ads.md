@@ -492,7 +492,7 @@ When adding audience segments to a Display campaign, choose between Targeting an
 |---|---|---|
 | **Viewable CPM (vCPM)** | Cost per 1,000 viewable impressions | Useful for awareness goals; for Display / Video |
 
-**Note:** Enhanced CPC (eCPC) was sunset for Search and Display campaigns in March 2025. Existing eCPC campaigns now run as Manual CPC.
+**Note:** Enhanced CPC (eCPC) is no longer available for Search and Display campaigns; campaigns that were not proactively migrated now effectively use Manual CPC ([Google Ads Help](https://support.google.com/google-ads/answer/2464964?hl=en)).
 
 ### 7-3. Bid-strategy decision flow for Display
 
@@ -822,7 +822,7 @@ Once enough data accumulates, each asset (headline, description, image) gets a p
 
 ### Overview
 
-Starting April 2025, Demand Gen campaigns expanded delivery to include GDN image inventory. This means Demand Gen now delivers to:
+Demand Gen campaigns expanded delivery to include GDN image inventory ([Google Ads Help](https://support.google.com/google-ads/answer/15890515?hl=en)). This means Demand Gen now delivers to:
 
 - YouTube (in-feed, Shorts, etc.)
 - Discover
