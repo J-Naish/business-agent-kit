@@ -93,7 +93,7 @@ Search works when explicit intent, a relevant promise, a strong landing page, an
 | **0–15** | Manual CPC or Maximize Clicks | Exact, Phrase | Keep the true business outcome primary. Track micro-CVs as secondary; use a proxy as primary only if it is proven to correlate with qualified outcomes |
 | **15–30** | Maximize Conversions (no tCPA) | Exact, Phrase | Operate on primary CV only. Move micro-CVs to secondary |
 | **30–50** | tCPA (set from actuals) | Phrase-led, begin testing Broad | Primary CV only. Consider importing offline CVs (B2B) |
-| **50–100** | tCPA or tROAS | Broad + Smart Bidding as the workhorse | Begin using CV value rules. Verify DDA eligibility |
+| **50–100** | tCPA or tROAS | Broad + Smart Bidding as the workhorse | Begin using CV value rules. Use DDA unless you need a conservative last-click view |
 | **100+** | tROAS / Portfolio bidding | Broad-led | Run tROAS in earnest. Refine CV values |
 
 ---
@@ -599,7 +599,7 @@ Examples:
 |------|--------|------|
 | Click-through CV | 30–90 days | B2B (long consideration) → 90; e-commerce (impulse) → 30 |
 | View-through CV | 1 day (default) | For Display / Video. Minimal effect on Search-only |
-| Engaged-view CV | CV after 10s of viewing | YouTube video ads |
+| Engaged-view CV | CV after meaningful video engagement (e.g. 10s skippable in-stream, 5s in-feed / Shorts) | YouTube / video-enabled campaigns |
 
 ---
 
@@ -804,10 +804,10 @@ The only supported Google Ads attribution models are **DDA (data-driven) and las
 
 | Model | Eligibility | Notes |
 |--------|---------|------|
-| **DDA (recommended)** | 3,000 interactions + 300 CVs in 30 days | ML distributes credit across each touchpoint; upper-funnel touches get credit |
+| **DDA (recommended)** | Default for most web / GA4 conversion actions | ML distributes credit across each touchpoint; upper-funnel touches get credit |
 | Last click | None | 100% credit to the last-clicked ad |
 
-- If you don't meet the threshold, use last-click
+- Use last-click only when you deliberately need a conservative reference or DDA is not trustable for the business question.
 ---
 
 ## 12. Budget management and optimization
@@ -816,7 +816,7 @@ The only supported Google Ads attribution models are **DDA (data-driven) and las
 
 | Item | Recommendation |
 |------|------|
-| Daily budget | At least 10–15× your target CPA |
+| Daily budget | 1–3× target CPA/day for narrow tests; 3–5×+ for healthier learning; 10×+ when fast scale is economically acceptable |
 | Monthly budget | Google Ads can spend up to 2× the daily budget on a given day (averaged monthly) |
 | Sign of budget shortage | If IS lost (budget) ≥ 20%, consider an increase |
 
@@ -884,7 +884,7 @@ Set a total budget for a defined period and let Google's AI optimize daily alloc
 | 1 | Migrating with too little CV data (under 30/mo) | Stay on Manual or Maximize Clicks until data accumulates |
 | 2 | Unrealistic targets | Start from actuals, tighten gradually |
 | 3 | Frequent changes during learning | Avoid large changes for 2–3 weeks |
-| 4 | Mismatch between budget and tCPA | Daily budget at least 10–15× tCPA |
+| 4 | Mismatch between budget and tCPA | Avoid budgets below 1× tCPA; use 3–5×+ tCPA/day when you expect stable learning |
 | 5 | CV-data contamination | Accurate tracking; watch for accidental micro-CV inclusion |
 | 6 | Blindly accepting platform recommendations | Recommendations are a hypothesis — judge with your own data |
 

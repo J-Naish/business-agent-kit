@@ -154,7 +154,7 @@ The shortest path for a first-time P-MAX launch. Refer to detailed sections belo
 | 4. Search themes | 8–12 themes | [§6](#6-search-themes-and-url-expansion) |
 | 5. Exclusions | Brand exclusion + irrelevant-KW negatives + URL exclusion rules (URL expansion OFF for lead-gen) | [§7](#7-negative-keywords-and-brand-exclusion) |
 | 6. Bidding | Start with Maximize Conversions or Maximize Conversion Value (no constraint) | [§8](#8-bid-strategy) |
-| 7. Budget | At least 3× your target CPA per day | [§8](#8-bid-strategy) |
+| 7. Budget | 3–5× target CPA/day when possible; 1–3× for narrow tests | [§8](#8-bid-strategy) |
 | 8. Go live | Activate the campaign | — |
 
 ### First two weeks (learning period)
@@ -252,7 +252,7 @@ Account
 |---------|---------|------|
 | Goal | Sales / Leads | Match to business goal |
 | Bid strategy | Value-led → tROAS / Volume-led → tCPA | See [§8](#8-bid-strategy) |
-| Budget | 3× target CPA per day | Minimum is 1× CPA per day |
+| Budget | 3–5× target CPA per day when possible | 1–3× can work for narrow tests; below 1× is usually too slow |
 | Geo | Target locations explicit | Recommend "Presence" only |
 | Language | Target languages explicit | |
 | Ad schedule | As needed | Default is 24/7 |
@@ -532,9 +532,10 @@ Does CV value vary by product?
 
 | Item | Recommendation | Notes |
 |------|------|------|
-| Min daily budget | 3× target CPA | Practical starting point for faster data accumulation |
-| Floor | 1× target CPA | Below this, learning is extremely slow |
-| Practical floor | 1–3× target CPA per day (e.g., $50 CPA → $50–$150 / day) | Varies by industry and CPA |
+| Floor | 1× target CPA | Below this, learning is extremely slow and budget pacing can hide demand |
+| Narrow-test range | 1–3× target CPA per day (e.g., $50 CPA → $50–$150 / day) | Works when structure is tight and expectations are modest |
+| Healthy range | 3–5× target CPA per day | Practical starting point for steadier learning and faster readout |
+| Scale / fast-learning range | 5–10×+ target CPA per day | Use when economics allow and the campaign has enough audience/feed/creative depth |
 | Budget increases | Up to 20% every 7–14 days | Sudden hikes reset learning |
 | Budget decreases | Up to 15% every 7–14 days | Sudden cuts destabilize delivery |
 
@@ -555,27 +556,29 @@ CV data is P-MAX's only learning signal. The quality of your CV definitions and 
 | Set CV value accurately (e-commerce: dynamic; lead-gen: lead-score-based) | CV-value accuracy directly determines tROAS accuracy |
 | Use data-driven attribution when appropriate | Helps credit non-last-click touchpoints when the account has meaningful assist paths |
 
-### 9-3. Click-based vs. view-through CV
+### 9-3. Click-based, engaged-view, and view-through CV
 
-> See SKILL.md "VTC unified policy" as well. P-MAX is the ad type most affected by VTC — extra care is warranted.
+> See SKILL.md "VTC unified policy" as well. P-MAX is heavily affected by non-click attribution, but standard P-MAX does not normally put plain VTC in the primary Conversions column. The practical risk is mixing click, EVC, store-goal VTC, brand, remarketing, and modeled conversions into one success story.
 
-P-MAX can include view-through conversions (VTC) in reporting and optimization depending on conversion-action settings. High VTC share can overstate causal impact.
+P-MAX includes engaged-view conversions (EVC) for eligible video engagement in Conversions. Standard view-through conversions (VTC: impression without click or engagement) are usually reporting-only, except for P-MAX Store Goals. High non-click share can overstate causal impact even when the reporting is technically correct.
 
 | Metric | Description | Caveat |
 |------|------|-------|
-| Click-through CV | Click → CV | Reflects actual ad impact |
-| View-through CV | Impression but no click → CV | Causal contribution unclear; risk of overstating impact |
+| Click-through CV | Click → CV | Strongest direct-response signal |
+| Engaged-view CV | Meaningful video view → CV | Biddable for supported P-MAX video inventory, but still non-click |
+| View-through CV | Impression but no click/engagement → CV | Usually reporting-only for standard P-MAX; biddable for Store Goals |
 
 **Mitigation (advanced):**
-- Create a click-only CV action and use it as P-MAX's CV goal
-- Apparent ROAS may drop after the switch because impression-only credit is removed. Judge the change with a before/after window and business-source-of-truth data, not platform ROAS alone.
-- This is an advanced technique — start with defaults, monitor VTC share, and decide from there
+- Segment conversions by ad event type: Clicks, Interactions / Engaged-view, and Impression.
+- If non-click contribution is distorting decisions, create a click-prioritized reporting view or campaign experiment; do not blindly remove useful EVC from bidding.
+- For Store Goals, compare store visits / store sales against POS or store-level revenue before scaling from VTC-heavy results.
+- This is an advanced technique: start with defaults, monitor event mix, and decide from there.
 
 **How to validate in your account:**
-1. Use Segment → Conversions → Conversion Action to see VTC share
-2. If VTC ≥ 50% of total CVs, consider creating a click-only CV action
-3. After switching, observe for 4+ weeks and judge by click-through CPA / ROAS
-4. Record CPA / ROAS / CV count before and after to assess real improvement
+1. Use Segment → Conversions → Ad event type to separate clicks, engaged views, and impressions.
+2. Use the channel performance report to see whether Search, Shopping, YouTube, Display, Discover, Gmail, Maps, or Search partners are driving the event mix.
+3. If impression-attributed CVs are material, compare against backend revenue, store sales, or a holdout before raising budget.
+4. Record CPA / ROAS / CV count before and after major goal or attribution-view changes to assess real improvement.
 
 ### 9-4. Offline CV import
 
@@ -945,7 +948,7 @@ When performance falls short, work in this order.
 | Priority | Check | Action |
 |-------|------------|------|
 | 1 | CV measurement accurate? | Implement Enhanced Conversions / revisit CV definitions |
-| 2 | Budget sufficient? | At least 3× target CPA per day |
+| 2 | Budget sufficient? | 1–3× target CPA/day for narrow tests; 3–5×+ for stable learning |
 | 3 | Asset quality sufficient? | Replace "Low" assets / fill gaps |
 | 4 | Audience signals appropriate? | Add Customer Match / revise signals |
 | 5 | Negatives and brand exclusion right? | Add irrelevant terms via search-terms report |
@@ -983,7 +986,7 @@ When performance falls short, work in this order.
 | Leaving URL expansion on by default | Traffic leaks to blogs / careers | Configure URL exclusion rules; off for lead-gen |
 | Running without brand exclusion | P-MAX absorbs brand-search CVs — apparent ROAS is high but real lift is small | Configure brand exclusion to draw a clean line with Search |
 | Excluding all non-CV terms | Narrows AI exploration; loses new-customer discovery | Strategic, category-level exclusion only |
-| Judging by ROAS alone | VTC-inclusive ROAS may be overstated | Also evaluate click-only ROAS |
+| Judging by ROAS alone | Brand, remarketing, modeled CV, EVC, or Store Goals VTC may overstate lift | Also evaluate click-only / ad-event-type ROAS and business revenue |
 | Spiking the budget | Triggers learning reset | Up to 20% per 7–14 days |
 | Setting tCPA / tROAS targets to aspirational values | Delivery collapses, learning halts | Anchor on actuals |
 | "Set and forget" P-MAX | Performance decays as the environment shifts | Make a weekly health check routine |
@@ -1006,7 +1009,7 @@ Reverse lookup: identify the cause from the symptom and decide the action.
 
 | Symptom | Likely causes | Action |
 |------|---------|-------|
-| CVs are coming in but ROAS is degrading | High VTC share inflates apparent ROAS / tROAS too loose / low-margin products dominate CVs | Check VTC share / tighten tROAS in steps from actuals / split by margin via custom labels |
+| CVs are coming in but ROAS is degrading | Non-click event mix, tROAS too loose, or low-margin products dominate CVs | Segment by ad event type / tighten tROAS in steps from actuals / split by margin via custom labels |
 | Spend concentrates on a few products / AGs | AI optimized into a few easy-to-convert products | Split via listing groups / improve low-spend AG asset quality / split campaigns to manage budget independently |
 | YouTube / Display share is too high | Full-asset delivery skewing to retargeting / fierce Search-channel competition | Consider feed-only / enable New Customer Acquisition mode / verify true CV contribution in the channel report |
 | CPA / CPC suddenly rose | Learning reset / competitive shift / seasonality | Check recent changes (bid, budget, assets) / wait 2–3 weeks for stabilization / check search-terms for new high-CPC queries |

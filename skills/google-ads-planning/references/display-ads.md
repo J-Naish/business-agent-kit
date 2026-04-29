@@ -514,7 +514,7 @@ Display ads behave differently from Search — "non-click contribution," "view-t
 
 ### 8-1. View-through conversions (VTC)
 
-Counted when the user saw the ad (didn't click), then later visited the site directly and converted.
+Counted when the user saw the ad, did not interact with it, and later converted within the view-through window.
 
 | Item | Description |
 |---|---|
@@ -529,10 +529,10 @@ Per the unified VTC policy in SKILL.md, treat VTC as follows:
 
 | Policy | Use | Conditions |
 |---|---|---|
-| **Monitoring only (recommended starting point)** | VTC kept as Secondary CV; not used for bid optimization. Tracked as a reference signal for awareness efforts | Use this by default |
-| **Include in bidding** | Set the window to 1 day and include VTC in Primary CV for bid optimization | Only when remarketing has sufficient CV volume (30+ per month) and VTC is <50% of total CVs |
+| **Monitoring only (recommended starting point)** | VTC reported in View-through conversions / All conversions; not used as the main optimization signal | Use this by default |
+| **Use as supporting evidence** | Pair VTC with click / EVC, frequency, placement quality, lift tests, and backend outcomes | Especially useful for remarketing and awareness readouts |
 
-**Note:** Overweighting VTC risks budget flowing to impressions that don't actually drive conversions. Keeping the VTC window short (1 day) helps prevent inflation. Always track both the VTC-included CPA / ROAS and the click-only CPA / ROAS in parallel.
+**Note:** Overweighting VTC risks budget flowing to impressions that don't actually drive conversions. Keeping the VTC window short (1 day) helps prevent inflation. Always track click-based / EVC performance and VTC-assisted contribution separately.
 
 ### 8-2. Primary vs Secondary conversions
 

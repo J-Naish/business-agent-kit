@@ -331,7 +331,7 @@ Demand Gen has different pricing models and user states per surface, so the crea
 | Strategy | Goal | Use |
 |---|---|---|
 | **Maximize Conversions** | Maximize CV count within the budget | New campaigns, low CV data, early stage. Recommended for small budgets too |
-| **Target CPA (tCPA)** | Maximize CV count at the specified CPA | After 50+ conversions are accumulated; budget ≥15× target CPA |
+| **Target CPA (tCPA)** | Maximize CV count at the specified CPA | After 50+ conversions are accumulated; 3–5× target CPA/day is workable, 15×+ gives a cleaner read |
 | **Maximize Conversion Value** | Maximize CV value within the budget | When CV value (revenue, etc.) is set up |
 | **Target ROAS (tROAS)** | Maximize CV value at the specified ROAS | Sufficient CV-value data + clear ROAS goal |
 | **Target CPC (tCPC)** | Control average CPC | Only available when the campaign goal is "clicks" — awareness or traffic ([Google Ads Help](https://support.google.com/google-ads/answer/16262529?hl=en)) |
@@ -355,8 +355,8 @@ Is the campaign's primary goal traffic / awareness?
 | Note | Description |
 |---|---|
 | **Target CPC granularity** | Can be set at both campaign and ad-group level; ad-group level wins |
-| **Minimum budget** | Roughly $100/day or 15–20× target CPA recommended |
-| **Small-budget alternative** | Limiting the geography can let you start at $20–35/day |
+| **Budget for conversion goals** | Practical working range is $100–500/day per ad group or about 15× the goal CPA when you want a clean read; narrow tests can run smaller |
+| **Small-budget alternative** | Limiting the geography, audience, or surface can let you start at $20–35/day, but judge it as a learning test rather than a scale plan |
 | **Learning period** | Avoid major changes for 3–4 weeks after launch |
 
 ---
@@ -449,8 +449,8 @@ Demand Gen (Shorts-focused)
 
 | Item | Recommendation |
 |---|---|
-| Minimum daily budget | 15–20× target CPA, or roughly $100/day |
-| Small-scale test | Geo-limited can start at $20–35/day |
+| Working daily budget | $100–500/day per ad group or about 15× target CPA when you want enough signal for a fair conversion read |
+| Small-scale test | Geo / audience / surface-limited tests can start around $20–35/day, but expect slower learning |
 | Total campaign budget | Can also be set to spend evenly across the full delivery period |
 
 ---
@@ -462,8 +462,9 @@ Demand Gen (Shorts-focused)
 | Metric | Use |
 |---|---|
 | **CPA / ROAS** | Direct performance evaluation |
-| **VTC (view-through CV)** | Users who saw the ad without clicking and converted later. Per the unified VTC policy in SKILL.md, don't combine with direct CV — track separately as "demand-creation indirect impact" |
-| **Cross-platform comparable CV** | Metric intended to support cross-channel comparison when available |
+| **EVC (engaged-view CV)** | Users who watched enough of a video ad and converted later. Included in Conversions for supported Demand Gen inventory; segment by ad event type when evaluating direct response |
+| **VTC (view-through CV)** | Users who saw the ad without clicking or engaged-viewing and converted later. VTC optimization is YouTube-only open beta and off by default; if enabled, keep the VTC window short and report impression credit separately |
+| **Cross-platform comparable CV** | Reporting-only Demand Gen metric that can include VTC to compare with paid-social-style reporting; don't use it to compare against Search, Shopping, or P-MAX |
 | **Attributed brand searches** | Brand-search activity attributed to Demand Gen when available |
 | **Assist CV** | Demand Gen touchpoints that contributed to a final conversion |
 
@@ -581,8 +582,9 @@ Per-asset performance labels:
 | **May 2025** | **Target CPC bidding** available in click-goal Demand Gen campaigns ([Google Ads Help](https://support.google.com/google-ads/answer/16262529?hl=en)) |
 | **Jul 2025** | Existing VAC (Video Action Campaigns) begin auto-migration to Demand Gen ([Google Ads Help](https://support.google.com/google-ads/answer/15110871?hl=en)) |
 | **Sep 2025** | Migration of accounts with VAC delivery completes in batches ([Google Ads Help](https://support.google.com/google-ads/answer/15110871?hl=en)) |
-| **Oct–Dec 2025** | Expanded channel controls, Google Maps support where available, AI creative features, new-customer-acquisition options, local offers, and checkout-link style commerce features; verify availability in the UI and current Help before relying on these |
+| **Oct–Dec 2025** | Expanded channel controls, AI creative features, new-customer-acquisition options, local offers, and checkout-link style commerce features; verify availability in the UI and current Help before relying on these |
 | **Jan 2026** | Connected-TV commerce features, attributed brand-search reporting where available, and travel-feed support |
+| **2026** | VTC optimization for Demand Gen is available as an open beta for YouTube inventory and is off by default; enable only when impression-based optimization fits the evaluation model ([Google Ads Help](https://support.google.com/google-ads/answer/16399666)) |
 | **Mar 2026 onward** | Treat Lookalike reach settings as directional controls unless strict targeting behavior is confirmed in the current UI |
 
 ---
@@ -615,7 +617,7 @@ Per-asset performance labels:
 - [ ] Business name set
 - [ ] Video assets: ideally all 3 aspect ratios (16:9 / 1:1 / 9:16)
 - [ ] Bid strategy confirmed (initial: Maximize Conversions)
-- [ ] Daily budget ≥15× target CPA
+- [ ] Daily budget matched to the readout goal: 3–5× target CPA/day minimum for conversion learning, 15×+ for faster scale where affordable
 - [ ] Audience setup: prospecting and remarketing in separate ad groups
 - [ ] Optimized Targeting: ON for prospecting / OFF for remarketing
 - [ ] Audience exclusion: converted users excluded

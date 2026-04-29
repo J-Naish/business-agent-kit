@@ -50,7 +50,7 @@ Use this as the default practice cadence unless the user's account context sugge
 - Use platform metrics for tactical optimization, not as final financial truth.
 - Report brand separately from non-brand. For established brands, assume some branded conversions would happen organically unless a holdout or incrementality test says otherwise.
 - For P-MAX / Demand Gen / Display / Video, look for incremental contribution, assisted demand, branded search lift, and audience-pool growth; last-click CPA is often incomplete.
-- Keep VTC visible but separate by default. If included in primary reporting, state the assumption and use short windows or calibration tests.
+- Keep VTC visible but separate by default. Distinguish VTC from engaged-view conversions (EVC): EVC is a biddable video-engagement signal in Video / Demand Gen / P-MAX, while standard VTC is usually reporting-only except for App, P-MAX Store Goals, and Demand Gen campaigns explicitly opted into VTC optimization.
 - Use geo holdouts, Customer Match holdouts, campaign experiments, conversion lift, or pre/post analysis when budget and volume allow.
 - Reconcile against revenue, pipeline, CRM, app LTV, or contribution margin. Do not sum platform-reported revenue across channels as if it were deduplicated.
 
@@ -342,7 +342,7 @@ When changing bid settings:
 
 - Avoid major changes during the 2–3 week learning period.
 - Don't move Target CPA / ROAS by more than 20% at a time.
-- Daily budget should be at least 10–15× target CPA.
+- Treat budget-to-target ratios as practical ranges, not platform rules: below 1× target CPA/day is usually too slow, 1–3× can work for narrow tests, 3–5× is a healthier performance budget, and 10×+ is for aggressive scaling or faster learning when economics allow.
 
 ### Conversion design
 
@@ -361,26 +361,29 @@ Modern setup to prioritize:
 
 For details — Consent Mode v2 setup, EC/OCI/ECfL choice, modeled-CV interpretation, attribution, VTC policy, iOS/SKAN, and incrementality methods — see [references/measurement.md](references/measurement.md).
 
-#### View-through conversions (VTC) — unified policy
+#### View-through conversions (VTC) and engaged-view conversions (EVC) — unified policy
 
-VTC measures users who saw the ad without clicking and converted later. It applies to display, video, P-MAX, Demand Gen — anywhere with impression-led inventory. Treat VTC consistently:
+VTC measures users who saw the ad without clicking and converted later. EVC measures a deeper video engagement without a click: e.g. watching enough of a YouTube / Shorts / in-feed ad and then converting within the EVC window. Treat them separately:
 
 | Principle | Description |
 |---|---|
-| **Default = monitoring only** | Don't include VTC in the primary CV that drives bidding. Track it as a secondary signal. |
+| **Default VTC stance = monitoring first** | Don't let impression-only credit drive the business story unless the campaign type and setting explicitly make VTC biddable. Track VTC as a supporting signal and segment by ad event type. |
+| **EVC is not the same as VTC** | EVC flows into the Conversions column for supported video-based campaign types and is a stronger non-click signal than a plain impression. Still report click vs EVC separately for serious decisions. |
 | **Keep the window short** | 1-day VTC window (default). Longer windows blur causality and inflate the count. |
-| **Don't combine with click-based CV in CPA / ROAS** | Report VTC separately as "indirect contribution." |
-| **Watch the VTC ratio** | If VTC is >50% of total conversions, the campaign's real direct effect is likely overstated. |
+| **Don't headline blended CPA / ROAS blindly** | Report click-based, EVC, and VTC-included views separately when the decision is material. |
+| **Watch the VTC ratio** | If VTC is >50% of total reported conversions, the campaign's direct effect is likely overstated unless an incrementality test supports it. |
 
 **VTC handling per ad type:**
 
-| Ad type | VTC impact | Recommendation |
+| Ad type | Correct handling | Recommendation |
 |---|---|---|
-| **Search** | Negligible (click-driven) | No special handling needed. |
-| **Display** | Mid–high (heavy impression volume) | Track VTC as secondary CV. For remarketing campaigns with strong CV volume, consider including VTC in primary. |
-| **Video** | Mid (post-view influence) | Track VTC separately as "video assist." Don't combine with direct CV. |
-| **P-MAX** | High (default optimizes including VTC) | Audit VTC ratio regularly. If consistently >50%, consider creating a click-based CV action (advanced — see [references/pmax.md](references/pmax.md) §9-3). |
-| **Demand Gen** | Mid–high | Treat VTC + assist as "demand-creation indirect impact." Use blended CPA for overall judgment. |
+| **Search / Shopping** | Click-driven; VTC is not a meaningful optimization signal | No special handling beyond normal attribution checks. |
+| **Display** | Standard VTC is reporting-only in the VTC / All conversions columns | Use VTC as assist evidence; use click/EVC/business outcomes for bidding decisions. |
+| **Video** | EVC can be in Conversions; plain VTC should stay assist-only | Report click, EVC, and VTC separately; use lift/search-lift for upper-funnel value. |
+| **P-MAX standard** | EVC can be in Conversions; standard VTC is not included in Conversions by default | Audit ad event type and channel mix; avoid calling VTC-included ROAS "real ROAS." |
+| **P-MAX Store Goals** | VTC can be included for store-goal measurement | Reconcile with POS / store revenue where possible. |
+| **Demand Gen** | EVC is included; VTC optimization is available for YouTube inventory but is off by default; Platform Comparable columns can include VTC for reporting only | Enable VTC optimization only when the goal is social-style scale and reporting can tolerate impression-credit inflation. |
+| **App** | VTC optimization exists for eligible app campaigns, especially Android installs | Use when install scale matters, but separate prospecting from re-engagement and monitor retained-user quality. |
 
 ### Budget allocation
 
@@ -410,8 +413,8 @@ Quarterly: campaign-structure review, strategy-level rethink
 | Enhanced Conversions not enabled | Turn it on — cookie-restriction defense is required |
 | Bid targets unrealistic | Start from observed historical numbers, then tighten gradually |
 | Frequent changes during learning period | Hold off on big changes for 2–3 weeks after a change |
-| P-MAX underbudgeted | Daily budget must be ≥10× target CPA |
-| Judging on VTC-inclusive ROAS only | Also evaluate click-only ROAS in parallel |
+| P-MAX underbudgeted | Keep at least 1–3× target CPA/day for a narrow test and 3–5×+ when you expect stable learning |
+| Judging on VTC / EVC-inclusive ROAS only | Also evaluate click-only, EVC, and business-source-of-truth results in parallel |
 | Mismatched ad → LP | Provide a dedicated LP per ad group |
 
 ---

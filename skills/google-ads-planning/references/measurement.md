@@ -128,15 +128,15 @@ For e-commerce, a fixed-value CV is almost always wrong — Smart Bidding cannot
 
 ### Ad-type compatibility quick reference
 
-| Campaign type | Bids on click-based CV | Bids on VTC | Notes |
+| Campaign type | Bids on click-based CV | Non-click conversion handling | Notes |
 |---|---|---|---|
 | Search | Yes | No (VTC reported but not in Conversions column) | Standard click-driven |
-| Display | Yes | Default 1-day VTC excluded from Conversions | Toggle VTC into Conversions only with deliberate reason |
+| Display | Yes | EVC can apply to video inventory; standard VTC is reporting-only | Use VTC as assist evidence, not the main CPA story |
 | Shopping | Yes | No | Click-driven |
-| Video Action | Click + Engaged-View (3-day default) | EVC counted in Conversions for Video Action and Demand Gen | EVC = ≥10s view without click |
-| App | Click + view-based (2-day install / 1-day engagement) | **VTC counted in Conversions for App** | iOS: SKAN + ICM signal blend, see Section 11 |
-| **Performance Max** | Click + Engaged-View | **VTC counted in Conversions only for PMax Store Goals** (not standard PMax) | Audit VTC ratio quarterly |
-| **Demand Gen** | Click + Engaged-View | **VTC counted in Conversions for Demand Gen** | Most generous VTC inclusion of any campaign type |
+| Video Action | Click + Engaged-View | EVC counted in Conversions; standard VTC reported separately | EVC is the direct-response video non-click signal |
+| App | Click + view-based | VTC optimization can make eligible VTC biddable, especially Android installs | iOS: SKAN + ICM signal blend, see Section 11 |
+| **Performance Max** | Click + Engaged-View | EVC counted in Conversions; standard VTC counted in Conversions only for PMax Store Goals | Audit ad event type and channel mix quarterly |
+| **Demand Gen** | Click + Engaged-View | EVC counted in Conversions; VTC optimization can be enabled for YouTube inventory but is off by default | Platform Comparable columns can include VTC for reporting only |
 
 Reference: [Google Ads Help](https://support.google.com/google-ads/answer/16542520).
 
@@ -436,7 +436,7 @@ DDA evaluates the full path across mobile/desktop/tablet, across Search, Display
 |---|---|---|
 | Click-through | 1–90 days | **30 days** (most CV actions) |
 | View-through | 1–30 days | **1 day** |
-| Engaged-view (Video Action / Demand Gen) | 1–30 days | **3 days** |
+| Engaged-view | 1–30 days | **1 day** for Video Action / Demand Gen / P-MAX; **3 days** for store visits / store sales |
 
 Choose the window that matches conversion latency, not vanity. Long windows inflate counts and slow learning; short windows under-count high-consideration purchases.
 
@@ -450,48 +450,48 @@ Cross-account conversion tracking at the MCC/manager level **overrides** sub-acc
 
 VTC measures users who saw an ad without clicking and converted later. It applies anywhere with impression-led inventory: Display, Video, PMax, Demand Gen, App. **Treat VTC consistently across the account**, do not let policy drift by campaign type.
 
-### Default windows by campaign type
+### Default windows and inclusion by campaign type
 
-| Campaign | VTC window default | Inclusion in "Conversions" column by default |
+| Campaign | Default non-click window | Inclusion in "Conversions" column by default |
 |---|---|---|
 | Search | n/a (click-driven) | n/a |
 | Display | 1 day | **No** — reported in "View-through conversions" only |
 | Shopping | 1 day | **No** |
-| Video Action | 3-day Engaged-View | **Yes for EVC, not standard VTC** |
-| App — Install | 2-day VTC | **Yes** |
-| App — Engagement | 1-day VTC | **Yes** |
-| **Performance Max (standard)** | 1 day | **No** — VTC reported separately |
+| Video Action | 1-day Engaged-View | **Yes for EVC, not standard VTC** |
+| App — Install | 2-day install EVC / 24-hour VTC where VTC optimization is enabled | **Yes for eligible optimized view signals** |
+| App — Engagement | 1-day engagement EVC / 24-hour VTC where VTC optimization is enabled | **Yes for eligible optimized view signals** |
+| **Performance Max (standard)** | 1-day Engaged-View | **Yes for EVC; no for standard VTC** |
 | **Performance Max for Store Goals** | 1 day | **Yes** |
-| **Demand Gen** | 1 day | **Yes** |
+| **Demand Gen** | 1-day Engaged-View; 1-day VTC recommended if VTC optimization is enabled | **Yes for EVC; VTC only when VTC optimization is enabled. Platform Comparable columns can include VTC for reporting only** |
 
-Reference: [Google Ads Help](https://support.google.com/google-ads/answer/16542520).
+References: [View-through conversions](https://support.google.com/google-ads/answer/16542520), [Engaged-view conversions](https://support.google.com/google-ads/answer/10048752), [Demand Gen VTC optimization](https://support.google.com/google-ads/answer/16399666), and [Demand Gen Platform Comparable columns](https://support.google.com/google-ads/answer/15299024).
 
-This means PMax Standard, Display, and Search show "clean" CPA/ROAS by default, while Demand Gen, App, and PMax Store Goals show CPA/ROAS that **already includes VTC**. Adjust expectations accordingly when comparing across campaign types.
+This means standard PMax, Display, Shopping, and Search do **not** normally include standard VTC in the primary Conversions column. They can still include EVC where video engagement is eligible. Demand Gen requires extra care: ordinary Conversions can include EVC, VTC optimization can make YouTube VTC biddable when enabled, and Platform Comparable columns include VTC for cross-platform reporting but do not affect bidding.
 
 ### Engaged-View Conversions (EVC)
 
-- **Skippable in-stream / in-feed video**: viewer watches ≥ 10 seconds without clicking, then converts within window
-- **Non-skippable bumper**: video completion is the trigger
-- Available on YouTube and Google Video Partners
-- Default 3-day EVC window for Video Action
-- EVCs flow into **Conversions** column for Video Action and Demand Gen
+- **Skippable in-stream**: viewer watches ≥ 10 seconds without clicking, then converts within window
+- **In-feed / Shorts**: viewer watches ≥ 5 seconds without clicking, then converts within window
+- Available on Video, App, Display video inventory, Demand Gen, and Performance Max
+- Default EVC window is 1 day for Video Action / Demand Gen / P-MAX and 3 days for store visits / store sales
+- EVCs flow into **Conversions** and **All conversions** columns for supported campaign types
 
 ### VTC handling policy (default for this skill)
 
 | Principle | Practice |
 |---|---|
-| **Default = monitoring only for non-Demand Gen non-App** | Track VTC in "All conversions"; do not bid on it for Display, standard PMax |
+| **Default = monitoring first** | Track standard VTC separately; do not treat impression-only credit as primary proof unless the campaign is explicitly opted into VTC optimization or is PMax Store Goals / eligible App |
 | **Keep windows short** | 1-day VTC default; longer windows blur causality |
-| **Don't combine click + VTC in CPA / ROAS for headline reporting** | Separate "click-based CPA" and "VTC-included CPA" |
+| **Don't combine click + EVC + VTC blindly** | Separate click-based, EVC, and VTC-included CPA / ROAS for material decisions |
 | **Watch the VTC ratio** | If VTC > 50% of total CV for a campaign, the campaign's direct effect is likely overstated |
-| **Audit Demand Gen and PMax Store Goals quarterly** | These default to VTC-included; recalibrate against business outcomes |
+| **Audit Demand Gen VTC optimization and PMax Store Goals quarterly** | These can make VTC biddable; recalibrate against business outcomes |
 
 ### VTC red flags
 
 | Symptom | Likely cause | Action |
 |---|---|---|
-| VTC > 50% of total CV in PMax | Heavy Display/YouTube delivery, low-quality placement, frequency too high | Add brand exclusions, audit placement reports, lower frequency cap, consider click-based custom CV (see [pmax.md §9-3](pmax.md)) |
-| Demand Gen VTC > 70% | Audience too narrow → frequency over-exposure | Broaden audience signal, add new creative, separate prospecting / remarketing |
+| VTC > 50% of total reported CV in PMax Store Goals or VTC-heavy reports | Heavy Display/YouTube delivery, low-quality placement, frequency too high | Add brand exclusions, audit placement reports, use channel report / ad event type, and reconcile against store/POS or backend data |
+| Demand Gen VTC > 70% after VTC optimization is enabled | Audience too narrow → frequency over-exposure or impression-credit inflation | Broaden audience signal, add new creative, separate prospecting / remarketing, and check click+EVC performance |
 | App VTC > 60% | iOS attribution noise or remarketing-heavy mix | Audit ATT opt-in rate, separate prospecting from re-engagement |
 | ROAS spikes after a Display launch | New VTC pickup, not new revenue | Verify business revenue moved; if not, keep VTC visible but reweight |
 
@@ -750,8 +750,8 @@ Inside Google Ads, lift studies measure Google's view of Google. They do not cap
 | ROAS spiked but profit didn't move | Modeled CV inflated, or VTC pickup, or brand share rose | Decompose: modeled vs observed, click vs VTC, brand vs non-brand |
 | Lead CPA looks good but SQL rate dropped | Bid strategy is learning low-quality leads | Switch Primary to qualified-lead via ECfL/OCI; re-run for 2–3 weeks |
 | Offline imports cause bidding volatility | Bulk uploads at irregular intervals during learning | Move to daily or hourly imports; avoid huge backfills mid-learning |
-| Demand Gen CPA looks bad | Reported CPA may include VTC; direct conversions only is the cleaner read | Segment Engaged-View vs click; consider blended CPA against business outcome |
-| PMax revenue great, business revenue flat | Brand capture, remarketing bias, VTC inclusion, low-margin product mix | Brand exclusions, NCA mode, separate VTC, segment by margin (see [pmax.md §7](pmax.md)) |
+| Demand Gen CPA looks bad | Last-click CPA may understate mid-funnel value, while Platform Comparable or VTC-optimized views may overstate it | Segment click vs EVC vs impression; consider blended CPA against business outcome |
+| PMax revenue great, business revenue flat | Brand capture, remarketing bias, EVC/VTC interpretation, low-margin product mix | Brand exclusions, NCA mode, segment by ad event type and margin (see [pmax.md §7](pmax.md)) |
 | iOS App tROAS unstable | Volume below 30–50 daily revenue conversions; SKAN signal sparsity | Drop back to ACi tCPA, deepen ATT prompt UX, enable ICM |
 | EEA campaigns silently lost remarketing | CMv2 non-compliant since July 2025 enforcement | Re-implement CMv2 properly; lost period is non-recoverable |
 | Conversion adjustments not affecting bids | Adjustments arriving > 7 days post-conversion | Move to within-7-day import cadence; for very long cycles, switch Primary to a closer proxy |
@@ -767,7 +767,7 @@ A "good enough" stack scales with spend. Don't over-engineer for accounts that a
 - Google tag (client-side) via GTM
 - Auto-detected Enhanced Conversions
 - Single Primary CV action; secondary as monitoring
-- Last-click attribution if DDA isn't eligible; otherwise DDA default
+- DDA default for most web / GA4 conversion actions; use last-click only as a deliberate conservative reference
 - CMv2 only if EEA/UK/CH traffic (mandatory there)
 - No sGTM, no GTG required
 - Skip incrementality testing — volume too thin
@@ -803,7 +803,7 @@ A "good enough" stack scales with spend. Don't over-engineer for accounts that a
 ## Cross-references
 
 - Conversion design and Primary/Secondary policy at the SKILL level → [SKILL.md §3 — Conversion design](../SKILL.md#conversion-design)
-- VTC handling per ad type policy → [SKILL.md §3 — VTC unified policy](../SKILL.md#view-through-conversions-vtc--unified-policy)
+- VTC / EVC handling per ad type policy → [SKILL.md](../SKILL.md)
 - Budget vs signal viability → [budget-planning.md](budget-planning.md)
 - Diagnostic decision trees for failing accounts → [diagnostic-decision-trees.md](diagnostic-decision-trees.md)
 - PMax-specific measurement detail (asset-group reporting, brand exclusions, click-based custom CV) → [pmax.md](pmax.md)

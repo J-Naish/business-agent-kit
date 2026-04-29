@@ -292,8 +292,8 @@ In Google Ads, you pick a goal first; the available sub-types depend on the goal
 
 | Item | Recommendation |
 |---|---|
-| Daily budget under tCPA | 15× target CPA or higher |
-| Daily budget under Maximize Conversions | 10× expected CPA or higher |
+| Daily budget under tCPA | 3–5× target CPA as a workable floor; 10–15×+ for faster scale when economics allow |
+| Daily budget under Maximize Conversions | 3–5× expected CPA as a workable floor; 10×+ for faster learning |
 | CV accumulation goal | 15+ per month (rough Smart Bidding stability bar) |
 
 ### 3-3. Rules for changing budget
@@ -624,7 +624,7 @@ Video Action Campaigns are being upgraded to Demand Gen; verify current migratio
 ### 10-3. Demand Gen setup points
 
 - **Bid:** Start with tCPA or Maximize Conversions; migrate to tROAS as data accumulates
-- **Budget:** Set daily budget at 15× target CPA
+- **Budget:** Use 3–5× target CPA/day as a workable floor; 10–15×+ is better when you need a faster read and the economics allow it
 - **Creative:** Upload both video and image (only one limits surfaces)
 - **Targeting:** Custom segments + Customer Match + Lookalike Segments (when available) + Optimized Targeting ON
 - **Content targeting:** Don't add (causes delivery restrictions)
@@ -662,7 +662,7 @@ Demand Gen is sensitive to learning periods. Use the following rules to prevent 
 | **CPM** | Cost ÷ impressions × 1,000 | Reach cost efficiency |
 | **CV count** | Number of conversions | Demand Gen primary KPI |
 | **CPA** | Cost ÷ CV | CV cost efficiency |
-| **View-through CV** | Watched the ad but didn't click directly; converted later | Indirect impact of video ads |
+| **View-through CV** | Saw the ad but didn't click or engaged-view; converted later | Indirect impact of video ads |
 | **Cross-device CV** | Watched on one device → converted on another | Multi-device impact |
 
 ### 11-2. Brand Lift studies
@@ -685,7 +685,7 @@ Built-in lift-measurement workflow for awareness / consideration impact from vid
 | Consideration | VTR, view-completion rate, CPV | Engagement rate, channel subscribes, GA4 site visits | CPA alone (video contributes at the consideration stage; direct CV undersells it) |
 | Conversion acquisition | CV count, CPA, ROAS | View-through CV, cross-device CV, CPC | VTR (under CV optimization, judge by CV quality and quantity, not view rate) |
 
-> **VTC handling** (aligned with the unified VTC policy in SKILL.md): track view-through CV separately from primary KPIs. Don't combine with direct CV — evaluate independently as "video's indirect contribution." Combining can make CPA look unreasonably low and lead to bad scaling decisions.
+> **VTC / EVC handling** (aligned with the unified policy in SKILL.md): EVC is the stronger non-click video signal and can flow into Conversions for supported campaign types. Track plain VTC separately from primary KPIs and evaluate it as indirect contribution. Combining click, EVC, and VTC without labels can make CPA look cleaner than the business reality.
 
 ---
 
