@@ -38,7 +38,7 @@ Lead campaigns work when the **lead path, form/message design, qualification log
 - Promising Advantage+ Leads and then over-restricting audience / placement, silently disabling Advantage+.
 - Forgetting that when an account is flagged Special Ad Category, custom audience exclusions, lookalikes, and many demographic filters disappear.
 
-Glossary terms used throughout this document live in `SKILL.md` (to be added to the Meta planning skill glossary).
+Glossary terms used throughout this document live in the [SKILL.md glossary](../SKILL.md#common-meta-ads-glossary).
 
 ---
 

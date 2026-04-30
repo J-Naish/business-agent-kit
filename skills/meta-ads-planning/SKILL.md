@@ -328,7 +328,7 @@ Use the cadence table in [Practice-first stance](#cadence) as the canonical oper
 
 For each selected objective, consult the matching playbook for both practice and settings. The practice sections should drive the recommendation; settings are the implementation layer.
 
-Before asset specs or copy drafts, use [references/creative-strategy.md](references/creative-strategy.md) to define audience, offer, proof, objections, format fit, and test angles. Then use objective playbooks and [references/creative-production.md](references/creative-production.md) for format-specific production.
+Before asset specs or copy drafts, use [references/creative-strategy.md](references/creative-strategy.md) to define audience, offer, proof, objections, format fit, and test angles. Produce one filled brief per concept using the [Creative Brief Template](references/creative-strategy.md#7-creative-brief-template) before commissioning production. Then use objective playbooks and [references/creative-production.md](references/creative-production.md) for format-specific production.
 
 ### Per-objective playbooks
 

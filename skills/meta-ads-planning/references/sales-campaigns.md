@@ -30,8 +30,7 @@ Inverting this order is the single most common operator mistake.
 
 ### 0-3. Decision matrix by monthly purchase volume
 
-Use Meta's per-week-per-ad-set learning-phase target (50 events/week to exit learning) as the anchor. ()
-
+Use Meta's per-week-per-ad-set learning-phase target (50 events/week to exit learning) as the anchor.
 | Monthly purchase volume | Recommended Sales setup | Notes |
 |---|---|---|
 | 0-30 purchases/month | Single manual Sales campaign, 1-2 ad sets, broad audience, optimize for `Purchase` if reliable, otherwise `InitiateCheckout` or `AddToCart` (predictive of purchase) | Volume too low for any per-ad-set learning. Do not use Advantage+ Sales as sole engine. Focus on creative and offer. |
@@ -39,8 +38,6 @@ Use Meta's per-week-per-ad-set learning-phase target (50 events/week to exit lea
 | 50-100 purchases/month | Advantage+ Sales as primary acquisition, manual Sales for retargeting/exclusions. Optimize for `Purchase`. Lowest Cost. | Single ad set in Advantage+ can plausibly exit learning. Begin creative volume push (15-25 ads). |
 | 100-300 purchases/month | Advantage+ Sales primary + manual Sales for product-set, margin, or geo splits. Begin Cost-per-Result-Goal testing. Value optimization viable if value distribution is wide. | Sweet spot. Can run 2-3 ad sets in Advantage+ Sales (each capped at 50 ads). |
 | 300+ purchases/month | Advantage+ Sales + Advantage+ catalog ads (broad and retargeting) + manual splits for margin/region/new-vs-existing. ROAS Goal viable. Conversion Lift viable. | Now safe to run incrementality, value rules, and pLTV-based optimization. |
-
-()
 
 ### 0-4. Diagnosis order when account is underperforming
 
@@ -72,8 +69,6 @@ Use Meta's per-week-per-ad-set learning-phase target (50 events/week to exit lea
 
 The Sales objective in the ODAX (Outcome-Driven Ad Experiences) menu replaces the older "Conversions" and "Catalog Sales" objectives. It is the single objective for any campaign optimizing toward direct purchase, subscription, trial, or other downstream-revenue actions.
 
-()
-
 ### 1-2. Conversion locations
 
 Sales campaigns expose 5 conversion locations. Choice here determines required signal stack and which performance goals are exposed.
@@ -84,7 +79,7 @@ Sales campaigns expose 5 conversion locations. Choice here determines required s
 | App | App SDK (Facebook SDK / FB SDK) or MMP integration with app events, AEM for iOS | App-first commerce, subscription apps | iOS measurement runs on AEM + AdAttributionKit + MMP. Plan with that constraint. |
 | Website and shop (US-only at time of writing) | Pixel + CAPI + connected Shop on Facebook/Instagram | US D2C with Shop tab | Shop integration is US-restricted. Verify country eligibility in account UI. |
 | Calls | Phone number + click-to-call signal; optionally CRM offline conversion | Local services, high-ticket consultative B2C | Optimization quality depends on whether call outcomes are uploaded as offline conversion. |
-| Messaging apps (Messenger, WhatsApp, Instagram Direct) | Purchase events sent to Meta from chat platform; messaging integration | Conversational commerce (apparel, beauty, services in APAC/LATAM) | Requires `maximize purchases through messaging` performance goal and 5+ purchase events in trailing 30 days for eligibility. () |
+| Messaging apps (Messenger, WhatsApp, Instagram Direct) | Purchase events sent to Meta from chat platform; messaging integration | Conversational commerce (apparel, beauty, services in APAC/LATAM) | Requires `maximize purchases through messaging` performance goal and 5+ purchase events in trailing 30 days for eligibility. |
 
 (
 
@@ -103,8 +98,6 @@ Performance goal = the optimization event Meta delivers against. Available optio
 | Maximize impressions | Any | Reach-style only | Do not use for Sales objective in practice |
 
 Operating rule: pick the goal that matches the actual revenue event. Use bridging events (LPV, ATC, IC) only when account-level Purchase volume is below ~30/month and only as an explicit transitional posture.
-
-()
 
 ### 1-4. Sales path requirements
 
@@ -155,8 +148,7 @@ Anti-pattern: one campaign per product, per audience, per creative. This fragmen
 
 ### 2-3. Number of ad sets
 
-Inside Advantage+ Sales, the 2026 limit is 50 ads per ad set, and multiple ad sets per campaign are now allowed (the previous "1 ad set / 150 ads" rule is gone). ()
-
+Inside Advantage+ Sales, the 2026 limit is 50 ads per ad set, and multiple ad sets per campaign are now allowed (the previous "1 ad set / 150 ads" rule is gone).
 Inside manual Sales:
 
 | Account stage | Recommended ad sets per campaign |
@@ -190,8 +182,7 @@ Campaign B: Sales | Manual | Lowest Cost | Purchase
     Ads: 4-8 (DPA-style + creative)
 ```
 
-Existing Customer Budget Cap (if available in UI) on Campaign A: 20-30% to start, 10-15% in growth mode. ()
-
+Existing Customer Budget Cap (if available in UI) on Campaign A: 20-30% to start, 10-15% in growth mode.
 **Template C — 300+ purchases/month (mature D2C with margin signal)**
 
 ```
@@ -226,8 +217,7 @@ Split when:
 
 ### 3-1. What it is
 
-Advantage+ Sales is Meta's automated Sales campaign type. It was previously named "Advantage+ Shopping Campaigns" (ASC); the rename to "Advantage+ Sales" reflects that it now supports more than just shop-style conversions. ()
-
+Advantage+ Sales is Meta's automated Sales campaign type. It was previously named "Advantage+ Shopping Campaigns" (ASC); the rename to "Advantage+ Sales" reflects that it now supports more than just shop-style conversions.
 ### 3-2. What is automated
 
 The system automates four levers:
@@ -281,8 +271,6 @@ Hard rule for the skill: **always verify in current UI before promising specific
 | Domain verification | Required |
 | AEM event prioritization | Purchase ranked #1 |
 
-()
-
 ### 3-6. Ad import
 
 Advantage+ Sales lets you import existing best-performing posts/ads. Use cases:
@@ -302,8 +290,6 @@ Advantage+ Sales lets you import existing best-performing posts/ads. Use cases:
 | Margin varies materially by SKU | Manual Sales with product-set splits, or feed-side margin labels |
 | Test new creative concept in isolation | Manual (if isolation matters) or A+ with controlled creative slot |
 
-()
-
 ---
 
 ## 4. Catalog Ads / Advantage+ Catalog Ads (Deep Dive)
@@ -316,8 +302,6 @@ Catalog ads (the format formerly called Dynamic Product Ads / DPA) split into tw
 |---|---|---|
 | Advantage+ catalog ads for retargeting | Custom audience: viewed product, ATC, past purchasers | Lower-funnel re-engagement |
 | Advantage+ catalog ads for broad audiences | Open audience driven by feed signals + Advantage+ Audience | Prospecting via feed (formerly DABA) |
-
-()
 
 ### 4-2. Feed requirements (required fields)
 
@@ -334,8 +318,6 @@ Required fields for a feed used with catalog ads:
 | `link` | URL | Must be HTTPS, must match domain verification |
 | `image_link` | URL | Min 500×500, recommended 1024×1024+, JPEG/PNG/GIF, <8MB, HTTPS |
 | `brand` | string | Required |
-
-()
 
 ### 4-3. Conditionally required fields
 
@@ -396,8 +378,6 @@ Common feed problems:
 
 For dynamic personalization, Pixel+CAPI Purchase, AddToCart, and ViewContent events must include `content_ids` (array of strings) and `content_type` ("product" or "product_group") that match the `id` (or `item_group_id`) in the catalog. If they do not match, the system cannot personalize, and the campaign degrades to non-dynamic delivery.
 
-()
-
 ---
 
 ## 5. Collection Ads + Instant Experience
@@ -405,8 +385,6 @@ For dynamic personalization, Pixel+CAPI Purchase, AddToCart, and ViewContent eve
 ### 5-1. Format spec
 
 Collection ads have a primary asset (video or image) plus a 3-tile product grid below. Tapping opens an Instant Experience full-screen post-click destination that loads inside the Meta app.
-
-()
 
 ### 5-2. Templates
 
@@ -455,8 +433,6 @@ Avoid Collection when:
 
 A Sales-objective performance goal that optimizes for purchase events occurring inside Messenger (and increasingly Instagram Direct / WhatsApp where supported). Selected as: Conversion location = Messaging app → Performance goal = Maximize purchases through messaging.
 
-()
-
 ### 6-2. Requirements
 
 | Requirement | Spec |
@@ -482,8 +458,7 @@ A Sales-objective performance goal that optimizes for purchase events occurring 
 
 ### 6-5. Reporting caveat
 
-The "mark as paid" feature inside Messenger does not currently feed conversion optimization, only reporting. Optimization requires actual `Purchase` events with value/currency sent via CAPI/Pixel keyed on the messaging interaction. ()
-
+The "mark as paid" feature inside Messenger does not currently feed conversion optimization, only reporting. Optimization requires actual `Purchase` events with value/currency sent via CAPI/Pixel keyed on the messaging interaction.
 ---
 
 ## 7. Bidding Strategy
@@ -499,8 +474,6 @@ The "mark as paid" feature inside Messenger does not currently feed conversion o
 | Highest Value | No ROAS constraint; chase highest-value buyers | Bridge from Lowest Cost to ROAS Goal; 4-6 weeks before introducing ROAS Goal | Spend will drift to high-AOV but possibly low-margin |
 | Minimum/Maximum Spend Targets | Floor/ceiling on ad-set spend within campaign budget | Multi-ad-set Advantage+ campaigns where ad set parity matters | Adds complexity; verify availability in account UI |
 
-()
-
 ### 7-2. Stage-by-stage posture
 
 | Stage | Posture |
@@ -513,8 +486,7 @@ The "mark as paid" feature inside Messenger does not currently feed conversion o
 
 ### 7-3. Bid Cap math
 
-Bid Cap should reflect maximum acceptable cost-per-result + auction overhead. Practitioner heuristic: target CPA × 1.2 to 1.5. ()
-
+Bid Cap should reflect maximum acceptable cost-per-result + auction overhead. Practitioner heuristic: target CPA × 1.2 to 1.5.
 Example: target CPA = $20 → Bid Cap = $24-30.
 
 ### 7-4. ROAS Goal pitfalls
@@ -610,8 +582,6 @@ In Advantage+ Sales, customer-list exclusions remain hard. Use this as the de fa
 | Square 1:1 (legacy) | Low | Surviving for compatibility, not preferred |
 | Story-only static | Low | Reels covers most of this |
 
-()
-
 ### 9-2. Asset volume and concept count
 
 | Account stage | Concepts | Variants/concept | Total ads |
@@ -635,8 +605,6 @@ As of March 2026, Stories and Reels share a unified safe zone on a 1440×2560 ca
 | Sides | 6% each (~87px) |
 
 Center critical content within the middle ~80% horizontally to survive Smart Zoom on different devices.
-
-()
 
 ### 9-4. Aspect ratio defaults
 
@@ -670,8 +638,7 @@ Advantage+ Creative auto-applies enhancements (cropping, music, text variations,
 
 ### 9-7. UGC and social proof
 
-In Sales, UGC consistently outperforms produced creative on cost per result, especially for D2C in 2025-2026. Operating heuristic: at least 30% of active Sales creative should be UGC-style. ()
-
+In Sales, UGC consistently outperforms produced creative on cost per result, especially for D2C in 2025-2026. Operating heuristic: at least 30% of active Sales creative should be UGC-style.
 ---
 
 ## 10. Catalog Feed Quality (Operational Checklist)
@@ -726,8 +693,6 @@ For every key event (Purchase, AddToCart, InitiateCheckout, ViewContent, Lead, S
 | `contents` | Recommended | Array with id, quantity, item_price |
 | `order_id` | Recommended | Helps server-side dedup and CRM reconciliation |
 
-()
-
 ### 11-2. Standard event templates
 
 | Event | Required fields | Optional but recommended |
@@ -748,8 +713,6 @@ Spec:
 - Browser preferred: when both arrive within ~5 minutes, Meta favors browser event
 - Verify in Events Manager → Test Events; look for "Deduplicated" tag
 
-()
-
 Common dedup failures:
 
 | Failure | Cause | Fix |
@@ -769,8 +732,6 @@ Operating rules:
 - Aim for 7+ on Purchase; 6+ on upper-funnel
 - Improve EMQ by sending hashed email, phone, fbp, fbc, external_id, IP, user agent, and (where allowed) address fields
 - Do NOT block launch on EMQ; iterate after baseline
-
-()
 
 ### 11-5. Backend reconciliation
 

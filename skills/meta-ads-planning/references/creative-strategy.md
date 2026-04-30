@@ -8,6 +8,7 @@
 - [4. Creative Testing](#4-creative-testing)
 - [5. Creative Strategy by Funnel Stage](#5-creative-strategy-by-funnel-stage)
 - [6. Partnership Ads](#6-partnership-ads)
+- [7. Creative Brief Template](#7-creative-brief-template)
 
 ---
 
@@ -217,3 +218,65 @@ Partnership Ads let a brand run ads using a creator's or partner's identity, sub
 - Strengthening a UGC strategy.
 - Reaching a new market or audience.
 - Refreshing performance when brand-handle ads have plateaued.
+
+---
+
+## 7. Creative Brief Template
+
+Use this brief as the handoff from creative strategy to asset production. One brief = one **concept** (not one variant). Fill it before commissioning shoots, scripts, or design work, and keep it next to the ad in the testing log.
+
+A concept is well-defined when (a) the angle, proof, and objection are explicit, (b) a competitor could not run the same ad without rebranding, and (c) the hypothesis names a metric and a funnel stage.
+
+### Brief fields
+
+| Field | What to fill | Notes |
+|---|---|---|
+| Concept name | Short identifier (`UGC_BeforeAfter_Skin_v1`) | Used in ad name and testing log |
+| Campaign | Objective + conversion location + performance goal | E.g. `Sales / Website / Purchase` |
+| Funnel stage | ToF / MoF / BoF | Drives tone, length, and KPI |
+| Audience read | Who this concept is built for, in one sentence | Buyer state, not demographic |
+| Offer | The specific promise or product framing in this ad | Not the brand tagline |
+| Angle | One of: pain, benefit, social proof, curiosity, comparison, scarcity, demo, contrarian, founder, category-entry-point | Pick one, do not combine |
+| Hook | First 1–3 seconds (video) or first line (static/copy) | Must qualify intent, not just attract |
+| Proof | Testimonial, before/after, data, credential, demo, UGC | Concrete, sourced |
+| Objection addressed | The single buyer hesitation this concept defuses | Price, trust, fit, switching cost, time |
+| Format | Image / short-form video / polished video / carousel / collection / Reels-native / Partnership Ad | One per brief |
+| Aspect ratio + duration | 9:16 / 4:5 / 1:1; seconds for video | Match placement priority |
+| CTA | Meta-preset button | Must align with conversion location |
+| Copy variants | Short / medium / long versions of primary text and headline | 3–5 of each at minimum |
+| Hypothesis | "We expect this concept to {win on / lose on / change} {metric} because {reason}" | One sentence, falsifiable |
+| Read-out KPI | Primary metric for go/kill | CPA, CPL, ROAS, qualified-lead rate, hook rate, hold rate |
+| Refresh trigger | Frequency / CTR / CPA threshold that flags fatigue | Reuse across concepts when possible |
+| Production owner | Person or vendor accountable | Avoids no-owner stalls |
+| Compliance flags | Special Ad Category, regulated claims, teen/sensitive targeting, music licensing, Partnership Ads permissions | Check before production, not after |
+
+### Worked example
+
+| Field | Value |
+|---|---|
+| Concept name | `UGC_BeforeAfter_Skin_v1` |
+| Campaign | Sales / Website / Purchase |
+| Funnel stage | MoF |
+| Audience read | Women 28–45 who tried 2+ skincare brands and stopped trusting ad claims |
+| Offer | 30-day money-back trial of the night serum |
+| Angle | Social proof (before/after with creator's own face) |
+| Hook | "I stopped buying skincare ads. Then this happened in 4 weeks." |
+| Proof | Real creator, dated photos, dermatologist quote in caption |
+| Objection addressed | "Another over-promised serum I'll regret buying" |
+| Format | Short-form video (UGC-style, creator-shot) |
+| Aspect ratio + duration | 9:16, 22 seconds |
+| CTA | Shop Now |
+| Copy variants | Short (1 line skeptic hook), Medium (3-line journey), Long (paragraph with refund policy) |
+| Hypothesis | "We expect this concept to win on hook rate vs the studio video because skeptic-framing qualifies intent earlier" |
+| Read-out KPI | CPA on Purchase; secondary: hook rate, hold rate |
+| Refresh trigger | Frequency > 3.5 with CTR drop > 25% week-over-week |
+| Production owner | Creator partnership lead |
+| Compliance flags | Health claim review needed; Partnership Ads permissions required; no "guaranteed results" language |
+
+### How to use the brief in testing
+
+- One concept per brief; multiple variants (headline, opening line, crop) ride under the same brief.
+- A test wave is 3–5 briefs running against each other, not 3–5 variants of the same brief.
+- Kill a brief on the read-out KPI, not on hook rate alone.
+- Promote a brief to "winner" only when it has cleared the funnel-stage KPI for at least the standard learning window for the campaign volume.
+- Recycle the **angle / proof / objection** of winners into new briefs with different formats and hooks; do not re-render the same brief into 20 variants.
