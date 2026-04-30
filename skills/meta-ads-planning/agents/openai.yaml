@@ -1,10 +1,10 @@
 interface:
   display_name: "Meta Ads Planning"
-  short_description: "Plan high-performing Meta ad campaigns"
+  short_description: "Plan high-performing Meta ads programs"
   icon_small: "./assets/meta.svg"
   icon_large: "./assets/meta.svg"
   brand_color: "#0668E1"
-  default_prompt: "Use $meta-ads-planning to design a Meta ads campaign plan from business goals, budget, conversion signals, creative strategy, and measurement constraints."
+  default_prompt: "Use $meta-ads-planning to design or improve a Meta ads program from business goals, budget, objective fit, Advantage+ posture, creative strategy, and Pixel/CAPI/app/CRM measurement constraints."
 
 policy:
   allow_implicit_invocation: true

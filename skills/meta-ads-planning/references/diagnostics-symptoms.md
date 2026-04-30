@@ -1,4 +1,4 @@
-# Diagnostic decision trees
+# Symptom-based diagnostics
 
 Use this reference for existing-account improvement. Diagnose the failure mode before proposing changes. Most Meta Ads problems are caused by bad signal, weak creative, poor destination, fragmented structure, unrealistic economics, or over-trusted attribution.
 

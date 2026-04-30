@@ -1,4 +1,4 @@
-# Campaign Structure Best Practices
+# Meta campaign structure and naming
 
 ## Contents
 
@@ -206,7 +206,7 @@ The learning phase is the initial period where Meta's delivery system explores a
 | 1-day view | Impression-only followed by conversion | Monitor separately; use cautiously for retargeting and high-frequency campaigns |
 | Longer click windows where available | Captures longer consideration | High-ticket, B2B, longer sales cycles |
 
-Note: reporting-tool and API behavior changes over time. Some sources report that longer view-through windows were removed from Ads Insights API in January 2026, and Meta's March 2026 attribution update reclassified non-link interactions into engage-through. Verify current Ads Manager/API behavior for the user's stack before relying on any specific window.
+Note: reporting-tool and API behavior changes over time. Verify current Ads Manager/API behavior for the user's stack before relying on any specific attribution window or interaction classification.
 
 ---
 
@@ -246,7 +246,7 @@ Note: reporting-tool and API behavior changes over time. Some sources report tha
 | Optimization event | Purchase; use AddToCart only if purchase volume is insufficient |
 | Formats | Collection Ads, carousel, dynamic ads, video |
 | Placements | Advantage+ placements; prioritize placement-ready Instagram Feed/Reels creative |
-| Targeting | Broad + high-quality Custom Audience / Lookalike signals |
+| Targeting | Broad + high-quality Custom Audience signals; use Lookalikes only as a verified, non-core test |
 | Bid strategy | Lowest cost -> ROAS goal |
 | Budget allocation | Testing 10-20% / scaling 80-90% |
 | Measurement caution | Track new vs existing customers, margin, and incrementality |
@@ -260,7 +260,7 @@ Note: reporting-tool and API behavior changes over time. Some sources report tha
 | Optimization event | Lead, qualified lead, form submit, or CRM-backed event |
 | Formats | Lead Ads / Instant Forms, video, image |
 | Placements | Facebook Feed + Instagram Feed; consider excluding Audience Network |
-| Targeting | Broad + customer-list Lookalike + website visitor remarketing |
+| Targeting | Broad + customer-list/custom-audience signals + website visitor remarketing where volume supports it |
 | Bid strategy | Cost cap after stable volume |
 | Note | Test Instant Forms against website conversions for lead quality |
 | Measurement caution | Do not optimize to raw CPL without qualified lead or pipeline feedback |
@@ -300,7 +300,7 @@ Note: reporting-tool and API behavior changes over time. Some sources report tha
 | Optimization event | Install -> in-app event -> value |
 | Formats | App demo video, playable ads |
 | Placements | Advantage+ placements |
-| Targeting | Broad + high-value user Lookalike where useful |
+| Targeting | Broad + high-value user Custom Audience signals where useful; verify Lookalike availability before using it as a control |
 | Bid strategy | Lowest cost -> value optimization |
 | Note | Move toward higher-value events after enough install and event data accumulates |
 

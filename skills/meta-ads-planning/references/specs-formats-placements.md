@@ -1,123 +1,18 @@
-# Meta Ad Types and Selection Guide
+# Meta ad formats and placements
+
+Use this reference for ad format and placement details. Use the objective playbooks for strategy.
 
 ## Contents
 
-- [1. Campaign Objectives](#1-campaign-objectives)
-- [2. Ad Formats](#2-ad-formats)
-- [3. Placements](#3-placements)
-- [4. Benchmarks](#4-benchmarks)
+- [1. Ad Formats](#1-ad-formats)
+- [2. Placements](#2-placements)
+- [3. Benchmarks](#3-benchmarks)
 
 ---
 
-## 1. Campaign Objectives
+## 1. Ad Formats
 
-Meta campaigns use six campaign objectives. The objective must match the business goal because it determines the optimization direction.
-
-Important: choosing the wrong objective trains delivery toward the wrong behavior. For example, if the real goal is purchase but the campaign uses **Traffic**, Meta may find people likely to click rather than people likely to buy.
-
-### 1-1. Objective Details
-
-#### Awareness
-
-| Item | Details |
-|---|---|
-| Summary | Maximize awareness, reach, or recall at the top of the funnel |
-| Performance goals | Reach, impressions, ad recall lift where available |
-| Use when | New brand launch, new market entry, event announcement, product launch |
-| Best for | Any business with low awareness or reach goals |
-| Recommended formats | Video/Reels, image, carousel |
-| Notes | Useful for building retargeting audiences when paired with a clear funnel plan |
-
-#### Traffic
-
-| Item | Details |
-|---|---|
-| Summary | Maximize visits to a URL or destination |
-| Performance goals | Landing page views, link clicks, daily unique reach |
-| Use when | Content distribution, landing page traffic, early data gathering |
-| Best for | Media, blogs, affiliate pages, email capture pages, new accounts with little conversion data |
-| Recommended formats | Image, carousel, video |
-| Notes | Use as a temporary step when conversion signal is insufficient; migrate to Sales or Leads once conversion data is reliable |
-
-#### Engagement
-
-| Item | Details |
-|---|---|
-| Summary | Drive likes, shares, comments, video views, messages, or event responses |
-| Performance goals | Post engagement, video views, messages, event responses |
-| Use when | Social proof, community building, events, video-view campaigns |
-| Best for | Creators, events, community-led brands |
-| Recommended formats | Video/Reels, carousel |
-| Notes | Useful for engagement pools, but do not treat engagement as revenue without evidence |
-
-#### Leads
-
-| Item | Details |
-|---|---|
-| Summary | Collect prospect contact information |
-| Performance goals | Instant Form submissions, website leads, Messenger leads, calls |
-| Use when | Newsletter signups, webinar registration, content downloads, inquiries, demo requests |
-| Best for | B2B services, real estate, education, consulting, professional services, insurance |
-| Recommended formats | Lead Ads / Instant Forms, video, image |
-| Two paths | **Instant Forms:** higher volume and lower friction, often lower quality. **Website conversions:** lower volume, often higher intent and more qualification |
-
-#### App Promotion
-
-| Item | Details |
-|---|---|
-| Summary | Drive app installs, app events, or value |
-| Performance goals | App installs, app events, value optimization |
-| Use when | App acquisition or app re-engagement |
-| Best for | Mobile apps and games |
-| Recommended formats | Video, playable ads |
-| Notes | Move from install optimization toward higher-value app events once enough event volume exists |
-
-#### Sales
-
-| Item | Details |
-|---|---|
-| Summary | Maximize purchases and other direct conversion actions |
-| Performance goals | Purchase, add to cart, initiate checkout, ROAS |
-| Use when | Product sales, catalog sales, promotion campaigns, retargeting |
-| Best for | E-commerce, D2C, subscriptions, high-ticket conversion capture |
-| Recommended formats | Collection Ads, carousel, dynamic ads, video |
-| Requirements | Reliable Meta Pixel / Conversions API setup and conversion data are ideal |
-| Notes | Default starting point when e-commerce revenue or direct conversion volume is the primary goal |
-
-### 1-2. Objective Selection by Business Type
-
-| Business type | Recommended objective | Optimization event | Notes |
-|---|---|---|---|
-| **E-commerce / D2C** | Sales; Advantage+ sales campaign when suitable | Purchase | If purchase volume is insufficient, start with AddToCart cautiously |
-| **B2B lead generation** | Leads or Sales | Lead / form submit / qualified lead | Test Instant Forms against website conversions for quality |
-| **SaaS** | Leads -> Sales | Demo request / sign-up / trial start | Use the event that best predicts pipeline or subscription |
-| **Local business** | Awareness + Sales/Leads | Store visit, purchase, booking, call, lead | Combine local targeting and local proof |
-| **App** | App promotion | Install -> in-app event | Graduate toward higher-value events |
-| **Media / blog** | Traffic | Landing page view | Use when ad revenue, content visits, or email capture is the goal |
-| **Event** | Awareness + Engagement | Event response / reach | Awareness before the event; engagement near the event |
-| **Brand building** | Awareness | Reach / ad recall lift | Video-led storytelling |
-
-### 1-3. Choosing the Optimization Event
-
-Choose the most valuable action that has enough volume to optimize.
-
-```
-Ideal: Purchase
-  ↓ if weekly volume is insufficient
-Fallback: AddToCart / InitiateCheckout
-  ↓ if still insufficient
-Temporary proxy: ViewContent / LandingPageView
-  ↓ once signal improves
-Move back toward Purchase
-```
-
-Caution: optimizing to higher-funnel events can increase volume while reducing purchase intent. Use shallow events only when the tradeoff is explicit.
-
----
-
-## 2. Ad Formats
-
-### 2-1. Image Ads
+### 1-1. Image Ads
 
 Summary: one static image plus text and CTA. The most basic and fastest format to produce.
 
@@ -137,7 +32,7 @@ Performance characteristics:
 
 Use when: promoting one product or offer, limited production resources, fast A/B tests, retargeting.
 
-### 2-2. Video Ads
+### 1-2. Video Ads
 
 Summary: video creative for Feed, Stories, Reels, and other video placements.
 
@@ -158,7 +53,7 @@ Performance characteristics:
 
 Use when: product demonstration, brand story, testimonial, founder story, emotional hook.
 
-### 2-3. Carousel Ads
+### 1-3. Carousel Ads
 
 Summary: 2-10 images or videos that users can swipe. Each card can have its own link.
 
@@ -172,7 +67,7 @@ Summary: 2-10 images or videos that users can swipe. Each card can have its own 
 
 Use when: multiple products, step-by-step explanation, before/after, benefit sequence, comparison.
 
-### 2-4. Collection Ads
+### 1-4. Collection Ads
 
 Summary: mobile-first format with a cover image/video plus product grid. Tapping opens an Instant Experience.
 
@@ -184,7 +79,7 @@ Summary: mobile-first format with a cover image/video plus product grid. Tapping
 
 Use when: e-commerce catalog is strong and users should browse multiple products.
 
-### 2-5. Lead Ads / Instant Forms
+### 1-5. Lead Ads / Instant Forms
 
 Summary: lead capture completes inside Facebook or Instagram.
 
@@ -202,13 +97,13 @@ Quality tactics:
 
 Use when: newsletter signup, content download, inquiry, demo request, mobile form drop-off is a problem.
 
-### 2-6. Instant Experience
+### 1-6. Instant Experience
 
 Summary: a fast-loading fullscreen mobile experience that opens after an ad tap.
 
 Use when: immersive brand experience, catalog browsing, mobile landing-page substitute, Collection Ads destination.
 
-### 2-7. Format Selection Matrix
+### 1-7. Format Selection Matrix
 
 | Objective | First choice | Second choice | Third choice | Why |
 |---|---|---|---|---|
@@ -222,9 +117,9 @@ Use when: immersive brand experience, catalog browsing, mobile landing-page subs
 
 ---
 
-## 3. Placements
+## 2. Placements
 
-### 3-1. Placement List
+### 2-1. Placement List
 
 #### Facebook Placements
 
@@ -268,7 +163,7 @@ Use when: immersive brand experience, catalog browsing, mobile landing-page subs
 | **Rewarded Video** | Rewarded app video inventory | Video | High completion, often app/gaming context |
 | **Threads Feed** | Threads feed inventory where available | Image, video | Reach expansion; availability varies |
 
-### 3-2. Placement Quality Tiers
+### 2-2. Placement Quality Tiers
 
 | Tier | Placements | Characteristics | Recommended use |
 |---|---|---|---|
@@ -276,7 +171,7 @@ Use when: immersive brand experience, catalog browsing, mobile landing-page subs
 | **Medium quality** | Instagram Explore, Facebook Marketplace, In-Stream Video | Broader reach and contextual value; in-stream inventory exists but is less central than Feed/Reels/Stories for many accounts | Awareness, Traffic, Sales tests |
 | **Lower quality / variable** | Audience Network, Messenger, Right Column | Cheap impressions but variable intent | Awareness, reach expansion, or controlled tests |
 
-### 3-3. Advantage+ Placements vs Manual Placements
+### 2-3. Advantage+ Placements vs Manual Placements
 
 | Item | Advantage+ placements | Manual placements |
 |---|---|---|
@@ -288,7 +183,7 @@ Use when: immersive brand experience, catalog browsing, mobile landing-page subs
 
 Default: use **Advantage+ placements** for Sales, Leads, and App promotion unless there is a clear control or quality reason not to.
 
-### 3-4. Placement Creative Specs
+### 2-4. Placement Creative Specs
 
 #### Aspect Ratios
 
@@ -313,7 +208,7 @@ Default: use **Advantage+ placements** for Sales, Leads, and App promotion unles
 
 Design rule: use ratio-based safe zones rather than hard-coded pixels. For 9:16 assets, keep critical text, logos, product details, and CTA outside the top 14%, bottom 20-35%, and side 6% areas. Always verify with Ads Manager placement previews because UI overlays vary by device, placement, caption length, and product updates.
 
-### 3-5. Placement Strategy by Business Type
+### 2-5. Placement Strategy by Business Type
 
 | Business type | Recommended placements | Reason |
 |---|---|---|
@@ -326,7 +221,7 @@ Design rule: use ratio-based safe zones rather than hard-coded pixels. For 9:16 
 
 ---
 
-## 4. Benchmarks
+## 3. Benchmarks
 
 Benchmarks vary heavily by country, industry, seasonality, product price, offer, funnel, and measurement setup. Use any benchmark only as an initial planning reference, not as a success rule.
 
