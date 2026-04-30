@@ -1,6 +1,6 @@
 # Meta Advantage+ automation
 
-Use this reference when deciding whether Meta automation should be used, limited, or replaced with a manual structure. Keep measurement implementation details in `measurement-capi-attribution.md`.
+Use this reference when deciding whether Meta automation should be used, limited, or replaced with a manual structure. Keep measurement implementation details in `measurement-and-attribution.md`.
 
 ## Operating model
 

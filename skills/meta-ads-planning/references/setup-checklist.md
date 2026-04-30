@@ -31,7 +31,7 @@ Use this reference when the plan needs to become an implementation checklist. St
 | Custom Audience | Build from website, app, customer list, engagement, video, Instant Form, or CRM sources. Confirm size and retention windows. |
 | Exclusions | Use customer, purchaser, lead, employee, invalid geography, or other hard business exclusions where current UI and policy allow. |
 | Advantage+ Audience | Treat inclusions as suggestions unless the UI marks them as controls. Verify hard controls in current UI. |
-| Special Ad Categories | Check `policy-special-categories.md` before building audiences or forms. |
+| Special Ad Categories | Check `policy-and-special-categories.md` before building audiences or forms. |
 
 ## 4. Campaign and ad setup QA
 

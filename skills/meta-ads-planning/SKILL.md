@@ -125,8 +125,8 @@ Determine which situation applies. If unclear, ask.
 
 For existing accounts, run a diagnostic after Step 1 before proposing changes.
 
-- If the user provides account data in any form - CSV/XLSX exports, copied tables, screenshots, dashboards, CRM reports, Events Manager diagnostics, catalog reports, MMP exports, API extracts, or metric summaries - first use [references/diagnostics-account-data.md](references/diagnostics-account-data.md).
-- If the user only describes symptoms, use [references/diagnostics-symptoms.md](references/diagnostics-symptoms.md) to rank likely root causes.
+- If the user provides account data in any form - CSV/XLSX exports, copied tables, screenshots, dashboards, CRM reports, Events Manager diagnostics, catalog reports, MMP exports, API extracts, or metric summaries - first use [references/account-data-diagnostics.md](references/account-data-diagnostics.md).
+- If the user only describes symptoms, use [references/symptom-diagnostics.md](references/symptom-diagnostics.md) to rank likely root causes.
 - Always separate supported findings from limitations, rank actions by business impact and evidence, and include expected stabilization windows plus changes to avoid.
 
 ---
@@ -144,7 +144,7 @@ For existing accounts, run a diagnostic after Step 1 before proposing changes.
 | **Destination** | URL, app store, Instant Form, Messenger/Instagram/WhatsApp flow, catalog, store/POS |
 | **Audience constraints** | Geography, language, age, compliance, customer type, exclusions, Special Ad Category |
 
-After Phase A, use [references/strategy-business-models.md](references/strategy-business-models.md) to check the default strategy for the business model before choosing objectives or structure.
+After Phase A, use [references/business-model-playbooks.md](references/business-model-playbooks.md) to check the default strategy for the business model before choosing objectives or structure.
 
 ### Phase B: Detailed inputs for design
 
@@ -160,9 +160,9 @@ After Phase A, use [references/strategy-business-models.md](references/strategy-
 
 After the details are known:
 
-- Use [references/strategy-budget.md](references/strategy-budget.md) to check whether the budget can support the proposed conversion event, campaign mix, and learning volume.
-- Use [references/measurement-capi-attribution.md](references/measurement-capi-attribution.md) when conversion tracking is not yet live, CAPI/app measurement is involved, lead quality is a problem, or reporting reconciliation matters.
-- Use [references/policy-special-categories.md](references/policy-special-categories.md) before recommending targeting for credit, employment, housing, social issues/elections/politics, financial services, health, teens, or other constrained categories.
+- Use [references/budget-planning.md](references/budget-planning.md) to check whether the budget can support the proposed conversion event, campaign mix, and learning volume.
+- Use [references/measurement-and-attribution.md](references/measurement-and-attribution.md) when conversion tracking is not yet live, CAPI/app measurement is involved, lead quality is a problem, or reporting reconciliation matters.
+- Use [references/policy-and-special-categories.md](references/policy-and-special-categories.md) before recommending targeting for credit, employment, housing, social issues/elections/politics, financial services, health, teens, or other constrained categories.
 
 ---
 
@@ -170,9 +170,9 @@ After the details are known:
 
 Before choosing the final mix, combine:
 
-1. Business-model fit from [references/strategy-business-models.md](references/strategy-business-models.md).
-2. Budget and signal viability from [references/strategy-budget.md](references/strategy-budget.md).
-3. Measurement readiness from [references/measurement-capi-attribution.md](references/measurement-capi-attribution.md).
+1. Business-model fit from [references/business-model-playbooks.md](references/business-model-playbooks.md).
+2. Budget and signal viability from [references/budget-planning.md](references/budget-planning.md).
+3. Measurement readiness from [references/measurement-and-attribution.md](references/measurement-and-attribution.md).
 4. Objective and automation fit from the cheat sheet and playbooks below.
 
 Do not recommend an objective just because it is available. If budget, event quality, creative supply, catalog health, app measurement, CRM feedback, or policy cannot support it, state what must be fixed first.
@@ -183,12 +183,12 @@ Meta's "campaign type" is usually **objective + conversion location + performanc
 
 | Objective | Primary role | Best for | Main playbook |
 |---|---|---|---|
-| **Awareness** | Reach, frequency, ad recall, brand lift, upper-funnel video | Brand launches, category creation, events, full-funnel support | [references/objective-awareness-traffic-engagement.md](references/objective-awareness-traffic-engagement.md) |
-| **Traffic** | Landing page visits, link clicks, profile/WhatsApp/phone/website traffic | Content distribution, consideration pages, low-signal bridge campaigns | [references/objective-awareness-traffic-engagement.md](references/objective-awareness-traffic-engagement.md) |
-| **Engagement** | Video views, post engagement, messages, event responses, social proof | Video pools, communities, events, message volume, mid-funnel warming | [references/objective-awareness-traffic-engagement.md](references/objective-awareness-traffic-engagement.md) |
-| **Leads** | Raw leads, higher-intent leads, calls, click-to-message leads, Conversion Leads | B2B, services, education, real estate, local, high-ticket inquiry flows | [references/objective-leads.md](references/objective-leads.md) |
-| **App promotion** | Installs, app events, value, re-engagement | Apps, mobile games, subscription apps, retained user growth | [references/objective-app.md](references/objective-app.md) |
-| **Sales** | Purchases, website/app conversions, catalog sales, value, purchases through messaging | E-commerce, D2C, subscriptions, catalog retail, conversion-led revenue | [references/objective-sales.md](references/objective-sales.md) |
+| **Awareness** | Reach, frequency, ad recall, brand lift, upper-funnel video | Brand launches, category creation, events, full-funnel support | [references/awareness-traffic-engagement.md](references/awareness-traffic-engagement.md) |
+| **Traffic** | Landing page visits, link clicks, profile/WhatsApp/phone/website traffic | Content distribution, consideration pages, low-signal bridge campaigns | [references/awareness-traffic-engagement.md](references/awareness-traffic-engagement.md) |
+| **Engagement** | Video views, post engagement, messages, event responses, social proof | Video pools, communities, events, message volume, mid-funnel warming | [references/awareness-traffic-engagement.md](references/awareness-traffic-engagement.md) |
+| **Leads** | Raw leads, higher-intent leads, calls, click-to-message leads, Conversion Leads | B2B, services, education, real estate, local, high-ticket inquiry flows | [references/leads-campaigns.md](references/leads-campaigns.md) |
+| **App promotion** | Installs, app events, value, re-engagement | Apps, mobile games, subscription apps, retained user growth | [references/app-campaigns.md](references/app-campaigns.md) |
+| **Sales** | Purchases, website/app conversions, catalog sales, value, purchases through messaging | E-commerce, D2C, subscriptions, catalog retail, conversion-led revenue | [references/sales-campaigns.md](references/sales-campaigns.md) |
 
 ### Selection references
 
@@ -196,15 +196,15 @@ Use the cheat sheet only for first-pass direction. Before finalizing the mix, re
 
 | Decision | Reference |
 |---|---|
-| Default mix by business model and funnel role | [references/strategy-business-models.md](references/strategy-business-models.md) |
-| Budget sufficiency, expected event volume, and what not to launch yet | [references/strategy-budget.md](references/strategy-budget.md) |
-| Awareness / Traffic / Engagement details | [references/objective-awareness-traffic-engagement.md](references/objective-awareness-traffic-engagement.md) |
-| Leads, Instant Forms, click-to-message leads, calls, Conversion Leads | [references/objective-leads.md](references/objective-leads.md) |
-| App promotion, app events, iOS/SKAN/AAK, MMP, re-engagement, playable ads | [references/objective-app.md](references/objective-app.md) |
-| Sales, Advantage+ Sales, catalog ads, collection, purchases through messaging | [references/objective-sales.md](references/objective-sales.md) |
-| Advantage+ automation and controls | [references/automation-advantage-plus.md](references/automation-advantage-plus.md) |
-| Measurement, CAPI, attribution, offline/CRM, and app signal quality | [references/measurement-capi-attribution.md](references/measurement-capi-attribution.md) |
-| Format specs and placement overview | [references/specs-formats-placements.md](references/specs-formats-placements.md) |
+| Default mix by business model and funnel role | [references/business-model-playbooks.md](references/business-model-playbooks.md) |
+| Budget sufficiency, expected event volume, and what not to launch yet | [references/budget-planning.md](references/budget-planning.md) |
+| Awareness / Traffic / Engagement details | [references/awareness-traffic-engagement.md](references/awareness-traffic-engagement.md) |
+| Leads, Instant Forms, click-to-message leads, calls, Conversion Leads | [references/leads-campaigns.md](references/leads-campaigns.md) |
+| App promotion, app events, iOS/SKAN/AAK, MMP, re-engagement, playable ads | [references/app-campaigns.md](references/app-campaigns.md) |
+| Sales, Advantage+ Sales, catalog ads, collection, purchases through messaging | [references/sales-campaigns.md](references/sales-campaigns.md) |
+| Advantage+ automation and controls | [references/advantage-plus.md](references/advantage-plus.md) |
+| Measurement, CAPI, attribution, offline/CRM, and app signal quality | [references/measurement-and-attribution.md](references/measurement-and-attribution.md) |
+| Format specs and placement overview | [references/ad-formats-and-placements.md](references/ad-formats-and-placements.md) |
 
 Verify current Meta documentation or current Ads Manager UI before implementing volatile features such as Advantage+ Sales controls, existing-customer budget cap behavior, Advantage+ Leads eligibility, attribution columns, Detailed Targeting exclusions, AEM behavior, Threads placement availability, and teen/Special Ad Category targeting.
 
@@ -278,7 +278,7 @@ Examples: `Website_Purchase_Broad`, `InstantForm_HigherIntent_Broad`, `AppEvent_
 
 ### Bidding strategy
 
-Use [references/strategy-budget.md](references/strategy-budget.md) and the selected objective playbook before selecting, changing, or rolling back bid strategies. At minimum, check:
+Use [references/budget-planning.md](references/budget-planning.md) and the selected objective playbook before selecting, changing, or rolling back bid strategies. At minimum, check:
 
 1. Primary optimization-event volume in the last 30 days.
 2. Event latency vs attribution and decision window.
@@ -290,13 +290,13 @@ Default path: start with highest volume / lowest cost for unstable launches, int
 
 ### Conversion design
 
-Use [references/measurement-capi-attribution.md](references/measurement-capi-attribution.md) for Pixel/CAPI, deduplication, EMQ, offline events, Conversion Leads CRM integration, app measurement, attribution, and incrementality. Use [references/automation-advantage-plus.md](references/automation-advantage-plus.md) for Advantage+ automation controls and manual fallback decisions.
+Use [references/measurement-and-attribution.md](references/measurement-and-attribution.md) for Pixel/CAPI, deduplication, EMQ, offline events, Conversion Leads CRM integration, app measurement, attribution, and incrementality. Use [references/advantage-plus.md](references/advantage-plus.md) for Advantage+ automation controls and manual fallback decisions.
 
 Keep the high-level rule in the active plan: choose the deepest reliable event with workable volume and latency, keep weak proxies secondary or temporary unless validated, and separate click-through, engage-through, view-through, modeled, and business-source-of-truth results when the decision is material.
 
 ### Budget allocation
 
-Use [references/strategy-budget.md](references/strategy-budget.md) before applying allocation rules. The 70 / 20 / 10 split is only a default operating pattern when the budget is large enough to fund learning in each bucket.
+Use [references/budget-planning.md](references/budget-planning.md) before applying allocation rules. The 70 / 20 / 10 split is only a default operating pattern when the budget is large enough to fund learning in each bucket.
 
 **70 / 20 / 10 rule:**
 
@@ -334,12 +334,12 @@ Before asset specs or copy drafts, use [references/creative-strategy.md](referen
 
 | Objective / campaign type | Playbook | Key design topics |
 |---|---|---|
-| Awareness | [references/objective-awareness-traffic-engagement.md](references/objective-awareness-traffic-engagement.md) | Reach, ad recall, Brand Lift, Reservation buying, Threads, video-led creative, upper-funnel measurement |
-| Traffic | [references/objective-awareness-traffic-engagement.md](references/objective-awareness-traffic-engagement.md) | Link clicks vs landing page views, traffic-as-sales antipattern, LPV quality, content/consideration roles |
-| Engagement | [references/objective-awareness-traffic-engagement.md](references/objective-awareness-traffic-engagement.md) | Video views, messages, event responses, social proof, Reels/Stories/Threads, handoff to Sales/Leads |
-| Leads | [references/objective-leads.md](references/objective-leads.md) | Instant Forms, Higher Intent, Rich Creative, website leads, click-to-message, calls, Conversion Leads, CRM quality loops |
-| App promotion | [references/objective-app.md](references/objective-app.md) | Advantage+ App, app event ladder, iOS AAK/SKAN/AEM, MMPs, CAPI for App, re-engagement, playable ads |
-| Sales | [references/objective-sales.md](references/objective-sales.md) | Advantage+ Sales, manual Sales, catalog ads, collection/Instant Experience, purchases through messaging, value optimization |
+| Awareness | [references/awareness-traffic-engagement.md](references/awareness-traffic-engagement.md) | Reach, ad recall, Brand Lift, Reservation buying, Threads, video-led creative, upper-funnel measurement |
+| Traffic | [references/awareness-traffic-engagement.md](references/awareness-traffic-engagement.md) | Link clicks vs landing page views, traffic-as-sales antipattern, LPV quality, content/consideration roles |
+| Engagement | [references/awareness-traffic-engagement.md](references/awareness-traffic-engagement.md) | Video views, messages, event responses, social proof, Reels/Stories/Threads, handoff to Sales/Leads |
+| Leads | [references/leads-campaigns.md](references/leads-campaigns.md) | Instant Forms, Higher Intent, Rich Creative, website leads, click-to-message, calls, Conversion Leads, CRM quality loops |
+| App promotion | [references/app-campaigns.md](references/app-campaigns.md) | Advantage+ App, app event ladder, iOS AAK/SKAN/AEM, MMPs, CAPI for App, re-engagement, playable ads |
+| Sales | [references/sales-campaigns.md](references/sales-campaigns.md) | Advantage+ Sales, manual Sales, catalog ads, collection/Instant Experience, purchases through messaging, value optimization |
 
 ### Cross-cutting design references
 
@@ -347,18 +347,18 @@ Use these inside the workflow, not just as optional reading:
 
 | Reference | Use when | Key design topics |
 |---|---|---|
-| [references/strategy-business-models.md](references/strategy-business-models.md) | Choosing strategy by business model | E-commerce, lead gen, SaaS, local, app, brand, combination patterns |
-| [references/strategy-budget.md](references/strategy-budget.md) | Deciding what the budget can realistically support | CPA/ROAS economics, expected event volume, campaign mix viability |
-| [references/measurement-capi-attribution.md](references/measurement-capi-attribution.md) | Designing events, choosing attribution, planning incrementality, diagnosing signal issues | Pixel/CAPI, deduplication, EMQ, offline/CRM, app measurement, attribution, lift |
-| [references/automation-advantage-plus.md](references/automation-advantage-plus.md) | Deciding automation posture and manual fallback structure | Advantage+ Sales, Leads, App, Audience, Placements, Creative, CBO, volatile controls |
-| [references/diagnostics-account-data.md](references/diagnostics-account-data.md) | Interpreting account exports, screenshots, dashboards, CRM/MMP/catalog data, Events Manager diagnostics | Data intake, field map, evidence ranking, if-this-then-that actions |
-| [references/policy-special-categories.md](references/policy-special-categories.md) | Regulated or constrained categories | Special Ad Categories, targeting limits, teen/sensitive topics, compliance-first design |
-| [references/diagnostics-symptoms.md](references/diagnostics-symptoms.md) | Improving an existing account from symptoms | Spend/CV issues, lead quality, fatigue, signal, structure, Advantage+ traps |
+| [references/business-model-playbooks.md](references/business-model-playbooks.md) | Choosing strategy by business model | E-commerce, lead gen, SaaS, local, app, brand, combination patterns |
+| [references/budget-planning.md](references/budget-planning.md) | Deciding what the budget can realistically support | CPA/ROAS economics, expected event volume, campaign mix viability |
+| [references/measurement-and-attribution.md](references/measurement-and-attribution.md) | Designing events, choosing attribution, planning incrementality, diagnosing signal issues | Pixel/CAPI, deduplication, EMQ, offline/CRM, app measurement, attribution, lift |
+| [references/advantage-plus.md](references/advantage-plus.md) | Deciding automation posture and manual fallback structure | Advantage+ Sales, Leads, App, Audience, Placements, Creative, CBO, volatile controls |
+| [references/account-data-diagnostics.md](references/account-data-diagnostics.md) | Interpreting account exports, screenshots, dashboards, CRM/MMP/catalog data, Events Manager diagnostics | Data intake, field map, evidence ranking, if-this-then-that actions |
+| [references/policy-and-special-categories.md](references/policy-and-special-categories.md) | Regulated or constrained categories | Special Ad Categories, targeting limits, teen/sensitive topics, compliance-first design |
+| [references/symptom-diagnostics.md](references/symptom-diagnostics.md) | Improving an existing account from symptoms | Spend/CV issues, lead quality, fatigue, signal, structure, Advantage+ traps |
 | [references/creative-strategy.md](references/creative-strategy.md) | Designing creative system, tests, and briefs | Angles, proof, objections, funnel-stage creative, refresh cadence |
 | [references/creative-production.md](references/creative-production.md) | Producing assets and copy | Image, video, carousel, collection, Instant Forms, Instant Experience |
-| [references/specs-formats-placements.md](references/specs-formats-placements.md) | Need a quick overview of formats or placements | Image, video, carousel, collection, Instant Experience, placements, safe zones |
-| [references/setup-implementation-checklist.md](references/setup-implementation-checklist.md) | Setup-level implementation | Account setup, Pixel/CAPI basics, targeting, bidding, ad setup |
-| [references/strategy-structure-naming.md](references/strategy-structure-naming.md) | Structural templates and naming | 2/3-campaign patterns, learning, KPIs, structure examples |
+| [references/ad-formats-and-placements.md](references/ad-formats-and-placements.md) | Need a quick overview of formats or placements | Image, video, carousel, collection, Instant Experience, placements, safe zones |
+| [references/setup-checklist.md](references/setup-checklist.md) | Setup-level implementation | Account setup, Pixel/CAPI basics, targeting, bidding, ad setup |
+| [references/campaign-structure.md](references/campaign-structure.md) | Structural templates and naming | 2/3-campaign patterns, learning, KPIs, structure examples |
 
 ### Delivering the output
 

@@ -661,8 +661,8 @@ Current official checks for volatile lead items:
 
 ## Cross-references
 
-- Use `measurement-capi-attribution.md` for CAPI, deduplication, and CRM/offline feedback details.
+- Use `measurement-and-attribution.md` for CAPI, deduplication, and CRM/offline feedback details.
 - Use `creative-strategy.md` for qualification creative principles.
-- Use `diagnostics-symptoms.md` and `diagnostics-account-data.md` when diagnosing an existing account.
-- Use `policy-special-categories.md` for Special Ad Categories and regulated lead-gen planning.
-- Use `automation-advantage-plus.md` for Advantage+ Leads, attribution, and volatile UI/API behavior.
+- Use `symptom-diagnostics.md` and `account-data-diagnostics.md` when diagnosing an existing account.
+- Use `policy-and-special-categories.md` for Special Ad Categories and regulated lead-gen planning.
+- Use `advantage-plus.md` for Advantage+ Leads, attribution, and volatile UI/API behavior.

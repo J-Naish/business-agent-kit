@@ -1049,8 +1049,8 @@ Current official checks for volatile Sales items:
 
 ## 16. Cross-references
 
-- Use `measurement-capi-attribution.md` for Pixel/CAPI, deduplication, EMQ, offline events, attribution, and incrementality.
-- Use `automation-advantage-plus.md` for Advantage+ Sales controls, existing-customer volatility, and current attribution/API behavior.
-- Use `diagnostics-account-data.md` when the user provides Ads Manager, Events Manager, backend, CRM, or catalog data.
+- Use `measurement-and-attribution.md` for Pixel/CAPI, deduplication, EMQ, offline events, attribution, and incrementality.
+- Use `advantage-plus.md` for Advantage+ Sales controls, existing-customer volatility, and current attribution/API behavior.
+- Use `account-data-diagnostics.md` when the user provides Ads Manager, Events Manager, backend, CRM, or catalog data.
 - Use `creative-strategy.md` and `creative-production.md` for concept strategy, Reels/Stories fit, UGC/social proof, and format production.
-- Use `policy-special-categories.md` if the offer touches credit, housing, employment, health, social issues, or other regulated topics.
+- Use `policy-and-special-categories.md` if the offer touches credit, housing, employment, health, social issues, or other regulated topics.
