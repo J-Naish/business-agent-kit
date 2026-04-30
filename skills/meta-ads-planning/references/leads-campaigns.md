@@ -8,7 +8,7 @@ Lead campaigns work when the **lead path, form/message design, qualification log
 
 - **Cheap CPL is not success.** Optimize against qualified-lead rate, contact rate, appointment rate, SQL/opportunity rate, close rate, and revenue. Treat raw CPL as a front-end operational metric only.
 - **Friction is a lever, not a defect.** Higher Intent forms and qualification questions deliberately reduce volume to raise quality. The right friction depends on the deal size, sales bandwidth, and lead-quality history.
-- **Conversion Leads is the strongest quality unlock when eligible.** When the account meets the readiness conditions (200 leads/month, 15-16 digit Meta Lead ID mapped, daily upload, optimized stage within 28 days, stage CVR 1-40%), Meta optimizes toward the deeper CRM stage rather than form fill. Without those conditions, do not promise it.
+- **Conversion Leads is the strongest quality unlock when eligible.** When the account meets the readiness conditions (roughly 200-250 leads/month — exact threshold varies by partner integration and current Meta UI/CRM partner docs; 15-16 digit Meta Lead ID mapped, daily upload, optimized stage within 28 days, stage CVR 1-40%), Meta optimizes toward the deeper CRM stage rather than form fill. Without those conditions, do not promise it.
 - **Advantage+ Leads is automation-first, not a magic button.** When Advantage+ is on, audience, placements, and campaign budget are simultaneously automated; only custom audience exclusions, age 18+, location/language, and account-level controls are honored without disabling Advantage+. Do not blame Advantage+ for poor lead quality before checking form, offer, follow-up, and CRM feedback.
 - **Speed-to-lead beats form length.** For high-intent Meta-sourced leads, design operations around very fast acknowledgement and routing; click-to-message leads are essentially live and lose intent quickly.
 - **Source breakdowns reveal where quality varies.** Placement, ad, form, audience, gender/age, region, and creative breakdowns surface which combinations produce qualified pipeline vs. junk.
@@ -25,7 +25,7 @@ Lead campaigns work when the **lead path, form/message design, qualification log
 | WhatsApp/Messenger volume but no qualification | Welcome message specificity, response speed, qualifying script | Pre-filled message, agent SLA under 5s for auto-ack, qualification chatbot |
 | Calls volume, low quality | Country code, business-hours scheduling, call ad creative qualifies | Use lifetime budget + dayparting, qualify in ad copy, add call-tracking to CRM |
 | Volume good early, then collapse | Audience exhaustion, creative fatigue, learning reset, attribution-window changes | Refresh creative, broaden audience, hold edits, audit attribution-window setting |
-| Conversion Leads not optimizing | Volume below 200/mo, lead ID mismatch, stage CVR outside 1-40%, latency >28d | Reset to Maximize Leads while you re-build feedback loop |
+| Conversion Leads not optimizing | Volume below ~200-250/mo threshold, lead ID mismatch, stage CVR outside 1-40%, latency >28d | Reset to Maximize Leads while you re-build feedback loop |
 
 ### Common traps
 
@@ -58,7 +58,7 @@ This matrix replaces the Google Ads "monthly conversions" matrix with two axes t
 
 Notes:
 
-- The "200 leads/month, daily upload, 28d stage, 1-40% stage CVR" thresholds for Conversion Leads come directly from Meta Developer guidance. They are the eligibility floor, not a stretch goal.
+- The "~200-250 leads/month, daily upload, 28d stage, 1-40% stage CVR" thresholds for Conversion Leads are the commonly cited eligibility floor across Meta Developer / partner documentation; the exact number varies by source and integration, so confirm in the current UI / partner docs for the account in question. Treat as a floor, not a stretch goal.
 - "Maximize number of conversion leads" performance goal exists as a distinct option once the Conversion Leads CRM data is wired and Meta sees the deeper stage events.
 - A typical readiness build takes 1-3 months end-to-end; full optimizer convergence is reported around 45-60 days after stable feedback. Treat 90 days as the planning horizon for Conversion Leads.
 
@@ -81,7 +81,7 @@ Use this as the canonical "which path" decision tree for a Meta Leads campaign.
 | Click-to-Instagram-Direct lead | IG Direct | Creator / lifestyle / DTC services with IG-first audience | IG inbox SLA / IG automation | Same as above |
 | Click-to-WhatsApp lead | WhatsApp Business / WABA | LATAM / EMEA / India, high-consideration, regulated locally | WhatsApp Business account, pre-filled message, agent / bot SLA | WABA template approvals, regional pricing |
 | Calls (Lead Ads with Calling) | Phone dialer | Urgent local services, home services, healthcare bookings | Country phone number, business hours | Missed calls, off-hours waste |
-| Conversion Leads | Any of above + CRM CAPI | Mature lead programs with 200+ leads/mo | Lead ID mapping + daily upload + 28d/<40% stage CVR | Setup misconfig = no optimization gain |
+| Conversion Leads | Any of above + CRM CAPI | Mature lead programs with ~200-250+ leads/mo (verify current threshold) | Lead ID mapping + daily upload + 28d/<40% stage CVR | Setup misconfig = no optimization gain |
 | Advantage+ Leads | Any conversion location | Eligible accounts wanting automation | Broad audience tolerance, custom-audience-only exclusion, 18+, all placements | Quality issues need feedback loop |
 
 ### Selection logic (path → quality → match)
@@ -110,7 +110,7 @@ Use this as the canonical "which path" decision tree for a Meta Leads campaign.
          CRM logic on the site is materially better.
 
 4. Volume + qualified-lead rate qualifies for Conversion Leads?
-   (200/mo, lead ID mapped, daily upload, stage <28d, stage CVR 1-40%)
+   (~200-250/mo per current docs, lead ID mapped, daily upload, stage <28d, stage CVR 1-40%)
    YES → Build Conversion Leads; then move performance goal to
          "Maximize conversion leads".
    NO  → Stay on "Maximize number of leads"; build the readiness in parallel.
@@ -581,7 +581,7 @@ Use this tree when an account is underperforming. Walk top-down. Stop and act on
    └─ Stage event latency > 28 days → choose earlier stage for optimization
 
 6. Is the account ready for Conversion Leads?
-   ├─ <200 leads/mo OR stage CVR outside 1-40% → keep Maximize leads; build readiness
+   ├─ Below current Conversion Leads volume threshold (~200-250/mo) OR stage CVR outside 1-40% → keep Maximize leads; build readiness
    └─ Ready → switch performance goal to Maximize conversion leads; hold variables 2 weeks
 
 7. Is Advantage+ Leads "On" as expected?

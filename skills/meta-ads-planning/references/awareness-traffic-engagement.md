@@ -504,7 +504,7 @@ Creative must be vertical 9:16, sound-on-friendly, and native-feeling. Cropped F
 
 ### 3-7. Threads engagement
 
-Threads ads rolled out globally in 2026. All ODAX objectives are supported on Threads, but **engagement objectives perform particularly well** due to high inherent engagement rates (~6.25% median, higher than X). Treat Threads as additive placement under Engagement / Post engagement.
+Threads opened to all eligible advertisers globally on 2025-04-23, with full user-side global rollout completing in January 2026. Supported objectives are limited (current Meta documentation lists Awareness, Traffic, Engagement, App Promotion, Sales with website destinations, and Leads — verify in current UI before promising a specific objective on Threads). Threads is included by default in Advantage+ placements; opt out manually if needed. Treat Threads as an additive placement; engagement-style creative tends to perform well, but do not commit to a specific median engagement rate without account-level data.
 
 ### 3-8. Boost post relationship
 

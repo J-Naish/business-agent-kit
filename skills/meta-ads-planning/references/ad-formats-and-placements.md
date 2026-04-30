@@ -152,7 +152,7 @@ Use when: immersive brand experience, catalog browsing, mobile landing-page subs
 
 | Placement | Description | Formats | Notes |
 |---|---|---|---|
-| **Home Screen** | Between chat threads | Image | Reach during message checking |
+| ~~Home Screen (Inbox)~~ | ~~Between chat threads~~ | — | **Deprecated 2025-11-11** (`messenger_home`). Removed as a placement; do not include in new plans. |
 | **Sponsored Messages** | Message delivered in chat | Text + image | Limited/relationship-based use; click-to-message ads are the mainstream acquisition path |
 
 #### Audience Network / Threads

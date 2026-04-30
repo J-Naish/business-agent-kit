@@ -123,7 +123,7 @@ Before launching Sales:
 - CAPI integrated (server-side or via gateway). Conversions API for Browsers (CAPIG) is the lowest-effort fallback if direct server integration is impossible.
 - Events Manager Test Events shows duplicate detection working for at least Purchase, AddToCart, InitiateCheckout, ViewContent.
 - Domain verified in Business Manager.
-- Aggregated Event Measurement (AEM) priorities configured: Purchase ranked #1; downstream events follow.
+- Aggregated Event Measurement (AEM) is auto-aggregated; manual event prioritization and the 8-event cap were removed in June 2025. Verify current Events Manager UI before assuming any manual priority workflow.
 - Catalog created and feed scheduled (if any feed-driven format will be used).
 - Special Ad Categories assessed (financial, employment, housing, social/political → restricted targeting).
 
@@ -269,7 +269,7 @@ Hard rule for the skill: **always verify in current UI before promising specific
 | Daily budget | At least Target CPA × 50 / 7 (e.g., $30 CPA → $214/day floor) |
 | Creative count | Minimum 6, recommended 15-30, optimal 20-50 diverse assets |
 | Domain verification | Required |
-| AEM event prioritization | Purchase ranked #1 |
+| AEM event prioritization | Auto-aggregated; manual prioritization and 8-event cap removed June 2025 |
 
 ### 3-6. Ad import
 
