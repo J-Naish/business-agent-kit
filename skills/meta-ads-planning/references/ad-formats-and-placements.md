@@ -40,11 +40,11 @@ Summary: video creative for Feed, Stories, Reels, and other video placements.
 |---|---|
 | Recommended resolution | Feed: 1440x1440 (1:1) or 1440x1800 (4:5); Reels/Stories: 1440x2560 or 1080x1920 (9:16) |
 | Minimum resolution | 120x120; use higher source quality whenever possible |
-| Recommended length | Feed: 15-60s; Reels: 15-30s; Stories: up to 15s per story unit |
+| Recommended length | Feed: 15-60s; Reels: 15-30s as a performance heuristic; Stories: up to 15s per story unit |
 | File type | MP4, MOV; GIF may be accepted for some video placements |
 | Max file size | 4 GB |
 | Codec | H.264 video, AAC audio; prefer square pixels, fixed frame rate, progressive scan, and stereo AAC 128 kbps+ |
-| Maximum length | Placement-dependent; Facebook Feed video can support very long uploads, but ads usually perform better when concise |
+| Maximum length | Placement-dependent; Instagram Reels ads can be up to 15 minutes, and Facebook Reels limits have changed; ads usually perform better when concise |
 
 Performance characteristics:
 

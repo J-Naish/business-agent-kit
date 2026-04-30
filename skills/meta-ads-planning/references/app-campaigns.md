@@ -14,7 +14,7 @@ App Promotion campaigns optimize for installs, post-install events, or value. Th
 - **iOS and Android need separate campaigns.** Different frameworks (AAK / SKAN / AEM on iOS, Play Install Referrer + Meta Install Referrer on Android), different opt-in realities, different CPI ranges.
 - **Re-engagement ROAS is easy to over-claim.** Returning users may have come back without ads, so use holdouts or incrementality tests before treating re-engagement ROAS as causal.
 - **Learning resets are easy to trigger.** Bid moves >20%, budget swings >20%, wholesale creative replacement, or switching optimization event mid-flight all reset learning. Learning phase exits at 50 events / week per ad set.
-- **AEM is now automated.** As of June 2025 Meta removed the 8-event cap and prioritization requirement for app AEM. All eligible standard / custom events are processed without manual ranking.
+- **Do not assume the old 8-event ranking workflow.** Web AEM is now commonly described as automated, while app AEM depends on Meta/MMP/Apple setup details. Verify the selected app, MMP, and Events Manager workflow before giving instructions about event caps or prioritization.
 - **Advantage+ App is the default starting point in 2026.** Manual app campaigns are a fallback for very specific eligibility / measurement edge cases.
 
 ### Diagnostic philosophy
@@ -39,9 +39,9 @@ These never reconcile perfectly. Use each for its role:
 
 | Goal | Setup | Optimization event | Bid strategy | Min daily budget guideline | Notes |
 |---|---|---|---|---|---|
-| **New-install acquisition (default)** | Advantage+ App | App install | Lowest cost or Cost per result goal | tCPI guideline x 50 | Default for cold app UA |
+| **New-install acquisition (default)** | Advantage+ App | App install | Highest volume or Cost per result goal | tCPI guideline x 50 | Default for cold app UA |
 | **Quality install** | Advantage+ App or manual | App event (registration / tutorial / key action) | Cost per result goal | Daily budget supporting >= 50 events / week | Graduate when retention proxy correlates with LTV |
-| **Revenue / purchase optimization** | Advantage+ App | App event = Purchase | Lowest cost (Highest value) or ROAS goal | Sufficient to clear 50+ purchases / 7d | Requires value passing + currency mapping |
+| **Revenue / purchase optimization** | Advantage+ App | App event = Purchase | Highest value or ROAS goal | Sufficient to clear 50+ purchases / 7d | Requires value passing + currency mapping |
 | **Subscription / trial app** | Advantage+ App | App event = Subscribe / StartTrial | Cost per result goal then ROAS goal | Trial volume >= 30 / day to start | Tag paid_start vs trial_start cleanly |
 | **Re-engagement (existing users)** | App Promotion - Re-engagement | App event in deep-linked surface | Cost per result goal | Audience-size dependent | Apply incrementality skepticism |
 | **Game UA** | Advantage+ App + Playable | Tutorial complete or level N | Cost per result goal | Tutorial volume gate | Playable is design-load heavy but install-quality positive |
@@ -247,8 +247,8 @@ Key facts:
 
 #### 2025-2026 changes
 
-- **June 2025**: Meta removed the 8-event limit and the manual prioritization requirement for app AEM. All eligible standard / custom events are processed automatically. No ranking, no caps, no manual list.
-- AEM is now fully automated for app
+- **2025 web AEM changes**: Web AEM is now commonly described as no longer requiring the old manual 8-event prioritization workflow. Do not automatically apply that statement to app AEM without checking the selected MMP / Meta app setup.
+- App AEM behavior must be verified in the current app and MMP workflow
 - Eligibility check happens at ad-set creation time; if app is AEM-eligible, AEM is selected by default
 
 #### Setup gotcha
@@ -371,7 +371,7 @@ Deduplication: use `event_name` and `event_id` consistently across SDK and CAPI;
 
 | Strategy | What it does | App-campaign use | Volume need |
 |---|---|---|---|
-| **Lowest cost (no goal)** | Maximize results within budget | Default for cold UA, install volume | Lowest |
+| **Highest volume (no goal)** | Maximize results within budget | Default for cold UA, install volume | Lowest |
 | **Cost per result goal** | Targets a CPA / CPI but flexes per auction | Most common for App Event Optimization | Need 50 events / week / ad set to learn |
 | **Bid cap** | Hard ceiling on per-auction bid | Rare for app; aggressive cost control | Need experience with cost ceilings |
 | **Highest value (no goal) / VO** | Maximizes total value in budget | Mature monetized apps | 50+ value events / 7d / ad set |
@@ -381,7 +381,7 @@ Deduplication: use `event_name` and `event_id` consistently across SDK and CAPI;
 
 | Stage | Recommended bidding |
 |---|---|
-| Brand new app, no events | Lowest cost on Install |
+| Brand new app, no events | Highest volume on Install |
 | 2-4 weeks in, install volume stable, onboarding events firing | Cost per result goal on Onboarding event |
 | Onboarding stable, key action stable | Cost per result goal on Key Action |
 | Purchase volume >= 50 / week | Cost per result goal on Purchase |
@@ -391,7 +391,7 @@ Deduplication: use `event_name` and `event_id` consistently across SDK and CAPI;
 
 | Bid strategy | Volume floor | Comfortable |
 |---|---|---|
-| Lowest cost (Install) | 50 installs / week / ad set | 200+ |
+| Highest volume (Install) | 50 installs / week / ad set | 200+ |
 | Cost per result goal (Event) | 50 events / week / ad set | 100+ |
 | Bid cap | 50+ | 100+ |
 | VO / ROAS goal | 50 value events / 7d / ad set | 100+ |
@@ -668,7 +668,7 @@ In 2026 the bias is toward Advantage+. Manual is increasingly a tactical tool, n
 - Changing budget >20% during the learning phase
 - Single ad set covering all geos with very different LTV (mixed signal)
 - No deep links - re-engagement campaigns can run but UX collapses
-- Manually prioritizing AEM events as if the 8-event cap still existed (it was removed June 2025)
+- Manually prioritizing AEM events from an outdated web workflow without verifying the current app/MMP setup
 - Comparing CPI to a category benchmark without normalizing for ATT impact / measurement framework
 
 ---
@@ -681,7 +681,7 @@ iOS app measurement is the most fast-moving area in performance marketing. Re-ch
 |---|---|---|
 | AAK iOS version requirements (17.4 / 18 / 18.4 / future) | Apple ships new functionality each major release | Quarterly or after WWDC |
 | Apple's recommended framework (AAK vs SKAN parity) | Apple is migrating apps to AAK gradually | Bi-annually |
-| Meta AEM event caps / prioritization | The 8-event cap was removed June 2025 - rules can change again | Quarterly |
+| Meta AEM event caps / prioritization | Web AEM prioritization changed in 2025; app AEM depends on current Meta/MMP support | Quarterly |
 | Meta attribution windows | 7d/28d view removed Jan 2026 - more changes possible | Per Meta announcement |
 | MMP AEM / AAK feature parity | MMPs ship support at different speeds | Check the selected MMP's current setup UI |
 | Meta Advantage+ App eligibility / behavior | Default-on changes happen regularly | Quarterly |

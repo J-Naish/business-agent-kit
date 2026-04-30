@@ -228,7 +228,7 @@ RCT measuring incremental conversions, not just recall. Even though Conversion L
 
 ### 1-10. Awareness on Threads
 
-Threads (rolled out globally in 2026, Medium) supports Awareness objective with Reach, Impressions, Ad Recall Lift performance goals. Engagement rates are higher than X (median 6.25%), but Threads inventory is small relative to Feed/Reels. Treat as additive placement, not standalone strategy.
+Threads ads opened to eligible advertisers globally on 2025-04-23. Awareness support and performance goals can vary by account and rollout state, so verify the current Ads Manager UI before promising a specific objective or goal. Treat Threads as additive placement inventory, not a standalone strategy.
 
 ---
 

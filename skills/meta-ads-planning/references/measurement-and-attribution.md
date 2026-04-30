@@ -363,7 +363,7 @@ Note on optimization eligibility: all `action_source` values support optimizatio
 | Required mapping | 15-16 digit Meta Lead ID into CRM |
 | Stage timing | Stage event must occur within 28 days of lead creation |
 | Stage conversion rate | Should fall between 1% and 40% |
-| Practical planning floor | Around 200-250 qualifying leads per month before expecting stable optimization |
+| Practical planning floor | Meta developer guidance lists at least 200 leads per month before expecting stable optimization |
 | Upload cadence | Daily minimum; near-real-time preferred |
 | Time to value | About 3 months expected; implementation 1 month to several months |
 

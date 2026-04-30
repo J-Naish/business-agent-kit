@@ -81,7 +81,7 @@ Use these shared terms instead of repeating basic definitions in each playbook.
 | CRM feedback | Qualified lead, opportunity, closed-won, offline purchase, LTV, or other business outcome sent back to Meta |
 | VTC | View-through conversion: impression-only credit followed by conversion |
 | Engage-through | Social engagement or qualified video engagement followed by conversion in the available window |
-| Special Ad Category | Meta policy category such as credit, employment, housing, or social issues/elections/politics |
+| Special Ad Category | Meta policy category such as credit / financial products and services, employment, housing, or social issues/elections/politics |
 
 ## Output flexibility
 
@@ -286,7 +286,7 @@ Use [references/budget-planning.md](references/budget-planning.md) and the selec
 4. Signal depth: purchase, qualified lead, app value, retained user, or micro-event.
 5. Budget-to-bid ratio.
 
-Default path: start with highest volume / lowest cost for unstable launches, introduce cost per result goal / cost cap only after the account has stable volume and defensible economics, and use bid cap / ROAS goal only when value data and delivery volume can support stricter control.
+Default path: start with **Highest volume** in current Ads Manager UI (often represented as lowest-cost/automatic bidding in older docs or API language) for unstable launches, introduce **Cost per result goal** only after the account has stable volume and defensible economics, and use **Bid cap** / **ROAS goal** only when value data and delivery volume can support stricter control.
 
 ### Conversion design
 

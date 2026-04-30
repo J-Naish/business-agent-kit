@@ -81,7 +81,7 @@ Design rule: use 9:16 vertical as the master design when Reels and Stories matte
 | Element | Recommendation |
 |---|---|
 | First 1-3 seconds | Use a strong hook; this is the most important section |
-| Length | Feed: 15-60s; Reels: 15-30s; Stories: short and direct |
+| Length | Feed: 15-60s; Reels: 15-30s as a performance heuristic; Stories: short and direct |
 | Aspect ratio | 9:16 for vertical-first delivery; 4:5 for Feed adaptations |
 | Captions | Add captions by default |
 | Tone | Match the buyer and offer; testimonial, interview, demo, and problem-led hooks often work well |

@@ -110,7 +110,7 @@ Run these in order. Do not start with creative pruning if the account is optimiz
 | Ad set has far below practical learning volume | Delivery decisions are fragile | Consolidate, raise budget, or choose a validated higher-volume event |
 | Budget/day below target CPA | Learning will be slow and noisy | Narrow structure, raise budget, or lower ambition only if economics allow |
 | Spend spread across many low-volume ad sets | Fragmented learning | Consolidate around objective/economics/geo/compliance |
-| Cost cap/ROAS goal underspends | Target too tight or signal too weak | Loosen target, return to highest volume, or fix signal before forcing control |
+| Cost per result goal / ROAS goal underspends | Target too tight or signal too weak | Loosen target, return to highest volume, or fix signal before forcing control |
 | Retargeting consumes large budget with high ROAS | Incrementality risk | Cap/holdout/reallocate to prospecting and measure blended outcome |
 
 ### C. Objective and traffic quality

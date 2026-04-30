@@ -19,7 +19,7 @@ Ask whether the campaign promotes any of the following. If yes, route through th
 
 | Category | Examples | Planning impact |
 |---|---|---|
-| Credit / financial products | Credit cards, loans, mortgages, financing, BNPL, debt relief, insurance-like finance offers | Targeting restrictions, copy/disclosure scrutiny, potential audience limitations |
+| Credit / Financial Products and Services | Credit cards, loans, mortgages, financing, BNPL, debt relief, insurance, banking, investment, payment, or other financial services offers | Targeting restrictions, copy/disclosure scrutiny, potential audience limitations |
 | Employment | Jobs, recruitment, internships, employment services, professional opportunities | Targeting restrictions, anti-discrimination constraints |
 | Housing | Home sales/rentals, mortgages, real estate listings, housing services | Targeting restrictions, anti-discrimination constraints |
 | Social issues / elections / politics | Elections, candidates, legislation, social issue advocacy, political fundraising | Authorization, disclaimer, geo/account controls, ad library transparency |
@@ -63,9 +63,9 @@ If uncertain, state the ambiguity and ask for the offer, landing page, target co
 
 ---
 
-## 4. Credit and financial products
+## 4. Credit / Financial Products and Services
 
-Use this for credit cards, loans, mortgages, financing, debt services, and similar offers.
+Use this for credit cards, loans, mortgages, financing, debt services, banking, insurance, investment, payment, and similar financial offers. Meta API and UI surfaces may still show both `CREDIT` and `FINANCIAL_PRODUCTS_SERVICES`; verify the current account workflow before choosing the category.
 
 ### Planning stance
 
@@ -168,11 +168,11 @@ Health and wellness campaigns may not always be Special Ad Category campaigns, b
 
 ## 9. Teen and age-sensitive targeting
 
-Meta's teen targeting and data-use rules change over time and can vary by region.
+Meta's teen targeting and data-use rules change over time and can vary by region. Current Meta help states that advertisers can include teens only by age and location, not by interests, behaviors, gender, or off-Meta activity; higher age thresholds apply in some countries (for example Thailand and Indonesia).
 
 Planning stance:
 
-- Verify current age, interest, placement, and data-use limits before recommending teen campaigns.
+- Verify current age, location granularity, placement, and data-use limits before recommending teen campaigns.
 - Avoid sensitive topics, body image pressure, financial promises, or manipulative urgency.
 - Use broad, age-appropriate creative and landing experiences.
 - Do not rely on granular targeting or retargeting assumptions without current UI verification.

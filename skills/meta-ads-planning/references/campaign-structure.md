@@ -247,7 +247,7 @@ Note: reporting-tool and API behavior changes over time. Verify current Ads Mana
 | Formats | Collection Ads, carousel, dynamic ads, video |
 | Placements | Advantage+ placements; prioritize placement-ready Instagram Feed/Reels creative |
 | Targeting | Broad + high-quality Custom Audience signals; use Lookalikes only as a verified, non-core test |
-| Bid strategy | Lowest cost -> ROAS goal |
+| Bid strategy | Highest volume -> ROAS goal |
 | Budget allocation | Testing 10-20% / scaling 80-90% |
 | Measurement caution | Track new vs existing customers, margin, and incrementality |
 
@@ -261,7 +261,7 @@ Note: reporting-tool and API behavior changes over time. Verify current Ads Mana
 | Formats | Lead Ads / Instant Forms, video, image |
 | Placements | Facebook Feed + Instagram Feed; consider excluding Audience Network |
 | Targeting | Broad + customer-list/custom-audience signals + website visitor remarketing where volume supports it |
-| Bid strategy | Cost cap after stable volume |
+| Bid strategy | Cost per result goal after stable volume |
 | Note | Test Instant Forms against website conversions for lead quality |
 | Measurement caution | Do not optimize to raw CPL without qualified lead or pipeline feedback |
 
@@ -275,7 +275,7 @@ Note: reporting-tool and API behavior changes over time. Verify current Ads Mana
 | Formats | Demo video, feature carousel, image |
 | Placements | Facebook Feed + Instagram Feed |
 | Targeting | Broad + Custom Audiences such as site visitors and video viewers |
-| Bid strategy | Lowest cost -> Cost cap |
+| Bid strategy | Highest volume -> Cost per result goal |
 | Note | Free trial or demo offers often work well, but quality must be checked |
 
 ### Local Business
@@ -288,7 +288,7 @@ Note: reporting-tool and API behavior changes over time. Verify current Ads Mana
 | Formats | Store tour video, offer image, carousel |
 | Placements | Facebook Feed + Marketplace + Instagram Feed where relevant |
 | Targeting | Local geography + broad audience |
-| Bid strategy | Lowest cost |
+| Bid strategy | Highest volume |
 | Note | Service area and local proof matter |
 
 ### App Business
@@ -301,7 +301,7 @@ Note: reporting-tool and API behavior changes over time. Verify current Ads Mana
 | Formats | App demo video, playable ads |
 | Placements | Advantage+ placements |
 | Targeting | Broad + high-value user Custom Audience signals where useful; verify Lookalike availability before using it as a control |
-| Bid strategy | Lowest cost -> value optimization |
+| Bid strategy | Highest volume -> Highest value |
 | Note | Move toward higher-value events after enough install and event data accumulates |
 
 ### Brand Awareness
@@ -314,7 +314,7 @@ Note: reporting-tool and API behavior changes over time. Verify current Ads Mana
 | Formats | Video/Reels, image |
 | Placements | Advantage+ placements; Reels and Stories-ready creative |
 | Targeting | Broad for maximum reach |
-| Bid strategy | Lowest cost |
+| Bid strategy | Highest volume |
 | Note | Use video-led brand storytelling |
 
 ---

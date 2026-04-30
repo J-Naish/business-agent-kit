@@ -178,13 +178,13 @@ Formatting:
 |---|---|
 | Recommended size | Reels/Stories: 1440x2560 or 1080x1920 (9:16); Feed: 1440x1800 (4:5) or 1440x1440 (1:1) |
 | Minimum size | 120x120; use high-resolution source files for production |
-| Recommended length | Feed: 15-60s; Reels: 15-30s; Stories: short and direct |
+| Recommended length | Feed: 15-60s; Reels: 15-30s as a performance heuristic; Stories: short and direct |
 | File type | MP4, MOV; GIF may be accepted for some video placements |
 | File size | Up to 4 GB |
 | Codec | H.264 video, AAC audio |
 | Audio/video technicals | Prefer square pixels, fixed frame rate, progressive scan, stereo AAC 128 kbps+ |
 | Frame rate | Up to 30 fps is a practical default unless source and placement justify otherwise |
-| Maximum length | Placement-dependent; concise ads usually outperform the theoretical maximum |
+| Maximum length | Placement-dependent; Instagram Reels ads can be up to 15 minutes, and concise ads usually outperform the theoretical maximum |
 
 ### 3-2. Structure Framework
 

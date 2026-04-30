@@ -97,7 +97,7 @@ Learning limited / unstable
 ├── Creative library too thin?
 │   └── Add distinct concepts, not tiny variants
 └── Bid/control too restrictive?
-    └── Use Lowest Cost / Highest Volume until stable
+    └── Use Highest volume until stable
 ```
 
 ---

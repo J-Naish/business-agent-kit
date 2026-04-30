@@ -140,7 +140,7 @@ Skill stance: do not encode lookalikes as an independent strategy in 2026. Use t
 | Field | Value |
 |---|---|
 | What is automated | Delivers beyond the listed interests when better performance is predicted |
-| Status 2026 | Subsumed by Advantage+ Audience. Many granular interest categories were consolidated 2025-06-23 and further removed 2026-01-15. |
+| Status 2026 | Subsumed by Advantage+ Audience. Meta has continued consolidating granular detailed targeting options; some accounts/tools warned that impacted options would stop delivering on 2026-01-15. Verify affected interests in the current Ads Manager UI. |
 | Detailed targeting exclusions | Removed from new ad sets and from active existing campaigns created in Ads Manager starting 2025-03-31 |
 | Risk | Skill must not promise interest-level fences; interests cannot constrain delivery |
 
@@ -345,7 +345,7 @@ When Advantage+ end-to-end form is the wrong fit, planning falls back to manual 
 ```
 Campaign
   Objective: Sales (purchase, optimization for value where possible)
-  Bid strategy: Highest value (or cost cap if you have a tested target ROAS)
+  Bid strategy: Highest value, ROAS goal, or Cost per result goal depending on value data and target stability
   Budget: CBO with ad-set spend caps if 2+ ad sets share the same audience family
 Ad set A: Broad + A+ Audience seed = nothing (truly broad)
   Hard controls: country, language, age min

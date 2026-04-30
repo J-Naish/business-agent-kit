@@ -49,11 +49,11 @@ Before recommending campaign objectives or structures, answer these in order.
 
 | Expected monthly true conversions | Structure posture | Bidding / optimization posture |
 |---|---|---|
-| 0-10 | Very narrow. One main campaign/ad set and one clean event | Lowest cost; avoid cost controls and complex tests |
-| 10-30 | Still consolidated. Avoid many ad sets and separate test campaigns | Lowest cost; consider a validated proxy event if true CV is too sparse |
+| 0-10 | Very narrow. One main campaign/ad set and one clean event | Highest volume; avoid cost controls and complex tests |
+| 10-30 | Still consolidated. Avoid many ad sets and separate test campaigns | Highest volume; consider a validated proxy event if true CV is too sparse |
 | 30-50 | One main campaign per distinct goal can work | Cost controls only if CPA is stable |
 | 50-100 | Room for controlled creative testing or funnel separation | Advantage+ / broad delivery tests become more defensible |
-| 100+ | Broader structure and experiments become realistic | Cost cap, ROAS goal, value optimization, holdouts where suitable |
+| 100+ | Broader structure and experiments become realistic | Cost per result goal, ROAS goal, highest value, holdouts where suitable |
 
 These are operating thresholds, not platform requirements. If the conversion action is low-quality, more volume does not help.
 

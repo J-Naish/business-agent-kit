@@ -34,10 +34,10 @@ Use Meta's per-week-per-ad-set learning-phase target (50 events/week to exit lea
 | Monthly purchase volume | Recommended Sales setup | Notes |
 |---|---|---|
 | 0-30 purchases/month | Single manual Sales campaign, 1-2 ad sets, broad audience, optimize for `Purchase` if reliable, otherwise `InitiateCheckout` or `AddToCart` (predictive of purchase) | Volume too low for any per-ad-set learning. Do not use Advantage+ Sales as sole engine. Focus on creative and offer. |
-| 30-50 purchases/month | Manual Sales + a small Advantage+ Sales test (if catalog-eligible). Consolidate ad sets. Lowest Cost bidding. | Borderline learning. Consider higher-funnel events (ATC/IC) for optimization while Purchase event accumulates. |
-| 50-100 purchases/month | Advantage+ Sales as primary acquisition, manual Sales for retargeting/exclusions. Optimize for `Purchase`. Lowest Cost. | Single ad set in Advantage+ can plausibly exit learning. Begin creative volume push (15-25 ads). |
-| 100-300 purchases/month | Advantage+ Sales primary + manual Sales for product-set, margin, or geo splits. Begin Cost-per-Result-Goal testing. Value optimization viable if value distribution is wide. | Sweet spot. Can run 2-3 ad sets in Advantage+ Sales (each capped at 50 ads). |
-| 300+ purchases/month | Advantage+ Sales + Advantage+ catalog ads (broad and retargeting) + manual splits for margin/region/new-vs-existing. ROAS Goal viable. Conversion Lift viable. | Now safe to run incrementality, value rules, and pLTV-based optimization. |
+| 30-50 purchases/month | Manual Sales + a small Advantage+ Sales test (if catalog-eligible). Consolidate ad sets. Highest volume bidding. | Borderline learning. Consider higher-funnel events (ATC/IC) for optimization while Purchase event accumulates. |
+| 50-100 purchases/month | Advantage+ Sales as primary acquisition, manual Sales for retargeting/exclusions. Optimize for `Purchase`. Highest volume. | Single ad set in Advantage+ can plausibly exit learning. Begin creative volume push (15-25 ads). |
+| 100-300 purchases/month | Advantage+ Sales primary + manual Sales for product-set, margin, or geo splits. Begin Cost per result goal testing. Value optimization viable if value distribution is wide. | Sweet spot. Can run 2-3 ad sets in Advantage+ Sales (each capped at 50 ads). |
+| 300+ purchases/month | Advantage+ Sales + Advantage+ catalog ads (broad and retargeting) + manual splits for margin/region/new-vs-existing. ROAS goal viable. Conversion Lift viable. | Now safe to run incrementality, value rules, and pLTV-based optimization. |
 
 ### 0-4. Diagnosis order when account is underperforming
 
@@ -71,13 +71,13 @@ The Sales objective in the ODAX (Outcome-Driven Ad Experiences) menu replaces th
 
 ### 1-2. Conversion locations
 
-Sales campaigns expose 5 conversion locations. Choice here determines required signal stack and which performance goals are exposed.
+Sales campaigns expose several conversion locations. Choice here determines required signal stack and which performance goals are exposed; Shops and hybrid shop/website options are in transition, so verify current account UI before planning around them.
 
 | Conversion location | Signal stack required | Best for | Notes |
 |---|---|---|---|
 | Website | Meta Pixel + CAPI, Purchase event with value/currency | Standard e-commerce, SaaS purchase, lead-to-sale flows | Default. 95% of Sales campaigns belong here. |
 | App | App SDK (Facebook SDK / FB SDK) or MMP integration with app events, AEM for iOS | App-first commerce, subscription apps | iOS measurement runs on AEM + AdAttributionKit + MMP. Plan with that constraint. |
-| Website and shop (US-only at time of writing) | Pixel + CAPI + connected Shop on Facebook/Instagram | US D2C with Shop tab | Shop integration is US-restricted. Verify country eligibility in account UI. |
+| Website and shop / shop-assisted destination (availability changing) | Pixel + CAPI + connected Shop on Facebook/Instagram | Accounts where Meta still exposes shop-assisted sales routing | Meta has been moving Shops checkout toward website checkout; verify whether `Website and shop` or buyer-journey personalization is available in the current account UI. |
 | Calls | Phone number + click-to-call signal; optionally CRM offline conversion | Local services, high-ticket consultative B2C | Optimization quality depends on whether call outcomes are uploaded as offline conversion. |
 | Messaging apps (Messenger, WhatsApp, Instagram Direct) | Purchase events sent to Meta from chat platform; messaging integration | Conversational commerce (apparel, beauty, services in APAC/LATAM) | Requires `maximize purchases through messaging` performance goal and 5+ purchase events in trailing 30 days for eligibility. |
 
@@ -89,7 +89,7 @@ Performance goal = the optimization event Meta delivers against. Available optio
 
 | Performance goal | Conversion location(s) | Use case | Risk |
 |---|---|---|---|
-| Maximize number of conversions | Website / App / Website-and-shop | Default for Purchase optimization | Treats every conversion as equal regardless of order value |
+| Maximize number of conversions | Website / App / shop-assisted destination where available | Default for Purchase optimization | Treats every conversion as equal regardless of order value |
 | Maximize value of conversions | Website / App | Wide AOV distribution; pLTV active | Requires value/currency on every event; volume threshold ~50/wk |
 | Maximize landing page views | Website | Bridging step when Purchase volume too low | Do NOT use as terminal goal; transition to Purchase ASAP |
 | Maximize link clicks | Website / Messaging | Diagnostic only; not a true Sales goal | Will not optimize for downstream conversion |
@@ -123,7 +123,7 @@ Before launching Sales:
 - CAPI integrated (server-side or via gateway). Conversions API for Browsers (CAPIG) is the lowest-effort fallback if direct server integration is impossible.
 - Events Manager Test Events shows duplicate detection working for at least Purchase, AddToCart, InitiateCheckout, ViewContent.
 - Domain verified in Business Manager.
-- Aggregated Event Measurement (AEM) is auto-aggregated; manual event prioritization and the 8-event cap were removed in June 2025. Verify current Events Manager UI before assuming any manual priority workflow.
+- Web Aggregated Event Measurement (AEM) is commonly auto-aggregated in current Events Manager workflows. Verify the current UI before assuming any manual 8-event priority workflow.
 - Catalog created and feed scheduled (if any feed-driven format will be used).
 - Special Ad Categories assessed (financial, employment, housing, social/political → restricted targeting).
 
@@ -138,7 +138,7 @@ Default rule: minimize campaigns. Each campaign is a separate learning unit.
 | Different brand within same Business Manager | Yes |
 | Strict budget separation required (compliance, finance) | Yes |
 | New product launch needing isolation for clean measurement | Yes (temporary) |
-| Different bidding strategy (Lowest Cost vs ROAS Goal) | Yes |
+| Different bidding strategy (Highest volume vs ROAS goal) | Yes |
 | Different audience type (broad vs retargeting) | Maybe — increasingly handled by Advantage+ |
 | Different creative theme/concept | No |
 | Different demographic | No (let Advantage+ Audience handle) |
@@ -148,7 +148,7 @@ Anti-pattern: one campaign per product, per audience, per creative. This fragmen
 
 ### 2-3. Number of ad sets
 
-Inside Advantage+ Sales, the 2026 limit is 50 ads per ad set, and multiple ad sets per campaign are now allowed (the previous "1 ad set / 150 ads" rule is gone).
+Inside Advantage+ Sales, use 50 ads per ad set as the practical 2026 limit; campaign-level and migration limits can also apply (for example older ASC references used up to 150 creative combinations). Verify current UI/API limits before bulk importing or duplicating large campaigns.
 Inside manual Sales:
 
 | Account stage | Recommended ad sets per campaign |
@@ -165,7 +165,7 @@ If an ad set cannot plausibly hit 50 conversions/week given current spend and CP
 **Template A — Sub-50 purchases/month (small store)**
 
 ```
-Campaign: Sales | Manual | Lowest Cost | Purchase
+Campaign: Sales | Manual | Highest volume | Purchase
   Ad Set: Broad | Advantage+ Audience | Advantage+ Placements
     Ads: 6-10 (2-3 concepts x 2-3 formats)
 ```
@@ -173,27 +173,27 @@ Campaign: Sales | Manual | Lowest Cost | Purchase
 **Template B — 50-300 purchases/month (scaling D2C)**
 
 ```
-Campaign A: Sales | Advantage+ Sales | Lowest Cost | Purchase
+Campaign A: Sales | Advantage+ Sales | Highest volume | Purchase
   Ad Set 1: default Advantage+ Sales ad set
     Ads: 15-30 (testing 4-6 concepts)
 
-Campaign B: Sales | Manual | Lowest Cost | Purchase
+Campaign B: Sales | Manual | Highest volume | Purchase
   Ad Set: Retargeting (180-day site visitors, video viewers, IG engagers)
     Ads: 4-8 (DPA-style + creative)
 ```
 
-Existing Customer Budget Cap (if available in UI) on Campaign A: 20-30% to start, 10-15% in growth mode.
+Existing Customer Budget Cap / equivalent new-customer control only if available in the current UI. If unavailable, use customer-list exclusions or a two-ad-set structure with explicit spend controls.
 **Template C — 300+ purchases/month (mature D2C with margin signal)**
 
 ```
-Campaign A: Advantage+ Sales | Lowest Cost or ROAS Goal | Purchase value
+Campaign A: Advantage+ Sales | Highest volume or ROAS goal | Purchase value
   Existing customer cap: 15-25%
   Ads: 30-50 across hero / UGC / DPA-style / Reels-native
-Campaign B: Manual Sales | Catalog | Advantage+ catalog ads (broad) | Highest Value
+Campaign B: Manual Sales | Catalog | Advantage+ catalog ads (broad) | Highest value
   Product Set: high-margin SKUs, custom_label_0 = "high_margin"
 Campaign C: Manual Sales | Catalog | Advantage+ catalog ads (retargeting)
   Audience: Viewed but not purchased (14d, 30d), ATC not purchased (7d), past purchasers (180d for cross-sell)
-Campaign D: Manual Sales | Lowest Cost | Purchase
+Campaign D: Manual Sales | Highest volume | Purchase
   Ad Set: New customer-only (excluded customer list, excluded purchased pixel audience)
 ```
 
@@ -227,7 +227,7 @@ The system automates four levers:
 | Audience | Advantage+ Audience expands beyond suggestions; demo/age/location can be soft signals; only certain controls are hard. |
 | Placement | Advantage+ Placements distributes across Facebook, Instagram, Reels, Stories, Audience Network, Messenger. |
 | Creative | Up to 150 creative combinations can be tested; system swaps copy, headlines, CTAs, music, cropping. |
-| Budget | Single campaign-level budget; no ad-set-budget tier in classic ASC; March 2026 update added multi-ad-set support. |
+| Budget | Campaign-level Advantage+ budget across ad sets; legacy ASC/API behavior is being migrated into a unified Advantage+ structure, so verify whether ad-set spend controls are available in the current UI/API. |
 
 (
 
@@ -235,10 +235,10 @@ The system automates four levers:
 
 Even inside Advantage+ Sales, the following are still operator decisions:
 
-- Conversion location (Website / App / Website-and-shop)
+- Conversion location (Website / App / shop-assisted destination where still available)
 - Performance goal (conversions vs value)
-- Bidding strategy (Lowest Cost / Cost-per-Result Goal / ROAS Goal / Bid Cap)
-- Existing Customer Budget Cap (when available — see 3-4)
+- Bidding strategy (Highest volume / Cost per result goal / ROAS goal / Bid cap)
+- Existing Customer Budget Cap or replacement customer-state controls (when available — see 3-4)
 - Country/region (hard constraint, not suggestion)
 - Minimum age (hard, especially for restricted offers)
 - Language (soft)
@@ -248,7 +248,7 @@ Even inside Advantage+ Sales, the following are still operator decisions:
 
 ### 3-4. Existing Customer Budget Cap (volatile)
 
-Existing Customer Budget Cap behavior is volatile. Verify the current account UI before promising a specific cap range, removal, or expanded control set.
+Existing Customer Budget Cap behavior is volatile and tied to Meta's migration from legacy ASC flows into unified Advantage+ campaign setup. Verify the current account UI/API before promising availability, a specific cap range, removal, or expanded control set.
 
 | Volume / mode | Recommended cap |
 |---|---|
@@ -257,7 +257,7 @@ Existing Customer Budget Cap behavior is volatile. Verify the current account UI
 | Aggressive new-customer growth | 10-15% |
 | Brand pulse / loyalty period | 30-40% |
 
-Hard rule for the skill: **always verify in current UI before promising specific cap behavior**. If the cap field is missing for a given account or country, fall back to manual Sales with a customer-list exclusion ad set, or a separate retargeting campaign with explicit budget.
+Hard rule for the skill: **always verify in current UI/API before promising specific cap behavior**. If the cap field is missing for a given account or country, fall back to customer-list exclusions, a two-ad-set structure separating existing and non-existing customers, or a separate retargeting campaign with explicit budget.
 
 ### 3-5. Eligibility and learning requirements
 
@@ -269,7 +269,7 @@ Hard rule for the skill: **always verify in current UI before promising specific
 | Daily budget | At least Target CPA × 50 / 7 (e.g., $30 CPA → $214/day floor) |
 | Creative count | Minimum 6, recommended 15-30, optimal 20-50 diverse assets |
 | Domain verification | Required |
-| AEM event prioritization | Auto-aggregated; manual prioritization and 8-event cap removed June 2025 |
+| AEM event prioritization | Web AEM is auto-aggregated; do not assume a manual 8-event prioritization workflow without checking current Events Manager |
 
 ### 3-6. Ad import
 
@@ -467,43 +467,43 @@ The "mark as paid" feature inside Messenger does not currently feed conversion o
 
 | Strategy | Mechanic | When to use | Risk |
 |---|---|---|---|
-| Lowest Cost (Highest Volume) | No constraint; spend full budget chasing cheapest results | Default. New accounts, learning, exploration | CPA can drift up over time as easy auctions exhaust |
-| Cost per Result Goal | Soft target average CPA | Stable account with predictable economics; ≥50 conversions/week | If goal too tight, underdelivery |
-| Bid Cap | Hard ceiling on bid in auction | Strict CPA control; manual auction discipline | Underdelivery if cap below market clearing price |
-| ROAS Goal | Soft target average ROAS | Value optimization mature, ≥50 valued conversions/week, value distribution wide | If too high, Meta pauses delivery |
-| Highest Value | No ROAS constraint; chase highest-value buyers | Bridge from Lowest Cost to ROAS Goal; 4-6 weeks before introducing ROAS Goal | Spend will drift to high-AOV but possibly low-margin |
+| Highest volume | No constraint; spend full budget chasing cheapest results | Default. New accounts, learning, exploration | CPA can drift up over time as easy auctions exhaust |
+| Cost per result goal | Soft target average CPA | Stable account with predictable economics; ≥50 conversions/week | If goal too tight, underdelivery |
+| Bid cap | Hard ceiling on bid in auction | Strict CPA control; manual auction discipline | Underdelivery if cap below market clearing price |
+| ROAS goal | Soft target average ROAS | Value optimization mature, ≥50 valued conversions/week, value distribution wide | If too high, Meta pauses delivery |
+| Highest value | No ROAS constraint; chase highest-value buyers | Bridge from Highest volume to ROAS goal; 4-6 weeks before introducing ROAS goal | Spend will drift to high-AOV but possibly low-margin |
 | Minimum/Maximum Spend Targets | Floor/ceiling on ad-set spend within campaign budget | Multi-ad-set Advantage+ campaigns where ad set parity matters | Adds complexity; verify availability in account UI |
 
 ### 7-2. Stage-by-stage posture
 
 | Stage | Posture |
 |---|---|
-| New account / 0-30 purchases/mo | Lowest Cost. Do not set CPA target. Optimize for whatever event has volume. |
-| 30-50 purchases/mo | Lowest Cost. Begin tracking organic CPA distribution to understand realistic Cost Goal. |
-| 50-100 purchases/mo | Lowest Cost still default. Cost-per-Result Goal can be tested in a parallel ad set, not as global switch. |
-| 100-300 purchases/mo | Cost-per-Result Goal viable for stability. Highest Value if value optimization is on. |
-| 300+ purchases/mo with stable value events | ROAS Goal viable. Set Goal at observed average ROAS minus 10-20% (loose) initially, tighten over weeks. |
+| New account / 0-30 purchases/mo | Highest volume. Do not set CPA target. Optimize for whatever event has volume. |
+| 30-50 purchases/mo | Highest volume. Begin tracking organic CPA distribution to understand realistic Cost per result goal. |
+| 50-100 purchases/mo | Highest volume still default. Cost per result goal can be tested in a parallel ad set, not as global switch. |
+| 100-300 purchases/mo | Cost per result goal viable for stability. Highest value if value optimization is on. |
+| 300+ purchases/mo with stable value events | ROAS goal viable. Set goal at observed average ROAS minus 10-20% (loose) initially, tighten over weeks. |
 
-### 7-3. Bid Cap math
+### 7-3. Bid Cap Math
 
-Bid Cap should reflect maximum acceptable cost-per-result + auction overhead. Practitioner heuristic: target CPA × 1.2 to 1.5.
-Example: target CPA = $20 → Bid Cap = $24-30.
+Bid cap should reflect maximum acceptable cost-per-result + auction overhead. Practitioner heuristic: target CPA × 1.2 to 1.5.
+Example: target CPA = $20 → Bid cap = $24-30.
 
-### 7-4. ROAS Goal pitfalls
+### 7-4. ROAS Goal Pitfalls
 
-- Setting ROAS Goal above the campaign's organic average → delivery stalls.
-- Switching from Lowest Cost to ROAS Goal during a campaign → learning resets.
-- ROAS Goal without value optimization on every event → optimizes against incomplete signal.
-- Refunds not fed back → ROAS Goal optimizes on inflated values.
+- Setting ROAS goal above the campaign's organic average → delivery stalls.
+- Switching from Highest volume to ROAS goal during a campaign → learning resets.
+- ROAS goal without value optimization on every event → optimizes against incomplete signal.
+- Refunds not fed back → ROAS goal optimizes on inflated values.
 
 ### 7-5. Value optimization readiness
 
-Required to run Highest Value or ROAS Goal:
+Required to run Highest value or ROAS goal:
 
 - All Purchase events carry `value` and `currency` (not zero, not stub)
 - Value distribution wide enough that high vs low matters (>2x AOV spread between top and bottom quintile)
 - ≥50 valued purchases per ad set per week
-- CAPI dedup verified — duplicate-counted revenue is the most common ROAS Goal failure
+- CAPI dedup verified — duplicate-counted revenue is the most common ROAS goal failure
 - Refund/return flow ideally pushes negative-value or refund event back
 
 ---
@@ -814,7 +814,7 @@ START
 │   ├─ YES → Margin/refund/discount mix problem
 │   │   ├─ Add custom_label margin tiers to feed
 │   │   ├─ Run product-set splits by margin
-│   │   └─ Consider Highest Value with margin-weighted values
+│   │   └─ Consider Highest value with margin-weighted values
 │   └─ NO → continue
 │
 ├─ Q5: Is CPA rising over time at flat creative?
@@ -846,7 +846,7 @@ START
     │   ├─ Audience exclusions missing? Add customer list.
     │   ├─ Conversion event too low-funnel? Move to Purchase.
     │   ├─ Budget below 50/wk threshold? Increase or consolidate.
-    │   └─ ROAS Goal too tight? Loosen 10-20%.
+    │   └─ ROAS goal too tight? Loosen 10-20%.
 ```
 
 ---
@@ -884,11 +884,11 @@ START
 
 ### 13-4. Bidding traps
 
-- ROAS Goal set above organic average → delivery stalls
+- ROAS goal set above organic average → delivery stalls
 - Switching strategy mid-learning
-- Bid Cap below market clearing price → underdelivery without diagnosis
-- Cost-per-Result Goal with <50 events/week → unstable
-- Not feeding refund events back when running Highest Value or ROAS Goal
+- Bid cap below market clearing price → underdelivery without diagnosis
+- Cost per result goal with <50 events/week → unstable
+- Not feeding refund events back when running Highest value or ROAS goal
 
 ### 13-5. Advantage+ Sales-specific traps
 
@@ -941,7 +941,7 @@ These features have rolled out, rolled back, or changed scope multiple times. **
 | Advantage+ catalog ads — broad mode | Available, or merged into Advantage+ Sales catalog flow? |
 | Shop integration / Shop ads | Available in this country (US-only as of writing)? |
 | Maximum spend / minimum spend ad-set targets | Visible in budget controls? |
-| ROAS Goal vs Highest Value | Both available? |
+| ROAS goal vs Highest value | Both available? |
 | Advantage+ Creative enhancements | Per-asset toggle present? AI-generated text approval flow? |
 | Conversions API for Browsers (CAPIG) | Setup option visible? |
 | Conversion Leads optimization | Eligibility unlocked? |
@@ -972,7 +972,7 @@ Current official checks for volatile Sales items:
 | What replaces it? | Sales is the consolidation of old Conversions + Catalog Sales objectives |
 | Default conversion location | Website |
 | Required signal stack | Pixel + CAPI + Purchase event with value/currency |
-| Default bidding | Lowest Cost (Highest Volume) |
+| Default bidding | Highest volume |
 | Learning threshold | 50 conversions per ad set per week |
 | Default placement | Advantage+ Placements (all surfaces) |
 | Default audience | Advantage+ Audience |
@@ -983,11 +983,11 @@ Current official checks for volatile Sales items:
 |---|---|
 | D2C with clean Pixel+CAPI, ≥100 purchases/mo | Advantage+ Sales primary + manual retargeting |
 | D2C with large catalog | Advantage+ Sales + Advantage+ catalog ads (broad + retargeting) |
-| Subscription / SaaS with Purchase or Subscribe events | Advantage+ Sales optimizing on Subscribe/Purchase, Highest Value if value distribution wide |
+| Subscription / SaaS with Purchase or Subscribe events | Advantage+ Sales optimizing on Subscribe/Purchase, Highest value if value distribution wide |
 | High-margin niche | Manual Sales with margin-labeled product sets |
 | Local / service area | Manual Sales with strict geo + Calls or Messaging conversion location |
 | Conversational commerce (chat-led) | Sales with Messaging conversion location, purchases-through-messaging goal |
-| US store with Shop integration | Advantage+ Sales with Website-and-shop conversion location |
+| Store with Shop integration | Advantage+ Sales with shop-assisted destination only where the current UI still exposes it |
 | Mobile-first app commerce | Sales with App conversion location, AEM + MMP measurement |
 
 ### 15-3. Key thresholds
