@@ -26,15 +26,15 @@ Critical reframing: **Awareness / Traffic / Engagement are NOT just "softer Sale
 
 Awareness is the **only** objective that explicitly buys for memory and reach quality. Its job is mental availability, recall, and demand creation, not last-click ROAS.
 
-### Role: 主役 vs サポート
+### Role: Primary vs supporting
 
 | Scenario | Role | Why |
 |---|---|---|
-| Brand launch / category entry | 主役 | No demand exists to harvest; recall-building is the campaign |
-| Product launch with existing brand | 主役 (paired with Sales) | Awareness drives top-of-mind, Sales captures intent |
-| Mature DR account with stable Sales ROAS | サポート / 補完 | Reach incremental users Sales auction misses |
-| Local store opening | 主役 (geo-bound) | Reach with frequency is the actual job |
-| Pure performance scaling under tight CAC target | 不適 | Will look broken on last-click attribution |
+| Brand launch / category entry | Primary | No demand exists to harvest; recall-building is the campaign |
+| Product launch with existing brand | Primary (paired with Sales) | Awareness drives top-of-mind, Sales captures intent |
+| Mature DR account with stable Sales ROAS | Supporting / complementary | Reach incremental users Sales auction misses |
+| Local store opening | Primary (geo-bound) | Reach with frequency is the actual job |
+| Pure performance scaling under tight CAC target | Poor fit | Will look broken on last-click attribution |
 
 ### What matters most
 
@@ -238,17 +238,17 @@ Threads (rolled out globally in 2026, Medium) supports Awareness objective with 
 
 Traffic optimizes for **destination visits**, not memory and not conversions. It is the most misused objective on Meta because "I want website visits" feels like the right phrasing for almost any campaign — but it almost always isn't.
 
-### Role: 主役 vs サポート
+### Role: Primary vs supporting
 
 | Scenario | Role | Why |
 |---|---|---|
-| Content distribution (blog, podcast, news) | 主役 | The visit IS the goal; engaged-session is the KPI |
-| Pre-conversion education hub | 主役 (mid-funnel bridge) | Sends to explainer; retargeted by Sales/Leads |
-| New site, conversion tracking not yet live | 主役 (temporary) | Bridge until Pixel/CAPI works; migrate to Sales ASAP |
-| Third-party destination Pixel can't track | 主役 | Only option, with UTM + external analytics |
-| E-commerce purchase goal | **不適 (アンチパターン)** | Sales objective always beats Traffic for revenue |
-| Lead capture goal | **不適** | Leads objective with Instant Forms or Conversions optimization beats Traffic |
-| Brand awareness goal | **不適** | Awareness with Reach / Ad Recall Lift beats Traffic |
+| Content distribution (blog, podcast, news) | Primary | The visit IS the goal; engaged-session is the KPI |
+| Pre-conversion education hub | Primary (mid-funnel bridge) | Sends to explainer; retargeted by Sales/Leads |
+| New site, conversion tracking not yet live | Primary (temporary) | Bridge until Pixel/CAPI works; migrate to Sales ASAP |
+| Third-party destination Pixel can't track | Primary | Only option, with UTM + external analytics |
+| E-commerce purchase goal | **Poor fit (antipattern)** | Sales objective always beats Traffic for revenue |
+| Lead capture goal | **Poor fit** | Leads objective with Instant Forms or Conversions optimization beats Traffic |
+| Brand awareness goal | **Poor fit** | Awareness with Reach / Ad Recall Lift beats Traffic |
 
 ### What matters most
 
@@ -354,7 +354,7 @@ Traffic creative should **pre-qualify the click**. The destination promise shoul
 |---|---|
 | Hook | State what the user will get on the destination |
 | Specificity | Numbers, names, formats ("12-min read", "5-step guide") |
-| Audience signal | "If you run a SaaS team..." / "For Tokyo-based founders..." |
+| Audience signal | "If you run a SaaS team..." / "For founders expanding into a new market..." |
 | Effort cue | Length, format, eligibility — set expectation |
 | Avoid clickbait | Curiosity gaps inflate CTR but tank LP engagement and CVR |
 | Format | Static and short video both fine; carousel for multi-section content |
@@ -404,17 +404,17 @@ UTM minimum: source, medium, campaign, content, term. Match to GA4 + backend ses
 
 Engagement is the most heterogeneous of the three upper-funnel objectives. It actually contains five distinct campaign sub-strategies, and choosing the right subtype matters more than choosing the objective itself.
 
-### Role: 主役 vs サポート
+### Role: Primary vs supporting
 
 | Scenario | Role | Why |
 |---|---|---|
-| Conversational sales/services (high-touch) | 主役 (Messages subtype) | Conversation IS the qualification step |
-| Video education / content nurture | 主役 (Video views) | Build retargeting pool of educated viewers |
-| Local event / webinar | 主役 (Event responses) — with caution | Direct event signal, but see traps |
-| Community / creator content | 主役 (Post engagement) | Comment/share velocity is the goal |
-| WhatsApp commerce | 主役 (Conversions on messaging apps) | Conversation → purchase pipeline |
-| E-commerce purchase | サポート only | Use Sales for purchase optimization |
-| B2B lead capture | サポート only | Use Leads for form/CRM-feedback optimization |
+| Conversational sales/services (high-touch) | Primary (Messages subtype) | Conversation IS the qualification step |
+| Video education / content nurture | Primary (Video views) | Build retargeting pool of educated viewers |
+| Local event / webinar | Primary (Event responses) - with caution | Direct event signal, but see traps |
+| Community / creator content | Primary (Post engagement) | Comment/share velocity is the goal |
+| WhatsApp commerce | Primary (Conversions on messaging apps) | Conversation -> purchase pipeline |
+| E-commerce purchase | Supporting only | Use Sales for purchase optimization |
+| B2B lead capture | Supporting only | Use Leads for form/CRM-feedback optimization |
 
 ### What matters most
 
@@ -487,7 +487,7 @@ Facebook Events feature has been in long decline. Practical reality:
 - Younger audiences rarely use Facebook Events
 - Event response ≠ attendance (high false-positive rate)
 - Calendar/email/SMS reminder flows must run alongside
-- Tickets/registration pages on external platforms (Eventbrite, Luma, Peatix) bypass Facebook Events entirely
+- Tickets/registration pages on external platforms (Eventbrite, Luma, ticketing platforms, webinar tools) bypass Facebook Events entirely
 
 Skill rule: prefer **Traffic / LPV** to a registration page or **Leads / Instant Form** for event RSVP, with Engagement / Event Responses only as a supplemental Facebook-native signal. Do not build event campaigns around Event Responses as the primary KPI.
 
@@ -600,12 +600,12 @@ For Messages and CTM (Click-to-Message) campaigns, business value depends on ope
 
 | Business question | Awareness | Traffic | Engagement |
 |---|---|---|---|
-| Build memory / recall in a market | Yes (主役) | No | No |
-| Drive content visits (blog, news) | No | Yes (主役) | No |
+| Build memory / recall in a market | Yes (primary) | No | No |
+| Drive content visits (blog, news) | No | Yes (primary) | No |
 | Build retargeting pool of qualified video viewers | Possible (ThruPlay) | No | Yes (Video Views ThruPlay, primary) |
 | Run conversational sales / WhatsApp commerce | No | No | Yes (Messages / Conversions on messaging apps) |
-| Brand launch with budget for Brand Lift study | Yes (主役) | No | No |
-| Local store opening | Yes (主役) | No | Possibly Engagement Event Responses as supplement |
+| Brand launch with budget for Brand Lift study | Yes (primary) | No | No |
+| Local store opening | Yes (primary) | No | Possibly Engagement Event Responses as supplement |
 | Educate a niche before retargeting with Sales | Yes (Reach + ThruPlay) | Yes (LPV to article) | Yes (Video Views) |
 | Pre-launch waitlist | No | Yes (LPV to waitlist page) — but Leads / Instant Form is better | No |
 | Webinar registration | No | No (Traffic to LP works but Leads is better) | No |

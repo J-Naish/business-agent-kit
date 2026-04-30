@@ -257,10 +257,10 @@ Establish a single naming convention before launch. Naming directly impacts filt
 | Obj | `Sales` `Lead` `App` `Awareness` `Traffic` `Engagement` | Objective abbreviation |
 | Goal | `Purchase` `Value` `QLead` `Install` `AppEvent` `Reach` `LPV` `Msg` | Performance goal or optimization event |
 | Audience | `Prospecting` `Retargeting` `NewCustomer` `Existing` `Broad` `SAC` | Audience/customer role |
-| Geo | `US` `Tokyo` `EU` etc. | Geographic targeting; omit only if obvious |
+| Geo | `US` `EU` `LATAM` `SEA` `Global` etc. | Geographic targeting; omit only if obvious |
 | Note | Product/category/test/compliance note | As needed |
 
-**Examples:** `Sales_Purchase_NewCustomer_US`, `Lead_QLead_Prospecting_Tokyo`, `App_AppEvent_iOS_US`, `Awareness_Reach_Broad_JP`, `Engagement_Msg_Prospecting_Kanto`.
+**Examples:** `Sales_Purchase_NewCustomer_US`, `Lead_QLead_Prospecting_EMEA`, `App_AppEvent_iOS_LATAM`, `Awareness_Reach_Broad_Global`, `Engagement_Msg_Prospecting_SEA`.
 
 #### Ad set name
 

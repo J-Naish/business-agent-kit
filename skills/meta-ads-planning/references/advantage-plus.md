@@ -89,7 +89,7 @@ Formerly "Advantage Detailed Targeting expansion" plus broad-targeting AI; conso
 | Auto-application | Auto-applied to new campaigns where available. Exception: Advantage+ Sales sets it implicitly. Manual ad sets get a "Switch to Advantage+ Audience" prompt. |
 | Effect on detailed targeting | Detailed targeting acts as a seed, not a fence. Cannot be relied on for compliance segregation. |
 | Effect on lookalikes | lookalikes are now a "starting hint" inside Advantage+ Audience, not a true audience floor |
-| Detailed targeting exclusions | Removed from Advantage+ Audience; deprecated platform-wide as of 2026-03-31 in many surfaces |
+| Detailed targeting exclusions | Removed from Advantage+ Audience. Meta removed detailed targeting exclusions from new ad sets and from active existing campaigns created in Ads Manager starting 2025-03-31. |
 | Risk | If the campaign requires audience guarantees (compliance, brand safety, age-restricted), Advantage+ Audience cannot deliver them via interests |
 
 
@@ -141,7 +141,7 @@ Skill stance: do not encode lookalikes as an independent strategy in 2026. Use t
 |---|---|
 | What is automated | Delivers beyond the listed interests when better performance is predicted |
 | Status 2026 | Subsumed by Advantage+ Audience. Many granular interest categories were consolidated 2025-06-23 and further removed 2026-01-15. |
-| Detailed targeting exclusions | Removed from existing campaigns 2026-03-31 |
+| Detailed targeting exclusions | Removed from new ad sets and from active existing campaigns created in Ads Manager starting 2025-03-31 |
 | Risk | Skill must not promise interest-level fences; interests cannot constrain delivery |
 
 
